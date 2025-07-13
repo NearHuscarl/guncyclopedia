@@ -1,0 +1,3598 @@
+[
+  {
+    "id": "Rusty_Sidearm",
+    "name": "Rusty Sidearm",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/ce/Rusty_Sidearm.png/revision/latest?cb=20200410183300",
+    "quote": "Still Works. Mostly.",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16.4
+      }
+    ]
+  },
+  {
+    "id": "Marine_Sidearm",
+    "name": "Marine Sidearm",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/90/Marine_Sidearm.png/revision/latest?cb=20160310051052",
+    "quote": "Always With You",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 15.6
+      }
+    ]
+  },
+  {
+    "id": "Rogue_Special",
+    "name": "Rogue Special",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/ae/Rogue_Special.png/revision/latest?cb=20160305235517",
+    "quote": "Underhanded And Efficient",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 13.6
+      }
+    ]
+  },
+  {
+    "id": "Budget_Revolver",
+    "name": "Budget Revolver",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/30/Budget_Revolver.png/revision/latest?cb=20160310052406",
+    "quote": "Affordable Arms",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "id": "Dart_Gun",
+    "name": "Dart Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/43/Dart_Gun.png/revision/latest?cb=20160310050541",
+    "quote": "Sticky",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 18
+      }
+    ]
+  },
+  {
+    "id": "Robot%27s_Right_Hand",
+    "name": "Robot's Right Hand",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b0/Robot%27s_Right_Hand.png/revision/latest?cb=20160310052417",
+    "quote": "Built To Kill",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "id": "Slinger",
+    "name": "Slinger",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/f4/Slinger.png/revision/latest?cb=20190406101659",
+    "quote": "Farewell to arms",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 22.4
+      }
+    ]
+  },
+  {
+    "id": "Blasphemy",
+    "name": "Blasphemy",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/22/Blasphemy.png/revision/latest?cb=20160310050332",
+    "quote": "To The Point",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Beam Swing",
+        "value": 56
+      },
+      {
+        "condition": "Only Swing Or Beam",
+        "value": 28
+      }
+    ]
+  },
+  {
+    "id": "Casey",
+    "name": "Casey",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/1e/Casey.png/revision/latest?cb=20161220033905",
+    "quote": "Batting .50",
+    "quality": "D",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 50
+      }
+    ]
+  },
+  {
+    "id": "Pea_Shooter",
+    "name": "Pea Shooter",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/09/Pea_Shooter.png/revision/latest?cb=20160305235549",
+    "quote": "Baby's First Gun",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 10.6
+      }
+    ]
+  },
+  {
+    "id": "38_Special",
+    "name": "38 Special",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/e9/38_Special.png/revision/latest?cb=20160310050218",
+    "quote": "For The Inquisitive",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26.5
+      }
+    ]
+  },
+  {
+    "id": "Derringer",
+    "name": "Derringer",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/01/Derringer.png/revision/latest?cb=20160310050559",
+    "quote": "One Last Trick",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 15.2
+      }
+    ]
+  },
+  {
+    "id": "Trank_Gun",
+    "name": "Trank Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/af/Trank_Gun.png/revision/latest?cb=20190406104939",
+    "quote": "Non Non Lethal",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 47.6
+      }
+    ]
+  },
+  {
+    "id": "Unfinished_Gun",
+    "name": "Unfinished Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/e8/Unfinished_Gun.png/revision/latest?cb=20160310051748",
+    "quote": "Still Warm",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 20.9
+      }
+    ]
+  },
+  {
+    "id": "Elimentaler",
+    "name": "Elimentaler",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/94/Elimentaler.png/revision/latest?cb=20180720005944",
+    "quote": "Full of Holes",
+    "quality": "S",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 29
+      }
+    ]
+  },
+  {
+    "id": "Bullet",
+    "name": "Bullet",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/65/Bullet_%28Gun%29.png/revision/latest?cb=20160905013440",
+    "quote": "Fires Guns",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 21
+      }
+    ]
+  },
+  {
+    "id": "Shell",
+    "name": "Shell",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/06/Shell.png/revision/latest?cb=20160905013508",
+    "quote": "Fires Shotguns",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 36.9
+      }
+    ]
+  },
+  {
+    "id": "Hyper_Light_Blaster",
+    "name": "Hyper Light Blaster",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/23/Hyper_Light_Blaster.png/revision/latest?cb=20170128230459",
+    "quote": "Skill Honed Sharp",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 85.1
+      }
+    ]
+  },
+  {
+    "id": "Boxing_Glove",
+    "name": "Boxing Glove",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/e1/Boxing_Glove.png/revision/latest?cb=20180720005940",
+    "quote": "Pistol Hondo",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "id": "Makarov",
+    "name": "Makarov",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/4c/Makarov.png/revision/latest?cb=20160305235629",
+    "quote": "The People's Gun",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16.6
+      }
+    ]
+  },
+  {
+    "id": "M1911",
+    "name": "M1911",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b2/M1911.png/revision/latest?cb=20160310051009",
+    "quote": "Classic",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26
+      }
+    ]
+  },
+  {
+    "id": "Magnum",
+    "name": "Magnum",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/90/Magnum.png/revision/latest?cb=20160310051033",
+    "quote": "5 Shots Or 6?",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 44.6
+      }
+    ]
+  },
+  {
+    "id": "Colt_1851",
+    "name": "Colt 1851",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/cd/Colt_1851.png/revision/latest?cb=20160310050459",
+    "quote": "You Dig",
+    "quality": "C",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 28.2
+      }
+    ]
+  },
+  {
+    "id": "SAA",
+    "name": "SAA",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/8f/SAA.png/revision/latest?cb=20160310051353",
+    "quote": "Exhilarating Reload Time",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 43.6
+      }
+    ]
+  },
+  {
+    "id": "Cold_45",
+    "name": "Cold 45",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c2/Cold_45.png/revision/latest?cb=20160405034858",
+    "quote": "Shatterday Night Special",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 25.3
+      }
+    ]
+  },
+  {
+    "id": "Polaris",
+    "name": "Polaris",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a2/Polaris.png/revision/latest?cb=20160310051220",
+    "quote": "Storied",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Level 1",
+        "value": 17.9
+      },
+      {
+        "condition": "Level 2",
+        "value": 43
+      },
+      {
+        "condition": "Level 3",
+        "value": 71.6
+      }
+    ]
+  },
+  {
+    "id": "Jolter",
+    "name": "Jolter",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/e6/Jolter.png/revision/latest?cb=20160310050904",
+    "quote": ".95 Caliber",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 39.5
+      }
+    ]
+  },
+  {
+    "id": "Dungeon_Eagle",
+    "name": "Dungeon Eagle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/f6/Dungeon_Eagle.png/revision/latest?cb=20160310050623",
+    "quote": "Caw!",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 32.1
+      }
+    ]
+  },
+  {
+    "id": "Grey_Mauser",
+    "name": "Grey Mauser",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/54/Grey_Mauser_%28Gun%29.png/revision/latest?cb=20160423204018",
+    "quote": "Silent And Deadly",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 43.3
+      }
+    ]
+  },
+  {
+    "id": "Vorpal_Gun",
+    "name": "Vorpal Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/9f/Vorpal_Gun.png/revision/latest?cb=20170127024522",
+    "quote": ".50 Criticaliber",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 23.8
+      }
+    ]
+  },
+  {
+    "id": "High_Kaliber",
+    "name": "High Kaliber",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b1/High_Kaliber.png/revision/latest?cb=20190406101652",
+    "quote": "Soul Reaver",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 33
+      }
+    ]
+  },
+  {
+    "id": "Shellegun",
+    "name": "Shellegun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/59/Shellegun.png/revision/latest?cb=20160415014704",
+    "quote": "Circle Of Death",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Pistol Manual",
+        "value": 33.1
+      },
+      {
+        "condition": "Pistol Automatic",
+        "value": 24
+      },
+      {
+        "condition": "Beam",
+        "value": 13.3
+      },
+      {
+        "condition": "Both Modes",
+        "value": 18.4
+      }
+    ]
+  },
+  {
+    "id": "Dueling_Pistol",
+    "name": "Dueling Pistol",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/95/Dueling_Pistol.png/revision/latest?cb=20160310050617",
+    "quote": "Ricochet",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "id": "AU_Gun",
+    "name": "AU Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/04/AU_Gun.png/revision/latest?cb=20160310050252",
+    "quote": "Some Assembly Required",
+    "quality": "S",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 80
+      }
+    ]
+  },
+  {
+    "id": "Big_Iron",
+    "name": "Big Iron",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c2/Big_Iron.png/revision/latest?cb=20160310050320",
+    "quote": "Heavy",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "id": "Composite_Gun",
+    "name": "Composite Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/99/Composite_Gun.png/revision/latest?cb=20160310050511",
+    "quote": "Undetectable",
+    "quality": "S",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "id": "Flare_Gun",
+    "name": "Flare Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/57/Flare_Gun.png/revision/latest?cb=20160310050709",
+    "quote": "Over Here",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 17.3
+      }
+    ]
+  },
+  {
+    "id": "Smiley%27s_Revolver",
+    "name": "Smiley's Revolver",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a8/Smiley%27s_Revolver.png/revision/latest?cb=20160310051536",
+    "quote": "All Smiles",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 43.2
+      }
+    ]
+  },
+  {
+    "id": "Shades%27s_Revolver",
+    "name": "Shades's Revolver",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/43/Shades%27s_Revolver.png/revision/latest?cb=20160310051429",
+    "quote": "Someone Loses An Eye",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "id": "Knight%27s_Gun",
+    "name": "Knight's Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/24/Knight%27s_Gun.png/revision/latest/scale-to-width-down/32?cb=20180913161932",
+    "quote": "Plowshare",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 64.9
+      }
+    ]
+  },
+  {
+    "id": "GuNNER",
+    "name": "GuNNER",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/25/GuNNER.png/revision/latest?cb=20190406101650",
+    "quote": "Backpack Not Included",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 27.5
+      }
+    ]
+  },
+  {
+    "id": "Regular_Shotgun",
+    "name": "Regular Shotgun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c6/Regular_Shotgun.png/revision/latest?cb=20160310051323",
+    "quote": "Cocked And Loaded",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 32
+      }
+    ]
+  },
+  {
+    "id": "Big_Shotgun",
+    "name": "Big Shotgun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/de/Big_Shotgun.png/revision/latest/scale-to-width-down/32?cb=20180720005939",
+    "quote": "A Shotgun That's Big",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 63.1
+      }
+    ]
+  },
+  {
+    "id": "Old_Goldie",
+    "name": "Old Goldie",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/57/Old_Goldie.png/revision/latest?cb=20160310051140",
+    "quote": "For The Discerning",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 88.1
+      }
+    ]
+  },
+  {
+    "id": "Sawed-Off",
+    "name": "Sawed-Off",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/87/Sawed-Off.png/revision/latest?cb=20160310051404",
+    "quote": "No Butts About It",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 25.9
+      }
+    ]
+  },
+  {
+    "id": "Winchester",
+    "name": "Winchester",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/e6/Winchester.png/revision/latest?cb=20160310051848",
+    "quote": "Better Than A Box Of Roses",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 36.9
+      }
+    ]
+  },
+  {
+    "id": "Rattler",
+    "name": "Rattler",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/1a/Rattler.png/revision/latest?cb=20160316074641",
+    "quote": "Snakes On A Gun",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 35.6
+      }
+    ]
+  },
+  {
+    "id": "Bubble_Blaster",
+    "name": "Bubble Blaster",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/04/Bubble_Blaster.png/revision/latest?cb=20180720005940",
+    "quote": "The Suds",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 105.3
+      }
+    ]
+  },
+  {
+    "id": "Elephant_Gun",
+    "name": "Elephant Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a0/Elephant_Gun.png/revision/latest?cb=20160310050629",
+    "quote": "Shoots Elephants",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 31.4
+      }
+    ]
+  },
+  {
+    "id": "Tangler",
+    "name": "Tangler",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/0a/Tangler.png/revision/latest?cb=20160310051629",
+    "quote": "Get Wrecktangled",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 43.6
+      }
+    ]
+  },
+  {
+    "id": "Void_Shotgun",
+    "name": "Void Shotgun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/54/Void_Shotgun.png/revision/latest?cb=20160310051826",
+    "quote": "CQC",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 50
+      }
+    ]
+  },
+  {
+    "id": "Mass_Shotgun",
+    "name": "Mass Shotgun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/fb/Mass_Shotgun.png/revision/latest?cb=20160310051058",
+    "quote": "My Favorite Gun",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Ball",
+        "value": 25
+      },
+      {
+        "condition": "Split",
+        "value": 60
+      }
+    ]
+  },
+  {
+    "id": "Shotgun_Full_of_Hate",
+    "name": "Shotgun Full of Hate",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b1/Shotgun_Full_of_Hate.png/revision/latest?cb=20160310051455",
+    "quote": "Hate Is Power!",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 54.5
+      }
+    ]
+  },
+  {
+    "id": "Shotgun_Full_of_Love",
+    "name": "Shotgun Full of Love",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/2d/Shotgun_Full_of_Love.png/revision/latest?cb=20160310051501",
+    "quote": "Kill With Kindness",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 51.1
+      }
+    ]
+  },
+  {
+    "id": "Shotgrub",
+    "name": "Shotgrub",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/eb/Shotgrub.png/revision/latest?cb=20160310051450",
+    "quote": "No Worries!",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 46.5
+      }
+    ]
+  },
+  {
+    "id": "Gilded_Hydra",
+    "name": "Gilded Hydra",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/13/Gilded_Hydra.png/revision/latest?cb=20160323082412",
+    "quote": "Heads Up!",
+    "quality": "S",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Full Health",
+        "value": 30
+      },
+      {
+        "condition": "1 Missing Heart",
+        "value": 64.3
+      },
+      {
+        "condition": "2 Missing Hearts",
+        "value": 83.3
+      }
+    ]
+  },
+  {
+    "id": "Blunderbuss",
+    "name": "Blunderbuss",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b3/Blunderbuss.png/revision/latest?cb=20160310050349",
+    "quote": "Shoots Anything",
+    "quality": "D",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 44.4
+      }
+    ]
+  },
+  {
+    "id": "Pulse_Cannon",
+    "name": "Pulse Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/ef/Pulse_Cannon.png/revision/latest?cb=20160310051249",
+    "quote": "Time Of Death...",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 41.7
+      }
+    ]
+  },
+  {
+    "id": "Siren",
+    "name": "Siren",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/0a/Siren.png/revision/latest/scale-to-width-down/32?cb=20160310051513",
+    "quote": "Mershotgun",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 32
+      }
+    ]
+  },
+  {
+    "id": "Zilla_Shotgun",
+    "name": "Zilla Shotgun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/93/Zilla_Shotgun.png/revision/latest?cb=20160310051911",
+    "quote": "Quadruple the fun!",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 42.7
+      }
+    ]
+  },
+  {
+    "id": "Ice_Breaker",
+    "name": "Ice Breaker",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/5a/Ice_Breaker.png/revision/latest?cb=20160310050858",
+    "quote": "Never Let Go",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 32.4
+      }
+    ]
+  },
+  {
+    "id": "The_Membrane",
+    "name": "The Membrane",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/19/The_Membrane.png/revision/latest?cb=20160319221650",
+    "quote": "Green Or Yellow?",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 38.9
+      }
+    ]
+  },
+  {
+    "id": "Huntsman",
+    "name": "Huntsman",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/75/Huntsman.png/revision/latest?cb=20160310050849",
+    "quote": "Axes Of Evil",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 28.3
+      }
+    ]
+  },
+  {
+    "id": "Blooper",
+    "name": "Blooper",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/43/Blooper.png/revision/latest?cb=20160310050338",
+    "quote": "Close Your Bloop",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 58.3
+      }
+    ]
+  },
+  {
+    "id": "JK-47",
+    "name": "JK-47",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/06/JK-47.png/revision/latest?cb=20180913222633",
+    "quote": "Substitute",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 18.9
+      }
+    ]
+  },
+  {
+    "id": "Bow",
+    "name": "Bow",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/65/Bow.png/revision/latest?cb=20160310050400",
+    "quote": "Hold Fire To Charge",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26.8
+      }
+    ]
+  },
+  {
+    "id": "Charmed_Bow",
+    "name": "Charmed Bow",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a5/Charmed_Bow.png/revision/latest?cb=20160310050453",
+    "quote": "<3-----<<<",
+    "quality": "B",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Uncharged",
+        "value": 37.5
+      },
+      {
+        "condition": "Charged",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "id": "Crossbow",
+    "name": "Crossbow",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/79/Crossbow.png/revision/latest?cb=20160306191626",
+    "quote": "The Original",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 29.3
+      }
+    ]
+  },
+  {
+    "id": "Sticky_Crossbow",
+    "name": "Sticky Crossbow",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/4f/Sticky_Crossbow.png/revision/latest?cb=20160310051606",
+    "quote": "Reload, Explode",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "id": "Shotbow",
+    "name": "Shotbow",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a7/Shotbow.png/revision/latest?cb=20160310051440",
+    "quote": "A Teleporter Accident",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30.9
+      }
+    ]
+  },
+  {
+    "id": "Triple_Crossbow",
+    "name": "Triple Crossbow",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/24/Triple_Crossbow.png/revision/latest?cb=20160310051736",
+    "quote": "3 > 1",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 38.2
+      }
+    ]
+  },
+  {
+    "id": "Crescent_Crossbow",
+    "name": "Crescent Crossbow",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/18/Crescent_Crossbow.png/revision/latest?cb=20160310050523",
+    "quote": "Moon Shot",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Varies heavily due to nature of projectiles",
+        "value": 19.5
+      }
+    ]
+  },
+  {
+    "id": "Gunbow",
+    "name": "Gunbow",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/e6/Gunbow.png/revision/latest?cb=20160310050802",
+    "quote": "Failed Experiment",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Hit Once Normal",
+        "value": 12.37
+      },
+      {
+        "condition": "Hit Twice",
+        "value": 18.55
+      },
+      {
+        "condition": "Hit Thrice",
+        "value": 30.92
+      },
+      {
+        "condition": "Hit Seven Times Rare",
+        "value": 55.65
+      }
+    ]
+  },
+  {
+    "id": "Klobbe",
+    "name": "Klobbe",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/fd/Klobbe.png/revision/latest?cb=20160310050910",
+    "quote": "Everyone's Favorite",
+    "quality": "D",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 11.9
+      }
+    ]
+  },
+  {
+    "id": "Machine_Pistol",
+    "name": "Machine Pistol",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/63/Machine_Pistol.png/revision/latest?cb=20160310051021",
+    "quote": "Rapid Fire",
+    "quality": "D",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 29.7
+      }
+    ]
+  },
+  {
+    "id": "Thompson_Sub-Machinegun",
+    "name": "Thompson Sub-Machinegun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/62/Thompson_Sub-Machinegun.png/revision/latest?cb=20160310051706",
+    "quote": "Myeah, See!",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 40.8
+      }
+    ]
+  },
+  {
+    "id": "AK-47",
+    "name": "AK-47",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/f8/AK-47.png/revision/latest?cb=20160310050228",
+    "quote": "Accept No Substitutes",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 44.7
+      }
+    ]
+  },
+  {
+    "id": "Strafe_Gun",
+    "name": "Strafe Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/be/Strafe_Gun.png/revision/latest/scale-to-width-down/32?cb=20170128230421",
+    "quote": "Bleeding Edge Gameplay",
+    "quality": "S",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 46.5
+      }
+    ]
+  },
+  {
+    "id": "AKEY-47",
+    "name": "AKEY-47",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/80/AKEY-47.png/revision/latest?cb=20160405050635",
+    "quote": "Unlocked And Loaded!",
+    "quality": "S",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 44.7
+      }
+    ]
+  },
+  {
+    "id": "Stone_Dome",
+    "name": "Stone Dome",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/d8/Stone_Dome.png/revision/latest?cb=20180720005952",
+    "quote": "Big Head Mode",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26.5
+      }
+    ]
+  },
+  {
+    "id": "Crown_of_Guns",
+    "name": "Crown of Guns",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/dc/Crown_of_Guns.png/revision/latest?cb=20161220012959",
+    "quote": "All Hail",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 220
+      }
+    ]
+  },
+  {
+    "id": "M16",
+    "name": "M16",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/ea/M16.png/revision/latest/scale-to-width-down/32?cb=20160310050958",
+    "quote": "Underslung",
+    "quality": "A",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 35.6
+      }
+    ]
+  },
+  {
+    "id": "Combined_Rifle",
+    "name": "Combined Rifle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/2b/Combined_Rifle.png/revision/latest?cb=20170915223926",
+    "quote": "Halve Lives",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 36.6
+      }
+    ]
+  },
+  {
+    "id": "Zorgun",
+    "name": "Zorgun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/0a/Zorgun.png/revision/latest?cb=20160310051922",
+    "quote": "Don't Push The Red Button",
+    "quality": "A",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 57.5
+      }
+    ]
+  },
+  {
+    "id": "The_Fat_Line",
+    "name": "The Fat Line",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/39/The_Fat_Line.png/revision/latest/scale-to-width-down/32?cb=20170915223655",
+    "quote": "Technobabble",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 38.4
+      }
+    ]
+  },
+  {
+    "id": "Mr._Accretion_Jr.",
+    "name": "Mr. Accretion Jr.",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/ee/Mr._Accretion_Jr..png/revision/latest?cb=20180720005948",
+    "quote": "Music of the Spheres",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 21.9
+      }
+    ]
+  },
+  {
+    "id": "VertebraeK-47",
+    "name": "VertebraeK-47",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/84/VertebraeK-47.png/revision/latest?cb=20160310051804",
+    "quote": "Nervous Yet?",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 27.3
+      }
+    ]
+  },
+  {
+    "id": "Balloon_Gun",
+    "name": "Balloon Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/69/Balloon_Gun.png/revision/latest?cb=20160905182404",
+    "quote": "Hot Air",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 44.1
+      }
+    ]
+  },
+  {
+    "id": "MAC10",
+    "name": "MAC10",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/62/MAC10.png/revision/latest?cb=20160310051015",
+    "quote": "$#!^@ Never End",
+    "quality": "C",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 34.7
+      }
+    ]
+  },
+  {
+    "id": "Triple_Gun",
+    "name": "Triple Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a0/Triple_Gun.png/revision/latest?cb=20180815231701",
+    "quote": "Bullet the Stampede",
+    "quality": "B",
+    "type": "Varies",
+    "dps": [
+      {
+        "condition": "Revolver",
+        "value": 16.6
+      },
+      {
+        "condition": "Machine Gun",
+        "value": 46.2
+      },
+      {
+        "condition": "Beam",
+        "value": 160
+      }
+    ]
+  },
+  {
+    "id": "Heck_Blaster",
+    "name": "Heck Blaster",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/9f/Heck_Blaster.png/revision/latest?cb=20160310050820",
+    "quote": "Whoa, Nelly",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 31.4
+      }
+    ]
+  },
+  {
+    "id": "Patriot",
+    "name": "Patriot",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/12/Patriot.png/revision/latest?cb=20160316074629",
+    "quote": "Gun Eater",
+    "quality": "S",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 69
+      }
+    ]
+  },
+  {
+    "id": "AC-15",
+    "name": "AC-15",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/f6/AC-15.png/revision/latest?cb=20170915224513",
+    "quote": "Metalled Gear",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Unarmored",
+        "value": 25.8
+      },
+      {
+        "condition": "Armored",
+        "value": 27.9
+      }
+    ]
+  },
+  {
+    "id": "Vulcan_Cannon",
+    "name": "Vulcan Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/cf/Vulcan_Cannon.png/revision/latest?cb=20160310051837",
+    "quote": "Boundless Slaughter",
+    "quality": "S",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 100
+      }
+    ]
+  },
+  {
+    "id": "Plague_Pistol",
+    "name": "Plague Pistol",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/ed/Plague_Pistol.png/revision/latest?cb=20160310051214",
+    "quote": "Chemical Warfare",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16.8
+      }
+    ]
+  },
+  {
+    "id": "Gungine",
+    "name": "Gungine",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/da/Gungine.png/revision/latest?cb=20160319195714",
+    "quote": "12 Cylinder",
+    "quality": "S",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 80.6
+      }
+    ]
+  },
+  {
+    "id": "The_Predator",
+    "name": "The Predator",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/2e/The_Predator.png/revision/latest?cb=20190406233709",
+    "quote": "High-tech $#!*",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 29.4
+      }
+    ]
+  },
+  {
+    "id": "Dragunfire",
+    "name": "Dragunfire",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c9/Dragunfire.png/revision/latest?cb=20160310050611",
+    "quote": "Roar",
+    "quality": "A",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 42.4
+      }
+    ]
+  },
+  {
+    "id": "Sniper_Rifle",
+    "name": "Sniper Rifle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/cf/Sniper_Rifle.png/revision/latest?cb=20160310051542",
+    "quote": "Scope Creep",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 24.8
+      }
+    ]
+  },
+  {
+    "id": "A.W.P.",
+    "name": "A.W.P.",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/85/A.W.P..png/revision/latest?cb=20160310050223",
+    "quote": "Noob Cannon",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30.5
+      }
+    ]
+  },
+  {
+    "id": "M1",
+    "name": "M1",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/59/M1.png/revision/latest?cb=20160310050952",
+    "quote": "Bolt Action",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 22.6
+      }
+    ]
+  },
+  {
+    "id": "Winchester_Rifle",
+    "name": "Winchester Rifle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/80/Winchester_Rifle.png/revision/latest/scale-to-width-down/32?cb=20160310051842",
+    "quote": "Guns And Deviltry.",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 19.7
+      }
+    ]
+  },
+  {
+    "id": "Corsair",
+    "name": "Corsair",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/4f/Corsair.png/revision/latest?cb=20160310050517",
+    "quote": "Plot A Course",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 12.5
+      }
+    ]
+  },
+  {
+    "id": "Railgun",
+    "name": "Railgun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/ab/Railgun.png/revision/latest/scale-to-width-down/32?cb=20160310051317",
+    "quote": "Calibrating",
+    "quality": "S",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "1 Hit",
+        "value": 27
+      },
+      {
+        "condition": "Maximum Hits",
+        "value": 243.2
+      }
+    ]
+  },
+  {
+    "id": "Prototype_Railgun",
+    "name": "Prototype Railgun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/43/Prototype_Railgun.png/revision/latest/scale-to-width-down/32?cb=20160310051243",
+    "quote": "DANGER: HIGH VOLTAGE",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 51
+      }
+    ]
+  },
+  {
+    "id": "Void_Marshal",
+    "name": "Void Marshal",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/84/Void_Marshal.png/revision/latest?cb=20160310051816",
+    "quote": "Acquired Under The Table",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 51.9
+      }
+    ]
+  },
+  {
+    "id": "Deck4rd",
+    "name": "Deck4rd",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/88/Deck4rd.png/revision/latest?cb=20160310050547",
+    "quote": "Unicorn Of Handguns",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 47.1
+      }
+    ]
+  },
+  {
+    "id": "The_Judge",
+    "name": "The Judge",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/39/The_Judge.png/revision/latest?cb=20160310051648",
+    "quote": "Hot Shot",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 32.5
+      }
+    ]
+  },
+  {
+    "id": "Mourning_Star",
+    "name": "Mourning Star",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/36/Mourning_Star.png/revision/latest?cb=20170128230453",
+    "quote": "Satellite Rain",
+    "quality": "S",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 110
+      }
+    ]
+  },
+  {
+    "id": "Alien_Sidearm",
+    "name": "Alien Sidearm",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c6/Alien_Sidearm.png/revision/latest?cb=20160310050240",
+    "quote": "Shield Breaker",
+    "quality": "D",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 19.6
+      }
+    ]
+  },
+  {
+    "id": "RUBE-ADYNE_Prototype",
+    "name": "RUBE-ADYNE Prototype",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/69/RUBE-ADYNE_Prototype.png/revision/latest?cb=20160310051341",
+    "quote": "It Never Quits",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 35
+      }
+    ]
+  },
+  {
+    "id": "RUBE-ADYNE_MK.II",
+    "name": "RUBE-ADYNE MK.II",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/7c/RUBE-ADYNE_MK.II.png/revision/latest?cb=20160310051335",
+    "quote": "Polished Product",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 63.8
+      }
+    ]
+  },
+  {
+    "id": "Rubenstein%27s_Monster",
+    "name": "Rubenstein's Monster",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/08/Rubenstein%27s_Monster.png/revision/latest/scale-to-width-down/32?cb=20180720100336",
+    "quote": "Unit 00",
+    "quality": "N",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 102.2
+      }
+    ]
+  },
+  {
+    "id": "Chamber_Gun",
+    "name": "Chamber Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/16/Chamber_Gun.png/revision/latest?cb=20190406195820",
+    "quote": "Product of Environment",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Keep of the Lead Lord",
+        "value": 15.9
+      },
+      {
+        "condition": "Oubliette",
+        "value": 30.3
+      },
+      {
+        "condition": "Gungeon Proper",
+        "value": 25.1
+      },
+      {
+        "condition": "Abbey of the True Gun",
+        "value": 80
+      },
+      {
+        "condition": "Black Powder Mine",
+        "value": 300
+      },
+      {
+        "condition": "Resourceful Rat's Lair",
+        "value": 20
+      },
+      {
+        "condition": "Hollow",
+        "value": 68
+      },
+      {
+        "condition": "R&G Dept.",
+        "value": 10
+      },
+      {
+        "condition": "Forge",
+        "value": 70
+      },
+      {
+        "condition": "Bullet Hell",
+        "value": 180
+      }
+    ]
+  },
+  {
+    "id": "Gunderfury",
+    "name": "Gunderfury",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a7/Gunderfury.png/revision/latest?cb=20190406104933",
+    "quote": "Gun of Guncraft",
+    "quality": "A",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Level 1-19",
+        "value": 25.45
+      },
+      {
+        "condition": "Level 20-29",
+        "value": 29.57
+      },
+      {
+        "condition": "Level 30-39",
+        "value": 33.157
+      },
+      {
+        "condition": "Level 40-49",
+        "value": 34.09
+      },
+      {
+        "condition": "Level 50-59",
+        "value": 107.14
+      },
+      {
+        "condition": "Level 60",
+        "value": 181.82
+      }
+    ]
+  },
+  {
+    "id": "Mine_Cutter",
+    "name": "Mine Cutter",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c2/Mine_Cutter.png/revision/latest?cb=20160310051116",
+    "quote": "Safety First",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "id": "Void_Core_Assault_Rifle",
+    "name": "Void Core Assault Rifle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/d0/Void_Core_Assault_Rifle.png/revision/latest?cb=20160310051810",
+    "quote": "Rapid Fire",
+    "quality": "B",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 27.8
+      }
+    ]
+  },
+  {
+    "id": "Flash_Ray",
+    "name": "Flash Ray",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/d0/Flash_Ray.png/revision/latest?cb=20160310050715",
+    "quote": "Ah Ahhh!",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 23.1
+      }
+    ]
+  },
+  {
+    "id": "Wind_Up_Gun",
+    "name": "Wind Up Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/99/Wind_Up_Gun.png/revision/latest?cb=20160310051853",
+    "quote": "Charge It",
+    "quality": "D",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 18.9
+      }
+    ]
+  },
+  {
+    "id": "H4mmer",
+    "name": "H4mmer",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/59/H4mmer.png/revision/latest?cb=20160310050814",
+    "quote": "Many Bullets",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 63.5
+      }
+    ]
+  },
+  {
+    "id": "Snakemaker",
+    "name": "Snakemaker",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/9c/Snakemaker.png/revision/latest?cb=20160327224501",
+    "quote": "SSSSSSSSSSS",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 34.8
+      }
+    ]
+  },
+  {
+    "id": "Turbo-Gun",
+    "name": "Turbo-Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/85/Turbo-Gun.png/revision/latest?cb=20180720220429",
+    "quote": "Repetitive Strain",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Min",
+        "value": 32
+      },
+      {
+        "condition": "Max",
+        "value": 80
+      }
+    ]
+  },
+  {
+    "id": "Hegemony_Carbine",
+    "name": "Hegemony Carbine",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b2/Hegemony_Carbine.png/revision/latest?cb=20160310050826",
+    "quote": "All The Same",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 23
+      }
+    ]
+  },
+  {
+    "id": "Screecher",
+    "name": "Screecher",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/2d/Screecher.png/revision/latest?cb=20160310051416",
+    "quote": "Cover Your Ears!",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "id": "Laser_Lotus",
+    "name": "Laser Lotus",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b0/Laser_Lotus.png/revision/latest?cb=20160310050916",
+    "quote": "Level 5",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 50.3
+      }
+    ]
+  },
+  {
+    "id": "Hegemony_Rifle",
+    "name": "Hegemony Rifle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/f4/Hegemony_Rifle.png/revision/latest?cb=20160310051600",
+    "quote": "So Precise",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 31.9
+      }
+    ]
+  },
+  {
+    "id": "Fightsabre",
+    "name": "Fightsabre",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c2/Fightsabre.png/revision/latest/scale-to-width-down/32?cb=20160310050652",
+    "quote": "Heresy",
+    "quality": "S",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 29.4
+      }
+    ]
+  },
+  {
+    "id": "Helix",
+    "name": "Helix",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c1/Helix.png/revision/latest?cb=20160310050832",
+    "quote": "Splice 'n' Dice",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 34
+      }
+    ]
+  },
+  {
+    "id": "Laser_Rifle",
+    "name": "Laser Rifle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/0d/Laser_Rifle.png/revision/latest?cb=20160310050922",
+    "quote": "Blast Off!",
+    "quality": "C",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 25.5
+      }
+    ]
+  },
+  {
+    "id": "Crestfaller",
+    "name": "Crestfaller",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/1e/Crestfaller.png/revision/latest?cb=20160310050529",
+    "quote": "Cold Reality",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 18.4
+      }
+    ]
+  },
+  {
+    "id": "Rad_Gun",
+    "name": "Rad Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/e3/Rad_Gun.png/revision/latest?cb=20161219235014",
+    "quote": "Totally Rad",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "At 0 Reloads",
+        "value": 24.6
+      }
+    ]
+  },
+  {
+    "id": "Thunderclap",
+    "name": "Thunderclap",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/8a/Thunderclap.png/revision/latest?cb=20160310051712",
+    "quote": "Lightning In A Bullet",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 38.7
+      }
+    ]
+  },
+  {
+    "id": "Charge_Shot",
+    "name": "Charge Shot",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/81/Charge_Shot.png/revision/latest?cb=20160310050447",
+    "quote": "Hold To Fire",
+    "quality": "B",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 24.4
+      }
+    ]
+  },
+  {
+    "id": "Dark_Marker",
+    "name": "Dark Marker",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/62/Dark_Marker.png/revision/latest?cb=20160310050535",
+    "quote": "Big Bang",
+    "quality": "S",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 38.6
+      }
+    ]
+  },
+  {
+    "id": "Particulator",
+    "name": "Particulator",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/08/Particulator.png/revision/latest?cb=20160310051151",
+    "quote": "Strange Matter",
+    "quality": "S",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 41.6
+      }
+    ]
+  },
+  {
+    "id": "The_Emperor",
+    "name": "The Emperor",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/96/The_Emperor.png/revision/latest?cb=20160310051641",
+    "quote": "Electric Terror",
+    "quality": "A",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 37.5
+      }
+    ]
+  },
+  {
+    "id": "RPG",
+    "name": "RPG",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/6f/RPG.png/revision/latest?cb=20160310051329",
+    "quote": "Leveled Up",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 18.3
+      }
+    ]
+  },
+  {
+    "id": "Grenade_Launcher",
+    "name": "Grenade Launcher",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/67/Grenade_Launcher.png/revision/latest?cb=20160310050751",
+    "quote": "Fwomp!",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 29.2
+      }
+    ]
+  },
+  {
+    "id": "Stinger",
+    "name": "Stinger",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b6/Stinger.png/revision/latest?cb=20160310051612",
+    "quote": "Drone Warfare",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 27.5
+      }
+    ]
+  },
+  {
+    "id": "The_Exotic",
+    "name": "The Exotic",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/d2/The_Exotic.png/revision/latest/scale-to-width-down/32?cb=20180409001457",
+    "quote": "Pack of Wolves",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 44.5
+      }
+    ]
+  },
+  {
+    "id": "Com4nd0",
+    "name": "Com4nd0",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/af/Com4nd0.png/revision/latest?cb=20160310050505",
+    "quote": "You're Fired",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 54.6
+      }
+    ]
+  },
+  {
+    "id": "RC_Rocket",
+    "name": "RC Rocket",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/75/RC_Rocket.png/revision/latest/scale-to-width-down/32?cb=20160323033213",
+    "quote": "Avoid User Error",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 86.7
+      }
+    ]
+  },
+  {
+    "id": "Yari_Launcher",
+    "name": "Yari Launcher",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/66/Yari_Launcher.png/revision/latest?cb=20160310051905",
+    "quote": "Hell. Yes.",
+    "quality": "S",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 221.2
+      }
+    ]
+  },
+  {
+    "id": "Lil%27_Bomber",
+    "name": "Lil' Bomber",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/d0/Lil%27_Bomber.png/revision/latest?cb=20160310050934",
+    "quote": "ReFuse To Lose!",
+    "quality": "D",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "id": "Grasschopper",
+    "name": "Grasschopper",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c5/Grasschopper.png/revision/latest?cb=20160310050745",
+    "quote": "Noisy",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "id": "Void_Core_Cannon",
+    "name": "Void Core Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/46/Void_Core_Cannon.png/revision/latest/scale-to-width-down/32?cb=20190406044936",
+    "quote": "Critical Strike",
+    "quality": "B",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 34.8
+      }
+    ]
+  },
+  {
+    "id": "Bundle_of_Wands",
+    "name": "Bundle of Wands",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b5/Bundle_of_Wands.png/revision/latest?cb=20160310050418",
+    "quote": "Dark Arts",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 42
+      }
+    ]
+  },
+  {
+    "id": "Staff_of_Firepower",
+    "name": "Staff of Firepower",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/79/Staff_of_Firepower.png/revision/latest?cb=20160310051554",
+    "quote": "Missing Link",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Gun",
+        "value": 24
+      },
+      {
+        "condition": "Staff",
+        "value": 54.3
+      },
+      {
+        "condition": "Both",
+        "value": 42.3
+      }
+    ]
+  },
+  {
+    "id": "Witch_Pistol",
+    "name": "Witch Pistol",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/82/Witch_Pistol.png/revision/latest?cb=20160310051859",
+    "quote": "Spells Your Doom",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 18.5
+      }
+    ]
+  },
+  {
+    "id": "Hexagun",
+    "name": "Hexagun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/28/Hexagun.png/revision/latest/scale-to-width-down/32?cb=20160310050843",
+    "quote": "Light Fantastic",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 28
+      }
+    ]
+  },
+  {
+    "id": "Phoenix",
+    "name": "Phoenix",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c1/Phoenix.png/revision/latest?cb=20160310051202",
+    "quote": "Reborn In Flame",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16.8
+      }
+    ]
+  },
+  {
+    "id": "Magic_Lamp",
+    "name": "Magic Lamp",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/3b/Magic_Lamp.png/revision/latest?cb=20160310051027",
+    "quote": "One Wish, Three Times",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 63.2
+      }
+    ]
+  },
+  {
+    "id": "Teapot",
+    "name": "Teapot",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/81/Teapot.png/revision/latest?cb=20181002031439",
+    "quote": "Monocular Monster",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 14.7
+      }
+    ]
+  },
+  {
+    "id": "Gunslinger%27s_Ashes",
+    "name": "Gunslinger's Ashes",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/d2/Gunslinger%27s_Ashes.png/revision/latest?cb=20160408220611",
+    "quote": "Spirit, Willing",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 21.4
+      }
+    ]
+  },
+  {
+    "id": "Luxin_Cannon",
+    "name": "Luxin Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/94/Luxin_Cannon.png/revision/latest?cb=20160310050946",
+    "quote": "Omnichrome",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 43.8
+      }
+    ]
+  },
+  {
+    "id": "Gunther",
+    "name": "Gunther",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/3d/Gunther.png/revision/latest?cb=20160408220616",
+    "quote": "Jealous Weapon",
+    "quality": "S",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "First Stage",
+        "value": 34.6
+      },
+      {
+        "condition": "Second Stage",
+        "value": 51.9
+      },
+      {
+        "condition": "Third Stage",
+        "value": 69.2
+      }
+    ]
+  },
+  {
+    "id": "Unicorn_Horn",
+    "name": "Unicorn Horn",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/67/Unicorn_Horn.png/revision/latest?cb=20160310051758",
+    "quote": "Fires Friendship",
+    "quality": "A",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "id": "Cobalt_Hammer",
+    "name": "Cobalt Hammer",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/1f/Cobalt_Hammer.png/revision/latest?cb=20160406002233",
+    "quote": "Break Stuff",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 57.8
+      }
+    ]
+  },
+  {
+    "id": "Frost_Giant",
+    "name": "Frost Giant",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/99/Frost_Giant.png/revision/latest?cb=20160310050727",
+    "quote": "Icy Grasp",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 80
+      }
+    ]
+  },
+  {
+    "id": "Bullet_Bore",
+    "name": "Bullet Bore",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/32/Bullet_Bore.png/revision/latest?cb=20160310052411",
+    "quote": "Mind Muncher",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 23.3
+      }
+    ]
+  },
+  {
+    "id": "Cat_Claw",
+    "name": "Cat Claw",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/ab/Cat_Claw.png/revision/latest?cb=20160408055244",
+    "quote": "Kneadle Your Foes!",
+    "quality": "A",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 65.5
+      }
+    ]
+  },
+  {
+    "id": "Megahand",
+    "name": "Megahand",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/3e/Megahand.png/revision/latest?cb=20160310051110",
+    "quote": "-P-",
+    "quality": "B",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 62.4
+      }
+    ]
+  },
+  {
+    "id": "Demon_Head",
+    "name": "Demon Head",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/34/Demon_Head.png/revision/latest?cb=20160310050553",
+    "quote": "Wanged",
+    "quality": "B",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 31
+      }
+    ]
+  },
+  {
+    "id": "Heroine",
+    "name": "Heroine",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/fd/Heroine.png/revision/latest?cb=20160310050838",
+    "quote": "Charge Beam Active",
+    "quality": "B",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 47.2
+      }
+    ]
+  },
+  {
+    "id": "Mutation",
+    "name": "Mutation",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/e5/Mutation.png/revision/latest?cb=20160406013709",
+    "quote": "Didn't Need Two Anyway",
+    "quality": "B",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "id": "Flame_Hand",
+    "name": "Flame Hand",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/9d/Flame_Hand.png/revision/latest?cb=20160310050703",
+    "quote": "2D6 + Int Mod",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 23.6
+      }
+    ]
+  },
+  {
+    "id": "Sunlight_Javelin",
+    "name": "Sunlight Javelin",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/11/Sunlight_Javelin.png/revision/latest?cb=20190407201141",
+    "quote": "Brilliant Aura",
+    "quality": "B",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "id": "Machine_Fist",
+    "name": "Machine Fist",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/5a/Machine_Fist.png/revision/latest?cb=20160310052323",
+    "quote": "Avalanche Of Bullets",
+    "quality": "A",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 46
+      }
+    ]
+  },
+  {
+    "id": "Robot%27s_Left_Hand",
+    "name": "Robot's Left Hand",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/fb/Robot%27s_Left_Hand.png/revision/latest?cb=20170127053707",
+    "quote": "See You Later",
+    "quality": "A",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "id": "Snowballer",
+    "name": "Snowballer",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/39/Snowballer.png/revision/latest?cb=20160310051548",
+    "quote": "May Contain Rocks",
+    "quality": "D",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 17.3
+      }
+    ]
+  },
+  {
+    "id": "Super_Meat_Gun",
+    "name": "Super Meat Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/ee/Super_Meat_Gun.png/revision/latest?cb=20160310051623",
+    "quote": "Very Fast",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 45
+      }
+    ]
+  },
+  {
+    "id": "Anvillain",
+    "name": "Anvillain",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/28/Anvillain.png/revision/latest?cb=20160310050246",
+    "quote": "Practical And Safe",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 47.7
+      }
+    ]
+  },
+  {
+    "id": "Fossilized_Gun",
+    "name": "Fossilized Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/77/Fossilized_Gun.png/revision/latest?cb=20160319213203",
+    "quote": "Proof That Guns Once Existed",
+    "quality": "D",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 15
+      }
+    ]
+  },
+  {
+    "id": "Gamma_Ray",
+    "name": "Gamma Ray",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/30/Gamma_Ray.png/revision/latest?cb=20160310050733",
+    "quote": "Mean Green",
+    "quality": "C",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16
+      }
+    ]
+  },
+  {
+    "id": "Freeze_Ray",
+    "name": "Freeze Ray",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c2/Freeze_Ray.png/revision/latest?cb=20160310050721",
+    "quote": "Ice To Meet You",
+    "quality": "A",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "id": "Science_Cannon",
+    "name": "Science Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/68/Science_Cannon.png/revision/latest?cb=20160310050605",
+    "quote": "Charged Particles",
+    "quality": "B",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26
+      }
+    ]
+  },
+  {
+    "id": "Disintegrator",
+    "name": "Disintegrator",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/84/Disintegrator.png/revision/latest?cb=20160310051410",
+    "quote": "Return To Dust",
+    "quality": "S",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 70
+      }
+    ]
+  },
+  {
+    "id": "Proton_Backpack",
+    "name": "Proton Backpack",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b0/Proton_Backpack.png/revision/latest?cb=20160310051226",
+    "quote": "Crossing Streams",
+    "quality": "B",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 50
+      }
+    ]
+  },
+  {
+    "id": "Mega_Douser",
+    "name": "Mega Douser",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/c1/Mega_Douser.png/revision/latest?cb=20160310051104",
+    "quote": "Contents Under Pressure",
+    "quality": "D",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 15
+      }
+    ]
+  },
+  {
+    "id": "Plunger",
+    "name": "Plunger",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/3/30/Plunger.png/revision/latest?cb=20160319213055",
+    "quote": "Take Your Best Shot!",
+    "quality": "C",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "id": "Raiden_Coil",
+    "name": "Raiden Coil",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/1e/Raiden_Coil.png/revision/latest?cb=20160310051301",
+    "quote": "Shoot Em' Up",
+    "quality": "A",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 17.5
+      }
+    ]
+  },
+  {
+    "id": "Moonscraper",
+    "name": "Moonscraper",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/ba/Moonscraper.png/revision/latest?cb=20160310051128",
+    "quote": "Beeeeoooowwww!",
+    "quality": "C",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26
+      }
+    ]
+  },
+  {
+    "id": "Barrel",
+    "name": "Barrel",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a1/Barrel.png/revision/latest?cb=20160310050308",
+    "quote": "Nothin' Easier",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30.3
+      }
+    ]
+  },
+  {
+    "id": "Trick_Gun",
+    "name": "Trick Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/d1/Trick_Gun.png/revision/latest?cb=20160310051724",
+    "quote": "Reload To Transform",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16.5
+      }
+    ]
+  },
+  {
+    "id": "Mailbox",
+    "name": "Mailbox",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/88/Mailbox.png/revision/latest?cb=20160310051046",
+    "quote": "Special Delivery",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16.6
+      }
+    ]
+  },
+  {
+    "id": "Nail_Gun",
+    "name": "Nail Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/79/Nail_Gun.png/revision/latest?cb=20160310051134",
+    "quote": "Pest Control",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 25.1
+      }
+    ]
+  },
+  {
+    "id": "Light_Gun",
+    "name": "Light Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/44/Light_Gun.png/revision/latest?cb=20230103100055",
+    "quote": "Third-Party",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 28.8
+      }
+    ]
+  },
+  {
+    "id": "Dueling_Laser",
+    "name": "Dueling Laser",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/af/Dueling_Laser.png/revision/latest?cb=20160905013451",
+    "quote": "More interesting this way!",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 70.4
+      }
+    ]
+  },
+  {
+    "id": "Wood_Beam",
+    "name": "Wood Beam",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/78/Wood_Beam.png/revision/latest?cb=20180720011621",
+    "quote": "Speak Softly",
+    "quality": "B",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "No Swing",
+        "value": 10
+      }
+    ]
+  },
+  {
+    "id": "Mahoguny",
+    "name": "Mahoguny",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/ed/Mahoguny.png/revision/latest?cb=20160310051040",
+    "quote": "100% Organic",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 56.3
+      }
+    ]
+  },
+  {
+    "id": "The_Scrambler",
+    "name": "The Scrambler",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/fc/The_Scrambler.png/revision/latest?cb=20160310051700",
+    "quote": "Bullet Or The Gun?",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 42.5
+      }
+    ]
+  },
+  {
+    "id": "Trashcannon",
+    "name": "Trashcannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/1e/Trashcannon.png/revision/latest?cb=20160310051718",
+    "quote": "Take It Out!",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16.6
+      }
+    ]
+  },
+  {
+    "id": "Glacier",
+    "name": "Glacier",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/24/Glacier.png/revision/latest?cb=20160310050739",
+    "quote": "Refill Your Trays",
+    "quality": "A",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 24
+      }
+    ]
+  },
+  {
+    "id": "Origuni",
+    "name": "Origuni",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/09/Origuni.png/revision/latest?cb=20160310051146",
+    "quote": "Thousand Cuts",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 22.5
+      }
+    ]
+  },
+  {
+    "id": "The_Kiln",
+    "name": "The Kiln",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/48/The_Kiln.png/revision/latest?cb=20160310051654",
+    "quote": "Fires Pots",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 16
+      }
+    ]
+  },
+  {
+    "id": "Skull_Spitter",
+    "name": "Skull Spitter",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/0b/Skull_Spitter.png/revision/latest?cb=20160310051519",
+    "quote": "Hard Headed",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 27
+      }
+    ]
+  },
+  {
+    "id": "Buzzkill",
+    "name": "Buzzkill",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/7e/Buzzkill.png/revision/latest?cb=20160310050424",
+    "quote": "Sawed On!",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 24.7
+      }
+    ]
+  },
+  {
+    "id": "Tear_Jerker",
+    "name": "Tear Jerker",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/2b/Tear_Jerker.png/revision/latest?cb=20160310051635",
+    "quote": "Q_Q",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26
+      }
+    ]
+  },
+  {
+    "id": "Starpew",
+    "name": "Starpew",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/0a/Starpew.png/revision/latest?cb=20160905013515",
+    "quote": "Reap And Sow",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "No Charge",
+        "value": 35
+      },
+      {
+        "condition": "1 Charge",
+        "value": 46.6
+      },
+      {
+        "condition": "2 Charges",
+        "value": 50
+      },
+      {
+        "condition": "3 Charges",
+        "value": 51.6
+      },
+      {
+        "condition": "Fully Charged",
+        "value": 93.3
+      }
+    ]
+  },
+  {
+    "id": "Eye_of_the_Beholster",
+    "name": "Eye of the Beholster",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/4c/Eye_of_the_Beholster.png/revision/latest?cb=20160310050635",
+    "quote": "What A Beauty!",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 23.2
+      }
+    ]
+  },
+  {
+    "id": "Molotov_Launcher",
+    "name": "Molotov Launcher",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/03/Molotov_Launcher.png/revision/latest/scale-to-width-down/32?cb=20160310051122",
+    "quote": "Exactly What You Think",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 2.4
+      }
+    ]
+  },
+  {
+    "id": "Glass_Cannon",
+    "name": "Glass Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/6e/Glass_Cannon.png/revision/latest?cb=20180913222236",
+    "quote": "Fragile, Fatal",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 50
+      }
+    ]
+  },
+  {
+    "id": "Shock_Rifle",
+    "name": "Shock Rifle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/6a/Shock_Rifle.png/revision/latest?cb=20160310051434",
+    "quote": "Zap",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 27.9
+      }
+    ]
+  },
+  {
+    "id": "Bait_Launcher",
+    "name": "Bait Launcher",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/ca/Bait_Launcher.png/revision/latest?cb=20160323022301",
+    "quote": "Meat Your Maker",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "id": "Brick_Breaker",
+    "name": "Brick Breaker",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/51/Brick_Breaker.png/revision/latest?cb=20160310050406",
+    "quote": "Wrong Kind Of Mortar",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 15.6
+      }
+    ]
+  },
+  {
+    "id": "Betrayer%27s_Shield",
+    "name": "Betrayer's Shield",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/82/Betrayer%27s_Shield.png/revision/latest?cb=20160316074612",
+    "quote": "Actually A Gun",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 32.3
+      }
+    ]
+  },
+  {
+    "id": "Lower_Case_r",
+    "name": "Lower Case r",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/f4/Lower_Case_r.png/revision/latest?cb=20160310050940",
+    "quote": "Alphabetical!",
+    "quality": "D",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 18
+      }
+    ]
+  },
+  {
+    "id": "Excaliber",
+    "name": "Excaliber",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/5f/Excaliber.png/revision/latest?cb=20160319191719",
+    "quote": "Once And Future",
+    "quality": "B",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 43.7
+      }
+    ]
+  },
+  {
+    "id": "Face_Melter",
+    "name": "Face Melter",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/4f/Face_Melter.png/revision/latest?cb=20160310050646",
+    "quote": "Squiddley-squiddley-wheeyooo!",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 40
+      }
+    ]
+  },
+  {
+    "id": "Really_Special_Lute",
+    "name": "Really Special Lute",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/56/Really_Special_Lute.png/revision/latest?cb=20190406101838",
+    "quote": "Purple Prose",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 82.5
+      }
+    ]
+  },
+  {
+    "id": "Trident",
+    "name": "Trident",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/9a/Trident.png/revision/latest/scale-to-width-down/32?cb=20160310051730",
+    "quote": "Under The Sea",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 46.5
+      }
+    ]
+  },
+  {
+    "id": "Kruller_Glaive",
+    "name": "Kruller Glaive",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/48/Kruller_Glaive.png/revision/latest?cb=20190406104935",
+    "quote": "Studied the Blade",
+    "quality": "B",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 20.8
+      }
+    ]
+  },
+  {
+    "id": "Abyssal_Tentacle",
+    "name": "Abyssal Tentacle",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/fe/Abyssal_Tentacle.png/revision/latest?cb=20160320220037",
+    "quote": "Look Away",
+    "quality": "A",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 22.5
+      }
+    ]
+  },
+  {
+    "id": "Quad_Laser",
+    "name": "Quad Laser",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/0/02/Quad_Laser.png/revision/latest?cb=20160310051255",
+    "quote": "No One Can Defeat It",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 53.3
+      }
+    ]
+  },
+  {
+    "id": "Tetrominator",
+    "name": "Tetrominator",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/5f/Tetrominator.png/revision/latest?cb=20180819021942",
+    "quote": "LINE PIECE!",
+    "quality": "B",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 24.8
+      }
+    ]
+  },
+  {
+    "id": "Pitchfork",
+    "name": "Pitchfork",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/1c/Pitchfork.png/revision/latest?cb=20160310051208",
+    "quote": "Get Forked!",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26.7
+      }
+    ]
+  },
+  {
+    "id": "Evolver",
+    "name": "Evolver",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/98/Evolver.png/revision/latest?cb=20190406101649",
+    "quote": "Tamagunchi",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Amoeba Form",
+        "value": 13.5
+      },
+      {
+        "condition": "Sponge Form",
+        "value": 19.1
+      },
+      {
+        "condition": "Flatworm Form",
+        "value": 25.8
+      },
+      {
+        "condition": "Snail Form",
+        "value": 43.125
+      },
+      {
+        "condition": "Frog Form",
+        "value": 23
+      },
+      {
+        "condition": "Dragon Form",
+        "value": 93.8
+      }
+    ]
+  },
+  {
+    "id": "Gungeon_Ant",
+    "name": "Gungeon Ant",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/8d/Gungeon_Ant.png/revision/latest?cb=20160310050808",
+    "quote": "What Army?",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 30
+      }
+    ]
+  },
+  {
+    "id": "Life_Orb",
+    "name": "Life Orb",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a5/Life_Orb.png/revision/latest?cb=20180721184428",
+    "quote": "Your Soul is Mine",
+    "quality": "A",
+    "type": "Beam",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 20
+      }
+    ]
+  },
+  {
+    "id": "Alien_Engine",
+    "name": "Alien Engine",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/2e/Alien_Engine.png/revision/latest?cb=20160310050234",
+    "quote": "The Dangerzone",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 160.4
+      }
+    ]
+  },
+  {
+    "id": "Microtransaction_Gun",
+    "name": "Microtransaction Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/f1/Microtransaction_Gun.png/revision/latest?cb=20160316074623",
+    "quote": "Pay To Win",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 44.4
+      }
+    ]
+  },
+  {
+    "id": "Poxcannon",
+    "name": "Poxcannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/96/Poxcannon.png/revision/latest?cb=20160427231251",
+    "quote": "Lousy T-Shirt",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 26.1
+      }
+    ]
+  },
+  {
+    "id": "T-Shirt_Cannon",
+    "name": "T-Shirt Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/2/25/T-Shirt_Cannon.png/revision/latest?cb=20160310051742",
+    "quote": "Machine Gun Wash Only!",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 18.1
+      }
+    ]
+  },
+  {
+    "id": "Banana",
+    "name": "Banana",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/6/69/Banana.png/revision/latest?cb=20160310050258",
+    "quote": "Planpain",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 15
+      }
+    ]
+  },
+  {
+    "id": "Bee_Hive",
+    "name": "Bee Hive",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/82/Bee_Hive.png/revision/latest?cb=20160310050314",
+    "quote": "Bzzzzzzz!",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 29.9
+      }
+    ]
+  },
+  {
+    "id": "Silencer",
+    "name": "Silencer",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/43/Silencer.png/revision/latest?cb=20160310051507",
+    "quote": "300 Dead Count",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 14
+      }
+    ]
+  },
+  {
+    "id": "Camera",
+    "name": "Camera",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/80/Camera.png/revision/latest?cb=20160310050441",
+    "quote": "Say Cheese",
+    "quality": "C",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 15.4
+      }
+    ]
+  },
+  {
+    "id": "Directional_Pad",
+    "name": "Directional Pad",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/e/ef/Directional_Pad.png/revision/latest?cb=20160905013445",
+    "quote": "Input Output",
+    "quality": "B",
+    "type": "Burst",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 20.7
+      }
+    ]
+  },
+  {
+    "id": "3rd_Party_Controller",
+    "name": "3rd Party Controller",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a1/3rd_Party_Controller.png/revision/latest?cb=20190406104931",
+    "quote": "Assuming Direct Control",
+    "quality": "A",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 4.7
+      }
+    ]
+  },
+  {
+    "id": "Gunzheng",
+    "name": "Gunzheng",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/9f/Gunzheng.png/revision/latest?cb=20160422230851",
+    "quote": "Hustle",
+    "quality": "B",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 85.7
+      }
+    ]
+  },
+  {
+    "id": "Sling",
+    "name": "Sling",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/9/93/Sling.png/revision/latest?cb=20160310051525",
+    "quote": "Outrageous!",
+    "quality": "D",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 25
+      }
+    ]
+  },
+  {
+    "id": "Cactus",
+    "name": "Cactus",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/a6/Cactus.png/revision/latest?cb=20160310050430",
+    "quote": "1000 Needles!",
+    "quality": "C",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 25
+      }
+    ]
+  },
+  {
+    "id": "Black_Hole_Gun",
+    "name": "Black Hole Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/7/79/Black_Hole_Gun.png/revision/latest/scale-to-width-down/32?cb=20160310050326",
+    "quote": "Won't You Come",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 29.6
+      }
+    ]
+  },
+  {
+    "id": "BSG",
+    "name": "BSG",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/57/BSG.png/revision/latest?cb=20160310050412",
+    "quote": "Big Shooty Gun",
+    "quality": "S",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 47.5
+      }
+    ]
+  },
+  {
+    "id": "Compressed_Air_Tank",
+    "name": "Compressed Air Tank",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/a/af/Compressed_Air_Tank.png/revision/latest?cb=20160320205816",
+    "quote": "You Know My Work",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 125
+      }
+    ]
+  },
+  {
+    "id": "Serious_Cannon",
+    "name": "Serious Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/51/Serious_Cannon.png/revision/latest?cb=20160310051422",
+    "quote": "Seriously MENTAL",
+    "quality": "A",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 17
+      }
+    ]
+  },
+  {
+    "id": "Makeshift_Cannon",
+    "name": "Makeshift Cannon",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/d/d1/Makeshift_Cannon.png/revision/latest?cb=20160415215315",
+    "quote": "You Only Get One Shot",
+    "quality": "S",
+    "type": "Charged",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 571
+      }
+    ]
+  },
+  {
+    "id": "Devolver",
+    "name": "Devolver",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/5/58/Devolver.png/revision/latest?cb=20161221203249",
+    "quote": "Degenerates",
+    "quality": "C",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 24.1
+      }
+    ]
+  },
+  {
+    "id": "Finished_Gun",
+    "name": "Finished Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/b/b5/Finished_Gun.png/revision/latest?cb=20190406111912",
+    "quote": "Thanks For Playing",
+    "quality": "D",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": 84.1
+      }
+    ]
+  },
+  {
+    "id": "Blasphemy",
+    "name": "Blasphemy (Wooden)",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/8/88/Blasphemy_Past.png/revision/latest?cb=20170127024501",
+    "quote": "To The Point",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": -1
+      }
+    ]
+  },
+  {
+    "id": "High_Dragunfire",
+    "name": "High Dragunfire",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/f/fa/High_Dragunfire.png/revision/latest?cb=20180722031034",
+    "quote": "Pre-Rendered",
+    "quality": "S",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": -1
+      }
+    ]
+  },
+  {
+    "id": "Mimic_Gun",
+    "name": "Mimic Gun",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/4/41/Mimic_Gun.png/revision/latest?cb=20180722032027",
+    "quote": "",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": -1
+      }
+    ]
+  },
+  {
+    "id": "Prize_Pistol",
+    "name": "Prize Pistol",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/c/ca/Prize_Pistol.png/revision/latest?cb=20210912202834",
+    "quote": "Definitely Fair",
+    "quality": "N",
+    "type": "Semiautomatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": -1
+      }
+    ]
+  },
+  {
+    "id": "Windgunner",
+    "name": "Windgunner",
+    "image": "https://static.wikia.nocookie.net/enterthegungeon_gamepedia/images/1/14/Windgunner.png/revision/latest/scale-to-width-down/32?cb=20180913222311",
+    "quote": "The Way Of Guns",
+    "quality": "N",
+    "type": "Automatic",
+    "dps": [
+      {
+        "condition": "Default",
+        "value": -1
+      }
+    ]
+  }
+]
