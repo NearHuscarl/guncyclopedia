@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { parseComplexDpsText } from "./gun";
+import { parseComplexDpsText, parseComplexMagText } from "./gun";
 
 describe("gun.ts", () => {
   describe("parseComplexDpsText()", () => {
@@ -9,6 +9,7 @@ describe("gun.ts", () => {
       expect(result).toEqual([
         {
           condition: "Varies heavily due to nature of projectiles",
+          isMin: true,
           value: 19.5,
         },
       ]);
@@ -69,6 +70,40 @@ Level 60: 181.82`;
         { condition: "Level 50-59", value: 107.14 },
         { condition: "Level 60", value: 181.82 },
       ]);
+    });
+  });
+
+  describe("parseComplexMagText()", () => {
+    test(`should handle special case for a specific weapon: Gilded Hydra`, () => {
+      const text = "1+";
+      const result = parseComplexMagText(text, "Gilded_Hydra");
+      expect(result).toEqual([
+        {
+          condition: "Increased by 1 for each half heart missing",
+          isMin: true,
+          value: 1,
+        },
+      ]);
+    });
+
+    test(`should handle special case for a specific weapon: Triple Gun`, () => {
+      const text = `9 (revolver)
+32 (machine gun)
+∞ (beam)`;
+      const result = parseComplexMagText(text, "Triple_Gun");
+      expect(result).toEqual([
+        { condition: "Revolver", value: 9 },
+        { condition: "Machine Gun", value: 32 },
+        { condition: "Beam", value: 500 },
+      ]);
+    });
+
+    test(`should handle special case for a specific weapon: Microtransaction Gun`, () => {
+      const text = `9 (revolver)
+32 (machine gun)
+∞ (beam)`;
+      const result = parseComplexMagText(text, "Microtransaction_Gun");
+      expect(result).toEqual([{ condition: "Number of shells held", value: 0, isMin: true }]);
     });
   });
 });

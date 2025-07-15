@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "create-db": "node --experimental-strip-types scripts/create-gungeon-db.ts",
+    "create-db:dps": "cross-env DEBUG=gun:common,gun:dps yarn create-db",
+    "create-db:mag": "cross-env DEBUG=gun:common,gun:mag yarn create-db",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -26,6 +28,8 @@
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
     "chalk": "^5.4.1",
+    "cross-env": "^7.0.3",
+    "debug": "^4.4.1",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",

@@ -1,10 +1,21 @@
 import chalk from "chalk";
+import debug from "debug";
 import startCase from "lodash/startCase.js";
 import { type Page } from "playwright";
-import { goToPage } from "./util.ts";
+import { goToPage, unwrapParentheses } from "./util.ts";
+
+const logStar = debug("gun:common");
+const logDps = debug("gun:dps");
+const logMag = debug("gun:mag");
 
 type TDamagePerSecond = {
   condition: string;
+  isMin?: boolean;
+  value: number;
+};
+type TMagazineSize = {
+  condition: string;
+  isMin?: boolean;
   value: number;
 };
 
@@ -16,6 +27,7 @@ export interface IGunDto {
   quality: string;
   type: string;
   dps: string;
+  magazineSize: string;
 }
 
 export interface IGun {
@@ -26,40 +38,46 @@ export interface IGun {
   quality: "S" | "A" | "B" | "C" | "D" | "N";
   type: "Semiautomatic" | "Charged" | "Burst" | "Automatic" | "Varies" | "Beam";
   dps: TDamagePerSecond[];
+  magazineSize: TMagazineSize[];
 }
 
-function unwrapParentheses(text: string): string {
-  return text.replace(/\((.*)\)/, "$1");
+export async function goToGunDetailPage(page: Page, gunId: string) {
+  const gunDetailPage = `https://enterthegungeon.fandom.com/wiki/${gunId}`;
+  logStar(chalk.grey(`Navigating to ${gunDetailPage} page`));
+  await page.goto(gunDetailPage, { waitUntil: "domcontentloaded" });
 }
 
-export function parseComplexDpsText(
-  text: string,
-  gunId: string
-): TDamagePerSecond[] {
+export async function getDetailStats(page: Page, field: string) {
+  const row = page.locator("tr", {
+    has: page.locator("td:first-child", { hasText: field }),
+  });
+  const secondTd = row.locator("td").nth(1);
+  return (await secondTd.innerText()).trim() ?? "";
+}
+
+export function parseComplexDpsText(text: string, gunId: string): TDamagePerSecond[] {
   const parts = text.split("\n");
-  const res: TDamagePerSecond[] = [];
 
   // Handle special cases for specific guns
   switch (gunId) {
     case "Crescent_Crossbow": {
-      const [first, second] = text
-        .split(/(\d+(?:\.\d+)?) and up/)
-        .filter(Boolean);
-      res.push({
-        condition: unwrapParentheses(second.trim()),
-        value: parseFloat(first.trim()),
-      });
-      return res;
+      const [first, second] = text.split(/(\d+(?:\.\d+)?) and up/).filter(Boolean);
+      return [{ condition: unwrapParentheses(second.trim()), value: parseFloat(first.trim()), isMin: true }];
     }
     case "Turbo-Gun": {
       const [min, max] = text.split("-").map((v) => parseFloat(v));
-      return res.concat([
+      return [
         { condition: "Min", value: min },
         { condition: "Max", value: max },
-      ]);
+      ];
+    }
+    case "Prize_Pistol": {
+      // https://enterthegungeon.fandom.com/wiki/Prize_Pistol
+      return [{ condition: "Default", value: 0 }];
     }
   }
 
+  const res: TDamagePerSecond[] = [];
   // Format example: `12.37 (hit once normal)`
   const isValueFirst = parts[0].endsWith(")");
   // Format example: `Uncharged: 37.5`
@@ -81,6 +99,9 @@ export function parseComplexDpsText(
         value: parseFloat(second.trim()),
       });
     }
+  } else if (!Number.isNaN(Number(text))) {
+    // a simple numeric value in the detail page
+    res.push({ condition: "Default", value: parseFloat(text) });
   } else {
     throw new Error(`Unknown DPS format of ${gunId}: ` + chalk.green(text));
   }
@@ -88,48 +109,104 @@ export function parseComplexDpsText(
   return res;
 }
 
-async function parseDpsText(
-  gunDto: IGunDto,
-  page: Page
-): Promise<TDamagePerSecond[]> {
+async function parseDpsText(gunDto: IGunDto, page: Page): Promise<TDamagePerSecond[]> {
   const dpsText = gunDto.dps;
-  const isComplexDps = Number.isNaN(Number(dpsText)) && dpsText !== "?";
+  const isComplexDps = Number.isNaN(Number(dpsText));
 
   if (!isComplexDps) {
-    const dpsValue = Number.isNaN(parseFloat(dpsText))
-      ? -1 // ?
-      : parseFloat(dpsText);
-    return [{ condition: "Default", value: dpsValue }];
+    return [{ condition: "Default", value: parseFloat(dpsText) }];
   }
 
-  const gunDetailPage = `https://enterthegungeon.fandom.com/wiki/${gunDto.id}`;
-  console.log(
-    chalk.grey(
-      `Navigating to ${gunDetailPage} page to parse complex DPS text: "${chalk.bgGray(
-        dpsText
-      )}"`
-    )
-  );
-  await page.goto(gunDetailPage, { waitUntil: "domcontentloaded" });
+  logDps(chalk.grey(`Parsing complex DPS text: "${chalk.bgGray(dpsText)}"...`));
+  await goToGunDetailPage(page, gunDto.id);
 
-  const dpsDetailText = await page.$eval(
-    'tr:has(td:first-child span[title^="Damage per second"]) td:nth-child(2)',
-    (el: HTMLElement) => el.innerText?.trim() || ""
-  );
-  console.log(chalk.grey("> Parsing:"));
-  console.log(chalk.magenta(dpsDetailText));
+  const dpsDetailText = await getDetailStats(page, "DPS");
+  logDps(chalk.grey("> Parsing:"));
+  logDps(chalk.magenta(dpsDetailText));
 
   const res = parseComplexDpsText(dpsDetailText, gunDto.id);
-  console.log(chalk.yellow(JSON.stringify(res)));
-  console.log();
+  logDps(chalk.yellow(JSON.stringify(res)));
+  logDps("\n");
+
+  return res;
+}
+
+export function parseComplexMagText(text: string, gunId: string): TMagazineSize[] {
+  const parts = text.split("\n");
+
+  // Handle special cases for specific guns
+  switch (gunId) {
+    // https://enterthegungeon.fandom.com/wiki/Gilded_Hydra
+    case "Gilded_Hydra": {
+      return [{ condition: "Increased by 1 for each half heart missing", value: parseFloat(text), isMin: true }];
+    }
+    // https://enterthegungeon.fandom.com/wiki/Triple_Gun
+    case "Triple_Gun": {
+      // mag size == max ammo = 500
+      return parseComplexMagText(text.replace("∞", "500"), `${gunId}_handled`);
+    }
+    // https://enterthegungeon.fandom.com/wiki/Microtransaction_Gun
+    case "Microtransaction_Gun": {
+      return [{ condition: "Number of shells held", value: 0, isMin: true }];
+    }
+  }
+
+  const res: TMagazineSize[] = [];
+  // Format example: `12.37 (hit once normal)`
+  const isValueFirst = parts[0].endsWith(")");
+  // Format example: `Uncharged: 37.5`
+  const isConditionFirst = parts[0].match(/:\s*\d+(?:\.\d+)?$/);
+
+  if (isValueFirst) {
+    for (const part of parts) {
+      const [first, second] = part.split(/^(\d+(?:\.\d+)?)/).filter(Boolean);
+      res.push({
+        condition: startCase(unwrapParentheses(second.trim())),
+        value: parseFloat(first.trim()),
+      });
+    }
+  } else if (isConditionFirst) {
+    for (const part of parts) {
+      const [first, second] = part.split(/^([^:]+):/).filter(Boolean);
+      res.push({
+        condition: first.trim(),
+        value: parseFloat(second.trim()),
+      });
+    }
+  } else if (!Number.isNaN(Number(text))) {
+    // a simple numeric value in the detail page
+    res.push({ condition: "Default", value: parseFloat(text) });
+  } else {
+    throw new Error(`Unknown Magazine Size format of ${gunId}: ` + chalk.green(text));
+  }
+
+  return res;
+}
+
+async function parseMagazineSizeText(gunDto: IGunDto, page: Page): Promise<TMagazineSize[]> {
+  const magazineSize = gunDto.magazineSize;
+  const isComplexValue = Number.isNaN(Number(magazineSize));
+
+  if (!isComplexValue) {
+    return [{ condition: "Default", value: parseFloat(magazineSize) }];
+  }
+
+  logMag(chalk.grey(`Parsing complex Magazine size text: "${chalk.bgGray(magazineSize)}"...`));
+  await goToGunDetailPage(page, gunDto.id);
+
+  const magDetailText = await getDetailStats(page, "Magazine Size");
+  logMag(chalk.grey("> Parsing:"));
+  logMag(chalk.magenta(magDetailText));
+
+  const res = parseComplexMagText(magDetailText, gunDto.id);
+  logMag(chalk.yellow(JSON.stringify(res)));
+  logMag("\n");
 
   return res;
 }
 
 export async function getGuns() {
-  const { browser, context, page } = await goToPage(
-    "https://enterthegungeon.fandom.com/wiki/Guns"
-  );
+  const { browser, context, page } = await goToPage("https://enterthegungeon.fandom.com/wiki/Guns");
 
   const qualityMap = {
     "1S_Quality_Item.png": "S",
@@ -147,15 +224,14 @@ export async function getGuns() {
         const cells = row.querySelectorAll("td");
         if (cells.length < 6) return null;
 
-        const image =
-          cells[0].querySelector("img")?.getAttribute("data-src") || "";
+        const image = cells[0].querySelector("img")?.getAttribute("data-src") || "";
         const idHref = cells[1].querySelector("a")?.getAttribute("href") ?? "";
         const name = cells[1].textContent?.trim() || "";
         const quote = cells[3].textContent?.trim() || "";
-        const qualityKey =
-          cells[4].querySelector("img")?.getAttribute("data-image-key") || "";
+        const qualityKey = cells[4].querySelector("img")?.getAttribute("data-image-key") || "";
         const type = cells[5].textContent?.trim() || "";
         const dps = cells[6].textContent?.trim() || "";
+        const magazineSize = cells[7].textContent?.trim() || "";
 
         const id = idHref.split("/").pop() || "";
 
@@ -167,6 +243,7 @@ export async function getGuns() {
           quality: qualityKey,
           type,
           dps,
+          magazineSize,
         };
       })
       .filter(Boolean) as IGunDto[];
@@ -179,13 +256,18 @@ export async function getGuns() {
       quality: qualityMap[gunDto.quality],
       type: gunDto.type as IGun["type"],
       dps: await parseDpsText(gunDto, page),
+      magazineSize: await parseMagazineSizeText(gunDto, page),
     });
   }
 
-  const qualitySet = new Set(guns.map((gun) => gun.type));
-  console.log(qualitySet);
+  // const qualitySet = gunDtos
+  //   .filter((g) => Number.isNaN(Number(g.magazineSize)))
+  //   .map((gun) => ({
+  //     link: `https://enterthegungeon.fandom.com/wiki/${gun.id}`,
+  //     mag: gun.magazineSize,
+  //   }));
+  // console.log(qualitySet);
 
-  // Teardown
   await context.close();
   await browser.close();
 

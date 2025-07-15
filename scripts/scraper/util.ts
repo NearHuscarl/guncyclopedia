@@ -18,3 +18,7 @@ export async function goToPage(url: string) {
 
   return { browser, context, page };
 }
+
+export function unwrapParentheses(text: string): string {
+  return text.replace(/\((.*)\)/, "$1");
+}
