@@ -8,6 +8,7 @@
     "create-db": "node --experimental-strip-types scripts/create-gungeon-db.ts",
     "create-db:dps": "cross-env DEBUG=gun:common,gun:dps yarn create-db",
     "create-db:mag": "cross-env DEBUG=gun:common,gun:mag yarn create-db",
+    "extract-assets": "node --experimental-strip-types scripts/asset-extractor/index.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -16,7 +17,8 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "zod": "^4.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
