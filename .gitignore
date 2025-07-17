@@ -29,5 +29,13 @@ dist-ssr
 /blob-report/
 /playwright/.cache/
 
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
 # game assets
 /scripts/asset-extractor/assets/
