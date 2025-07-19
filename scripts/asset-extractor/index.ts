@@ -1,12 +1,14 @@
-import { TranslationManager } from "./translation-manager.ts";
+import { TranslationRepository } from "./translation/translation.repository.ts";
 import { createPickupObjects } from "./pickup-objects.ts";
-import { EncounterDatabase } from "./encounter-database.ts";
-import { GunManager } from "./gun-manager.ts";
+import { EncounterTrackableRepository } from "./encouter-trackable/encounter-trackable.repository.ts";
+import { AssetService } from "./asset-service.ts";
+import { GunRepository } from "./gun/gun.repository.ts";
 
 async function main() {
-  await TranslationManager.load();
-  await EncounterDatabase.load();
-  await GunManager.load();
+  await AssetService.load();
+  await TranslationRepository.load();
+  await GunRepository.load();
+  await EncounterTrackableRepository.load();
   await createPickupObjects();
 }
 

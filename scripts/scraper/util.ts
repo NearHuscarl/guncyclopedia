@@ -1,5 +1,7 @@
 import { chromium, devices } from "playwright";
 
+export const INFINITY = 9999999; // JSON-serializable infinite value
+
 export async function goToPage(url: string) {
   const browser = await chromium.launch({
     // headless: true,

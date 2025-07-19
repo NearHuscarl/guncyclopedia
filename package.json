@@ -8,6 +8,8 @@
     "create-db": "node --experimental-strip-types scripts/create-gungeon-db.ts",
     "create-db:dps": "cross-env DEBUG=gun:common,gun:dps yarn create-db",
     "create-db:mag": "cross-env DEBUG=gun:common,gun:mag yarn create-db",
+    "create-db:ammo": "cross-env DEBUG=gun:common,gun:ammo yarn create-db",
+    "create-db:firerate": "cross-env DEBUG=gun:common,gun:firerate yarn create-db",
     "extract-assets": "node --experimental-strip-types scripts/asset-extractor/index.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -40,7 +42,8 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.4",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "yaml": "^2.8.0"
   },
   "packageManager": "yarn@4.9.2"
 }

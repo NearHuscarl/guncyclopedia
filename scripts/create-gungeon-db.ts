@@ -8,11 +8,7 @@ async function main() {
   console.log(chalk.green("Fetching gun data..."));
   const guns = await getGuns();
 
-  await writeFile(
-    path.join(import.meta.dirname, "../data/guns.json"),
-    JSON.stringify(guns, null, 2),
-    { encoding: "utf-8" }
-  );
+  await writeFile(path.join(import.meta.dirname, "../data/guns.json"), JSON.stringify(guns, null, 2), "utf-8");
 }
 
 await main();

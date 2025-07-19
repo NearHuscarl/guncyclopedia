@@ -1,11 +1,13 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
-import { EncounterDatabase } from "./encounter-database.ts";
-import { TranslationManager } from "./translation-manager.ts";
 import z from "zod/v4";
 import chalk from "chalk";
 import invert from "lodash/invert.js";
-import { GunDto, GunManager } from "./gun-manager.ts";
+import { EncounterTrackableRepository } from "./encouter-trackable/encounter-trackable.repository.ts";
+import { TranslationRepository } from "./translation/translation.repository.ts";
+import { GunClass, ItemQuality, ShootStyle } from "./gun/gun.dto.ts";
+import { GunRepository } from "./gun/gun.repository.ts";
+import { ASSET_EXTRACTOR_ROOT } from "./constants.ts";
 
 const PickupObject = z.object({
   id: z.number(),
@@ -61,9 +63,9 @@ export function isItem(obj: object): obj is TItem {
 
 export async function createPickupObjects() {
   const pickupObjects: TPickupObject[] = [];
-  const gunQualityTextLookup = invert(GunDto.ItemQuality);
-  const gunClassTextLookup = invert(GunDto.GunClass);
-  const shootStyleTextLookup = invert(GunDto.ShootStyle);
+  const gunQualityTextLookup = invert(ItemQuality);
+  const gunClassTextLookup = invert(GunClass);
+  const shootStyleTextLookup = invert(ShootStyle);
   const unusedGunIds = new Set([
     // https://enterthegungeon.fandom.com/wiki/Black_Revolver
     405,
@@ -79,14 +81,14 @@ export async function createPickupObjects() {
     46,
   ]);
 
-  for (const entry of EncounterDatabase.entries) {
+  for (const entry of EncounterTrackableRepository.entries) {
     if (entry.pickupObjectId === -1 || entry.journalData.IsEnemy === 1) {
       continue; // an enemy or something else
     }
     const texts = {
-      name: TranslationManager.getItemTranslation(entry.journalData.PrimaryDisplayName),
-      quote: TranslationManager.getItemTranslation(entry.journalData.NotificationPanelDescription),
-      description: TranslationManager.getItemTranslation(entry.journalData.AmmonomiconFullEntry),
+      name: TranslationRepository.getItemTranslation(entry.journalData.PrimaryDisplayName ?? ""),
+      quote: TranslationRepository.getItemTranslation(entry.journalData.NotificationPanelDescription ?? ""),
+      description: TranslationRepository.getItemTranslation(entry.journalData.AmmonomiconFullEntry ?? ""),
     };
 
     if (!texts.name || !texts.quote || !texts.description) {
@@ -117,9 +119,9 @@ export async function createPickupObjects() {
           continue;
         }
 
-        const gunDto = GunManager.getGun(pickupObject.id);
+        const gunDto = GunRepository.getGun(pickupObject.id);
         if (!gunDto) {
-          console.warn(chalk.yellow(`Gun with ID ${pickupObject.id} (${texts.name}) not found in GunManager.`));
+          console.warn(chalk.yellow(`Gun with ID ${pickupObject.id} (${texts.name}) not found in GunRepository.`));
           continue;
         }
 
@@ -147,7 +149,14 @@ export async function createPickupObjects() {
     }
   }
 
-  await writeFile(path.join(import.meta.dirname, "out/pickup-objects.json"), JSON.stringify(pickupObjects, null, 2), {
-    encoding: "utf-8",
-  });
+  const itemCount = chalk.yellow(pickupObjects.filter(isItem).length);
+  const gunCount = chalk.yellow(pickupObjects.filter(isGun).length);
+  const totalCount = chalk.yellow(pickupObjects.length);
+  console.log(chalk.green(`Collected ${totalCount} pickup objects: ${itemCount} items and ${gunCount} guns.`));
+
+  await writeFile(
+    path.join(ASSET_EXTRACTOR_ROOT, "out/pickup-objects.json"),
+    JSON.stringify(pickupObjects, null, 2),
+    "utf-8"
+  );
 }

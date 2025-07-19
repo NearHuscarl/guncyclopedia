@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { parseComplexDpsText, parseComplexMagText } from "./gun";
+import { parseComplexAmmoCapacityText, parseComplexDpsText, parseComplexMagText } from "./gun";
 
 describe("gun.ts", () => {
   describe("parseComplexDpsText()", () => {
@@ -71,6 +71,13 @@ Level 60: 181.82`;
         { condition: "Level 60", value: 181.82 },
       ]);
     });
+
+    test("should parse simple value as well", () => {
+      const text = `1000`;
+      const result = parseComplexDpsText(text, "Random_Gun");
+
+      expect(result).toEqual([{ condition: "Default", value: 1000 }]);
+    });
   });
 
   describe("parseComplexMagText()", () => {
@@ -103,6 +110,13 @@ Level 60: 181.82`;
 32 (machine gun)
 ∞ (beam)`;
       const result = parseComplexMagText(text, "Microtransaction_Gun");
+      expect(result).toEqual([{ condition: "Number of shells held", value: 0, isMin: true }]);
+    });
+  });
+
+  describe("parseComplexAmmoCapacityText()", () => {
+    test(`should handle special case for a specific weapon: Microtransaction Gun`, () => {
+      const result = parseComplexAmmoCapacityText("Equal to Shells held", "Microtransaction_Gun");
       expect(result).toEqual([{ condition: "Number of shells held", value: 0, isMin: true }]);
     });
   });

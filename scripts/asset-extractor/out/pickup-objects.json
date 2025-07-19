@@ -4166,20 +4166,6 @@
     "spread": 8
   },
   {
-    "id": 221,
-    "name": "AK-47",
-    "quote": "Accept No Substitutes",
-    "description": "The AK-47 is in many ways the gun against which all other guns are judged. This affordable and reliable piece of hardware has proven itself in nearly any terrain or situation. Desert, jungle, snow, and dungeon were all accounted for in its timeless design. It can even fire underwater.",
-    "type": "gun",
-    "quality": "SPECIAL",
-    "gunClass": "FULLAUTO",
-    "shootStyle": "Automatic",
-    "maxAmmo": 350,
-    "magazineSize": 30,
-    "reloadTime": 0.6,
-    "spread": 5
-  },
-  {
     "id": 90,
     "name": "Eye of the Beholster",
     "quote": "What A Beauty!",

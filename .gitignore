@@ -39,3 +39,4 @@ dist-ssr
 
 # game assets
 /scripts/asset-extractor/assets/
+/scripts/asset-extractor/cache/
