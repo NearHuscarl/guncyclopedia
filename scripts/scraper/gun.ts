@@ -364,8 +364,7 @@ export async function getGuns() {
       magazineSize: await parseMagazineSizeText(gunDto, page),
       ammoCapacity: await parseAmmoCapacityText(gunDto, page),
       fireRate: await parseFireRateText(gunDto, page),
-      reloadTime: parseFloat(gunDto.reloadTime),
-      t: gunDto.reloadTime,
+      reloadTime: await parseReloadTimeText(gunDto, page),
     });
   }
 
@@ -373,7 +372,6 @@ export async function getGuns() {
     .filter((g) => Number.isNaN(g.reloadTime))
     .map((gun) => ({
       link: `https://enterthegungeon.fandom.com/wiki/${gun.id}`,
-      ammo: gun.t,
     }));
   console.log(set);
 

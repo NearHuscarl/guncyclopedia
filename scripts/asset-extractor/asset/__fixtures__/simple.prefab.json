@@ -1,0 +1,17 @@
+[
+  {
+    "$$fileID": 1375546667133903,
+    "$$typeName": "GameObject",
+    "serializedVersion": 5,
+    "m_PrefabParentObject": { "fileID": 0 },
+    "m_PrefabInternal": { "fileID": 100100000 },
+    "m_Component": [{ "component": { "fileID": 4532073358521599 } }, { "component": { "fileID": 114708655969415259 } }],
+    "m_Name": "Excaliber_Green"
+  },
+  {
+    "$$fileID": 114912356597816347,
+    "$$typeName": "MonoBehaviour",
+    "m_ObjectHideFlags": 0,
+    "m_PrefabParentObject": { "fileID": 0 }
+  }
+]

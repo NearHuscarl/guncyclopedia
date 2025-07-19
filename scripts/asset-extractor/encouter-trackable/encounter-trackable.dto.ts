@@ -6,7 +6,7 @@ export const EncounterDatabase = z.object({
     z.object({
       path: z.string(),
       pickupObjectId: z.number(),
-      isPassiveItem: BinaryOption.optional(),
+      isPassiveItem: BinaryOption,
       isPlayerItem: BinaryOption,
       shootStyleInt: z.number(),
       doesntDamageSecretWalls: z.number(),

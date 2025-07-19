@@ -19,6 +19,7 @@ const PickupObject = z.object({
 
 const Gun = PickupObject.extend({
   type: z.literal("gun"),
+  gunNameInternal: z.string(),
   quality: z.enum(["EXCLUDED", "SPECIAL", "COMMON", "D", "C", "B", "A", "S"]),
   gunClass: z.enum([
     "NONE",
@@ -61,7 +62,14 @@ export function isItem(obj: object): obj is TItem {
   return typeof obj === "object" && "type" in obj && obj.type === "item";
 }
 
-export async function createPickupObjects() {
+type TCreatePickupObjectsInput = {
+  translationRepo: TranslationRepository;
+  gunRepo: GunRepository;
+  encounterTrackableRepo: EncounterTrackableRepository;
+};
+
+export async function createPickupObjects(options: TCreatePickupObjectsInput) {
+  const { translationRepo, gunRepo, encounterTrackableRepo } = options;
   const pickupObjects: TPickupObject[] = [];
   const gunQualityTextLookup = invert(ItemQuality);
   const gunClassTextLookup = invert(GunClass);
@@ -81,14 +89,14 @@ export async function createPickupObjects() {
     46,
   ]);
 
-  for (const entry of EncounterTrackableRepository.entries) {
+  for (const entry of encounterTrackableRepo.entries) {
     if (entry.pickupObjectId === -1 || entry.journalData.IsEnemy === 1) {
       continue; // an enemy or something else
     }
     const texts = {
-      name: TranslationRepository.getItemTranslation(entry.journalData.PrimaryDisplayName ?? ""),
-      quote: TranslationRepository.getItemTranslation(entry.journalData.NotificationPanelDescription ?? ""),
-      description: TranslationRepository.getItemTranslation(entry.journalData.AmmonomiconFullEntry ?? ""),
+      name: translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? ""),
+      quote: translationRepo.getItemTranslation(entry.journalData.NotificationPanelDescription ?? ""),
+      description: translationRepo.getItemTranslation(entry.journalData.AmmonomiconFullEntry ?? ""),
     };
 
     if (!texts.name || !texts.quote || !texts.description) {
@@ -119,12 +127,13 @@ export async function createPickupObjects() {
           continue;
         }
 
-        const gunDto = GunRepository.getGun(pickupObject.id);
+        const gunDto = gunRepo.getGun(pickupObject.id);
         if (!gunDto) {
           console.warn(chalk.yellow(`Gun with ID ${pickupObject.id} (${texts.name}) not found in GunRepository.`));
           continue;
         }
 
+        pickupObject.gunNameInternal = gunDto.gunName;
         pickupObject.quality = gunQualityTextLookup[gunDto.quality] as typeof pickupObject.quality;
         pickupObject.gunClass = gunClassTextLookup[gunDto.gunClass] as typeof pickupObject.gunClass;
         pickupObject.shootStyle = shootStyleTextLookup[

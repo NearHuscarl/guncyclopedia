@@ -1,0 +1,25 @@
+{
+  "PickupObjectId": 345,
+  "gunClass": 10,
+  "gunName": "Hero's Blade",
+  "maxAmmo": 500,
+  "quality": 5,
+  "reloadTime": 1.5,
+  "rawVolley": {
+    "fileID": 0
+  },
+  "singleModule": {
+    "angleVariance": 8,
+    "chargeProjectiles": [],
+    "cooldownTime": 0.15,
+    "numberOfShotsInClip": 25,
+    "projectiles": [
+      {
+        "fileID": 114474206188037740,
+        "guid": "7db03fb3e768b3b49bc458d390ac7ccb",
+        "type": 2
+      }
+    ],
+    "shootStyle": 1
+  }
+}

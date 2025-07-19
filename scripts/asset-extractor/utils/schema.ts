@@ -1,3 +1,10 @@
-import z4 from "zod/v4";
+import z from "zod/v4";
 
-export const BinaryOption = z4.union([z4.literal(0), z4.literal(1)]);
+export const BinaryOption = z.union([z.literal(0), z.literal(1)]);
+export const Percentage = z.number().min(0).max(1);
+export const AssetExternalReference = z
+  .object({
+    fileID: z.number(),
+    guid: z.string().optional(),
+  })
+  .catchall(z.unknown());

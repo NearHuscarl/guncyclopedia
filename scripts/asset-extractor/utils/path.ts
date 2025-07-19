@@ -16,3 +16,7 @@ export async function getAllFileRecursively(dir: string, extension: string): Pro
 
   return files;
 }
+
+export function normalizePath(filePath: string): string {
+  return filePath.replace(/\\/g, "/");
+}

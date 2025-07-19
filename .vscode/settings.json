@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.prefab": "yaml",
+    "*.meta": "yaml",
+    "*.asset": "yaml"
+  }
+}

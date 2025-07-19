@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &114708655969415259
+MonoBehaviour:
+  PickupObjectId: 345
+  quality: 5
+  gunName: Hero's Blade
+  gunClass: 10
+  passiveStatModifiers:
+    - statToBoost: 14
+      modifyType: 0
+      amount: 2
+      isMeatBunBuff: 0
+  rawVolley: { fileID: 0 }
+  singleModule:
+    shootStyle: 1
+    projectiles:
+      - { fileID: 114474206188037739, guid: 7db03fb3e768b3b49bc458d390ac7ccb, type: 2 }
+    chargeProjectiles: []
+    angleVariance: 8
+    cooldownTime: 0.15
+    numberOfShotsInClip: 25
+  maxAmmo: 500
+  reloadTime: 1.5

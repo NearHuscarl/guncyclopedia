@@ -1,0 +1,22 @@
+[
+  {
+    "$$fileID": 114708655969415259,
+    "$$typeName": "MonoBehaviour",
+    "m_Script": {
+      "$$scriptPath": "Assets/Scripts/Assembly-CSharp/Gun.cs.meta",
+      "fileID": 11500000,
+      "guid": "0f903c73702fdea77bdc0ea60b3f9740",
+      "type": 3
+    },
+    "singleModule": {
+      "projectiles": [
+        {
+          "$$scriptPath": "Assets/GameObject/Excaliber_Green_Projectile.prefab.meta",
+          "fileID": 114474206188037739,
+          "guid": "7db03fb3e768b3b49bc458d390ac7ccb",
+          "type": 2
+        }
+      ]
+    }
+  }
+]

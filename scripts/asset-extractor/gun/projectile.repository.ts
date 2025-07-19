@@ -1,0 +1,106 @@
+import { readdir, readFile } from "node:fs/promises";
+import path from "node:path";
+import chalk from "chalk";
+import z from "zod/v4";
+import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
+import { AssetService } from "../asset/asset-service.ts";
+import { restoreCache, saveCache } from "../utils/cache.ts";
+import { ProjectileDto } from "./projectile.dto.ts";
+import type { TProjectileDto } from "./projectile.dto.ts";
+
+type Guid = string;
+
+export class ProjectileRepository {
+  private _projectiles = new Map<Guid, TProjectileDto>();
+  private readonly _assetService: AssetService;
+
+  private constructor(assetService: AssetService) {
+    this._assetService = assetService;
+  }
+
+  static async create(_assetService: AssetService) {
+    const instance = new ProjectileRepository(_assetService);
+    return await instance.load();
+  }
+
+  private _isProjectileDto(obj: unknown): obj is TProjectileDto {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath === AssetService.PROJECTILE_SCRIPT;
+  }
+
+  private async _getAllProjectileRefabFiles() {
+    const projectileDirectories = ["assets/ExportedProject/Assets/GameObject"];
+    const res: string[] = [];
+
+    for (const dir of projectileDirectories) {
+      const files = await readdir(path.join(ASSET_EXTRACTOR_ROOT, dir));
+
+      for (const file of files) {
+        if (!file.endsWith(".prefab")) continue;
+        const content = await readFile(path.join(ASSET_EXTRACTOR_ROOT, dir, file), "utf-8");
+        if (!content.includes("AppliesPoison")) continue; // quick check to filter out non-projectile prefabs
+
+        res.push(path.join(dir, file));
+      }
+    }
+
+    return res;
+  }
+
+  private async _parseProjectile(filePath: string) {
+    try {
+      const refab = await this._assetService.parseSerializedAsset(filePath);
+      for (const block of refab) {
+        if (!this._isProjectileDto(block)) {
+          continue;
+        }
+
+        try {
+          return ProjectileDto.parse(block);
+        } catch (error) {
+          if (error instanceof z.ZodError) {
+            console.error(chalk.red(`Error parsing projectile dto at ${filePath}`));
+            console.error(z.prettifyError(error));
+          }
+          throw error;
+        }
+      }
+    } catch {
+      console.warn(chalk.yellow(`Error parsing ${filePath}. Skipping...`));
+    }
+  }
+
+  async load() {
+    console.log(chalk.green("Loading projectile data..."));
+
+    this._projectiles = await restoreCache("projectile.repository");
+
+    if (this._projectiles.size > 0) {
+      console.log(chalk.green(`Loaded ${chalk.yellow(this._projectiles.size)} projectiles from cache.`));
+      return;
+    }
+    console.log(chalk.yellow("No cache found, loading projectiles from files..."));
+
+    const prefabFiles = await this._getAllProjectileRefabFiles();
+    const start = performance.now();
+
+    for (let i = 0; i < prefabFiles.length; i++) {
+      const file = prefabFiles[i];
+      process.stdout.write(chalk.grey(`\rloading projectiles from ${i + 1}/${prefabFiles.length} files...`));
+      const projDto = await this._parseProjectile(file);
+      if (!projDto) continue;
+
+      const metaFilePath = path.join(ASSET_EXTRACTOR_ROOT, file + ".meta");
+      const meta = await this._assetService.parseAssetMeta(metaFilePath);
+      this._projectiles.set(meta.guid, projDto);
+    }
+
+    console.log();
+    console.log(chalk.magenta(`Took ${(performance.now() - start) / 1000}s`));
+
+    await saveCache("projectile.repository", this._projectiles);
+  }
+
+  getProjectile(guid: string) {
+    return this._projectiles.get(guid);
+  }
+}

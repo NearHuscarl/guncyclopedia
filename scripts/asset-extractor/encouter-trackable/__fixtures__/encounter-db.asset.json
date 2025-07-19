@@ -1,0 +1,32 @@
+[
+  {
+    "doesntDamageSecretWalls": 0,
+    "isInfiniteAmmoGun": 0,
+    "isPassiveItem": 0,
+    "isPlayerItem": 0,
+    "journalData": {
+      "AmmonomiconFullEntry": null,
+      "IsEnemy": 0,
+      "NotificationPanelDescription": null,
+      "PrimaryDisplayName": null
+    },
+    "path": "Assets/Data/Enemies/BulletMachineGunMan.prefab",
+    "pickupObjectId": -1,
+    "shootStyleInt": -1
+  },
+  {
+    "doesntDamageSecretWalls": 0,
+    "isInfiniteAmmoGun": 0,
+    "isPassiveItem": 0,
+    "isPlayerItem": 0,
+    "journalData": {
+      "AmmonomiconFullEntry": "#BANANA_LONGDESC",
+      "IsEnemy": 0,
+      "NotificationPanelDescription": "#BANANA_SHORTDESC",
+      "PrimaryDisplayName": "#BANANA_ENCNAME"
+    },
+    "path": "Assets/Data/Guns/Banana_Gun_Synergy.prefab",
+    "pickupObjectId": 688,
+    "shootStyleInt": 3
+  }
+]

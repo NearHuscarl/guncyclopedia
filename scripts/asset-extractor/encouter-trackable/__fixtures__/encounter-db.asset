@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  Entries:
+  - myGuid: 1eaaaa3b4d2848b7ad39053132cf116c
+    path: Assets/Data/Enemies/BulletMachineGunMan.prefab
+    journalData:
+      PrimaryDisplayName:
+      NotificationPanelDescription:
+      AmmonomiconFullEntry:
+      IsEnemy: 0
+    pickupObjectId: -1
+    shootStyleInt: -1
+    isPlayerItem: 0
+    isPassiveItem: 0
+    isInfiniteAmmoGun: 0
+    doesntDamageSecretWalls: 0
+  - myGuid: 81fd66b6b2e240048281a4867f184778
+    path: Assets/Data/Guns/Banana_Gun_Synergy.prefab
+    journalData:
+      PrimaryDisplayName: '#BANANA_ENCNAME'
+      NotificationPanelDescription: '#BANANA_SHORTDESC'
+      AmmonomiconFullEntry: '#BANANA_LONGDESC'
+      IsEnemy: 0
+    pickupObjectId: 688
+    shootStyleInt: 3
+    isPlayerItem: 0
+    isPassiveItem: 0
+    isInfiniteAmmoGun: 0
+    doesntDamageSecretWalls: 0

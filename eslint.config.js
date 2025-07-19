@@ -33,6 +33,7 @@ export default tseslint.config([
         {
           selector: "memberLike",
           modifiers: ["private"],
+          format: ["camelCase", "UPPER_CASE"],
           leadingUnderscore: "require",
         },
       ],

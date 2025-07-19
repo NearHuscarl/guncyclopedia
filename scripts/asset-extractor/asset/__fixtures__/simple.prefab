@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1375546667133903
+GameObject:
+  serializedVersion: 5
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_Component:
+  - component: {fileID: 4532073358521599}
+  - component: {fileID: 114708655969415259}
+  m_Name: Excaliber_Green
+--- !u!114 &114912356597816347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}

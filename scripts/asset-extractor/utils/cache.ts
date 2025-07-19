@@ -3,7 +3,10 @@ import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 
-const CACHE_BASE_PATH = path.join(ASSET_EXTRACTOR_ROOT, "cache");
+const CACHE_BASE_PATH =
+  process.env.NODE_ENV === "test"
+    ? path.join(ASSET_EXTRACTOR_ROOT, "cache-test")
+    : path.join(ASSET_EXTRACTOR_ROOT, "cache");
 
 export async function saveCache<K, V>(key: string, value: Map<K, V>) {
   const dir = path.dirname(CACHE_BASE_PATH);
