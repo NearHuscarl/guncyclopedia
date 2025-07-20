@@ -20,11 +20,21 @@ describe("gun.repository.ts", () => {
     return GunRepository.create(assetService, [inputPath]);
   }
 
-  it("should parse simple gun from refab file", async () => {
+  it("should parse a simple gun from refab file", async () => {
     const inputPath = "gun/__fixtures__/simple-gun";
     const gunRepo = await createGunRepo(inputPath);
     const actual = gunRepo.getGun(345);
     const outputPath = "gun/__fixtures__/simple-gun/Excaliber_Green.prefab.json";
+    const expected = JSON.parse(await readFile(path.join(ASSET_EXTRACTOR_ROOT, outputPath), "utf-8"));
+
+    expect(actual).toEqual(expected);
+  });
+
+  it("should parse a charge gun from refab file", async () => {
+    const inputPath = "gun/__fixtures__/charge-gun";
+    const gunRepo = await createGunRepo(inputPath);
+    const actual = gunRepo.getGun(41);
+    const outputPath = "gun/__fixtures__/charge-gun/Samus Arm.prefab.json";
     const expected = JSON.parse(await readFile(path.join(ASSET_EXTRACTOR_ROOT, outputPath), "utf-8"));
 
     expect(actual).toEqual(expected);

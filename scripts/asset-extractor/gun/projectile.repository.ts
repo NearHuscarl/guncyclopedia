@@ -11,7 +11,11 @@ import type { TProjectileDto } from "./projectile.dto.ts";
 type Guid = string;
 
 export class ProjectileRepository {
-  private static readonly _SEARCH_DIRECTORIES = ["assets/ExportedProject/Assets/GameObject"];
+  private static readonly _SEARCH_DIRECTORIES = [
+    "assets/ExportedProject/Assets/GameObject",
+    "assets/ExportedProject/Assets/data/projectiles",
+    "assets/ExportedProject/Assets/data/projectiles/beams",
+  ];
 
   private _projectiles = new Map<Guid, TProjectileDto>();
   private readonly _assetService: AssetService;

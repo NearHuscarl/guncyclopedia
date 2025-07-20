@@ -1,5 +1,5 @@
 import z from "zod/v4";
-import { AssetExternalReference } from "../utils/schema.ts";
+import { AssetExternalReference, AssetExternalReferences } from "../utils/schema.ts";
 
 export const ItemQuality = {
   EXCLUDED: -100,
@@ -35,6 +35,30 @@ export const ShootStyle = {
   Burst: 4,
 };
 
+export const ProjectileModule = z.object({
+  shootStyle: z.enum(ShootStyle),
+  /**
+   * Basic array of projectiles fired per shot
+   */
+  projectiles: AssetExternalReferences,
+  /**
+   * Array of projectiles fired when the gun is charged.
+   * Depends on how long the gun is charged, the projectile with the appropriate ChargeTime
+   * will be selected from this array. This projectiles are used over the basic projectiles
+   * if `ProjectileModule.ShootStyle` is `Charged`.
+   * See `ProjectileModule.cs#GetChargeProjectile` for more details.
+   */
+  chargeProjectiles: z.array(
+    z.object({
+      ChargeTime: z.number(),
+      Projectile: AssetExternalReference,
+    })
+  ),
+  cooldownTime: z.number(),
+  angleVariance: z.number(),
+  numberOfShotsInClip: z.number(),
+});
+
 export const GunDto = z
   .object({
     PickupObjectId: z.number(),
@@ -49,42 +73,22 @@ export const GunDto = z
      * - Different types of projectiles fired per shot (Planet Gun)
      *
      * According to `Gun.cs#ForceFireProjectile()` and many other instances in Gun.cs, when projectile modules
-     * insdie volley are defined, singleModule is ignored completely.
+     * inside volley are defined, singleModule is ignored completely.
      */
     rawVolley: AssetExternalReference,
-    singleModule: z.object({
-      shootStyle: z.enum(ShootStyle),
-      /**
-       * Basic array of projectiles fired per shot
-       */
-      projectiles: z.array(AssetExternalReference),
-      /**
-       * Array of projectiles fired when the gun is charged.
-       * Depends on how long the gun is charged, the projectile with the appropriate ChargeTime
-       * will be selected from this array. This projectiles are used over the basic projectiles
-       * if `ProjectileModule.ShootStyle` is `Charged`.
-       */
-      chargeProjectiles: z.array(
-        z.object({
-          ChargeTime: z.number(),
-          Projectile: AssetExternalReference,
-        })
-      ),
-      cooldownTime: z.number(),
-      angleVariance: z.number(),
-      numberOfShotsInClip: z.number(),
-    }),
+    singleModule: ProjectileModule,
   })
   .refine(
     (data) => {
-      const proj = data.singleModule.projectiles.filter((p) => p.fileID !== 0);
+      const proj = data.singleModule.projectiles;
       const chargeProj = data.singleModule.chargeProjectiles;
-      return proj.length > 0 || chargeProj.length > 0;
+      return data.rawVolley.fileID > 0 || proj.length > 0 || chargeProj.length > 0;
     },
     {
-      message: "Either `projectiles` or `chargeProjectiles` must be non-empty.",
+      message: "Either `rawVolley`, `singleModule.projectiles` or `singleModule.chargeProjectiles` must be non-empty.",
       path: ["singleModule"], // error will be associated with this field
     }
   );
 
 export type TGunDto = z.input<typeof GunDto>;
+export type TProjectileModule = z.input<typeof ProjectileModule>;

@@ -8,13 +8,14 @@ import { ProjectileRepository } from "./gun/projectile.repository.ts";
 async function main() {
   const assetService = await AssetService.create();
   const translationRepo = await TranslationRepository.create();
-  const _projectileRepo = await ProjectileRepository.create(assetService);
+  const projectileRepo = await ProjectileRepository.create(assetService);
   const gunRepo = await GunRepository.create(assetService);
   const encounterTrackableRepo = await EncounterTrackableRepository.create(assetService);
   await createPickupObjects({
     translationRepo,
     gunRepo,
     encounterTrackableRepo,
+    projectileRepo,
   });
 }
 

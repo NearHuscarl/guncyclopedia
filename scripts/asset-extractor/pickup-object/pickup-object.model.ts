@@ -13,7 +13,18 @@ const Projectile = z.object({
   speed: z.number(),
   range: z.number(),
   force: z.number(),
-  chargeTime: z.number().optional(), // if shootStyle is Charged
+  // TODO: research ProjectileModule.cs#GetEstimatedShotsPerSecond
+  // dps: z.undefined(),
+});
+
+export const ProjectileMode = z.object({
+  name: z.string(),
+  shootStyle: z.enum(["SemiAutomatic", "Automatic", "Beam", "Charged", "Burst"]),
+  chargeTime: z.number().optional(),
+  cooldownTime: z.number(),
+  magazineSize: z.number(),
+  spread: z.number(),
+  projectiles: z.array(Projectile),
 });
 
 export const Gun = PickupObject.extend({
@@ -36,20 +47,22 @@ export const Gun = PickupObject.extend({
     "SHITTY",
     "CHARGE",
   ]),
-  shootStyle: z.enum(["SemiAutomatic", "Automatic", "Beam", "Charged", "Burst"]),
-  projectiles: z.array(Projectile),
+  projectileModes: z.array(ProjectileMode),
   maxAmmo: z.number(),
-  magazineSize: z.number(),
   reloadTime: z.number(),
-  spread: z.number(),
   featureFlags: z.array(z.enum(["hasInfiniteAmmo", "doesntDamageSecretWalls"])),
   video: z.string().optional(),
 });
+
 export const Item = PickupObject.extend({
   type: z.literal("item"),
   isPassive: z.boolean(),
 });
 
 export type TPickupObject = z.input<typeof PickupObject>;
-export type TGun = z.input<typeof Gun>;
+
 export type TItem = z.input<typeof Item>;
+
+export type TProjectile = z.input<typeof Projectile>;
+export type TProjectileMode = z.input<typeof ProjectileMode>;
+export type TGun = z.input<typeof Gun>;

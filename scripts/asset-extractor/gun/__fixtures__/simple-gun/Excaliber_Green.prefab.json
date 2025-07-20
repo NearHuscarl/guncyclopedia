@@ -17,8 +17,7 @@
       {
         "$$scriptPath": "simple-projectile/Excaliber_Green_Projectile.prefab.meta",
         "fileID": 114474206188037740,
-        "guid": "7db03fb3e768b3b49bc458d390ac7ccb",
-        "type": 2
+        "guid": "7db03fb3e768b3b49bc458d390ac7ccb"
       }
     ],
     "shootStyle": 1

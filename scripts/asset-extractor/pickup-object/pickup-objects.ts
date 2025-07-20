@@ -1,16 +1,14 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
-import z from "zod/v4";
 import chalk from "chalk";
-import invert from "lodash/invert.js";
 import { EncounterTrackableRepository } from "../encouter-trackable/encounter-trackable.repository.ts";
 import { TranslationRepository } from "../translation/translation.repository.ts";
-import { GunClass, ItemQuality, ShootStyle } from "../gun/gun.dto.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
-import { Gun, Item } from "./pickup-object.model.ts";
+import { buildGunModel } from "./build-gun-model.ts";
+import { buildItemModel } from "./build-item-model.ts";
+import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import type { TItem, TGun, TPickupObject } from "./pickup-object.model.ts";
-import { videos } from "../gun/gun.meta.ts";
 
 export function isGun(obj: object): obj is TGun {
   return typeof obj === "object" && "type" in obj && obj.type === "gun";
@@ -24,97 +22,29 @@ type TCreatePickupObjectsInput = {
   translationRepo: TranslationRepository;
   gunRepo: GunRepository;
   encounterTrackableRepo: EncounterTrackableRepository;
+  projectileRepo: ProjectileRepository;
 };
 
 export async function createPickupObjects(options: TCreatePickupObjectsInput) {
-  const { translationRepo, gunRepo, encounterTrackableRepo } = options;
+  const { translationRepo, gunRepo, encounterTrackableRepo, projectileRepo } = options;
   const pickupObjects: TPickupObject[] = [];
-  const gunQualityTextLookup = invert(ItemQuality);
-  const gunClassTextLookup = invert(GunClass);
-  const shootStyleTextLookup = invert(ShootStyle);
-  const unusedGunIds = new Set([
-    // https://enterthegungeon.fandom.com/wiki/Black_Revolver
-    405,
-    // https://enterthegungeon.wiki.gg/wiki/Ice_Ogre_Head
-    226,
-    // https://enterthegungeon.fandom.com/wiki/Megaphone
-    361,
-    // https://enterthegungeon.fandom.com/wiki/Portaler
-    391,
-    // https://enterthegungeon.fandom.com/wiki/Gundertale
-    509,
-    // https://the-advanced-ammonomicon.fandom.com/wiki/Flamethrower
-    46,
-  ]);
 
   for (const entry of encounterTrackableRepo.entries) {
     if (entry.pickupObjectId === -1 || entry.journalData.IsEnemy === 1) {
       continue; // an enemy or something else
     }
-    const texts = {
-      name: translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? ""),
-      quote: translationRepo.getItemTranslation(entry.journalData.NotificationPanelDescription ?? ""),
-      description: translationRepo.getItemTranslation(entry.journalData.AmmonomiconFullEntry ?? ""),
-    };
 
-    if (!texts.name || !texts.quote || !texts.description) {
-      console.warn(
-        chalk.yellow(`Missing translation for pickup object ID ${entry.pickupObjectId}. path: ${entry.path}`)
-      );
-      continue;
-    }
+    const isItem = entry.isPlayerItem === 1 || entry.isPassiveItem === 1;
+    const isGun = entry.shootStyleInt >= 0;
 
-    const pickupObject: Record<string, string | number> = {
-      ...texts,
-      id: entry.pickupObjectId,
-    };
-
-    if (entry.isPlayerItem === 1 || entry.isPassiveItem === 1) {
-      pickupObject.type = "item";
-    } else if (entry.shootStyleInt >= 0) {
-      pickupObject.type = "gun";
-    }
-
-    try {
-      if (isItem(pickupObject)) {
-        pickupObject.isPassive = entry.isPassiveItem === 1;
-        // TODO: add item quality and more if needed
-        pickupObjects.push(Item.parse(pickupObject));
-      } else if (isGun(pickupObject)) {
-        if (unusedGunIds.has(pickupObject.id)) {
-          continue;
-        }
-
-        const gunDto = gunRepo.getGun(pickupObject.id);
-        if (!gunDto) {
-          console.warn(chalk.yellow(`Gun with ID ${pickupObject.id} (${texts.name}) not found in GunRepository.`));
-          continue;
-        }
-
-        pickupObject.gunNameInternal = gunDto.gunName;
-        pickupObject.quality = gunQualityTextLookup[gunDto.quality] as typeof pickupObject.quality;
-        pickupObject.gunClass = gunClassTextLookup[gunDto.gunClass] as typeof pickupObject.gunClass;
-        pickupObject.shootStyle = shootStyleTextLookup[
-          gunDto.singleModule.shootStyle
-        ] as typeof pickupObject.shootStyle;
-        pickupObject.maxAmmo = gunDto.maxAmmo;
-        pickupObject.magazineSize = gunDto.singleModule.numberOfShotsInClip;
-        pickupObject.reloadTime = gunDto.reloadTime;
-        pickupObject.spread = gunDto.singleModule.angleVariance;
-        pickupObject.featureFlags = [];
-        if (entry.isInfiniteAmmoGun) pickupObject.featureFlags.push("hasInfiniteAmmo");
-        if (entry.doesntDamageSecretWalls) pickupObject.featureFlags.push("doesntDamageSecretWalls");
-        if (videos.has(pickupObject.id)) pickupObject.video = videos.get(pickupObject.id);
-        pickupObjects.push(Gun.parse(pickupObject));
-      } else {
-        console.warn(chalk.yellow(`Unknown pickup object type for ID ${pickupObject.id}:`, texts.name));
-      }
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        console.error(chalk.red(`Error parsing pickup object with ID ${pickupObject.id}:`));
-        console.error(z.flattenError(error));
-      }
-      throw error;
+    if (isItem) {
+      const item = buildItemModel({ entry, translationRepo });
+      if (item) pickupObjects.push(item);
+    } else if (isGun) {
+      const gun = buildGunModel({ entry, translationRepo, gunRepo, projectileRepo });
+      if (gun) pickupObjects.push(gun);
+    } else {
+      console.warn(chalk.yellow(`Unknown pickup object type for ID ${entry.pickupObjectId}`));
     }
   }
 
