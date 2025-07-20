@@ -11,6 +11,8 @@ import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode } from "./pickup-object.model.ts";
 import type { TGunDto } from "../gun/gun.dto.ts";
+import type { TProjectileDto } from "../gun/projectile.dto.ts";
+import { applySpecialCases } from "./apply-special-cases.ts";
 
 const gunQualityTextLookup = invert(ItemQuality);
 const gunClassTextLookup = invert(GunClass);
@@ -30,6 +32,31 @@ const unusedGunIds = new Set([
   // https://the-advanced-ammonomicon.fandom.com/wiki/Flamethrower
   46,
 ]);
+
+function buildProjectile(projDto: TProjectileDto): TProjectile {
+  const proj: TProjectile = {
+    damage: projDto.baseData.damage,
+    speed: projDto.baseData.speed,
+    range: projDto.baseData.range,
+    force: projDto.baseData.force,
+  };
+
+  if (projDto.AppliesPoison) proj.poisonChance = projDto.PoisonApplyChance;
+  if (projDto.AppliesSpeedModifier) {
+    // Some mistakes where AppliesSpeedModifier doesn't mean anything
+    // ExportedProject\Assets\GameObject\Railgun_Variant_Projectile.prefab
+    if (projDto.speedEffect.SpeedMultiplier < 1) {
+      proj.speedChance = projDto.SpeedApplyChance;
+    }
+  }
+  if (projDto.AppliesCharm) proj.charmChance = projDto.CharmApplyChance;
+  if (projDto.AppliesFreeze) proj.freezeChance = projDto.FreezeApplyChance;
+  if (projDto.AppliesFire) proj.fireChance = projDto.FireApplyChance;
+  if (projDto.AppliesStun) proj.stunChance = projDto.StunApplyChance;
+  if (projDto.AppliesCheese) proj.cheeseChance = projDto.CheeseApplyChance;
+
+  return proj;
+}
 
 function buildProjectileModules(gunDto: TGunDto, projectileRepo: ProjectileRepository): TProjectileMode[] {
   const projectileModes: TProjectileMode[] = [];
@@ -64,13 +91,6 @@ function buildProjectileModules(gunDto: TGunDto, projectileRepo: ProjectileRepos
         if (p.Projectile.fileID === uniqChargeProjectiles[i + 1]?.Projectile.fileID) continue;
 
         const projDto = getProjectile(p.Projectile.guid);
-        const proj: TProjectile = {
-          damage: projDto.baseData.damage,
-          speed: projDto.baseData.speed,
-          range: projDto.baseData.range,
-          force: projDto.baseData.force,
-        };
-
         const isUncharged = i === 0 && uniqChargeProjectiles.length > 1 && p.ChargeTime === 0;
 
         // a charge should be an entire mode, not just a projectile
@@ -81,7 +101,7 @@ function buildProjectileModules(gunDto: TGunDto, projectileRepo: ProjectileRepos
           magazineSize: mod.numberOfShotsInClip,
           spread: mod.angleVariance,
           chargeTime: p.ChargeTime,
-          projectiles: [proj],
+          projectiles: [buildProjectile(projDto)],
         });
       }
     } else {
@@ -91,17 +111,7 @@ function buildProjectileModules(gunDto: TGunDto, projectileRepo: ProjectileRepos
         cooldownTime: mod.cooldownTime,
         magazineSize: mod.numberOfShotsInClip,
         spread: mod.angleVariance,
-        projectiles: mod.projectiles
-          .filter((p) => p.guid)
-          .map((p) => {
-            const projDto = getProjectile(p.guid!);
-            return {
-              damage: projDto.baseData.damage,
-              speed: projDto.baseData.speed,
-              range: projDto.baseData.range,
-              force: projDto.baseData.force,
-            };
-          }),
+        projectiles: mod.projectiles.filter((p) => p.guid).map((p) => buildProjectile(getProjectile(p.guid!))),
       });
     }
   }
@@ -144,19 +154,21 @@ export function buildGunModel({
     if (entry.isInfiniteAmmoGun) featureFlags.push("hasInfiniteAmmo");
     if (entry.doesntDamageSecretWalls) featureFlags.push("doesntDamageSecretWalls");
 
-    return Gun.parse({
-      ...texts,
-      type: "gun",
-      id: entry.pickupObjectId,
-      gunNameInternal: gunDto.gunName,
-      quality: gunQualityTextLookup[gunDto.quality],
-      gunClass: gunClassTextLookup[gunDto.gunClass],
-      maxAmmo: gunDto.maxAmmo,
-      reloadTime: gunDto.reloadTime,
-      featureFlags,
-      projectileModes: buildProjectileModules(gunDto, projectileRepo),
-      video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
-    });
+    return Gun.parse(
+      applySpecialCases({
+        ...texts,
+        type: "gun",
+        id: entry.pickupObjectId,
+        gunNameInternal: gunDto.gunName,
+        quality: gunQualityTextLookup[gunDto.quality] as keyof typeof ItemQuality,
+        gunClass: gunClassTextLookup[gunDto.gunClass] as keyof typeof GunClass,
+        maxAmmo: gunDto.maxAmmo,
+        reloadTime: gunDto.reloadTime,
+        featureFlags,
+        projectileModes: buildProjectileModules(gunDto, projectileRepo),
+        video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
+      })
+    );
   } catch (error) {
     if (error instanceof z.ZodError) {
       console.error(chalk.red(`Error parsing GUN pickup-object with ID ${entry.pickupObjectId}:`));

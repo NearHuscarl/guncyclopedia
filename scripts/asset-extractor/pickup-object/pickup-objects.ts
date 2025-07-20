@@ -44,7 +44,8 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
       const gun = buildGunModel({ entry, translationRepo, gunRepo, projectileRepo });
       if (gun) pickupObjects.push(gun);
     } else {
-      console.warn(chalk.yellow(`Unknown pickup object type for ID ${entry.pickupObjectId}`));
+      const name = translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? "");
+      console.warn(chalk.yellow(`Unknown pickup object type for ID ${entry.pickupObjectId}, name: ${name}`));
     }
   }
 

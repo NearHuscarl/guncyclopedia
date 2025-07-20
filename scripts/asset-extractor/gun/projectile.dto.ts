@@ -22,18 +22,28 @@ export const ProjectileDto = z.object({
   }),
   damageTypes: z.enum(CoreDamageType),
   damagesWalls: BinaryOption,
+
   AppliesPoison: BinaryOption,
   PoisonApplyChance: Percentage,
+
   AppliesSpeedModifier: BinaryOption,
   SpeedApplyChance: Percentage,
+  speedEffect: z.object({
+    SpeedMultiplier: z.number(),
+  }),
+
   AppliesCharm: BinaryOption,
   CharmApplyChance: Percentage,
+
   AppliesFreeze: BinaryOption,
   FreezeApplyChance: Percentage,
+
   AppliesFire: BinaryOption,
   FireApplyChance: Percentage,
+
   AppliesStun: BinaryOption,
   StunApplyChance: Percentage,
+
   AppliesCheese: BinaryOption,
   CheeseApplyChance: Percentage,
 });

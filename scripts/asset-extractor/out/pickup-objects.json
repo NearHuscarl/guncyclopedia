@@ -215,7 +215,8 @@
             "damage": 35,
             "speed": 13,
             "range": 50,
-            "force": 80
+            "force": 80,
+            "stunChance": 0.3
           }
         ]
       }
@@ -305,7 +306,8 @@
             "damage": 65,
             "speed": 100,
             "range": 1000,
-            "force": 25
+            "force": 25,
+            "freezeChance": 1
           }
         ]
       }
@@ -427,7 +429,9 @@
             "damage": 11,
             "speed": 23,
             "range": 60,
-            "force": 8
+            "force": 8,
+            "speedChance": 1,
+            "stunChance": 1
           }
         ]
       }
@@ -976,7 +980,8 @@
             "damage": 14,
             "speed": 45,
             "range": 1000,
-            "force": 8
+            "force": 8,
+            "charmChance": 0.75
           }
         ]
       }
@@ -1204,7 +1209,8 @@
             "damage": 2,
             "speed": 23,
             "range": 1000,
-            "force": 35
+            "force": 35,
+            "fireChance": 1
           }
         ]
       }
@@ -1474,7 +1480,8 @@
             "damage": 6,
             "speed": 28,
             "range": 35,
-            "force": 10
+            "force": 10,
+            "freezeChance": 1
           }
         ]
       }
@@ -1595,7 +1602,8 @@
             "damage": 10,
             "speed": 40,
             "range": 1000,
-            "force": 11
+            "force": 11,
+            "freezeChance": 1
           }
         ]
       }
@@ -1625,7 +1633,8 @@
             "damage": 10,
             "speed": 40,
             "range": 1000,
-            "force": 11
+            "force": 11,
+            "freezeChance": 1
           }
         ]
       }
@@ -1839,7 +1848,8 @@
             "damage": 31,
             "speed": 100,
             "range": 40,
-            "force": 30
+            "force": 30,
+            "fireChance": 1
           }
         ]
       }
@@ -1993,7 +2003,13 @@
             "damage": 26,
             "speed": 90,
             "range": 500,
-            "force": 35
+            "force": 35,
+            "statusEffectChancePerSecond": 0.6,
+            "poisonChance": 1,
+            "charmChance": 1,
+            "freezeChance": 1,
+            "fireChance": 1,
+            "stunChance": 1
           }
         ]
       }
@@ -2083,7 +2099,8 @@
             "damage": 6.5,
             "speed": 25,
             "range": 1000,
-            "force": 21
+            "force": 21,
+            "fireChance": 0.08
           }
         ]
       }
@@ -2113,7 +2130,8 @@
             "damage": 5,
             "speed": 25,
             "range": 1000,
-            "force": 27
+            "force": 27,
+            "fireChance": 0.08
           }
         ]
       }
@@ -2649,7 +2667,8 @@
             "damage": 8,
             "speed": 20,
             "range": 1000,
-            "force": 13
+            "force": 13,
+            "stunChance": 0.2
           }
         ]
       }
@@ -2709,7 +2728,8 @@
             "damage": 13,
             "speed": 23,
             "range": 1000,
-            "force": 35
+            "force": 35,
+            "fireChance": 1
           }
         ]
       }
@@ -2739,7 +2759,8 @@
             "damage": 13,
             "speed": 23,
             "range": 1000,
-            "force": 35
+            "force": 35,
+            "fireChance": 1
           }
         ]
       }
@@ -2859,7 +2880,8 @@
             "damage": 20,
             "speed": 60,
             "range": 30,
-            "force": 10
+            "force": 10,
+            "freezeChance": 1
           }
         ]
       }
@@ -2889,7 +2911,8 @@
             "damage": 20,
             "speed": 60,
             "range": 30,
-            "force": 10
+            "force": 10,
+            "freezeChance": 1
           }
         ]
       }
@@ -2949,7 +2972,8 @@
             "damage": 3.5,
             "speed": 30,
             "range": 50,
-            "force": 4
+            "force": 4,
+            "fireChance": 1
           }
         ]
       }
@@ -3289,7 +3313,8 @@
             "damage": 10,
             "speed": 30,
             "range": 3,
-            "force": 10
+            "force": 10,
+            "fireChance": 1
           }
         ]
       }
@@ -3319,7 +3344,8 @@
             "damage": 10,
             "speed": 30,
             "range": 3,
-            "force": 10
+            "force": 10,
+            "fireChance": 1
           }
         ]
       }
@@ -4684,7 +4710,8 @@
             "damage": 4,
             "speed": 23,
             "range": 1000,
-            "force": 35
+            "force": 35,
+            "fireChance": 1
           }
         ]
       }
@@ -4714,7 +4741,8 @@
             "damage": 4,
             "speed": 23,
             "range": 1000,
-            "force": 35
+            "force": 35,
+            "fireChance": 1
           }
         ]
       }
@@ -4892,7 +4920,8 @@
             "damage": 15,
             "speed": 25,
             "range": 1000,
-            "force": 60
+            "force": 60,
+            "poisonChance": 1
           }
         ]
       }
@@ -5101,7 +5130,8 @@
             "damage": 16,
             "speed": -1,
             "range": 50,
-            "force": 20
+            "force": 20,
+            "poisonChance": 1
           }
         ]
       }
@@ -5391,7 +5421,8 @@
             "damage": 5,
             "speed": 20,
             "range": 25,
-            "force": 13
+            "force": 13,
+            "poisonChance": 0.5
           }
         ]
       }
@@ -5421,7 +5452,8 @@
             "damage": 7,
             "speed": 10,
             "range": 45,
-            "force": 13
+            "force": 13,
+            "poisonChance": 0.5
           }
         ]
       }
@@ -6119,7 +6151,8 @@
             "damage": 3.5,
             "speed": 28,
             "range": 35,
-            "force": 10
+            "force": 10,
+            "freezeChance": 1
           }
         ]
       }
@@ -8436,7 +8469,8 @@
             "damage": 12,
             "speed": 100,
             "range": 3.5,
-            "force": 40
+            "force": 40,
+            "stunChance": 0.3
           }
         ]
       },
@@ -8452,7 +8486,8 @@
             "damage": 200,
             "speed": 100,
             "range": 3.5,
-            "force": 400
+            "force": 400,
+            "stunChance": 0.3
           }
         ]
       }
@@ -8871,7 +8906,8 @@
             "damage": 1.5,
             "speed": 12,
             "range": 12,
-            "force": 0
+            "force": 0,
+            "stunChance": 0.01
           }
         ]
       }
@@ -9320,7 +9356,8 @@
             "damage": 10,
             "speed": 15,
             "range": 1000,
-            "force": 11
+            "force": 11,
+            "poisonChance": 1
           }
         ]
       }
@@ -9350,7 +9387,8 @@
             "damage": 40,
             "speed": 10,
             "range": 1000,
-            "force": 9
+            "force": 9,
+            "cheeseChance": 1
           }
         ]
       }
@@ -9469,7 +9507,8 @@
             "damage": 5,
             "speed": 25,
             "range": 1000,
-            "force": 27
+            "force": 27,
+            "fireChance": 0.08
           }
         ]
       }
@@ -9688,7 +9727,8 @@
             "damage": 2,
             "speed": 23,
             "range": 1000,
-            "force": 35
+            "force": 35,
+            "fireChance": 1
           }
         ]
       },
@@ -9829,7 +9869,8 @@
             "damage": 6,
             "speed": 10,
             "range": 1000,
-            "force": 8
+            "force": 8,
+            "stunChance": 1
           }
         ]
       },
@@ -9892,7 +9933,8 @@
             "damage": 23,
             "speed": 50,
             "range": 50,
-            "force": 20
+            "force": 20,
+            "poisonChance": 1
           }
         ]
       }
@@ -9922,37 +9964,43 @@
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
-            "force": 9
+            "force": 9,
+            "cheeseChance": 1
           },
           {
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
-            "force": 9
+            "force": 9,
+            "cheeseChance": 1
           },
           {
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
-            "force": 9
+            "force": 9,
+            "cheeseChance": 1
           },
           {
             "damage": 8,
             "speed": 23,
             "range": 1000,
-            "force": 9
+            "force": 9,
+            "cheeseChance": 1
           },
           {
             "damage": 8,
             "speed": 23,
             "range": 1000,
-            "force": 9
+            "force": 9,
+            "cheeseChance": 1
           },
           {
             "damage": 15,
             "speed": 23,
             "range": 1000,
-            "force": 9
+            "force": 9,
+            "cheeseChance": 1
           }
         ]
       }
@@ -10063,7 +10111,8 @@
             "damage": 5,
             "speed": 30,
             "range": 1000,
-            "force": 8
+            "force": 8,
+            "freezeChance": 1
           }
         ]
       },
@@ -10079,7 +10128,8 @@
             "damage": 60,
             "speed": 35,
             "range": 1000,
-            "force": 8
+            "force": 8,
+            "freezeChance": 1
           }
         ]
       }
@@ -10110,7 +10160,8 @@
             "damage": 8,
             "speed": 600,
             "range": 1000,
-            "force": 4
+            "force": 4,
+            "fireChance": 1
           }
         ]
       },
@@ -10126,7 +10177,8 @@
             "damage": 35,
             "speed": 26,
             "range": 1000,
-            "force": 32
+            "force": 32,
+            "fireChance": 1
           }
         ]
       }
@@ -10234,7 +10286,8 @@
             "damage": 45,
             "speed": 120,
             "range": 1000,
-            "force": 90
+            "force": 90,
+            "fireChance": 1
           }
         ]
       }

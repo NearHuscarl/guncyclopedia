@@ -1,4 +1,5 @@
 import z from "zod/v4";
+import { Percentage } from "../utils/schema.ts";
 
 const PickupObject = z.object({
   id: z.number(),
@@ -13,6 +14,19 @@ const Projectile = z.object({
   speed: z.number(),
   range: z.number(),
   force: z.number(),
+  /**
+   * Chance to apply a status effect per second. If a beam weapon has status effects, the default value is `1`
+   *
+   * For [Science Cannon](https://enterthegungeon.fandom.com/wiki/Science_Cannon), multiple effects can be applied at the same time.
+   */
+  statusEffectChancePerSecond: Percentage.optional(),
+  poisonChance: Percentage.optional(),
+  speedChance: Percentage.optional(),
+  charmChance: Percentage.optional(),
+  freezeChance: Percentage.optional(),
+  fireChance: Percentage.optional(),
+  stunChance: Percentage.optional(),
+  cheeseChance: Percentage.optional(),
   // TODO: research ProjectileModule.cs#GetEstimatedShotsPerSecond
   // dps: z.undefined(),
 });

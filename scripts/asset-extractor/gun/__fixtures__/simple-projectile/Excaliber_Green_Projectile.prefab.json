@@ -20,5 +20,8 @@
     "speed": 23
   },
   "damageTypes": 0,
-  "damagesWalls": 1
+  "damagesWalls": 1,
+  "speedEffect": {
+    "SpeedMultiplier": 1
+  }
 }
