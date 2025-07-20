@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &114474206188037739
+MonoBehaviour:
+  m_Script: { fileID: 11500000, guid: 75280d5bb60068b2fabefd8e2004397e, type: 3 }
+  damageTypes: 0
+  baseData:
+    damage: 6
+    speed: 23
+    range: 50
+    force: 10
+  AppliesPoison: 0
+  PoisonApplyChance: 1
+  AppliesSpeedModifier: 0
+  SpeedApplyChance: 1
+  AppliesCharm: 0
+  CharmApplyChance: 1
+  AppliesFreeze: 0
+  FreezeApplyChance: 1
+  AppliesFire: 0
+  FireApplyChance: 1
+  AppliesStun: 0
+  StunApplyChance: 1
+  AppliesCheese: 0
+  CheeseApplyChance: 1
+  damagesWalls: 1

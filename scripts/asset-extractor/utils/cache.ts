@@ -9,10 +9,9 @@ const CACHE_BASE_PATH =
     : path.join(ASSET_EXTRACTOR_ROOT, "cache");
 
 export async function saveCache<K, V>(key: string, value: Map<K, V>) {
-  const dir = path.dirname(CACHE_BASE_PATH);
   const cacheValue = Object.fromEntries(value);
 
-  await mkdir(dir, { recursive: true });
+  await mkdir(CACHE_BASE_PATH, { recursive: true });
   await writeFile(`${CACHE_BASE_PATH}/${key}.json`, JSON.stringify(cacheValue, null, 2), "utf-8");
 }
 

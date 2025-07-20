@@ -2,6 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &114708655969415259
 MonoBehaviour:
+  m_Script: {fileID: 11500000, guid: 0f903c73702fdea77bdc0ea60b3f9740, type: 3}
   PickupObjectId: 345
   quality: 5
   gunName: Hero's Blade

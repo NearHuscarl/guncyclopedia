@@ -1,5 +1,5 @@
 import { TranslationRepository } from "./translation/translation.repository.ts";
-import { createPickupObjects } from "./pickup-objects.ts";
+import { createPickupObjects } from "./pickup-object/pickup-objects.ts";
 import { EncounterTrackableRepository } from "./encouter-trackable/encounter-trackable.repository.ts";
 import { AssetService } from "./asset/asset-service.ts";
 import { GunRepository } from "./gun/gun.repository.ts";

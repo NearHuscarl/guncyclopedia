@@ -7,11 +7,12 @@ import { getAllFileRecursively, normalizePath } from "../utils/path.ts";
 import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { parseYaml } from "../utils/yaml.ts";
-import { AssetMeta, MonoBehaviour, TAssetMeta, TUnityAsset, type Guid, type TMonoBehaviour } from "./asset.dto.ts";
+import { AssetMeta, MonoBehaviour } from "./asset.dto.ts";
+import type { TAssetMeta, TUnityAsset, Guid, TMonoBehaviour } from "./asset.dto.ts";
 
 export class AssetService {
-  static readonly PROJECTILE_SCRIPT = "Assets/Scripts/Assembly-CSharp/Projectile.cs.meta";
-  static readonly GUN_SCRIPT = "Assets/Scripts/Assembly-CSharp/Gun.cs.meta";
+  static readonly PROJECTILE_SCRIPT = "Projectile.cs.meta";
+  static readonly GUN_SCRIPT = "Gun.cs.meta";
   private readonly _DEFAULT_META_ROOT_DIR = path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject");
 
   private _assetPaths = new Map<Guid, string>();

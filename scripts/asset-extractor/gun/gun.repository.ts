@@ -17,7 +17,7 @@ export class GunRepository {
 
   private _guns = new Map<number, TGunDto>();
   private readonly _assetService: AssetService;
-  private readonly _gunDirectories;
+  private readonly _gunDirectories: string[];
 
   private constructor(assetService: AssetService, gunDirectories?: string[]) {
     this._assetService = assetService;
@@ -34,7 +34,7 @@ export class GunRepository {
   }
 
   private _isGunDto(obj: unknown): obj is TGunDto {
-    return typeof obj === "object" && typeof obj?.["gunName"] === "string";
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.GUN_SCRIPT);
   }
 
   private async _getAllRefabFilesInGunFolders() {

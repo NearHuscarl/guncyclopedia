@@ -3,56 +3,14 @@ import path from "node:path";
 import z from "zod/v4";
 import chalk from "chalk";
 import invert from "lodash/invert.js";
-import { EncounterTrackableRepository } from "./encouter-trackable/encounter-trackable.repository.ts";
-import { TranslationRepository } from "./translation/translation.repository.ts";
-import { GunClass, ItemQuality, ShootStyle } from "./gun/gun.dto.ts";
-import { GunRepository } from "./gun/gun.repository.ts";
-import { ASSET_EXTRACTOR_ROOT } from "./constants.ts";
-
-const PickupObject = z.object({
-  id: z.number(),
-  name: z.string(),
-  quote: z.string(),
-  description: z.string(),
-  type: z.enum(["gun", "item"]),
-});
-
-const Gun = PickupObject.extend({
-  type: z.literal("gun"),
-  gunNameInternal: z.string(),
-  quality: z.enum(["EXCLUDED", "SPECIAL", "COMMON", "D", "C", "B", "A", "S"]),
-  gunClass: z.enum([
-    "NONE",
-    "PISTOL",
-    "SHOTGUN",
-    "FULLAUTO",
-    "RIFLE",
-    "BEAM",
-    "POISON",
-    "FIRE",
-    "ICE",
-    "CHARM",
-    "EXPLOSIVE",
-    "SILLY",
-    "SHITTY",
-    "CHARGE",
-  ]),
-  shootStyle: z.enum(["SemiAutomatic", "Automatic", "Beam", "Charged", "Burst"]),
-  maxAmmo: z.number(),
-  magazineSize: z.number(),
-  reloadTime: z.number(),
-  spread: z.number(),
-  hasInfiniteAmmo: z.boolean().optional(),
-  doesntDamageSecretWalls: z.boolean().optional(),
-});
-const Item = PickupObject.extend({
-  type: z.literal("item"),
-  isPassive: z.boolean(),
-});
-
-type TPickupObject = z.input<typeof PickupObject>;
-type TGun = z.input<typeof Gun>;
-type TItem = z.input<typeof Item>;
+import { EncounterTrackableRepository } from "../encouter-trackable/encounter-trackable.repository.ts";
+import { TranslationRepository } from "../translation/translation.repository.ts";
+import { GunClass, ItemQuality, ShootStyle } from "../gun/gun.dto.ts";
+import { GunRepository } from "../gun/gun.repository.ts";
+import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
+import { Gun, Item } from "./pickup-object.model.ts";
+import type { TItem, TGun, TPickupObject } from "./pickup-object.model.ts";
+import { videos } from "../gun/gun.meta.ts";
 
 export function isGun(obj: object): obj is TGun {
   return typeof obj === "object" && "type" in obj && obj.type === "gun";
@@ -143,8 +101,10 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
         pickupObject.magazineSize = gunDto.singleModule.numberOfShotsInClip;
         pickupObject.reloadTime = gunDto.reloadTime;
         pickupObject.spread = gunDto.singleModule.angleVariance;
-        if (entry.isInfiniteAmmoGun === 1) pickupObject.hasInfiniteAmmo = true;
-        if (entry.doesntDamageSecretWalls === 1) pickupObject.doesntDamageSecretWalls = true;
+        pickupObject.featureFlags = [];
+        if (entry.isInfiniteAmmoGun) pickupObject.featureFlags.push("hasInfiniteAmmo");
+        if (entry.doesntDamageSecretWalls) pickupObject.featureFlags.push("doesntDamageSecretWalls");
+        if (videos.has(pickupObject.id)) pickupObject.video = videos.get(pickupObject.id);
         pickupObjects.push(Gun.parse(pickupObject));
       } else {
         console.warn(chalk.yellow(`Unknown pickup object type for ID ${pickupObject.id}:`, texts.name));

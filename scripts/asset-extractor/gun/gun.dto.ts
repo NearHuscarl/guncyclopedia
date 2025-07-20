@@ -43,10 +43,27 @@ export const GunDto = z
     gunClass: z.enum(GunClass),
     maxAmmo: z.number(),
     reloadTime: z.number(),
+    /**
+     * A reference to a ProjectileVolleyData asset that defines complex firing behavior, e.g.:
+     * - Multiple projectiles per shot (Old Goldie, Crown of Guns)
+     * - Different types of projectiles fired per shot (Planet Gun)
+     *
+     * According to `Gun.cs#ForceFireProjectile()` and many other instances in Gun.cs, when projectile modules
+     * insdie volley are defined, singleModule is ignored completely.
+     */
+    rawVolley: AssetExternalReference,
     singleModule: z.object({
       shootStyle: z.enum(ShootStyle),
-      /* Basic array of projectiles fired per shot */
+      /**
+       * Basic array of projectiles fired per shot
+       */
       projectiles: z.array(AssetExternalReference),
+      /**
+       * Array of projectiles fired when the gun is charged.
+       * Depends on how long the gun is charged, the projectile with the appropriate ChargeTime
+       * will be selected from this array. This projectiles are used over the basic projectiles
+       * if `ProjectileModule.ShootStyle` is `Charged`.
+       */
       chargeProjectiles: z.array(
         z.object({
           ChargeTime: z.number(),

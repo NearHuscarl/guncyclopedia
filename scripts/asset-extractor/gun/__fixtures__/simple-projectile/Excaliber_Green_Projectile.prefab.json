@@ -1,0 +1,24 @@
+{
+  "AppliesCharm": 0,
+  "AppliesCheese": 0,
+  "AppliesFire": 0,
+  "AppliesFreeze": 0,
+  "AppliesPoison": 0,
+  "AppliesSpeedModifier": 0,
+  "AppliesStun": 0,
+  "CharmApplyChance": 1,
+  "CheeseApplyChance": 1,
+  "FireApplyChance": 1,
+  "FreezeApplyChance": 1,
+  "PoisonApplyChance": 1,
+  "SpeedApplyChance": 1,
+  "StunApplyChance": 1,
+  "baseData": {
+    "damage": 6,
+    "force": 10,
+    "range": 50,
+    "speed": 23
+  },
+  "damageTypes": 0,
+  "damagesWalls": 1
+}

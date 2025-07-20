@@ -11,27 +11,32 @@ import type { TProjectileDto } from "./projectile.dto.ts";
 type Guid = string;
 
 export class ProjectileRepository {
+  private static readonly _SEARCH_DIRECTORIES = ["assets/ExportedProject/Assets/GameObject"];
+
   private _projectiles = new Map<Guid, TProjectileDto>();
   private readonly _assetService: AssetService;
+  private readonly _searchDirectories: string[];
 
-  private constructor(assetService: AssetService) {
+  private constructor(assetService: AssetService, searchDirectories?: string[]) {
     this._assetService = assetService;
+    this._searchDirectories = searchDirectories || ProjectileRepository._SEARCH_DIRECTORIES;
   }
 
-  static async create(_assetService: AssetService) {
-    const instance = new ProjectileRepository(_assetService);
+  static async create(_assetService: AssetService, searchDirectories?: string[]) {
+    const instance = new ProjectileRepository(_assetService, searchDirectories);
     return await instance.load();
   }
 
   private _isProjectileDto(obj: unknown): obj is TProjectileDto {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath === AssetService.PROJECTILE_SCRIPT;
+    return (
+      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.PROJECTILE_SCRIPT)
+    );
   }
 
   private async _getAllProjectileRefabFiles() {
-    const projectileDirectories = ["assets/ExportedProject/Assets/GameObject"];
     const res: string[] = [];
 
-    for (const dir of projectileDirectories) {
+    for (const dir of this._searchDirectories) {
       const files = await readdir(path.join(ASSET_EXTRACTOR_ROOT, dir));
 
       for (const file of files) {
@@ -76,7 +81,7 @@ export class ProjectileRepository {
 
     if (this._projectiles.size > 0) {
       console.log(chalk.green(`Loaded ${chalk.yellow(this._projectiles.size)} projectiles from cache.`));
-      return;
+      return this;
     }
     console.log(chalk.yellow("No cache found, loading projectiles from files..."));
 
@@ -98,6 +103,7 @@ export class ProjectileRepository {
     console.log(chalk.magenta(`Took ${(performance.now() - start) / 1000}s`));
 
     await saveCache("projectile.repository", this._projectiles);
+    return this;
   }
 
   getProjectile(guid: string) {

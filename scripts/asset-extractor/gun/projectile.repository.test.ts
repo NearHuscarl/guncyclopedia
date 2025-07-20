@@ -3,9 +3,9 @@ import path from "node:path";
 import { readFile } from "node:fs/promises";
 import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { AssetService } from "../asset/asset-service.ts";
-import { GunRepository } from "./gun.repository.ts";
+import { ProjectileRepository } from "./projectile.repository.ts";
 
-describe("gun.repository.ts", () => {
+describe("projectile.repository.ts", () => {
   beforeAll(() => {
     vi.mock("../utils/cache", async () => {
       return {
@@ -15,16 +15,17 @@ describe("gun.repository.ts", () => {
     });
   });
 
-  async function createGunRepo(inputPath: string) {
+  async function createProjectileRepo(inputPath: string) {
     const assetService = await AssetService.create(path.join(import.meta.dirname, "__fixtures__"));
-    return GunRepository.create(assetService, [inputPath]);
+    const projRepo = await ProjectileRepository.create(assetService, [inputPath]);
+    return projRepo;
   }
 
-  it("should parse simple gun from refab file", async () => {
-    const inputPath = "gun/__fixtures__/simple-gun";
-    const gunRepo = await createGunRepo(inputPath);
-    const actual = gunRepo.getGun(345);
-    const outputPath = "gun/__fixtures__/simple-gun/Excaliber_Green.prefab.json";
+  it("should parse simple projectile from refab file", async () => {
+    const inputPath = "gun/__fixtures__/simple-projectile";
+    const projRepo = await createProjectileRepo(inputPath);
+    const actual = projRepo.getProjectile("7db03fb3e768b3b49bc458d390ac7ccb");
+    const outputPath = "gun/__fixtures__/simple-projectile/Excaliber_Green_Projectile.prefab.json";
     const expected = JSON.parse(await readFile(path.join(ASSET_EXTRACTOR_ROOT, outputPath), "utf-8"));
 
     expect(actual).toEqual(expected);
