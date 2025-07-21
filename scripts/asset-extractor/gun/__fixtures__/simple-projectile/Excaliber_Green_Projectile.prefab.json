@@ -23,5 +23,6 @@
   "damagesWalls": 1,
   "speedEffect": {
     "SpeedMultiplier": 1
-  }
+  },
+  "ignoreDamageCaps": 0
 }

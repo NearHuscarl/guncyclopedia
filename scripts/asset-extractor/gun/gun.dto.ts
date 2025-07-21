@@ -1,5 +1,5 @@
 import z from "zod/v4";
-import { AssetExternalReference, AssetExternalReferences } from "../utils/schema.ts";
+import { AssetExternalReference, AssetExternalReferences, BinaryOption } from "../utils/schema.ts";
 import { StatModifierSchema } from "../player/player.dto.ts";
 
 export const ItemQuality = {
@@ -74,8 +74,13 @@ export const GunDto = z
     gunClass: z.enum(GunClass),
     currentGunStatModifiers: z.array(StatModifierSchema),
     passiveStatModifiers: z.array(StatModifierSchema).optional(),
+    UsesBossDamageModifier: BinaryOption,
+    CustomBossDamageModifier: z.number(),
     maxAmmo: z.number(),
     reloadTime: z.number(),
+    blankDuringReload: BinaryOption,
+    blankReloadRadius: z.number(),
+    reflectDuringReload: BinaryOption,
     /**
      * A reference to a ProjectileVolleyData asset that defines complex firing behavior, e.g.:
      * - Multiple projectiles per shot (Old Goldie, Crown of Guns)

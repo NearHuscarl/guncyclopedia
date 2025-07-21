@@ -47,6 +47,7 @@ function buildProjectile(id: number, projDto: TProjectileDto): TProjectile {
     force: projDto.baseData.force,
   };
 
+  if (projDto.ignoreDamageCaps) proj.ignoreDamageCaps = true;
   if (projDto.AppliesPoison) proj.poisonChance = projDto.PoisonApplyChance;
   if (projDto.AppliesSpeedModifier) {
     // Some mistakes where AppliesSpeedModifier doesn't mean anything
@@ -76,7 +77,7 @@ function computeProjectileSpawnWeight(projectiles: TProjectile[]): TProjectile[]
   return uniqProjectiles.map((p) => ({ ...p, spawnWeight: projectileCount[p.id] }));
 }
 
-function buildProjectileModules(gunDto: TGunDto, projectileRepo: ProjectileRepository): TProjectileMode[] {
+function buildProjectileModes(gunDto: TGunDto, projectileRepo: ProjectileRepository): TProjectileMode[] {
   const projectileModes: TProjectileMode[] = [];
   const getProjectile = (guid: string) => {
     const projDto = projectileRepo.getProjectile(guid);
@@ -179,8 +180,20 @@ export function buildGunModel({
 
     if (entry.isInfiniteAmmoGun) featureFlags.push("hasInfiniteAmmo");
     if (entry.doesntDamageSecretWalls) featureFlags.push("doesntDamageSecretWalls");
+    if (gunDto.reflectDuringReload) featureFlags.push("reflectDuringReload");
+    if (gunDto.blankDuringReload) {
+      featureFlags.push("blankDuringReload");
+    }
 
     const allStatModifiers = gunDto.currentGunStatModifiers.concat(gunDto.passiveStatModifiers ?? []);
+
+    if (gunDto.UsesBossDamageModifier === 1) {
+      allStatModifiers.push({
+        statToBoost: StatModifier.StatType.DamageToBosses,
+        modifyType: StatModifier.ModifyMethod.MULTIPLICATIVE,
+        amount: gunDto.CustomBossDamageModifier >= 0 ? gunDto.CustomBossDamageModifier : 0.8,
+      });
+    }
 
     return Gun.parse(
       applySpecialCases({
@@ -198,7 +211,8 @@ export function buildGunModel({
         maxAmmo: gunDto.maxAmmo,
         reloadTime: gunDto.reloadTime,
         featureFlags,
-        projectileModes: buildProjectileModules(gunDto, projectileRepo),
+        projectileModes: buildProjectileModes(gunDto, projectileRepo),
+        blankReloadRadius: gunDto.blankDuringReload ? gunDto.blankReloadRadius : undefined,
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       })
     );

@@ -10,6 +10,7 @@
   "reloadTime": 0.54,
   "singleModule": {
     "angleVariance": 0,
+    "sequenceStyle": 0,
     "chargeProjectiles": [
       {
         "ChargeTime": 0,
@@ -43,5 +44,12 @@
       }
     ],
     "shootStyle": 3
-  }
+  },
+  "CustomBossDamageModifier": -1,
+  "UsesBossDamageModifier": 0,
+  "blankDuringReload": 0,
+  "blankReloadRadius": 1,
+  "currentGunStatModifiers": [],
+  "passiveStatModifiers": [],
+  "reflectDuringReload": 0
 }

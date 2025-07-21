@@ -7,6 +7,7 @@ MonoBehaviour:
   quality: 5
   gunName: Hero's Blade
   gunClass: 10
+  currentGunStatModifiers: []
   passiveStatModifiers:
     - statToBoost: 14
       modifyType: 0
@@ -17,9 +18,15 @@ MonoBehaviour:
     shootStyle: 1
     projectiles:
       - { fileID: 114474206188037739, guid: 7db03fb3e768b3b49bc458d390ac7ccb, type: 2 }
+    sequenceStyle: 1
     chargeProjectiles: []
     angleVariance: 8
     cooldownTime: 0.15
     numberOfShotsInClip: 25
+  UsesBossDamageModifier: 0
+  CustomBossDamageModifier: -1
   maxAmmo: 500
   reloadTime: 1.5
+  blankDuringReload: 1
+  blankReloadRadius: 1.8
+  reflectDuringReload: 1

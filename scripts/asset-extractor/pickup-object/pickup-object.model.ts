@@ -13,6 +13,7 @@ const PickupObject = z.object({
 const Projectile = z.object({
   // fileID of the block in the prefab file
   id: z.number(),
+  ignoreDamageCaps: z.boolean().optional(),
   damage: z.number(),
   speed: z.number(),
   range: z.number(),
@@ -82,7 +83,10 @@ export const Gun = PickupObject.extend({
   projectileModes: z.array(ProjectileMode),
   maxAmmo: z.number(),
   reloadTime: z.number(),
-  featureFlags: z.array(z.enum(["hasInfiniteAmmo", "doesntDamageSecretWalls"])),
+  featureFlags: z.array(
+    z.enum(["hasInfiniteAmmo", "doesntDamageSecretWalls", "reflectDuringReload", "blankDuringReload"])
+  ),
+  blankReloadRadius: z.number().optional(),
   video: z.string().optional(),
 });
 

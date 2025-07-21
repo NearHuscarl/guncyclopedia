@@ -5,6 +5,13 @@
   "maxAmmo": 500,
   "quality": 5,
   "reloadTime": 1.5,
+  "passiveStatModifiers": [
+    {
+      "amount": 2,
+      "modifyType": 0,
+      "statToBoost": 14
+    }
+  ],
   "rawVolley": {
     "fileID": 0
   },
@@ -13,6 +20,7 @@
     "chargeProjectiles": [],
     "cooldownTime": 0.15,
     "numberOfShotsInClip": 25,
+    "sequenceStyle": 1,
     "projectiles": [
       {
         "$$scriptPath": "simple-projectile/Excaliber_Green_Projectile.prefab.meta",
@@ -21,5 +29,11 @@
       }
     ],
     "shootStyle": 1
-  }
+  },
+  "CustomBossDamageModifier": -1,
+  "UsesBossDamageModifier": 0,
+  "blankDuringReload": 1,
+  "blankReloadRadius": 1.8,
+  "currentGunStatModifiers": [],
+  "reflectDuringReload": 1
 }

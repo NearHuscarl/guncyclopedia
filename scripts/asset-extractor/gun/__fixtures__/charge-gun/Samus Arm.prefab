@@ -7,12 +7,14 @@ MonoBehaviour:
   quality: 3
   gunName: Hunter Arm
   gunClass: 60
+  currentGunStatModifiers: []
   passiveStatModifiers: []
   rawVolley: {fileID: 0}
   singleModule:
     shootStyle: 3
     projectiles:
       - { fileID: 114474206188037739, guid: 7db03fb3e768b3b49bc458d390ac7ccb, type: 2 }
+    sequenceStyle: 0
     chargeProjectiles:
     - ChargeTime: 0
       Projectile: {fileID: 114785029221341664, guid: d5a0bb378127ebb4e8e4703561446b50, type: 2}
@@ -23,5 +25,10 @@ MonoBehaviour:
     angleVariance: 0
     cooldownTime: 0.07
     numberOfShotsInClip: 6
+  UsesBossDamageModifier: 0
+  CustomBossDamageModifier: -1
   maxAmmo: 200
   reloadTime: 0.54
+  blankDuringReload: 0
+  blankReloadRadius: 1
+  reflectDuringReload: 0

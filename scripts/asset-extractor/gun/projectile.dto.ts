@@ -14,6 +14,7 @@ const CoreDamageType = {
 };
 
 export const ProjectileDto = z.object({
+  ignoreDamageCaps: BinaryOption,
   baseData: z.object({
     damage: z.number(),
     speed: z.number(),

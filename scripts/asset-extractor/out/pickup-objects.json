@@ -660,8 +660,10 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls"
-    ]
+      "doesntDamageSecretWalls",
+      "blankDuringReload"
+    ],
+    "blankReloadRadius": 3
   },
   {
     "id": 813,
@@ -695,8 +697,10 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls"
-    ]
+      "doesntDamageSecretWalls",
+      "blankDuringReload"
+    ],
+    "blankReloadRadius": 3
   },
   {
     "id": 376,
@@ -833,7 +837,13 @@
     "gunNameInternal": "Bomb Gun",
     "quality": "D",
     "gunClass": "EXPLOSIVE",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 1.3
+      }
+    ],
     "projectileModes": [
       {
         "name": "Charged",
@@ -866,7 +876,13 @@
     "gunNameInternal": "Bomb Gun",
     "quality": "SPECIAL",
     "gunClass": "EXPLOSIVE",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 1.3
+      }
+    ],
     "projectileModes": [
       {
         "name": "Charged",
@@ -2543,7 +2559,13 @@
     "gunNameInternal": "Electro Shark",
     "quality": "A",
     "gunClass": "FULLAUTO",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -2734,7 +2756,11 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "reflectDuringReload",
+      "blankDuringReload"
+    ],
+    "blankReloadRadius": 1.8
   },
   {
     "id": 33,
@@ -3809,7 +3835,13 @@
     "gunNameInternal": "Blooper",
     "quality": "B",
     "gunClass": "SHOTGUN",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 80,
     "reloadTime": 2,
@@ -4738,7 +4770,13 @@
     "gunNameInternal": "Mutated Arm",
     "quality": "B",
     "gunClass": "BEAM",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -5167,7 +5205,13 @@
     "gunNameInternal": "Plasma Rifle",
     "quality": "A",
     "gunClass": "RIFLE",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -5199,7 +5243,13 @@
     "gunNameInternal": "Plasma Rifle",
     "quality": "SPECIAL",
     "gunClass": "RIFLE",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -5294,7 +5344,13 @@
     "gunNameInternal": "Proton Pack",
     "quality": "B",
     "gunClass": "BEAM",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 500,
     "reloadTime": 0,
@@ -5309,7 +5365,13 @@
     "gunNameInternal": "Proton Pack",
     "quality": "EXCLUDED",
     "gunClass": "BEAM",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 500,
     "reloadTime": 0,
@@ -5406,7 +5468,13 @@
     "gunNameInternal": "Pulse Rifle",
     "quality": "C",
     "gunClass": "SHOTGUN",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.8,
@@ -5631,7 +5699,13 @@
     "gunNameInternal": "Rattler Shotgun",
     "quality": "B",
     "gunClass": "POISON",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 1.2,
@@ -5678,7 +5752,13 @@
     "gunNameInternal": "Rectangle Shotugn",
     "quality": "C",
     "gunClass": "SILLY",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.5,
@@ -5763,7 +5843,13 @@
     "gunNameInternal": "RPG",
     "quality": "B",
     "gunClass": "EXPLOSIVE",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 1.3
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -6415,7 +6501,10 @@
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "blankDuringReload"
+    ],
+    "blankReloadRadius": 1.25
   },
   {
     "id": 143,
@@ -6441,7 +6530,13 @@
     "gunNameInternal": "Shotgun Full Of Love",
     "quality": "A",
     "gunClass": "CHARM",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.2,
@@ -6741,7 +6836,13 @@
     "gunNameInternal": "Space Core Shotgun",
     "quality": "B",
     "gunClass": "SHOTGUN",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.2,
@@ -7024,7 +7125,10 @@
     ],
     "maxAmmo": 280,
     "reloadTime": 0.48,
-    "featureFlags": []
+    "featureFlags": [
+      "blankDuringReload"
+    ],
+    "blankReloadRadius": 1.5
   },
   {
     "id": 680,
@@ -7062,7 +7166,10 @@
     ],
     "maxAmmo": 280,
     "reloadTime": 0.48,
-    "featureFlags": []
+    "featureFlags": [
+      "blankDuringReload"
+    ],
+    "blankReloadRadius": 2.5
   },
   {
     "id": 208,
@@ -7486,7 +7593,10 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1,
-    "featureFlags": []
+    "featureFlags": [
+      "blankDuringReload"
+    ],
+    "blankReloadRadius": 1.5
   },
   {
     "id": 381,
@@ -7750,7 +7860,10 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.7,
-    "featureFlags": []
+    "featureFlags": [
+      "blankDuringReload"
+    ],
+    "blankReloadRadius": 1.25
   },
   {
     "id": 181,
@@ -7901,6 +8014,7 @@
         "projectiles": [
           {
             "id": 114124075017315760,
+            "ignoreDamageCaps": true,
             "damage": 8,
             "speed": 10,
             "range": 90,
@@ -8018,7 +8132,13 @@
     "gunNameInternal": "Zilla Combat Shotgun",
     "quality": "A",
     "gunClass": "SHOTGUN",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 240,
     "reloadTime": 1.5,
@@ -9192,6 +9312,7 @@
         "projectiles": [
           {
             "id": 114802611533702220,
+            "ignoreDamageCaps": true,
             "damage": 200,
             "speed": 100,
             "range": 3.5,
@@ -9376,6 +9497,7 @@
         "projectiles": [
           {
             "id": 114833481146952400,
+            "ignoreDamageCaps": true,
             "damage": 140,
             "speed": 600,
             "range": 1000,
@@ -9409,6 +9531,7 @@
         "projectiles": [
           {
             "id": 114833481146952400,
+            "ignoreDamageCaps": true,
             "damage": 140,
             "speed": 600,
             "range": 1000,
@@ -9524,7 +9647,13 @@
     "gunNameInternal": "Mutated Tech Arm",
     "quality": "SPECIAL",
     "gunClass": "BEAM",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -9668,7 +9797,13 @@
     "gunNameInternal": "Shovel Gung",
     "quality": "A",
     "gunClass": "SILLY",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 180,
     "reloadTime": 1.7,
@@ -10021,7 +10156,13 @@
     "gunNameInternal": "Proton Pack",
     "quality": "SPECIAL",
     "gunClass": "BEAM",
-    "playerStatModifiers": [],
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.8
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 1000,
     "reloadTime": 0,
