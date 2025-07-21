@@ -2,7 +2,9 @@ import chalk from "chalk";
 import z from "zod/v4";
 import invert from "lodash/invert.js";
 import uniqBy from "lodash/uniqBy.js";
-import { GunClass, ItemQuality, ShootStyle } from "../gun/gun.dto.ts";
+import countBy from "lodash/countBy.js";
+import keyBy from "lodash/keyBy.js";
+import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
 import { videos } from "../gun/gun.meta.ts";
 import { Gun, ProjectileMode } from "./pickup-object.model.ts";
 import { TranslationRepository } from "../translation/translation.repository.ts";
@@ -13,10 +15,13 @@ import type { TGun, TProjectile, TProjectileMode } from "./pickup-object.model.t
 import type { TGunDto } from "../gun/gun.dto.ts";
 import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import { applySpecialCases } from "./apply-special-cases.ts";
+import { StatModifier } from "../player/player.dto.ts";
 
 const gunQualityTextLookup = invert(ItemQuality);
 const gunClassTextLookup = invert(GunClass);
 const shootStyleTextLookup = invert(ShootStyle);
+const modifyMethodTextLookup = invert(StatModifier.ModifyMethod);
+const statTypeTextLookup = invert(StatModifier.StatType);
 
 const unusedGunIds = new Set([
   // https://enterthegungeon.fandom.com/wiki/Black_Revolver
@@ -33,8 +38,9 @@ const unusedGunIds = new Set([
   46,
 ]);
 
-function buildProjectile(projDto: TProjectileDto): TProjectile {
+function buildProjectile(id: number, projDto: TProjectileDto): TProjectile {
   const proj: TProjectile = {
+    id,
     damage: projDto.baseData.damage,
     speed: projDto.baseData.speed,
     range: projDto.baseData.range,
@@ -56,6 +62,18 @@ function buildProjectile(projDto: TProjectileDto): TProjectile {
   if (projDto.AppliesCheese) proj.cheeseChance = projDto.CheeseApplyChance;
 
   return proj;
+}
+
+function computeProjectileSpawnWeight(projectiles: TProjectile[]): TProjectile[] {
+  const projectileCount = countBy(projectiles, (p) => p.id);
+  const projectileLookup = keyBy(projectiles, (p) => p.id);
+  const uniqProjectiles = Object.values(projectileLookup);
+
+  if (uniqProjectiles.length === 1) {
+    return uniqProjectiles;
+  }
+
+  return uniqProjectiles.map((p) => ({ ...p, spawnWeight: projectileCount[p.id] }));
 }
 
 function buildProjectileModules(gunDto: TGunDto, projectileRepo: ProjectileRepository): TProjectileMode[] {
@@ -101,17 +119,25 @@ function buildProjectileModules(gunDto: TGunDto, projectileRepo: ProjectileRepos
           magazineSize: mod.numberOfShotsInClip,
           spread: mod.angleVariance,
           chargeTime: p.ChargeTime,
-          projectiles: [buildProjectile(projDto)],
+          projectiles: [buildProjectile(p.Projectile.fileID, projDto)],
         });
       }
     } else {
+      let projectiles = mod.projectiles
+        .filter((p) => p.guid)
+        .map((p) => buildProjectile(p.fileID, getProjectile(p.guid!)));
+
+      if (mod.sequenceStyle === ProjectileSequenceStyle.Random) {
+        projectiles = computeProjectileSpawnWeight(projectiles);
+      }
+
       projectileModes.push({
         name: "Default",
         shootStyle: shootStyleTextLookup[mod.shootStyle] as keyof typeof ShootStyle,
         cooldownTime: mod.cooldownTime,
         magazineSize: mod.numberOfShotsInClip,
         spread: mod.angleVariance,
-        projectiles: mod.projectiles.filter((p) => p.guid).map((p) => buildProjectile(getProjectile(p.guid!))),
+        projectiles,
       });
     }
   }
@@ -154,6 +180,8 @@ export function buildGunModel({
     if (entry.isInfiniteAmmoGun) featureFlags.push("hasInfiniteAmmo");
     if (entry.doesntDamageSecretWalls) featureFlags.push("doesntDamageSecretWalls");
 
+    const allStatModifiers = gunDto.currentGunStatModifiers.concat(gunDto.passiveStatModifiers ?? []);
+
     return Gun.parse(
       applySpecialCases({
         ...texts,
@@ -162,6 +190,11 @@ export function buildGunModel({
         gunNameInternal: gunDto.gunName,
         quality: gunQualityTextLookup[gunDto.quality] as keyof typeof ItemQuality,
         gunClass: gunClassTextLookup[gunDto.gunClass] as keyof typeof GunClass,
+        playerStatModifiers: allStatModifiers.map((m) => ({
+          statToBoost: statTypeTextLookup[m.statToBoost],
+          modifyType: modifyMethodTextLookup[m.modifyType] as keyof typeof StatModifier.ModifyMethod,
+          amount: m.amount,
+        })),
         maxAmmo: gunDto.maxAmmo,
         reloadTime: gunDto.reloadTime,
         featureFlags,

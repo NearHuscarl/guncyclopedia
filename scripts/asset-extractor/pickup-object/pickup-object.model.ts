@@ -1,5 +1,6 @@
 import z from "zod/v4";
 import { Percentage } from "../utils/schema.ts";
+import { StatModifier } from "../player/player.dto.ts";
 
 const PickupObject = z.object({
   id: z.number(),
@@ -10,12 +11,22 @@ const PickupObject = z.object({
 });
 
 const Projectile = z.object({
+  // fileID of the block in the prefab file
+  id: z.number(),
   damage: z.number(),
   speed: z.number(),
   range: z.number(),
   force: z.number(),
+
   /**
-   * Chance to apply a status effect per second. If a beam weapon has status effects, the default value is `1`
+   * Chance to spawn this projectile = `spawnWeight / projectileModes.length`.
+   */
+  spawnWeight: z.number().optional(),
+
+  /**
+   * Chance to apply a status effect per second.
+   *
+   * If a beam weapon has status effects, the default is `1`
    *
    * For [Science Cannon](https://enterthegungeon.fandom.com/wiki/Science_Cannon), multiple effects can be applied at the same time.
    */
@@ -61,6 +72,13 @@ export const Gun = PickupObject.extend({
     "SHITTY",
     "CHARGE",
   ]),
+  playerStatModifiers: z.array(
+    z.object({
+      statToBoost: z.enum(Object.keys(StatModifier.StatType)),
+      modifyType: z.enum(["ADDITIVE", "MULTIPLICATIVE"]),
+      amount: z.number(),
+    })
+  ),
   projectileModes: z.array(ProjectileMode),
   maxAmmo: z.number(),
   reloadTime: z.number(),

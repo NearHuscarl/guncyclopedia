@@ -8,6 +8,7 @@
     "gunNameInternal": "38 Special",
     "quality": "D",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -17,6 +18,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114896789340300930,
             "damage": 5,
             "speed": 23,
             "range": 35,
@@ -38,6 +40,7 @@
     "gunNameInternal": "38 Special",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -47,6 +50,7 @@
         "spread": 3,
         "projectiles": [
           {
+            "id": 114896789340300930,
             "damage": 5,
             "speed": 23,
             "range": 35,
@@ -68,6 +72,7 @@
     "gunNameInternal": "AK-47",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -77,6 +82,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114185699992755520,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
@@ -98,6 +104,7 @@
     "gunNameInternal": "AKey-47",
     "quality": "S",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -107,6 +114,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114567482076009760,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
@@ -128,6 +136,7 @@
     "gunNameInternal": "AKey-47",
     "quality": "EXCLUDED",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -137,6 +146,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114274964049860530,
             "damage": 10,
             "speed": 15,
             "range": 1000,
@@ -158,6 +168,7 @@
     "gunNameInternal": "Gungeon Ant",
     "quality": "C",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 1.2,
@@ -172,6 +183,7 @@
     "gunNameInternal": "Gungeon Ant",
     "quality": "EXCLUDED",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -181,6 +193,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114012325946609900,
             "damage": 20,
             "speed": 40,
             "range": 90,
@@ -202,6 +215,7 @@
     "gunNameInternal": "Anvil Gun",
     "quality": "C",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -212,6 +226,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114315542973814900,
             "damage": 35,
             "speed": 13,
             "range": 50,
@@ -234,6 +249,7 @@
     "gunNameInternal": "Artful Shooter",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -243,6 +259,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114560402299873250,
             "damage": 14,
             "speed": 18,
             "range": 60,
@@ -264,6 +281,7 @@
     "gunNameInternal": "AWP",
     "quality": "A",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -273,6 +291,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114862927331148030,
             "damage": 40,
             "speed": 100,
             "range": 1000,
@@ -294,6 +313,7 @@
     "gunNameInternal": "AWP",
     "quality": "SPECIAL",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -303,6 +323,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114905819903621260,
             "damage": 65,
             "speed": 100,
             "range": 1000,
@@ -325,6 +346,7 @@
     "gunNameInternal": "Banana",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -335,6 +357,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114370423634914060,
             "damage": 10,
             "speed": 15,
             "range": 25,
@@ -356,6 +379,7 @@
     "gunNameInternal": "Banana",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -366,6 +390,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114344603957675460,
             "damage": 10,
             "speed": 15,
             "range": 25,
@@ -387,6 +412,7 @@
     "gunNameInternal": "Baretta",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -396,6 +422,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114951707549892770,
             "damage": 6.5,
             "speed": 23,
             "range": 60,
@@ -417,6 +444,7 @@
     "gunNameInternal": "Baretta",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -426,6 +454,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114631968641731820,
             "damage": 11,
             "speed": 23,
             "range": 60,
@@ -449,6 +478,7 @@
     "gunNameInternal": "Beehive",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -458,6 +488,7 @@
         "spread": 90,
         "projectiles": [
           {
+            "id": 114426586698194270,
             "damage": 3,
             "speed": 9,
             "range": 1000,
@@ -479,6 +510,7 @@
     "gunNameInternal": "Beehive",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -488,6 +520,7 @@
         "spread": 90,
         "projectiles": [
           {
+            "id": 114426586698194270,
             "damage": 3,
             "speed": 9,
             "range": 1000,
@@ -509,6 +542,7 @@
     "gunNameInternal": "Big Iron",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.2,
@@ -523,6 +557,7 @@
     "gunNameInternal": "Big Iron",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.2,
@@ -537,6 +572,7 @@
     "gunNameInternal": "Black Hole Gun",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -547,6 +583,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114525911470657180,
             "damage": 10,
             "speed": 4,
             "range": 1000,
@@ -568,6 +605,7 @@
     "gunNameInternal": "Deck_4RD",
     "quality": "A",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -577,6 +615,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114415159422265140,
             "damage": 5,
             "speed": 20,
             "range": 1000,
@@ -598,6 +637,7 @@
     "gunNameInternal": "Blasphemy",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -607,6 +647,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114079867983711070,
             "damage": 14,
             "speed": 26,
             "range": 1000,
@@ -631,6 +672,7 @@
     "gunNameInternal": "Blasphemy",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -640,6 +682,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114784837184282290,
             "damage": 14,
             "speed": 26,
             "range": 1000,
@@ -664,6 +707,7 @@
     "gunNameInternal": "Block Gun",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -673,6 +717,7 @@
         "spread": 2,
         "projectiles": [
           {
+            "id": 114062563903367550,
             "damage": 10,
             "speed": 20,
             "range": 1000,
@@ -694,6 +739,7 @@
     "gunNameInternal": "Blunderbuss",
     "quality": "D",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 1.2,
@@ -708,6 +754,7 @@
     "gunNameInternal": "Blunderbuss",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 1.2,
@@ -722,6 +769,7 @@
     "gunNameInternal": "Jolt Pistol",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -731,6 +779,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114049427272450990,
             "damage": 13,
             "speed": 25,
             "range": 25,
@@ -752,6 +801,7 @@
     "gunNameInternal": "Jolt Pistol",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -761,6 +811,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114363460507142560,
             "damage": 13,
             "speed": 35,
             "range": 25,
@@ -782,6 +833,7 @@
     "gunNameInternal": "Bomb Gun",
     "quality": "D",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -792,6 +844,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114665645265612270,
             "damage": 15,
             "speed": 20,
             "range": 25,
@@ -813,6 +866,7 @@
     "gunNameInternal": "Bomb Gun",
     "quality": "SPECIAL",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -823,6 +877,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114895260224878480,
             "damage": 15,
             "speed": 20,
             "range": 25,
@@ -844,6 +899,7 @@
     "gunNameInternal": "Wood Bow",
     "quality": "C",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged lvl 1",
@@ -854,6 +910,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114350962351239790,
             "damage": 7.5,
             "speed": 25,
             "range": 1000,
@@ -870,6 +927,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114605777448037490,
             "damage": 30,
             "speed": 45,
             "range": 1000,
@@ -891,6 +949,7 @@
     "gunNameInternal": "Laser Rifle",
     "quality": "C",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -900,6 +959,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114651785991298960,
             "damage": 5,
             "speed": 200,
             "range": 60,
@@ -921,6 +981,7 @@
     "gunNameInternal": "Laser Rifle",
     "quality": "SPECIAL",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -930,6 +991,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114222065062734940,
             "damage": 5,
             "speed": 200,
             "range": 60,
@@ -951,6 +1013,7 @@
     "gunNameInternal": "Charmed Bow",
     "quality": "B",
     "gunClass": "CHARM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged lvl 1",
@@ -961,6 +1024,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114350962351239790,
             "damage": 7.5,
             "speed": 25,
             "range": 1000,
@@ -977,6 +1041,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114918469592481650,
             "damage": 14,
             "speed": 45,
             "range": 1000,
@@ -999,6 +1064,7 @@
     "gunNameInternal": "Cool Bow",
     "quality": "EXCLUDED",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -1009,6 +1075,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114389121676312930,
             "damage": 50,
             "speed": 60,
             "range": 1000,
@@ -1030,6 +1097,7 @@
     "gunNameInternal": "Comm4nd0",
     "quality": "B",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1039,6 +1107,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114642402486159550,
             "damage": 20,
             "speed": 14,
             "range": 90,
@@ -1060,6 +1129,7 @@
     "gunNameInternal": "Comm4nd0",
     "quality": "EXCLUDED",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1069,6 +1139,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114642402486159550,
             "damage": 20,
             "speed": 14,
             "range": 90,
@@ -1090,6 +1161,7 @@
     "gunNameInternal": "BSG",
     "quality": "S",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -1100,6 +1172,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114864704904430960,
             "damage": 50,
             "speed": 10,
             "range": 10,
@@ -1121,6 +1194,7 @@
     "gunNameInternal": "Gun Bow",
     "quality": "A",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -1131,6 +1205,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114840640322856830,
             "damage": 35,
             "speed": 500,
             "range": 1000,
@@ -1152,6 +1227,7 @@
     "gunNameInternal": "Gun Bow",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -1162,6 +1238,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114052885507126190,
             "damage": 35,
             "speed": 500,
             "range": 1000,
@@ -1183,6 +1260,7 @@
     "gunNameInternal": "Bundle Of Wands",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.5,
@@ -1197,6 +1275,7 @@
     "gunNameInternal": "Burning Hand",
     "quality": "B",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1206,6 +1285,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114330716428537250,
             "damage": 2,
             "speed": 23,
             "range": 1000,
@@ -1228,6 +1308,7 @@
     "gunNameInternal": "Burning Hand",
     "quality": "SPECIAL",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1237,6 +1318,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114985187137260260,
             "damage": 1.35,
             "speed": 23,
             "range": 1000,
@@ -1258,6 +1340,7 @@
     "gunNameInternal": "Cactus",
     "quality": "C",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1267,6 +1350,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114463286814687100,
             "damage": 2.5,
             "speed": 60,
             "range": 1000,
@@ -1288,6 +1372,7 @@
     "gunNameInternal": "Cactus",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1297,6 +1382,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114463286814687100,
             "damage": 2.5,
             "speed": 60,
             "range": 1000,
@@ -1318,6 +1404,7 @@
     "gunNameInternal": "Spy Camera",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -1328,6 +1415,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114075948131093540,
             "damage": 10,
             "speed": 1,
             "range": 1,
@@ -1349,6 +1437,7 @@
     "gunNameInternal": "Microtransaction Gun",
     "quality": "A",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 400,
     "reloadTime": 0.3,
@@ -1363,6 +1452,7 @@
     "gunNameInternal": "Mindmunch",
     "quality": "A",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1372,6 +1462,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114998860674079330,
             "damage": 10,
             "speed": 20,
             "range": 1000,
@@ -1393,6 +1484,7 @@
     "gunNameInternal": "Mindmunch",
     "quality": "EXCLUDED",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 75,
     "reloadTime": 1.5,
@@ -1407,6 +1499,7 @@
     "gunNameInternal": "Charge Shot",
     "quality": "B",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -1417,6 +1510,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114987675762209600,
             "damage": 30,
             "speed": 30,
             "range": 1000,
@@ -1438,6 +1532,7 @@
     "gunNameInternal": "Claw",
     "quality": "A",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1447,6 +1542,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114231256280379180,
             "damage": 2,
             "speed": 23,
             "range": 1000,
@@ -1468,6 +1564,7 @@
     "gunNameInternal": "Cold 45",
     "quality": "B",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1477,6 +1574,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114392019431499090,
             "damage": 6,
             "speed": 28,
             "range": 35,
@@ -1499,6 +1597,7 @@
     "gunNameInternal": "Colt 1851",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1508,6 +1607,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114797807333792260,
             "damage": 6,
             "speed": 25,
             "range": 1000,
@@ -1529,6 +1629,7 @@
     "gunNameInternal": "Composite Gun",
     "quality": "S",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 50,
     "reloadTime": 0.6,
@@ -1543,6 +1644,7 @@
     "gunNameInternal": "Crescent Moon Crossbow",
     "quality": "A",
     "gunClass": "CHARM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -1553,6 +1655,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114091663553609040,
             "damage": 8,
             "speed": 22,
             "range": 1000,
@@ -1569,6 +1672,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114856462997942980,
             "damage": 22,
             "speed": 32,
             "range": 1000,
@@ -1590,6 +1694,7 @@
     "gunNameInternal": "Fallen Crest",
     "quality": "C",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1599,6 +1704,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114683674297976060,
             "damage": 10,
             "speed": 40,
             "range": 1000,
@@ -1621,6 +1727,7 @@
     "gunNameInternal": "Fallen Crest",
     "quality": "SPECIAL",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1630,6 +1737,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114683674297976060,
             "damage": 10,
             "speed": 40,
             "range": 1000,
@@ -1652,6 +1760,7 @@
     "gunNameInternal": "Crossbow",
     "quality": "D",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1661,6 +1770,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114984880685952910,
             "damage": 22,
             "speed": 26,
             "range": 1000,
@@ -1682,6 +1792,7 @@
     "gunNameInternal": "Shotbow",
     "quality": "B",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 80,
     "reloadTime": 1.5,
@@ -1696,6 +1807,7 @@
     "gunNameInternal": "Shotbow",
     "quality": "EXCLUDED",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 80,
     "reloadTime": 1.5,
@@ -1710,6 +1822,7 @@
     "gunNameInternal": "Excellent Prismatic Spray",
     "quality": "C",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1719,6 +1832,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114801085712679550,
             "damage": 4.5,
             "speed": 60,
             "range": 1000,
@@ -1740,6 +1854,7 @@
     "gunNameInternal": "Excellent Prismatic Spray",
     "quality": "EXCLUDED",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1749,6 +1864,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114801085712679550,
             "damage": 4.5,
             "speed": 60,
             "range": 1000,
@@ -1770,6 +1886,7 @@
     "gunNameInternal": "Dart Gun",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1779,6 +1896,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114700039904118530,
             "damage": 6,
             "speed": 20,
             "range": 25,
@@ -1803,6 +1921,7 @@
     "gunNameInternal": "Dart Gun",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1812,6 +1931,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114450284148686940,
             "damage": 6,
             "speed": 20,
             "range": 25,
@@ -1836,6 +1956,7 @@
     "gunNameInternal": "Demon Head",
     "quality": "B",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1845,6 +1966,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114567625487047950,
             "damage": 31,
             "speed": 100,
             "range": 40,
@@ -1867,6 +1989,7 @@
     "gunNameInternal": "Baretta",
     "quality": "D",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -1876,6 +1999,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114482169170237180,
             "damage": 10,
             "speed": 23,
             "range": 60,
@@ -1897,6 +2021,7 @@
     "gunNameInternal": "Dungeon Eagle",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -1907,6 +2032,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114946625181095760,
             "damage": 10,
             "speed": 25,
             "range": 60,
@@ -1923,6 +2049,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114085505438899120,
             "damage": 20,
             "speed": 30,
             "range": 60,
@@ -1944,6 +2071,7 @@
     "gunNameInternal": "Dungeon Eagle",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -1954,6 +2082,7 @@
         "spread": 3,
         "projectiles": [
           {
+            "id": 114946625181095760,
             "damage": 10,
             "speed": 25,
             "range": 60,
@@ -1970,6 +2099,7 @@
         "spread": 3,
         "projectiles": [
           {
+            "id": 114682527533988050,
             "damage": 20,
             "speed": 30,
             "range": 60,
@@ -1991,6 +2121,7 @@
     "gunNameInternal": "Disintegrator",
     "quality": "B",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2000,6 +2131,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114230268509808770,
             "damage": 26,
             "speed": 90,
             "range": 500,
@@ -2027,6 +2159,7 @@
     "gunNameInternal": "Distortion Launcher",
     "quality": "S",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2036,6 +2169,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114323651490818080,
             "damage": 30,
             "speed": 10,
             "range": 10,
@@ -2057,6 +2191,7 @@
     "gunNameInternal": "Space Marshal",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2066,6 +2201,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114718794898545440,
             "damage": 9,
             "speed": 35,
             "range": 35,
@@ -2087,6 +2223,7 @@
     "gunNameInternal": "Dragonbreath Gun",
     "quality": "A",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2096,6 +2233,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114239973350516750,
             "damage": 6.5,
             "speed": 25,
             "range": 1000,
@@ -2118,6 +2256,7 @@
     "gunNameInternal": "Dragonbreath Gun",
     "quality": "SPECIAL",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2127,6 +2266,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114452201114156270,
             "damage": 5,
             "speed": 25,
             "range": 1000,
@@ -2149,6 +2289,7 @@
     "gunNameInternal": "Dueling Pistol",
     "quality": "D",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2158,6 +2299,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114896254347626500,
             "damage": 10,
             "speed": 30,
             "range": 1000,
@@ -2179,6 +2321,7 @@
     "gunNameInternal": "Dueling Pistol",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2188,6 +2331,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114896254347626500,
             "damage": 10,
             "speed": 30,
             "range": 1000,
@@ -2209,6 +2353,7 @@
     "gunNameInternal": "Std. Issue Laser",
     "quality": "B",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2218,6 +2363,7 @@
         "spread": 13,
         "projectiles": [
           {
+            "id": 114947591078892370,
             "damage": 10,
             "speed": 35,
             "range": 15,
@@ -2239,6 +2385,7 @@
     "gunNameInternal": "Std. Issue Laser",
     "quality": "SPECIAL",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2248,6 +2395,7 @@
         "spread": 2,
         "projectiles": [
           {
+            "id": 114497622523703890,
             "damage": 10,
             "speed": 200,
             "range": 1000,
@@ -2269,6 +2417,7 @@
     "gunNameInternal": "Bullet Blaster",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2278,6 +2427,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114629037993422940,
             "damage": 2.2,
             "speed": 40,
             "range": 14,
@@ -2299,6 +2449,7 @@
     "gunNameInternal": "Electric Guitar Gun",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 600,
     "reloadTime": 1.2,
@@ -2313,6 +2464,7 @@
     "gunNameInternal": "Electric Guitar Gun",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 600,
     "reloadTime": 1.2,
@@ -2327,6 +2479,7 @@
     "gunNameInternal": "Electric Rifle",
     "quality": "B",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2336,6 +2489,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114508316777118140,
             "damage": 8,
             "speed": 140,
             "range": 1000,
@@ -2357,6 +2511,7 @@
     "gunNameInternal": "Electric Rifle",
     "quality": "EXCLUDED",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2366,6 +2521,7 @@
         "spread": 3,
         "projectiles": [
           {
+            "id": 114508316777118140,
             "damage": 8,
             "speed": 140,
             "range": 1000,
@@ -2387,6 +2543,7 @@
     "gunNameInternal": "Electro Shark",
     "quality": "A",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2396,6 +2553,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114260816434973540,
             "damage": 7,
             "speed": 20,
             "range": 50,
@@ -2417,6 +2575,7 @@
     "gunNameInternal": "Elephant Gun",
     "quality": "C",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.5,
@@ -2431,6 +2590,7 @@
     "gunNameInternal": "Elephant Gun",
     "quality": "SPECIAL",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.5,
@@ -2445,6 +2605,7 @@
     "gunNameInternal": "Energy Cannon",
     "quality": "S",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2454,6 +2615,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114402962887994610,
             "damage": 70,
             "speed": 120,
             "range": 50,
@@ -2475,6 +2637,13 @@
     "gunNameInternal": "Enginge Gun",
     "quality": "S",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "MovementSpeed",
+        "modifyType": "ADDITIVE",
+        "amount": 2.25
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -2484,6 +2653,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114653091730260700,
             "damage": 5,
             "speed": 35,
             "range": 1000,
@@ -2505,6 +2675,7 @@
     "gunNameInternal": "Excaliber",
     "quality": "S",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2514,6 +2685,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114348863400142180,
             "damage": 7,
             "speed": 30,
             "range": 1000,
@@ -2535,6 +2707,13 @@
     "gunNameInternal": "Hero's Blade",
     "quality": "S",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 2
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -2544,6 +2723,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114474206188037740,
             "damage": 6,
             "speed": 23,
             "range": 50,
@@ -2565,6 +2745,7 @@
     "gunNameInternal": "Eyeball Gun",
     "quality": "C",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2574,6 +2755,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114622847827339000,
             "damage": 7,
             "speed": 15,
             "range": 15,
@@ -2595,6 +2777,7 @@
     "gunNameInternal": "Eyeball Gun",
     "quality": "EXCLUDED",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2604,6 +2787,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114622847827339000,
             "damage": 7,
             "speed": 15,
             "range": 15,
@@ -2625,6 +2809,13 @@
     "gunNameInternal": "Finished Gun",
     "quality": "S",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 5
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -2634,6 +2825,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114219598290014340,
             "damage": 14,
             "speed": 30,
             "range": 1000,
@@ -2655,6 +2847,7 @@
     "gunNameInternal": "Barrel",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2664,6 +2857,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114825618809788800,
             "damage": 8,
             "speed": 20,
             "range": 1000,
@@ -2686,6 +2880,7 @@
     "gunNameInternal": "Barrel",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2695,6 +2890,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114079902179257150,
             "damage": 5,
             "speed": 23,
             "range": 35,
@@ -2716,6 +2912,7 @@
     "gunNameInternal": "Flare Gun",
     "quality": "D",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2725,6 +2922,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114360702715392180,
             "damage": 13,
             "speed": 23,
             "range": 1000,
@@ -2747,6 +2945,7 @@
     "gunNameInternal": "Flare Gun",
     "quality": "SPECIAL",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2756,6 +2955,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114335673409713420,
             "damage": 13,
             "speed": 23,
             "range": 1000,
@@ -2778,6 +2978,7 @@
     "gunNameInternal": "Retro Special",
     "quality": "D",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2787,6 +2988,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114628041183583360,
             "damage": 7.5,
             "speed": 600,
             "range": 1000,
@@ -2808,6 +3010,7 @@
     "gunNameInternal": "Retro Special",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2817,6 +3020,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114294112522023780,
             "damage": 7.5,
             "speed": 600,
             "range": 1000,
@@ -2838,6 +3042,7 @@
     "gunNameInternal": "Fossilized Gun",
     "quality": "D",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2847,6 +3052,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114010753331923440,
             "damage": 15,
             "speed": 15,
             "range": 20,
@@ -2868,6 +3074,7 @@
     "gunNameInternal": "Freeze Ray",
     "quality": "A",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2877,6 +3084,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114681434351488620,
             "damage": 20,
             "speed": 60,
             "range": 30,
@@ -2899,6 +3107,7 @@
     "gunNameInternal": "Freeze Ray",
     "quality": "EXCLUDED",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2908,6 +3117,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114681434351488620,
             "damage": 20,
             "speed": 60,
             "range": 30,
@@ -2930,6 +3140,7 @@
     "gunNameInternal": "ChromeAssault",
     "quality": "C",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2939,6 +3150,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114092331556137810,
             "damage": 3.5,
             "speed": 30,
             "range": 50,
@@ -2960,6 +3172,7 @@
     "gunNameInternal": "ChromeAssault",
     "quality": "EXCLUDED",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -2969,6 +3182,7 @@
         "spread": 2,
         "projectiles": [
           {
+            "id": 114125533548100720,
             "damage": 3.5,
             "speed": 30,
             "range": 50,
@@ -2991,6 +3205,7 @@
     "gunNameInternal": "Gilded Hydra",
     "quality": "S",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 50,
     "reloadTime": 2,
@@ -3005,6 +3220,7 @@
     "gunNameInternal": "Au Gun",
     "quality": "S",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3014,6 +3230,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114286395352330050,
             "damage": 100,
             "speed": 25,
             "range": 1000,
@@ -3035,6 +3252,18 @@
     "gunNameInternal": "Gold Double-Barrel Shotgun",
     "quality": "A",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Damage",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 1.7
+      },
+      {
+        "statToBoost": "Coolness",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.2,
@@ -3049,6 +3278,7 @@
     "gunNameInternal": "Guzheng",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3058,6 +3288,7 @@
         "spread": 35,
         "projectiles": [
           {
+            "id": 114610194431727940,
             "damage": 6,
             "speed": 23,
             "range": 1000,
@@ -3079,6 +3310,7 @@
     "gunNameInternal": "H4MMER",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3088,6 +3320,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114093482670022420,
             "damage": 3.8,
             "speed": 23,
             "range": 1000,
@@ -3109,6 +3342,7 @@
     "gunNameInternal": "H4MMER",
     "quality": "SPECIAL",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3118,6 +3352,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114093482670022420,
             "damage": 3.8,
             "speed": 23,
             "range": 1000,
@@ -3139,6 +3374,7 @@
     "gunNameInternal": "Hand Crossbow",
     "quality": "EXCLUDED",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3148,6 +3384,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114125458338948370,
             "damage": 14,
             "speed": 25,
             "range": 1000,
@@ -3169,6 +3406,7 @@
     "gunNameInternal": "Hmon Autorifle",
     "quality": "EXCLUDED",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3178,6 +3416,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114306015487110130,
             "damage": 8,
             "speed": 23,
             "range": 1000,
@@ -3199,6 +3438,7 @@
     "gunNameInternal": "Improvised Magic Gun",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3208,6 +3448,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114313037067296290,
             "damage": 7,
             "speed": 25,
             "range": 1000,
@@ -3229,6 +3470,7 @@
     "gunNameInternal": "Ice Breaker",
     "quality": "B",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 0.9,
@@ -3243,6 +3485,7 @@
     "gunNameInternal": "Ice Breaker",
     "quality": "EXCLUDED",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 0.9,
@@ -3257,6 +3500,7 @@
     "gunNameInternal": "Ice Giant Handgun",
     "quality": "B",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 130,
     "reloadTime": 1.6,
@@ -3271,6 +3515,7 @@
     "gunNameInternal": "Ice Gun",
     "quality": "A",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3280,6 +3525,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114413286563126990,
             "damage": 8,
             "speed": 18,
             "range": 35,
@@ -3301,6 +3547,7 @@
     "gunNameInternal": "Alien Engine",
     "quality": "B",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3310,6 +3557,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114509491164920210,
             "damage": 10,
             "speed": 30,
             "range": 3,
@@ -3332,6 +3580,7 @@
     "gunNameInternal": "Alien Engine",
     "quality": "EXCLUDED",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3341,6 +3590,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114264750226239100,
             "damage": 10,
             "speed": 30,
             "range": 3,
@@ -3363,6 +3613,7 @@
     "gunNameInternal": "Kirkcannon",
     "quality": "S",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 1,
     "reloadTime": 2.1,
@@ -3377,6 +3628,7 @@
     "gunNameInternal": "Klobbe",
     "quality": "D",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3386,6 +3638,7 @@
         "spread": 20,
         "projectiles": [
           {
+            "id": 114183794164890460,
             "damage": 1.2,
             "speed": 14,
             "range": 1000,
@@ -3407,6 +3660,7 @@
     "gunNameInternal": "Klobbe",
     "quality": "EXCLUDED",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 900,
     "reloadTime": 2,
@@ -3421,6 +3675,7 @@
     "gunNameInternal": "Rogue Special",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3430,6 +3685,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114306914266468600,
             "damage": 5,
             "speed": 22,
             "range": 13,
@@ -3454,6 +3710,7 @@
     "gunNameInternal": "Rogue Special",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3463,6 +3720,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114311301201095100,
             "damage": 5,
             "speed": 22,
             "range": 13,
@@ -3487,6 +3745,7 @@
     "gunNameInternal": "Lamp",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3496,6 +3755,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114221102145965680,
             "damage": 8,
             "speed": 12,
             "range": 1000,
@@ -3517,6 +3777,7 @@
     "gunNameInternal": "Lawgiver",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3526,6 +3787,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114901061687978880,
             "damage": 7.5,
             "speed": 30,
             "range": 1000,
@@ -3547,6 +3809,7 @@
     "gunNameInternal": "Blooper",
     "quality": "B",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 80,
     "reloadTime": 2,
@@ -3561,6 +3824,7 @@
     "gunNameInternal": "Lower Case r",
     "quality": "D",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 900,
     "reloadTime": 2,
@@ -3575,6 +3839,7 @@
     "gunNameInternal": "Lower Case r",
     "quality": "EXCLUDED",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 900,
     "reloadTime": 2,
@@ -3589,6 +3854,7 @@
     "gunNameInternal": "M1 Rifle",
     "quality": "C",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3598,6 +3864,7 @@
         "spread": 2,
         "projectiles": [
           {
+            "id": 114363225498455260,
             "damage": 20,
             "speed": 200,
             "range": 60,
@@ -3619,6 +3886,7 @@
     "gunNameInternal": "M16",
     "quality": "A",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3628,6 +3896,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114653584098832660,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
@@ -3649,6 +3918,7 @@
     "gunNameInternal": "M1911",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3658,6 +3928,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114065052545340300,
             "damage": 8,
             "speed": 23,
             "range": 60,
@@ -3679,6 +3950,7 @@
     "gunNameInternal": "M1 Rifle",
     "quality": "SPECIAL",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3688,6 +3960,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114363225498455260,
             "damage": 20,
             "speed": 200,
             "range": 60,
@@ -3709,6 +3982,7 @@
     "gunNameInternal": "M79 Grenade Launcher",
     "quality": "B",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3718,6 +3992,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114727401617507470,
             "damage": 10,
             "speed": 20,
             "range": 20,
@@ -3739,6 +4014,7 @@
     "gunNameInternal": "MAC10",
     "quality": "C",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3748,6 +4024,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114784569087986910,
             "damage": 3.5,
             "speed": 23,
             "range": 1000,
@@ -3769,6 +4046,7 @@
     "gunNameInternal": "Machine Gun Hand",
     "quality": "A",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3778,6 +4056,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114461262978510300,
             "damage": 4,
             "speed": 27,
             "range": 1000,
@@ -3799,6 +4078,7 @@
     "gunNameInternal": "Spell Action Revolver",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3808,6 +4088,7 @@
         "spread": 2,
         "projectiles": [
           {
+            "id": 114653398868583620,
             "damage": 6,
             "speed": 27,
             "range": 1000,
@@ -3829,6 +4110,7 @@
     "gunNameInternal": "Sorcerer Rifle",
     "quality": "B",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3838,6 +4120,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114565264539953330,
             "damage": 35,
             "speed": 200,
             "range": 1000,
@@ -3859,6 +4142,7 @@
     "gunNameInternal": "Magnum",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3868,6 +4152,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114272768402858540,
             "damage": 13,
             "speed": 23,
             "range": 60,
@@ -3889,6 +4174,7 @@
     "gunNameInternal": "Magnum",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3898,6 +4184,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114272768402858540,
             "damage": 13,
             "speed": 23,
             "range": 60,
@@ -3919,6 +4206,7 @@
     "gunNameInternal": "Mailbox",
     "quality": "D",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3928,6 +4216,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114556825349328370,
             "damage": 5,
             "speed": 22,
             "range": 1000,
@@ -3949,6 +4238,7 @@
     "gunNameInternal": "Makarov",
     "quality": "D",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3958,6 +4248,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114269592593992900,
             "damage": 5,
             "speed": 23,
             "range": 60,
@@ -3979,6 +4270,7 @@
     "gunNameInternal": "Mask Gun",
     "quality": "S",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -3988,6 +4280,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114495915252017580,
             "damage": 6,
             "speed": 16,
             "range": 50,
@@ -4012,6 +4305,7 @@
     "gunNameInternal": "Big Bang",
     "quality": "S",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 250,
     "reloadTime": 1.5,
@@ -4026,6 +4320,7 @@
     "gunNameInternal": "Grey Mauser",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4035,6 +4330,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114311944587215250,
             "damage": 8,
             "speed": 32,
             "range": 1000,
@@ -4056,6 +4352,7 @@
     "gunNameInternal": "Tiger",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -4066,6 +4363,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114859311110804690,
             "damage": 10,
             "speed": 20,
             "range": 1000,
@@ -4088,6 +4386,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "B",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -4098,6 +4397,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114356007251169310,
             "damage": 6,
             "speed": 20,
             "range": 1000,
@@ -4114,6 +4414,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114908166823623360,
             "damage": 45,
             "speed": 25,
             "range": 1000,
@@ -4135,6 +4436,7 @@
     "gunNameInternal": "Mermaid Gun",
     "quality": "C",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 1.5,
@@ -4149,6 +4451,7 @@
     "gunNameInternal": "Reaction Jacktor",
     "quality": "B",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 1.2,
@@ -4163,6 +4466,7 @@
     "gunNameInternal": "Vulcan Cannon",
     "quality": "S",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4172,6 +4476,7 @@
         "spread": 12,
         "projectiles": [
           {
+            "id": 114176452529780020,
             "damage": 5,
             "speed": 50,
             "range": 1000,
@@ -4193,6 +4498,7 @@
     "gunNameInternal": "Vulcan Cannon",
     "quality": "SPECIAL",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4202,6 +4508,7 @@
         "spread": 9,
         "projectiles": [
           {
+            "id": 114176452529780020,
             "damage": 5,
             "speed": 50,
             "range": 1000,
@@ -4223,6 +4530,7 @@
     "gunNameInternal": "Mining Laser",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 250,
     "reloadTime": 1.2,
@@ -4237,6 +4545,7 @@
     "gunNameInternal": "Missile Launcher",
     "quality": "B",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 50,
     "reloadTime": 2,
@@ -4251,6 +4560,7 @@
     "gunNameInternal": "Mjolnir",
     "quality": "A",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -4261,6 +4571,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114892897749192670,
             "damage": 26,
             "speed": 200,
             "range": 50,
@@ -4277,6 +4588,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114875087251195300,
             "damage": 36,
             "speed": 600,
             "range": 100,
@@ -4298,6 +4610,7 @@
     "gunNameInternal": "Vindicator",
     "quality": "C",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4307,6 +4620,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114957267831578660,
             "damage": 6,
             "speed": 18,
             "range": 25,
@@ -4328,6 +4642,7 @@
     "gunNameInternal": "Vindicator",
     "quality": "SPECIAL",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4337,6 +4652,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114957267831578660,
             "damage": 6,
             "speed": 18,
             "range": 25,
@@ -4358,6 +4674,7 @@
     "gunNameInternal": "Moonscraper Laser",
     "quality": "C",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4367,6 +4684,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114961025268646690,
             "damage": 26,
             "speed": -1,
             "range": 50,
@@ -4388,6 +4706,7 @@
     "gunNameInternal": "Moonscraper Laser",
     "quality": "EXCLUDED",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4397,6 +4716,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114539372758863040,
             "damage": 26,
             "speed": -1,
             "range": 50,
@@ -4418,6 +4738,7 @@
     "gunNameInternal": "Mutated Arm",
     "quality": "B",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4427,6 +4748,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114488791598716770,
             "damage": 45,
             "speed": 40,
             "range": 20,
@@ -4448,6 +4770,7 @@
     "gunNameInternal": "Nailgun",
     "quality": "D",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4457,6 +4780,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114113556706213140,
             "damage": 3,
             "speed": 26,
             "range": 12,
@@ -4478,6 +4802,7 @@
     "gunNameInternal": "Nailgun",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4487,6 +4812,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114526129796828580,
             "damage": 3,
             "speed": 26,
             "range": 12,
@@ -4508,6 +4834,7 @@
     "gunNameInternal": "Nikita",
     "quality": "A",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4517,6 +4844,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114856551296766750,
             "damage": 100,
             "speed": 10,
             "range": 200,
@@ -4538,6 +4866,7 @@
     "gunNameInternal": "Grasshopper",
     "quality": "A",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4547,6 +4876,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114007841381396340,
             "damage": 20,
             "speed": 36,
             "range": 18,
@@ -4568,6 +4898,7 @@
     "gunNameInternal": "Origuni",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 300,
     "reloadTime": 1.2,
@@ -4582,6 +4913,7 @@
     "gunNameInternal": "Origuni",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 300,
     "reloadTime": 1.2,
@@ -4596,6 +4928,7 @@
     "gunNameInternal": "Pea Shooter",
     "quality": "D",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4605,6 +4938,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114313712714135300,
             "damage": 4,
             "speed": 20,
             "range": 20,
@@ -4626,6 +4960,7 @@
     "gunNameInternal": "Pea Shooter",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4635,6 +4970,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114519973531780460,
             "damage": 4,
             "speed": 20,
             "range": 20,
@@ -4656,6 +4992,7 @@
     "gunNameInternal": "Phoenix",
     "quality": "D",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 350,
     "reloadTime": 1.2,
@@ -4670,6 +5007,7 @@
     "gunNameInternal": "Phoenix",
     "quality": "EXCLUDED",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 350,
     "reloadTime": 1.2,
@@ -4684,6 +5022,7 @@
     "gunNameInternal": "Pillow",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 1.5,
@@ -4698,6 +5037,7 @@
     "gunNameInternal": "Pitchfork",
     "quality": "C",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4707,6 +5047,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114497808686779070,
             "damage": 4,
             "speed": 23,
             "range": 1000,
@@ -4729,6 +5070,7 @@
     "gunNameInternal": "Pitchfork",
     "quality": "EXCLUDED",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4738,6 +5080,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114228963054950860,
             "damage": 4,
             "speed": 23,
             "range": 1000,
@@ -4760,6 +5103,7 @@
     "gunNameInternal": "Plasma Cell Gun",
     "quality": "A",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4769,6 +5113,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114771281427112400,
             "damage": 18,
             "speed": 45,
             "range": 1000,
@@ -4790,6 +5135,7 @@
     "gunNameInternal": "Plasma Cell Gun",
     "quality": "SPECIAL",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4799,6 +5145,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114435129307251200,
             "damage": 9,
             "speed": 45,
             "range": 1000,
@@ -4820,6 +5167,7 @@
     "gunNameInternal": "Plasma Rifle",
     "quality": "A",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4829,6 +5177,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114528832783713280,
             "damage": 9,
             "speed": 20,
             "range": 1000,
@@ -4850,6 +5199,7 @@
     "gunNameInternal": "Plasma Rifle",
     "quality": "SPECIAL",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4859,6 +5209,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114528832783713280,
             "damage": 9,
             "speed": 20,
             "range": 1000,
@@ -4880,6 +5231,7 @@
     "gunNameInternal": "Polaris",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 450,
     "reloadTime": 0.6,
@@ -4894,6 +5246,7 @@
     "gunNameInternal": "Polaris",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 700,
     "reloadTime": 0.6,
@@ -4908,6 +5261,7 @@
     "gunNameInternal": "Pox Cannon",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -4917,6 +5271,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114559095376104880,
             "damage": 15,
             "speed": 25,
             "range": 1000,
@@ -4939,6 +5294,7 @@
     "gunNameInternal": "Proton Pack",
     "quality": "B",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 500,
     "reloadTime": 0,
@@ -4953,6 +5309,7 @@
     "gunNameInternal": "Proton Pack",
     "quality": "EXCLUDED",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 500,
     "reloadTime": 0,
@@ -4967,6 +5324,7 @@
     "gunNameInternal": "Alien Sidearm",
     "quality": "D",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -4977,6 +5335,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114261575353455940,
             "damage": 5,
             "speed": 23,
             "range": 15,
@@ -4993,6 +5352,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114414650700425710,
             "damage": 25,
             "speed": 28,
             "range": 15,
@@ -5014,6 +5374,7 @@
     "gunNameInternal": "Alien Sidearm",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5023,6 +5384,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114261575353455940,
             "damage": 5,
             "speed": 23,
             "range": 15,
@@ -5044,6 +5406,7 @@
     "gunNameInternal": "Pulse Rifle",
     "quality": "C",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.8,
@@ -5058,6 +5421,7 @@
     "gunNameInternal": "Raygun",
     "quality": "A",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5067,6 +5431,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114681763200655920,
             "damage": 10,
             "speed": 40,
             "range": 35,
@@ -5088,6 +5453,7 @@
     "gunNameInternal": "Laze-er",
     "quality": "C",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5097,6 +5463,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114333403811931170,
             "damage": 80,
             "speed": 1,
             "range": 15,
@@ -5118,6 +5485,7 @@
     "gunNameInternal": "Radiation Laser",
     "quality": "C",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5127,6 +5495,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114798661734248670,
             "damage": 16,
             "speed": -1,
             "range": 50,
@@ -5149,6 +5518,7 @@
     "gunNameInternal": "Maximum Purple",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5158,6 +5528,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114648007186617340,
             "damage": 17.5,
             "speed": -1,
             "range": 30,
@@ -5179,6 +5550,7 @@
     "gunNameInternal": "Maximum Purple",
     "quality": "EXCLUDED",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 500,
     "reloadTime": 0,
@@ -5193,6 +5565,7 @@
     "gunNameInternal": "Railgun Prototype",
     "quality": "A",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -5203,6 +5576,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114241082621710750,
             "damage": 150,
             "speed": 800,
             "range": 1000,
@@ -5224,6 +5598,7 @@
     "gunNameInternal": "Railgun",
     "quality": "S",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -5234,6 +5609,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114215383236382190,
             "damage": 50,
             "speed": 250,
             "range": 1000,
@@ -5255,6 +5631,7 @@
     "gunNameInternal": "Rattler Shotgun",
     "quality": "B",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 1.2,
@@ -5269,6 +5646,7 @@
     "gunNameInternal": "Raw Iron",
     "quality": "D",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5278,6 +5656,7 @@
         "spread": 15,
         "projectiles": [
           {
+            "id": 114252260356695840,
             "damage": 6,
             "speed": 15,
             "range": 35,
@@ -5299,6 +5678,7 @@
     "gunNameInternal": "Rectangle Shotugn",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.5,
@@ -5313,6 +5693,7 @@
     "gunNameInternal": "Gunhand",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5322,6 +5703,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114809743183948740,
             "damage": 5,
             "speed": 25,
             "range": 20,
@@ -5346,6 +5728,7 @@
     "gunNameInternal": "Gunhand",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5355,6 +5738,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114703169949024460,
             "damage": 5,
             "speed": 25,
             "range": 20,
@@ -5379,6 +5763,7 @@
     "gunNameInternal": "RPG",
     "quality": "B",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5388,6 +5773,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114717146464919580,
             "damage": 20,
             "speed": 40,
             "range": 90,
@@ -5409,6 +5795,7 @@
     "gunNameInternal": "Plague Gun",
     "quality": "D",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5418,6 +5805,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114315510110493230,
             "damage": 5,
             "speed": 20,
             "range": 25,
@@ -5440,6 +5828,7 @@
     "gunNameInternal": "Plague Gun",
     "quality": "SPECIAL",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5449,6 +5838,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114277320872476580,
             "damage": 7,
             "speed": 10,
             "range": 45,
@@ -5471,6 +5861,7 @@
     "gunNameInternal": "Rusty Sidearm",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5480,6 +5871,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114616609437177570,
             "damage": 6,
             "speed": 16,
             "range": 16,
@@ -5504,6 +5896,7 @@
     "gunNameInternal": "Rusty Sidearm",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5513,6 +5906,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114334541641640720,
             "damage": 6,
             "speed": 16,
             "range": 16,
@@ -5537,6 +5931,7 @@
     "gunNameInternal": "S.A.A.",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5546,6 +5941,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114810915753120900,
             "damage": 8,
             "speed": 25,
             "range": 1000,
@@ -5567,6 +5963,7 @@
     "gunNameInternal": "Sailgun",
     "quality": "C",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -5577,6 +5974,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114911804535896320,
             "damage": 10,
             "speed": 20,
             "range": 1000,
@@ -5598,6 +5996,7 @@
     "gunNameInternal": "Sailgun",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -5608,6 +6007,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114911804535896320,
             "damage": 10,
             "speed": 20,
             "range": 1000,
@@ -5629,6 +6029,7 @@
     "gunNameInternal": "Hunter Arm",
     "quality": "B",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -5639,6 +6040,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114785029221341660,
             "damage": 5,
             "speed": 20,
             "range": 1000,
@@ -5655,6 +6057,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114854345284293340,
             "damage": 10,
             "speed": 27,
             "range": 1000,
@@ -5671,6 +6074,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114433998896312750,
             "damage": 70,
             "speed": 35,
             "range": 1000,
@@ -5692,6 +6096,7 @@
     "gunNameInternal": "Sawed-Off Shotgun",
     "quality": "D",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.2,
@@ -5706,6 +6111,7 @@
     "gunNameInternal": "Saw Shooter",
     "quality": "C",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5715,6 +6121,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114701701509598240,
             "damage": 7,
             "speed": 25,
             "range": 1000,
@@ -5736,6 +6143,7 @@
     "gunNameInternal": "Saw Shooter",
     "quality": "EXCLUDED",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5745,6 +6153,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114771185259339060,
             "damage": 7,
             "speed": 10,
             "range": 1000,
@@ -5766,6 +6175,7 @@
     "gunNameInternal": "Scrambler",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5775,6 +6185,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114184724067110770,
             "damage": 6,
             "speed": 20,
             "range": 32,
@@ -5796,6 +6207,7 @@
     "gunNameInternal": "Serious Cannon",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -5806,6 +6218,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114303502967742400,
             "damage": 50,
             "speed": 35,
             "range": 1000,
@@ -5827,6 +6240,7 @@
     "gunNameInternal": "Compressed Air Tank",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -5837,6 +6251,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114387090144835550,
             "damage": 150,
             "speed": 10,
             "range": 1000,
@@ -5858,6 +6273,13 @@
     "gunNameInternal": "Shellegun",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -5867,6 +6289,7 @@
         "spread": 2,
         "projectiles": [
           {
+            "id": 114145549663758340,
             "damage": 8,
             "speed": 25,
             "range": 30,
@@ -5888,6 +6311,7 @@
     "gunNameInternal": "Shieldmet's Gun",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5897,6 +6321,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114589276095346220,
             "damage": 7,
             "speed": 23,
             "range": 18,
@@ -5918,6 +6343,7 @@
     "gunNameInternal": "Shieldmet's Gun",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -5927,6 +6353,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114589276095346220,
             "damage": 7,
             "speed": 23,
             "range": 18,
@@ -5948,6 +6375,7 @@
     "gunNameInternal": "Shotgrub",
     "quality": "C",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 250,
     "reloadTime": 1.5,
@@ -5962,6 +6390,7 @@
     "gunNameInternal": "Regular Shotgun",
     "quality": "D",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.8,
@@ -5976,6 +6405,13 @@
     "gunNameInternal": "Shotgun Axe",
     "quality": "C",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.2,
@@ -5990,6 +6426,7 @@
     "gunNameInternal": "Shotgun Full of Hate",
     "quality": "A",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.2,
@@ -6004,6 +6441,7 @@
     "gunNameInternal": "Shotgun Full Of Love",
     "quality": "A",
     "gunClass": "CHARM",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.2,
@@ -6018,6 +6456,7 @@
     "gunNameInternal": "Skull Gun",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6027,6 +6466,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114914839921999470,
             "damage": 10,
             "speed": 15,
             "range": 1000,
@@ -6048,6 +6488,13 @@
     "gunNameInternal": "Sling",
     "quality": "D",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "DamageToBosses",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 2.5
+      }
+    ],
     "projectileModes": [
       {
         "name": "Charged",
@@ -6058,6 +6505,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114238127755714030,
             "damage": 25,
             "speed": 40,
             "range": 1000,
@@ -6079,6 +6527,7 @@
     "gunNameInternal": "Science Ray",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6088,6 +6537,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114504276175189180,
             "damage": 12,
             "speed": 50,
             "range": 1000,
@@ -6109,6 +6559,7 @@
     "gunNameInternal": "Sniper Rifle",
     "quality": "C",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6118,6 +6569,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114050581975448340,
             "damage": 26,
             "speed": 200,
             "range": 1000,
@@ -6139,6 +6591,7 @@
     "gunNameInternal": "Snowball Launcher",
     "quality": "D",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6148,6 +6601,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114456779905475540,
             "damage": 3.5,
             "speed": 28,
             "range": 35,
@@ -6170,6 +6624,7 @@
     "gunNameInternal": "Snowball Launcher",
     "quality": "SPECIAL",
     "gunClass": "ICE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 400,
     "reloadTime": 1.2,
@@ -6184,6 +6639,7 @@
     "gunNameInternal": "Budget Revolver",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6193,6 +6649,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114046051525963000,
             "damage": 6,
             "speed": 23,
             "range": 18,
@@ -6217,6 +6674,7 @@
     "gunNameInternal": "Budget Revolver",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6226,6 +6684,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114529247206234960,
             "damage": 6,
             "speed": 23,
             "range": 18,
@@ -6250,6 +6709,7 @@
     "gunNameInternal": "Space Core Assault Rifle",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6259,6 +6719,7 @@
         "spread": 3,
         "projectiles": [
           {
+            "id": 114572152291722480,
             "damage": 6.5,
             "speed": 23,
             "range": 20,
@@ -6280,6 +6741,7 @@
     "gunNameInternal": "Space Core Shotgun",
     "quality": "B",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.2,
@@ -6294,6 +6756,7 @@
     "gunNameInternal": "Vertebrae-K 47",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6303,6 +6766,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114631718632587680,
             "damage": 4,
             "speed": 18,
             "range": 1000,
@@ -6324,6 +6788,7 @@
     "gunNameInternal": "Marine Sidearm",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6333,6 +6798,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114325594745882980,
             "damage": 5,
             "speed": 25,
             "range": 18,
@@ -6357,6 +6823,7 @@
     "gunNameInternal": "Marine Sidearm",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6366,6 +6833,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114423521821845070,
             "damage": 5,
             "speed": 25,
             "range": 18,
@@ -6390,6 +6858,7 @@
     "gunNameInternal": "SST Issue",
     "quality": "EXCLUDED",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6399,6 +6868,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114682339660958670,
             "damage": 3,
             "speed": 25,
             "range": 18,
@@ -6420,6 +6890,7 @@
     "gunNameInternal": "Sticky Crossbow",
     "quality": "C",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6429,6 +6900,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114747689334559060,
             "damage": 5,
             "speed": 25,
             "range": 1000,
@@ -6450,6 +6922,7 @@
     "gunNameInternal": "Mega Douser",
     "quality": "D",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6459,6 +6932,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114446154582139100,
             "damage": 15,
             "speed": 20,
             "range": 20,
@@ -6480,6 +6954,18 @@
     "gunNameInternal": "Super Meat Gun",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "MovementSpeed",
+        "modifyType": "ADDITIVE",
+        "amount": 1.5
+      },
+      {
+        "statToBoost": "Health",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -6489,6 +6975,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114248244441338960,
             "damage": 6,
             "speed": 25,
             "range": 1000,
@@ -6510,6 +6997,13 @@
     "gunNameInternal": "Swordgun",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 2.5
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -6519,6 +7013,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114767962586827460,
             "damage": 7,
             "speed": 26,
             "range": 1000,
@@ -6540,6 +7035,13 @@
     "gunNameInternal": "Swordgun",
     "quality": "SPECIAL",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 2.5
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -6549,6 +7051,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114767962586827460,
             "damage": 7,
             "speed": 26,
             "range": 1000,
@@ -6570,6 +7073,7 @@
     "gunNameInternal": "Syringe Gun",
     "quality": "C",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6579,6 +7083,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114656870583575870,
             "damage": 7,
             "speed": 20,
             "range": 20,
@@ -6600,6 +7105,7 @@
     "gunNameInternal": "Tank Gun",
     "quality": "EXCLUDED",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -6610,6 +7116,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114869420202008530,
             "damage": 100,
             "speed": 26,
             "range": 90,
@@ -6631,6 +7138,7 @@
     "gunNameInternal": "Maximum Tentacle",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6640,6 +7148,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114350024543640750,
             "damage": 22.5,
             "speed": -1,
             "range": 30,
@@ -6661,6 +7170,7 @@
     "gunNameInternal": "Maximum Tentacle",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6670,6 +7180,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114507384622298380,
             "damage": 22.5,
             "speed": -1,
             "range": 30,
@@ -6691,6 +7202,7 @@
     "gunNameInternal": "Tetris Gun",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6700,52 +7212,60 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114356192950403280,
             "damage": 4,
             "speed": 16,
             "range": 30,
-            "force": 6
+            "force": 6,
+            "spawnWeight": 1
           },
           {
+            "id": 114359493423145730,
             "damage": 4,
             "speed": 16,
             "range": 30,
-            "force": 6
+            "force": 6,
+            "spawnWeight": 1
           },
           {
+            "id": 114426727456214530,
             "damage": 4,
             "speed": 16,
             "range": 30,
-            "force": 6
+            "force": 6,
+            "spawnWeight": 1
           },
           {
+            "id": 114669918192831330,
             "damage": 4,
             "speed": 16,
             "range": 30,
-            "force": 6
+            "force": 6,
+            "spawnWeight": 1
           },
           {
+            "id": 114047274316275700,
             "damage": 4,
             "speed": 16,
             "range": 30,
-            "force": 6
+            "force": 6,
+            "spawnWeight": 1
           },
           {
+            "id": 114074849116566820,
             "damage": 4,
             "speed": 16,
             "range": 30,
-            "force": 6
+            "force": 6,
+            "spawnWeight": 1
           },
           {
+            "id": 114482921910074850,
             "damage": 8,
             "speed": 16,
             "range": 30,
-            "force": 6
-          },
-          {
-            "damage": 8,
-            "speed": 16,
-            "range": 30,
-            "force": 6
+            "force": 6,
+            "spawnWeight": 2
           }
         ]
       }
@@ -6763,6 +7283,7 @@
     "gunNameInternal": "Thompson Sub-Machine Gun",
     "quality": "C",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6772,6 +7293,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114742904228204510,
             "damage": 5,
             "speed": 23,
             "range": 1000,
@@ -6793,6 +7315,7 @@
     "gunNameInternal": "Thompson Sub-Machine Gun",
     "quality": "SPECIAL",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6802,6 +7325,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114697366951412740,
             "damage": 6.5,
             "speed": 23,
             "range": 1000,
@@ -6823,6 +7347,7 @@
     "gunNameInternal": "Tiger",
     "quality": "EXCLUDED",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6832,6 +7357,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114273374687745540,
             "damage": 0,
             "speed": 23,
             "range": 1000,
@@ -6853,6 +7379,7 @@
     "gunNameInternal": "Trash Gun",
     "quality": "C",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6862,6 +7389,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114311539698730860,
             "damage": 20,
             "speed": 20,
             "range": 1000,
@@ -6883,6 +7411,7 @@
     "gunNameInternal": "Trash Gun",
     "quality": "SPECIAL",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6892,12 +7421,14 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114050801904001950,
             "damage": 20,
             "speed": 20,
             "range": 1000,
             "force": 20
           },
           {
+            "id": 114201483506559500,
             "damage": 20,
             "speed": 20,
             "range": 1000,
@@ -6919,6 +7450,7 @@
     "gunNameInternal": "Magnum",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 1.2,
@@ -6933,6 +7465,7 @@
     "gunNameInternal": "Trident",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6942,6 +7475,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114376776114072880,
             "damage": 8,
             "speed": 600,
             "range": 1000,
@@ -6963,6 +7497,7 @@
     "gunNameInternal": "Crossbow",
     "quality": "C",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 0.9,
@@ -6977,6 +7512,7 @@
     "gunNameInternal": "TShirt_Cannon",
     "quality": "D",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -6986,6 +7522,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114191942136219580,
             "damage": 8,
             "speed": 25,
             "range": 1000,
@@ -7007,6 +7544,7 @@
     "gunNameInternal": "Ghostly Sidearm",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7016,6 +7554,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114731476396855570,
             "damage": 0.5,
             "speed": 12,
             "range": 1000,
@@ -7037,6 +7576,7 @@
     "gunNameInternal": "Helix Blaster",
     "quality": "C",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 250,
     "reloadTime": 2,
@@ -7051,6 +7591,7 @@
     "gunNameInternal": "Helix Blaster",
     "quality": "SPECIAL",
     "gunClass": "POISON",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 250,
     "reloadTime": 2,
@@ -7065,6 +7606,13 @@
     "gunNameInternal": "Horn Of A Unicorn",
     "quality": "A",
     "gunClass": "BEAM",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 500,
     "reloadTime": 0,
@@ -7079,6 +7627,7 @@
     "gunNameInternal": "Ashes of a Gunslinger",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7088,6 +7637,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114232271890888160,
             "damage": 12,
             "speed": 1.8,
             "range": 6,
@@ -7109,6 +7659,7 @@
     "gunNameInternal": "Machine Pistol",
     "quality": "D",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7118,6 +7669,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114053205245074850,
             "damage": 3.2,
             "speed": 23,
             "range": 16,
@@ -7139,6 +7691,7 @@
     "gunNameInternal": "Machine Pistol",
     "quality": "EXCLUDED",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7148,6 +7701,7 @@
         "spread": 3,
         "projectiles": [
           {
+            "id": 114849337109351060,
             "damage": 3.2,
             "speed": 23,
             "range": 16,
@@ -7169,6 +7723,13 @@
     "gunNameInternal": "Wicked Sixter",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -7178,6 +7739,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114705787515711870,
             "damage": 12,
             "speed": 25,
             "range": 1000,
@@ -7199,6 +7761,7 @@
     "gunNameInternal": "Winchester Rifle",
     "quality": "D",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7208,6 +7771,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114244000781453890,
             "damage": 15,
             "speed": 32,
             "range": 1000,
@@ -7229,6 +7793,7 @@
     "gunNameInternal": "Winchester Shotgun",
     "quality": "C",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 1.7,
@@ -7243,6 +7808,7 @@
     "gunNameInternal": "Winder",
     "quality": "D",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7252,6 +7818,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114005017484887970,
             "damage": 5,
             "speed": 30,
             "range": 35,
@@ -7273,6 +7840,7 @@
     "gunNameInternal": "Wonderboy",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7282,6 +7850,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114079867983711070,
             "damage": 14,
             "speed": 26,
             "range": 1000,
@@ -7306,6 +7875,7 @@
     "gunNameInternal": "Wood Gun",
     "quality": "C",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 350,
     "reloadTime": 1.2,
@@ -7320,6 +7890,7 @@
     "gunNameInternal": "Yari Rocket Launcher",
     "quality": "S",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7329,6 +7900,7 @@
         "spread": 45,
         "projectiles": [
           {
+            "id": 114124075017315760,
             "damage": 8,
             "speed": 10,
             "range": 90,
@@ -7350,6 +7922,7 @@
     "gunNameInternal": "RUBE-ADYNE Mk. VI",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7359,6 +7932,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114075593731071620,
             "damage": 7,
             "speed": 40,
             "range": 60,
@@ -7380,6 +7954,7 @@
     "gunNameInternal": "Zapper",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7389,6 +7964,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114363554697502530,
             "damage": 7,
             "speed": 400,
             "range": 60,
@@ -7410,6 +7986,7 @@
     "gunNameInternal": "Zapper",
     "quality": "EXCLUDED",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7419,6 +7996,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114729821494799220,
             "damage": 3,
             "speed": 400,
             "range": 60,
@@ -7440,6 +8018,7 @@
     "gunNameInternal": "Zilla Combat Shotgun",
     "quality": "A",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 240,
     "reloadTime": 1.5,
@@ -7454,6 +8033,7 @@
     "gunNameInternal": "Zorgun",
     "quality": "A",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7463,6 +8043,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114456179231167380,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
@@ -7484,6 +8065,7 @@
     "gunNameInternal": "Balloon Gun",
     "quality": "C",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7493,6 +8075,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114761297778200780,
             "damage": 12,
             "speed": 18,
             "range": 40,
@@ -7514,6 +8097,13 @@
     "gunNameInternal": "Casey",
     "quality": "D",
     "gunClass": "SILLY",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 2
+      }
+    ],
     "projectileModes": [
       {
         "name": "Charged",
@@ -7524,6 +8114,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114906206875665550,
             "damage": 100,
             "speed": 22,
             "range": 2.5,
@@ -7548,6 +8139,7 @@
     "gunNameInternal": "Bullet",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7557,6 +8149,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114213498775371340,
             "damage": 7,
             "speed": 12,
             "range": 100,
@@ -7578,6 +8171,7 @@
     "gunNameInternal": "Grey Mauser",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7587,6 +8181,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114139410209904290,
             "damage": 5,
             "speed": 32,
             "range": 1000,
@@ -7608,6 +8203,7 @@
     "gunNameInternal": "Crown of Guns",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 3000,
     "reloadTime": 2,
@@ -7623,6 +8219,7 @@
     "gunNameInternal": "Devolver",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7632,6 +8229,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114029686490613460,
             "damage": 6,
             "speed": 25,
             "range": 1000,
@@ -7653,6 +8251,7 @@
     "gunNameInternal": "Directional Pad",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.7,
@@ -7667,6 +8266,7 @@
     "gunNameInternal": "Dueling Laser",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7676,6 +8276,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114247504345409760,
             "damage": 100,
             "speed": 600,
             "range": 1000,
@@ -7700,6 +8301,7 @@
     "gunNameInternal": "Evo Gun",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7709,6 +8311,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114947081916195120,
             "damage": 6,
             "speed": 22,
             "range": 10,
@@ -7730,6 +8333,7 @@
     "gunNameInternal": "Evo Gun",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7739,6 +8343,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114987417646123970,
             "damage": 8.5,
             "speed": 22,
             "range": 25,
@@ -7760,6 +8365,7 @@
     "gunNameInternal": "Evo Gun",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7769,6 +8375,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114825687067017700,
             "damage": 11.5,
             "speed": 25,
             "range": 25,
@@ -7790,6 +8397,7 @@
     "gunNameInternal": "Evo Gun",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 300,
     "reloadTime": 1.5,
@@ -7804,6 +8412,7 @@
     "gunNameInternal": "Evo Gun",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7813,6 +8422,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114461410621912450,
             "damage": 23,
             "speed": -1,
             "range": 30,
@@ -7834,6 +8444,7 @@
     "gunNameInternal": "Evo Gun",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7843,6 +8454,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114227018034877550,
             "damage": 37.5,
             "speed": 25,
             "range": 25,
@@ -7864,6 +8476,7 @@
     "gunNameInternal": "Morning Mallet",
     "quality": "S",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7873,6 +8486,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114150014680013540,
             "damage": 0,
             "speed": -1,
             "range": 50,
@@ -7894,6 +8508,7 @@
     "gunNameInternal": "Drift King",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7903,6 +8518,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114366736525681740,
             "damage": 20,
             "speed": 26,
             "range": 20,
@@ -7924,6 +8540,7 @@
     "gunNameInternal": "Drift King",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7933,6 +8550,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114366736525681740,
             "damage": 20,
             "speed": 26,
             "range": 20,
@@ -7954,6 +8572,7 @@
     "gunNameInternal": "Kthuliber Gun",
     "quality": "A",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -7963,6 +8582,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114900671141716690,
             "damage": 15,
             "speed": 22,
             "range": 25,
@@ -7984,6 +8604,7 @@
     "gunNameInternal": "Moon Crown",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 3000,
     "reloadTime": 2,
@@ -7998,6 +8619,13 @@
     "gunNameInternal": "Rad Gun",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Coolness",
+        "modifyType": "ADDITIVE",
+        "amount": 2
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 250,
     "reloadTime": 1.2,
@@ -8012,6 +8640,13 @@
     "gunNameInternal": "Rad Gun",
     "quality": "EXCLUDED",
     "gunClass": "SILLY",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Coolness",
+        "modifyType": "ADDITIVE",
+        "amount": 2
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 250,
     "reloadTime": 1.4,
@@ -8026,6 +8661,7 @@
     "gunNameInternal": "Shotgun Gun",
     "quality": "B",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 150,
     "reloadTime": 1.5,
@@ -8040,6 +8676,7 @@
     "gunNameInternal": "Starpew",
     "quality": "A",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 1,
@@ -8054,6 +8691,7 @@
     "gunNameInternal": "StrafeNailGun",
     "quality": "S",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8063,6 +8701,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114009462464134200,
             "damage": 1,
             "speed": 200,
             "range": 1000,
@@ -8084,6 +8723,7 @@
     "gunNameInternal": "Uberbot Gunhand",
     "quality": "A",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8093,6 +8733,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114502510359974740,
             "damage": 5,
             "speed": 35,
             "range": 1000,
@@ -8114,6 +8755,7 @@
     "gunNameInternal": "Voidcore Rocket Launcher",
     "quality": "B",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8123,6 +8765,7 @@
         "spread": 8,
         "projectiles": [
           {
+            "id": 114585645861244900,
             "damage": 10,
             "speed": 40,
             "range": 90,
@@ -8144,6 +8787,7 @@
     "gunNameInternal": "Eye Of The Beholster",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8153,6 +8797,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114668095301068270,
             "damage": 6,
             "speed": 200,
             "range": 1000,
@@ -8174,6 +8819,13 @@
     "gunNameInternal": "Smiley Revolver",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "GlobalPriceMultiplier",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.85
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -8183,6 +8835,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114795108289012740,
             "damage": 9,
             "speed": 23,
             "range": 60,
@@ -8204,6 +8857,13 @@
     "gunNameInternal": "Shades Revolver",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Coolness",
+        "modifyType": "ADDITIVE",
+        "amount": 3
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -8213,6 +8873,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114785808559069260,
             "damage": 15,
             "speed": 23,
             "range": 60,
@@ -8234,6 +8895,13 @@
     "gunNameInternal": "Angel Revolver",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "GlobalPriceMultiplier",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.85
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -8243,6 +8911,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114795108289012740,
             "damage": 9,
             "speed": 23,
             "range": 60,
@@ -8264,6 +8933,13 @@
     "gunNameInternal": "Nome Revolver",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "GlobalPriceMultiplier",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.85
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -8273,6 +8949,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114795108289012740,
             "damage": 9,
             "speed": 23,
             "range": 60,
@@ -8294,6 +8971,13 @@
     "gunNameInternal": "Tuco Revolver",
     "quality": "EXCLUDED",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "GlobalPriceMultiplier",
+        "modifyType": "MULTIPLICATIVE",
+        "amount": 0.85
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -8303,6 +8987,7 @@
         "spread": 6,
         "projectiles": [
           {
+            "id": 114795108289012740,
             "damage": 9,
             "speed": 23,
             "range": 60,
@@ -8324,6 +9009,7 @@
     "gunNameInternal": "Winchester Shotgun",
     "quality": "SPECIAL",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 1.7,
@@ -8338,6 +9024,7 @@
     "gunNameInternal": "Lt. Green's Rifle",
     "quality": "C",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 120,
     "reloadTime": 1.2,
@@ -8352,6 +9039,7 @@
     "gunNameInternal": "Lt. Red's Shotgun",
     "quality": "C",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8361,6 +9049,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114373201717754690,
             "damage": 8,
             "speed": 20,
             "range": 45,
@@ -8382,6 +9071,7 @@
     "gunNameInternal": "Armored Gun",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8391,6 +9081,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114486746018215000,
             "damage": 15,
             "speed": 50,
             "range": 25,
@@ -8412,6 +9103,7 @@
     "gunNameInternal": "Excaliber",
     "quality": "EXCLUDED",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8421,6 +9113,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114582453993264720,
             "damage": 3.8,
             "speed": 30,
             "range": 1000,
@@ -8442,6 +9135,13 @@
     "gunNameInternal": "Big Giant Head",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 750,
     "reloadTime": 2,
@@ -8456,6 +9156,13 @@
     "gunNameInternal": "Boxing Glove",
     "quality": "C",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -8466,6 +9173,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114031069632391180,
             "damage": 12,
             "speed": 100,
             "range": 3.5,
@@ -8483,6 +9191,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114802611533702220,
             "damage": 200,
             "speed": 100,
             "range": 3.5,
@@ -8505,6 +9214,7 @@
     "gunNameInternal": "Bubble Blaster",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 500,
     "reloadTime": 1.5,
@@ -8519,6 +9229,7 @@
     "gunNameInternal": "Combine Rifle",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8528,6 +9239,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114845750009340880,
             "damage": 5,
             "speed": 23,
             "range": 50,
@@ -8549,6 +9261,7 @@
     "gunNameInternal": "Controller",
     "quality": "A",
     "gunClass": "CHARM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8558,6 +9271,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114752240562839890,
             "damage": 2.5,
             "speed": 30,
             "range": 1000,
@@ -8579,6 +9293,7 @@
     "gunNameInternal": "Exotic Gun",
     "quality": "A",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8588,6 +9303,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114751558926163550,
             "damage": 25,
             "speed": 25,
             "range": 60,
@@ -8609,6 +9325,13 @@
     "gunNameInternal": "Big Giant Head",
     "quality": "EXCLUDED",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -8618,6 +9341,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114622847827339000,
             "damage": 7,
             "speed": 15,
             "range": 15,
@@ -8640,6 +9364,7 @@
     "gunNameInternal": "Glass Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -8650,6 +9375,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114833481146952400,
             "damage": 140,
             "speed": 600,
             "range": 1000,
@@ -8671,6 +9397,7 @@
     "gunNameInternal": "Glass Cannon",
     "quality": "C",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -8681,6 +9408,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114833481146952400,
             "damage": 140,
             "speed": 600,
             "range": 1000,
@@ -8702,6 +9430,7 @@
     "gunNameInternal": "Gunner",
     "quality": "B",
     "gunClass": "RIFLE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8711,6 +9440,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114401872525231760,
             "damage": 13.5,
             "speed": 27,
             "range": 1000,
@@ -8732,6 +9462,7 @@
     "gunNameInternal": "JK-47",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8741,6 +9472,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114339773656928000,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
@@ -8762,6 +9494,7 @@
     "gunNameInternal": "Life Orb",
     "quality": "A",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 600,
     "reloadTime": 1.6,
@@ -8776,6 +9509,7 @@
     "gunNameInternal": "Lute",
     "quality": "C",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 300,
     "reloadTime": 1.2,
@@ -8790,6 +9524,7 @@
     "gunNameInternal": "Mutated Tech Arm",
     "quality": "SPECIAL",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8799,6 +9534,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114601015058791840,
             "damage": 60,
             "speed": 45,
             "range": 30,
@@ -8820,6 +9556,7 @@
     "gunNameInternal": "Tachyon Gun",
     "quality": "B",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 2,
@@ -8834,6 +9571,7 @@
     "gunNameInternal": "Predator Gun",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8843,6 +9581,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114075585528699260,
             "damage": 25,
             "speed": 75,
             "range": 32,
@@ -8864,6 +9603,7 @@
     "gunNameInternal": "Bullet",
     "quality": "C",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8873,6 +9613,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114397319325555620,
             "damage": 7,
             "speed": 21,
             "range": 20,
@@ -8894,6 +9635,7 @@
     "gunNameInternal": "Screech Gun",
     "quality": "C",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8903,6 +9645,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114008031443873540,
             "damage": 1.5,
             "speed": 12,
             "range": 12,
@@ -8925,6 +9668,7 @@
     "gunNameInternal": "Shovel Gung",
     "quality": "A",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 180,
     "reloadTime": 1.7,
@@ -8939,6 +9683,7 @@
     "gunNameInternal": "Sprun",
     "quality": "SPECIAL",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8948,6 +9693,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114359131035267620,
             "damage": 45,
             "speed": 25,
             "range": 1000,
@@ -8972,6 +9718,7 @@
     "gunNameInternal": "Tachyon Gun",
     "quality": "B",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -8981,6 +9728,7 @@
         "spread": 5,
         "projectiles": [
           {
+            "id": 114007358936510700,
             "damage": 4,
             "speed": 35,
             "range": 30,
@@ -9002,6 +9750,7 @@
     "gunNameInternal": "Teapot Gun",
     "quality": "C",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9011,6 +9760,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114779909288209280,
             "damage": 8.5,
             "speed": 20,
             "range": 1000,
@@ -9032,6 +9782,7 @@
     "gunNameInternal": "Triple Gun",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9041,6 +9792,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114922205580693220,
             "damage": 160,
             "speed": 75,
             "range": 50,
@@ -9062,6 +9814,7 @@
     "gunNameInternal": "Triple Gun",
     "quality": "B",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9071,6 +9824,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114497830600056020,
             "damage": 10,
             "speed": 30,
             "range": 1000,
@@ -9092,6 +9846,7 @@
     "gunNameInternal": "Triple Gun",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9101,6 +9856,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114565160591662220,
             "damage": 6.5,
             "speed": 25,
             "range": 1000,
@@ -9122,6 +9878,7 @@
     "gunNameInternal": "AK-47 Island",
     "quality": "SPECIAL",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9131,6 +9888,7 @@
         "spread": 4,
         "projectiles": [
           {
+            "id": 114762460933484400,
             "damage": 7,
             "speed": 23,
             "range": 1000,
@@ -9152,6 +9910,7 @@
     "gunNameInternal": "Big Shotgun",
     "quality": "A",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 70,
     "reloadTime": 2.2,
@@ -9166,6 +9925,7 @@
     "gunNameInternal": "Lamey",
     "quality": "SPECIAL",
     "gunClass": "NONE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9175,6 +9935,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114970712597542580,
             "damage": 40,
             "speed": 40,
             "range": 60,
@@ -9196,6 +9957,7 @@
     "gunNameInternal": "Lamey",
     "quality": "C",
     "gunClass": "NONE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9205,6 +9967,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114290203374870110,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
@@ -9226,6 +9989,7 @@
     "gunNameInternal": "Exotic Gun",
     "quality": "SPECIAL",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9235,6 +9999,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114379055095414180,
             "damage": 5,
             "speed": 18,
             "range": 35,
@@ -9256,6 +10021,7 @@
     "gunNameInternal": "Proton Pack",
     "quality": "SPECIAL",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 1000,
     "reloadTime": 0,
@@ -9270,6 +10036,7 @@
     "gunNameInternal": "Regular Shotgun",
     "quality": "SPECIAL",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 500,
     "reloadTime": 1.8,
@@ -9284,6 +10051,7 @@
     "gunNameInternal": "Regular Shotgun",
     "quality": "SPECIAL",
     "gunClass": "SHOTGUN",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9293,6 +10061,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114460000384869470,
             "damage": 30,
             "speed": -1,
             "range": 30,
@@ -9314,6 +10083,7 @@
     "gunNameInternal": "Lamey",
     "quality": "SPECIAL",
     "gunClass": "NONE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9323,6 +10093,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114028340717589000,
             "damage": 30,
             "speed": 23,
             "range": 1,
@@ -9344,6 +10115,7 @@
     "gunNameInternal": "Retro Special",
     "quality": "SPECIAL",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9353,6 +10125,7 @@
         "spread": 10,
         "projectiles": [
           {
+            "id": 114322426769364260,
             "damage": 10,
             "speed": 15,
             "range": 1000,
@@ -9375,6 +10148,7 @@
     "gunNameInternal": "Exotic Gun",
     "quality": "SPECIAL",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9384,6 +10158,7 @@
         "spread": 1,
         "projectiles": [
           {
+            "id": 114615827827992050,
             "damage": 40,
             "speed": 10,
             "range": 1000,
@@ -9406,6 +10181,13 @@
     "gunNameInternal": "Chamber_Office",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -9415,6 +10197,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114362864606064430,
             "damage": 1,
             "speed": 40,
             "range": 10,
@@ -9436,6 +10219,7 @@
     "gunNameInternal": "Upper Case R",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 2,
@@ -9450,6 +10234,7 @@
     "gunNameInternal": "Glaive",
     "quality": "B",
     "gunClass": "NONE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -9460,6 +10245,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114178808054294740,
             "damage": 25,
             "speed": 20,
             "range": 100,
@@ -9481,6 +10267,7 @@
     "gunNameInternal": "Gunderfury Level 0",
     "quality": "A",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 1,
@@ -9495,6 +10282,7 @@
     "gunNameInternal": "Dragonbreath Gun",
     "quality": "S",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9504,6 +10292,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114500081735968050,
             "damage": 5,
             "speed": 25,
             "range": 1000,
@@ -9526,6 +10315,7 @@
     "gunNameInternal": "Lamey",
     "quality": "EXCLUDED",
     "gunClass": "NONE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9535,6 +10325,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114652800406525400,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
@@ -9559,6 +10350,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -9569,6 +10361,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114211571901951920,
             "damage": 12,
             "speed": 18,
             "range": 40,
@@ -9585,6 +10378,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114908166823623360,
             "damage": 45,
             "speed": 25,
             "range": 1000,
@@ -9606,6 +10400,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 0.54,
@@ -9620,6 +10415,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -9630,6 +10426,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114356007251169310,
             "damage": 6,
             "speed": 20,
             "range": 1000,
@@ -9646,6 +10443,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114577522690995040,
             "damage": 10,
             "speed": 20,
             "range": 1000,
@@ -9667,6 +10465,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -9677,6 +10476,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114356007251169310,
             "damage": 6,
             "speed": 20,
             "range": 1000,
@@ -9693,6 +10493,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114034969866641040,
             "damage": 10,
             "speed": 1,
             "range": 1,
@@ -9714,6 +10515,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -9724,6 +10526,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114941339190500450,
             "damage": 2,
             "speed": 23,
             "range": 1000,
@@ -9741,6 +10544,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114908166823623360,
             "damage": 45,
             "speed": 25,
             "range": 1000,
@@ -9762,6 +10566,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -9772,6 +10577,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114100803049208450,
             "damage": 4,
             "speed": 11,
             "range": 20,
@@ -9788,6 +10594,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114908166823623360,
             "damage": 45,
             "speed": 25,
             "range": 1000,
@@ -9809,6 +10616,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -9819,6 +10627,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114364465869085570,
             "damage": 7,
             "speed": 25,
             "range": 1000,
@@ -9835,6 +10644,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114908166823623360,
             "damage": 45,
             "speed": 25,
             "range": 1000,
@@ -9856,6 +10666,7 @@
     "gunNameInternal": "Lemon Hand Cannon",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -9866,6 +10677,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114145021923196400,
             "damage": 6,
             "speed": 10,
             "range": 1000,
@@ -9883,6 +10695,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114908166823623360,
             "damage": 45,
             "speed": 25,
             "range": 1000,
@@ -9904,6 +10717,13 @@
     "gunNameInternal": "Casey",
     "quality": "SPECIAL",
     "gunClass": "SILLY",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 2
+      }
+    ],
     "projectileModes": [],
     "maxAmmo": 1,
     "reloadTime": 1,
@@ -9921,6 +10741,7 @@
     "gunNameInternal": "Radiation Laser",
     "quality": "SPECIAL",
     "gunClass": "BEAM",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9930,6 +10751,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114532290720849010,
             "damage": 23,
             "speed": 50,
             "range": 50,
@@ -9952,6 +10774,7 @@
     "gunNameInternal": "Elimentaler",
     "quality": "S",
     "gunClass": "PISTOL",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -9961,45 +10784,30 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114032786166435710,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
             "force": 9,
+            "spawnWeight": 3,
             "cheeseChance": 1
           },
           {
-            "damage": 5.5,
-            "speed": 23,
-            "range": 1000,
-            "force": 9,
-            "cheeseChance": 1
-          },
-          {
-            "damage": 5.5,
-            "speed": 23,
-            "range": 1000,
-            "force": 9,
-            "cheeseChance": 1
-          },
-          {
+            "id": 114552951478745580,
             "damage": 8,
             "speed": 23,
             "range": 1000,
             "force": 9,
+            "spawnWeight": 2,
             "cheeseChance": 1
           },
           {
-            "damage": 8,
-            "speed": 23,
-            "range": 1000,
-            "force": 9,
-            "cheeseChance": 1
-          },
-          {
+            "id": 114884338150333200,
             "damage": 15,
             "speed": 23,
             "range": 1000,
             "force": 9,
+            "spawnWeight": 1,
             "cheeseChance": 1
           }
         ]
@@ -10021,6 +10829,7 @@
     "gunNameInternal": "Screech Gun",
     "quality": "SPECIAL",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -10030,6 +10839,7 @@
         "spread": 11,
         "projectiles": [
           {
+            "id": 114295483571979150,
             "damage": 8,
             "speed": 26,
             "range": 1000,
@@ -10051,6 +10861,7 @@
     "gunNameInternal": "Hunter Arm",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -10061,6 +10872,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114184327325144260,
             "damage": 80,
             "speed": 20,
             "range": 1000,
@@ -10077,6 +10889,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114299764659574290,
             "damage": 160,
             "speed": 20,
             "range": 1000,
@@ -10098,6 +10911,7 @@
     "gunNameInternal": "Hunter Arm",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -10108,6 +10922,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114637653807083230,
             "damage": 5,
             "speed": 30,
             "range": 1000,
@@ -10125,6 +10940,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114435949694079040,
             "damage": 60,
             "speed": 35,
             "range": 1000,
@@ -10147,6 +10963,7 @@
     "gunNameInternal": "Hunter Arm",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Uncharged",
@@ -10157,6 +10974,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114494104262219070,
             "damage": 8,
             "speed": 600,
             "range": 1000,
@@ -10174,6 +10992,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114097460218955740,
             "damage": 35,
             "speed": 26,
             "range": 1000,
@@ -10196,6 +11015,7 @@
     "gunNameInternal": "Hunter Arm",
     "quality": "SPECIAL",
     "gunClass": "CHARGE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 200,
     "reloadTime": 0.54,
@@ -10210,6 +11030,7 @@
     "gunNameInternal": "Slinger",
     "quality": "SPECIAL",
     "gunClass": "NONE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -10219,6 +11040,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114585925113751090,
             "damage": 5.5,
             "speed": 23,
             "range": 1000,
@@ -10243,6 +11065,7 @@
     "gunNameInternal": "Dragonbreath Gun",
     "quality": "EXCLUDED",
     "gunClass": "FULLAUTO",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Default",
@@ -10252,6 +11075,7 @@
         "spread": 7,
         "projectiles": [
           {
+            "id": 114947167712769540,
             "damage": 35,
             "speed": 22,
             "range": 10,
@@ -10273,6 +11097,7 @@
     "gunNameInternal": "Sunlight Spear",
     "quality": "B",
     "gunClass": "FIRE",
+    "playerStatModifiers": [],
     "projectileModes": [
       {
         "name": "Charged",
@@ -10283,6 +11108,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114159826856804770,
             "damage": 45,
             "speed": 120,
             "range": 1000,
@@ -10305,6 +11131,7 @@
     "gunNameInternal": "Upper Case R",
     "quality": "SPECIAL",
     "gunClass": "EXPLOSIVE",
+    "playerStatModifiers": [],
     "projectileModes": [],
     "maxAmmo": 100,
     "reloadTime": 2.5,
@@ -10319,6 +11146,13 @@
     "gunNameInternal": "WoodBeam",
     "quality": "B",
     "gunClass": "SHITTY",
+    "playerStatModifiers": [
+      {
+        "statToBoost": "Curse",
+        "modifyType": "ADDITIVE",
+        "amount": 1
+      }
+    ],
     "projectileModes": [
       {
         "name": "Default",
@@ -10328,6 +11162,7 @@
         "spread": 0,
         "projectiles": [
           {
+            "id": 114389454472467280,
             "damage": 1,
             "speed": 40,
             "range": 10,

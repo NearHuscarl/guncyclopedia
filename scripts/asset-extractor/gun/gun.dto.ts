@@ -1,5 +1,6 @@
 import z from "zod/v4";
 import { AssetExternalReference, AssetExternalReferences } from "../utils/schema.ts";
+import { StatModifierSchema } from "../player/player.dto.ts";
 
 export const ItemQuality = {
   EXCLUDED: -100,
@@ -10,7 +11,7 @@ export const ItemQuality = {
   B: 3,
   A: 4,
   S: 5,
-};
+} as const;
 export const GunClass = {
   NONE: 0,
   PISTOL: 1,
@@ -26,14 +27,19 @@ export const GunClass = {
   SILLY: 50,
   SHITTY: 55,
   CHARGE: 60,
-};
+} as const;
 export const ShootStyle = {
   SemiAutomatic: 0,
   Automatic: 1,
   Beam: 2,
   Charged: 3,
   Burst: 4,
-};
+} as const;
+export const ProjectileSequenceStyle = {
+  Random: 0,
+  Ordered: 1,
+  OrderedGroups: 2,
+} as const;
 
 export const ProjectileModule = z.object({
   shootStyle: z.enum(ShootStyle),
@@ -48,6 +54,7 @@ export const ProjectileModule = z.object({
    * if `ProjectileModule.ShootStyle` is `Charged`.
    * See `ProjectileModule.cs#GetChargeProjectile` for more details.
    */
+  sequenceStyle: z.enum(ProjectileSequenceStyle),
   chargeProjectiles: z.array(
     z.object({
       ChargeTime: z.number(),
@@ -65,6 +72,8 @@ export const GunDto = z
     gunName: z.string(),
     quality: z.enum(ItemQuality),
     gunClass: z.enum(GunClass),
+    currentGunStatModifiers: z.array(StatModifierSchema),
+    passiveStatModifiers: z.array(StatModifierSchema).optional(),
     maxAmmo: z.number(),
     reloadTime: z.number(),
     /**
