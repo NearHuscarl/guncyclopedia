@@ -21,7 +21,6 @@
             "projectiles": [
               {
                 "id": "38_Special_Projectile",
-                "name": "38_Special_Projectile",
                 "damage": 5,
                 "speed": 23,
                 "range": 35,
@@ -58,7 +57,6 @@
             "projectiles": [
               {
                 "id": "38_Special_Projectile",
-                "name": "38_Special_Projectile",
                 "damage": 5,
                 "speed": 23,
                 "range": 35,
@@ -95,7 +93,6 @@
             "projectiles": [
               {
                 "id": "AKProjectile",
-                "name": "AKProjectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -132,7 +129,6 @@
             "projectiles": [
               {
                 "id": "AKey_Projectile",
-                "name": "AKey_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -169,7 +165,6 @@
             "projectiles": [
               {
                 "id": "Akey_47_Projectile_Synergy",
-                "name": "Akey_47_Projectile_Synergy",
                 "damage": 10,
                 "speed": 15,
                 "range": 1000,
@@ -206,7 +201,6 @@
             "projectiles": [
               {
                 "id": "Ant_Gun_Projectile",
-                "name": "Ant_Gun_Projectile",
                 "damage": 2,
                 "speed": 25,
                 "range": 28,
@@ -221,7 +215,6 @@
             "projectiles": [
               {
                 "id": "Ant_Gun_Projectile",
-                "name": "Ant_Gun_Projectile",
                 "damage": 2,
                 "speed": 25,
                 "range": 28,
@@ -236,7 +229,6 @@
             "projectiles": [
               {
                 "id": "Ant_Gun_Projectile",
-                "name": "Ant_Gun_Projectile",
                 "damage": 2,
                 "speed": 25,
                 "range": 28,
@@ -273,7 +265,6 @@
             "projectiles": [
               {
                 "id": "Ant_Gun_Missile_Synergy",
-                "name": "VFX_Rocket_Exhaust_Fire",
                 "damage": 20,
                 "speed": 40,
                 "range": 90,
@@ -311,7 +302,6 @@
             "projectiles": [
               {
                 "id": "Anvil_Projectile",
-                "name": "Anvil_Projectile",
                 "damage": 35,
                 "speed": 13,
                 "range": 50,
@@ -349,7 +339,6 @@
             "projectiles": [
               {
                 "id": "ArtfulDodger_Projectile",
-                "name": "Trail",
                 "damage": 14,
                 "speed": 18,
                 "range": 60,
@@ -386,7 +375,6 @@
             "projectiles": [
               {
                 "id": "AWP_Projectile",
-                "name": "Trail 1",
                 "damage": 40,
                 "speed": 100,
                 "range": 1000,
@@ -423,7 +411,6 @@
             "projectiles": [
               {
                 "id": "AWP_Synergy_Projectile",
-                "name": "Trail 1",
                 "damage": 65,
                 "speed": 100,
                 "range": 1000,
@@ -462,7 +449,6 @@
             "projectiles": [
               {
                 "id": "Banana_Projectile",
-                "name": "Banana_Projectile",
                 "damage": 10,
                 "speed": 15,
                 "range": 25,
@@ -500,7 +486,6 @@
             "projectiles": [
               {
                 "id": "Banana_Projectile_Synergy",
-                "name": "Banana_Projectile_Synergy",
                 "damage": 10,
                 "speed": 15,
                 "range": 25,
@@ -537,7 +522,6 @@
             "projectiles": [
               {
                 "id": "barettaprojectile",
-                "name": "barettaprojectile",
                 "damage": 6.5,
                 "speed": 23,
                 "range": 60,
@@ -574,7 +558,6 @@
             "projectiles": [
               {
                 "id": "Baretta_Projectile_Tranq",
-                "name": "Baretta_Projectile_Tranq",
                 "damage": 11,
                 "speed": 23,
                 "range": 60,
@@ -613,7 +596,6 @@
             "projectiles": [
               {
                 "id": "BeeProjectile",
-                "name": "BeeProjectile",
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
@@ -650,7 +632,6 @@
             "projectiles": [
               {
                 "id": "BeeProjectile",
-                "name": "BeeProjectile",
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
@@ -687,7 +668,6 @@
             "projectiles": [
               {
                 "id": "Bigiron_Projectile",
-                "name": "Bigiron_Projectile",
                 "damage": 7,
                 "speed": 30,
                 "range": 15,
@@ -702,7 +682,6 @@
             "projectiles": [
               {
                 "id": "Bigiron_Projectile",
-                "name": "Bigiron_Projectile",
                 "damage": 7,
                 "speed": 30,
                 "range": 15,
@@ -717,7 +696,6 @@
             "projectiles": [
               {
                 "id": "Bigiron_Projectile",
-                "name": "Bigiron_Projectile",
                 "damage": 7,
                 "speed": 30,
                 "range": 15,
@@ -754,7 +732,6 @@
             "projectiles": [
               {
                 "id": "Bigiron_Slug_Projectile",
-                "name": "Bigiron_Slug_Projectile",
                 "damage": 25,
                 "speed": 22,
                 "range": 10,
@@ -792,7 +769,6 @@
             "projectiles": [
               {
                 "id": "BlackHoleProjectile",
-                "name": "BlackHoleSuck",
                 "damage": 10,
                 "speed": 4,
                 "range": 1000,
@@ -829,7 +805,6 @@
             "projectiles": [
               {
                 "id": "Bladerunner_Projectile",
-                "name": "Bladerunner_Projectile",
                 "damage": 5,
                 "speed": 20,
                 "range": 1000,
@@ -866,7 +841,6 @@
             "projectiles": [
               {
                 "id": "Blasphemy_Projectile",
-                "name": "Blasphemy_Projectile",
                 "damage": 14,
                 "speed": 26,
                 "range": 1000,
@@ -908,7 +882,6 @@
             "projectiles": [
               {
                 "id": "Blasphemy_Projectile_Alt",
-                "name": "Blasphemy_Projectile_Alt",
                 "damage": 14,
                 "speed": 26,
                 "range": 1000,
@@ -950,7 +923,6 @@
             "projectiles": [
               {
                 "id": "Turtle_Shell_Projectile",
-                "name": "Turtle_Shell_Projectile",
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
@@ -988,7 +960,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1010,7 +981,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1025,7 +995,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1040,7 +1009,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1055,7 +1023,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1070,7 +1037,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1085,7 +1051,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1100,7 +1065,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1115,7 +1079,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1130,7 +1093,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1168,7 +1130,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1190,7 +1151,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1205,7 +1165,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1220,7 +1179,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1235,7 +1193,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1250,7 +1207,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1265,7 +1221,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1280,7 +1235,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1295,7 +1249,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1310,7 +1263,6 @@
             "projectiles": [
               {
                 "id": "Blunderbuss_Projectile",
-                "name": "Blunderbuss_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -1347,7 +1299,6 @@
             "projectiles": [
               {
                 "id": "Bolt_Rifle_Projectile",
-                "name": "Bolt_Rifle_Projectile",
                 "damage": 13,
                 "speed": 25,
                 "range": 25,
@@ -1384,7 +1335,6 @@
             "projectiles": [
               {
                 "id": "Bolt_Rifle_Projectile_Synergy",
-                "name": "Bolt_Rifle_Projectile_Synergy",
                 "damage": 13,
                 "speed": 35,
                 "range": 25,
@@ -1428,7 +1378,6 @@
             "projectiles": [
               {
                 "id": "Bomb_Projectile",
-                "name": "Bomb_Projectile",
                 "damage": 15,
                 "speed": 20,
                 "range": 25,
@@ -1472,7 +1421,6 @@
             "projectiles": [
               {
                 "id": "Bomb_Gold_Projectile_Synergy",
-                "name": "Bomb_Gold_Projectile_Synergy",
                 "damage": 15,
                 "speed": 20,
                 "range": 25,
@@ -1510,7 +1458,6 @@
             "projectiles": [
               {
                 "id": "Arrow",
-                "name": "Arrow",
                 "damage": 7.5,
                 "speed": 25,
                 "range": 1000,
@@ -1532,7 +1479,6 @@
             "projectiles": [
               {
                 "id": "Arrow_Light",
-                "name": "Arrow_Light",
                 "damage": 30,
                 "speed": 45,
                 "range": 1000,
@@ -1569,7 +1515,6 @@
             "projectiles": [
               {
                 "id": "Bowcaster_Projectile",
-                "name": "Trail 1",
                 "damage": 5,
                 "speed": 200,
                 "range": 60,
@@ -1606,7 +1551,6 @@
             "projectiles": [
               {
                 "id": "Bowcaster_Projectile_Synergy",
-                "name": "Trail 1",
                 "damage": 5,
                 "speed": 200,
                 "range": 60,
@@ -1644,7 +1588,6 @@
             "projectiles": [
               {
                 "id": "Arrow",
-                "name": "Arrow",
                 "damage": 7.5,
                 "speed": 25,
                 "range": 1000,
@@ -1666,7 +1609,6 @@
             "projectiles": [
               {
                 "id": "Arrow_Charmed",
-                "name": "VFX_Heart_Trail",
                 "damage": 14,
                 "speed": 45,
                 "range": 1000,
@@ -1705,7 +1647,6 @@
             "projectiles": [
               {
                 "id": "Arrow_Super_Light",
-                "name": "Arrow_Super_Light",
                 "damage": 50,
                 "speed": 60,
                 "range": 1000,
@@ -1742,7 +1683,6 @@
             "projectiles": [
               {
                 "id": "Homing_Missile",
-                "name": "Exhaust",
                 "damage": 20,
                 "speed": 14,
                 "range": 90,
@@ -1779,7 +1719,6 @@
             "projectiles": [
               {
                 "id": "Homing_Missile",
-                "name": "Exhaust",
                 "damage": 20,
                 "speed": 14,
                 "range": 90,
@@ -1817,7 +1756,6 @@
             "projectiles": [
               {
                 "id": "BSG_Projectile",
-                "name": "BSG_Projectile",
                 "damage": 50,
                 "speed": 10,
                 "range": 10,
@@ -1855,7 +1793,6 @@
             "projectiles": [
               {
                 "id": "Bulletbow_Pierce_Projectile",
-                "name": "Trail 1",
                 "damage": 35,
                 "speed": 500,
                 "range": 1000,
@@ -1893,7 +1830,6 @@
             "projectiles": [
               {
                 "id": "BulletBow_Synergy_Projectile",
-                "name": "Trail 1",
                 "damage": 35,
                 "speed": 500,
                 "range": 1000,
@@ -1930,7 +1866,6 @@
             "projectiles": [
               {
                 "id": "Magic_Bullet_Projectile",
-                "name": "Point light",
                 "damage": 7,
                 "speed": 23,
                 "range": 60,
@@ -1945,7 +1880,6 @@
             "projectiles": [
               {
                 "id": "Magic_Bullet_Projectile",
-                "name": "Point light",
                 "damage": 7,
                 "speed": 23,
                 "range": 60,
@@ -1960,7 +1894,6 @@
             "projectiles": [
               {
                 "id": "Magic_Bullet_Projectile",
-                "name": "Point light",
                 "damage": 7,
                 "speed": 23,
                 "range": 60,
@@ -1997,7 +1930,6 @@
             "projectiles": [
               {
                 "id": "Fireball_Projectile",
-                "name": "Fireball_Projectile",
                 "damage": 2,
                 "speed": 23,
                 "range": 1000,
@@ -2035,7 +1967,6 @@
             "projectiles": [
               {
                 "id": "Fireball_Projectile_Synergy",
-                "name": "Fireball_Projectile_Synergy",
                 "damage": 1.35,
                 "speed": 23,
                 "range": 1000,
@@ -2072,7 +2003,6 @@
             "projectiles": [
               {
                 "id": "NeedleProjectile",
-                "name": "NeedleProjectile",
                 "damage": 2.5,
                 "speed": 60,
                 "range": 1000,
@@ -2109,7 +2039,6 @@
             "projectiles": [
               {
                 "id": "NeedleProjectile",
-                "name": "NeedleProjectile",
                 "damage": 2.5,
                 "speed": 60,
                 "range": 1000,
@@ -2147,7 +2076,6 @@
             "projectiles": [
               {
                 "id": "Camera_Gun_Projectile",
-                "name": "Camera_Gun_Projectile",
                 "damage": 10,
                 "speed": 1,
                 "range": 1,
@@ -2184,7 +2112,6 @@
             "projectiles": [
               {
                 "id": "Microtransaction_Green_Gem_Projectile",
-                "name": "Microtransaction_Green_Gem_Projectile",
                 "damage": 15,
                 "speed": 18,
                 "range": 1000,
@@ -2193,7 +2120,6 @@
               },
               {
                 "id": "Microtransaction_Bobble_Artbook_Projectile",
-                "name": "Microtransaction_Bobble_Artbook_Projectile",
                 "damage": 2,
                 "speed": 18,
                 "range": 1000,
@@ -2202,7 +2128,6 @@
               },
               {
                 "id": "Microtransaction_Bobble_Hunter_Projectile",
-                "name": "Microtransaction_Bobble_Hunter_Projectile",
                 "damage": 15,
                 "speed": 18,
                 "range": 1000,
@@ -2211,7 +2136,6 @@
               },
               {
                 "id": "Microtransaction_Bobble_Convict_Projectile",
-                "name": "Microtransaction_Bobble_Convict_Projectile",
                 "damage": 15,
                 "speed": 18,
                 "range": 1000,
@@ -2221,7 +2145,6 @@
               },
               {
                 "id": "Microtransaction_Bobble_Marine_Projectile",
-                "name": "Microtransaction_Bobble_Marine_Projectile",
                 "damage": 20,
                 "speed": 18,
                 "range": 1000,
@@ -2230,7 +2153,6 @@
               },
               {
                 "id": "Microtransaction_Bobble_Rogue_Projectile",
-                "name": "Microtransaction_Bobble_Rogue_Projectile",
                 "damage": 15,
                 "speed": 18,
                 "range": 1000,
@@ -2239,7 +2161,6 @@
               },
               {
                 "id": "Microtransaction_Plush_Projectile",
-                "name": "Microtransaction_Plush_Projectile",
                 "damage": 8,
                 "speed": 18,
                 "range": 1000,
@@ -2278,7 +2199,6 @@
             "projectiles": [
               {
                 "id": "CerebralBoreProjectile",
-                "name": "Spark",
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
@@ -2315,7 +2235,6 @@
             "projectiles": [
               {
                 "id": "CerebralBoreProjectile",
-                "name": "Spark",
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
@@ -2330,7 +2249,6 @@
             "projectiles": [
               {
                 "id": "CerebralBoreProjectile",
-                "name": "Spark",
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
@@ -2368,7 +2286,6 @@
             "projectiles": [
               {
                 "id": "Charge_Shot_Projectile_Big",
-                "name": "Charge_Shot_Projectile_Big",
                 "damage": 30,
                 "speed": 30,
                 "range": 1000,
@@ -2405,7 +2322,6 @@
             "projectiles": [
               {
                 "id": "Claw_Projectile",
-                "name": "Claw_Projectile",
                 "damage": 2,
                 "speed": 23,
                 "range": 1000,
@@ -2442,7 +2358,6 @@
             "projectiles": [
               {
                 "id": "Cold_45_Projectile",
-                "name": "Cold_45_Projectile",
                 "damage": 6,
                 "speed": 28,
                 "range": 35,
@@ -2480,7 +2395,6 @@
             "projectiles": [
               {
                 "id": "Colt_1851_Projectile",
-                "name": "Colt_1851_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
@@ -2518,7 +2432,6 @@
             "projectiles": [
               {
                 "id": "Composite_Gun_Projectile",
-                "name": "Composite_Gun_Projectile",
                 "damage": 40,
                 "speed": 30,
                 "range": 1000,
@@ -2540,7 +2453,6 @@
             "projectiles": [
               {
                 "id": "Composite_Gun_Projectile_Big",
-                "name": "Composite_Gun_Projectile_Big",
                 "damage": 100,
                 "speed": 30,
                 "range": 1000,
@@ -2578,7 +2490,6 @@
             "projectiles": [
               {
                 "id": "Star_Uncharged_Projectile",
-                "name": "Star_Uncharged_Projectile",
                 "damage": 8,
                 "speed": 22,
                 "range": 1000,
@@ -2600,7 +2511,6 @@
             "projectiles": [
               {
                 "id": "Star_Projectile",
-                "name": "Star_Projectile",
                 "damage": 22,
                 "speed": 32,
                 "range": 1000,
@@ -2637,7 +2547,6 @@
             "projectiles": [
               {
                 "id": "Crestfallen_Gun_Projectile",
-                "name": "Crestfallen_Gun_Projectile",
                 "damage": 10,
                 "speed": 40,
                 "range": 1000,
@@ -2675,7 +2584,6 @@
             "projectiles": [
               {
                 "id": "Crestfallen_Gun_Projectile",
-                "name": "Crestfallen_Gun_Projectile",
                 "damage": 10,
                 "speed": 40,
                 "range": 1000,
@@ -2713,7 +2621,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt",
-                "name": "CrossbowBolt",
                 "damage": 22,
                 "speed": 26,
                 "range": 1000,
@@ -2750,7 +2657,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2765,7 +2671,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2780,7 +2685,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2795,7 +2699,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2810,7 +2713,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2825,7 +2727,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2862,7 +2763,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2877,7 +2777,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2892,7 +2791,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2907,7 +2805,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2922,7 +2819,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2937,7 +2833,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2952,7 +2847,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2967,7 +2861,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -2982,7 +2875,6 @@
             "projectiles": [
               {
                 "id": "CrossbowBolt_Shotgun_Projectile",
-                "name": "CrossbowBolt_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -3019,7 +2911,6 @@
             "projectiles": [
               {
                 "id": "Prismatic_Spray_Projectile",
-                "name": "Prismatic_Spray_Projectile",
                 "damage": 4.5,
                 "speed": 60,
                 "range": 1000,
@@ -3056,7 +2947,6 @@
             "projectiles": [
               {
                 "id": "Prismatic_Spray_Projectile",
-                "name": "Prismatic_Spray_Projectile",
                 "damage": 4.5,
                 "speed": 60,
                 "range": 1000,
@@ -3093,7 +2983,6 @@
             "projectiles": [
               {
                 "id": "Nerf_Dart",
-                "name": "Nerf_Dart",
                 "damage": 6,
                 "speed": 20,
                 "range": 25,
@@ -3133,7 +3022,6 @@
             "projectiles": [
               {
                 "id": "Nerf_Dart_Alt",
-                "name": "Nerf_Dart_Alt",
                 "damage": 6,
                 "speed": 20,
                 "range": 25,
@@ -3173,7 +3061,6 @@
             "projectiles": [
               {
                 "id": "Demon_Head_beam",
-                "name": "Demon_Head_beam",
                 "damage": 31,
                 "speed": 100,
                 "range": 40,
@@ -3211,7 +3098,6 @@
             "projectiles": [
               {
                 "id": "Derringer_Projectile",
-                "name": "Derringer_Projectile",
                 "damage": 10,
                 "speed": 23,
                 "range": 60,
@@ -3249,7 +3135,6 @@
             "projectiles": [
               {
                 "id": "DesertEagleProjectile",
-                "name": "DesertEagleProjectile",
                 "damage": 10,
                 "speed": 25,
                 "range": 60,
@@ -3271,7 +3156,6 @@
             "projectiles": [
               {
                 "id": "DesertEagleChargeProjectile",
-                "name": "DesertEagleChargeProjectile",
                 "damage": 20,
                 "speed": 30,
                 "range": 60,
@@ -3309,7 +3193,6 @@
             "projectiles": [
               {
                 "id": "DesertEagleProjectile",
-                "name": "DesertEagleProjectile",
                 "damage": 10,
                 "speed": 25,
                 "range": 60,
@@ -3331,7 +3214,6 @@
             "projectiles": [
               {
                 "id": "DesertEagleChargeProjectile_Synergy",
-                "name": "DesertEagleChargeProjectile_Synergy",
                 "damage": 20,
                 "speed": 30,
                 "range": 60,
@@ -3368,7 +3250,6 @@
             "projectiles": [
               {
                 "id": "Disintegrator_Beam",
-                "name": "Disintegrator_Beam",
                 "damage": 26,
                 "speed": 90,
                 "range": 500,
@@ -3411,7 +3292,6 @@
             "projectiles": [
               {
                 "id": "Distortion_Launcher_Projectile_Large",
-                "name": "Distortion_Launcher_Projectile_Large",
                 "damage": 30,
                 "speed": 10,
                 "range": 10,
@@ -3448,7 +3328,6 @@
             "projectiles": [
               {
                 "id": "DL45Projectile",
-                "name": "Point light",
                 "damage": 9,
                 "speed": 35,
                 "range": 35,
@@ -3485,7 +3364,6 @@
             "projectiles": [
               {
                 "id": "Dragonbreath_Projectile",
-                "name": "Dragonbreath_Projectile",
                 "damage": 6.5,
                 "speed": 25,
                 "range": 1000,
@@ -3523,7 +3401,6 @@
             "projectiles": [
               {
                 "id": "Dragonbreath_Projectile_Kaliber",
-                "name": "Dragonbreath_Projectile_Kaliber",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -3561,7 +3438,6 @@
             "projectiles": [
               {
                 "id": "Musketball_Projectile",
-                "name": "Musketball_Projectile",
                 "damage": 10,
                 "speed": 30,
                 "range": 1000,
@@ -3598,7 +3474,6 @@
             "projectiles": [
               {
                 "id": "Musketball_Projectile",
-                "name": "Musketball_Projectile",
                 "damage": 10,
                 "speed": 30,
                 "range": 1000,
@@ -3635,7 +3510,6 @@
             "projectiles": [
               {
                 "id": "E12Projectile",
-                "name": "Point light",
                 "damage": 10,
                 "speed": 35,
                 "range": 15,
@@ -3672,7 +3546,6 @@
             "projectiles": [
               {
                 "id": "E12_Fast_Projectile_Synergy",
-                "name": "Trail 1",
                 "damage": 10,
                 "speed": 200,
                 "range": 1000,
@@ -3709,7 +3582,6 @@
             "projectiles": [
               {
                 "id": "Earthworm_Projectile",
-                "name": "Earthworm_Projectile",
                 "damage": 2.2,
                 "speed": 40,
                 "range": 14,
@@ -3746,7 +3618,6 @@
             "projectiles": [
               {
                 "id": "Music_Note_Projectile_001",
-                "name": "Music_Note_Projectile_001",
                 "damage": 4,
                 "speed": 15,
                 "range": 15,
@@ -3761,7 +3632,6 @@
             "projectiles": [
               {
                 "id": "Music_Note_Projectile_001",
-                "name": "Music_Note_Projectile_001",
                 "damage": 4,
                 "speed": 15,
                 "range": 15,
@@ -3776,7 +3646,6 @@
             "projectiles": [
               {
                 "id": "Music_Note_Projectile_001",
-                "name": "Music_Note_Projectile_001",
                 "damage": 4,
                 "speed": 15,
                 "range": 15,
@@ -3791,7 +3660,6 @@
             "projectiles": [
               {
                 "id": "Music_Note_Projectile_001",
-                "name": "Music_Note_Projectile_001",
                 "damage": 4,
                 "speed": 15,
                 "range": 15,
@@ -3828,7 +3696,6 @@
             "projectiles": [
               {
                 "id": "Music_Note_Projectile_001",
-                "name": "Music_Note_Projectile_001",
                 "damage": 4,
                 "speed": 15,
                 "range": 15,
@@ -3843,7 +3710,6 @@
             "projectiles": [
               {
                 "id": "Music_Note_Projectile_001",
-                "name": "Music_Note_Projectile_001",
                 "damage": 4,
                 "speed": 15,
                 "range": 15,
@@ -3880,7 +3746,6 @@
             "projectiles": [
               {
                 "id": "Electric_Rifle_Projectile",
-                "name": "light",
                 "damage": 8,
                 "speed": 140,
                 "range": 1000,
@@ -3917,7 +3782,6 @@
             "projectiles": [
               {
                 "id": "Electric_Rifle_Projectile",
-                "name": "light",
                 "damage": 8,
                 "speed": 140,
                 "range": 1000,
@@ -3960,7 +3824,6 @@
             "projectiles": [
               {
                 "id": "Electro_Shark_Projectile",
-                "name": "Electro_Shark_Projectile",
                 "damage": 7,
                 "speed": 20,
                 "range": 50,
@@ -3997,7 +3860,6 @@
             "projectiles": [
               {
                 "id": "Elephant_Gun_Projectile",
-                "name": "Elephant_Gun_Projectile",
                 "damage": 5.5,
                 "speed": 30,
                 "range": 15,
@@ -4012,7 +3874,6 @@
             "projectiles": [
               {
                 "id": "Elephant_Gun_Projectile",
-                "name": "Elephant_Gun_Projectile",
                 "damage": 5.5,
                 "speed": 30,
                 "range": 15,
@@ -4027,7 +3888,6 @@
             "projectiles": [
               {
                 "id": "Elephant_Gun_Projectile",
-                "name": "Elephant_Gun_Projectile",
                 "damage": 5.5,
                 "speed": 30,
                 "range": 15,
@@ -4042,7 +3902,6 @@
             "projectiles": [
               {
                 "id": "Elephant_Gun_Projectile",
-                "name": "Elephant_Gun_Projectile",
                 "damage": 5.5,
                 "speed": 30,
                 "range": 15,
@@ -4057,7 +3916,6 @@
             "projectiles": [
               {
                 "id": "Elephant_Gun_Projectile",
-                "name": "Elephant_Gun_Projectile",
                 "damage": 5.5,
                 "speed": 30,
                 "range": 15,
@@ -4072,7 +3930,6 @@
             "projectiles": [
               {
                 "id": "Elephant_Gun_Projectile",
-                "name": "Elephant_Gun_Projectile",
                 "damage": 5.5,
                 "speed": 30,
                 "range": 15,
@@ -4109,7 +3966,6 @@
             "projectiles": [
               {
                 "id": "Elephant_Projectile",
-                "name": "Elephant_Projectile",
                 "damage": 30,
                 "speed": 19,
                 "range": 1000,
@@ -4146,7 +4002,6 @@
             "projectiles": [
               {
                 "id": "SpiralBeamProjectile",
-                "name": "SpiralBeamProjectile",
                 "damage": 70,
                 "speed": 120,
                 "range": 50,
@@ -4189,7 +4044,6 @@
             "projectiles": [
               {
                 "id": "Engine_Gun_Projectile",
-                "name": "Engine_Gun_Projectile",
                 "damage": 5,
                 "speed": 35,
                 "range": 1000,
@@ -4226,7 +4080,6 @@
             "projectiles": [
               {
                 "id": "Excaliber_Projectile",
-                "name": "Excaliber_Projectile",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -4269,7 +4122,6 @@
             "projectiles": [
               {
                 "id": "Excaliber_Green_Projectile",
-                "name": "Excaliber_Green_Projectile",
                 "damage": 6,
                 "speed": 23,
                 "range": 50,
@@ -4310,7 +4162,6 @@
             "projectiles": [
               {
                 "id": "Tear_Projectile",
-                "name": "Tear_Projectile",
                 "damage": 7,
                 "speed": 15,
                 "range": 15,
@@ -4347,7 +4198,6 @@
             "projectiles": [
               {
                 "id": "Tear_Projectile",
-                "name": "Tear_Projectile",
                 "damage": 7,
                 "speed": 15,
                 "range": 15,
@@ -4390,7 +4240,6 @@
             "projectiles": [
               {
                 "id": "Black_Revolver_Projectile",
-                "name": "Black_Revolver_Projectile",
                 "damage": 14,
                 "speed": 30,
                 "range": 1000,
@@ -4427,7 +4276,6 @@
             "projectiles": [
               {
                 "id": "Fish_Projectile",
-                "name": "Fish_Projectile",
                 "damage": 8,
                 "speed": 20,
                 "range": 1000,
@@ -4465,7 +4313,6 @@
             "projectiles": [
               {
                 "id": "Fish_Barrel_Bullet_Projectile",
-                "name": "Fish_Barrel_Bullet_Projectile",
                 "damage": 5,
                 "speed": 23,
                 "range": 35,
@@ -4502,7 +4349,6 @@
             "projectiles": [
               {
                 "id": "Flare_Projectile",
-                "name": "Point light",
                 "damage": 13,
                 "speed": 23,
                 "range": 1000,
@@ -4540,7 +4386,6 @@
             "projectiles": [
               {
                 "id": "Flare_Projectile_Synergy",
-                "name": "Point light",
                 "damage": 13,
                 "speed": 23,
                 "range": 1000,
@@ -4578,7 +4423,6 @@
             "projectiles": [
               {
                 "id": "Flash_Raygun_Projectile",
-                "name": "Trail 1",
                 "damage": 7.5,
                 "speed": 600,
                 "range": 1000,
@@ -4615,7 +4459,6 @@
             "projectiles": [
               {
                 "id": "Flash_Raygun_Projectile_Synergy",
-                "name": "Trail 1",
                 "damage": 7.5,
                 "speed": 600,
                 "range": 1000,
@@ -4652,7 +4495,6 @@
             "projectiles": [
               {
                 "id": "Oil_Beam",
-                "name": "Oil_Beam",
                 "damage": 15,
                 "speed": 15,
                 "range": 20,
@@ -4689,7 +4531,6 @@
             "projectiles": [
               {
                 "id": "FreezeRay",
-                "name": "FreezeRay",
                 "damage": 20,
                 "speed": 60,
                 "range": 30,
@@ -4727,7 +4568,6 @@
             "projectiles": [
               {
                 "id": "FreezeRay",
-                "name": "FreezeRay",
                 "damage": 20,
                 "speed": 60,
                 "range": 30,
@@ -4765,7 +4605,6 @@
             "projectiles": [
               {
                 "id": "Future_Assault_Rifle_Projectile",
-                "name": "Future_Assault_Rifle_Projectile",
                 "damage": 3.5,
                 "speed": 30,
                 "range": 50,
@@ -4802,7 +4641,6 @@
             "projectiles": [
               {
                 "id": "Future_Assault_Rifle_Projectile_Synergy",
-                "name": "Future_Assault_Rifle_Projectile_Synergy",
                 "damage": 3.5,
                 "speed": 30,
                 "range": 50,
@@ -4840,7 +4678,6 @@
             "projectiles": [
               {
                 "id": "Gilded_Hydra_Projectile",
-                "name": "Gilded_Hydra_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
@@ -4855,7 +4692,6 @@
             "projectiles": [
               {
                 "id": "Gilded_Hydra_Projectile",
-                "name": "Gilded_Hydra_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
@@ -4870,7 +4706,6 @@
             "projectiles": [
               {
                 "id": "Gilded_Hydra_Projectile",
-                "name": "Gilded_Hydra_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
@@ -4885,7 +4720,6 @@
             "projectiles": [
               {
                 "id": "Gilded_Hydra_Projectile",
-                "name": "Gilded_Hydra_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
@@ -4900,7 +4734,6 @@
             "projectiles": [
               {
                 "id": "Gilded_Hydra_Projectile",
-                "name": "Gilded_Hydra_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
@@ -4915,7 +4748,6 @@
             "projectiles": [
               {
                 "id": "Gilded_Hydra_Projectile",
-                "name": "Gilded_Hydra_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
@@ -4930,7 +4762,6 @@
             "projectiles": [
               {
                 "id": "Gilded_Hydra_Projectile",
-                "name": "Gilded_Hydra_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
@@ -4945,7 +4776,6 @@
             "projectiles": [
               {
                 "id": "Gilded_Hydra_Projectile",
-                "name": "Gilded_Hydra_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
@@ -4982,7 +4812,6 @@
             "projectiles": [
               {
                 "id": "GoldenGunProjectile",
-                "name": "GoldenGunProjectile",
                 "damage": 100,
                 "speed": 25,
                 "range": 1000,
@@ -5030,7 +4859,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5045,7 +4873,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5060,7 +4887,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5075,7 +4901,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5090,7 +4915,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5105,7 +4929,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5120,7 +4943,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5135,7 +4957,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5150,7 +4971,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5165,7 +4985,6 @@
             "projectiles": [
               {
                 "id": "ShotgunPelletProjectile_001",
-                "name": "ShotgunPelletProjectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -5202,7 +5021,6 @@
             "projectiles": [
               {
                 "id": "Guzheng_Projectile",
-                "name": "Guzheng_Projectile",
                 "damage": 6,
                 "speed": 23,
                 "range": 1000,
@@ -5239,7 +5057,6 @@
             "projectiles": [
               {
                 "id": "H4MMERProjectile",
-                "name": "H4MMERProjectile",
                 "damage": 3.8,
                 "speed": 23,
                 "range": 1000,
@@ -5276,7 +5093,6 @@
             "projectiles": [
               {
                 "id": "H4MMERProjectile",
-                "name": "H4MMERProjectile",
                 "damage": 3.8,
                 "speed": 23,
                 "range": 1000,
@@ -5313,7 +5129,6 @@
             "projectiles": [
               {
                 "id": "Arrow_Hand",
-                "name": "Arrow_Hand",
                 "damage": 14,
                 "speed": 25,
                 "range": 1000,
@@ -5350,7 +5165,6 @@
             "projectiles": [
               {
                 "id": "hmonRifleProjectile_01",
-                "name": "hmonRifleProjectile_01",
                 "damage": 8,
                 "speed": 23,
                 "range": 1000,
@@ -5387,7 +5201,6 @@
             "projectiles": [
               {
                 "id": "Hybrid_Magic_Gun_Projectile",
-                "name": "Hybrid_Magic_Gun_Projectile",
                 "damage": 7,
                 "speed": 25,
                 "range": 1000,
@@ -5424,7 +5237,6 @@
             "projectiles": [
               {
                 "id": "Ice_Breakers_Shotgun_Bullet",
-                "name": "Ice_Breakers_Shotgun_Bullet",
                 "damage": 2,
                 "speed": 22,
                 "range": 10,
@@ -5440,7 +5252,6 @@
             "projectiles": [
               {
                 "id": "Ice_Breakers_Shotgun_Bullet",
-                "name": "Ice_Breakers_Shotgun_Bullet",
                 "damage": 2,
                 "speed": 22,
                 "range": 10,
@@ -5456,7 +5267,6 @@
             "projectiles": [
               {
                 "id": "Ice_Breakers_Shotgun_Bullet",
-                "name": "Ice_Breakers_Shotgun_Bullet",
                 "damage": 2,
                 "speed": 22,
                 "range": 10,
@@ -5472,7 +5282,6 @@
             "projectiles": [
               {
                 "id": "Ice_Breakers_Shotgun_Bullet",
-                "name": "Ice_Breakers_Shotgun_Bullet",
                 "damage": 2,
                 "speed": 22,
                 "range": 10,
@@ -5488,7 +5297,6 @@
             "projectiles": [
               {
                 "id": "Ice_Breakers_Shotgun_Bullet",
-                "name": "Ice_Breakers_Shotgun_Bullet",
                 "damage": 2,
                 "speed": 22,
                 "range": 10,
@@ -5526,7 +5334,6 @@
             "projectiles": [
               {
                 "id": "Ice_Breakers_Synergy_Projectile",
-                "name": "Ice_Breakers_Synergy_Projectile",
                 "damage": 2,
                 "speed": 50,
                 "range": 100,
@@ -5564,7 +5371,6 @@
             "projectiles": [
               {
                 "id": "Ice_Giant_Gun_Bullet_Projectile",
-                "name": "Ice_Giant_Gun_Bullet_Projectile",
                 "damage": 12,
                 "speed": 20,
                 "range": 30,
@@ -5579,7 +5385,6 @@
             "projectiles": [
               {
                 "id": "Ice_Giant_Gun_Freeze_Projectile",
-                "name": "Ice_Giant_Gun_Freeze_Projectile",
                 "damage": 0,
                 "speed": 18,
                 "range": 3,
@@ -5617,7 +5422,6 @@
             "projectiles": [
               {
                 "id": "Glacier_Projectile",
-                "name": "Glacier_Projectile",
                 "damage": 8,
                 "speed": 18,
                 "range": 35,
@@ -5654,7 +5458,6 @@
             "projectiles": [
               {
                 "id": "Jet_Engine_Projectile",
-                "name": "Jet_Engine_Projectile",
                 "damage": 10,
                 "speed": 30,
                 "range": 3,
@@ -5692,7 +5495,6 @@
             "projectiles": [
               {
                 "id": "Jet_Engine_Projectile_Synergy",
-                "name": "Jet_Engine_Projectile_Synergy",
                 "damage": 10,
                 "speed": 30,
                 "range": 3,
@@ -5731,7 +5533,6 @@
             "projectiles": [
               {
                 "id": "Kirkcannon_Projectile_Gem001",
-                "name": "Kirkcannon_Projectile_Gem001",
                 "ignoreDamageCaps": true,
                 "damage": 200,
                 "speed": 25,
@@ -5747,7 +5548,6 @@
             "projectiles": [
               {
                 "id": "Kirkcannon_Projectile_Gem002",
-                "name": "Kirkcannon_Projectile_Gem002",
                 "ignoreDamageCaps": true,
                 "damage": 200,
                 "speed": 35,
@@ -5763,7 +5563,6 @@
             "projectiles": [
               {
                 "id": "Kirkcannon_Projectile_Gem003",
-                "name": "Kirkcannon_Projectile_Gem003",
                 "ignoreDamageCaps": true,
                 "damage": 200,
                 "speed": 35,
@@ -5779,7 +5578,6 @@
             "projectiles": [
               {
                 "id": "Kirkcannon_Projectile_Gem004",
-                "name": "Kirkcannon_Projectile_Gem004",
                 "ignoreDamageCaps": true,
                 "damage": 200,
                 "speed": 25,
@@ -5795,7 +5593,6 @@
             "projectiles": [
               {
                 "id": "Kirkcannon_Projectile_Gem005",
-                "name": "Kirkcannon_Projectile_Gem005",
                 "ignoreDamageCaps": true,
                 "damage": 200,
                 "speed": 25,
@@ -5811,7 +5608,6 @@
             "projectiles": [
               {
                 "id": "Kirkcannon_Projectile_Gem001",
-                "name": "Kirkcannon_Projectile_Gem001",
                 "ignoreDamageCaps": true,
                 "damage": 200,
                 "speed": 25,
@@ -5849,7 +5645,6 @@
             "projectiles": [
               {
                 "id": "KlobbProjectile",
-                "name": "KlobbProjectile",
                 "damage": 1.2,
                 "speed": 14,
                 "range": 1000,
@@ -5886,7 +5681,6 @@
             "projectiles": [
               {
                 "id": "KlobbProjectile",
-                "name": "KlobbProjectile",
                 "damage": 1.2,
                 "speed": 14,
                 "range": 1000,
@@ -5901,7 +5695,6 @@
             "projectiles": [
               {
                 "id": "KlobbProjectile",
-                "name": "KlobbProjectile",
                 "damage": 1.2,
                 "speed": 14,
                 "range": 1000,
@@ -5938,7 +5731,6 @@
             "projectiles": [
               {
                 "id": "Knave3_Projectile",
-                "name": "Point light",
                 "damage": 5,
                 "speed": 22,
                 "range": 13,
@@ -5978,7 +5770,6 @@
             "projectiles": [
               {
                 "id": "Knave3_Projectile_Alt",
-                "name": "Point light",
                 "damage": 5,
                 "speed": 22,
                 "range": 13,
@@ -6018,7 +5809,6 @@
             "projectiles": [
               {
                 "id": "Genie_Projectile",
-                "name": "light",
                 "damage": 8,
                 "speed": 12,
                 "range": 1000,
@@ -6055,7 +5845,6 @@
             "projectiles": [
               {
                 "id": "Lawgiver_Normal_Projectile",
-                "name": "Lawgiver_Normal_Projectile",
                 "damage": 7.5,
                 "speed": 30,
                 "range": 1000,
@@ -6098,7 +5887,6 @@
             "projectiles": [
               {
                 "id": "Looper_Projectile",
-                "name": "Looper_Projectile",
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
@@ -6113,7 +5901,6 @@
             "projectiles": [
               {
                 "id": "Looper_Projectile",
-                "name": "Looper_Projectile",
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
@@ -6128,7 +5915,6 @@
             "projectiles": [
               {
                 "id": "Looper_Projectile",
-                "name": "Looper_Projectile",
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
@@ -6143,7 +5929,6 @@
             "projectiles": [
               {
                 "id": "Looper_Projectile",
-                "name": "Looper_Projectile",
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
@@ -6158,7 +5943,6 @@
             "projectiles": [
               {
                 "id": "Looper_Projectile",
-                "name": "Looper_Projectile",
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
@@ -6173,7 +5957,6 @@
             "projectiles": [
               {
                 "id": "Looper_Projectile",
-                "name": "Looper_Projectile",
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
@@ -6210,7 +5993,6 @@
             "projectiles": [
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6218,7 +6000,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6226,7 +6007,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6234,7 +6014,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6242,7 +6021,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6250,7 +6028,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6287,7 +6064,6 @@
             "projectiles": [
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6295,7 +6071,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6303,7 +6078,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6311,7 +6085,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6319,7 +6092,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6327,7 +6099,6 @@
               },
               {
                 "id": "Word_B_Projectile",
-                "name": "Word_B_Projectile",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -6364,7 +6135,6 @@
             "projectiles": [
               {
                 "id": "M1_Projectile",
-                "name": "Trail 1",
                 "damage": 20,
                 "speed": 200,
                 "range": 60,
@@ -6401,7 +6171,6 @@
             "projectiles": [
               {
                 "id": "M16_Projectile",
-                "name": "M16_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -6438,7 +6207,6 @@
             "projectiles": [
               {
                 "id": "M1911Projectile",
-                "name": "M1911Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 60,
@@ -6475,7 +6243,6 @@
             "projectiles": [
               {
                 "id": "M1_Projectile",
-                "name": "Trail 1",
                 "damage": 20,
                 "speed": 200,
                 "range": 60,
@@ -6512,7 +6279,6 @@
             "projectiles": [
               {
                 "id": "Grenade_Projectile",
-                "name": "Grenade_Projectile",
                 "damage": 10,
                 "speed": 20,
                 "range": 20,
@@ -6549,7 +6315,6 @@
             "projectiles": [
               {
                 "id": "MAC10_Projectile",
-                "name": "MAC10_Projectile",
                 "damage": 3.5,
                 "speed": 23,
                 "range": 1000,
@@ -6586,7 +6351,6 @@
             "projectiles": [
               {
                 "id": "Machine_Gun_Hand_Projectile",
-                "name": "Machine_Gun_Hand_Projectile",
                 "damage": 4,
                 "speed": 27,
                 "range": 1000,
@@ -6623,7 +6387,6 @@
             "projectiles": [
               {
                 "id": "Magic_Bullet_Chunk_Projectile",
-                "name": "Point light",
                 "damage": 6,
                 "speed": 27,
                 "range": 1000,
@@ -6660,7 +6423,6 @@
             "projectiles": [
               {
                 "id": "Magic_Sniper_Projectile",
-                "name": "Trail 1",
                 "damage": 35,
                 "speed": 200,
                 "range": 1000,
@@ -6697,7 +6459,6 @@
             "projectiles": [
               {
                 "id": "MagnumProjectile",
-                "name": "MagnumProjectile",
                 "damage": 13,
                 "speed": 23,
                 "range": 60,
@@ -6734,7 +6495,6 @@
             "projectiles": [
               {
                 "id": "MagnumProjectile",
-                "name": "MagnumProjectile",
                 "damage": 13,
                 "speed": 23,
                 "range": 60,
@@ -6771,7 +6531,6 @@
             "projectiles": [
               {
                 "id": "Letter_Projectile",
-                "name": "Letter_Projectile",
                 "damage": 5,
                 "speed": 22,
                 "range": 1000,
@@ -6808,7 +6567,6 @@
             "projectiles": [
               {
                 "id": "MakarovProjectile",
-                "name": "MakarovProjectile",
                 "damage": 5,
                 "speed": 23,
                 "range": 60,
@@ -6845,7 +6603,6 @@
             "projectiles": [
               {
                 "id": "Mask_Gun_Projectile",
-                "name": "Point light",
                 "damage": 6,
                 "speed": 16,
                 "range": 50,
@@ -6885,7 +6642,6 @@
             "projectiles": [
               {
                 "id": "Matter_Antimatter_Projectile",
-                "name": "Matter_Antimatter_Projectile",
                 "damage": 13.5,
                 "speed": 26,
                 "range": 1000,
@@ -6907,7 +6663,6 @@
             "projectiles": [
               {
                 "id": "Antimatter_Projectile",
-                "name": "Antimatter_Projectile",
                 "damage": 40,
                 "speed": 10,
                 "range": 1000,
@@ -6922,7 +6677,6 @@
             "projectiles": [
               {
                 "id": "Matter_Projectile",
-                "name": "Matter_Projectile",
                 "damage": 40,
                 "speed": 10,
                 "range": 1000,
@@ -6959,7 +6713,6 @@
             "projectiles": [
               {
                 "id": "Mauser_Pistol_Projectile",
-                "name": "Mauser_Pistol_Projectile",
                 "damage": 8,
                 "speed": 32,
                 "range": 1000,
@@ -6997,7 +6750,6 @@
             "projectiles": [
               {
                 "id": "Meat_Projectile",
-                "name": "Meat_Projectile",
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
@@ -7036,7 +6788,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Weak",
-                "name": "Mega_Buster_Projectile_Weak",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -7058,7 +6809,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Super",
-                "name": "Mega_Buster_Projectile_Super",
                 "damage": 45,
                 "speed": 25,
                 "range": 1000,
@@ -7095,7 +6845,6 @@
             "projectiles": [
               {
                 "id": "Mermaid_Projectile",
-                "name": "Mermaid_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
@@ -7110,7 +6859,6 @@
             "projectiles": [
               {
                 "id": "Mermaid_Projectile",
-                "name": "Mermaid_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
@@ -7125,7 +6873,6 @@
             "projectiles": [
               {
                 "id": "Mermaid_Projectile",
-                "name": "Mermaid_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
@@ -7162,7 +6909,6 @@
             "projectiles": [
               {
                 "id": "ME_Shotgun_Projectile",
-                "name": "ME_Shotgun_Projectile",
                 "damage": 30,
                 "speed": 10,
                 "range": 5,
@@ -7199,7 +6945,6 @@
             "projectiles": [
               {
                 "id": "Minigun_Projectile",
-                "name": "Minigun_Projectile",
                 "damage": 5,
                 "speed": 50,
                 "range": 1000,
@@ -7236,7 +6981,6 @@
             "projectiles": [
               {
                 "id": "Minigun_Projectile",
-                "name": "Minigun_Projectile",
                 "damage": 5,
                 "speed": 50,
                 "range": 1000,
@@ -7273,7 +7017,6 @@
             "projectiles": [
               {
                 "id": "Mining_Laser_Ham_Projectile",
-                "name": "Trail 1",
                 "damage": 10,
                 "speed": 600,
                 "range": 1000,
@@ -7310,7 +7053,6 @@
             "projectiles": [
               {
                 "id": "Stinger_Projectile",
-                "name": "Point light",
                 "damage": 10,
                 "speed": 20,
                 "range": 60,
@@ -7325,7 +7067,6 @@
             "projectiles": [
               {
                 "id": "BeeProjectile",
-                "name": "BeeProjectile",
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
@@ -7340,7 +7081,6 @@
             "projectiles": [
               {
                 "id": "BeeProjectile",
-                "name": "BeeProjectile",
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
@@ -7355,7 +7095,6 @@
             "projectiles": [
               {
                 "id": "BeeProjectile",
-                "name": "BeeProjectile",
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
@@ -7393,7 +7132,6 @@
             "projectiles": [
               {
                 "id": "Mjolnir_Uncharged_Projectile",
-                "name": "Trail 1",
                 "damage": 26,
                 "speed": 200,
                 "range": 50,
@@ -7415,7 +7153,6 @@
             "projectiles": [
               {
                 "id": "Mjolnir_Charged_Projectile",
-                "name": "Trail 1",
                 "damage": 36,
                 "speed": 600,
                 "range": 100,
@@ -7452,7 +7189,6 @@
             "projectiles": [
               {
                 "id": "Molotov_Cocktail_Projectile",
-                "name": "VFX_Rocket_Exhaust_Fire",
                 "damage": 6,
                 "speed": 18,
                 "range": 25,
@@ -7489,7 +7225,6 @@
             "projectiles": [
               {
                 "id": "Molotov_Cocktail_Projectile",
-                "name": "VFX_Rocket_Exhaust_Fire",
                 "damage": 6,
                 "speed": 18,
                 "range": 25,
@@ -7526,7 +7261,6 @@
             "projectiles": [
               {
                 "id": "MoonrakerLaserBeam",
-                "name": "MoonrakerLaserBeam",
                 "damage": 26,
                 "speed": -1,
                 "range": 50,
@@ -7563,7 +7297,6 @@
             "projectiles": [
               {
                 "id": "MoonrakerLaserBeam_Synergy",
-                "name": "MoonrakerLaserBeam_Synergy",
                 "damage": 26,
                 "speed": -1,
                 "range": 50,
@@ -7606,7 +7339,6 @@
             "projectiles": [
               {
                 "id": "Mutant_Arm_Beam",
-                "name": "Mutant_Arm_Beam",
                 "damage": 45,
                 "speed": 40,
                 "range": 20,
@@ -7643,7 +7375,6 @@
             "projectiles": [
               {
                 "id": "Nail",
-                "name": "Nail",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -7680,7 +7411,6 @@
             "projectiles": [
               {
                 "id": "Nail_Synergy",
-                "name": "Nail_Synergy",
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
@@ -7717,7 +7447,6 @@
             "projectiles": [
               {
                 "id": "WireGuided_Missile",
-                "name": "VFX_Rocket_Exhaust",
                 "damage": 100,
                 "speed": 10,
                 "range": 200,
@@ -7754,7 +7483,6 @@
             "projectiles": [
               {
                 "id": "Noisy_Cricket_Projectile",
-                "name": "Noisy_Cricket_Projectile",
                 "damage": 20,
                 "speed": 36,
                 "range": 18,
@@ -7791,7 +7519,6 @@
             "projectiles": [
               {
                 "id": "Origami_Flower_Projectile",
-                "name": "Origami_Flower_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 40,
@@ -7800,7 +7527,6 @@
               },
               {
                 "id": "Origami_Swan_Projectile",
-                "name": "Origami_Swan_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 40,
@@ -7809,7 +7535,6 @@
               },
               {
                 "id": "Origami_Unicorn_Projectile",
-                "name": "Origami_Unicorn_Projectile",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 40,
@@ -7847,7 +7572,6 @@
             "projectiles": [
               {
                 "id": "Origami_Projectile_Synergy",
-                "name": "Origami_Projectile_Synergy",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 40,
@@ -7862,7 +7586,6 @@
             "projectiles": [
               {
                 "id": "Origami_Projectile_Synergy",
-                "name": "Origami_Projectile_Synergy",
                 "damage": 7.5,
                 "speed": 20,
                 "range": 40,
@@ -7899,7 +7622,6 @@
             "projectiles": [
               {
                 "id": "Pea_Projectile",
-                "name": "light",
                 "damage": 4,
                 "speed": 20,
                 "range": 20,
@@ -7936,7 +7658,6 @@
             "projectiles": [
               {
                 "id": "Pea_Grenade",
-                "name": "light",
                 "damage": 4,
                 "speed": 20,
                 "range": 20,
@@ -7973,7 +7694,6 @@
             "projectiles": [
               {
                 "id": "Phoenix_Projectile",
-                "name": "Phoenix_Projectile",
                 "damage": 4,
                 "speed": 25,
                 "range": 25,
@@ -7988,7 +7708,6 @@
             "projectiles": [
               {
                 "id": "Phoenix_Flame_Projectile",
-                "name": "Phoenix_Flame_Projectile",
                 "damage": 0,
                 "speed": 10,
                 "range": 3,
@@ -8026,7 +7745,6 @@
             "projectiles": [
               {
                 "id": "Phoenix_Projectile",
-                "name": "Phoenix_Projectile",
                 "damage": 4,
                 "speed": 25,
                 "range": 25,
@@ -8041,7 +7759,6 @@
             "projectiles": [
               {
                 "id": "Phoenix_Flame_Projectile",
-                "name": "Phoenix_Flame_Projectile",
                 "damage": 0,
                 "speed": 10,
                 "range": 3,
@@ -8079,7 +7796,6 @@
             "projectiles": [
               {
                 "id": "Pillow_Projectile",
-                "name": "Pillow_Projectile",
                 "damage": 10,
                 "speed": 23,
                 "range": 40,
@@ -8094,7 +7810,6 @@
             "projectiles": [
               {
                 "id": "Pillow_Stun_Projectile",
-                "name": "Pillow_Stun_Projectile",
                 "damage": 5,
                 "speed": 16,
                 "range": 3,
@@ -8132,7 +7847,6 @@
             "projectiles": [
               {
                 "id": "Pitchfork_Projectile",
-                "name": "Pitchfork_Projectile",
                 "damage": 4,
                 "speed": 23,
                 "range": 1000,
@@ -8170,7 +7884,6 @@
             "projectiles": [
               {
                 "id": "Pitchfork_Projectile_Synergy",
-                "name": "Pitchfork_Projectile_Synergy",
                 "damage": 4,
                 "speed": 23,
                 "range": 1000,
@@ -8208,7 +7921,6 @@
             "projectiles": [
               {
                 "id": "Plasma_Cell_Projectile",
-                "name": "light",
                 "damage": 18,
                 "speed": 45,
                 "range": 1000,
@@ -8245,7 +7957,6 @@
             "projectiles": [
               {
                 "id": "Plasma_Cell_Synergy_Projectile",
-                "name": "light",
                 "damage": 9,
                 "speed": 45,
                 "range": 1000,
@@ -8288,7 +7999,6 @@
             "projectiles": [
               {
                 "id": "Plasma_Rifle_Projectile",
-                "name": "Point light",
                 "damage": 9,
                 "speed": 20,
                 "range": 1000,
@@ -8331,7 +8041,6 @@
             "projectiles": [
               {
                 "id": "Plasma_Rifle_Projectile",
-                "name": "Point light",
                 "damage": 9,
                 "speed": 20,
                 "range": 1000,
@@ -8346,7 +8055,6 @@
             "projectiles": [
               {
                 "id": "Plasma_Rifle_Projectile",
-                "name": "Point light",
                 "damage": 9,
                 "speed": 20,
                 "range": 1000,
@@ -8383,7 +8091,6 @@
             "projectiles": [
               {
                 "id": "Polar_Star_L1_Projectile",
-                "name": "Polar_Star_L1_Projectile",
                 "damage": 5,
                 "speed": 40,
                 "range": 1000,
@@ -8404,7 +8111,6 @@
             "projectiles": [
               {
                 "id": "Polar_Star_L2_Projectile",
-                "name": "Polar_Star_L2_Projectile",
                 "damage": 5,
                 "speed": 40,
                 "range": 1000,
@@ -8419,7 +8125,6 @@
             "projectiles": [
               {
                 "id": "Polar_Star_L2_Projectile",
-                "name": "Polar_Star_L2_Projectile",
                 "damage": 5,
                 "speed": 40,
                 "range": 1000,
@@ -8440,7 +8145,6 @@
             "projectiles": [
               {
                 "id": "Polar_Star_Projectile",
-                "name": "Polar_Star_Projectile",
                 "damage": 25,
                 "speed": 40,
                 "range": 1000,
@@ -8479,7 +8183,6 @@
             "projectiles": [
               {
                 "id": "Polar_Star_L1_Projectile",
-                "name": "Polar_Star_L1_Projectile",
                 "damage": 5,
                 "speed": 40,
                 "range": 1000,
@@ -8500,7 +8203,6 @@
             "projectiles": [
               {
                 "id": "Polar_Star_L2_Projectile",
-                "name": "Polar_Star_L2_Projectile",
                 "damage": 5,
                 "speed": 40,
                 "range": 1000,
@@ -8515,7 +8217,6 @@
             "projectiles": [
               {
                 "id": "Polar_Star_L2_Projectile",
-                "name": "Polar_Star_L2_Projectile",
                 "damage": 5,
                 "speed": 40,
                 "range": 1000,
@@ -8536,7 +8237,6 @@
             "projectiles": [
               {
                 "id": "Polar_Star_Projectile",
-                "name": "Polar_Star_Projectile",
                 "damage": 25,
                 "speed": 40,
                 "range": 1000,
@@ -8575,7 +8275,6 @@
             "projectiles": [
               {
                 "id": "TShirt_Green_Projectile",
-                "name": "light",
                 "damage": 15,
                 "speed": 25,
                 "range": 1000,
@@ -8619,7 +8318,6 @@
             "projectiles": [
               {
                 "id": "Proton_Pack_Beam_Red",
-                "name": "Proton_Pack_Beam_Red",
                 "damage": 1.5,
                 "speed": 12,
                 "range": 90,
@@ -8634,7 +8332,6 @@
             "projectiles": [
               {
                 "id": "Proton_Pack_Beam_Ver2",
-                "name": "Proton_Pack_Beam_Ver2",
                 "damage": 50,
                 "speed": 14,
                 "range": 90,
@@ -8677,7 +8374,6 @@
             "projectiles": [
               {
                 "id": "Proton_Pack_Beam_Red_Synergy",
-                "name": "Proton_Pack_Beam_Red_Synergy",
                 "damage": 1.5,
                 "speed": 12,
                 "range": 90,
@@ -8692,7 +8388,6 @@
             "projectiles": [
               {
                 "id": "Proton_Pack_Beam_Ver2",
-                "name": "Proton_Pack_Beam_Ver2",
                 "damage": 50,
                 "speed": 14,
                 "range": 90,
@@ -8730,7 +8425,6 @@
             "projectiles": [
               {
                 "id": "Pulse_Projectile",
-                "name": "Pulse_Projectile",
                 "damage": 5,
                 "speed": 23,
                 "range": 15,
@@ -8752,7 +8446,6 @@
             "projectiles": [
               {
                 "id": "PulseCharge_Projectile",
-                "name": "PulseCharge_Projectile",
                 "damage": 25,
                 "speed": 28,
                 "range": 15,
@@ -8789,7 +8482,6 @@
             "projectiles": [
               {
                 "id": "Pulse_Projectile",
-                "name": "Pulse_Projectile",
                 "damage": 5,
                 "speed": 23,
                 "range": 15,
@@ -8832,7 +8524,6 @@
             "projectiles": [
               {
                 "id": "PulseCannonProjectile_001",
-                "name": "PulseCannonProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -8847,7 +8538,6 @@
             "projectiles": [
               {
                 "id": "PulseCannonProjectile_001",
-                "name": "PulseCannonProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -8862,7 +8552,6 @@
             "projectiles": [
               {
                 "id": "PulseCannonProjectile_001",
-                "name": "PulseCannonProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -8877,7 +8566,6 @@
             "projectiles": [
               {
                 "id": "PulseCannonProjectile_001",
-                "name": "PulseCannonProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -8892,7 +8580,6 @@
             "projectiles": [
               {
                 "id": "PulseCannonProjectile_001",
-                "name": "PulseCannonProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -8907,7 +8594,6 @@
             "projectiles": [
               {
                 "id": "PulseCannonProjectile_001",
-                "name": "PulseCannonProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -8944,7 +8630,6 @@
             "projectiles": [
               {
                 "id": "Purple_Raygun_Projectile",
-                "name": "Point light",
                 "damage": 10,
                 "speed": 40,
                 "range": 35,
@@ -8981,7 +8666,6 @@
             "projectiles": [
               {
                 "id": "Quad_Laser_Projectile",
-                "name": "Quad_Laser_Projectile",
                 "damage": 80,
                 "speed": 1,
                 "range": 15,
@@ -9018,7 +8702,6 @@
             "projectiles": [
               {
                 "id": "RadiationLaserBeam",
-                "name": "RadiationLaserBeam",
                 "damage": 16,
                 "speed": -1,
                 "range": 50,
@@ -9056,7 +8739,6 @@
             "projectiles": [
               {
                 "id": "RaidenLaserBeam",
-                "name": "Impact",
                 "damage": 17.5,
                 "speed": -1,
                 "range": 30,
@@ -9093,7 +8775,6 @@
             "projectiles": [
               {
                 "id": "RaidenLaserBeam",
-                "name": "Impact",
                 "damage": 17.5,
                 "speed": -1,
                 "range": 30,
@@ -9108,7 +8789,6 @@
             "projectiles": [
               {
                 "id": "Raiden_Projectile",
-                "name": "Raiden_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -9123,7 +8803,6 @@
             "projectiles": [
               {
                 "id": "Raiden_Projectile",
-                "name": "Raiden_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -9161,7 +8840,6 @@
             "projectiles": [
               {
                 "id": "Railgun_Variant_Projectile",
-                "name": "Trail 1",
                 "damage": 150,
                 "speed": 800,
                 "range": 1000,
@@ -9199,7 +8877,6 @@
             "projectiles": [
               {
                 "id": "Railgun_Projectile",
-                "name": "Trail 1",
                 "damage": 50,
                 "speed": 250,
                 "range": 1000,
@@ -9242,7 +8919,6 @@
             "projectiles": [
               {
                 "id": "Rattler_Projectile",
-                "name": "Rattler_Projectile",
                 "damage": 3,
                 "speed": 15,
                 "range": 20,
@@ -9257,7 +8933,6 @@
             "projectiles": [
               {
                 "id": "Rattler_Venom_Projectile",
-                "name": "Trail 1",
                 "damage": 3,
                 "speed": 200,
                 "range": 1000,
@@ -9273,7 +8948,6 @@
             "projectiles": [
               {
                 "id": "Rattler_Projectile",
-                "name": "Rattler_Projectile",
                 "damage": 3,
                 "speed": 15,
                 "range": 20,
@@ -9288,7 +8962,6 @@
             "projectiles": [
               {
                 "id": "Rattler_Projectile",
-                "name": "Rattler_Projectile",
                 "damage": 3,
                 "speed": 15,
                 "range": 20,
@@ -9303,7 +8976,6 @@
             "projectiles": [
               {
                 "id": "Rattler_Projectile",
-                "name": "Rattler_Projectile",
                 "damage": 3,
                 "speed": 15,
                 "range": 20,
@@ -9318,7 +8990,6 @@
             "projectiles": [
               {
                 "id": "Rattler_Projectile",
-                "name": "Rattler_Projectile",
                 "damage": 3,
                 "speed": 15,
                 "range": 20,
@@ -9333,7 +9004,6 @@
             "projectiles": [
               {
                 "id": "Rattler_Projectile",
-                "name": "Rattler_Projectile",
                 "damage": 3,
                 "speed": 15,
                 "range": 20,
@@ -9348,7 +9018,6 @@
             "projectiles": [
               {
                 "id": "Rattler_Projectile",
-                "name": "Rattler_Projectile",
                 "damage": 3,
                 "speed": 15,
                 "range": 20,
@@ -9385,7 +9054,6 @@
             "projectiles": [
               {
                 "id": "Raw_Iron_Projectile",
-                "name": "Raw_Iron_Projectile",
                 "damage": 6,
                 "speed": 15,
                 "range": 35,
@@ -9428,7 +9096,6 @@
             "projectiles": [
               {
                 "id": "Rectangle_Shotgun_Projectile",
-                "name": "Rectangle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -9443,7 +9110,6 @@
             "projectiles": [
               {
                 "id": "Rectangle_Shotgun_Projectile",
-                "name": "Rectangle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -9458,7 +9124,6 @@
             "projectiles": [
               {
                 "id": "Rectangle_Shotgun_Projectile",
-                "name": "Rectangle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -9473,7 +9138,6 @@
             "projectiles": [
               {
                 "id": "Rectangle_Shotgun_Projectile",
-                "name": "Rectangle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -9488,7 +9152,6 @@
             "projectiles": [
               {
                 "id": "Rectangle_Shotgun_Projectile",
-                "name": "Rectangle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -9503,7 +9166,6 @@
             "projectiles": [
               {
                 "id": "Rectangle_Shotgun_Projectile",
-                "name": "Rectangle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -9540,7 +9202,6 @@
             "projectiles": [
               {
                 "id": "RobotGunhand_Projectile",
-                "name": "RobotGunhand_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 20,
@@ -9580,7 +9241,6 @@
             "projectiles": [
               {
                 "id": "RobotGunhand_Projectile_Alt",
-                "name": "RobotGunhand_Projectile_Alt",
                 "damage": 5,
                 "speed": 25,
                 "range": 20,
@@ -9626,7 +9286,6 @@
             "projectiles": [
               {
                 "id": "RPG_Missile",
-                "name": "VFX_Rocket_Exhaust_Fire",
                 "damage": 20,
                 "speed": 40,
                 "range": 90,
@@ -9663,7 +9322,6 @@
             "projectiles": [
               {
                 "id": "Rusty_Goop_Gun_Projectile",
-                "name": "VFX_Poison_Trail",
                 "damage": 5,
                 "speed": 20,
                 "range": 25,
@@ -9701,7 +9359,6 @@
             "projectiles": [
               {
                 "id": "Rusty_Goop_Gun_Projectile_Synergy",
-                "name": "VFX_Poison_Trail",
                 "damage": 7,
                 "speed": 10,
                 "range": 45,
@@ -9739,7 +9396,6 @@
             "projectiles": [
               {
                 "id": "Rusty_Sidearm_Projectile",
-                "name": "Rusty_Sidearm_Projectile",
                 "damage": 6,
                 "speed": 16,
                 "range": 16,
@@ -9779,7 +9435,6 @@
             "projectiles": [
               {
                 "id": "Rusty_Sidearm_Projectile_Alt",
-                "name": "Rusty_Sidearm_Projectile_Alt",
                 "damage": 6,
                 "speed": 16,
                 "range": 16,
@@ -9819,7 +9474,6 @@
             "projectiles": [
               {
                 "id": "SAA_Projectile",
-                "name": "SAA_Projectile",
                 "damage": 8,
                 "speed": 25,
                 "range": 1000,
@@ -9857,7 +9511,6 @@
             "projectiles": [
               {
                 "id": "Sailgun_Projectile",
-                "name": "Trail",
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
@@ -9895,7 +9548,6 @@
             "projectiles": [
               {
                 "id": "Sailgun_Projectile",
-                "name": "Trail",
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
@@ -9933,7 +9585,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_small",
-                "name": "Samus_Projectile_small",
                 "damage": 5,
                 "speed": 20,
                 "range": 1000,
@@ -9955,7 +9606,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_medium",
-                "name": "Samus_Projectile_medium",
                 "damage": 10,
                 "speed": 27,
                 "range": 1000,
@@ -9977,7 +9627,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_large",
-                "name": "Samus_Projectile_large",
                 "damage": 70,
                 "speed": 35,
                 "range": 1000,
@@ -10014,7 +9663,6 @@
             "projectiles": [
               {
                 "id": "SawedOff_Shotgun_Projectile",
-                "name": "SawedOff_Shotgun_Projectile",
                 "damage": 4,
                 "speed": 23,
                 "range": 8,
@@ -10029,7 +9677,6 @@
             "projectiles": [
               {
                 "id": "SawedOff_Shotgun_Projectile",
-                "name": "SawedOff_Shotgun_Projectile",
                 "damage": 4,
                 "speed": 23,
                 "range": 8,
@@ -10044,7 +9691,6 @@
             "projectiles": [
               {
                 "id": "SawedOff_Shotgun_Projectile",
-                "name": "SawedOff_Shotgun_Projectile",
                 "damage": 4,
                 "speed": 23,
                 "range": 8,
@@ -10059,7 +9705,6 @@
             "projectiles": [
               {
                 "id": "SawedOff_Shotgun_Projectile",
-                "name": "SawedOff_Shotgun_Projectile",
                 "damage": 4,
                 "speed": 23,
                 "range": 8,
@@ -10096,7 +9741,6 @@
             "projectiles": [
               {
                 "id": "Saw_Projectile",
-                "name": "Saw_Projectile",
                 "damage": 7,
                 "speed": 25,
                 "range": 1000,
@@ -10133,7 +9777,6 @@
             "projectiles": [
               {
                 "id": "Saw_Projectile_Synergy",
-                "name": "Saw_Projectile_Synergy",
                 "damage": 7,
                 "speed": 10,
                 "range": 1000,
@@ -10170,7 +9813,6 @@
             "projectiles": [
               {
                 "id": "Egg_Projectile",
-                "name": "Egg_Projectile",
                 "damage": 6,
                 "speed": 20,
                 "range": 32,
@@ -10208,7 +9850,6 @@
             "projectiles": [
               {
                 "id": "Cannonball_Projectile",
-                "name": "Cannonball_Projectile",
                 "damage": 50,
                 "speed": 35,
                 "range": 1000,
@@ -10246,7 +9887,6 @@
             "projectiles": [
               {
                 "id": "SharkProjectile",
-                "name": "SharkProjectile",
                 "damage": 150,
                 "speed": 10,
                 "range": 1000,
@@ -10289,7 +9929,6 @@
             "projectiles": [
               {
                 "id": "Shellegun_Bullet_Projectile",
-                "name": "Shellegun_Bullet_Projectile",
                 "damage": 8,
                 "speed": 25,
                 "range": 30,
@@ -10326,7 +9965,6 @@
             "projectiles": [
               {
                 "id": "Shieldmet_Projectile",
-                "name": "Shieldmet_Projectile",
                 "damage": 7,
                 "speed": 23,
                 "range": 18,
@@ -10363,7 +10001,6 @@
             "projectiles": [
               {
                 "id": "Shieldmet_Projectile",
-                "name": "Shieldmet_Projectile",
                 "damage": 7,
                 "speed": 23,
                 "range": 18,
@@ -10400,7 +10037,6 @@
             "projectiles": [
               {
                 "id": "Shotgrub_Projectile",
-                "name": "VFX_Poison_Trail",
                 "damage": 5,
                 "speed": 20,
                 "range": 25,
@@ -10416,7 +10052,6 @@
             "projectiles": [
               {
                 "id": "Shotgrub_Projectile",
-                "name": "VFX_Poison_Trail",
                 "damage": 5,
                 "speed": 20,
                 "range": 25,
@@ -10432,7 +10067,6 @@
             "projectiles": [
               {
                 "id": "Shotgrub_Projectile",
-                "name": "VFX_Poison_Trail",
                 "damage": 5,
                 "speed": 20,
                 "range": 25,
@@ -10448,7 +10082,6 @@
             "projectiles": [
               {
                 "id": "Shotgrub_Projectile",
-                "name": "VFX_Poison_Trail",
                 "damage": 5,
                 "speed": 20,
                 "range": 25,
@@ -10464,7 +10097,6 @@
             "projectiles": [
               {
                 "id": "Shotgrub_Projectile",
-                "name": "VFX_Poison_Trail",
                 "damage": 5,
                 "speed": 20,
                 "range": 25,
@@ -10502,7 +10134,6 @@
             "projectiles": [
               {
                 "id": "RegularShotgunProjectile_001",
-                "name": "RegularShotgunProjectile_001",
                 "damage": 4,
                 "speed": 20,
                 "range": 15,
@@ -10517,7 +10148,6 @@
             "projectiles": [
               {
                 "id": "RegularShotgunProjectile_001",
-                "name": "RegularShotgunProjectile_001",
                 "damage": 4,
                 "speed": 20,
                 "range": 15,
@@ -10532,7 +10162,6 @@
             "projectiles": [
               {
                 "id": "RegularShotgunProjectile_001",
-                "name": "RegularShotgunProjectile_001",
                 "damage": 4,
                 "speed": 20,
                 "range": 15,
@@ -10547,7 +10176,6 @@
             "projectiles": [
               {
                 "id": "RegularShotgunProjectile_001",
-                "name": "RegularShotgunProjectile_001",
                 "damage": 4,
                 "speed": 20,
                 "range": 15,
@@ -10562,7 +10190,6 @@
             "projectiles": [
               {
                 "id": "RegularShotgunProjectile_001",
-                "name": "RegularShotgunProjectile_001",
                 "damage": 4,
                 "speed": 20,
                 "range": 15,
@@ -10577,7 +10204,6 @@
             "projectiles": [
               {
                 "id": "RegularShotgunProjectile_001",
-                "name": "RegularShotgunProjectile_001",
                 "damage": 4,
                 "speed": 20,
                 "range": 15,
@@ -10620,7 +10246,6 @@
             "projectiles": [
               {
                 "id": "ShotgunAxeProjectile_001",
-                "name": "ShotgunAxeProjectile_001",
                 "damage": 3.5,
                 "speed": 25,
                 "range": 15,
@@ -10635,7 +10260,6 @@
             "projectiles": [
               {
                 "id": "ShotgunAxeProjectile_001",
-                "name": "ShotgunAxeProjectile_001",
                 "damage": 3.5,
                 "speed": 25,
                 "range": 15,
@@ -10650,7 +10274,6 @@
             "projectiles": [
               {
                 "id": "ShotgunAxeProjectile_001",
-                "name": "ShotgunAxeProjectile_001",
                 "damage": 3.5,
                 "speed": 25,
                 "range": 15,
@@ -10665,7 +10288,6 @@
             "projectiles": [
               {
                 "id": "ShotgunAxeProjectile_001",
-                "name": "ShotgunAxeProjectile_001",
                 "damage": 3.5,
                 "speed": 25,
                 "range": 15,
@@ -10680,7 +10302,6 @@
             "projectiles": [
               {
                 "id": "ShotgunAxeProjectile_001",
-                "name": "ShotgunAxeProjectile_001",
                 "damage": 3.5,
                 "speed": 25,
                 "range": 15,
@@ -10695,7 +10316,6 @@
             "projectiles": [
               {
                 "id": "ShotgunAxeProjectile_001",
-                "name": "ShotgunAxeProjectile_001",
                 "damage": 3.5,
                 "speed": 25,
                 "range": 15,
@@ -10735,7 +10355,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Hate_Projectile_Poison",
-                "name": "VFX_Poison_Trail",
                 "damage": 6,
                 "speed": 16,
                 "range": 22,
@@ -10750,7 +10369,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Hate_Projectile_Bullet",
-                "name": "Shotgun_Hate_Projectile_Bullet",
                 "damage": 6,
                 "speed": 22,
                 "range": 10,
@@ -10765,7 +10383,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Hate_Projectile_Poison",
-                "name": "VFX_Poison_Trail",
                 "damage": 6,
                 "speed": 16,
                 "range": 22,
@@ -10780,7 +10397,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Hate_Projectile_Nail",
-                "name": "Shotgun_Hate_Projectile_Nail",
                 "damage": 3,
                 "speed": 30,
                 "range": 1000,
@@ -10795,7 +10411,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Hate_Skull_Projectile",
-                "name": "Shotgun_Hate_Skull_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -10810,7 +10425,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Hate_Projectile_Bullet",
-                "name": "Shotgun_Hate_Projectile_Bullet",
                 "damage": 6,
                 "speed": 22,
                 "range": 10,
@@ -10853,7 +10467,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Love_Bullet_Projectile",
-                "name": "Shotgun_Love_Bullet_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -10869,7 +10482,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Love_Bullet_Projectile",
-                "name": "Shotgun_Love_Bullet_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -10885,7 +10497,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Love_Star_Projectile",
-                "name": "Shotgun_Love_Star_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -10901,7 +10512,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Love_Bear_Projectile",
-                "name": "Shotgun_Love_Bear_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -10917,7 +10527,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Love_Candy_Projectile",
-                "name": "Shotgun_Love_Candy_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -10933,7 +10542,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Love_Bear_Projectile",
-                "name": "Shotgun_Love_Bear_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -10971,7 +10579,6 @@
             "projectiles": [
               {
                 "id": "Ghost_Bullet_Projectile",
-                "name": "Ghost_Bullet_Projectile",
                 "damage": 10,
                 "speed": 15,
                 "range": 1000,
@@ -11015,7 +10622,6 @@
             "projectiles": [
               {
                 "id": "Sling_Projectile",
-                "name": "Sling_Projectile",
                 "damage": 25,
                 "speed": 40,
                 "range": 1000,
@@ -11052,7 +10658,6 @@
             "projectiles": [
               {
                 "id": "Snakepoof_Projectile",
-                "name": "Snakepoof_Projectile",
                 "damage": 12,
                 "speed": 50,
                 "range": 1000,
@@ -11089,7 +10694,6 @@
             "projectiles": [
               {
                 "id": "SniperRifleProjectile",
-                "name": "Trail 1",
                 "damage": 26,
                 "speed": 200,
                 "range": 1000,
@@ -11126,7 +10730,6 @@
             "projectiles": [
               {
                 "id": "Snowball_Projectile",
-                "name": "Snowball_Projectile",
                 "damage": 3.5,
                 "speed": 28,
                 "range": 35,
@@ -11164,7 +10767,6 @@
             "projectiles": [
               {
                 "id": "Snowball_Projectile",
-                "name": "Snowball_Projectile",
                 "damage": 3.5,
                 "speed": 28,
                 "range": 35,
@@ -11180,7 +10782,6 @@
             "projectiles": [
               {
                 "id": "Snowball_Projectile",
-                "name": "Snowball_Projectile",
                 "damage": 3.5,
                 "speed": 28,
                 "range": 35,
@@ -11196,7 +10797,6 @@
             "projectiles": [
               {
                 "id": "Snowball_Projectile",
-                "name": "Snowball_Projectile",
                 "damage": 3.5,
                 "speed": 28,
                 "range": 35,
@@ -11234,7 +10834,6 @@
             "projectiles": [
               {
                 "id": "Budget_Projectile",
-                "name": "Budget_Projectile",
                 "damage": 6,
                 "speed": 23,
                 "range": 18,
@@ -11274,7 +10873,6 @@
             "projectiles": [
               {
                 "id": "Budget_Projectile_Alt",
-                "name": "Budget_Projectile_Alt",
                 "damage": 6,
                 "speed": 23,
                 "range": 18,
@@ -11314,7 +10912,6 @@
             "projectiles": [
               {
                 "id": "space_Rifle_Projectile_01",
-                "name": "space_Rifle_Projectile_01",
                 "damage": 6.5,
                 "speed": 23,
                 "range": 20,
@@ -11357,7 +10954,6 @@
             "projectiles": [
               {
                 "id": "space_Shotgun_Projectile_01",
-                "name": "light",
                 "damage": 5,
                 "speed": 17,
                 "range": 10,
@@ -11372,7 +10968,6 @@
             "projectiles": [
               {
                 "id": "space_Shotgun_Projectile_01",
-                "name": "light",
                 "damage": 5,
                 "speed": 17,
                 "range": 10,
@@ -11387,7 +10982,6 @@
             "projectiles": [
               {
                 "id": "space_Shotgun_Projectile_01",
-                "name": "light",
                 "damage": 5,
                 "speed": 17,
                 "range": 10,
@@ -11402,7 +10996,6 @@
             "projectiles": [
               {
                 "id": "space_Shotgun_Projectile_01",
-                "name": "light",
                 "damage": 5,
                 "speed": 17,
                 "range": 10,
@@ -11417,7 +11010,6 @@
             "projectiles": [
               {
                 "id": "space_Shotgun_Projectile_01",
-                "name": "light",
                 "damage": 5,
                 "speed": 17,
                 "range": 10,
@@ -11432,7 +11024,6 @@
             "projectiles": [
               {
                 "id": "space_Shotgun_Projectile_01",
-                "name": "light",
                 "damage": 5,
                 "speed": 17,
                 "range": 10,
@@ -11469,7 +11060,6 @@
             "projectiles": [
               {
                 "id": "Ghost_Bullet_Small_Projectile",
-                "name": "Ghost_Bullet_Small_Projectile",
                 "damage": 4,
                 "speed": 18,
                 "range": 1000,
@@ -11506,7 +11096,6 @@
             "projectiles": [
               {
                 "id": "SPMC1_Projectile",
-                "name": "SPMC1_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 18,
@@ -11546,7 +11135,6 @@
             "projectiles": [
               {
                 "id": "SPMC1_Projectile_Alt",
-                "name": "SPMC1_Projectile_Alt",
                 "damage": 5,
                 "speed": 25,
                 "range": 18,
@@ -11586,7 +11174,6 @@
             "projectiles": [
               {
                 "id": "SST_Projectile",
-                "name": "SST_Projectile",
                 "damage": 3,
                 "speed": 25,
                 "range": 18,
@@ -11623,7 +11210,6 @@
             "projectiles": [
               {
                 "id": "Arrow_Sticky_Projectile",
-                "name": "Arrow_Sticky_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -11660,7 +11246,6 @@
             "projectiles": [
               {
                 "id": "Super_Soaker_Beam",
-                "name": "Super_Soaker_Beam",
                 "damage": 15,
                 "speed": 20,
                 "range": 20,
@@ -11708,7 +11293,6 @@
             "projectiles": [
               {
                 "id": "Super_Meat_Gun_Projectile",
-                "name": "Super_Meat_Gun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
@@ -11751,7 +11335,6 @@
             "projectiles": [
               {
                 "id": "Swordgun_Projectile",
-                "name": "Swordgun_Projectile",
                 "damage": 7,
                 "speed": 26,
                 "range": 1000,
@@ -11797,7 +11380,6 @@
             "projectiles": [
               {
                 "id": "Swordgun_Projectile",
-                "name": "Swordgun_Projectile",
                 "damage": 7,
                 "speed": 26,
                 "range": 1000,
@@ -11837,7 +11419,6 @@
             "projectiles": [
               {
                 "id": "Syringe_Gun_Beam",
-                "name": "Syringe_Gun_Beam",
                 "damage": 7,
                 "speed": 20,
                 "range": 20,
@@ -11875,7 +11456,6 @@
             "projectiles": [
               {
                 "id": "Tank_Treader_Player_Projectile",
-                "name": "VFX_Rocket_Exhaust_Fire",
                 "damage": 100,
                 "speed": 26,
                 "range": 90,
@@ -11912,7 +11492,6 @@
             "projectiles": [
               {
                 "id": "Tentacle_Beam",
-                "name": "Impact",
                 "damage": 22.5,
                 "speed": -1,
                 "range": 30,
@@ -11949,7 +11528,6 @@
             "projectiles": [
               {
                 "id": "Tentacle_Beam_Kaliber",
-                "name": "Impact",
                 "damage": 22.5,
                 "speed": -1,
                 "range": 30,
@@ -11986,7 +11564,6 @@
             "projectiles": [
               {
                 "id": "Tetris_Projectile_001",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 16,
                 "range": 30,
@@ -11995,7 +11572,6 @@
               },
               {
                 "id": "Tetris_Projectile_002",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 16,
                 "range": 30,
@@ -12004,7 +11580,6 @@
               },
               {
                 "id": "Tetris_Projectile_003",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 16,
                 "range": 30,
@@ -12013,7 +11588,6 @@
               },
               {
                 "id": "Tetris_Projectile_004",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 16,
                 "range": 30,
@@ -12022,7 +11596,6 @@
               },
               {
                 "id": "Tetris_Projectile_005",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 16,
                 "range": 30,
@@ -12031,7 +11604,6 @@
               },
               {
                 "id": "Tetris_Projectile_006",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 16,
                 "range": 30,
@@ -12040,7 +11612,6 @@
               },
               {
                 "id": "Tetris_Projectile_007",
-                "name": "Point light",
                 "damage": 8,
                 "speed": 16,
                 "range": 30,
@@ -12078,7 +11649,6 @@
             "projectiles": [
               {
                 "id": "ThompsonProjectile",
-                "name": "ThompsonProjectile",
                 "damage": 5,
                 "speed": 23,
                 "range": 1000,
@@ -12115,7 +11685,6 @@
             "projectiles": [
               {
                 "id": "LaserThompson_Projectile_01",
-                "name": "LaserThompson_Projectile_01",
                 "damage": 6.5,
                 "speed": 23,
                 "range": 1000,
@@ -12152,7 +11721,6 @@
             "projectiles": [
               {
                 "id": "Tiger_Tooth_Projectile",
-                "name": "Tiger_Tooth_Projectile",
                 "damage": 0,
                 "speed": 23,
                 "range": 1000,
@@ -12189,7 +11757,6 @@
             "projectiles": [
               {
                 "id": "Trash_Bag_Projectile",
-                "name": "Trash_Bag_Projectile",
                 "damage": 20,
                 "speed": 20,
                 "range": 1000,
@@ -12226,7 +11793,6 @@
             "projectiles": [
               {
                 "id": "Trash_Recycle_Projectile_01",
-                "name": "Trash_Recycle_Projectile_01",
                 "damage": 20,
                 "speed": 20,
                 "range": 1000,
@@ -12234,7 +11800,6 @@
               },
               {
                 "id": "Trash_Recycle_Projectile_02",
-                "name": "Trash_Recycle_Projectile_02",
                 "damage": 20,
                 "speed": 20,
                 "range": 1000,
@@ -12271,7 +11836,6 @@
             "projectiles": [
               {
                 "id": "TrickProjectile_01",
-                "name": "TrickProjectile_01",
                 "damage": 7,
                 "speed": 30,
                 "range": 60,
@@ -12308,7 +11872,6 @@
             "projectiles": [
               {
                 "id": "Trident_Projectile",
-                "name": "Trail 1",
                 "damage": 8,
                 "speed": 600,
                 "range": 1000,
@@ -12348,7 +11911,6 @@
             "projectiles": [
               {
                 "id": "Arrow_Triple",
-                "name": "Arrow_Triple",
                 "damage": 7,
                 "speed": 25,
                 "range": 1000,
@@ -12386,7 +11948,6 @@
             "projectiles": [
               {
                 "id": "TShirt_Projectile",
-                "name": "light",
                 "damage": 8,
                 "speed": 25,
                 "range": 1000,
@@ -12423,7 +11984,6 @@
             "projectiles": [
               {
                 "id": "Tutorial_Knight_Revolver_Projectile",
-                "name": "Tutorial_Knight_Revolver_Projectile",
                 "damage": 0.5,
                 "speed": 12,
                 "range": 1000,
@@ -12460,7 +12020,6 @@
             "projectiles": [
               {
                 "id": "Twin_Energy_Projectile",
-                "name": "Point light",
                 "damage": 7.5,
                 "speed": 15,
                 "range": 100,
@@ -12475,7 +12034,6 @@
             "projectiles": [
               {
                 "id": "Twin_Energy_Projectile_Inverted",
-                "name": "Point light",
                 "damage": 7.5,
                 "speed": 15,
                 "range": 100,
@@ -12512,7 +12070,6 @@
             "projectiles": [
               {
                 "id": "Twin_Energy_Projectile",
-                "name": "Point light",
                 "damage": 7.5,
                 "speed": 15,
                 "range": 100,
@@ -12527,7 +12084,6 @@
             "projectiles": [
               {
                 "id": "Twin_Energy_Projectile_Inverted",
-                "name": "Point light",
                 "damage": 7.5,
                 "speed": 15,
                 "range": 100,
@@ -12570,7 +12126,6 @@
             "projectiles": [
               {
                 "id": "Rainbow_Beam",
-                "name": "Rainbow_Beam",
                 "damage": 30,
                 "speed": 30,
                 "range": 30,
@@ -12585,7 +12140,6 @@
             "projectiles": [
               {
                 "id": "Rainbow_Beam_White",
-                "name": "Rainbow_Beam_White",
                 "damage": 1.5,
                 "speed": 20,
                 "range": 90,
@@ -12622,7 +12176,6 @@
             "projectiles": [
               {
                 "id": "Boo_Projectile",
-                "name": "Boo_Projectile",
                 "damage": 12,
                 "speed": 1.8,
                 "range": 6,
@@ -12659,7 +12212,6 @@
             "projectiles": [
               {
                 "id": "UziProjectile",
-                "name": "UziProjectile",
                 "damage": 3.2,
                 "speed": 23,
                 "range": 16,
@@ -12696,7 +12248,6 @@
             "projectiles": [
               {
                 "id": "UziProjectile_Synergy",
-                "name": "UziProjectile_Synergy",
                 "damage": 3.2,
                 "speed": 23,
                 "range": 16,
@@ -12739,7 +12290,6 @@
             "projectiles": [
               {
                 "id": "Wicked_Sister_Projectile",
-                "name": "Wicked_Sister_Projectile",
                 "damage": 12,
                 "speed": 25,
                 "range": 1000,
@@ -12779,7 +12329,6 @@
             "projectiles": [
               {
                 "id": "Winchester_Rifle_Projectile",
-                "name": "Winchester_Rifle_Projectile",
                 "damage": 15,
                 "speed": 32,
                 "range": 1000,
@@ -12816,7 +12365,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -12831,7 +12379,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -12846,7 +12393,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -12861,7 +12407,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -12876,7 +12421,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -12891,7 +12435,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -12928,7 +12471,6 @@
             "projectiles": [
               {
                 "id": "Wind_Up_Gun_Projectile",
-                "name": "Point light",
                 "damage": 5,
                 "speed": 30,
                 "range": 35,
@@ -12965,7 +12507,6 @@
             "projectiles": [
               {
                 "id": "Blasphemy_Projectile",
-                "name": "Blasphemy_Projectile",
                 "damage": 14,
                 "speed": 26,
                 "range": 1000,
@@ -13005,7 +12546,6 @@
             "projectiles": [
               {
                 "id": "Pinecone_Projectile",
-                "name": "Pinecone_Projectile",
                 "damage": 5,
                 "speed": 15,
                 "range": 30,
@@ -13020,7 +12560,6 @@
             "projectiles": [
               {
                 "id": "Leaf_Projectile",
-                "name": "Leaf_Projectile",
                 "damage": 4,
                 "speed": 11,
                 "range": 20,
@@ -13035,7 +12574,6 @@
             "projectiles": [
               {
                 "id": "Leaf_Projectile",
-                "name": "Leaf_Projectile",
                 "damage": 4,
                 "speed": 11,
                 "range": 20,
@@ -13050,7 +12588,6 @@
             "projectiles": [
               {
                 "id": "Leaf_Projectile",
-                "name": "Leaf_Projectile",
                 "damage": 4,
                 "speed": 11,
                 "range": 20,
@@ -13087,7 +12624,6 @@
             "projectiles": [
               {
                 "id": "Robotech_Missile",
-                "name": "Exhaust",
                 "ignoreDamageCaps": true,
                 "damage": 8,
                 "speed": 10,
@@ -13125,7 +12661,6 @@
             "projectiles": [
               {
                 "id": "Yellow_Blaster_Projectile",
-                "name": "Point light",
                 "damage": 7,
                 "speed": 40,
                 "range": 60,
@@ -13162,7 +12697,6 @@
             "projectiles": [
               {
                 "id": "Zapper_Projectile",
-                "name": "Trail 1",
                 "damage": 7,
                 "speed": 400,
                 "range": 60,
@@ -13199,7 +12733,6 @@
             "projectiles": [
               {
                 "id": "Zapper_Dog_Projectile",
-                "name": "Trail 1",
                 "damage": 3,
                 "speed": 400,
                 "range": 60,
@@ -13243,7 +12776,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_small",
-                "name": "Zilla_Combat_Shotgun_Projectile_small",
                 "damage": 4,
                 "speed": 30,
                 "range": 1000,
@@ -13258,7 +12790,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_small",
-                "name": "Zilla_Combat_Shotgun_Projectile_small",
                 "damage": 4,
                 "speed": 30,
                 "range": 1000,
@@ -13273,7 +12804,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_small",
-                "name": "Zilla_Combat_Shotgun_Projectile_small",
                 "damage": 4,
                 "speed": 30,
                 "range": 1000,
@@ -13288,7 +12818,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_small",
-                "name": "Zilla_Combat_Shotgun_Projectile_small",
                 "damage": 4,
                 "speed": 30,
                 "range": 1000,
@@ -13303,7 +12832,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_small",
-                "name": "Zilla_Combat_Shotgun_Projectile_small",
                 "damage": 4,
                 "speed": 30,
                 "range": 1000,
@@ -13318,7 +12846,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_small",
-                "name": "Zilla_Combat_Shotgun_Projectile_small",
                 "damage": 4,
                 "speed": 30,
                 "range": 1000,
@@ -13333,7 +12860,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_small",
-                "name": "Zilla_Combat_Shotgun_Projectile_small",
                 "damage": 4,
                 "speed": 30,
                 "range": 1000,
@@ -13348,7 +12874,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_small",
-                "name": "Zilla_Combat_Shotgun_Projectile_small",
                 "damage": 4,
                 "speed": 30,
                 "range": 1000,
@@ -13370,7 +12895,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
-                "name": "Zilla_Combat_Shotgun_Projectile_charge",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -13385,7 +12909,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
-                "name": "Zilla_Combat_Shotgun_Projectile_charge",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -13400,7 +12923,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
-                "name": "Zilla_Combat_Shotgun_Projectile_charge",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -13415,7 +12937,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
-                "name": "Zilla_Combat_Shotgun_Projectile_charge",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -13430,7 +12951,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
-                "name": "Zilla_Combat_Shotgun_Projectile_charge",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -13445,7 +12965,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
-                "name": "Zilla_Combat_Shotgun_Projectile_charge",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -13460,7 +12979,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
-                "name": "Zilla_Combat_Shotgun_Projectile_charge",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -13475,7 +12993,6 @@
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
-                "name": "Zilla_Combat_Shotgun_Projectile_charge",
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
@@ -13512,7 +13029,6 @@
             "projectiles": [
               {
                 "id": "Raiden_Projectile",
-                "name": "Raiden_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -13549,7 +13065,6 @@
             "projectiles": [
               {
                 "id": "Air_Projectile",
-                "name": "Air_Projectile",
                 "damage": 12,
                 "speed": 18,
                 "range": 40,
@@ -13593,7 +13108,6 @@
             "projectiles": [
               {
                 "id": "Baseball_Bat_Projectile",
-                "name": "Baseball_Bat_Projectile",
                 "damage": 100,
                 "speed": 22,
                 "range": 2.5,
@@ -13615,7 +13129,6 @@
             "projectiles": [
               {
                 "id": "Baseball_Bat_Projectile",
-                "name": "Baseball_Bat_Projectile",
                 "damage": 100,
                 "speed": 22,
                 "range": 2.5,
@@ -13655,7 +13168,6 @@
             "projectiles": [
               {
                 "id": "Gun_Projectile",
-                "name": "SpawnPoint",
                 "damage": 7,
                 "speed": 12,
                 "range": 100,
@@ -13692,7 +13204,6 @@
             "projectiles": [
               {
                 "id": "Critical_Pistol_Projectile",
-                "name": "Critical_Pistol_Projectile",
                 "damage": 5,
                 "speed": 32,
                 "range": 1000,
@@ -13729,7 +13240,6 @@
             "projectiles": [
               {
                 "id": "Crowngun_Projectile",
-                "name": "Crowngun_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 40,
@@ -13744,7 +13254,6 @@
             "projectiles": [
               {
                 "id": "Crowngun_Projectile",
-                "name": "Crowngun_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 40,
@@ -13759,7 +13268,6 @@
             "projectiles": [
               {
                 "id": "Crowngun_Projectile",
-                "name": "Crowngun_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 40,
@@ -13797,7 +13305,6 @@
             "projectiles": [
               {
                 "id": "Devolver_Projectile",
-                "name": "Devolver_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
@@ -13834,7 +13341,6 @@
             "projectiles": [
               {
                 "id": "dpad_Gun_Projectile",
-                "name": "dpad_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 50,
@@ -13849,7 +13355,6 @@
             "projectiles": [
               {
                 "id": "dpad_Gun_Projectile",
-                "name": "dpad_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 50,
@@ -13864,7 +13369,6 @@
             "projectiles": [
               {
                 "id": "dpad_Gun_Projectile",
-                "name": "dpad_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 50,
@@ -13879,7 +13383,6 @@
             "projectiles": [
               {
                 "id": "dpad_Gun_Projectile",
-                "name": "dpad_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 50,
@@ -13916,7 +13419,6 @@
             "projectiles": [
               {
                 "id": "Dueling_Laser_Projectile",
-                "name": "Trail 1",
                 "damage": 100,
                 "speed": 600,
                 "range": 1000,
@@ -13956,7 +13458,6 @@
             "projectiles": [
               {
                 "id": "Evo_Gun_Projectile_001",
-                "name": "Evo_Gun_Projectile_001",
                 "damage": 6,
                 "speed": 22,
                 "range": 10,
@@ -13993,7 +13494,6 @@
             "projectiles": [
               {
                 "id": "Evo_Gun_Projectile_002",
-                "name": "Evo_Gun_Projectile_002",
                 "damage": 8.5,
                 "speed": 22,
                 "range": 25,
@@ -14030,7 +13530,6 @@
             "projectiles": [
               {
                 "id": "Evo_Gun_Projectile_003",
-                "name": "Evo_Gun_Projectile_003",
                 "damage": 11.5,
                 "speed": 25,
                 "range": 25,
@@ -14067,7 +13566,6 @@
             "projectiles": [
               {
                 "id": "Evo_Gun_Projectile_004",
-                "name": "Evo_Gun_Projectile_004",
                 "damage": 11.5,
                 "speed": 20,
                 "range": 25,
@@ -14082,7 +13580,6 @@
             "projectiles": [
               {
                 "id": "Evo_Gun_Projectile_004",
-                "name": "Evo_Gun_Projectile_004",
                 "damage": 11.5,
                 "speed": 20,
                 "range": 25,
@@ -14097,7 +13594,6 @@
             "projectiles": [
               {
                 "id": "Evo_Gun_Projectile_004",
-                "name": "Evo_Gun_Projectile_004",
                 "damage": 11.5,
                 "speed": 20,
                 "range": 25,
@@ -14134,7 +13630,6 @@
             "projectiles": [
               {
                 "id": "Evo_Gun_005_Beam",
-                "name": "Impact",
                 "damage": 23,
                 "speed": -1,
                 "range": 30,
@@ -14171,7 +13666,6 @@
             "projectiles": [
               {
                 "id": "Evo_Gun_Projectile_006",
-                "name": "Evo_Gun_Projectile_006",
                 "damage": 37.5,
                 "speed": 25,
                 "range": 25,
@@ -14208,7 +13702,6 @@
             "projectiles": [
               {
                 "id": "HammerOfDawn_Beam",
-                "name": "HammerOfDawn_Beam",
                 "damage": 0,
                 "speed": -1,
                 "range": 50,
@@ -14245,7 +13738,6 @@
             "projectiles": [
               {
                 "id": "HLD_Projectile",
-                "name": "Point light",
                 "damage": 20,
                 "speed": 26,
                 "range": 20,
@@ -14282,7 +13774,6 @@
             "projectiles": [
               {
                 "id": "HLD_Projectile",
-                "name": "Point light",
                 "damage": 20,
                 "speed": 26,
                 "range": 20,
@@ -14319,7 +13810,6 @@
             "projectiles": [
               {
                 "id": "Kthuliber_Gun_Projectile",
-                "name": "Kthuliber_Gun_Projectile",
                 "damage": 15,
                 "speed": 22,
                 "range": 25,
@@ -14356,7 +13846,6 @@
             "projectiles": [
               {
                 "id": "Moon_Crown_Projectile_Sm",
-                "name": "Moon_Crown_Projectile_Sm",
                 "damage": 5,
                 "speed": 23,
                 "range": 40,
@@ -14371,7 +13860,6 @@
             "projectiles": [
               {
                 "id": "Moon_Crown_Projectile_Mid",
-                "name": "Moon_Crown_Projectile_Mid",
                 "damage": 7,
                 "speed": 23,
                 "range": 40,
@@ -14386,7 +13874,6 @@
             "projectiles": [
               {
                 "id": "Moon_Crown_Projectile_Big",
-                "name": "Moon_Crown_Projectile_Big",
                 "damage": 10,
                 "speed": 23,
                 "range": 40,
@@ -14429,7 +13916,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_001",
-                "name": "Rad_Projectile_001",
                 "damage": 4,
                 "speed": 20,
                 "range": 55,
@@ -14450,7 +13936,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_002",
-                "name": "Rad_Projectile_002",
                 "damage": 6,
                 "speed": 25,
                 "range": 60,
@@ -14471,7 +13956,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_003",
-                "name": "Rad_Projectile_003",
                 "damage": 9,
                 "speed": 25,
                 "range": 66,
@@ -14492,7 +13976,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_004",
-                "name": "Rad_Projectile_004",
                 "damage": 15,
                 "speed": 25,
                 "range": 70,
@@ -14513,7 +13996,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_005",
-                "name": "Rad_Projectile_005",
                 "damage": 25,
                 "speed": 25,
                 "range": 70,
@@ -14559,7 +14041,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_001",
-                "name": "Rad_Projectile_001",
                 "damage": 4,
                 "speed": 20,
                 "range": 55,
@@ -14580,7 +14061,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_002",
-                "name": "Rad_Projectile_002",
                 "damage": 6,
                 "speed": 25,
                 "range": 60,
@@ -14601,7 +14081,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_003",
-                "name": "Rad_Projectile_003",
                 "damage": 9,
                 "speed": 25,
                 "range": 66,
@@ -14622,7 +14101,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_004",
-                "name": "Rad_Projectile_004",
                 "damage": 15,
                 "speed": 25,
                 "range": 70,
@@ -14643,7 +14121,6 @@
             "projectiles": [
               {
                 "id": "Rad_Projectile_005",
-                "name": "Rad_Projectile_005",
                 "damage": 25,
                 "speed": 25,
                 "range": 70,
@@ -14683,7 +14160,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Gun_Projectile",
-                "name": "Shotgun_Gun_Projectile",
                 "damage": 8,
                 "speed": 20,
                 "range": 20,
@@ -14698,7 +14174,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Gun_Projectile",
-                "name": "Shotgun_Gun_Projectile",
                 "damage": 8,
                 "speed": 20,
                 "range": 20,
@@ -14713,7 +14188,6 @@
             "projectiles": [
               {
                 "id": "Shotgun_Gun_Projectile",
-                "name": "Shotgun_Gun_Projectile",
                 "damage": 8,
                 "speed": 20,
                 "range": 20,
@@ -14751,7 +14225,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14773,7 +14246,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14788,7 +14260,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14810,7 +14281,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14825,7 +14295,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14847,7 +14316,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14862,7 +14330,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14877,7 +14344,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14892,7 +14358,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14907,7 +14372,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14922,7 +14386,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14937,7 +14400,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14952,7 +14414,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14967,7 +14428,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -14989,7 +14449,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -15004,7 +14463,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -15019,7 +14477,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -15034,7 +14491,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -15049,7 +14505,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -15064,7 +14519,6 @@
             "projectiles": [
               {
                 "id": "Starpew_Projectile",
-                "name": "Starpew_Projectile",
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
@@ -15101,7 +14555,6 @@
             "projectiles": [
               {
                 "id": "StrafeProjectile",
-                "name": "Trail 1",
                 "damage": 1,
                 "speed": 200,
                 "range": 1000,
@@ -15138,7 +14591,6 @@
             "projectiles": [
               {
                 "id": "Uberbot_Projectile",
-                "name": "Uberbot_Projectile",
                 "damage": 5,
                 "speed": 35,
                 "range": 1000,
@@ -15175,7 +14627,6 @@
             "projectiles": [
               {
                 "id": "Voidcore_Missile",
-                "name": "VFX_Voidcore_Trail",
                 "damage": 10,
                 "speed": 40,
                 "range": 90,
@@ -15212,7 +14663,6 @@
             "projectiles": [
               {
                 "id": "Beholster_Eye_Projectile",
-                "name": "Trail 1",
                 "damage": 6,
                 "speed": 200,
                 "range": 1000,
@@ -15255,7 +14705,6 @@
             "projectiles": [
               {
                 "id": "Bro_Green_Projectile",
-                "name": "Bro_Green_Projectile",
                 "damage": 9,
                 "speed": 23,
                 "range": 60,
@@ -15298,7 +14747,6 @@
             "projectiles": [
               {
                 "id": "Bro_Red_Projectile",
-                "name": "Bro_Red_Projectile",
                 "damage": 15,
                 "speed": 23,
                 "range": 60,
@@ -15341,7 +14789,6 @@
             "projectiles": [
               {
                 "id": "Bro_Green_Projectile",
-                "name": "Bro_Green_Projectile",
                 "damage": 9,
                 "speed": 23,
                 "range": 60,
@@ -15384,7 +14831,6 @@
             "projectiles": [
               {
                 "id": "Bro_Green_Projectile",
-                "name": "Bro_Green_Projectile",
                 "damage": 9,
                 "speed": 23,
                 "range": 60,
@@ -15427,7 +14873,6 @@
             "projectiles": [
               {
                 "id": "Bro_Green_Projectile",
-                "name": "Bro_Green_Projectile",
                 "damage": 9,
                 "speed": 23,
                 "range": 60,
@@ -15464,7 +14909,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -15479,7 +14923,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -15494,7 +14937,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -15509,7 +14951,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -15524,7 +14965,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -15539,7 +14979,6 @@
             "projectiles": [
               {
                 "id": "WinchesterShotgunProjectile_001",
-                "name": "WinchesterShotgunProjectile_001",
                 "damage": 4,
                 "speed": 25,
                 "range": 15,
@@ -15576,7 +15015,6 @@
             "projectiles": [
               {
                 "id": "Squad_Green_Projectile",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 22,
                 "range": 30,
@@ -15591,7 +15029,6 @@
             "projectiles": [
               {
                 "id": "Squad_Green_Projectile",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 22,
                 "range": 30,
@@ -15606,7 +15043,6 @@
             "projectiles": [
               {
                 "id": "Squad_Green_Projectile",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 22,
                 "range": 30,
@@ -15621,7 +15057,6 @@
             "projectiles": [
               {
                 "id": "Squad_Green_Projectile",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 22,
                 "range": 30,
@@ -15636,7 +15071,6 @@
             "projectiles": [
               {
                 "id": "Squad_Green_Projectile",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 22,
                 "range": 30,
@@ -15651,7 +15085,6 @@
             "projectiles": [
               {
                 "id": "Squad_Green_Projectile",
-                "name": "Point light",
                 "damage": 4,
                 "speed": 22,
                 "range": 30,
@@ -15688,7 +15121,6 @@
             "projectiles": [
               {
                 "id": "Pot_Projectile",
-                "name": "Point light",
                 "damage": 8,
                 "speed": 20,
                 "range": 45,
@@ -15725,7 +15157,6 @@
             "projectiles": [
               {
                 "id": "Armored_A_Gun_Projectile",
-                "name": "Armored_A_Gun_Projectile",
                 "damage": 15,
                 "speed": 50,
                 "range": 25,
@@ -15762,7 +15193,6 @@
             "projectiles": [
               {
                 "id": "Armored_B_Gun_Projectile",
-                "name": "Armored_B_Gun_Projectile",
                 "damage": 3.8,
                 "speed": 30,
                 "range": 1000,
@@ -15805,7 +15235,6 @@
             "projectiles": [
               {
                 "id": "BGH_Projectile",
-                "name": "BGH_Projectile",
                 "damage": 4.5,
                 "speed": 25,
                 "range": 1000,
@@ -15849,7 +15278,6 @@
             "projectiles": [
               {
                 "id": "Boxing_Glove_Projectile",
-                "name": "Boxing_Glove_Projectile",
                 "damage": 12,
                 "speed": 100,
                 "range": 3.5,
@@ -15872,7 +15300,6 @@
             "projectiles": [
               {
                 "id": "Boxing_Glove_Star_Projectile",
-                "name": "Boxing_Glove_Star_Projectile",
                 "ignoreDamageCaps": true,
                 "damage": 200,
                 "speed": 100,
@@ -15911,7 +15338,6 @@
             "projectiles": [
               {
                 "id": "Bubble_Big_Projectile",
-                "name": "Bubble_Big_Projectile",
                 "damage": 12,
                 "speed": 5,
                 "range": 15,
@@ -15920,7 +15346,6 @@
               },
               {
                 "id": "Bubble_Mid_Projectile",
-                "name": "Bubble_Mid_Projectile",
                 "damage": 12,
                 "speed": 5,
                 "range": 15,
@@ -15929,7 +15354,6 @@
               },
               {
                 "id": "Bubble_Sm_Projectile",
-                "name": "Bubble_Sm_Projectile",
                 "damage": 12,
                 "speed": 5,
                 "range": 15,
@@ -15967,7 +15391,6 @@
             "projectiles": [
               {
                 "id": "Combine_Rifle_Projectile",
-                "name": "Combine_Rifle_Projectile",
                 "damage": 5,
                 "speed": 23,
                 "range": 50,
@@ -16004,7 +15427,6 @@
             "projectiles": [
               {
                 "id": "Controller_Projectile",
-                "name": "Controller_Projectile",
                 "damage": 2.5,
                 "speed": 30,
                 "range": 1000,
@@ -16041,7 +15463,6 @@
             "projectiles": [
               {
                 "id": "Exotic_Projectile",
-                "name": "Point light",
                 "damage": 25,
                 "speed": 25,
                 "range": 60,
@@ -16084,7 +15505,6 @@
             "projectiles": [
               {
                 "id": "Tear_Projectile",
-                "name": "Tear_Projectile",
                 "damage": 7,
                 "speed": 15,
                 "range": 15,
@@ -16123,7 +15543,6 @@
             "projectiles": [
               {
                 "id": "Glass_Cannon_Projectile",
-                "name": "Trail 1",
                 "ignoreDamageCaps": true,
                 "damage": 140,
                 "speed": 600,
@@ -16162,7 +15581,6 @@
             "projectiles": [
               {
                 "id": "Glass_Cannon_Projectile",
-                "name": "Trail 1",
                 "ignoreDamageCaps": true,
                 "damage": 140,
                 "speed": 600,
@@ -16200,7 +15618,6 @@
             "projectiles": [
               {
                 "id": "Gunner_Projectile",
-                "name": "Gunner_Projectile",
                 "damage": 13.5,
                 "speed": 27,
                 "range": 1000,
@@ -16237,7 +15654,6 @@
             "projectiles": [
               {
                 "id": "JKProjectile",
-                "name": "JKProjectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -16274,7 +15690,6 @@
             "projectiles": [
               {
                 "id": "Life_Orb_Beam",
-                "name": "Impact (1)",
                 "damage": 20,
                 "speed": 30,
                 "range": 30,
@@ -16289,7 +15704,6 @@
             "projectiles": [
               {
                 "id": "Life_Orb_Beam_White",
-                "name": "Impact (2)",
                 "damage": 1.5,
                 "speed": 20,
                 "range": 40,
@@ -16326,7 +15740,6 @@
             "projectiles": [
               {
                 "id": "Lute_Note_Projectile",
-                "name": "Lute_Note_Projectile",
                 "damage": 6,
                 "speed": 9,
                 "range": 10,
@@ -16342,7 +15755,6 @@
             "projectiles": [
               {
                 "id": "Lute_Note_Projectile",
-                "name": "Lute_Note_Projectile",
                 "damage": 6,
                 "speed": 9,
                 "range": 10,
@@ -16358,7 +15770,6 @@
             "projectiles": [
               {
                 "id": "Lute_Note_Projectile",
-                "name": "Lute_Note_Projectile",
                 "damage": 6,
                 "speed": 9,
                 "range": 10,
@@ -16374,7 +15785,6 @@
             "projectiles": [
               {
                 "id": "Lute_Note_Projectile",
-                "name": "Lute_Note_Projectile",
                 "damage": 6,
                 "speed": 9,
                 "range": 10,
@@ -16390,7 +15800,6 @@
             "projectiles": [
               {
                 "id": "Lute_Note_Projectile",
-                "name": "Lute_Note_Projectile",
                 "damage": 6,
                 "speed": 9,
                 "range": 10,
@@ -16406,7 +15815,6 @@
             "projectiles": [
               {
                 "id": "Lute_Note_Projectile",
-                "name": "Lute_Note_Projectile",
                 "damage": 6,
                 "speed": 9,
                 "range": 10,
@@ -16422,7 +15830,6 @@
             "projectiles": [
               {
                 "id": "Lute_Note_Projectile",
-                "name": "Lute_Note_Projectile",
                 "damage": 6,
                 "speed": 9,
                 "range": 10,
@@ -16466,7 +15873,6 @@
             "projectiles": [
               {
                 "id": "Mutant_Tech_Beam",
-                "name": "Mutant_Tech_Beam",
                 "damage": 60,
                 "speed": 45,
                 "range": 30,
@@ -16503,7 +15909,6 @@
             "projectiles": [
               {
                 "id": "Planet_Mercury_Projectile",
-                "name": "Planet_Mercury_Projectile",
                 "damage": 5,
                 "speed": 19,
                 "range": 1000,
@@ -16513,7 +15918,6 @@
               },
               {
                 "id": "Planet_Venus_Projectile",
-                "name": "Planet_Venus_Projectile",
                 "damage": 8,
                 "speed": 19,
                 "range": 1000,
@@ -16523,7 +15927,6 @@
               },
               {
                 "id": "Planet_Earth_Projectile",
-                "name": "Planet_Earth_Projectile",
                 "damage": 10,
                 "speed": 19,
                 "range": 1000,
@@ -16532,7 +15935,6 @@
               },
               {
                 "id": "Planet_Mars_Projectile",
-                "name": "Planet_Mars_Projectile",
                 "damage": 10,
                 "speed": 19,
                 "range": 1000,
@@ -16541,7 +15943,6 @@
               },
               {
                 "id": "Planet_Jupiter_Projectile",
-                "name": "Planet_Jupiter_Projectile",
                 "damage": 55,
                 "speed": 19,
                 "range": 1000,
@@ -16550,7 +15951,6 @@
               },
               {
                 "id": "Planet_Saturn_Projectile",
-                "name": "Planet_Saturn_Projectile",
                 "damage": 30,
                 "speed": 19,
                 "range": 1000,
@@ -16559,7 +15959,6 @@
               },
               {
                 "id": "Planet_Uranus_Projectile",
-                "name": "Planet_Uranus_Projectile",
                 "damage": 8,
                 "speed": 19,
                 "range": 1000,
@@ -16569,7 +15968,6 @@
               },
               {
                 "id": "Planet_Neptune_Projectile",
-                "name": "Planet_Neptune_Projectile",
                 "damage": 8,
                 "speed": 19,
                 "range": 1000,
@@ -16608,7 +16006,6 @@
             "projectiles": [
               {
                 "id": "Predator_Projectile",
-                "name": "Predator_Projectile",
                 "damage": 25,
                 "speed": 75,
                 "range": 32,
@@ -16645,7 +16042,6 @@
             "projectiles": [
               {
                 "id": "Recharge_Projectile",
-                "name": "Point light",
                 "damage": 7,
                 "speed": 21,
                 "range": 20,
@@ -16682,7 +16078,6 @@
             "projectiles": [
               {
                 "id": "Screech_Projectile",
-                "name": "Screech_Projectile",
                 "damage": 1.5,
                 "speed": 12,
                 "range": 12,
@@ -16726,7 +16121,6 @@
             "projectiles": [
               {
                 "id": "Shovel_Gun_Projectile",
-                "name": "Shovel_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 10,
@@ -16741,7 +16135,6 @@
             "projectiles": [
               {
                 "id": "Shovel_Gun_Projectile",
-                "name": "Shovel_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 10,
@@ -16756,7 +16149,6 @@
             "projectiles": [
               {
                 "id": "Shovel_Gun_Projectile",
-                "name": "Shovel_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 10,
@@ -16771,7 +16163,6 @@
             "projectiles": [
               {
                 "id": "Shovel_Gun_Projectile",
-                "name": "Shovel_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 10,
@@ -16786,7 +16177,6 @@
             "projectiles": [
               {
                 "id": "Shovel_Gun_Projectile",
-                "name": "Shovel_Gun_Projectile",
                 "damage": 8,
                 "speed": 23,
                 "range": 10,
@@ -16823,7 +16213,6 @@
             "projectiles": [
               {
                 "id": "Sprun_Projectile",
-                "name": "Sprun_Projectile",
                 "damage": 45,
                 "speed": 25,
                 "range": 1000,
@@ -16863,7 +16252,6 @@
             "projectiles": [
               {
                 "id": "Tachyon_Projectile",
-                "name": "Tachyon_Projectile",
                 "damage": 4,
                 "speed": 35,
                 "range": 30,
@@ -16900,7 +16288,6 @@
             "projectiles": [
               {
                 "id": "Teapot_Projectile",
-                "name": "Teapot_Projectile",
                 "damage": 8.5,
                 "speed": 20,
                 "range": 1000,
@@ -16937,7 +16324,6 @@
             "projectiles": [
               {
                 "id": "Trigun_Angel_Beam",
-                "name": "Trigun_Angel_Beam",
                 "damage": 160,
                 "speed": 75,
                 "range": 50,
@@ -16974,7 +16360,6 @@
             "projectiles": [
               {
                 "id": "Trigun_Gun_Projectile",
-                "name": "Trigun_Gun_Projectile",
                 "damage": 10,
                 "speed": 30,
                 "range": 1000,
@@ -17011,7 +16396,6 @@
             "projectiles": [
               {
                 "id": "Trigun_Hand_Projectile",
-                "name": "Trigun_Hand_Projectile",
                 "damage": 6.5,
                 "speed": 25,
                 "range": 1000,
@@ -17048,7 +16432,6 @@
             "projectiles": [
               {
                 "id": "AKIslandProjectile",
-                "name": "AKIslandProjectile",
                 "damage": 7,
                 "speed": 23,
                 "range": 1000,
@@ -17085,7 +16468,6 @@
             "projectiles": [
               {
                 "id": "BigShotgun_Projectile",
-                "name": "BigShotgun_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -17100,7 +16482,6 @@
             "projectiles": [
               {
                 "id": "BigShotgun_Projectile",
-                "name": "BigShotgun_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -17115,7 +16496,6 @@
             "projectiles": [
               {
                 "id": "BigShotgun_Projectile",
-                "name": "BigShotgun_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -17152,7 +16532,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Abbey_Projectile",
-                "name": "Chamber_Abbey_Projectile",
                 "damage": 40,
                 "speed": 40,
                 "range": 60,
@@ -17189,7 +16568,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Castle_Projectile",
-                "name": "Chamber_Castle_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -17226,7 +16604,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gun_Catacomb_Projectile",
-                "name": "Chamber_Gun_Catacomb_Projectile",
                 "damage": 5,
                 "speed": 18,
                 "range": 35,
@@ -17269,7 +16646,6 @@
             "projectiles": [
               {
                 "id": "Forge_Gun_Beam_001",
-                "name": "Forge_Gun_Beam_001",
                 "damage": 35,
                 "speed": 12,
                 "range": 90,
@@ -17284,7 +16660,6 @@
             "projectiles": [
               {
                 "id": "Forge_Gun_Beam_002",
-                "name": "Forge_Gun_Beam_002",
                 "damage": 3,
                 "speed": 19,
                 "range": 90,
@@ -17299,7 +16674,6 @@
             "projectiles": [
               {
                 "id": "Forge_Gun_Beam_001",
-                "name": "Forge_Gun_Beam_001",
                 "damage": 35,
                 "speed": 12,
                 "range": 90,
@@ -17314,7 +16688,6 @@
             "projectiles": [
               {
                 "id": "Forge_Gun_Beam_002",
-                "name": "Forge_Gun_Beam_002",
                 "damage": 3,
                 "speed": 19,
                 "range": 90,
@@ -17351,7 +16724,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gungeon_Projectile_001",
-                "name": "Chamber_Gungeon_Projectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17366,7 +16738,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gungeon_Projectile_001",
-                "name": "Chamber_Gungeon_Projectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17381,7 +16752,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gungeon_Projectile_001",
-                "name": "Chamber_Gungeon_Projectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17396,7 +16766,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gungeon_Projectile_001",
-                "name": "Chamber_Gungeon_Projectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17411,7 +16780,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gungeon_Projectile_001",
-                "name": "Chamber_Gungeon_Projectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17426,7 +16794,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gungeon_Projectile_001",
-                "name": "Chamber_Gungeon_Projectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17463,7 +16830,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gun_Hell_Beam",
-                "name": "Impact",
                 "damage": 30,
                 "speed": -1,
                 "range": 30,
@@ -17500,7 +16866,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Mine_Projectile_Drill",
-                "name": "Chamber_Mine_Projectile_Drill",
                 "damage": 30,
                 "speed": 23,
                 "range": 1,
@@ -17537,7 +16902,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Oubliette_Projectile",
-                "name": "Chamber_Oubliette_Projectile",
                 "damage": 10,
                 "speed": 15,
                 "range": 1000,
@@ -17575,7 +16939,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Rat_Projectile",
-                "name": "Chamber_Rat_Projectile",
                 "damage": 40,
                 "speed": 10,
                 "range": 1000,
@@ -17619,7 +16982,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Office_Beam_Pencil",
-                "name": "Chamber_Office_Beam_Pencil",
                 "damage": 1,
                 "speed": 40,
                 "range": 10,
@@ -17656,7 +17018,6 @@
             "projectiles": [
               {
                 "id": "Circle_Shotgun_Projectile",
-                "name": "Circle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -17671,7 +17032,6 @@
             "projectiles": [
               {
                 "id": "Circle_Shotgun_Projectile",
-                "name": "Circle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -17686,7 +17046,6 @@
             "projectiles": [
               {
                 "id": "Circle_Shotgun_Projectile",
-                "name": "Circle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -17701,7 +17060,6 @@
             "projectiles": [
               {
                 "id": "Circle_Shotgun_Projectile",
-                "name": "Circle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -17716,7 +17074,6 @@
             "projectiles": [
               {
                 "id": "Circle_Shotgun_Projectile",
-                "name": "Circle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -17731,7 +17088,6 @@
             "projectiles": [
               {
                 "id": "Circle_Shotgun_Projectile",
-                "name": "Circle_Shotgun_Projectile",
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
@@ -17769,7 +17125,6 @@
             "projectiles": [
               {
                 "id": "GlaiveProjectile",
-                "name": "GlaiveProjectile",
                 "damage": 25,
                 "speed": 20,
                 "range": 100,
@@ -17806,7 +17161,6 @@
             "projectiles": [
               {
                 "id": "Gunderfury_Projectile_LV_10",
-                "name": "Gunderfury_Projectile_LV_10",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17821,7 +17175,6 @@
             "projectiles": [
               {
                 "id": "Gunderfury_Projectile_LV_10",
-                "name": "Gunderfury_Projectile_LV_10",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17836,7 +17189,6 @@
             "projectiles": [
               {
                 "id": "Gunderfury_Projectile_LV_10",
-                "name": "Gunderfury_Projectile_LV_10",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17851,7 +17203,6 @@
             "projectiles": [
               {
                 "id": "Chamber_Gungeon_Projectile_001",
-                "name": "Chamber_Gungeon_Projectile_001",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17866,7 +17217,6 @@
             "projectiles": [
               {
                 "id": "Gunderfury_Projectile_LV_10",
-                "name": "Gunderfury_Projectile_LV_10",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17881,7 +17231,6 @@
             "projectiles": [
               {
                 "id": "Gunderfury_Projectile_LV_10",
-                "name": "Gunderfury_Projectile_LV_10",
                 "damage": 3.5,
                 "speed": 22,
                 "range": 10,
@@ -17918,7 +17267,6 @@
             "projectiles": [
               {
                 "id": "HighDragonbreath_Projectile",
-                "name": "HighDragonbreath_Projectile",
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
@@ -17956,7 +17304,6 @@
             "projectiles": [
               {
                 "id": "Lamey_Projectile",
-                "name": "Lamey_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -17997,7 +17344,6 @@
             "projectiles": [
               {
                 "id": "Mega_Air_Projectile",
-                "name": "Mega_Air_Projectile",
                 "damage": 12,
                 "speed": 18,
                 "range": 40,
@@ -18019,7 +17365,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Super",
-                "name": "Mega_Buster_Projectile_Super",
                 "damage": 45,
                 "speed": 25,
                 "range": 1000,
@@ -18056,7 +17401,6 @@
             "projectiles": [
               {
                 "id": "BubbleLead_Big_Projectile",
-                "name": "BubbleLead_Big_Projectile",
                 "damage": 12,
                 "speed": 5,
                 "range": 15,
@@ -18065,7 +17409,6 @@
               },
               {
                 "id": "BubbleLead_Mid_Projectile",
-                "name": "BubbleLead_Mid_Projectile",
                 "damage": 12,
                 "speed": 5,
                 "range": 15,
@@ -18074,7 +17417,6 @@
               },
               {
                 "id": "BubbleLead_Sm_Projectile",
-                "name": "BubbleLead_Sm_Projectile",
                 "damage": 12,
                 "speed": 5,
                 "range": 15,
@@ -18097,7 +17439,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Super",
-                "name": "Mega_Buster_Projectile_Super",
                 "damage": 45,
                 "speed": 25,
                 "range": 1000,
@@ -18135,7 +17476,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Weak",
-                "name": "Mega_Buster_Projectile_Weak",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -18157,7 +17497,6 @@
             "projectiles": [
               {
                 "id": "Mega_Crash_Projectile",
-                "name": "Spark",
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
@@ -18195,7 +17534,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Weak",
-                "name": "Mega_Buster_Projectile_Weak",
                 "damage": 6,
                 "speed": 20,
                 "range": 1000,
@@ -18217,7 +17555,6 @@
             "projectiles": [
               {
                 "id": "Mega_Flash_Projectile",
-                "name": "Mega_Flash_Projectile",
                 "damage": 10,
                 "speed": 1,
                 "range": 1,
@@ -18255,7 +17592,6 @@
             "projectiles": [
               {
                 "id": "Mega_Heat_Projectile",
-                "name": "Mega_Heat_Projectile",
                 "damage": 2,
                 "speed": 23,
                 "range": 1000,
@@ -18278,7 +17614,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Super",
-                "name": "Mega_Buster_Projectile_Super",
                 "damage": 45,
                 "speed": 25,
                 "range": 1000,
@@ -18316,7 +17651,6 @@
             "projectiles": [
               {
                 "id": "Mega_Leaf_Projectile",
-                "name": "Mega_Leaf_Projectile",
                 "damage": 4,
                 "speed": 11,
                 "range": 20,
@@ -18338,7 +17672,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Super",
-                "name": "Mega_Buster_Projectile_Super",
                 "damage": 45,
                 "speed": 25,
                 "range": 1000,
@@ -18376,7 +17709,6 @@
             "projectiles": [
               {
                 "id": "Mega_Metal_Projectile",
-                "name": "Mega_Metal_Projectile",
                 "damage": 7,
                 "speed": 25,
                 "range": 1000,
@@ -18398,7 +17730,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Super",
-                "name": "Mega_Buster_Projectile_Super",
                 "damage": 45,
                 "speed": 25,
                 "range": 1000,
@@ -18436,7 +17767,6 @@
             "projectiles": [
               {
                 "id": "Mega_Quick_Projectile",
-                "name": "Mega_Quick_Projectile",
                 "damage": 6,
                 "speed": 10,
                 "range": 1000,
@@ -18459,7 +17789,6 @@
             "projectiles": [
               {
                 "id": "Mega_Buster_Projectile_Super",
-                "name": "Mega_Buster_Projectile_Super",
                 "damage": 45,
                 "speed": 25,
                 "range": 1000,
@@ -18503,7 +17832,6 @@
             "projectiles": [
               {
                 "id": "Nailbat_Projectile",
-                "name": "Nailbat_Projectile",
                 "damage": 100,
                 "speed": 22,
                 "range": 2.5,
@@ -18519,7 +17847,6 @@
             "projectiles": [
               {
                 "id": "Nailbat_Nail_Projectile",
-                "name": "Nailbat_Nail_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 10,
@@ -18534,7 +17861,6 @@
             "projectiles": [
               {
                 "id": "Nailbat_Nail_Projectile",
-                "name": "Nailbat_Nail_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 10,
@@ -18549,7 +17875,6 @@
             "projectiles": [
               {
                 "id": "Nailbat_Nail_Projectile",
-                "name": "Nailbat_Nail_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 10,
@@ -18564,7 +17889,6 @@
             "projectiles": [
               {
                 "id": "Nailbat_Nail_Projectile",
-                "name": "Nailbat_Nail_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 10,
@@ -18579,7 +17903,6 @@
             "projectiles": [
               {
                 "id": "Nailbat_Nail_Projectile",
-                "name": "Nailbat_Nail_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 10,
@@ -18594,7 +17917,6 @@
             "projectiles": [
               {
                 "id": "Nailbat_Nail_Projectile",
-                "name": "Nailbat_Nail_Projectile",
                 "damage": 3,
                 "speed": 26,
                 "range": 10,
@@ -18616,7 +17938,6 @@
             "projectiles": [
               {
                 "id": "Nailbat_Projectile",
-                "name": "Nailbat_Projectile",
                 "damage": 100,
                 "speed": 22,
                 "range": 2.5,
@@ -18657,7 +17978,6 @@
             "projectiles": [
               {
                 "id": "RadiationLaserBeam_Super2",
-                "name": "RadiationLaserBeam_Super2",
                 "damage": 23,
                 "speed": 50,
                 "range": 50,
@@ -18695,7 +18015,6 @@
             "projectiles": [
               {
                 "id": "Cheese_Projectile_Crumb",
-                "name": "Cheese_Projectile_Crumb",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -18705,7 +18024,6 @@
               },
               {
                 "id": "Cheese_Projectile_Wedge",
-                "name": "Cheese_Projectile_Wedge",
                 "damage": 8,
                 "speed": 23,
                 "range": 1000,
@@ -18715,7 +18033,6 @@
               },
               {
                 "id": "Cheese_Projectile_Wheel",
-                "name": "Cheese_Projectile_Wheel",
                 "damage": 15,
                 "speed": 23,
                 "range": 1000,
@@ -18757,7 +18074,6 @@
             "projectiles": [
               {
                 "id": "Rubeadyne_Rifle_Projectile",
-                "name": "Rubeadyne_Rifle_Projectile",
                 "damage": 8,
                 "speed": 26,
                 "range": 1000,
@@ -18795,7 +18111,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Hyper",
-                "name": "Samus_Projectile_Hyper",
                 "damage": 80,
                 "speed": 20,
                 "range": 1000,
@@ -18817,7 +18132,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Hyper_Charged",
-                "name": "Samus_Projectile_Hyper_Charged",
                 "damage": 160,
                 "speed": 20,
                 "range": 1000,
@@ -18855,7 +18169,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Ice",
-                "name": "Samus_Projectile_Ice",
                 "damage": 5,
                 "speed": 30,
                 "range": 1000,
@@ -18878,7 +18191,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Ice_Charged",
-                "name": "Samus_Projectile_Ice_Charged",
                 "damage": 60,
                 "speed": 35,
                 "range": 1000,
@@ -18917,7 +18229,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Plasma",
-                "name": "Trail 1",
                 "damage": 8,
                 "speed": 600,
                 "range": 1000,
@@ -18940,7 +18251,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Plasma_Charged",
-                "name": "Samus_Projectile_Plasma_Charged",
                 "damage": 35,
                 "speed": 26,
                 "range": 1000,
@@ -18979,7 +18289,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Wave_Middle",
-                "name": "Samus_Projectile_Wave_Middle",
                 "damage": 5,
                 "speed": 20,
                 "range": 1000,
@@ -18994,7 +18303,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Wave",
-                "name": "Samus_Projectile_Wave",
                 "damage": 5,
                 "speed": 20,
                 "range": 1000,
@@ -19009,7 +18317,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Wave",
-                "name": "Samus_Projectile_Wave",
                 "damage": 5,
                 "speed": 20,
                 "range": 1000,
@@ -19031,7 +18338,6 @@
             "projectiles": [
               {
                 "id": "Samus_Projectile_Wave_Charged",
-                "name": "Samus_Projectile_Wave_Charged",
                 "damage": 70,
                 "speed": 35,
                 "range": 1000,
@@ -19068,7 +18374,6 @@
             "projectiles": [
               {
                 "id": "Slinger_Projectile",
-                "name": "Slinger_Projectile",
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
@@ -19108,7 +18413,6 @@
             "projectiles": [
               {
                 "id": "Super_Space_Turtine_Projectile",
-                "name": "Super_Space_Turtine_Projectile",
                 "damage": 35,
                 "speed": 22,
                 "range": 10,
@@ -19146,7 +18450,6 @@
             "projectiles": [
               {
                 "id": "Sunlight_Spear_Projectile",
-                "name": "VFX_Voidcore_Trail",
                 "damage": 45,
                 "speed": 120,
                 "range": 1000,
@@ -19184,7 +18487,6 @@
             "projectiles": [
               {
                 "id": "Word_Up_R_Projectile",
-                "name": "VFX_Rocket_Exhaust",
                 "damage": 2.2,
                 "speed": 20,
                 "range": 1000,
@@ -19227,7 +18529,6 @@
             "projectiles": [
               {
                 "id": "Wood_Beam_0",
-                "name": "Wood_Beam",
                 "damage": 1,
                 "speed": 40,
                 "range": 10,
