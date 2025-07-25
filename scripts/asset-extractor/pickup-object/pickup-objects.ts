@@ -8,6 +8,7 @@ import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { buildGunModel } from "./build-gun-model.ts";
 import { buildItemModel } from "./build-item-model.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
+import { VolleyRepository } from "../gun/volley.repository.ts";
 import type { TItem, TGun, TPickupObject } from "./pickup-object.model.ts";
 
 export function isGun(obj: object): obj is TGun {
@@ -23,10 +24,11 @@ type TCreatePickupObjectsInput = {
   gunRepo: GunRepository;
   encounterTrackableRepo: EncounterTrackableRepository;
   projectileRepo: ProjectileRepository;
+  volleyRepo: VolleyRepository;
 };
 
 export async function createPickupObjects(options: TCreatePickupObjectsInput) {
-  const { translationRepo, gunRepo, encounterTrackableRepo, projectileRepo } = options;
+  const { translationRepo, gunRepo, encounterTrackableRepo, projectileRepo, volleyRepo } = options;
   const pickupObjects: TPickupObject[] = [];
 
   for (const entry of encounterTrackableRepo.entries) {
@@ -41,7 +43,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
       const item = buildItemModel({ entry, translationRepo });
       if (item) pickupObjects.push(item);
     } else if (isGun) {
-      const gun = buildGunModel({ entry, translationRepo, gunRepo, projectileRepo });
+      const gun = buildGunModel({ entry, translationRepo, gunRepo, projectileRepo, volleyRepo });
       if (gun) pickupObjects.push(gun);
     } else {
       const name = translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? "");

@@ -13,6 +13,7 @@ const PickupObject = z.object({
 const Projectile = z.object({
   // fileID of the block in the prefab file
   id: z.number(),
+  name: z.string(),
   ignoreDamageCaps: z.boolean().optional(),
   damage: z.number(),
   speed: z.number(),
@@ -43,14 +44,38 @@ const Projectile = z.object({
   // dps: z.undefined(),
 });
 
-export const ProjectileMode = z.object({
-  name: z.string(),
+/**
+ * randomize/cycle through the projectile array for each shot
+ */
+export type TProjectileSequence = TProjectile[]; // TProjectile[]
+/**
+ * projectiles fired in one shot
+ */
+export type TProjectilePerShot = {
+  shootStyle: "SemiAutomatic" | "Automatic" | "Beam" | "Charged" | "Burst";
+  cooldownTime: number;
+  spread: number;
+  projectiles: TProjectileSequence;
+};
+export const ProjectilePerShot: z.ZodType<TProjectilePerShot> = z.object({
   shootStyle: z.enum(["SemiAutomatic", "Automatic", "Beam", "Charged", "Burst"]),
-  chargeTime: z.number().optional(),
   cooldownTime: z.number(),
-  magazineSize: z.number(),
   spread: z.number(),
   projectiles: z.array(Projectile),
+});
+
+export interface TProjectileMode {
+  mode: string;
+  chargeTime?: number;
+  magazineSize: number;
+  projectiles: TProjectilePerShot[];
+}
+
+export const ProjectileMode: z.ZodType<TProjectileMode> = z.object({
+  mode: z.string(),
+  chargeTime: z.number().optional(),
+  magazineSize: z.number(),
+  projectiles: z.array(ProjectilePerShot),
 });
 
 export const Gun = PickupObject.extend({
@@ -80,11 +105,18 @@ export const Gun = PickupObject.extend({
       amount: z.number(),
     })
   ),
-  projectileModes: z.array(ProjectileMode),
+  projectileModes: z.array(ProjectileMode).nonempty(),
   maxAmmo: z.number(),
   reloadTime: z.number(),
   featureFlags: z.array(
-    z.enum(["hasInfiniteAmmo", "doesntDamageSecretWalls", "reflectDuringReload", "blankDuringReload"])
+    z.enum([
+      "hasInfiniteAmmo",
+      "doesntDamageSecretWalls",
+      "reflectDuringReload",
+      "blankDuringReload",
+      "activeReload",
+      "hasTieredProjectiles",
+    ])
   ),
   blankReloadRadius: z.number().optional(),
   video: z.string().optional(),
@@ -100,5 +132,4 @@ export type TPickupObject = z.input<typeof PickupObject>;
 export type TItem = z.input<typeof Item>;
 
 export type TProjectile = z.input<typeof Projectile>;
-export type TProjectileMode = z.input<typeof ProjectileMode>;
 export type TGun = z.input<typeof Gun>;

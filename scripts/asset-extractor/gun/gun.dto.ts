@@ -47,6 +47,7 @@ export const ProjectileModule = z.object({
    * Basic array of projectiles fired per shot
    */
   projectiles: AssetExternalReferences,
+  sequenceStyle: z.enum(ProjectileSequenceStyle),
   /**
    * Array of projectiles fired when the gun is charged.
    * Depends on how long the gun is charged, the projectile with the appropriate ChargeTime
@@ -54,13 +55,16 @@ export const ProjectileModule = z.object({
    * if `ProjectileModule.ShootStyle` is `Charged`.
    * See `ProjectileModule.cs#GetChargeProjectile` for more details.
    */
-  sequenceStyle: z.enum(ProjectileSequenceStyle),
   chargeProjectiles: z.array(
     z.object({
       ChargeTime: z.number(),
       Projectile: AssetExternalReference,
     })
   ),
+  /**
+   * Spawn 1 additional projectile per shot. See [https://enterthegungeon.fandom.com/wiki/Gilded_Hydra](https://enterthegungeon.fandom.com/wiki/Gilded_Hydra) for example.
+   */
+  mirror: BinaryOption,
   cooldownTime: z.number(),
   angleVariance: z.number(),
   numberOfShotsInClip: z.number(),
@@ -91,6 +95,10 @@ export const GunDto = z
      */
     rawVolley: AssetExternalReference,
     singleModule: ProjectileModule,
+    activeReloadData: z.object({
+      reloadSpeedMultiplier: z.number(),
+    }),
+    LocalActiveReload: BinaryOption,
   })
   .refine(
     (data) => {

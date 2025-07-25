@@ -56,25 +56,26 @@ export class ProjectileRepository {
   }
 
   private async _parseProjectile(filePath: string) {
-    try {
-      const refab = await this._assetService.parseSerializedAsset(filePath);
-      for (const block of refab) {
-        if (!this._isProjectileDto(block)) {
-          continue;
-        }
+    const refab = await this._assetService.parseSerializedAsset(filePath);
+    let $$name = "";
+    for (const block of refab) {
+      if (typeof block.m_Name === "string" && block.m_Name !== "Sprite") {
+        $$name = block.m_Name;
+      }
+      if (!this._isProjectileDto(block)) {
+        continue;
+      }
 
-        try {
-          return ProjectileDto.parse(block);
-        } catch (error) {
-          if (error instanceof z.ZodError) {
-            console.error(chalk.red(`Error parsing projectile dto at ${filePath}`));
-            console.error(z.prettifyError(error));
-          }
+      try {
+        return ProjectileDto.parse({ ...block, $$name });
+      } catch (error) {
+        if (error instanceof z.ZodError) {
+          console.error(chalk.red(`Error parsing projectile dto at ${filePath}`));
+          console.error(chalk.red(z.prettifyError(error)));
+        } else {
           throw error;
         }
       }
-    } catch {
-      console.warn(chalk.yellow(`Error parsing ${filePath}. Skipping...`));
     }
   }
 

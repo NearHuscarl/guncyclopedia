@@ -4,18 +4,22 @@ import invert from "lodash/invert.js";
 import uniqBy from "lodash/uniqBy.js";
 import countBy from "lodash/countBy.js";
 import keyBy from "lodash/keyBy.js";
+import isEqual from "lodash/isEqual.js";
+import uniq from "lodash/uniq.js";
+import cloneDeep from "lodash/cloneDeep.js";
 import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
 import { videos } from "../gun/gun.meta.ts";
-import { Gun, ProjectileMode } from "./pickup-object.model.ts";
+import { Gun } from "./pickup-object.model.ts";
 import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
-import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
-import type { TGun, TProjectile, TProjectileMode } from "./pickup-object.model.ts";
-import type { TGunDto } from "../gun/gun.dto.ts";
-import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import { applySpecialCases } from "./apply-special-cases.ts";
 import { StatModifier } from "../player/player.dto.ts";
+import { VolleyRepository } from "../gun/volley.repository.ts";
+import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
+import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./pickup-object.model.ts";
+import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
+import type { TProjectileDto } from "../gun/projectile.dto.ts";
 
 const gunQualityTextLookup = invert(ItemQuality);
 const gunClassTextLookup = invert(GunClass);
@@ -41,6 +45,7 @@ const unusedGunIds = new Set([
 function buildProjectile(id: number, projDto: TProjectileDto): TProjectile {
   const proj: TProjectile = {
     id,
+    name: projDto.$$name,
     damage: projDto.baseData.damage,
     speed: projDto.baseData.speed,
     range: projDto.baseData.range,
@@ -77,8 +82,13 @@ function computeProjectileSpawnWeight(projectiles: TProjectile[]): TProjectile[]
   return uniqProjectiles.map((p) => ({ ...p, spawnWeight: projectileCount[p.id] }));
 }
 
-function buildProjectileModes(gunDto: TGunDto, projectileRepo: ProjectileRepository): TProjectileMode[] {
-  const projectileModes: TProjectileMode[] = [];
+function buildModeFromProjectileModules(
+  mode: string | number,
+  gunDto: TGunDto,
+  defaultModule: TProjectileModule,
+  modules: TProjectileModule[],
+  projectileRepo: ProjectileRepository
+): TProjectileMode {
   const getProjectile = (guid: string) => {
     const projDto = projectileRepo.getProjectile(guid);
     if (!projDto) {
@@ -90,60 +100,129 @@ function buildProjectileModes(gunDto: TGunDto, projectileRepo: ProjectileReposit
     }
     return projDto;
   };
+  const projectilesPerShot: TProjectilePerShot[] = [];
+  for (const module of modules) {
+    let projectiles = module.projectiles
+      .filter((p) => p.guid)
+      .map((p) => buildProjectile(p.fileID, getProjectile(p.guid!)));
 
-  if (gunDto.rawVolley.guid) {
-    // TODO: handle rawVolley
-  } else {
-    const mod = gunDto.singleModule;
-
-    if (mod.shootStyle === ShootStyle.Charged) {
-      // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.
-      // See ExportedProject\Assets\GameObject\Baseball_Bat_Gun.prefab
-      const uniqChargeProjectiles = uniqBy(mod.chargeProjectiles, (p) => p.Projectile.fileID);
-      const isMultiLevelCharge = uniqChargeProjectiles.filter((p) => p.ChargeTime > 0).length > 1;
-      let chargeLvl = 0;
-
-      for (let i = 0; i < uniqChargeProjectiles.length; i++) {
-        const p = uniqChargeProjectiles[i];
-        if (!p.Projectile.guid) continue;
-        if (p.Projectile.fileID === 0) continue; // ChargeTime: 0 means no projectile fired until minimum charge time is reached
-        if (p.Projectile.fileID === uniqChargeProjectiles[i + 1]?.Projectile.fileID) continue;
-
-        const projDto = getProjectile(p.Projectile.guid);
-        const isUncharged = i === 0 && uniqChargeProjectiles.length > 1 && p.ChargeTime === 0;
-
-        // a charge should be an entire mode, not just a projectile
-        projectileModes.push({
-          name: isUncharged ? "Uncharged" : isMultiLevelCharge ? `Charged lvl ${++chargeLvl}` : "Charged",
-          cooldownTime: mod.cooldownTime,
-          shootStyle: shootStyleTextLookup[mod.shootStyle] as keyof typeof ShootStyle,
-          magazineSize: mod.numberOfShotsInClip,
-          spread: mod.angleVariance,
-          chargeTime: p.ChargeTime,
-          projectiles: [buildProjectile(p.Projectile.fileID, projDto)],
-        });
-      }
+    if (module.sequenceStyle === ProjectileSequenceStyle.Random) {
+      projectiles = computeProjectileSpawnWeight(projectiles);
     } else {
-      let projectiles = mod.projectiles
-        .filter((p) => p.guid)
-        .map((p) => buildProjectile(p.fileID, getProjectile(p.guid!)));
+      // TODO: handle other sequence styles
+    }
+    projectilesPerShot.push({
+      shootStyle: shootStyleTextLookup[module.shootStyle] as keyof typeof ShootStyle,
+      cooldownTime: module.cooldownTime,
+      spread: module.angleVariance,
+      projectiles,
+    });
 
-      if (mod.sequenceStyle === ProjectileSequenceStyle.Random) {
-        projectiles = computeProjectileSpawnWeight(projectiles);
-      }
-
-      projectileModes.push({
-        name: "Default",
-        shootStyle: shootStyleTextLookup[mod.shootStyle] as keyof typeof ShootStyle,
-        cooldownTime: mod.cooldownTime,
-        magazineSize: mod.numberOfShotsInClip,
-        spread: mod.angleVariance,
-        projectiles,
-      });
+    // TODO: handle invert
+    if (module.mirror) {
+      projectilesPerShot.push(cloneDeep(projectilesPerShot.at(-1)!));
     }
   }
+  const chargeTime = typeof mode === "number" ? mode : undefined;
+  return {
+    mode: typeof mode === "number" ? `Charge ${mode}` : mode,
+    magazineSize: defaultModule.numberOfShotsInClip,
+    chargeTime,
+    projectiles: projectilesPerShot,
+  };
+}
 
-  return projectileModes.map((m) => ProjectileMode.parse(m));
+function buildProjectileModesV2(
+  gunDto: TGunDto,
+  projectileRepo: ProjectileRepository,
+  volleyRepo: VolleyRepository
+): TProjectileMode[] {
+  const projectileModules: TProjectileModule[] = [];
+  let modulesAreTiers = false;
+
+  if (gunDto.rawVolley.guid) {
+    const volleyDto = volleyRepo.getVolley(gunDto.rawVolley.guid);
+    if (!volleyDto) {
+      throw new Error(
+        chalk.red(
+          `Parsing ${gunDto.gunName} (${gunDto.PickupObjectId}) gun failed: Volley with guid ${gunDto.rawVolley.guid} not found in VolleyRepository.`
+        )
+      );
+    }
+    projectileModules.push(...volleyDto.projectiles);
+    modulesAreTiers = Boolean(volleyDto.ModulesAreTiers);
+  } else {
+    projectileModules.push(gunDto.singleModule);
+  }
+  // see Gun.cs#DefaultModule. Some attributes within the module like numberOfShotsInClip/shootingStyle
+  // should be tied to a gun, not the projectile data. DefaultModule is used to retrieve those attributes
+  // for the gun model
+  const defaultModule = projectileModules[0];
+
+  // each module is a separate mode
+  if (modulesAreTiers) {
+    const modePrefix = gunDto.LocalActiveReload ? "Reload - " : "";
+    return projectileModules.map((mod, i) =>
+      buildModeFromProjectileModules(`${modePrefix}lvl ${i + 1}`, gunDto, defaultModule, [mod], projectileRepo)
+    );
+  }
+
+  // TODO: handle fucking Starpew volley
+  const chargeModulesLookup = new Map<number, TProjectileModule[]>();
+  const normalModules: TProjectileModule[] = [];
+  for (const module of projectileModules) {
+    if (module.shootStyle !== ShootStyle.Charged) {
+      normalModules.push(module);
+      continue;
+    }
+
+    const uniqChargeTimes = new Set(module.chargeProjectiles.map((p) => p.ChargeTime));
+    if (uniqChargeTimes.size < module.chargeProjectiles.length) {
+      throw new Error(
+        `${gunDto.gunName}, A projectile module must not have multiple projectiles with the same charge time. This is undefined behavior`
+      );
+    }
+
+    for (const { ChargeTime, Projectile } of module.chargeProjectiles) {
+      if (!Projectile.guid) continue;
+      if (!chargeModulesLookup.get(ChargeTime)) chargeModulesLookup.set(ChargeTime, []);
+
+      const chargeModules = chargeModulesLookup.get(ChargeTime)!;
+      const clonedModule = cloneDeep(module);
+      clonedModule.projectiles = [cloneDeep(Projectile)];
+      clonedModule.chargeProjectiles = [];
+      chargeModules.push(clonedModule);
+    }
+  }
+  const res: TProjectileMode[] = [];
+  // TODO: bounce bullets
+  // TODO: piecing bullets
+  // TODO: round that has explosion on impact count as another source of damage
+  // TODO: homing bullet
+  // TODO: link 2 guns (e.g. Gungeon Ant)
+  // TODO: invert bullet (check Directional Pad)
+
+  // // TODO: test casey's case again
+  // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.
+  // // See ExportedProject/Assets/GameObject/Baseball_Bat_Gun.prefab
+  // const entries = Array.from(chargeModes.entries());
+  // for (let i = 0; i < entries.length - 1; i++) {
+  //   const [, mode] = entries[i];
+  //   let j = i + 1;
+  //   while (j < entries.length && isEqual(entries[j][1]?.projectiles, mode?.projectiles)) {
+  //     chargeModes.delete(entries[j][0]);
+  //     j++;
+  //   }
+  // }
+
+  if (normalModules.length > 0) {
+    res.push(buildModeFromProjectileModules("Default", gunDto, defaultModule, normalModules, projectileRepo));
+  }
+  for (const [chargeTime, modules] of chargeModulesLookup.entries()) {
+    res.push(buildModeFromProjectileModules(chargeTime, gunDto, defaultModule, modules, projectileRepo));
+  }
+
+  return res;
 }
 
 type TBuildGunModelInput = {
@@ -151,6 +230,7 @@ type TBuildGunModelInput = {
   translationRepo: TranslationRepository;
   gunRepo: GunRepository;
   projectileRepo: ProjectileRepository;
+  volleyRepo: VolleyRepository;
 };
 
 export function buildGunModel({
@@ -158,6 +238,7 @@ export function buildGunModel({
   translationRepo,
   gunRepo,
   projectileRepo,
+  volleyRepo,
 }: TBuildGunModelInput): TGun | undefined {
   try {
     if (unusedGunIds.has(entry.pickupObjectId)) {
@@ -181,9 +262,10 @@ export function buildGunModel({
     if (entry.isInfiniteAmmoGun) featureFlags.push("hasInfiniteAmmo");
     if (entry.doesntDamageSecretWalls) featureFlags.push("doesntDamageSecretWalls");
     if (gunDto.reflectDuringReload) featureFlags.push("reflectDuringReload");
-    if (gunDto.blankDuringReload) {
-      featureFlags.push("blankDuringReload");
-    }
+    if (gunDto.LocalActiveReload) featureFlags.push("activeReload");
+    if (gunDto.blankDuringReload) featureFlags.push("blankDuringReload");
+    if (gunDto.rawVolley.guid && volleyRepo.getVolley(gunDto.rawVolley.guid)?.ModulesAreTiers)
+      featureFlags.push("hasTieredProjectiles");
 
     const allStatModifiers = gunDto.currentGunStatModifiers.concat(gunDto.passiveStatModifiers ?? []);
 
@@ -211,7 +293,7 @@ export function buildGunModel({
         maxAmmo: gunDto.maxAmmo,
         reloadTime: gunDto.reloadTime,
         featureFlags,
-        projectileModes: buildProjectileModes(gunDto, projectileRepo),
+        projectileModes: buildProjectileModesV2(gunDto, projectileRepo, volleyRepo),
         blankReloadRadius: gunDto.blankDuringReload ? gunDto.blankReloadRadius : undefined,
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       })

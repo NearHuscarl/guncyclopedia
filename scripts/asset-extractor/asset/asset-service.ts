@@ -11,8 +11,9 @@ import { AssetMeta, MonoBehaviour } from "./asset.dto.ts";
 import type { TAssetMeta, TUnityAsset, Guid, TMonoBehaviour } from "./asset.dto.ts";
 
 export class AssetService {
-  static readonly PROJECTILE_SCRIPT = "Projectile.cs.meta";
   static readonly GUN_SCRIPT = "Gun.cs.meta";
+  static readonly PROJECTILE_SCRIPT = "Projectile.cs.meta";
+  static readonly PROJECTILE_VOLLEY_SCRIPT = "ProjectileVolleyData.cs.meta";
   private readonly _DEFAULT_META_ROOT_DIR = path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject");
 
   private _assetPaths = new Map<Guid, string>();

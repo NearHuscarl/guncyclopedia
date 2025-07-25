@@ -14,6 +14,7 @@ const CoreDamageType = {
 };
 
 export const ProjectileDto = z.object({
+  $$name: z.string(),
   ignoreDamageCaps: BinaryOption,
   baseData: z.object({
     damage: z.number(),
@@ -28,7 +29,7 @@ export const ProjectileDto = z.object({
   PoisonApplyChance: Percentage,
 
   AppliesSpeedModifier: BinaryOption,
-  SpeedApplyChance: Percentage,
+  SpeedApplyChance: z.number(), // not Percentage because of a malformed projectile
   speedEffect: z.object({
     SpeedMultiplier: z.number(),
   }),
