@@ -5,8 +5,8 @@ import { EncounterTrackableRepository } from "../encouter-trackable/encounter-tr
 import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
-import { buildGunModel } from "./build-gun-model.ts";
-import { buildItemModel } from "./build-item-model.ts";
+import { GunModelGenerator } from "./gun-model-generator.ts";
+import { ItemModelGenerator } from "./item-model-generator.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import { VolleyRepository } from "../gun/volley.repository.ts";
 import type { TItem, TGun, TPickupObject } from "./pickup-object.model.ts";
@@ -30,6 +30,8 @@ type TCreatePickupObjectsInput = {
 export async function createPickupObjects(options: TCreatePickupObjectsInput) {
   const { translationRepo, gunRepo, encounterTrackableRepo, projectileRepo, volleyRepo } = options;
   const pickupObjects: TPickupObject[] = [];
+  const gunModelGenerator = new GunModelGenerator({ gunRepo, projectileRepo, volleyRepo, translationRepo });
+  const itemModelGenerator = new ItemModelGenerator({ translationRepo });
 
   for (const entry of encounterTrackableRepo.entries) {
     if (entry.pickupObjectId === -1 || entry.journalData.IsEnemy === 1) {
@@ -40,10 +42,10 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
     const isGun = entry.shootStyleInt >= 0;
 
     if (isItem) {
-      const item = buildItemModel({ entry, translationRepo });
+      const item = itemModelGenerator.generate(entry);
       if (item) pickupObjects.push(item);
     } else if (isGun) {
-      const gun = buildGunModel({ entry, translationRepo, gunRepo, projectileRepo, volleyRepo });
+      const gun = await gunModelGenerator.generate(entry);
       if (gun) pickupObjects.push(gun);
     } else {
       const name = translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? "");
