@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import z from "zod/v4";
-import { Item } from "./pickup-object.model.ts";
-import type { TItem } from "./pickup-object.model.ts";
+import { Item } from "./item.model.ts";
+import type { TItem } from "./item.model.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TranslationRepository } from "../translation/translation.repository.ts";
 

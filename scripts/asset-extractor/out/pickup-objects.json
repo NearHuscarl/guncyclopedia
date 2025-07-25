@@ -204,7 +204,9 @@
                 "damage": 2,
                 "speed": 25,
                 "range": 28,
-                "force": 8
+                "force": 8,
+                "numberOfBounces": 3,
+                "chanceToDieOnBounce": 0.5
               }
             ]
           },
@@ -218,7 +220,9 @@
                 "damage": 2,
                 "speed": 25,
                 "range": 28,
-                "force": 8
+                "force": 8,
+                "numberOfBounces": 3,
+                "chanceToDieOnBounce": 0.5
               }
             ]
           },
@@ -232,7 +236,9 @@
                 "damage": 2,
                 "speed": 25,
                 "range": 28,
-                "force": 8
+                "force": 8,
+                "numberOfBounces": 3,
+                "chanceToDieOnBounce": 0.5
               }
             ]
           }
@@ -268,7 +274,9 @@
                 "damage": 20,
                 "speed": 40,
                 "range": 90,
-                "force": 10
+                "force": 10,
+                "penetration": 10,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -306,7 +314,9 @@
                 "speed": 13,
                 "range": 50,
                 "force": 80,
-                "stunChance": 0.3
+                "stunChance": 0.3,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -342,7 +352,8 @@
                 "damage": 14,
                 "speed": 18,
                 "range": 60,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 10
               }
             ]
           }
@@ -378,7 +389,9 @@
                 "damage": 40,
                 "speed": 100,
                 "range": 1000,
-                "force": 25
+                "force": 25,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -415,7 +428,9 @@
                 "speed": 100,
                 "range": 1000,
                 "force": 25,
-                "freezeChance": 1
+                "freezeChance": 1,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -452,7 +467,8 @@
                 "damage": 10,
                 "speed": 15,
                 "range": 25,
-                "force": 30
+                "force": 30,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -489,7 +505,8 @@
                 "damage": 10,
                 "speed": 15,
                 "range": 25,
-                "force": 30
+                "force": 30,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -735,7 +752,9 @@
                 "damage": 25,
                 "speed": 22,
                 "range": 10,
-                "force": 8
+                "force": 8,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -772,7 +791,9 @@
                 "damage": 10,
                 "speed": 4,
                 "range": 1000,
-                "force": 9
+                "force": 9,
+                "penetration": 1000,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -844,7 +865,9 @@
                 "damage": 14,
                 "speed": 26,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 3,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -885,7 +908,9 @@
                 "damage": 14,
                 "speed": 26,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 3,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -926,7 +951,10 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 6,
+                "penetration": 4,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -963,7 +991,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -984,7 +1013,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -998,7 +1028,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1012,7 +1043,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1026,7 +1058,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1040,7 +1073,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1054,7 +1088,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1068,7 +1103,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1082,7 +1118,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1096,7 +1133,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -1133,7 +1171,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -1154,7 +1193,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1168,7 +1208,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1182,7 +1223,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1196,7 +1238,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1210,7 +1253,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1224,7 +1268,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1238,7 +1283,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1252,7 +1298,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -1266,7 +1313,8 @@
                 "damage": 3,
                 "speed": 26,
                 "range": 12,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -1381,7 +1429,8 @@
                 "damage": 15,
                 "speed": 20,
                 "range": 25,
-                "force": 30
+                "force": 30,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -1424,7 +1473,8 @@
                 "damage": 15,
                 "speed": 20,
                 "range": 25,
-                "force": 30
+                "force": 30,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -1482,7 +1532,9 @@
                 "damage": 30,
                 "speed": 45,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "penetration": 3,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -1554,7 +1606,8 @@
                 "damage": 5,
                 "speed": 200,
                 "range": 60,
-                "force": 16
+                "force": 16,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -1613,7 +1666,9 @@
                 "speed": 45,
                 "range": 1000,
                 "force": 8,
-                "charmChance": 0.75
+                "charmChance": 0.75,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -1650,7 +1705,9 @@
                 "damage": 50,
                 "speed": 60,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "penetration": 3,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -1686,7 +1743,8 @@
                 "damage": 20,
                 "speed": 14,
                 "range": 90,
-                "force": 10
+                "force": 10,
+                "isHoming": true
               }
             ]
           }
@@ -1722,7 +1780,8 @@
                 "damage": 20,
                 "speed": 14,
                 "range": 90,
-                "force": 10
+                "force": 10,
+                "isHoming": true
               }
             ]
           }
@@ -1759,7 +1818,10 @@
                 "damage": 50,
                 "speed": 10,
                 "range": 10,
-                "force": 30
+                "force": 30,
+                "numberOfBounces": 1,
+                "penetration": 35,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -1796,7 +1858,10 @@
                 "damage": 35,
                 "speed": 500,
                 "range": 1000,
-                "force": 0
+                "force": 0,
+                "numberOfBounces": 6,
+                "penetration": 50,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -1833,7 +1898,10 @@
                 "damage": 35,
                 "speed": 500,
                 "range": 1000,
-                "force": 0
+                "force": 0,
+                "numberOfBounces": 6,
+                "penetration": 50,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -1869,7 +1937,9 @@
                 "damage": 7,
                 "speed": 23,
                 "range": 60,
-                "force": 30
+                "force": 30,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -1883,7 +1953,9 @@
                 "damage": 7,
                 "speed": 23,
                 "range": 60,
-                "force": 30
+                "force": 30,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -1897,7 +1969,9 @@
                 "damage": 7,
                 "speed": 23,
                 "range": 60,
-                "force": 30
+                "force": 30,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -1934,7 +2008,9 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 4,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -2132,7 +2208,10 @@
                 "speed": 18,
                 "range": 1000,
                 "force": 15,
-                "spawnWeight": 2
+                "spawnWeight": 2,
+                "isHoming": true,
+                "homingRadius": 12,
+                "homingAngularVelocity": 360
               },
               {
                 "id": "Microtransaction_Bobble_Convict_Projectile",
@@ -2149,7 +2228,10 @@
                 "speed": 18,
                 "range": 1000,
                 "force": 15,
-                "spawnWeight": 2
+                "spawnWeight": 2,
+                "numberOfBounces": 2,
+                "penetration": 3,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Microtransaction_Bobble_Rogue_Projectile",
@@ -2202,7 +2284,9 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -2238,7 +2322,9 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -2252,7 +2338,9 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -2289,7 +2377,10 @@
                 "damage": 30,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 2,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -2325,7 +2416,10 @@
                 "damage": 2,
                 "speed": 23,
                 "range": 1000,
-                "force": 2
+                "force": 2,
+                "isHoming": true,
+                "homingRadius": 4,
+                "homingAngularVelocity": 2160
               }
             ]
           }
@@ -2456,7 +2550,9 @@
                 "damage": 100,
                 "speed": 30,
                 "range": 1000,
-                "force": 20
+                "force": 20,
+                "penetration": 6,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -2551,7 +2647,9 @@
                 "speed": 40,
                 "range": 1000,
                 "force": 11,
-                "freezeChance": 1
+                "freezeChance": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -2588,7 +2686,9 @@
                 "speed": 40,
                 "range": 1000,
                 "force": 11,
-                "freezeChance": 1
+                "freezeChance": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -3368,7 +3468,9 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 21,
-                "fireChance": 0.08
+                "fireChance": 0.08,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -3441,7 +3543,10 @@
                 "damage": 10,
                 "speed": 30,
                 "range": 1000,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 2,
+                "penetration": 2,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -3477,7 +3582,10 @@
                 "damage": 10,
                 "speed": 30,
                 "range": 1000,
-                "force": 15
+                "force": 15,
+                "numberOfBounces": 2,
+                "penetration": 2,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -3549,7 +3657,9 @@
                 "damage": 10,
                 "speed": 200,
                 "range": 1000,
-                "force": 15
+                "force": 15,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -4083,7 +4193,9 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 15
+                "force": 15,
+                "penetration": 3,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -4165,7 +4277,9 @@
                 "damage": 7,
                 "speed": 15,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -4201,7 +4315,9 @@
                 "damage": 7,
                 "speed": 15,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -4243,7 +4359,8 @@
                 "damage": 14,
                 "speed": 30,
                 "range": 1000,
-                "force": 14
+                "force": 14,
+                "numberOfBounces": 2
               }
             ]
           }
@@ -4280,7 +4397,9 @@
                 "speed": 20,
                 "range": 1000,
                 "force": 13,
-                "stunChance": 0.2
+                "stunChance": 0.2,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -4353,7 +4472,9 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -4390,7 +4511,9 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -4426,7 +4549,9 @@
                 "damage": 7.5,
                 "speed": 600,
                 "range": 1000,
-                "force": 4
+                "force": 4,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -4462,7 +4587,9 @@
                 "damage": 7.5,
                 "speed": 600,
                 "range": 1000,
-                "force": 4
+                "force": 4,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -4645,7 +4772,8 @@
                 "speed": 30,
                 "range": 50,
                 "force": 4,
-                "fireChance": 1
+                "fireChance": 1,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -4681,7 +4809,10 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -4695,7 +4826,10 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -4709,7 +4843,10 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -4723,7 +4860,10 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -4737,7 +4877,10 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -4751,7 +4894,10 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -4765,7 +4911,10 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -4779,7 +4928,10 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 15,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -4815,7 +4967,9 @@
                 "damage": 100,
                 "speed": 25,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -5024,7 +5178,12 @@
                 "damage": 6,
                 "speed": 23,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "penetration": 3,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 3,
+                "homingAngularVelocity": 350
               }
             ]
           }
@@ -5425,7 +5584,8 @@
                 "damage": 8,
                 "speed": 18,
                 "range": 35,
-                "force": 8
+                "force": 8,
+                "numberOfBounces": 4
               }
             ]
           }
@@ -5462,7 +5622,9 @@
                 "speed": 30,
                 "range": 3,
                 "force": 10,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -5499,7 +5661,9 @@
                 "speed": 30,
                 "range": 3,
                 "force": 10,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -5537,7 +5701,9 @@
                 "damage": 200,
                 "speed": 25,
                 "range": 1000,
-                "force": 80
+                "force": 80,
+                "penetration": 4,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5552,7 +5718,9 @@
                 "damage": 200,
                 "speed": 35,
                 "range": 1000,
-                "force": 80
+                "force": 80,
+                "penetration": 4,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5567,7 +5735,9 @@
                 "damage": 200,
                 "speed": 35,
                 "range": 1000,
-                "force": 80
+                "force": 80,
+                "penetration": 4,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5582,7 +5752,9 @@
                 "damage": 200,
                 "speed": 25,
                 "range": 1000,
-                "force": 80
+                "force": 80,
+                "penetration": 4,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5597,7 +5769,9 @@
                 "damage": 200,
                 "speed": 25,
                 "range": 1000,
-                "force": 80
+                "force": 80,
+                "penetration": 4,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5612,7 +5786,9 @@
                 "damage": 200,
                 "speed": 25,
                 "range": 1000,
-                "force": 80
+                "force": 80,
+                "penetration": 4,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -5890,7 +6066,9 @@
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
-                "force": 45
+                "force": 45,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5904,7 +6082,9 @@
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
-                "force": 45
+                "force": 45,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5918,7 +6098,9 @@
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
-                "force": 45
+                "force": 45,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5932,7 +6114,9 @@
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
-                "force": 45
+                "force": 45,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5946,7 +6130,9 @@
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
-                "force": 45
+                "force": 45,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -5960,7 +6146,9 @@
                 "damage": 7,
                 "speed": 27,
                 "range": 10,
-                "force": 45
+                "force": 45,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -6138,7 +6326,9 @@
                 "damage": 20,
                 "speed": 200,
                 "range": 60,
-                "force": 25
+                "force": 25,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -6246,7 +6436,9 @@
                 "damage": 20,
                 "speed": 200,
                 "range": 60,
-                "force": 25
+                "force": 25,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -6282,7 +6474,8 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 20,
-                "force": 20
+                "force": 20,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -6390,7 +6583,9 @@
                 "damage": 6,
                 "speed": 27,
                 "range": 1000,
-                "force": 20
+                "force": 20,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -6426,7 +6621,9 @@
                 "damage": 35,
                 "speed": 200,
                 "range": 1000,
-                "force": 25
+                "force": 25,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -6534,7 +6731,9 @@
                 "damage": 5,
                 "speed": 22,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -6606,7 +6805,10 @@
                 "damage": 6,
                 "speed": 16,
                 "range": 50,
-                "force": 20
+                "force": 20,
+                "numberOfBounces": 0,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -6666,7 +6868,9 @@
                 "damage": 40,
                 "speed": 10,
                 "range": 1000,
-                "force": 11
+                "force": 11,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -6680,7 +6884,9 @@
                 "damage": 40,
                 "speed": 10,
                 "range": 1000,
-                "force": 11
+                "force": 11,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -6848,7 +7054,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -6862,7 +7070,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -6876,7 +7086,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -7020,7 +7232,9 @@
                 "damage": 10,
                 "speed": 600,
                 "range": 1000,
-                "force": 4
+                "force": 4,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -7056,7 +7270,9 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 60,
-                "force": 10
+                "force": 10,
+                "penetration": 10,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -7135,7 +7351,9 @@
                 "damage": 26,
                 "speed": 200,
                 "range": 50,
-                "force": 20
+                "force": 20,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -7156,7 +7374,9 @@
                 "damage": 36,
                 "speed": 600,
                 "range": 100,
-                "force": 80
+                "force": 80,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -7523,7 +7743,9 @@
                 "speed": 20,
                 "range": 40,
                 "force": 13,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Origami_Swan_Projectile",
@@ -7531,7 +7753,9 @@
                 "speed": 20,
                 "range": 40,
                 "force": 13,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Origami_Unicorn_Projectile",
@@ -7539,7 +7763,9 @@
                 "speed": 20,
                 "range": 40,
                 "force": 13,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -7575,7 +7801,9 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 40,
-                "force": 13
+                "force": 13,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -7589,7 +7817,9 @@
                 "damage": 7.5,
                 "speed": 20,
                 "range": 40,
-                "force": 13
+                "force": 13,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -7697,7 +7927,9 @@
                 "damage": 4,
                 "speed": 25,
                 "range": 25,
-                "force": 13
+                "force": 13,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -7712,7 +7944,9 @@
                 "speed": 10,
                 "range": 3,
                 "force": 10,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -7748,7 +7982,9 @@
                 "damage": 4,
                 "speed": 25,
                 "range": 25,
-                "force": 13
+                "force": 13,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -7763,7 +7999,9 @@
                 "speed": 10,
                 "range": 3,
                 "force": 10,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -7814,7 +8052,9 @@
                 "speed": 16,
                 "range": 3,
                 "force": 12,
-                "stunChance": 1
+                "stunChance": 1,
+                "penetration": 4,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -7851,7 +8091,9 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 4,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -7888,7 +8130,9 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 4,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -7924,7 +8168,9 @@
                 "damage": 18,
                 "speed": 45,
                 "range": 1000,
-                "force": 26
+                "force": 26,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -7960,7 +8206,9 @@
                 "damage": 9,
                 "speed": 45,
                 "range": 1000,
-                "force": 26
+                "force": 26,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -8633,7 +8881,8 @@
                 "damage": 10,
                 "speed": 40,
                 "range": 35,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 2
               }
             ]
           }
@@ -8742,7 +8991,9 @@
                 "damage": 17.5,
                 "speed": -1,
                 "range": 30,
-                "force": 10
+                "force": 10,
+                "isHoming": true,
+                "homingAnddamageAllEnemies": true
               }
             ]
           }
@@ -8778,7 +9029,9 @@
                 "damage": 17.5,
                 "speed": -1,
                 "range": 30,
-                "force": 10
+                "force": 10,
+                "isHoming": true,
+                "homingAnddamageAllEnemies": true
               }
             ]
           },
@@ -8792,7 +9045,10 @@
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 5,
+                "homingAngularVelocity": 600
               }
             ]
           },
@@ -8806,7 +9062,10 @@
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 5,
+                "homingAngularVelocity": 600
               }
             ]
           }
@@ -8843,7 +9102,9 @@
                 "damage": 150,
                 "speed": 800,
                 "range": 1000,
-                "force": 0
+                "force": 0,
+                "penetration": 50,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -8880,7 +9141,10 @@
                 "damage": 50,
                 "speed": 250,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 10,
+                "penetration": 50,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -9057,7 +9321,9 @@
                 "damage": 6,
                 "speed": 15,
                 "range": 35,
-                "force": 6
+                "force": 6,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -9099,7 +9365,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -9113,7 +9381,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -9127,7 +9397,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -9141,7 +9413,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -9155,7 +9429,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -9169,7 +9445,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           }
@@ -9289,7 +9567,9 @@
                 "damage": 20,
                 "speed": 40,
                 "range": 90,
-                "force": 10
+                "force": 10,
+                "penetration": 10,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -9363,7 +9643,8 @@
                 "speed": 10,
                 "range": 45,
                 "force": 13,
-                "poisonChance": 0.5
+                "poisonChance": 0.5,
+                "numberOfBounces": 2
               }
             ]
           }
@@ -9477,7 +9758,8 @@
                 "damage": 8,
                 "speed": 25,
                 "range": 1000,
-                "force": 14
+                "force": 14,
+                "numberOfBounces": 2
               }
             ]
           }
@@ -9514,7 +9796,14 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
-                "force": 5
+                "force": 5,
+                "numberOfBounces": 8,
+                "chanceToDieOnBounce": 0.1,
+                "penetration": 30,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 4,
+                "homingAngularVelocity": 180
               }
             ]
           }
@@ -9551,7 +9840,14 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
-                "force": 5
+                "force": 5,
+                "numberOfBounces": 8,
+                "chanceToDieOnBounce": 0.1,
+                "penetration": 30,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 4,
+                "homingAngularVelocity": 180
               }
             ]
           }
@@ -9744,7 +10040,10 @@
                 "damage": 7,
                 "speed": 25,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 3,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -9780,7 +10079,10 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 3,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -9853,7 +10155,10 @@
                 "damage": 50,
                 "speed": 35,
                 "range": 1000,
-                "force": 60
+                "force": 60,
+                "numberOfBounces": 6,
+                "penetration": 4,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -9890,7 +10195,10 @@
                 "damage": 150,
                 "speed": 10,
                 "range": 1000,
-                "force": 0
+                "force": 0,
+                "numberOfBounces": 50,
+                "penetration": 1000,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -10400,7 +10708,9 @@
                 "damage": 3,
                 "speed": 30,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -10414,7 +10724,10 @@
                 "damage": 5,
                 "speed": 25,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "numberOfBounces": 1,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -10501,7 +10814,9 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 8,
-                "charmChance": 0.25
+                "charmChance": 0.25,
+                "penetration": 8,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -10516,7 +10831,8 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 8,
-                "charmChance": 0.25
+                "charmChance": 0.25,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -10546,7 +10862,8 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 8,
-                "charmChance": 0.25
+                "charmChance": 0.25,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -10582,7 +10899,12 @@
                 "damage": 10,
                 "speed": 15,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 3,
+                "canPenetrateObjects": false,
+                "isHoming": true,
+                "homingRadius": 6,
+                "homingAngularVelocity": 500
               }
             ]
           }
@@ -10625,7 +10947,8 @@
                 "damage": 25,
                 "speed": 40,
                 "range": 1000,
-                "force": 12
+                "force": 12,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -10697,7 +11020,9 @@
                 "damage": 26,
                 "speed": 200,
                 "range": 1000,
-                "force": 15
+                "force": 15,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -11063,7 +11388,12 @@
                 "damage": 4,
                 "speed": 18,
                 "range": 1000,
-                "force": 6
+                "force": 6,
+                "penetration": 1,
+                "canPenetrateObjects": false,
+                "isHoming": true,
+                "homingRadius": 6,
+                "homingAngularVelocity": 700
               }
             ]
           }
@@ -11296,7 +11626,10 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 6,
+                "penetration": 20,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -11338,7 +11671,9 @@
                 "damage": 7,
                 "speed": 26,
                 "range": 1000,
-                "force": 15
+                "force": 15,
+                "penetration": 3,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -11383,7 +11718,9 @@
                 "damage": 7,
                 "speed": 26,
                 "range": 1000,
-                "force": 15
+                "force": 15,
+                "penetration": 3,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -11495,7 +11832,9 @@
                 "damage": 22.5,
                 "speed": -1,
                 "range": 30,
-                "force": 10
+                "force": 10,
+                "isHoming": true,
+                "homingAnddamageAllEnemies": false
               }
             ]
           }
@@ -11504,7 +11843,8 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [],
+    "video": "https://youtu.be/zJ1MiifNI5A?t=22"
   },
   {
     "id": 689,
@@ -11531,7 +11871,9 @@
                 "damage": 22.5,
                 "speed": -1,
                 "range": 30,
-                "force": 10
+                "force": 10,
+                "isHoming": true,
+                "homingAnddamageAllEnemies": false
               }
             ]
           }
@@ -11724,7 +12066,10 @@
                 "damage": 0,
                 "speed": 23,
                 "range": 1000,
-                "force": 15
+                "force": 15,
+                "isHoming": true,
+                "homingRadius": 4,
+                "homingAngularVelocity": 2160
               }
             ]
           }
@@ -11839,7 +12184,8 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 60,
-                "force": 11
+                "force": 11,
+                "numberOfBounces": 4
               }
             ]
           }
@@ -11875,7 +12221,9 @@
                 "damage": 8,
                 "speed": 600,
                 "range": 1000,
-                "force": 4
+                "force": 4,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -12179,7 +12527,12 @@
                 "damage": 12,
                 "speed": 1.8,
                 "range": 6,
-                "force": 25
+                "force": 25,
+                "penetration": 3,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 10,
+                "homingAngularVelocity": 180
               }
             ]
           }
@@ -12474,7 +12827,9 @@
                 "damage": 5,
                 "speed": 30,
                 "range": 35,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -12510,7 +12865,9 @@
                 "damage": 14,
                 "speed": 26,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "penetration": 3,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -12549,7 +12906,8 @@
                 "damage": 5,
                 "speed": 15,
                 "range": 30,
-                "force": 20
+                "force": 20,
+                "numberOfBounces": 1
               }
             ]
           },
@@ -12628,7 +12986,8 @@
                 "damage": 8,
                 "speed": 10,
                 "range": 90,
-                "force": 30
+                "force": 30,
+                "isHoming": true
               }
             ]
           }
@@ -12664,7 +13023,8 @@
                 "damage": 7,
                 "speed": 40,
                 "range": 60,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 6
               }
             ]
           }
@@ -12700,7 +13060,9 @@
                 "damage": 7,
                 "speed": 400,
                 "range": 60,
-                "force": 30
+                "force": 30,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -12736,7 +13098,9 @@
                 "damage": 3,
                 "speed": 400,
                 "range": 60,
-                "force": 12
+                "force": 12,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -12898,7 +13262,10 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 4,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -12912,7 +13279,10 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 4,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -12926,7 +13296,10 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 4,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -12940,7 +13313,10 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 4,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -12954,7 +13330,10 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 4,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -12968,7 +13347,10 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 4,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -12982,7 +13364,10 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 4,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           },
@@ -12996,7 +13381,10 @@
                 "damage": 7,
                 "speed": 30,
                 "range": 1000,
-                "force": 50
+                "force": 50,
+                "numberOfBounces": 4,
+                "penetration": 12,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -13032,7 +13420,10 @@
                 "damage": 5.5,
                 "speed": 23,
                 "range": 1000,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 5,
+                "homingAngularVelocity": 600
               }
             ]
           }
@@ -13068,7 +13459,12 @@
                 "damage": 12,
                 "speed": 18,
                 "range": 40,
-                "force": 30
+                "force": 30,
+                "penetration": 1,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 6,
+                "homingAngularVelocity": 400
               }
             ]
           }
@@ -13111,7 +13507,9 @@
                 "damage": 100,
                 "speed": 22,
                 "range": 2.5,
-                "force": 120
+                "force": 120,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -13132,7 +13530,9 @@
                 "damage": 100,
                 "speed": 22,
                 "range": 2.5,
-                "force": 120
+                "force": 120,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -13243,7 +13643,10 @@
                 "damage": 5.5,
                 "speed": 23,
                 "range": 40,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 3,
+                "homingAngularVelocity": 400
               }
             ]
           },
@@ -13257,7 +13660,10 @@
                 "damage": 5.5,
                 "speed": 23,
                 "range": 40,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 3,
+                "homingAngularVelocity": 400
               }
             ]
           },
@@ -13271,7 +13677,10 @@
                 "damage": 5.5,
                 "speed": 23,
                 "range": 40,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 3,
+                "homingAngularVelocity": 400
               }
             ]
           }
@@ -13422,7 +13831,9 @@
                 "damage": 100,
                 "speed": 600,
                 "range": 1000,
-                "force": 20
+                "force": 20,
+                "penetration": 10,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -13633,7 +14044,9 @@
                 "damage": 23,
                 "speed": -1,
                 "range": 30,
-                "force": 10
+                "force": 10,
+                "isHoming": true,
+                "homingAnddamageAllEnemies": false
               }
             ]
           }
@@ -13669,7 +14082,10 @@
                 "damage": 37.5,
                 "speed": 25,
                 "range": 25,
-                "force": 7
+                "force": 7,
+                "isHoming": true,
+                "homingRadius": 1,
+                "homingAngularVelocity": 90
               }
             ]
           }
@@ -13741,7 +14157,9 @@
                 "damage": 20,
                 "speed": 26,
                 "range": 20,
-                "force": 6
+                "force": 6,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -13777,7 +14195,9 @@
                 "damage": 20,
                 "speed": 26,
                 "range": 20,
-                "force": 6
+                "force": 6,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -13813,7 +14233,12 @@
                 "damage": 15,
                 "speed": 22,
                 "range": 25,
-                "force": 13
+                "force": 13,
+                "penetration": 1,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 2,
+                "homingAngularVelocity": 90
               }
             ]
           }
@@ -13849,7 +14274,10 @@
                 "damage": 5,
                 "speed": 23,
                 "range": 40,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 3,
+                "homingAngularVelocity": 400
               }
             ]
           },
@@ -13863,7 +14291,10 @@
                 "damage": 7,
                 "speed": 23,
                 "range": 40,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 3,
+                "homingAngularVelocity": 400
               }
             ]
           },
@@ -13877,7 +14308,10 @@
                 "damage": 10,
                 "speed": 23,
                 "range": 40,
-                "force": 9
+                "force": 9,
+                "isHoming": true,
+                "homingRadius": 3,
+                "homingAngularVelocity": 400
               }
             ]
           }
@@ -14228,7 +14662,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -14249,7 +14685,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14263,7 +14701,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -14284,7 +14724,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14298,7 +14740,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -14319,7 +14763,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14333,7 +14779,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14347,7 +14795,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14361,7 +14811,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14375,7 +14827,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14389,7 +14843,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14403,7 +14859,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14417,7 +14875,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14431,7 +14891,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -14452,7 +14914,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14466,7 +14930,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14480,7 +14946,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14494,7 +14962,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14508,7 +14978,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -14522,7 +14994,9 @@
                 "damage": 7,
                 "speed": 10,
                 "range": 10,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -14630,7 +15104,12 @@
                 "damage": 10,
                 "speed": 40,
                 "range": 90,
-                "force": 10
+                "force": 10,
+                "penetration": 10,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 10,
+                "homingAngularVelocity": 540
               }
             ]
           }
@@ -14666,7 +15145,9 @@
                 "damage": 6,
                 "speed": 200,
                 "range": 1000,
-                "force": 4
+                "force": 4,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -15160,7 +15641,9 @@
                 "damage": 15,
                 "speed": 50,
                 "range": 25,
-                "force": 50
+                "force": 50,
+                "penetration": 3,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -15238,7 +15721,10 @@
                 "damage": 4.5,
                 "speed": 25,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "isHoming": true,
+                "homingRadius": 25,
+                "homingAngularVelocity": 360
               }
             ]
           }
@@ -15282,7 +15768,9 @@
                 "speed": 100,
                 "range": 3.5,
                 "force": 40,
-                "stunChance": 0.3
+                "stunChance": 0.3,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -15305,7 +15793,9 @@
                 "speed": 100,
                 "range": 3.5,
                 "force": 400,
-                "stunChance": 0.3
+                "stunChance": 0.3,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -15342,7 +15832,9 @@
                 "speed": 5,
                 "range": 15,
                 "force": 10,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": false
               },
               {
                 "id": "Bubble_Mid_Projectile",
@@ -15350,7 +15842,9 @@
                 "speed": 5,
                 "range": 15,
                 "force": 10,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": false
               },
               {
                 "id": "Bubble_Sm_Projectile",
@@ -15358,7 +15852,9 @@
                 "speed": 5,
                 "range": 15,
                 "force": 10,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -15466,7 +15962,9 @@
                 "damage": 25,
                 "speed": 25,
                 "range": 60,
-                "force": 10
+                "force": 10,
+                "penetration": 10,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -15508,7 +16006,9 @@
                 "damage": 7,
                 "speed": 15,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -15547,7 +16047,9 @@
                 "damage": 140,
                 "speed": 600,
                 "range": 1000,
-                "force": 20
+                "force": 20,
+                "penetration": 10,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -15585,7 +16087,9 @@
                 "damage": 140,
                 "speed": 600,
                 "range": 1000,
-                "force": 20
+                "force": 20,
+                "penetration": 10,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -15914,7 +16418,9 @@
                 "range": 1000,
                 "force": 20,
                 "spawnWeight": 1,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Planet_Venus_Projectile",
@@ -15923,7 +16429,9 @@
                 "range": 1000,
                 "force": 26,
                 "spawnWeight": 1,
-                "poisonChance": 1
+                "poisonChance": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Planet_Earth_Projectile",
@@ -15931,7 +16439,9 @@
                 "speed": 19,
                 "range": 1000,
                 "force": 60,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Planet_Mars_Projectile",
@@ -15939,7 +16449,9 @@
                 "speed": 19,
                 "range": 1000,
                 "force": 75,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Planet_Jupiter_Projectile",
@@ -15947,7 +16459,9 @@
                 "speed": 19,
                 "range": 1000,
                 "force": 45,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Planet_Saturn_Projectile",
@@ -15955,7 +16469,9 @@
                 "speed": 19,
                 "range": 1000,
                 "force": 30,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Planet_Uranus_Projectile",
@@ -15964,7 +16480,9 @@
                 "range": 1000,
                 "force": 30,
                 "spawnWeight": 1,
-                "freezeChance": 1
+                "freezeChance": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               },
               {
                 "id": "Planet_Neptune_Projectile",
@@ -15973,7 +16491,9 @@
                 "range": 1000,
                 "force": 30,
                 "spawnWeight": 1,
-                "freezeChance": 1
+                "freezeChance": 1,
+                "penetration": 0,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -16009,7 +16529,9 @@
                 "damage": 25,
                 "speed": 75,
                 "range": 32,
-                "force": 10
+                "force": 10,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -16045,7 +16567,9 @@
                 "damage": 7,
                 "speed": 21,
                 "range": 20,
-                "force": 6
+                "force": 6,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -16082,7 +16606,9 @@
                 "speed": 12,
                 "range": 12,
                 "force": 0,
-                "stunChance": 0.01
+                "stunChance": 0.01,
+                "penetration": 3,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -16255,7 +16781,12 @@
                 "damage": 4,
                 "speed": 35,
                 "range": 30,
-                "force": 0
+                "force": 0,
+                "penetration": 3,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 5,
+                "homingAngularVelocity": 600
               }
             ]
           }
@@ -16291,7 +16822,10 @@
                 "damage": 8.5,
                 "speed": 20,
                 "range": 1000,
-                "force": 7
+                "force": 7,
+                "isHoming": true,
+                "homingRadius": 2,
+                "homingAngularVelocity": 180
               }
             ]
           }
@@ -16535,7 +17069,9 @@
                 "damage": 40,
                 "speed": 40,
                 "range": 60,
-                "force": 13
+                "force": 13,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -16607,7 +17143,8 @@
                 "damage": 5,
                 "speed": 18,
                 "range": 35,
-                "force": 8
+                "force": 8,
+                "numberOfBounces": 4
               }
             ]
           }
@@ -16833,7 +17370,9 @@
                 "damage": 30,
                 "speed": -1,
                 "range": 30,
-                "force": 10
+                "force": 10,
+                "isHoming": true,
+                "homingAnddamageAllEnemies": false
               }
             ]
           }
@@ -16943,7 +17482,12 @@
                 "speed": 10,
                 "range": 1000,
                 "force": 9,
-                "cheeseChance": 1
+                "cheeseChance": 1,
+                "numberOfBounces": 5,
+                "chanceToDieOnBounce": 0.1,
+                "isHoming": true,
+                "homingRadius": 6,
+                "homingAngularVelocity": 80
               }
             ]
           }
@@ -17021,7 +17565,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -17035,7 +17581,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -17049,7 +17597,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -17063,7 +17613,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -17077,7 +17629,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           },
@@ -17091,7 +17645,9 @@
                 "damage": 6,
                 "speed": 25,
                 "range": 15,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 4,
+                "chanceToDieOnBounce": 0.3
               }
             ]
           }
@@ -17128,7 +17684,12 @@
                 "damage": 25,
                 "speed": 20,
                 "range": 100,
-                "force": 10
+                "force": 10,
+                "stunChance": 1,
+                "numberOfBounces": 100,
+                "penetration": 1,
+                "canPenetrateObjects": true,
+                "isHoming": true
               }
             ]
           }
@@ -17137,7 +17698,8 @@
     ],
     "maxAmmo": 100,
     "reloadTime": 1,
-    "featureFlags": []
+    "featureFlags": [],
+    "video": "https://youtu.be/x2GsWu0qJ9E?t=811"
   },
   {
     "id": 732,
@@ -17347,7 +17909,12 @@
                 "damage": 12,
                 "speed": 18,
                 "range": 40,
-                "force": 30
+                "force": 30,
+                "penetration": 1,
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 6,
+                "homingAngularVelocity": 400
               }
             ]
           }
@@ -17405,7 +17972,9 @@
                 "speed": 5,
                 "range": 15,
                 "force": 10,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": false
               },
               {
                 "id": "BubbleLead_Mid_Projectile",
@@ -17413,7 +17982,9 @@
                 "speed": 5,
                 "range": 15,
                 "force": 10,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": false
               },
               {
                 "id": "BubbleLead_Sm_Projectile",
@@ -17421,7 +17992,9 @@
                 "speed": 5,
                 "range": 15,
                 "force": 10,
-                "spawnWeight": 1
+                "spawnWeight": 1,
+                "penetration": 1,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -17500,7 +18073,9 @@
                 "damage": 10,
                 "speed": 20,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -17596,7 +18171,9 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 4,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -17712,7 +18289,10 @@
                 "damage": 7,
                 "speed": 25,
                 "range": 1000,
-                "force": 10
+                "force": 10,
+                "numberOfBounces": 3,
+                "penetration": 2,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -17836,7 +18416,9 @@
                 "speed": 22,
                 "range": 2.5,
                 "force": 120,
-                "poisonChance": 1
+                "poisonChance": 1,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           },
@@ -17942,7 +18524,9 @@
                 "speed": 22,
                 "range": 2.5,
                 "force": 120,
-                "poisonChance": 1
+                "poisonChance": 1,
+                "penetration": 10,
+                "canPenetrateObjects": false
               }
             ]
           }
@@ -18077,7 +18661,8 @@
                 "damage": 8,
                 "speed": 26,
                 "range": 1000,
-                "force": 9
+                "force": 9,
+                "numberOfBounces": 1
               }
             ]
           }
@@ -18233,7 +18818,9 @@
                 "speed": 600,
                 "range": 1000,
                 "force": 4,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -18255,7 +18842,9 @@
                 "speed": 26,
                 "range": 1000,
                 "force": 32,
-                "fireChance": 1
+                "fireChance": 1,
+                "penetration": 1,
+                "canPenetrateObjects": true
               }
             ]
           }
@@ -18341,7 +18930,10 @@
                 "damage": 70,
                 "speed": 35,
                 "range": 1000,
-                "force": 8
+                "force": 8,
+                "isHoming": true,
+                "homingRadius": 8,
+                "homingAngularVelocity": 180
               }
             ]
           }
@@ -18416,7 +19008,9 @@
                 "damage": 35,
                 "speed": 22,
                 "range": 10,
-                "force": 8
+                "force": 8,
+                "penetration": 5,
+                "canPenetrateObjects": true
               }
             ]
           }

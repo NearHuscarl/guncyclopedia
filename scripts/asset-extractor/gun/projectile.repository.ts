@@ -6,7 +6,14 @@ import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { ProjectileDto } from "./projectile.dto.ts";
-import type { TProjectileDto } from "./projectile.dto.ts";
+import type {
+  TBounceProjModifierData,
+  THomingModifierData,
+  TPierceProjModifierData,
+  TProjectileData,
+  TProjectileDto,
+  TRaidenBeamControllerData,
+} from "./projectile.dto.ts";
 
 type Guid = string;
 
@@ -31,9 +38,32 @@ export class ProjectileRepository {
     return await instance.load();
   }
 
-  private _isProjectileDto(obj: unknown): obj is TProjectileDto {
+  private _isProjectileData(obj: unknown): obj is TProjectileData {
+    if (!this._assetService.isMonoBehaviour(obj)) return false;
+    const scriptPath = obj.m_Script.$$scriptPath;
+    return scriptPath.endsWith(AssetService.PROJECTILE_SCRIPT);
+  }
+  private _isBounceModifierData(obj: unknown): obj is TBounceProjModifierData {
     return (
-      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.PROJECTILE_SCRIPT)
+      this._assetService.isMonoBehaviour(obj) &&
+      obj.m_Script.$$scriptPath.endsWith(AssetService.BOUNCE_PROJ_MODIFIER_SCRIPT)
+    );
+  }
+  private _isPierceModifierData(obj: unknown): obj is TPierceProjModifierData {
+    return (
+      this._assetService.isMonoBehaviour(obj) &&
+      obj.m_Script.$$scriptPath.endsWith(AssetService.PIERCE_PROJ_MODIFIER_SCRIPT)
+    );
+  }
+  private _isHomingModifierData(obj: unknown): obj is THomingModifierData {
+    return (
+      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.HOMING_MODIFIER_SCRIPT)
+    );
+  }
+  private _isRaidenBeamControllerData(obj: unknown): obj is TRaidenBeamControllerData {
+    return (
+      this._assetService.isMonoBehaviour(obj) &&
+      obj.m_Script.$$scriptPath.endsWith(AssetService.RAIDEN_BEAM_CONTROLLER_SCRIPT)
     );
   }
 
@@ -57,27 +87,34 @@ export class ProjectileRepository {
 
   private async _parseProjectile(filePath: string) {
     const refab = await this._assetService.parseSerializedAsset(filePath);
-    let $$name = "";
-    for (const block of refab) {
-      if (typeof block.m_Name === "string" && block.m_Name !== "Sprite") {
-        $$name = block.m_Name;
-      }
-      if (!this._isProjectileDto(block)) {
-        continue;
-      }
 
-      try {
-        const metaFilePath = filePath + ".meta";
-        const $$id = this._getProjectileKey({ $$scriptPath: metaFilePath });
+    const res: Partial<TProjectileDto> = {};
+    try {
+      for (const block of refab) {
+        if (this._isProjectileData(block) && !res.projectile) {
+          const metaFilePath = filePath + ".meta";
 
-        return ProjectileDto.parse({ ...block, $$id, $$name });
-      } catch (error) {
-        if (error instanceof z.ZodError) {
-          console.error(chalk.red(`Error parsing projectile dto at ${filePath}`));
-          console.error(chalk.red(z.prettifyError(error)));
-        } else {
-          throw error;
+          res.id = this._getProjectileKey({ $$scriptPath: metaFilePath });
+          res.projectile = block;
+        } else if (this._isBounceModifierData(block)) {
+          res.bounceProjModifier = block;
+        } else if (this._isPierceModifierData(block)) {
+          res.pierceProjModifier = block;
+        } else if (this._isHomingModifierData(block)) {
+          res.homingModifier = block;
+        } else if (this._isRaidenBeamControllerData(block)) {
+          res.raidenBeamController = block;
         }
+      }
+
+      return ProjectileDto.parse(res);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        console.error(chalk.red(`Error parsing projectile dto at ${filePath}`));
+        console.error(chalk.red(z.prettifyError(error)));
+        process.exit(1);
+      } else {
+        throw error;
       }
     }
   }
@@ -102,7 +139,7 @@ export class ProjectileRepository {
       const projDto = await this._parseProjectile(file);
       if (!projDto) continue;
 
-      this._projectiles.set(projDto.$$id, projDto);
+      this._projectiles.set(projDto.id, projDto);
     }
 
     console.log();

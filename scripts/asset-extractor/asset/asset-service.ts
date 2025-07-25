@@ -14,6 +14,11 @@ import type { TAssetExternalReference } from "../utils/schema.ts";
 export class AssetService {
   static readonly GUN_SCRIPT = "Gun.cs.meta";
   static readonly PROJECTILE_SCRIPT = "Projectile.cs.meta";
+  static readonly BOUNCE_PROJ_MODIFIER_SCRIPT = "BounceProjModifier.cs.meta";
+  static readonly PIERCE_PROJ_MODIFIER_SCRIPT = "PierceProjModifier.cs.meta";
+  static readonly HOMING_MODIFIER_SCRIPT = "HomingModifier.cs.meta";
+  static readonly RAIDEN_BEAM_CONTROLLER_SCRIPT = "RaidenBeamController.cs.meta";
+
   static readonly PROJECTILE_VOLLEY_SCRIPT = "ProjectileVolleyData.cs.meta";
   private readonly _DEFAULT_META_ROOT_DIR = path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject");
 

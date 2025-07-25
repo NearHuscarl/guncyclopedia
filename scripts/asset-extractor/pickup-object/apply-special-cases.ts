@@ -1,4 +1,4 @@
-import type { TGun } from "./pickup-object.model.ts";
+import type { TGun } from "./gun.model.ts";
 
 /**
  * Applies special cases for specific guns cause I'm too lazy to handle them in the main logic.

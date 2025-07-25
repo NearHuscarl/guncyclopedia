@@ -1,5 +1,6 @@
 import z from "zod/v4";
 import { BinaryOption, Percentage } from "../utils/schema.ts";
+import { MonoBehaviour } from "../asset/asset.dto.ts";
 
 const CoreDamageType = {
   None: 0,
@@ -13,9 +14,7 @@ const CoreDamageType = {
   SpecialBossDamage: 0x80,
 };
 
-export const ProjectileDto = z.object({
-  $$id: z.string(),
-  $$name: z.string(),
+const ProjectileData = MonoBehaviour.extend({
   ignoreDamageCaps: BinaryOption,
   baseData: z.object({
     damage: z.number(),
@@ -51,4 +50,37 @@ export const ProjectileDto = z.object({
   CheeseApplyChance: Percentage,
 });
 
+const BounceProjModifierData = z.object({
+  numberOfBounces: z.number(),
+  chanceToDieOnBounce: z.number(),
+});
+
+const PierceProjModifierData = z.object({
+  penetration: z.number(),
+  penetratesBreakables: BinaryOption,
+});
+
+const HomingModifierData = z.object({
+  HomingRadius: z.number(),
+  AngularVelocity: z.number(),
+});
+
+const RaidenBeamControllerData = z.object({
+  maxTargets: z.number(),
+});
+
+export const ProjectileDto = z.object({
+  id: z.string(),
+  projectile: ProjectileData,
+  bounceProjModifier: BounceProjModifierData.optional(),
+  pierceProjModifier: PierceProjModifierData.optional(),
+  homingModifier: HomingModifierData.optional(),
+  raidenBeamController: RaidenBeamControllerData.optional(),
+});
+
 export type TProjectileDto = z.input<typeof ProjectileDto>;
+export type TProjectileData = z.infer<typeof ProjectileData>;
+export type TBounceProjModifierData = z.infer<typeof BounceProjModifierData>;
+export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
+export type THomingModifierData = z.infer<typeof HomingModifierData>;
+export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;

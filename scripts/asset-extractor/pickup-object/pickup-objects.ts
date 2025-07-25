@@ -10,7 +10,9 @@ import { ItemModelGenerator } from "./item-model-generator.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import { VolleyRepository } from "../gun/volley.repository.ts";
 import { AssetService } from "../asset/asset-service.ts";
-import type { TItem, TGun, TPickupObject } from "./pickup-object.model.ts";
+import type { TGun } from "./gun.model.ts";
+import type { TItem } from "./item.model.ts";
+import type { TPickupObject } from "./pickup-object.model.ts";
 
 export function isGun(obj: object): obj is TGun {
   return typeof obj === "object" && "type" in obj && obj.type === "gun";

@@ -9,7 +9,7 @@ import uniq from "lodash/uniq.js";
 import cloneDeep from "lodash/cloneDeep.js";
 import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
 import { videos } from "../gun/gun.meta.ts";
-import { Gun } from "./pickup-object.model.ts";
+import { Gun } from "./gun.model.ts";
 import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
@@ -18,7 +18,7 @@ import { StatModifier } from "../player/player.dto.ts";
 import { VolleyRepository } from "../gun/volley.repository.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
-import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./pickup-object.model.ts";
+import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
 import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import type { TVolleyDto } from "../gun/volley.dto.ts";
@@ -98,28 +98,53 @@ export class GunModelGenerator {
 
   private _buildProjectile(projDto: TProjectileDto): TProjectile {
     const proj: TProjectile = {
-      id: projDto.$$id,
-      name: projDto.$$name,
-      damage: projDto.baseData.damage,
-      speed: projDto.baseData.speed,
-      range: projDto.baseData.range,
-      force: projDto.baseData.force,
+      id: projDto.id,
+      damage: projDto.projectile.baseData.damage,
+      speed: projDto.projectile.baseData.speed,
+      range: projDto.projectile.baseData.range,
+      force: projDto.projectile.baseData.force,
     };
 
-    if (projDto.ignoreDamageCaps) proj.ignoreDamageCaps = true;
-    if (projDto.AppliesPoison) proj.poisonChance = projDto.PoisonApplyChance;
-    if (projDto.AppliesSpeedModifier) {
+    if (projDto.projectile.ignoreDamageCaps) proj.ignoreDamageCaps = true;
+    if (projDto.projectile.AppliesPoison) proj.poisonChance = projDto.projectile.PoisonApplyChance;
+    if (projDto.projectile.AppliesSpeedModifier) {
       // Some mistakes where AppliesSpeedModifier doesn't mean anything
       // ExportedProject\Assets\GameObject\Railgun_Variant_Projectile.prefab
-      if (projDto.speedEffect.SpeedMultiplier < 1) {
-        proj.speedChance = projDto.SpeedApplyChance;
+      if (projDto.projectile.speedEffect.SpeedMultiplier < 1) {
+        proj.speedChance = projDto.projectile.SpeedApplyChance;
       }
     }
-    if (projDto.AppliesCharm) proj.charmChance = projDto.CharmApplyChance;
-    if (projDto.AppliesFreeze) proj.freezeChance = projDto.FreezeApplyChance;
-    if (projDto.AppliesFire) proj.fireChance = projDto.FireApplyChance;
-    if (projDto.AppliesStun) proj.stunChance = projDto.StunApplyChance;
-    if (projDto.AppliesCheese) proj.cheeseChance = projDto.CheeseApplyChance;
+    if (projDto.projectile.AppliesCharm) proj.charmChance = projDto.projectile.CharmApplyChance;
+    if (projDto.projectile.AppliesFreeze) proj.freezeChance = projDto.projectile.FreezeApplyChance;
+    if (projDto.projectile.AppliesFire) proj.fireChance = projDto.projectile.FireApplyChance;
+    if (projDto.projectile.AppliesStun) proj.stunChance = projDto.projectile.StunApplyChance;
+    if (projDto.projectile.AppliesCheese) proj.cheeseChance = projDto.projectile.CheeseApplyChance;
+
+    if (projDto.bounceProjModifier) {
+      proj.numberOfBounces = projDto.bounceProjModifier.numberOfBounces;
+      if ((projDto.bounceProjModifier.chanceToDieOnBounce ?? 0) > 0)
+        proj.chanceToDieOnBounce = projDto.bounceProjModifier.chanceToDieOnBounce;
+    }
+    if (projDto.pierceProjModifier) {
+      proj.penetration = projDto.pierceProjModifier.penetration;
+      proj.canPenetrateObjects = Boolean(projDto.pierceProjModifier.penetratesBreakables);
+    }
+    if (projDto.projectile.m_Script.$$scriptPath.endsWith("RobotechProjectile.cs.meta")) {
+      proj.isHoming = true;
+    }
+    if (projDto.projectile.m_Script.$$scriptPath.endsWith("BoomerangProjectile.cs.meta")) {
+      proj.isHoming = true;
+      proj.stunChance = 1; // Boomerang always stuns. See BoomerangProjectile.cs#StunDuration
+    }
+    if (projDto.homingModifier) {
+      proj.isHoming = true;
+      proj.homingRadius = projDto.homingModifier.HomingRadius;
+      proj.homingAngularVelocity = projDto.homingModifier.AngularVelocity;
+    }
+    if (projDto.raidenBeamController) {
+      proj.isHoming = true;
+      proj.homingAnddamageAllEnemies = projDto.raidenBeamController.maxTargets === -1;
+    }
 
     return proj;
   }
@@ -160,7 +185,6 @@ export class GunModelGenerator {
         projectiles,
       });
 
-      // TODO: handle invert
       if (module.mirror) {
         projectilesPerShot.push(cloneDeep(projectilesPerShot.at(-1)!));
       }
@@ -222,10 +246,12 @@ export class GunModelGenerator {
     const res: TProjectileMode[] = [];
     // TODO: bounce bullets
     // TODO: piecing bullets
+    // TODO: homing bullet -> fix PredatorGunController.cs for the predator gun
+    // TODO: trick gun (Gungeon Ant)
+    // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: round that has explosion on impact count as another source of damage
-    // TODO: homing bullet
-    // TODO: link 2 guns (e.g. Gungeon Ant)
-    // TODO: invert bullet (check Directional Pad)
+    // TODO: link 2 guns (e.g. Gun with EXCLUDED or SPECIAL quality)
+    // TODO: fear effect
 
     // // TODO: test casey's case again
     // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.

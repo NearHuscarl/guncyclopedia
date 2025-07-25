@@ -6,12 +6,10 @@ export const AssetMeta = z.object({
   guid: z.string(),
 });
 
-const UnityAssetBlock = z
-  .object({
-    $$fileID: z.number(),
-    $$typeName: z.string(),
-  })
-  .catchall(z.unknown());
+const UnityAssetBlock = z.object({
+  $$fileID: z.number(),
+  $$typeName: z.string(),
+});
 
 export const MonoBehaviour = UnityAssetBlock.extend({
   m_Script: z.object({
