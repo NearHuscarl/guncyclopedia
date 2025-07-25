@@ -7,6 +7,8 @@ export const AssetExternalReference = z.object({
   guid: z.string().optional(),
   $$scriptPath: z.string().optional(),
 });
+
 export const AssetExternalReferences = z
   .array(AssetExternalReference)
   .transform((v) => v.filter((ref) => ref.fileID !== 0));
+export type TAssetExternalReference = z.infer<typeof AssetExternalReference>;

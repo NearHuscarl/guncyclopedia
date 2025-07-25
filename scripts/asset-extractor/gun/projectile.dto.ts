@@ -14,6 +14,7 @@ const CoreDamageType = {
 };
 
 export const ProjectileDto = z.object({
+  $$id: z.string(),
   $$name: z.string(),
   ignoreDamageCaps: BinaryOption,
   baseData: z.object({

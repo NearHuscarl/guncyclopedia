@@ -3,6 +3,7 @@ import { BinaryOption } from "../utils/schema.ts";
 import { ProjectileModule } from "./gun.dto.ts";
 
 export const VolleyDto = z.object({
+  $$id: z.string(),
   m_Name: z.string(),
   projectiles: z.array(ProjectileModule),
   /**

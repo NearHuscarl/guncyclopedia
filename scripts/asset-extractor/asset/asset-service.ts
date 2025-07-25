@@ -9,6 +9,7 @@ import { restoreCache, saveCache } from "../utils/cache.ts";
 import { parseYaml } from "../utils/yaml.ts";
 import { AssetMeta, MonoBehaviour } from "./asset.dto.ts";
 import type { TAssetMeta, TUnityAsset, Guid, TMonoBehaviour } from "./asset.dto.ts";
+import type { TAssetExternalReference } from "../utils/schema.ts";
 
 export class AssetService {
   static readonly GUN_SCRIPT = "Gun.cs.meta";
@@ -63,6 +64,13 @@ export class AssetService {
 
   getPathByGuid(guid: string): string | undefined {
     return this._assetPaths.get(guid);
+  }
+
+  referenceExists(assetReference: TAssetExternalReference): assetReference is Required<TAssetExternalReference> {
+    if (!assetReference.$$scriptPath || !assetReference.guid || !assetReference.fileID) {
+      return false;
+    }
+    return true;
   }
 
   async parseAssetMeta(filePath: string): Promise<TAssetMeta> {

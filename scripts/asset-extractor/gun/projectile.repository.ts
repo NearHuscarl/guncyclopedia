@@ -67,7 +67,10 @@ export class ProjectileRepository {
       }
 
       try {
-        return ProjectileDto.parse({ ...block, $$name });
+        const metaFilePath = filePath + ".meta";
+        const $$id = this._getProjectileKey({ $$scriptPath: metaFilePath });
+
+        return ProjectileDto.parse({ ...block, $$id, $$name });
       } catch (error) {
         if (error instanceof z.ZodError) {
           console.error(chalk.red(`Error parsing projectile dto at ${filePath}`));
@@ -99,9 +102,7 @@ export class ProjectileRepository {
       const projDto = await this._parseProjectile(file);
       if (!projDto) continue;
 
-      const metaFilePath = path.join(ASSET_EXTRACTOR_ROOT, file + ".meta");
-      const meta = await this._assetService.parseAssetMeta(metaFilePath);
-      this._projectiles.set(meta.guid, projDto);
+      this._projectiles.set(projDto.$$id, projDto);
     }
 
     console.log();
@@ -111,7 +112,11 @@ export class ProjectileRepository {
     return this;
   }
 
-  getProjectile(guid: string) {
-    return this._projectiles.get(guid);
+  private _getProjectileKey(assetReference: { $$scriptPath: string }) {
+    return path.basename(assetReference.$$scriptPath, ".prefab.meta").replaceAll(" ", "_");
+  }
+
+  getProjectile(assetReference: { $$scriptPath: string }): TProjectileDto | undefined {
+    return this._projectiles.get(this._getProjectileKey(assetReference));
   }
 }

@@ -9,6 +9,7 @@ import { GunModelGenerator } from "./gun-model-generator.ts";
 import { ItemModelGenerator } from "./item-model-generator.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import { VolleyRepository } from "../gun/volley.repository.ts";
+import { AssetService } from "../asset/asset-service.ts";
 import type { TItem, TGun, TPickupObject } from "./pickup-object.model.ts";
 
 export function isGun(obj: object): obj is TGun {
@@ -25,12 +26,19 @@ type TCreatePickupObjectsInput = {
   encounterTrackableRepo: EncounterTrackableRepository;
   projectileRepo: ProjectileRepository;
   volleyRepo: VolleyRepository;
+  assetService: AssetService;
 };
 
 export async function createPickupObjects(options: TCreatePickupObjectsInput) {
-  const { translationRepo, gunRepo, encounterTrackableRepo, projectileRepo, volleyRepo } = options;
+  const { translationRepo, gunRepo, encounterTrackableRepo, projectileRepo, volleyRepo, assetService } = options;
   const pickupObjects: TPickupObject[] = [];
-  const gunModelGenerator = new GunModelGenerator({ gunRepo, projectileRepo, volleyRepo, translationRepo });
+  const gunModelGenerator = new GunModelGenerator({
+    gunRepo,
+    projectileRepo,
+    volleyRepo,
+    translationRepo,
+    assetService,
+  });
   const itemModelGenerator = new ItemModelGenerator({ translationRepo });
 
   for (const entry of encounterTrackableRepo.entries) {

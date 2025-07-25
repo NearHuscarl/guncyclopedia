@@ -21,6 +21,7 @@ MonoBehaviour:
     sequenceStyle: 1
     chargeProjectiles: []
     angleVariance: 8
+    mirror: 0
     cooldownTime: 0.15
     numberOfShotsInClip: 25
   UsesBossDamageModifier: 0
@@ -30,3 +31,6 @@ MonoBehaviour:
   blankDuringReload: 1
   blankReloadRadius: 1.8
   reflectDuringReload: 1
+  activeReloadData:
+    reloadSpeedMultiplier: 1
+  LocalActiveReload: 0

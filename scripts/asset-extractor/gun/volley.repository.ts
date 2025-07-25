@@ -7,6 +7,7 @@ import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { VolleyDto } from "./volley.dto.ts";
 import type { TVolleyDto } from "./volley.dto.ts";
+import type { TAssetExternalReference } from "../utils/schema.ts";
 
 type Guid = string;
 
@@ -63,7 +64,9 @@ export class VolleyRepository {
       }
 
       try {
-        return VolleyDto.parse(block);
+        const metaFilePath = filePath + ".meta";
+        const $$id = this._getVolleyKey({ $$scriptPath: metaFilePath });
+        return VolleyDto.parse({ ...block, $$id });
       } catch (error) {
         if (error instanceof z.ZodError) {
           console.error(chalk.red(`Error parsing volley dto at ${filePath}`));
@@ -94,9 +97,7 @@ export class VolleyRepository {
       const projDto = await this._parseVolley(file);
       if (!projDto) continue;
 
-      const metaFilePath = path.join(ASSET_EXTRACTOR_ROOT, file + ".meta");
-      const meta = await this._assetService.parseAssetMeta(metaFilePath);
-      this._volleys.set(meta.guid, projDto);
+      this._volleys.set(projDto.$$id, projDto);
     }
 
     console.log();
@@ -106,7 +107,11 @@ export class VolleyRepository {
     return this;
   }
 
-  getVolley(guid: string) {
-    return this._volleys.get(guid);
+  private _getVolleyKey(assetReference: { $$scriptPath: string }) {
+    return path.basename(assetReference.$$scriptPath, ".asset.meta").replaceAll(" ", "_");
+  }
+
+  getVolley(assetReference: Required<TAssetExternalReference>) {
+    return this._volleys.get(this._getVolleyKey(assetReference));
   }
 }

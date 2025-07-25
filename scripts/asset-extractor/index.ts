@@ -20,6 +20,7 @@ async function main() {
     encounterTrackableRepo,
     projectileRepo,
     volleyRepo,
+    assetService,
   });
 }
 

@@ -34,6 +34,7 @@
         }
       }
     ],
+    "mirror": 0,
     "cooldownTime": 0.07,
     "numberOfShotsInClip": 6,
     "projectiles": [
@@ -51,5 +52,9 @@
   "blankReloadRadius": 1,
   "currentGunStatModifiers": [],
   "passiveStatModifiers": [],
-  "reflectDuringReload": 0
+  "reflectDuringReload": 0,
+  "LocalActiveReload": 0,
+  "activeReloadData": {
+    "reloadSpeedMultiplier": 1
+  }
 }

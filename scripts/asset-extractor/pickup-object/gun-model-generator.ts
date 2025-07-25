@@ -16,11 +16,13 @@ import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import { applySpecialCases } from "./apply-special-cases.ts";
 import { StatModifier } from "../player/player.dto.ts";
 import { VolleyRepository } from "../gun/volley.repository.ts";
+import { AssetService } from "../asset/asset-service.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./pickup-object.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
 import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import type { TVolleyDto } from "../gun/volley.dto.ts";
+import type { TAssetExternalReference } from "../utils/schema.ts";
 
 const gunQualityTextLookup = invert(ItemQuality);
 const gunClassTextLookup = invert(GunClass);
@@ -48,6 +50,7 @@ type GunModelGeneratorCtor = {
   projectileRepo: ProjectileRepository;
   volleyRepo: VolleyRepository;
   translationRepo: TranslationRepository;
+  assetService: AssetService;
 };
 
 export class GunModelGenerator {
@@ -55,20 +58,22 @@ export class GunModelGenerator {
   private readonly _projectileRepo: ProjectileRepository;
   private readonly _volleyRepo: VolleyRepository;
   private readonly _translationRepo: TranslationRepository;
+  private readonly _assetService: AssetService;
 
-  constructor({ gunRepo, projectileRepo, volleyRepo, translationRepo }: GunModelGeneratorCtor) {
+  constructor({ gunRepo, projectileRepo, volleyRepo, translationRepo, assetService }: GunModelGeneratorCtor) {
     this._gunRepo = gunRepo;
     this._projectileRepo = projectileRepo;
     this._volleyRepo = volleyRepo;
     this._translationRepo = translationRepo;
+    this._assetService = assetService;
   }
 
   private _getGunVolley(gunDto: TGunDto): TVolleyDto | undefined {
-    if (!gunDto.rawVolley.guid) {
+    if (!this._assetService.referenceExists(gunDto.rawVolley)) {
       return undefined;
     }
 
-    const volleyDto = this._volleyRepo.getVolley(gunDto.rawVolley.guid);
+    const volleyDto = this._volleyRepo.getVolley(gunDto.rawVolley);
     if (!volleyDto) {
       throw new Error(
         chalk.red(
@@ -79,21 +84,21 @@ export class GunModelGenerator {
     return volleyDto;
   }
 
-  private _getProjectile(gunDto: TGunDto, guid: string) {
-    const projDto = this._projectileRepo.getProjectile(guid);
+  private _getProjectile(gunDto: TGunDto, assetReference: Required<TAssetExternalReference>) {
+    const projDto = this._projectileRepo.getProjectile(assetReference);
     if (!projDto) {
       throw new Error(
         chalk.red(
-          `Parsing ${gunDto.gunName} (${gunDto.PickupObjectId}) gun failed: Projectile with guid ${guid} not found in ProjectileRepository.`
+          `Parsing ${gunDto.gunName} (${gunDto.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`
         )
       );
     }
     return projDto;
   }
 
-  private _buildProjectile(id: number, projDto: TProjectileDto): TProjectile {
+  private _buildProjectile(projDto: TProjectileDto): TProjectile {
     const proj: TProjectile = {
-      id,
+      id: projDto.$$id,
       name: projDto.$$name,
       damage: projDto.baseData.damage,
       speed: projDto.baseData.speed,
@@ -140,8 +145,8 @@ export class GunModelGenerator {
     const projectilesPerShot: TProjectilePerShot[] = [];
     for (const module of modules) {
       let projectiles = module.projectiles
-        .filter((p) => p.guid)
-        .map((p) => this._buildProjectile(p.fileID, this._getProjectile(gunDto, p.guid!)));
+        .filter(this._assetService.referenceExists)
+        .map((p) => this._buildProjectile(this._getProjectile(gunDto, p)));
 
       if (module.sequenceStyle === ProjectileSequenceStyle.Random) {
         projectiles = this._computeProjectileSpawnWeight(projectiles);
@@ -270,8 +275,12 @@ export class GunModelGenerator {
       if (gunDto.reflectDuringReload) featureFlags.push("reflectDuringReload");
       if (gunDto.LocalActiveReload) featureFlags.push("activeReload");
       if (gunDto.blankDuringReload) featureFlags.push("blankDuringReload");
-      if (gunDto.rawVolley.guid && this._volleyRepo.getVolley(gunDto.rawVolley.guid)?.ModulesAreTiers)
+      if (
+        this._assetService.referenceExists(gunDto.rawVolley) &&
+        this._volleyRepo.getVolley(gunDto.rawVolley)?.ModulesAreTiers
+      ) {
         featureFlags.push("hasTieredProjectiles");
+      }
 
       const allStatModifiers = gunDto.currentGunStatModifiers.concat(gunDto.passiveStatModifiers ?? []);
 

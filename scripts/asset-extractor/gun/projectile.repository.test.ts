@@ -24,7 +24,7 @@ describe("projectile.repository.ts", () => {
   it("should parse simple projectile from refab file", async () => {
     const inputPath = "gun/__fixtures__/simple-projectile";
     const projRepo = await createProjectileRepo(inputPath);
-    const actual = projRepo.getProjectile("7db03fb3e768b3b49bc458d390ac7ccb");
+    const actual = projRepo.getProjectile({ $$scriptPath: "Excaliber_Green_Projectile.prefab.meta" });
     const outputPath = "gun/__fixtures__/simple-projectile/Excaliber_Green_Projectile.prefab.json";
     const expected = JSON.parse(await readFile(path.join(ASSET_EXTRACTOR_ROOT, outputPath), "utf-8"));
 

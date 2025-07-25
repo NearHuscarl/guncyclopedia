@@ -11,8 +11,8 @@ const PickupObject = z.object({
 });
 
 const Projectile = z.object({
-  // fileID of the block in the prefab file
-  id: z.number(),
+  // basename of the meta file that associates with the prefab file
+  id: z.string(),
   name: z.string(),
   ignoreDamageCaps: z.boolean().optional(),
   damage: z.number(),
