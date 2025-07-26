@@ -1,60 +1,62 @@
 {
-  "PickupObjectId": 41,
-  "gunClass": 60,
-  "gunName": "Hunter Arm",
-  "maxAmmo": 200,
-  "quality": 3,
-  "rawVolley": {
-    "fileID": 0
-  },
-  "reloadTime": 0.54,
-  "singleModule": {
-    "angleVariance": 0,
-    "sequenceStyle": 0,
-    "chargeProjectiles": [
-      {
-        "ChargeTime": 0,
-        "Projectile": {
-          "fileID": 114785029221341660,
-          "guid": "d5a0bb378127ebb4e8e4703561446b50"
+  "gun": {
+    "PickupObjectId": 41,
+    "gunClass": 60,
+    "gunName": "Hunter Arm",
+    "maxAmmo": 200,
+    "quality": 3,
+    "rawVolley": {
+      "fileID": 0
+    },
+    "reloadTime": 0.54,
+    "singleModule": {
+      "angleVariance": 0,
+      "sequenceStyle": 0,
+      "chargeProjectiles": [
+        {
+          "ChargeTime": 0,
+          "Projectile": {
+            "fileID": 114785029221341660,
+            "guid": "d5a0bb378127ebb4e8e4703561446b50"
+          }
+        },
+        {
+          "ChargeTime": 0.5,
+          "Projectile": {
+            "fileID": 114854345284293340,
+            "guid": "6fb8d9ca2e0161f49bd87324f85de867"
+          }
+        },
+        {
+          "ChargeTime": 1.5,
+          "Projectile": {
+            "fileID": 114433998896312750,
+            "guid": "9494279407fcc3f428da8d2f2725319e"
+          }
         }
-      },
-      {
-        "ChargeTime": 0.5,
-        "Projectile": {
-          "fileID": 114854345284293340,
-          "guid": "6fb8d9ca2e0161f49bd87324f85de867"
+      ],
+      "mirror": 0,
+      "cooldownTime": 0.07,
+      "numberOfShotsInClip": 6,
+      "projectiles": [
+        {
+          "$$scriptPath": "simple-projectile/Excaliber_Green_Projectile.prefab.meta",
+          "fileID": 114474206188037740,
+          "guid": "7db03fb3e768b3b49bc458d390ac7ccb"
         }
-      },
-      {
-        "ChargeTime": 1.5,
-        "Projectile": {
-          "fileID": 114433998896312750,
-          "guid": "9494279407fcc3f428da8d2f2725319e"
-        }
-      }
-    ],
-    "mirror": 0,
-    "cooldownTime": 0.07,
-    "numberOfShotsInClip": 6,
-    "projectiles": [
-      {
-        "$$scriptPath": "simple-projectile/Excaliber_Green_Projectile.prefab.meta",
-        "fileID": 114474206188037740,
-        "guid": "7db03fb3e768b3b49bc458d390ac7ccb"
-      }
-    ],
-    "shootStyle": 3
-  },
-  "CustomBossDamageModifier": -1,
-  "UsesBossDamageModifier": 0,
-  "blankDuringReload": 0,
-  "blankReloadRadius": 1,
-  "currentGunStatModifiers": [],
-  "passiveStatModifiers": [],
-  "reflectDuringReload": 0,
-  "LocalActiveReload": 0,
-  "activeReloadData": {
-    "reloadSpeedMultiplier": 1
+      ],
+      "shootStyle": 3
+    },
+    "CustomBossDamageModifier": -1,
+    "UsesBossDamageModifier": 0,
+    "blankDuringReload": 0,
+    "blankReloadRadius": 1,
+    "currentGunStatModifiers": [],
+    "passiveStatModifiers": [],
+    "reflectDuringReload": 0,
+    "LocalActiveReload": 0,
+    "activeReloadData": {
+      "reloadSpeedMultiplier": 1
+    }
   }
 }

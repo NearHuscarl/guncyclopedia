@@ -13,14 +13,12 @@ import { Gun } from "./gun.model.ts";
 import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
-import { applySpecialCases } from "./apply-special-cases.ts";
 import { StatModifier } from "../player/player.dto.ts";
 import { VolleyRepository } from "../gun/volley.repository.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
-import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import type { TVolleyDto } from "../gun/volley.dto.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
 
@@ -59,6 +57,7 @@ export class GunModelGenerator {
   private readonly _volleyRepo: VolleyRepository;
   private readonly _translationRepo: TranslationRepository;
   private readonly _assetService: AssetService;
+  private readonly _featureFlags: Set<TGun["featureFlags"][number]> = new Set();
 
   constructor({ gunRepo, projectileRepo, volleyRepo, translationRepo, assetService }: GunModelGeneratorCtor) {
     this._gunRepo = gunRepo;
@@ -69,15 +68,15 @@ export class GunModelGenerator {
   }
 
   private _getGunVolley(gunDto: TGunDto): TVolleyDto | undefined {
-    if (!this._assetService.referenceExists(gunDto.rawVolley)) {
+    if (!this._assetService.referenceExists(gunDto.gun.rawVolley)) {
       return undefined;
     }
 
-    const volleyDto = this._volleyRepo.getVolley(gunDto.rawVolley);
+    const volleyDto = this._volleyRepo.getVolley(gunDto.gun.rawVolley);
     if (!volleyDto) {
       throw new Error(
         chalk.red(
-          `Parsing ${gunDto.gunName} (${gunDto.PickupObjectId}) gun failed: Volley with guid ${gunDto.rawVolley.guid} not found in VolleyRepository.`
+          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${gunDto.gun.rawVolley.guid} not found in VolleyRepository.`
         )
       );
     }
@@ -89,14 +88,15 @@ export class GunModelGenerator {
     if (!projDto) {
       throw new Error(
         chalk.red(
-          `Parsing ${gunDto.gunName} (${gunDto.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`
+          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`
         )
       );
     }
     return projDto;
   }
 
-  private _buildProjectile(projDto: TProjectileDto): TProjectile {
+  private _buildProjectile(gunDto: TGunDto, projectileRef: Required<TAssetExternalReference>): TProjectile {
+    const projDto = this._getProjectile(gunDto, projectileRef);
     const proj: TProjectile = {
       id: projDto.id,
       damage: projDto.projectile.baseData.damage,
@@ -119,6 +119,9 @@ export class GunModelGenerator {
     if (projDto.projectile.AppliesFire) proj.fireChance = projDto.projectile.FireApplyChance;
     if (projDto.projectile.AppliesStun) proj.stunChance = projDto.projectile.StunApplyChance;
     if (projDto.projectile.AppliesCheese) proj.cheeseChance = projDto.projectile.CheeseApplyChance;
+    if (proj.charmChance || proj.freezeChance || proj.fireChance || proj.stunChance || proj.cheeseChance) {
+      this._featureFlags.add("hasStatusEffects");
+    }
 
     if (projDto.bounceProjModifier) {
       proj.numberOfBounces = projDto.bounceProjModifier.numberOfBounces;
@@ -129,21 +132,46 @@ export class GunModelGenerator {
       proj.penetration = projDto.pierceProjModifier.penetration;
       proj.canPenetrateObjects = Boolean(projDto.pierceProjModifier.penetratesBreakables);
     }
-    if (projDto.projectile.m_Script.$$scriptPath.endsWith("RobotechProjectile.cs.meta")) {
+    const projScript = projDto.projectile.m_Script.$$scriptPath;
+    if (projScript.endsWith("RobotechProjectile.cs.meta") || projScript.endsWith("BeeProjectile.cs.meta")) {
       proj.isHoming = true;
     }
-    if (projDto.projectile.m_Script.$$scriptPath.endsWith("BoomerangProjectile.cs.meta")) {
+    if (projScript.endsWith("BoomerangProjectile.cs.meta")) {
       proj.isHoming = true;
       proj.stunChance = 1; // Boomerang always stuns. See BoomerangProjectile.cs#StunDuration
+    }
+    if (projScript.endsWith("CerebralBoreProjectile.cs.meta")) {
+      proj.isHoming = true;
+      proj.stunChance = 1; // CerebralBoreProjectile always stuns.
     }
     if (projDto.homingModifier) {
       proj.isHoming = true;
       proj.homingRadius = projDto.homingModifier.HomingRadius;
       proj.homingAngularVelocity = projDto.homingModifier.AngularVelocity;
     }
+    if (projDto.basicBeamController) {
+      if (projDto.basicBeamController.usesChargeDelay) proj.beamChargeTime = projDto.basicBeamController.chargeDelay;
+      if (this._featureFlags.has("hasStatusEffects")) {
+        proj.beamStatusEffectChancePerSecond = projDto.basicBeamController.statusEffectChance;
+      }
+      if (projDto.basicBeamController.homingRadius > 0) {
+        proj.isHoming = true;
+        proj.homingRadius = projDto.basicBeamController.homingRadius;
+        proj.homingAngularVelocity = projDto.basicBeamController.homingAngularVelocity;
+      }
+    }
     if (projDto.raidenBeamController) {
       proj.isHoming = true;
       proj.homingAnddamageAllEnemies = projDto.raidenBeamController.maxTargets === -1;
+    }
+    if (gunDto.predatorGunController) {
+      proj.isHoming = true;
+      proj.homingRadius = gunDto.predatorGunController.HomingRadius;
+      proj.homingAngularVelocity = gunDto.predatorGunController.HomingAngularVelocity;
+    }
+
+    if (proj.isHoming) {
+      this._featureFlags.add("hasHomingProjectiles");
     }
 
     return proj;
@@ -171,7 +199,7 @@ export class GunModelGenerator {
     for (const module of modules) {
       let projectiles = module.projectiles
         .filter(this._assetService.referenceExists)
-        .map((p) => this._buildProjectile(this._getProjectile(gunDto, p)));
+        .map((p) => this._buildProjectile(gunDto, p));
 
       if (module.sequenceStyle === ProjectileSequenceStyle.Random) {
         projectiles = this._computeProjectileSpawnWeight(projectiles);
@@ -189,7 +217,19 @@ export class GunModelGenerator {
         projectilesPerShot.push(cloneDeep(projectilesPerShot.at(-1)!));
       }
     }
-    const chargeTime = typeof mode === "number" ? mode : undefined;
+    let chargeTime = typeof mode === "number" ? mode : undefined;
+    if (defaultModule.shootStyle === ShootStyle.Beam) {
+      if (projectilesPerShot[0].projectiles.length > 1) {
+        throw new Error(
+          chalk.red(
+            `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Beam gun must have only one type of projectile.`
+          )
+        );
+      }
+      chargeTime = Math.max(
+        ...projectilesPerShot.map((pps) => pps.projectiles.map((p) => p.beamChargeTime ?? 0)).flat()
+      );
+    }
     return {
       mode: typeof mode === "number" ? `Charge ${mode}` : mode,
       magazineSize: defaultModule.numberOfShotsInClip,
@@ -201,7 +241,7 @@ export class GunModelGenerator {
   private _buildProjectileModes(gunDto: TGunDto): TProjectileMode[] {
     const volleyDto = this._getGunVolley(gunDto);
     const modulesAreTiers = Boolean(volleyDto?.ModulesAreTiers);
-    const projectileModules = volleyDto ? volleyDto.projectiles : [gunDto.singleModule];
+    const projectileModules = volleyDto ? volleyDto.projectiles : [gunDto.gun.singleModule];
 
     // see Gun.cs#DefaultModule. Some attributes within the module like numberOfShotsInClip/shootingStyle
     // should be tied to a gun, not the projectile data. DefaultModule is used to retrieve those attributes
@@ -210,7 +250,8 @@ export class GunModelGenerator {
 
     // each module is a separate mode
     if (modulesAreTiers) {
-      const modePrefix = gunDto.LocalActiveReload ? "Reload - " : "";
+      this._featureFlags.add("hasTieredProjectiles");
+      const modePrefix = gunDto.gun.LocalActiveReload ? "Reload - " : "";
       return projectileModules.map((mod, i) =>
         this._buildModeFromProjectileModules(`${modePrefix}lvl ${i + 1}`, gunDto, defaultModule, [mod])
       );
@@ -228,7 +269,7 @@ export class GunModelGenerator {
       const uniqChargeTimes = new Set(module.chargeProjectiles.map((p) => p.ChargeTime));
       if (uniqChargeTimes.size < module.chargeProjectiles.length) {
         throw new Error(
-          `${gunDto.gunName}, A projectile module must not have multiple projectiles with the same charge time. This is undefined behavior`
+          `${gunDto.gun.gunName}, A projectile module must not have multiple projectiles with the same charge time. This is undefined behavior`
         );
       }
 
@@ -246,7 +287,9 @@ export class GunModelGenerator {
     const res: TProjectileMode[] = [];
     // TODO: bounce bullets
     // TODO: piecing bullets
-    // TODO: homing bullet -> fix PredatorGunController.cs for the predator gun
+    // TODO: SpawnProjModifier (The Scrambler, Particulator)
+    // TODO: homing bullet
+    // TODO: handle explosionData. See CerebralBoreProjectile.prefab
     // TODO: trick gun (Gungeon Ant)
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: round that has explosion on impact count as another source of damage
@@ -278,6 +321,8 @@ export class GunModelGenerator {
 
   async generate(entry: TEnconterDatabase["Entries"][number]) {
     try {
+      this._featureFlags.clear();
+
       if (unusedGunIds.has(entry.pickupObjectId)) {
         return;
       }
@@ -294,51 +339,43 @@ export class GunModelGenerator {
         return;
       }
 
-      const featureFlags: TGun["featureFlags"] = [];
+      if (entry.isInfiniteAmmoGun) this._featureFlags.add("hasInfiniteAmmo");
+      if (entry.doesntDamageSecretWalls) this._featureFlags.add("doesntDamageSecretWalls");
+      if (gunDto.gun.reflectDuringReload) this._featureFlags.add("reflectDuringReload");
+      if (gunDto.gun.LocalActiveReload) this._featureFlags.add("activeReload");
+      if (gunDto.gun.blankDuringReload) this._featureFlags.add("blankDuringReload");
 
-      if (entry.isInfiniteAmmoGun) featureFlags.push("hasInfiniteAmmo");
-      if (entry.doesntDamageSecretWalls) featureFlags.push("doesntDamageSecretWalls");
-      if (gunDto.reflectDuringReload) featureFlags.push("reflectDuringReload");
-      if (gunDto.LocalActiveReload) featureFlags.push("activeReload");
-      if (gunDto.blankDuringReload) featureFlags.push("blankDuringReload");
-      if (
-        this._assetService.referenceExists(gunDto.rawVolley) &&
-        this._volleyRepo.getVolley(gunDto.rawVolley)?.ModulesAreTiers
-      ) {
-        featureFlags.push("hasTieredProjectiles");
-      }
+      const allStatModifiers = gunDto.gun.currentGunStatModifiers.concat(gunDto.gun.passiveStatModifiers ?? []);
 
-      const allStatModifiers = gunDto.currentGunStatModifiers.concat(gunDto.passiveStatModifiers ?? []);
-
-      if (gunDto.UsesBossDamageModifier === 1) {
+      if (gunDto.gun.UsesBossDamageModifier === 1) {
         allStatModifiers.push({
           statToBoost: StatModifier.StatType.DamageToBosses,
           modifyType: StatModifier.ModifyMethod.MULTIPLICATIVE,
-          amount: gunDto.CustomBossDamageModifier >= 0 ? gunDto.CustomBossDamageModifier : 0.8,
+          amount: gunDto.gun.CustomBossDamageModifier >= 0 ? gunDto.gun.CustomBossDamageModifier : 0.8,
         });
       }
+      const gun: TGun = {
+        ...texts,
+        type: "gun",
+        id: entry.pickupObjectId,
+        gunNameInternal: gunDto.gun.gunName,
+        quality: gunQualityTextLookup[gunDto.gun.quality] as keyof typeof ItemQuality,
+        gunClass: gunClassTextLookup[gunDto.gun.gunClass] as keyof typeof GunClass,
+        playerStatModifiers: allStatModifiers.map((m) => ({
+          statToBoost: statTypeTextLookup[m.statToBoost],
+          modifyType: modifyMethodTextLookup[m.modifyType] as keyof typeof StatModifier.ModifyMethod,
+          amount: m.amount,
+        })),
+        maxAmmo: gunDto.gun.maxAmmo,
+        reloadTime: gunDto.gun.reloadTime,
+        featureFlags: [],
+        projectileModes: this._buildProjectileModes(gunDto),
+        blankReloadRadius: gunDto.gun.blankDuringReload ? gunDto.gun.blankReloadRadius : undefined,
+        video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
+      };
+      gun.featureFlags = Array.from(this._featureFlags);
 
-      return Gun.parse(
-        applySpecialCases({
-          ...texts,
-          type: "gun",
-          id: entry.pickupObjectId,
-          gunNameInternal: gunDto.gunName,
-          quality: gunQualityTextLookup[gunDto.quality] as keyof typeof ItemQuality,
-          gunClass: gunClassTextLookup[gunDto.gunClass] as keyof typeof GunClass,
-          playerStatModifiers: allStatModifiers.map((m) => ({
-            statToBoost: statTypeTextLookup[m.statToBoost],
-            modifyType: modifyMethodTextLookup[m.modifyType] as keyof typeof StatModifier.ModifyMethod,
-            amount: m.amount,
-          })),
-          maxAmmo: gunDto.maxAmmo,
-          reloadTime: gunDto.reloadTime,
-          featureFlags,
-          projectileModes: this._buildProjectileModes(gunDto),
-          blankReloadRadius: gunDto.blankDuringReload ? gunDto.blankReloadRadius : undefined,
-          video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
-        })
-      );
+      return Gun.parse(gun);
     } catch (error) {
       if (error instanceof z.ZodError) {
         console.error(chalk.red(`Error parsing GUN pickup-object with ID ${entry.pickupObjectId}:`));

@@ -7,7 +7,7 @@ import { AssetService } from "../asset/asset-service.ts";
 import { GunDto } from "./gun.dto.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { performance } from "node:perf_hooks";
-import type { TGunDto } from "./gun.dto.ts";
+import type { TGunData, TGunDto, TPredatorGunControllerData } from "./gun.dto.ts";
 
 export class GunRepository {
   private static readonly _GUN_DIRECTORIES = [
@@ -33,8 +33,13 @@ export class GunRepository {
     return await this._loadGunData();
   }
 
-  private _isGunDto(obj: unknown): obj is TGunDto {
+  private _isGunData(obj: unknown): obj is TGunData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.GUN_SCRIPT);
+  }
+  private _isPredatorGunControllerData(obj: unknown): obj is TPredatorGunControllerData {
+    return (
+      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("PredatorGunController.cs.meta")
+    );
   }
 
   private async _getAllRefabFilesInGunFolders() {
@@ -57,20 +62,25 @@ export class GunRepository {
 
   private async _parseGun(filePath: string) {
     const refab = await this._assetService.parseSerializedAsset(filePath);
-    for (const block of refab) {
-      if (!this._isGunDto(block)) {
-        continue;
+    const res: Partial<TGunDto> = {};
+
+    try {
+      for (const block of refab) {
+        if (this._isGunData(block)) {
+          res.gun = block;
+        } else if (this._isPredatorGunControllerData(block)) {
+          res.predatorGunController = block;
+        }
       }
 
-      try {
-        return GunDto.parse(block);
-      } catch (error) {
-        if (error instanceof z.ZodError) {
-          console.error(chalk.red(`Error parsing gun dto, ID: ${block.PickupObjectId}, name: ${block.gunName}`));
-          console.error(z.prettifyError(error));
-        } else {
-          throw error;
-        }
+      return GunDto.parse(res);
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        console.error(chalk.red(`Error parsing gun dto, ID: ${res.gun?.PickupObjectId}, name: ${res.gun?.gunName}`));
+        console.error(z.prettifyError(error));
+        process.exit(1);
+      } else {
+        throw error;
       }
     }
   }
@@ -95,7 +105,7 @@ export class GunRepository {
       const gunDto = await this._parseGun(file);
       if (!gunDto) continue;
 
-      this._guns.set(gunDto.PickupObjectId, gunDto);
+      this._guns.set(gunDto.gun.PickupObjectId, gunDto);
     }
 
     console.log();

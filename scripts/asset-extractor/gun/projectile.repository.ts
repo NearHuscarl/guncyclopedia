@@ -7,6 +7,7 @@ import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { ProjectileDto } from "./projectile.dto.ts";
 import type {
+  TBasicBeamControllerData,
   TBounceProjModifierData,
   THomingModifierData,
   TPierceProjModifierData,
@@ -38,33 +39,27 @@ export class ProjectileRepository {
     return await instance.load();
   }
 
+  private _containsScript(obj: unknown, scriptName: string): boolean {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(scriptName);
+  }
+
   private _isProjectileData(obj: unknown): obj is TProjectileData {
-    if (!this._assetService.isMonoBehaviour(obj)) return false;
-    const scriptPath = obj.m_Script.$$scriptPath;
-    return scriptPath.endsWith(AssetService.PROJECTILE_SCRIPT);
+    return this._containsScript(obj, AssetService.PROJECTILE_SCRIPT);
   }
   private _isBounceModifierData(obj: unknown): obj is TBounceProjModifierData {
-    return (
-      this._assetService.isMonoBehaviour(obj) &&
-      obj.m_Script.$$scriptPath.endsWith(AssetService.BOUNCE_PROJ_MODIFIER_SCRIPT)
-    );
+    return this._containsScript(obj, AssetService.BOUNCE_PROJ_MODIFIER_SCRIPT);
   }
   private _isPierceModifierData(obj: unknown): obj is TPierceProjModifierData {
-    return (
-      this._assetService.isMonoBehaviour(obj) &&
-      obj.m_Script.$$scriptPath.endsWith(AssetService.PIERCE_PROJ_MODIFIER_SCRIPT)
-    );
+    return this._containsScript(obj, AssetService.PIERCE_PROJ_MODIFIER_SCRIPT);
   }
   private _isHomingModifierData(obj: unknown): obj is THomingModifierData {
-    return (
-      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.HOMING_MODIFIER_SCRIPT)
-    );
+    return this._containsScript(obj, AssetService.HOMING_MODIFIER_SCRIPT);
+  }
+  private _isBasicBeamControllerData(obj: unknown): obj is TBasicBeamControllerData {
+    return this._containsScript(obj, "BasicBeamController.cs.meta");
   }
   private _isRaidenBeamControllerData(obj: unknown): obj is TRaidenBeamControllerData {
-    return (
-      this._assetService.isMonoBehaviour(obj) &&
-      obj.m_Script.$$scriptPath.endsWith(AssetService.RAIDEN_BEAM_CONTROLLER_SCRIPT)
-    );
+    return this._containsScript(obj, AssetService.RAIDEN_BEAM_CONTROLLER_SCRIPT);
   }
 
   private async _getAllProjectileRefabFiles() {
@@ -87,8 +82,8 @@ export class ProjectileRepository {
 
   private async _parseProjectile(filePath: string) {
     const refab = await this._assetService.parseSerializedAsset(filePath);
-
     const res: Partial<TProjectileDto> = {};
+
     try {
       for (const block of refab) {
         if (this._isProjectileData(block) && !res.projectile) {
@@ -102,6 +97,8 @@ export class ProjectileRepository {
           res.pierceProjModifier = block;
         } else if (this._isHomingModifierData(block)) {
           res.homingModifier = block;
+        } else if (this._isBasicBeamControllerData(block)) {
+          res.basicBeamController = block;
         } else if (this._isRaidenBeamControllerData(block)) {
           res.raidenBeamController = block;
         }

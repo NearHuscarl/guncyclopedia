@@ -65,6 +65,13 @@ const HomingModifierData = z.object({
   AngularVelocity: z.number(),
 });
 
+const BasicBeamControllerData = z.object({
+  usesChargeDelay: BinaryOption,
+  chargeDelay: z.number(),
+  statusEffectChance: z.number(),
+  homingRadius: z.number(),
+  homingAngularVelocity: z.number(),
+});
 const RaidenBeamControllerData = z.object({
   maxTargets: z.number(),
 });
@@ -75,6 +82,7 @@ export const ProjectileDto = z.object({
   bounceProjModifier: BounceProjModifierData.optional(),
   pierceProjModifier: PierceProjModifierData.optional(),
   homingModifier: HomingModifierData.optional(),
+  basicBeamController: BasicBeamControllerData.optional(),
   raidenBeamController: RaidenBeamControllerData.optional(),
 });
 
@@ -83,4 +91,5 @@ export type TProjectileData = z.infer<typeof ProjectileData>;
 export type TBounceProjModifierData = z.infer<typeof BounceProjModifierData>;
 export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
 export type THomingModifierData = z.infer<typeof HomingModifierData>;
+export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;

@@ -325,7 +325,9 @@
     ],
     "maxAmmo": 60,
     "reloadTime": 0.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 251,
@@ -439,7 +441,9 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 2.1,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 478,
@@ -589,7 +593,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 1,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 14,
@@ -616,7 +622,8 @@
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
-                "force": 2
+                "force": 2,
+                "isHoming": true
               }
             ]
           }
@@ -625,7 +632,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 0.06,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 703,
@@ -652,7 +661,8 @@
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
-                "force": 2
+                "force": 2,
+                "isHoming": true
               }
             ]
           }
@@ -661,7 +671,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 0.06,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 157,
@@ -1677,7 +1689,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 535,
@@ -1753,7 +1767,9 @@
     ],
     "maxAmmo": 40,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 723,
@@ -1790,7 +1806,9 @@
     ],
     "maxAmmo": 40,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 21,
@@ -2019,7 +2037,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 698,
@@ -2257,7 +2277,10 @@
     ],
     "maxAmmo": 400,
     "reloadTime": 0.3,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles",
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 362,
@@ -2428,7 +2451,9 @@
     ],
     "maxAmmo": 400,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 223,
@@ -2465,7 +2490,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 62,
@@ -2658,7 +2685,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 687,
@@ -2697,7 +2726,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 12,
@@ -3152,6 +3183,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.25,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -3165,7 +3197,12 @@
                 "speed": 100,
                 "range": 40,
                 "force": 30,
-                "fireChance": 1
+                "fireChance": 1,
+                "isHoming": true,
+                "homingRadius": 2,
+                "homingAngularVelocity": 450,
+                "beamChargeTime": 0.25,
+                "beamStatusEffectChancePerSecond": 1
               }
             ]
           }
@@ -3174,7 +3211,10 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 378,
@@ -3341,6 +3381,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.6,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -3354,12 +3395,13 @@
                 "speed": 90,
                 "range": 500,
                 "force": 35,
-                "statusEffectChancePerSecond": 0.6,
                 "poisonChance": 1,
                 "charmChance": 1,
                 "freezeChance": 1,
                 "fireChance": 1,
-                "stunChance": 1
+                "stunChance": 1,
+                "beamChargeTime": 0.6,
+                "beamStatusEffectChancePerSecond": 0.6
               }
             ]
           }
@@ -3368,7 +3410,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 228,
@@ -3479,7 +3523,9 @@
     ],
     "maxAmmo": 600,
     "reloadTime": 1.6,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 677,
@@ -3516,7 +3562,9 @@
     ],
     "maxAmmo": 600,
     "reloadTime": 1.6,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 9,
@@ -4103,6 +4151,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 1.5,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -4115,7 +4164,8 @@
                 "damage": 70,
                 "speed": 120,
                 "range": 50,
-                "force": 0
+                "force": 0,
+                "beamChargeTime": 1.5
               }
             ]
           }
@@ -4408,7 +4458,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 0.78,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 709,
@@ -4483,7 +4535,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 0.8,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 706,
@@ -4522,7 +4576,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 0.8,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 383,
@@ -4613,6 +4669,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -4649,6 +4706,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.4,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -4662,7 +4720,9 @@
                 "speed": 60,
                 "range": 30,
                 "force": 10,
-                "freezeChance": 1
+                "freezeChance": 1,
+                "beamChargeTime": 0.4,
+                "beamStatusEffectChancePerSecond": 1
               }
             ]
           }
@@ -4671,7 +4731,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 710,
@@ -4686,6 +4748,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.4,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -4699,7 +4762,9 @@
                 "speed": 60,
                 "range": 30,
                 "force": 10,
-                "freezeChance": 1
+                "freezeChance": 1,
+                "beamChargeTime": 0.4,
+                "beamStatusEffectChancePerSecond": 1
               }
             ]
           }
@@ -4708,7 +4773,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 229,
@@ -4782,7 +4849,9 @@
     ],
     "maxAmmo": 600,
     "reloadTime": 1.4,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 231,
@@ -5192,7 +5261,9 @@
     ],
     "maxAmmo": 800,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 91,
@@ -5469,7 +5540,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.9,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 745,
@@ -5506,7 +5579,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.9,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 387,
@@ -5557,7 +5632,9 @@
     ],
     "maxAmmo": 130,
     "reloadTime": 1.6,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 130,
@@ -5633,7 +5710,9 @@
     ],
     "maxAmmo": 1000,
     "reloadTime": 0.9,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 742,
@@ -5672,7 +5751,9 @@
     ],
     "maxAmmo": 1000,
     "reloadTime": 0.9,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 480,
@@ -7286,7 +7367,8 @@
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
-                "force": 2
+                "force": 2,
+                "isHoming": true
               }
             ]
           },
@@ -7300,7 +7382,8 @@
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
-                "force": 2
+                "force": 2,
+                "isHoming": true
               }
             ]
           },
@@ -7314,7 +7397,8 @@
                 "damage": 3,
                 "speed": 9,
                 "range": 1000,
-                "force": 2
+                "force": 2,
+                "isHoming": true
               }
             ]
           }
@@ -7323,7 +7407,9 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 390,
@@ -7472,6 +7558,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.2,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -7484,7 +7571,8 @@
                 "damage": 26,
                 "speed": -1,
                 "range": 50,
-                "force": 20
+                "force": 20,
+                "beamChargeTime": 0.2
               }
             ]
           }
@@ -7508,6 +7596,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.2,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -7520,7 +7609,8 @@
                 "damage": 26,
                 "speed": -1,
                 "range": 50,
-                "force": 20
+                "force": 20,
+                "beamChargeTime": 0.2
               }
             ]
           }
@@ -7550,6 +7640,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -7562,7 +7653,10 @@
                 "damage": 45,
                 "speed": 40,
                 "range": 20,
-                "force": 50
+                "force": 50,
+                "isHoming": true,
+                "homingRadius": 4,
+                "homingAngularVelocity": 1600
               }
             ]
           }
@@ -7571,7 +7665,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 26,
@@ -7955,7 +8051,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 736,
@@ -8010,7 +8108,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 335,
@@ -8063,7 +8163,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 336,
@@ -8102,7 +8204,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 722,
@@ -8141,7 +8245,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 156,
@@ -8557,6 +8663,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -8569,7 +8676,10 @@
                 "damage": 1.5,
                 "speed": 12,
                 "range": 90,
-                "force": 0
+                "force": 0,
+                "isHoming": true,
+                "homingRadius": 18,
+                "homingAngularVelocity": 420
               }
             ]
           },
@@ -8583,7 +8693,10 @@
                 "damage": 50,
                 "speed": 14,
                 "range": 90,
-                "force": 30
+                "force": 30,
+                "isHoming": true,
+                "homingRadius": 15,
+                "homingAngularVelocity": 420
               }
             ]
           }
@@ -8592,7 +8705,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 720,
@@ -8613,6 +8728,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -8625,7 +8741,10 @@
                 "damage": 1.5,
                 "speed": 12,
                 "range": 90,
-                "force": 0
+                "force": 0,
+                "isHoming": true,
+                "homingRadius": 18,
+                "homingAngularVelocity": 420
               }
             ]
           },
@@ -8639,7 +8758,10 @@
                 "damage": 50,
                 "speed": 14,
                 "range": 90,
-                "force": 30
+                "force": 30,
+                "isHoming": true,
+                "homingRadius": 15,
+                "homingAngularVelocity": 420
               }
             ]
           }
@@ -8648,7 +8770,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 57,
@@ -8942,6 +9066,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.2,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -8955,7 +9080,11 @@
                 "speed": -1,
                 "range": 50,
                 "force": 20,
-                "poisonChance": 1
+                "poisonChance": 1,
+                "isHoming": true,
+                "homingRadius": 2,
+                "homingAngularVelocity": 450,
+                "beamChargeTime": 0.2
               }
             ]
           }
@@ -8964,7 +9093,9 @@
     ],
     "maxAmmo": 800,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 107,
@@ -8979,6 +9110,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -9002,7 +9134,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 712,
@@ -9017,6 +9151,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -9074,7 +9209,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 370,
@@ -9812,7 +9949,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 686,
@@ -9856,7 +9995,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 41,
@@ -10872,7 +11013,9 @@
     ],
     "maxAmmo": 120,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 45,
@@ -10913,7 +11056,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 382,
@@ -11068,7 +11213,9 @@
     ],
     "maxAmmo": 400,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 679,
@@ -11135,7 +11282,9 @@
     ],
     "maxAmmo": 400,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 80,
@@ -11402,7 +11551,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 86,
@@ -11567,6 +11718,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -11747,6 +11899,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -11820,6 +11973,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -11843,7 +11997,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ],
     "video": "https://youtu.be/zJ1MiifNI5A?t=22"
   },
   {
@@ -11859,6 +12015,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -11882,7 +12039,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 483,
@@ -12078,7 +12237,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.6,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 154,
@@ -12465,6 +12626,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.2,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -12477,7 +12639,11 @@
                 "damage": 30,
                 "speed": 30,
                 "range": 30,
-                "force": 45
+                "force": 45,
+                "isHoming": true,
+                "homingRadius": 14,
+                "homingAngularVelocity": 420,
+                "beamChargeTime": 0.2
               }
             ]
           },
@@ -12491,7 +12657,10 @@
                 "damage": 1.5,
                 "speed": 20,
                 "range": 90,
-                "force": 30
+                "force": 30,
+                "isHoming": true,
+                "homingRadius": 15,
+                "homingAngularVelocity": 420
               }
             ]
           }
@@ -12500,7 +12669,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 198,
@@ -12541,7 +12712,9 @@
     ],
     "maxAmmo": 80,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 43,
@@ -12996,7 +13169,9 @@
     ],
     "maxAmmo": 140,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 142,
@@ -13432,7 +13607,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 0.6,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 520,
@@ -13473,7 +13650,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 1.7,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 541,
@@ -13689,7 +13868,9 @@
     ],
     "maxAmmo": 3000,
     "reloadTime": 2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ],
     "video": "https://youtu.be/LI8hGCKaRE8?t=15"
   },
   {
@@ -14032,6 +14213,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -500,
         "projectiles": [
           {
@@ -14055,7 +14237,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 760,
@@ -14094,7 +14278,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 515,
@@ -14109,6 +14295,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.2,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -14121,7 +14308,8 @@
                 "damage": 0,
                 "speed": -1,
                 "range": 50,
-                "force": 0
+                "force": 0,
+                "beamChargeTime": 0.2
               }
             ]
           }
@@ -14247,7 +14435,9 @@
     ],
     "maxAmmo": 666,
     "reloadTime": 1,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 594,
@@ -14320,7 +14510,9 @@
     ],
     "maxAmmo": 3000,
     "reloadTime": 2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 566,
@@ -15118,7 +15310,9 @@
     ],
     "maxAmmo": 120,
     "reloadTime": 2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 90,
@@ -15733,7 +15927,9 @@
     ],
     "maxAmmo": 750,
     "reloadTime": 2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 539,
@@ -15804,7 +16000,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.5,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 599,
@@ -16185,6 +16383,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -16347,7 +16546,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 608,
@@ -16368,6 +16569,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -16380,7 +16582,10 @@
                 "damage": 60,
                 "speed": 45,
                 "range": 30,
-                "force": 80
+                "force": 80,
+                "isHoming": true,
+                "homingRadius": 4,
+                "homingAngularVelocity": 1600
               }
             ]
           }
@@ -16389,7 +16594,9 @@
     ],
     "maxAmmo": 800,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 597,
@@ -16502,7 +16709,9 @@
     ],
     "maxAmmo": 100,
     "reloadTime": 2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 543,
@@ -16531,7 +16740,10 @@
                 "range": 32,
                 "force": 10,
                 "penetration": 1,
-                "canPenetrateObjects": true
+                "canPenetrateObjects": true,
+                "isHoming": true,
+                "homingRadius": 20,
+                "homingAngularVelocity": 720
               }
             ]
           }
@@ -16540,7 +16752,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1.2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 577,
@@ -16617,7 +16831,9 @@
     ],
     "maxAmmo": 1000,
     "reloadTime": 0.6,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 550,
@@ -16795,7 +17011,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 3,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 596,
@@ -16834,7 +17052,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 3,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 518,
@@ -16849,6 +17069,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 1.25,
         "magazineSize": 500,
         "projectiles": [
           {
@@ -16861,7 +17082,8 @@
                 "damage": 160,
                 "speed": 75,
                 "range": 50,
-                "force": 20
+                "force": 20,
+                "beamChargeTime": 1.25
               }
             ]
           }
@@ -17174,6 +17396,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -17186,7 +17409,10 @@
                 "damage": 35,
                 "speed": 12,
                 "range": 90,
-                "force": 0
+                "force": 0,
+                "isHoming": true,
+                "homingRadius": 35,
+                "homingAngularVelocity": 420
               }
             ]
           },
@@ -17200,7 +17426,10 @@
                 "damage": 3,
                 "speed": 19,
                 "range": 90,
-                "force": 30
+                "force": 30,
+                "isHoming": true,
+                "homingRadius": 32,
+                "homingAngularVelocity": 420
               }
             ]
           },
@@ -17214,7 +17443,10 @@
                 "damage": 35,
                 "speed": 12,
                 "range": 90,
-                "force": 0
+                "force": 0,
+                "isHoming": true,
+                "homingRadius": 35,
+                "homingAngularVelocity": 420
               }
             ]
           },
@@ -17228,7 +17460,10 @@
                 "damage": 3,
                 "speed": 19,
                 "range": 90,
-                "force": 30
+                "force": 30,
+                "isHoming": true,
+                "homingRadius": 32,
+                "homingAngularVelocity": 420
               }
             ]
           }
@@ -17237,7 +17472,9 @@
     ],
     "maxAmmo": 1000,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 660,
@@ -17358,6 +17595,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": 500,
         "projectiles": [
           {
@@ -17381,7 +17619,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0.1,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 807,
@@ -17496,7 +17736,10 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 2,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 823,
@@ -17517,6 +17760,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": 100,
         "projectiles": [
           {
@@ -17698,7 +17942,9 @@
     ],
     "maxAmmo": 100,
     "reloadTime": 1,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ],
     "video": "https://youtu.be/x2GsWu0qJ9E?t=811"
   },
   {
@@ -17842,7 +18088,9 @@
     ],
     "maxAmmo": 600,
     "reloadTime": 1.6,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 603,
@@ -17944,7 +18192,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.54,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 622,
@@ -18203,7 +18453,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.54,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 620,
@@ -18381,7 +18633,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.54,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 616,
@@ -18553,6 +18807,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0.2,
         "magazineSize": -1,
         "projectiles": [
           {
@@ -18566,7 +18821,11 @@
                 "speed": 50,
                 "range": 50,
                 "force": 20,
-                "poisonChance": 1
+                "poisonChance": 1,
+                "isHoming": true,
+                "homingRadius": 2,
+                "homingAngularVelocity": 450,
+                "beamChargeTime": 0.2
               }
             ]
           }
@@ -18575,7 +18834,9 @@
     ],
     "maxAmmo": 800,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 626,
@@ -18633,7 +18894,8 @@
     "reloadTime": 1.3,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls"
+      "doesntDamageSecretWalls",
+      "hasStatusEffects"
     ]
   },
   {
@@ -18789,7 +19051,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.54,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 614,
@@ -18853,7 +19117,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.54,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 612,
@@ -18942,7 +19208,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.54,
-    "featureFlags": []
+    "featureFlags": [
+      "hasHomingProjectiles"
+    ]
   },
   {
     "id": 604,
@@ -19057,7 +19325,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 0,
-    "featureFlags": []
+    "featureFlags": [
+      "hasStatusEffects"
+    ]
   },
   {
     "id": 649,
@@ -19114,6 +19384,7 @@
     "projectileModes": [
       {
         "mode": "Default",
+        "chargeTime": 0,
         "magazineSize": 100,
         "projectiles": [
           {

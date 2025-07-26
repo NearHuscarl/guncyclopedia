@@ -70,7 +70,7 @@ export const ProjectileModule = z.object({
   numberOfShotsInClip: z.number(),
 });
 
-export const GunDto = z
+const GunData = z
   .object({
     PickupObjectId: z.number(),
     gunName: z.string(),
@@ -112,5 +112,17 @@ export const GunDto = z
     }
   );
 
+const PredatorGunControllerData = z.object({
+  HomingRadius: z.number(),
+  HomingAngularVelocity: z.number(),
+});
+
+export const GunDto = z.object({
+  gun: GunData,
+  predatorGunController: PredatorGunControllerData.optional(),
+});
+
 export type TGunDto = z.input<typeof GunDto>;
+export type TGunData = z.input<typeof GunData>;
+export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
 export type TProjectileModule = z.input<typeof ProjectileModule>;

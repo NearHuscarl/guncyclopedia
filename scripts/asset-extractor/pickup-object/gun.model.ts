@@ -17,14 +17,6 @@ const Projectile = z.object({
    */
   spawnWeight: z.number().optional(),
 
-  /**
-   * Chance to apply a status effect per second.
-   *
-   * If a beam weapon has status effects, the default is `1`
-   *
-   * For [Science Cannon](https://enterthegungeon.fandom.com/wiki/Science_Cannon), multiple effects can be applied at the same time.
-   */
-  statusEffectChancePerSecond: Percentage.optional(),
   poisonChance: Percentage.optional(),
   speedChance: Percentage.optional(),
   charmChance: Percentage.optional(),
@@ -50,6 +42,15 @@ const Projectile = z.object({
   homingRadius: z.number().optional(),
   homingAngularVelocity: z.number().optional(),
 
+  beamChargeTime: z.number().optional(),
+  /**
+   * Chance to apply a status effect per second.
+   *
+   * If a beam weapon has status effects, the default is `1`
+   *
+   * For [Science Cannon](https://enterthegungeon.fandom.com/wiki/Science_Cannon), multiple effects can be applied at the same time.
+   */
+  beamStatusEffectChancePerSecond: Percentage.optional(),
   // TODO: research ProjectileModule.cs#GetEstimatedShotsPerSecond
   // dps: z.undefined(),
 });
@@ -125,7 +126,9 @@ export const Gun = PickupObject.extend({
       "reflectDuringReload",
       "blankDuringReload",
       "activeReload",
+      "hasStatusEffects",
       "hasTieredProjectiles",
+      "hasHomingProjectiles",
     ])
   ),
   blankReloadRadius: z.number().optional(),

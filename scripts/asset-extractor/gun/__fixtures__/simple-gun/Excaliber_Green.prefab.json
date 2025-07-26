@@ -1,44 +1,46 @@
 {
-  "PickupObjectId": 345,
-  "gunClass": 10,
-  "gunName": "Hero's Blade",
-  "maxAmmo": 500,
-  "quality": 5,
-  "reloadTime": 1.5,
-  "passiveStatModifiers": [
-    {
-      "amount": 2,
-      "modifyType": 0,
-      "statToBoost": 14
-    }
-  ],
-  "rawVolley": {
-    "fileID": 0
-  },
-  "singleModule": {
-    "angleVariance": 8,
-    "chargeProjectiles": [],
-    "mirror": 0,
-    "cooldownTime": 0.15,
-    "numberOfShotsInClip": 25,
-    "sequenceStyle": 1,
-    "projectiles": [
+  "gun": {
+    "PickupObjectId": 345,
+    "gunClass": 10,
+    "gunName": "Hero's Blade",
+    "maxAmmo": 500,
+    "quality": 5,
+    "reloadTime": 1.5,
+    "passiveStatModifiers": [
       {
-        "$$scriptPath": "simple-projectile/Excaliber_Green_Projectile.prefab.meta",
-        "fileID": 114474206188037740,
-        "guid": "7db03fb3e768b3b49bc458d390ac7ccb"
+        "amount": 2,
+        "modifyType": 0,
+        "statToBoost": 14
       }
     ],
-    "shootStyle": 1
-  },
-  "CustomBossDamageModifier": -1,
-  "UsesBossDamageModifier": 0,
-  "blankDuringReload": 1,
-  "blankReloadRadius": 1.8,
-  "currentGunStatModifiers": [],
-  "reflectDuringReload": 1,
-  "LocalActiveReload": 0,
-  "activeReloadData": {
-    "reloadSpeedMultiplier": 1
+    "rawVolley": {
+      "fileID": 0
+    },
+    "singleModule": {
+      "angleVariance": 8,
+      "chargeProjectiles": [],
+      "mirror": 0,
+      "cooldownTime": 0.15,
+      "numberOfShotsInClip": 25,
+      "sequenceStyle": 1,
+      "projectiles": [
+        {
+          "$$scriptPath": "simple-projectile/Excaliber_Green_Projectile.prefab.meta",
+          "fileID": 114474206188037740,
+          "guid": "7db03fb3e768b3b49bc458d390ac7ccb"
+        }
+      ],
+      "shootStyle": 1
+    },
+    "CustomBossDamageModifier": -1,
+    "UsesBossDamageModifier": 0,
+    "blankDuringReload": 1,
+    "blankReloadRadius": 1.8,
+    "currentGunStatModifiers": [],
+    "reflectDuringReload": 1,
+    "LocalActiveReload": 0,
+    "activeReloadData": {
+      "reloadSpeedMultiplier": 1
+    }
   }
 }
