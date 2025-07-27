@@ -1,11 +1,16 @@
+import path from "node:path";
+import z from "zod/v4";
 import chalk from "chalk";
 import { EncounterDatabase } from "./encounter-trackable.dto.ts";
 import { AssetService } from "../asset/asset-service.ts";
+import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import type { TEnconterDatabase } from "./encounter-trackable.dto.ts";
-import z from "zod/v4";
 
 export class EncounterTrackableRepository {
-  private static readonly _DEFAULT_DB_PATH = "assets/ExportedProject/Assets/data/databases/EncounterDatabase.asset";
+  private static readonly _DEFAULT_DB_PATH = path.join(
+    ASSET_EXTRACTOR_ROOT,
+    "assets/ExportedProject/Assets/data/databases/EncounterDatabase.asset"
+  );
 
   private _encounterDb: TEnconterDatabase | null = null;
   private readonly _assetService: AssetService;

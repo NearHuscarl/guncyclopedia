@@ -49,7 +49,7 @@ export class VolleyRepository {
         const content = await readFile(path.join(ASSET_EXTRACTOR_ROOT, dir, file), "utf-8");
         if (!content.includes("UsesBeamRotationLimiter")) continue; // quick check to filter out non-volley prefabs
 
-        res.push(path.join(dir, file));
+        res.push(path.join(ASSET_EXTRACTOR_ROOT, dir, file));
       }
     }
 

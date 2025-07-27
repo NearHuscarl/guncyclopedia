@@ -98,6 +98,7 @@ const GunData = z
     activeReloadData: z.object({
       reloadSpeedMultiplier: z.number(),
     }),
+    idleAnimation: z.string().nullable(),
     LocalActiveReload: BinaryOption,
   })
   .refine(
@@ -112,17 +113,37 @@ const GunData = z
     }
   );
 
+const SpriteData = z.object({
+  collection: AssetExternalReference.required(),
+});
+
+const SpriteAnimatorData = z.object({
+  library: AssetExternalReference.required(),
+});
+
 const PredatorGunControllerData = z.object({
   HomingRadius: z.number(),
   HomingAngularVelocity: z.number(),
 });
 
+const EncounterTrackable = z.object({
+  m_journalData: z.object({
+    AmmonomiconSprite: z.string().nullable(),
+  }),
+});
+
 export const GunDto = z.object({
   gun: GunData,
+  sprite: SpriteData,
+  spriteAnimator: SpriteAnimatorData,
+  encounterTrackable: EncounterTrackable.optional(),
   predatorGunController: PredatorGunControllerData.optional(),
 });
 
 export type TGunDto = z.input<typeof GunDto>;
 export type TGunData = z.input<typeof GunData>;
+export type TSpriteData = z.input<typeof SpriteData>;
+export type TSpriteAnimatorData = z.input<typeof SpriteAnimatorData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
+export type TEncounterTrackableData = z.input<typeof EncounterTrackable>;
 export type TProjectileModule = z.input<typeof ProjectileModule>;

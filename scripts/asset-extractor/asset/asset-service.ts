@@ -84,8 +84,13 @@ export class AssetService {
     return AssetMeta.parse(parsedMeta);
   }
 
+  async parseSerializedAssetFromReference(reference: Required<TAssetExternalReference>): Promise<TUnityAsset> {
+    const absoluteFilePath = path.join(this._DEFAULT_META_ROOT_DIR, reference.$$scriptPath.replace(/\.meta$/, ""));
+    return this.parseSerializedAsset(absoluteFilePath);
+  }
+
   async parseSerializedAsset(filePath: string): Promise<TUnityAsset> {
-    const unityFlavoredYaml = await readFile(path.join(ASSET_EXTRACTOR_ROOT, filePath), "utf8");
+    const unityFlavoredYaml = await readFile(filePath, "utf8");
     // example split pattern '--- !u!114 &114082853474172005'
     const blocks = unityFlavoredYaml.split(/^--- !u!/gm).slice(1); // skip the YAML preamble
     const res: TUnityAsset = [];

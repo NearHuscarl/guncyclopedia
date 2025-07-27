@@ -1,15 +1,17 @@
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import chalk from "chalk";
 import { EncounterTrackableRepository } from "../encouter-trackable/encounter-trackable.repository.ts";
 import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
-import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
+import { OUTPUT_ROOT } from "../constants.ts";
 import { GunModelGenerator } from "./gun-model-generator.ts";
 import { ItemModelGenerator } from "./item-model-generator.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import { VolleyRepository } from "../gun/volley.repository.ts";
 import { AssetService } from "../asset/asset-service.ts";
+import { SpriteService } from "../sprite/sprite.service.ts";
+import { SpriteAnimatorRepository } from "../sprite/sprite-animator.repository.ts";
 import type { TGun } from "./gun.model.ts";
 import type { TItem } from "./item.model.ts";
 import type { TPickupObject } from "./pickup-object.model.ts";
@@ -29,10 +31,21 @@ type TCreatePickupObjectsInput = {
   projectileRepo: ProjectileRepository;
   volleyRepo: VolleyRepository;
   assetService: AssetService;
+  spriteService: SpriteService;
+  spriteAnimatorRepo: SpriteAnimatorRepository;
 };
 
 export async function createPickupObjects(options: TCreatePickupObjectsInput) {
-  const { translationRepo, gunRepo, encounterTrackableRepo, projectileRepo, volleyRepo, assetService } = options;
+  const {
+    translationRepo,
+    gunRepo,
+    encounterTrackableRepo,
+    projectileRepo,
+    volleyRepo,
+    assetService,
+    spriteService,
+    spriteAnimatorRepo,
+  } = options;
   const pickupObjects: TPickupObject[] = [];
   const gunModelGenerator = new GunModelGenerator({
     gunRepo,
@@ -40,8 +53,14 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
     volleyRepo,
     translationRepo,
     assetService,
+    spriteService,
+    spriteAnimatorRepo,
   });
   const itemModelGenerator = new ItemModelGenerator({ translationRepo });
+
+  console.log(chalk.green("Saving spritesheets from exported asset..."));
+  await spriteService.saveSpritesheets();
+  await mkdir(path.join(OUTPUT_ROOT, "debug/guns"), { recursive: true });
 
   for (const entry of encounterTrackableRepo.entries) {
     if (entry.pickupObjectId === -1 || entry.journalData.IsEnemy === 1) {
@@ -68,9 +87,5 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
   const totalCount = chalk.yellow(pickupObjects.length);
   console.log(chalk.green(`Collected ${totalCount} pickup objects: ${itemCount} items and ${gunCount} guns.`));
 
-  await writeFile(
-    path.join(ASSET_EXTRACTOR_ROOT, "out/pickup-objects.json"),
-    JSON.stringify(pickupObjects, null, 2),
-    "utf-8"
-  );
+  await writeFile(path.join(OUTPUT_ROOT, "pickup-objects.json"), JSON.stringify(pickupObjects, null, 2), "utf-8");
 }

@@ -1,3 +1,5 @@
+import assert from "node:assert";
+import path from "node:path";
 import chalk from "chalk";
 import z from "zod/v4";
 import invert from "lodash/invert.js";
@@ -16,6 +18,9 @@ import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import { StatModifier } from "../player/player.dto.ts";
 import { VolleyRepository } from "../gun/volley.repository.ts";
 import { AssetService } from "../asset/asset-service.ts";
+import { SpriteService } from "../sprite/sprite.service.ts";
+import { SpriteAnimatorRepository } from "../sprite/sprite-animator.repository.ts";
+import { OUTPUT_ROOT } from "../constants.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
@@ -49,6 +54,8 @@ type GunModelGeneratorCtor = {
   volleyRepo: VolleyRepository;
   translationRepo: TranslationRepository;
   assetService: AssetService;
+  spriteService: SpriteService;
+  spriteAnimatorRepo: SpriteAnimatorRepository;
 };
 
 export class GunModelGenerator {
@@ -57,14 +64,18 @@ export class GunModelGenerator {
   private readonly _volleyRepo: VolleyRepository;
   private readonly _translationRepo: TranslationRepository;
   private readonly _assetService: AssetService;
+  private readonly _spriteService: SpriteService;
+  private readonly _spriteAnimatorRepo: SpriteAnimatorRepository;
   private readonly _featureFlags: Set<TGun["featureFlags"][number]> = new Set();
 
-  constructor({ gunRepo, projectileRepo, volleyRepo, translationRepo, assetService }: GunModelGeneratorCtor) {
-    this._gunRepo = gunRepo;
-    this._projectileRepo = projectileRepo;
-    this._volleyRepo = volleyRepo;
-    this._translationRepo = translationRepo;
-    this._assetService = assetService;
+  constructor(input: GunModelGeneratorCtor) {
+    this._gunRepo = input.gunRepo;
+    this._projectileRepo = input.projectileRepo;
+    this._volleyRepo = input.volleyRepo;
+    this._translationRepo = input.translationRepo;
+    this._assetService = input.assetService;
+    this._spriteService = input.spriteService;
+    this._spriteAnimatorRepo = input.spriteAnimatorRepo;
   }
 
   private _getGunVolley(gunDto: TGunDto): TVolleyDto | undefined {
@@ -319,6 +330,79 @@ export class GunModelGenerator {
     return res;
   }
 
+  private async _generateAnimation(gunDto: TGunDto): Promise<TGun["animation"]> {
+    const animationName = gunDto.gun.idleAnimation;
+    const imageOutputPath = path.join(OUTPUT_ROOT, "debug/guns");
+
+    if (animationName) {
+      let texturePath = "";
+      const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, animationName);
+      const frames: TGun["animation"]["frames"] = [];
+
+      if (clip.clipData) {
+        for (const frame of clip.clipData.frames) {
+          const { spriteData, texturePath: spriteTexturePath } = await this._spriteService.getSprite(
+            frame.spriteCollection,
+            frame.spriteId,
+            path.join(imageOutputPath, `${gunDto.gun.PickupObjectId}-${frame.spriteId}.png`)
+          );
+          if (!spriteData.name) {
+            throw new Error(
+              `Sprite data is missing a name for frame ${frame.spriteId} of clip ${chalk.green(animationName)}`
+            );
+          }
+          frames.push({ spriteName: spriteData.name, uvs: spriteData.uvs, spriteId: frame.spriteId });
+          if (texturePath) {
+            assert(texturePath === spriteTexturePath, "All frames must have the same texture path");
+          } else {
+            texturePath = spriteTexturePath;
+          }
+        }
+
+        return {
+          name: animationName,
+          fps: clip.clipData.fps,
+          loopStart: clip.clipData.loopStart,
+          texturePath,
+          frames,
+        };
+      } else {
+        console.warn(
+          chalk.yellow(
+            `Clip ${chalk.green(animationName)} not found in animation collection. Falling back to Ammonomicon sprite.`
+          )
+        );
+      }
+    }
+
+    const spriteName = gunDto.encounterTrackable?.m_journalData.AmmonomiconSprite;
+    const outputFile = path.join(imageOutputPath, `${gunDto.gun.PickupObjectId}.png`);
+
+    if (!spriteName) {
+      throw new Error(chalk.red(`No valid sprite found for gun ${gunDto.gun.gunName}`));
+    }
+    let res: Awaited<ReturnType<typeof this._spriteService.getSprite>> | null = null;
+    try {
+      res = await this._spriteService.getSprite(gunDto.sprite.collection, spriteName!, outputFile);
+    } catch {
+      res = await this._spriteService.getSpriteFromAmmononicon(spriteName!, outputFile);
+    }
+
+    return {
+      name: "No_Animation",
+      fps: 0,
+      loopStart: 0,
+      texturePath: res.texturePath,
+      frames: [
+        {
+          spriteName: res.spriteData.name,
+          spriteId: -1, // no sprite ID
+          uvs: res.spriteData.uvs,
+        },
+      ],
+    };
+  }
+
   async generate(entry: TEnconterDatabase["Entries"][number]) {
     try {
       this._featureFlags.clear();
@@ -371,10 +455,10 @@ export class GunModelGenerator {
         featureFlags: [],
         projectileModes: this._buildProjectileModes(gunDto),
         blankReloadRadius: gunDto.gun.blankDuringReload ? gunDto.gun.blankReloadRadius : undefined,
+        animation: await this._generateAnimation(gunDto),
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       };
       gun.featureFlags = Array.from(this._featureFlags);
-
       return Gun.parse(gun);
     } catch (error) {
       if (error instanceof z.ZodError) {

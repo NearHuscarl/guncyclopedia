@@ -1,5 +1,5 @@
 import z from "zod/v4";
-import { Percentage } from "../utils/schema.ts";
+import { Percentage, Position } from "../utils/schema.ts";
 import { StatModifier } from "../player/player.dto.ts";
 import { PickupObject } from "./pickup-object.model.ts";
 
@@ -133,6 +133,19 @@ export const Gun = PickupObject.extend({
   ),
   blankReloadRadius: z.number().optional(),
   video: z.string().optional(),
+  animation: z.object({
+    name: z.string(),
+    fps: z.number(),
+    loopStart: z.number(),
+    texturePath: z.string(),
+    frames: z.array(
+      z.object({
+        spriteName: z.string(),
+        spriteId: z.number().min(-1),
+        uvs: z.tuple([Position, Position, Position, Position]),
+      })
+    ),
+  }),
 });
 
 export type TProjectile = z.input<typeof Projectile>;

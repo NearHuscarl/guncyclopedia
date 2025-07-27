@@ -7,7 +7,14 @@ import { AssetService } from "../asset/asset-service.ts";
 import { GunDto } from "./gun.dto.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { performance } from "node:perf_hooks";
-import type { TGunData, TGunDto, TPredatorGunControllerData } from "./gun.dto.ts";
+import type {
+  TEncounterTrackableData,
+  TGunData,
+  TGunDto,
+  TPredatorGunControllerData,
+  TSpriteAnimatorData,
+  TSpriteData,
+} from "./gun.dto.ts";
 
 export class GunRepository {
   private static readonly _GUN_DIRECTORIES = [
@@ -36,10 +43,19 @@ export class GunRepository {
   private _isGunData(obj: unknown): obj is TGunData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.GUN_SCRIPT);
   }
+  private _isSpriteData(obj: unknown): obj is TSpriteData {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSprite.cs.meta");
+  }
+  private _isSpriteAnimatorData(obj: unknown): obj is TSpriteAnimatorData {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteAnimator.cs.meta");
+  }
   private _isPredatorGunControllerData(obj: unknown): obj is TPredatorGunControllerData {
     return (
       this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("PredatorGunController.cs.meta")
     );
+  }
+  private _isEncounterTrackable(obj: unknown): obj is TEncounterTrackableData {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("EncounterTrackable.cs.meta");
   }
 
   private async _getAllRefabFilesInGunFolders() {
@@ -53,7 +69,7 @@ export class GunRepository {
         const content = await readFile(path.join(ASSET_EXTRACTOR_ROOT, dir, file), "utf-8");
         if (!content.includes("gunName")) continue; // quick check to filter out non-gun prefabs
 
-        res.push(path.join(dir, file));
+        res.push(path.join(ASSET_EXTRACTOR_ROOT, dir, file));
       }
     }
 
@@ -68,9 +84,24 @@ export class GunRepository {
       for (const block of refab) {
         if (this._isGunData(block)) {
           res.gun = block;
+        } else if (this._isSpriteData(block)) {
+          res.sprite = block;
+        } else if (this._isSpriteAnimatorData(block)) {
+          res.spriteAnimator = block;
         } else if (this._isPredatorGunControllerData(block)) {
           res.predatorGunController = block;
+        } else if (this._isEncounterTrackable(block)) {
+          res.encounterTrackable = block;
         }
+      }
+
+      if (!res.encounterTrackable?.m_journalData.AmmonomiconSprite && !res.gun?.idleAnimation) {
+        console.warn(
+          chalk.yellow(
+            `Skip parsing gun: ${res.gun?.gunName} (${res.gun?.PickupObjectId}) because it has no idle sprite`
+          )
+        );
+        return undefined;
       }
 
       return GunDto.parse(res);

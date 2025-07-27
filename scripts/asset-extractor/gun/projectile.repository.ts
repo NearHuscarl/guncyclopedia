@@ -73,7 +73,7 @@ export class ProjectileRepository {
         const content = await readFile(path.join(ASSET_EXTRACTOR_ROOT, dir, file), "utf-8");
         if (!content.includes("AppliesPoison")) continue; // quick check to filter out non-projectile prefabs
 
-        res.push(path.join(dir, file));
+        res.push(path.join(ASSET_EXTRACTOR_ROOT, dir, file));
       }
     }
 
