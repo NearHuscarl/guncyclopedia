@@ -41,6 +41,21 @@
     "LocalActiveReload": 0,
     "activeReloadData": {
       "reloadSpeedMultiplier": 1
+    },
+    "idleAnimation": "excaliber_green_idle"
+  },
+  "sprite": {
+    "collection": {
+      "$$scriptPath": "WeaponCollection02.prefab.meta",
+      "fileID": 114912280443490740,
+      "guid": "e1b0a773077674642a09fd81e273e7aa"
+    }
+  },
+  "spriteAnimator": {
+    "library": {
+      "$$scriptPath": "GunAnimation02.prefab.meta",
+      "fileID": 114580231557743520,
+      "guid": "b1555509f8687d14193baf8d8e951044"
     }
   }
 }

@@ -2,7 +2,6 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 import { AssetService } from "./asset-service";
-import { ASSET_EXTRACTOR_ROOT } from "../constants";
 
 describe("asset-service.ts", () => {
   beforeAll(() => {
@@ -17,10 +16,10 @@ describe("asset-service.ts", () => {
 
       vi.spyOn(assetService, "getPathByGuid").mockImplementation(() => "Assets/Scripts/Assembly-CSharp/Gun.cs.meta");
 
-      const inputPath = "asset/__fixtures__/simple.prefab";
+      const inputPath = path.join(import.meta.dirname, "__fixtures__/simple.prefab");
       const actual = await assetService.parseSerializedAsset(inputPath);
-      const outputPath = "asset/__fixtures__/simple.prefab.json";
-      const expected = JSON.parse(await readFile(path.join(ASSET_EXTRACTOR_ROOT, outputPath), "utf-8"));
+      const outputPath = path.join(import.meta.dirname, "__fixtures__/simple.prefab.json");
+      const expected = JSON.parse(await readFile(outputPath, "utf-8"));
 
       expect(actual).toEqual(expected);
     });
@@ -34,10 +33,10 @@ describe("asset-service.ts", () => {
 
       vi.spyOn(assetService, "getPathByGuid").mockImplementation((guid) => mockedAssetPaths.get(guid));
 
-      const inputPath = "asset/__fixtures__/with-script.prefab";
+      const inputPath = path.join(import.meta.dirname, "__fixtures__/with-script.prefab");
       const actual = await assetService.parseSerializedAsset(inputPath);
-      const outputPath = "asset/__fixtures__/with-script.prefab.json";
-      const expected = JSON.parse(await readFile(path.join(ASSET_EXTRACTOR_ROOT, outputPath), "utf-8"));
+      const outputPath = path.join(import.meta.dirname, "__fixtures__/with-script.prefab.json");
+      const expected = JSON.parse(await readFile(outputPath, "utf-8"));
 
       expect(actual).toEqual(expected);
     });
@@ -46,10 +45,10 @@ describe("asset-service.ts", () => {
   describe("parseAssetMeta", () => {
     it("should extract the guid from the meta file", async () => {
       const assetService = await AssetService.create();
-      const inputPath = "asset/__fixtures__/simple.prefab.meta";
-      const actual = await assetService.parseAssetMeta(path.join(ASSET_EXTRACTOR_ROOT, inputPath));
-      const outputPath = "asset/__fixtures__/simple.prefab.meta.json";
-      const expected = JSON.parse(await readFile(path.join(ASSET_EXTRACTOR_ROOT, outputPath), "utf-8"));
+      const inputPath = path.join(import.meta.dirname, "__fixtures__/simple.prefab.meta");
+      const actual = await assetService.parseAssetMeta(inputPath);
+      const outputPath = path.join(import.meta.dirname, "__fixtures__/simple.prefab.meta.json");
+      const expected = JSON.parse(await readFile(outputPath, "utf-8"));
 
       expect(actual).toEqual(expected);
     });

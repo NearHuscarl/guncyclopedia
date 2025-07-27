@@ -34,3 +34,12 @@ MonoBehaviour:
   activeReloadData:
     reloadSpeedMultiplier: 1
   LocalActiveReload: 0
+  idleAnimation: excaliber_green_idle
+--- !u!114 &114649082338099805
+MonoBehaviour:
+  m_Script: {fileID: 11500000, guid: be2eb27ebbb2b33563f9aecc63cecfe9, type: 3}
+  library: {fileID: 114580231557743520, guid: b1555509f8687d14193baf8d8e951044, type: 2}
+--- !u!114 &114428557626772751
+MonoBehaviour:
+  m_Script: {fileID: 11500000, guid: a1a76e9538a0a156c5dcf6ab9f061f16, type: 3}
+  collection: {fileID: 114912280443490737, guid: e1b0a773077674642a09fd81e273e7aa, type: 2}

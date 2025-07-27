@@ -36,3 +36,12 @@ MonoBehaviour:
   activeReloadData:
     reloadSpeedMultiplier: 1
   LocalActiveReload: 0
+  idleAnimation: hunter_arm_idle
+--- !u!114 &114777460127263474
+MonoBehaviour:
+  m_Script: {fileID: 11500000, guid: be2eb27ebbb2b33563f9aecc63cecfe9, type: 3}
+  library: {fileID: 114495338656000541, guid: 1d214181d83086b40a8e3db705ecfb8f, type: 2}
+--- !u!114 &114030118594480000
+MonoBehaviour:
+  m_Script: {fileID: 11500000, guid: a1a76e9538a0a156c5dcf6ab9f061f16, type: 3}
+  collection: {fileID: 114860482231935556, guid: 9c2e356ee0b3a2747a16a74b57e51461, type: 2}

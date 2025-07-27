@@ -23,7 +23,7 @@ export class ProjectileRepository {
     "assets/ExportedProject/Assets/GameObject",
     "assets/ExportedProject/Assets/data/projectiles",
     "assets/ExportedProject/Assets/data/projectiles/beams",
-  ];
+  ].map((dir) => path.join(ASSET_EXTRACTOR_ROOT, dir));
 
   private _projectiles = new Map<Guid, TProjectileDto>();
   private readonly _assetService: AssetService;
@@ -66,14 +66,14 @@ export class ProjectileRepository {
     const res: string[] = [];
 
     for (const dir of this._searchDirectories) {
-      const files = await readdir(path.join(ASSET_EXTRACTOR_ROOT, dir));
+      const files = await readdir(dir);
 
       for (const file of files) {
         if (!file.endsWith(".prefab")) continue;
-        const content = await readFile(path.join(ASSET_EXTRACTOR_ROOT, dir, file), "utf-8");
+        const content = await readFile(path.join(dir, file), "utf-8");
         if (!content.includes("AppliesPoison")) continue; // quick check to filter out non-projectile prefabs
 
-        res.push(path.join(ASSET_EXTRACTOR_ROOT, dir, file));
+        res.push(path.join(dir, file));
       }
     }
 

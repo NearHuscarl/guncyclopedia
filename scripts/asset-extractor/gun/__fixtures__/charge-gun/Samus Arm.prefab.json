@@ -57,6 +57,21 @@
     "LocalActiveReload": 0,
     "activeReloadData": {
       "reloadSpeedMultiplier": 1
+    },
+    "idleAnimation": "hunter_arm_idle"
+  },
+  "sprite": {
+    "collection": {
+      "$$scriptPath": "WeaponCollection.prefab.meta",
+      "fileID": 114860482231935550,
+      "guid": "9c2e356ee0b3a2747a16a74b57e51461"
+    }
+  },
+  "spriteAnimator": {
+    "library": {
+      "$$scriptPath": "GunAnimation.prefab.meta",
+      "fileID": 114495338656000540,
+      "guid": "1d214181d83086b40a8e3db705ecfb8f"
     }
   }
 }

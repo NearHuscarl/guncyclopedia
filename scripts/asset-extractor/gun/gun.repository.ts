@@ -20,7 +20,7 @@ export class GunRepository {
   private static readonly _GUN_DIRECTORIES = [
     "assets/ExportedProject/Assets/data/guns",
     "assets/ExportedProject/Assets/GameObject",
-  ];
+  ].map((dir) => path.join(ASSET_EXTRACTOR_ROOT, dir));
 
   private _guns = new Map<number, TGunDto>();
   private readonly _assetService: AssetService;
@@ -62,14 +62,14 @@ export class GunRepository {
     const res: string[] = [];
 
     for (const dir of this._gunDirectories) {
-      const files = await readdir(path.join(ASSET_EXTRACTOR_ROOT, dir));
+      const files = await readdir(dir);
 
       for (const file of files) {
         if (!file.endsWith(".prefab")) continue;
-        const content = await readFile(path.join(ASSET_EXTRACTOR_ROOT, dir, file), "utf-8");
+        const content = await readFile(path.join(dir, file), "utf-8");
         if (!content.includes("gunName")) continue; // quick check to filter out non-gun prefabs
 
-        res.push(path.join(ASSET_EXTRACTOR_ROOT, dir, file));
+        res.push(path.join(dir, file));
       }
     }
 
