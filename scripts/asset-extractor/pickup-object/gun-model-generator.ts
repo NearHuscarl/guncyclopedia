@@ -1,17 +1,13 @@
 import assert from "node:assert";
-import path from "node:path";
 import chalk from "chalk";
 import z from "zod/v4";
 import invert from "lodash/invert.js";
-import uniqBy from "lodash/uniqBy.js";
 import countBy from "lodash/countBy.js";
 import keyBy from "lodash/keyBy.js";
-import isEqual from "lodash/isEqual.js";
-import uniq from "lodash/uniq.js";
 import cloneDeep from "lodash/cloneDeep.js";
 import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
 import { videos } from "../gun/gun.meta.ts";
-import { Gun } from "./gun.model.ts";
+import { Gun } from "./client/models/gun.model.ts";
 import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
@@ -20,9 +16,8 @@ import { VolleyRepository } from "../gun/volley.repository.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { SpriteService } from "../sprite/sprite.service.ts";
 import { SpriteAnimatorRepository } from "../sprite/sprite-animator.repository.ts";
-import { OUTPUT_ROOT } from "../constants.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
-import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./gun.model.ts";
+import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
 import type { TVolleyDto } from "../gun/volley.dto.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
@@ -306,6 +301,9 @@ export class GunModelGenerator {
     // TODO: round that has explosion on impact count as another source of damage
     // TODO: link 2 guns (e.g. Gun with EXCLUDED or SPECIAL quality)
     // TODO: fear effect
+    // Edge cases:
+    // Gungeon Ant: calculate reload time again based on the active reload multiplier
+    // Rad Gun: create 2 modes for different type of projectiles when alternate reloading
 
     // // TODO: test casey's case again
     // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.
@@ -332,7 +330,6 @@ export class GunModelGenerator {
 
   private async _generateAnimation(gunDto: TGunDto): Promise<TGun["animation"]> {
     const animationName = gunDto.gun.idleAnimation;
-    const imageOutputPath = path.join(OUTPUT_ROOT, "debug/guns");
 
     if (animationName) {
       let texturePath = "";
@@ -344,7 +341,7 @@ export class GunModelGenerator {
           const { spriteData, texturePath: spriteTexturePath } = await this._spriteService.getSprite(
             frame.spriteCollection,
             frame.spriteId,
-            path.join(imageOutputPath, `${gunDto.gun.PickupObjectId}-${frame.spriteId}.png`)
+            gunDto
           );
           if (!spriteData.name) {
             throw new Error(
@@ -376,16 +373,15 @@ export class GunModelGenerator {
     }
 
     const spriteName = gunDto.encounterTrackable?.m_journalData.AmmonomiconSprite;
-    const outputFile = path.join(imageOutputPath, `${gunDto.gun.PickupObjectId}.png`);
 
     if (!spriteName) {
       throw new Error(chalk.red(`No valid sprite found for gun ${gunDto.gun.gunName}`));
     }
     let res: Awaited<ReturnType<typeof this._spriteService.getSprite>> | null = null;
     try {
-      res = await this._spriteService.getSprite(gunDto.sprite.collection, spriteName!, outputFile);
+      res = await this._spriteService.getSprite(gunDto.sprite.collection, spriteName, gunDto);
     } catch {
-      res = await this._spriteService.getSpriteFromAmmononicon(spriteName!, outputFile);
+      res = await this._spriteService.getSpriteFromAmmononicon(spriteName, gunDto);
     }
 
     return {
@@ -446,7 +442,7 @@ export class GunModelGenerator {
         quality: gunQualityTextLookup[gunDto.gun.quality] as keyof typeof ItemQuality,
         gunClass: gunClassTextLookup[gunDto.gun.gunClass] as keyof typeof GunClass,
         playerStatModifiers: allStatModifiers.map((m) => ({
-          statToBoost: statTypeTextLookup[m.statToBoost],
+          statToBoost: statTypeTextLookup[m.statToBoost] as keyof typeof StatModifier.StatType,
           modifyType: modifyMethodTextLookup[m.modifyType] as keyof typeof StatModifier.ModifyMethod,
           amount: m.amount,
         })),

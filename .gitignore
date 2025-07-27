@@ -42,4 +42,4 @@ dist-ssr
 /scripts/asset-extractor/assets/
 /scripts/asset-extractor/cache/
 
-/scripts/asset-extractor/out/debug/
+/src/client/generated/data/debug/

@@ -8,15 +8,16 @@ import { VolleyRepository } from "./gun/volley.repository.ts";
 import { SpriteRepository } from "./sprite/sprite.repository.ts";
 import { SpriteService } from "./sprite/sprite.service.ts";
 import { SpriteAnimatorRepository } from "./sprite/sprite-animator.repository.ts";
+import { copyClientCode } from "./pickup-object/copy-client-code.ts";
 
-async function main() {
+async function extractAssets() {
   const assetService = await AssetService.create();
   const translationRepo = await TranslationRepository.create();
   const projectileRepo = await ProjectileRepository.create(assetService);
   const volleyRepo = await VolleyRepository.create(assetService);
   const gunRepo = await GunRepository.create(assetService);
   const spriteRepo = await SpriteRepository.create(assetService);
-  const spriteService = new SpriteService(spriteRepo);
+  const spriteService = await SpriteService.create(spriteRepo);
   const spriteAnimatorRepo = await SpriteAnimatorRepository.create(assetService, spriteRepo);
   const encounterTrackableRepo = await EncounterTrackableRepository.create(assetService);
 
@@ -30,6 +31,11 @@ async function main() {
     spriteService,
     spriteAnimatorRepo,
   });
+}
+
+async function main() {
+  await copyClientCode();
+  await extractAssets();
 }
 
 await main();

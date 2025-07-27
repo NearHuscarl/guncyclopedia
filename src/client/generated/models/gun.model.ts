@@ -1,6 +1,5 @@
 import z from "zod/v4";
-import { Percentage, Position } from "../utils/schema.ts";
-import { StatModifier } from "../player/player.dto.ts";
+import { Percentage, Position } from "./schema.ts";
 import { PickupObject } from "./pickup-object.model.ts";
 
 const Projectile = z.object({
@@ -111,7 +110,39 @@ export const Gun = PickupObject.extend({
   ]),
   playerStatModifiers: z.array(
     z.object({
-      statToBoost: z.enum(Object.keys(StatModifier.StatType)),
+      statToBoost: z.enum([
+        "MovementSpeed",
+        "RateOfFire",
+        "Accuracy",
+        "Health",
+        "Coolness",
+        "Damage",
+        "ProjectileSpeed",
+        "AdditionalGunCapacity",
+        "AdditionalItemCapacity",
+        "AmmoCapacityMultiplier",
+        "ReloadSpeed",
+        "AdditionalShotPiercing",
+        "KnockbackMultiplier",
+        "GlobalPriceMultiplier",
+        "Curse",
+        "PlayerBulletScale",
+        "AdditionalClipCapacityMultiplier",
+        "AdditionalShotBounces",
+        "AdditionalBlanksPerFloor",
+        "ShadowBulletChance",
+        "ThrownGunDamage",
+        "DodgeRollDamage",
+        "DamageToBosses",
+        "EnemyProjectileSpeedMultiplier",
+        "ExtremeShadowBulletChance",
+        "ChargeAmountMultiplier",
+        "RangeMultiplier",
+        "DodgeRollDistanceMultiplier",
+        "DodgeRollSpeedMultiplier",
+        "TarnisherClipCapacityMultiplier",
+        "MoneyMultiplierFromEnemies",
+      ]),
       modifyType: z.enum(["ADDITIVE", "MULTIPLICATIVE"]),
       amount: z.number(),
     })
