@@ -43,6 +43,7 @@
         {
           "spriteName": "38_special_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1210957,
@@ -109,6 +110,7 @@
         {
           "spriteName": "38_special_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1210957,
@@ -175,6 +177,7 @@
         {
           "spriteName": "ak-47_shoot_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.85742384,
@@ -241,6 +244,7 @@
         {
           "spriteName": "AKey-47_idle_001",
           "spriteId": 507,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.94336134,
@@ -263,6 +267,7 @@
         {
           "spriteName": "AKey-47_idle_002",
           "spriteId": 509,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.87500197,
@@ -285,6 +290,7 @@
         {
           "spriteName": "AKey-47_idle_003",
           "spriteId": 505,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.87500197,
@@ -307,6 +313,7 @@
         {
           "spriteName": "AKey-47_idle_004",
           "spriteId": 506,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.87500197,
@@ -373,6 +380,7 @@
         {
           "spriteName": "AKey-47_2_idle_001",
           "spriteId": 1192,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.11133008,
@@ -395,6 +403,7 @@
         {
           "spriteName": "AKey-47_2_idle_002",
           "spriteId": 1193,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.11133008,
@@ -417,6 +426,7 @@
         {
           "spriteName": "AKey-47_2_idle_003",
           "spriteId": 1194,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.08398633,
@@ -439,6 +449,7 @@
         {
           "spriteName": "AKey-47_2_idle_004",
           "spriteId": 1195,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.97656447,
@@ -461,6 +472,7 @@
         {
           "spriteName": "AKey-47_2_idle_005",
           "spriteId": 1196,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6757832,
@@ -561,6 +573,7 @@
         {
           "spriteName": "blue_ant_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.016602539,
@@ -629,6 +642,7 @@
         {
           "spriteName": "blue2_ant_idle_001",
           "spriteId": 1726,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.22558692,
@@ -651,6 +665,7 @@
         {
           "spriteName": "blue2_ant_idle_002",
           "spriteId": 1733,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.32421973,
@@ -673,6 +688,7 @@
         {
           "spriteName": "blue2_ant_idle_003",
           "spriteId": 1727,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.09179785,
@@ -695,6 +711,7 @@
         {
           "spriteName": "blue2_ant_idle_004",
           "spriteId": 1731,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.36230567,
@@ -767,6 +784,7 @@
         {
           "spriteName": "anvil_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.25879005,
@@ -834,6 +852,7 @@
         {
           "spriteName": "game_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6103525,
@@ -902,6 +921,7 @@
         {
           "spriteName": "awp_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0898457,
@@ -973,6 +993,7 @@
         {
           "spriteName": "awp_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0898457,
@@ -1041,6 +1062,7 @@
         {
           "spriteName": "banana_gun_charge_004",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.22265723,
@@ -1109,6 +1131,7 @@
         {
           "spriteName": "banana_gun_charge_004",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.22265723,
@@ -1175,6 +1198,7 @@
         {
           "spriteName": "baretta_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32031447,
@@ -1245,6 +1269,7 @@
         {
           "spriteName": "mgs_tranq_idle_001",
           "spriteId": 258,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9472676,
@@ -1314,6 +1339,7 @@
         {
           "spriteName": "beehive_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.63086134,
@@ -1383,6 +1409,7 @@
         {
           "spriteName": "beehive_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.63086134,
@@ -1477,6 +1504,7 @@
         {
           "spriteName": "bigiron_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5019541,
@@ -1545,6 +1573,7 @@
         {
           "spriteName": "bigiron_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5019541,
@@ -1614,6 +1643,7 @@
         {
           "spriteName": "black_hole_gun_idle_001",
           "spriteId": 95,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24121192,
@@ -1636,6 +1666,7 @@
         {
           "spriteName": "black_hole_gun_idle_002",
           "spriteId": 105,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2392588,
@@ -1658,6 +1689,7 @@
         {
           "spriteName": "black_hole_gun_idle_003",
           "spriteId": 96,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.25879005,
@@ -1724,6 +1756,7 @@
         {
           "spriteName": "blade_runner_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6601582,
@@ -1797,6 +1830,7 @@
         {
           "spriteName": "blasphemy_charge_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.53418064,
@@ -1870,6 +1904,7 @@
         {
           "spriteName": "blasphemy_charge_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.53418064,
@@ -1939,6 +1974,7 @@
         {
           "spriteName": "block_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6230478,
@@ -2149,6 +2185,7 @@
         {
           "spriteName": "blunderbuss_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.82812697,
@@ -2359,6 +2396,7 @@
         {
           "spriteName": "blunderbuss_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.82812697,
@@ -2425,6 +2463,7 @@
         {
           "spriteName": "bolt_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.97461134,
@@ -2491,6 +2530,7 @@
         {
           "spriteName": "bolt_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.97461134,
@@ -2565,6 +2605,7 @@
         {
           "spriteName": "bomb_gun_idle_001",
           "spriteId": 490,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5664072,
@@ -2587,6 +2628,7 @@
         {
           "spriteName": "bomb_gun_idle_002",
           "spriteId": 494,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.10254004,
@@ -2609,6 +2651,7 @@
         {
           "spriteName": "bomb_gun_idle_003",
           "spriteId": 495,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.035157226,
@@ -2683,6 +2726,7 @@
         {
           "spriteName": "bomb2_gun_idle_001",
           "spriteId": 1748,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5664072,
@@ -2705,6 +2749,7 @@
         {
           "spriteName": "bomb2_gun_idle_002",
           "spriteId": 1747,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.078125976,
@@ -2727,6 +2772,7 @@
         {
           "spriteName": "bomb2_gun_idle_003",
           "spriteId": 1743,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1611338,
@@ -2817,6 +2863,7 @@
         {
           "spriteName": "bow_idle_001",
           "spriteId": 223,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6601582,
@@ -2883,6 +2930,7 @@
         {
           "spriteName": "bowcaster_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.16406445,
@@ -2950,6 +2998,7 @@
         {
           "spriteName": "bowcaster_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.16406445,
@@ -3043,6 +3092,7 @@
         {
           "spriteName": "charm_bow_idle_001",
           "spriteId": 865,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.83398634,
@@ -3112,6 +3162,7 @@
         {
           "spriteName": "bow_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9160176,
@@ -3181,6 +3232,7 @@
         {
           "spriteName": "box_rocket_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.39648634,
@@ -3250,6 +3302,7 @@
         {
           "spriteName": "box_rocket_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.39648634,
@@ -3320,6 +3373,7 @@
         {
           "spriteName": "BSG_idle_001",
           "spriteId": 332,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32422072,
@@ -3342,6 +3396,7 @@
         {
           "spriteName": "BSG_idle_002",
           "spriteId": 746,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8476582,
@@ -3364,6 +3419,7 @@
         {
           "spriteName": "BSG_idle_003",
           "spriteId": 749,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8945332,
@@ -3386,6 +3442,7 @@
         {
           "spriteName": "BSG_idle_004",
           "spriteId": 754,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.84179884,
@@ -3408,6 +3465,7 @@
         {
           "spriteName": "BSG_idle_003",
           "spriteId": 749,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8945332,
@@ -3430,6 +3488,7 @@
         {
           "spriteName": "BSG_idle_002",
           "spriteId": 746,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8476582,
@@ -3500,6 +3559,7 @@
         {
           "spriteName": "bulletbow_idle_001",
           "spriteId": 235,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.85937595,
@@ -3570,6 +3630,7 @@
         {
           "spriteName": "bulletbow2_idle_001",
           "spriteId": 1622,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.35254005,
@@ -3670,6 +3731,7 @@
         {
           "spriteName": "bundle_wands_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.30078322,
@@ -3741,6 +3803,7 @@
         {
           "spriteName": "burning_hand_idle_001",
           "spriteId": 598,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.75586134,
@@ -3763,6 +3826,7 @@
         {
           "spriteName": "burning_hand_idle_002",
           "spriteId": 606,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7753926,
@@ -3785,6 +3849,7 @@
         {
           "spriteName": "burning_hand_idle_003",
           "spriteId": 599,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.5800801,
@@ -3807,6 +3872,7 @@
         {
           "spriteName": "burning_hand_idle_004",
           "spriteId": 607,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8300801,
@@ -3829,6 +3895,7 @@
         {
           "spriteName": "burning_hand_idle_005",
           "spriteId": 600,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.87304884,
@@ -3851,6 +3918,7 @@
         {
           "spriteName": "burning_hand_idle_006",
           "spriteId": 602,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24218945,
@@ -3917,6 +3985,7 @@
         {
           "spriteName": "burning2_hand_idle_001",
           "spriteId": 1110,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6601582,
@@ -3939,6 +4008,7 @@
         {
           "spriteName": "burning2_hand_idle_002",
           "spriteId": 1107,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.79492384,
@@ -3961,6 +4031,7 @@
         {
           "spriteName": "burning2_hand_idle_003",
           "spriteId": 1113,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.5566426,
@@ -3983,6 +4054,7 @@
         {
           "spriteName": "burning2_hand_idle_004",
           "spriteId": 1105,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.76562697,
@@ -4005,6 +4077,7 @@
         {
           "spriteName": "burning2_hand_idle_005",
           "spriteId": 1114,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.89648634,
@@ -4027,6 +4100,7 @@
         {
           "spriteName": "burning2_hand_idle_006",
           "spriteId": 1106,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.21875195,
@@ -4093,6 +4167,7 @@
         {
           "spriteName": "cactus_gun_idle_001",
           "spriteId": 596,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5566426,
@@ -4115,6 +4190,7 @@
         {
           "spriteName": "cactus_gun_idle_002",
           "spriteId": 594,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5566426,
@@ -4137,6 +4213,7 @@
         {
           "spriteName": "cactus_gun_idle_002",
           "spriteId": 594,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5566426,
@@ -4159,6 +4236,7 @@
         {
           "spriteName": "cactus_gun_idle_003",
           "spriteId": 597,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5566426,
@@ -4181,6 +4259,7 @@
         {
           "spriteName": "cactus_gun_idle_001",
           "spriteId": 596,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5566426,
@@ -4247,6 +4326,7 @@
         {
           "spriteName": "cactus2_gun_idle_001",
           "spriteId": 1096,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5566426,
@@ -4269,6 +4349,7 @@
         {
           "spriteName": "cactus2_gun_idle_002",
           "spriteId": 1101,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.36328322,
@@ -4291,6 +4372,7 @@
         {
           "spriteName": "cactus2_gun_idle_003",
           "spriteId": 1100,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.42968947,
@@ -4313,6 +4395,7 @@
         {
           "spriteName": "cactus2_gun_idle_004",
           "spriteId": 1099,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.4863301,
@@ -4335,6 +4418,7 @@
         {
           "spriteName": "cactus2_gun_idle_005",
           "spriteId": 1097,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.4863301,
@@ -4357,6 +4441,7 @@
         {
           "spriteName": "cactus2_gun_idle_006",
           "spriteId": 1095,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.63086134,
@@ -4424,6 +4509,7 @@
         {
           "spriteName": "camera_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1455088,
@@ -4550,6 +4636,7 @@
         {
           "spriteName": "mt_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.09961035,
@@ -4622,6 +4709,7 @@
         {
           "spriteName": "cerebral_bore_idle_001",
           "spriteId": 665,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.28711036,
@@ -4644,6 +4732,7 @@
         {
           "spriteName": "cerebral_bore_idle_002",
           "spriteId": 670,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2392588,
@@ -4734,6 +4823,7 @@
         {
           "spriteName": "cerebral2_bore_idle_001",
           "spriteId": 1718,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.25683692,
@@ -4756,6 +4846,7 @@
         {
           "spriteName": "cerebral2_bore_idle_002",
           "spriteId": 1719,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2392588,
@@ -4826,6 +4917,7 @@
         {
           "spriteName": "charge_shot_idle_001",
           "spriteId": 457,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.29980567,
@@ -4848,6 +4940,7 @@
         {
           "spriteName": "charge_shot_idle_002",
           "spriteId": 446,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.59082127,
@@ -4870,6 +4963,7 @@
         {
           "spriteName": "charge_shot_idle_001",
           "spriteId": 457,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.29980567,
@@ -4892,6 +4986,7 @@
         {
           "spriteName": "charge_shot_idle_003",
           "spriteId": 452,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.22070411,
@@ -4963,6 +5058,7 @@
         {
           "spriteName": "claw_idle_001",
           "spriteId": 626,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.31054786,
@@ -4985,6 +5081,7 @@
         {
           "spriteName": "claw_idle_002",
           "spriteId": 624,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.21191505,
@@ -5007,6 +5104,7 @@
         {
           "spriteName": "claw_idle_003",
           "spriteId": 625,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7880869,
@@ -5029,6 +5127,7 @@
         {
           "spriteName": "claw_idle_002",
           "spriteId": 624,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.21191505,
@@ -5098,6 +5197,7 @@
         {
           "spriteName": "cold_45_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.4736338,
@@ -5164,6 +5264,7 @@
         {
           "spriteName": "colt_1851_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9804707,
@@ -5254,6 +5355,7 @@
         {
           "spriteName": "composite_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.5224619,
@@ -5342,6 +5444,7 @@
         {
           "spriteName": "crescent_moon_crossbow_charge_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24609473,
@@ -5413,6 +5516,7 @@
         {
           "spriteName": "cresftfallen_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.015625976,
@@ -5484,6 +5588,7 @@
         {
           "spriteName": "cresftfallen_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.015625976,
@@ -5550,6 +5655,7 @@
         {
           "spriteName": "crossbow_load_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.43359572,
@@ -5686,6 +5792,7 @@
         {
           "spriteName": "Crossbow_Shotgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.39453322,
@@ -5864,6 +5971,7 @@
         {
           "spriteName": "Crossbow2_Shotgun_idle_001",
           "spriteId": 1207,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.058595702,
@@ -5886,6 +5994,7 @@
         {
           "spriteName": "Crossbow2_Shotgun_idle_002",
           "spriteId": 1208,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8535176,
@@ -5908,6 +6017,7 @@
         {
           "spriteName": "Crossbow2_Shotgun_idle_003",
           "spriteId": 1209,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.70312697,
@@ -5930,6 +6040,7 @@
         {
           "spriteName": "Crossbow2_Shotgun_idle_004",
           "spriteId": 1210,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.75586134,
@@ -5952,6 +6063,7 @@
         {
           "spriteName": "Crossbow2_Shotgun_idle_005",
           "spriteId": 1211,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.70312697,
@@ -6018,6 +6130,7 @@
         {
           "spriteName": "crystal_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.09472754,
@@ -6084,6 +6197,7 @@
         {
           "spriteName": "crystal_gun2_idle_001",
           "spriteId": 1655,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0009775391,
@@ -6106,6 +6220,7 @@
         {
           "spriteName": "crystal_gun2_idle_002",
           "spriteId": 1663,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.029297851,
@@ -6128,6 +6243,7 @@
         {
           "spriteName": "crystal_gun2_idle_003",
           "spriteId": 1662,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.04394629,
@@ -6150,6 +6266,7 @@
         {
           "spriteName": "crystal_gun2_idle_004",
           "spriteId": 1657,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.089844726,
@@ -6172,6 +6289,7 @@
         {
           "spriteName": "crystal_gun2_idle_005",
           "spriteId": 1658,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.07324316,
@@ -6194,6 +6312,7 @@
         {
           "spriteName": "crystal_gun2_idle_006",
           "spriteId": 1659,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.058594726,
@@ -6216,6 +6335,7 @@
         {
           "spriteName": "crystal_gun2_idle_007",
           "spriteId": 1664,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0009775391,
@@ -6285,6 +6405,7 @@
         {
           "spriteName": "nerf_handgun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.41015822,
@@ -6354,6 +6475,7 @@
         {
           "spriteName": "nerf_handgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.46093947,
@@ -6430,6 +6552,7 @@
         {
           "spriteName": "demon_head_idle_001",
           "spriteId": 318,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77343947,
@@ -6452,6 +6575,7 @@
         {
           "spriteName": "demon_head_idle_002",
           "spriteId": 322,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6210957,
@@ -6474,6 +6598,7 @@
         {
           "spriteName": "demon_head_idle_002",
           "spriteId": 322,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6210957,
@@ -6496,6 +6621,7 @@
         {
           "spriteName": "demon_head_idle_002",
           "spriteId": 322,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6210957,
@@ -6518,6 +6644,7 @@
         {
           "spriteName": "demon_head_idle_001",
           "spriteId": 318,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77343947,
@@ -6540,6 +6667,7 @@
         {
           "spriteName": "demon_head_idle_002",
           "spriteId": 322,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6210957,
@@ -6606,6 +6734,7 @@
         {
           "spriteName": "derringer_intro_006",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.41699317,
@@ -6694,6 +6823,7 @@
         {
           "spriteName": "deserteagle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.83593947,
@@ -6782,6 +6912,7 @@
         {
           "spriteName": "deserteagle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.83593947,
@@ -6858,6 +6989,7 @@
         {
           "spriteName": "disintegrator_idle_001",
           "spriteId": 501,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5195322,
@@ -6880,6 +7012,7 @@
         {
           "spriteName": "disintegrator_idle_002",
           "spriteId": 500,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5693369,
@@ -6902,6 +7035,7 @@
         {
           "spriteName": "disintegrator_idle_003",
           "spriteId": 498,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3486338,
@@ -6924,6 +7058,7 @@
         {
           "spriteName": "disintegrator_idle_004",
           "spriteId": 504,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.51855564,
@@ -6946,6 +7081,7 @@
         {
           "spriteName": "disintegrator_idle_005",
           "spriteId": 503,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5039072,
@@ -7012,6 +7148,7 @@
         {
           "spriteName": "distortion_launcher_idle_001",
           "spriteId": 287,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.015625976,
@@ -7034,6 +7171,7 @@
         {
           "spriteName": "distortion_launcher_idle_002",
           "spriteId": 291,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.015625976,
@@ -7056,6 +7194,7 @@
         {
           "spriteName": "distortion_launcher_idle_001",
           "spriteId": 287,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.015625976,
@@ -7078,6 +7217,7 @@
         {
           "spriteName": "distortion_launcher_idle_003",
           "spriteId": 286,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.015625976,
@@ -7144,6 +7284,7 @@
         {
           "spriteName": "dl45_idle_001",
           "spriteId": 621,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7519551,
@@ -7166,6 +7307,7 @@
         {
           "spriteName": "dl45_idle_002",
           "spriteId": 622,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7207051,
@@ -7188,6 +7330,7 @@
         {
           "spriteName": "dl45_idle_003",
           "spriteId": 623,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.69531447,
@@ -7210,6 +7353,7 @@
         {
           "spriteName": "dl45_idle_004",
           "spriteId": 624,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.66211134,
@@ -7232,6 +7376,7 @@
         {
           "spriteName": "dl45_idle_001",
           "spriteId": 621,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7519551,
@@ -7254,6 +7399,7 @@
         {
           "spriteName": "dl45_idle_003",
           "spriteId": 623,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.69531447,
@@ -7276,6 +7422,7 @@
         {
           "spriteName": "dl45_idle_001",
           "spriteId": 621,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7519551,
@@ -7298,6 +7445,7 @@
         {
           "spriteName": "dl45_idle_004",
           "spriteId": 624,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.66211134,
@@ -7320,6 +7468,7 @@
         {
           "spriteName": "dl45_idle_003",
           "spriteId": 623,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.69531447,
@@ -7342,6 +7491,7 @@
         {
           "spriteName": "dl45_idle_002",
           "spriteId": 622,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7207051,
@@ -7364,6 +7514,7 @@
         {
           "spriteName": "dl45_idle_003",
           "spriteId": 623,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.69531447,
@@ -7386,6 +7537,7 @@
         {
           "spriteName": "dl45_idle_004",
           "spriteId": 624,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.66211134,
@@ -7457,6 +7609,7 @@
         {
           "spriteName": "dragonbreath_idle_001",
           "spriteId": 683,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9003926,
@@ -7479,6 +7632,7 @@
         {
           "spriteName": "dragonbreath_idle_002",
           "spriteId": 682,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9023457,
@@ -7501,6 +7655,7 @@
         {
           "spriteName": "dragonbreath_idle_003",
           "spriteId": 689,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.94531447,
@@ -7523,6 +7678,7 @@
         {
           "spriteName": "dragonbreath_idle_002",
           "spriteId": 682,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9023457,
@@ -7592,6 +7748,7 @@
         {
           "spriteName": "kalibreath_idle_001",
           "spriteId": 1001,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7519551,
@@ -7614,6 +7771,7 @@
         {
           "spriteName": "kalibreath_idle_002",
           "spriteId": 1005,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.78125197,
@@ -7636,6 +7794,7 @@
         {
           "spriteName": "kalibreath_idle_003",
           "spriteId": 1007,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.89843947,
@@ -7658,6 +7817,7 @@
         {
           "spriteName": "kalibreath_idle_002",
           "spriteId": 1005,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.78125197,
@@ -7727,6 +7887,7 @@
         {
           "spriteName": "dueling_pistol_idle_001",
           "spriteId": 99,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7773457,
@@ -7796,6 +7957,7 @@
         {
           "spriteName": "dueling_pistol2_idle_001",
           "spriteId": 1035,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.25390822,
@@ -7862,6 +8024,7 @@
         {
           "spriteName": "E12_idle_001",
           "spriteId": 124,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5566426,
@@ -7930,6 +8093,7 @@
         {
           "spriteName": "E12_2_idle_001",
           "spriteId": 1118,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.056642577,
@@ -7996,6 +8160,7 @@
         {
           "spriteName": "earthworm_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8300801,
@@ -8104,6 +8269,7 @@
         {
           "spriteName": "Electric_Guitar_Gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0009775391,
@@ -8184,6 +8350,7 @@
         {
           "spriteName": "Electric_Guitar_Gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0009775391,
@@ -8250,6 +8417,7 @@
         {
           "spriteName": "electric_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.08691504,
@@ -8316,6 +8484,7 @@
         {
           "spriteName": "electric2_rifle_idle_001",
           "spriteId": 1647,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7441416,
@@ -8388,6 +8557,7 @@
         {
           "spriteName": "electro_shark_idle_001",
           "spriteId": 484,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.21875098,
@@ -8410,6 +8580,7 @@
         {
           "spriteName": "electro_shark_idle_002",
           "spriteId": 483,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.23828223,
@@ -8432,6 +8603,7 @@
         {
           "spriteName": "electro_shark_idle_003",
           "spriteId": 476,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3486338,
@@ -8454,6 +8626,7 @@
         {
           "spriteName": "electro_shark_idle_004",
           "spriteId": 477,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.27246192,
@@ -8476,6 +8649,7 @@
         {
           "spriteName": "electro_shark_idle_005",
           "spriteId": 481,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.25683692,
@@ -8612,6 +8786,7 @@
         {
           "spriteName": "elephant_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1679707,
@@ -8678,6 +8853,7 @@
         {
           "spriteName": "elephant_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1679707,
@@ -8746,6 +8922,7 @@
         {
           "spriteName": "energy_cannon_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.4375078,
@@ -8818,6 +8995,7 @@
         {
           "spriteName": "engine_gun_idle_002",
           "spriteId": 908,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.17773536,
@@ -8840,6 +9018,7 @@
         {
           "spriteName": "engine_gun_idle_003",
           "spriteId": 915,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.84375095,
@@ -8908,6 +9087,7 @@
         {
           "spriteName": "Excaliber_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.29492384,
@@ -8984,6 +9164,7 @@
         {
           "spriteName": "excaliber_green_idle_001",
           "spriteId": 579,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1298838,
@@ -9006,6 +9187,7 @@
         {
           "spriteName": "excaliber_green_idle_002",
           "spriteId": 580,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1455088,
@@ -9074,6 +9256,7 @@
         {
           "spriteName": "eyeball_gun_idle_001",
           "spriteId": 158,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1210957,
@@ -9096,6 +9279,7 @@
         {
           "spriteName": "eyeball_gun_idle_001",
           "spriteId": 158,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1210957,
@@ -9118,6 +9302,7 @@
         {
           "spriteName": "eyeball_gun_idle_001",
           "spriteId": 158,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1210957,
@@ -9140,6 +9325,7 @@
         {
           "spriteName": "eyeball_gun_idle_002",
           "spriteId": 155,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.16992383,
@@ -9162,6 +9348,7 @@
         {
           "spriteName": "eyeball_gun_idle_002",
           "spriteId": 155,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.16992383,
@@ -9184,6 +9371,7 @@
         {
           "spriteName": "eyeball_gun_idle_002",
           "spriteId": 155,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.16992383,
@@ -9206,6 +9394,7 @@
         {
           "spriteName": "eyeball_gun_idle_002",
           "spriteId": 155,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.16992383,
@@ -9228,6 +9417,7 @@
         {
           "spriteName": "eyeball_gun_idle_001",
           "spriteId": 158,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1210957,
@@ -9250,6 +9440,7 @@
         {
           "spriteName": "eyeball_gun_idle_001",
           "spriteId": 158,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1210957,
@@ -9272,6 +9463,7 @@
         {
           "spriteName": "eyeball_gun_idle_001",
           "spriteId": 158,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1210957,
@@ -9294,6 +9486,7 @@
         {
           "spriteName": "eyeball_gun_idle_003",
           "spriteId": 160,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.26562697,
@@ -9316,6 +9509,7 @@
         {
           "spriteName": "eyeball_gun_idle_003",
           "spriteId": 160,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.26562697,
@@ -9338,6 +9532,7 @@
         {
           "spriteName": "eyeball_gun_idle_001",
           "spriteId": 158,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1210957,
@@ -9360,6 +9555,7 @@
         {
           "spriteName": "eyeball_gun_idle_004",
           "spriteId": 156,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1445332,
@@ -9382,6 +9578,7 @@
         {
           "spriteName": "eyeball_gun_idle_004",
           "spriteId": 156,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1445332,
@@ -9404,6 +9601,7 @@
         {
           "spriteName": "eyeball_gun_idle_004",
           "spriteId": 156,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1445332,
@@ -9472,6 +9670,7 @@
         {
           "spriteName": "eyeball_sgun_idle_001",
           "spriteId": 940,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.17187695,
@@ -9494,6 +9693,7 @@
         {
           "spriteName": "eyeball_sgun_idle_001",
           "spriteId": 940,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.17187695,
@@ -9516,6 +9716,7 @@
         {
           "spriteName": "eyeball_sgun_idle_001",
           "spriteId": 940,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.17187695,
@@ -9538,6 +9739,7 @@
         {
           "spriteName": "eyeball_sgun_idle_002",
           "spriteId": 935,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.20117383,
@@ -9560,6 +9762,7 @@
         {
           "spriteName": "eyeball_sgun_idle_003",
           "spriteId": 929,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.36328322,
@@ -9582,6 +9785,7 @@
         {
           "spriteName": "eyeball_sgun_idle_004",
           "spriteId": 934,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.88281447,
@@ -9655,6 +9859,7 @@
         {
           "spriteName": "finished_gun_idle_001",
           "spriteId": 385,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -9677,6 +9882,7 @@
         {
           "spriteName": "finished_gun_idle_002",
           "spriteId": 386,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.56836134,
@@ -9699,6 +9905,7 @@
         {
           "spriteName": "finished_gun_idle_003",
           "spriteId": 387,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.42187697,
@@ -9721,6 +9928,7 @@
         {
           "spriteName": "finished_gun_idle_004",
           "spriteId": 388,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.42578322,
@@ -9743,6 +9951,7 @@
         {
           "spriteName": "finished_gun_idle_005",
           "spriteId": 389,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.42773634,
@@ -9814,6 +10023,7 @@
         {
           "spriteName": "fish_barrel_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.85156447,
@@ -9880,6 +10090,7 @@
         {
           "spriteName": "fish2_barrel_gun_idle_001",
           "spriteId": 1135,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.033205077,
@@ -9902,6 +10113,7 @@
         {
           "spriteName": "fish2_barrel_gun_idle_002",
           "spriteId": 1141,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.035158202,
@@ -9924,6 +10136,7 @@
         {
           "spriteName": "fish2_barrel_gun_idle_003",
           "spriteId": 1147,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.11133008,
@@ -9946,6 +10159,7 @@
         {
           "spriteName": "fish2_barrel_gun_idle_004",
           "spriteId": 1142,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2753926,
@@ -10017,6 +10231,7 @@
         {
           "spriteName": "flare_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.33398536,
@@ -10088,6 +10303,7 @@
         {
           "spriteName": "flare_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.33398536,
@@ -10156,6 +10372,7 @@
         {
           "spriteName": "flash_raygun_fire_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.07129004,
@@ -10224,6 +10441,7 @@
         {
           "spriteName": "flash_raygun_fire_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.07129004,
@@ -10291,6 +10509,7 @@
         {
           "spriteName": "fossilized_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.4375078,
@@ -10363,6 +10582,7 @@
         {
           "spriteName": "freeze_ray_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6796953,
@@ -10435,6 +10655,7 @@
         {
           "spriteName": "freeze_ray_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6796953,
@@ -10501,6 +10722,7 @@
         {
           "spriteName": "future_assault_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5458994,
@@ -10571,6 +10793,7 @@
         {
           "spriteName": "future_assault_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5458994,
@@ -10759,6 +10982,7 @@
         {
           "spriteName": "gilded_hydra_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71582127,
@@ -10827,6 +11051,7 @@
         {
           "spriteName": "golden_gun_idle_001",
           "spriteId": 107,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6035176,
@@ -11030,6 +11255,7 @@
         {
           "spriteName": "gold_double_barrel_shotgun_idle_001",
           "spriteId": 543,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0898457,
@@ -11052,6 +11278,7 @@
         {
           "spriteName": "gold_double_barrel_shotgun_idle_002",
           "spriteId": 548,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.16601758,
@@ -11074,6 +11301,7 @@
         {
           "spriteName": "gold_double_barrel_shotgun_idle_003",
           "spriteId": 549,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0898457,
@@ -11096,6 +11324,7 @@
         {
           "spriteName": "gold_double_barrel_shotgun_idle_004",
           "spriteId": 546,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7851582,
@@ -11118,6 +11347,7 @@
         {
           "spriteName": "gold_double_barrel_shotgun_idle_005",
           "spriteId": 547,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2753926,
@@ -11191,6 +11421,7 @@
         {
           "spriteName": "guzheng_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5351572,
@@ -11257,6 +11488,7 @@
         {
           "spriteName": "h4mmer_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.62304884,
@@ -11323,6 +11555,7 @@
         {
           "spriteName": "h4mmer2_idle_001",
           "spriteId": 1156,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6445332,
@@ -11389,6 +11622,7 @@
         {
           "spriteName": "hand_crossbow_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.94531345,
@@ -11455,6 +11689,7 @@
         {
           "spriteName": "hmon_autorifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9335947,
@@ -11521,6 +11756,7 @@
         {
           "spriteName": "hybrid_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.10254004,
@@ -11650,6 +11886,7 @@
         {
           "spriteName": "ice_breakers_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.30468848,
@@ -11719,6 +11956,7 @@
         {
           "spriteName": "ice_breakers_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.30468848,
@@ -11802,6 +12040,7 @@
         {
           "spriteName": "ice_giant_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.25879005,
@@ -11869,6 +12108,7 @@
         {
           "spriteName": "glacier_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32129005,
@@ -11940,6 +12180,7 @@
         {
           "spriteName": "jet_engine_idle_001",
           "spriteId": 129,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.20898536,
@@ -11962,6 +12203,7 @@
         {
           "spriteName": "jet_engine_idle_002",
           "spriteId": 127,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1923838,
@@ -11984,6 +12226,7 @@
         {
           "spriteName": "jet_engine_idle_003",
           "spriteId": 121,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.14257911,
@@ -12006,6 +12249,7 @@
         {
           "spriteName": "jet_engine_idle_004",
           "spriteId": 133,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.09472754,
@@ -12077,6 +12321,7 @@
         {
           "spriteName": "jet2_engine_idle_001",
           "spriteId": 1782,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.28711036,
@@ -12099,6 +12344,7 @@
         {
           "spriteName": "jet2_engine_idle_002",
           "spriteId": 1780,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32421973,
@@ -12121,6 +12367,7 @@
         {
           "spriteName": "jet2_engine_idle_003",
           "spriteId": 1785,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.25390723,
@@ -12143,6 +12390,7 @@
         {
           "spriteName": "jet2_engine_idle_004",
           "spriteId": 1787,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5322275,
@@ -12298,6 +12546,7 @@
         {
           "spriteName": "kirkcannon_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.15625098,
@@ -12364,6 +12613,7 @@
         {
           "spriteName": "klobb_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.20117383,
@@ -12444,6 +12694,7 @@
         {
           "spriteName": "klobb_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.20117383,
@@ -12513,6 +12764,7 @@
         {
           "spriteName": "knav3_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6367207,
@@ -12582,6 +12834,7 @@
         {
           "spriteName": "rogue_special_idle_001",
           "spriteId": 123,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.73437697,
@@ -12604,6 +12857,7 @@
         {
           "spriteName": "rogue_special_idle_002",
           "spriteId": 418,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71093947,
@@ -12626,6 +12880,7 @@
         {
           "spriteName": "rogue_special_idle_003",
           "spriteId": 419,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71679884,
@@ -12648,6 +12903,7 @@
         {
           "spriteName": "rogue_special_idle_004",
           "spriteId": 420,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.74023634,
@@ -12670,6 +12926,7 @@
         {
           "spriteName": "rogue_special_idle_005",
           "spriteId": 421,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7441426,
@@ -12736,6 +12993,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -12758,6 +13016,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -12780,6 +13039,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -12802,6 +13062,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -12824,6 +13085,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -12846,6 +13108,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -12868,6 +13131,7 @@
         {
           "spriteName": "lamp_idle_002",
           "spriteId": 215,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2988301,
@@ -12890,6 +13154,7 @@
         {
           "spriteName": "lamp_idle_003",
           "spriteId": 212,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.48437697,
@@ -12912,6 +13177,7 @@
         {
           "spriteName": "lamp_idle_004",
           "spriteId": 219,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.26172072,
@@ -12934,6 +13200,7 @@
         {
           "spriteName": "lamp_idle_005",
           "spriteId": 213,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.37890822,
@@ -12956,6 +13223,7 @@
         {
           "spriteName": "lamp_idle_006",
           "spriteId": 785,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7773457,
@@ -12978,6 +13246,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13000,6 +13269,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13022,6 +13292,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13044,6 +13315,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13066,6 +13338,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13088,6 +13361,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13110,6 +13384,7 @@
         {
           "spriteName": "lamp_idle_001 1",
           "spriteId": 222,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13132,6 +13407,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13154,6 +13430,7 @@
         {
           "spriteName": "lamp_idle_001 1",
           "spriteId": 222,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13176,6 +13453,7 @@
         {
           "spriteName": "lamp_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13198,6 +13476,7 @@
         {
           "spriteName": "lamp_idle_001 1",
           "spriteId": 222,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32617384,
@@ -13264,6 +13543,7 @@
         {
           "spriteName": "lawgiver_idle_001",
           "spriteId": 708,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.44140822,
@@ -13286,6 +13566,7 @@
         {
           "spriteName": "lawgiver_idle_002",
           "spriteId": 710,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.44140822,
@@ -13308,6 +13589,7 @@
         {
           "spriteName": "lawgiver_idle_003",
           "spriteId": 711,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.40429884,
@@ -13330,6 +13612,7 @@
         {
           "spriteName": "lawgiver_idle_002",
           "spriteId": 710,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.44140822,
@@ -13352,6 +13635,7 @@
         {
           "spriteName": "lawgiver_idle_001",
           "spriteId": 708,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.44140822,
@@ -13506,6 +13790,7 @@
         {
           "spriteName": "looper_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5410176,
@@ -13607,6 +13892,7 @@
         {
           "spriteName": "lower_case_r_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.43359473,
@@ -13708,6 +13994,7 @@
         {
           "spriteName": "lower_case_r_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.43359473,
@@ -13776,6 +14063,7 @@
         {
           "spriteName": "m1_rifle_idle_001",
           "spriteId": 61,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.68750197,
@@ -13842,6 +14130,7 @@
         {
           "spriteName": "m16_mg_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3457051,
@@ -13908,6 +14197,7 @@
         {
           "spriteName": "m1911_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7773457,
@@ -13976,6 +14266,7 @@
         {
           "spriteName": "m1_rifle2_idle_001",
           "spriteId": 1067,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.033205077,
@@ -14043,6 +14334,7 @@
         {
           "spriteName": "m79_grenade_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.55273634,
@@ -14109,6 +14401,7 @@
         {
           "spriteName": "Mac10_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.58398634,
@@ -14175,6 +14468,7 @@
         {
           "spriteName": "machine_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7490244,
@@ -14243,6 +14537,7 @@
         {
           "spriteName": "magic_revolver_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.20508008,
@@ -14311,6 +14606,7 @@
         {
           "spriteName": "magic_sniper_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.88574314,
@@ -14377,6 +14673,7 @@
         {
           "spriteName": "magnum_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6035176,
@@ -14443,6 +14740,7 @@
         {
           "spriteName": "magnum_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.49023634,
@@ -14511,6 +14809,7 @@
         {
           "spriteName": "mailbox_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.15039258,
@@ -14577,6 +14876,7 @@
         {
           "spriteName": "makarov_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.80468947,
@@ -14649,6 +14949,7 @@
         {
           "spriteName": "mask_gun_idle_001",
           "spriteId": 565,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.029297851,
@@ -14671,6 +14972,7 @@
         {
           "spriteName": "mask_gun_idle_002",
           "spriteId": 549,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.12500098,
@@ -14693,6 +14995,7 @@
         {
           "spriteName": "mask_gun_idle_002",
           "spriteId": 549,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.12500098,
@@ -14715,6 +15018,7 @@
         {
           "spriteName": "mask_gun_idle_002",
           "spriteId": 549,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.12500098,
@@ -14737,6 +15041,7 @@
         {
           "spriteName": "mask_gun_idle_002",
           "spriteId": 549,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.12500098,
@@ -14759,6 +15064,7 @@
         {
           "spriteName": "mask_gun_idle_002",
           "spriteId": 549,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.12500098,
@@ -14781,6 +15087,7 @@
         {
           "spriteName": "mask_gun_idle_002",
           "spriteId": 549,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.12500098,
@@ -14803,6 +15110,7 @@
         {
           "spriteName": "mask_gun_idle_001",
           "spriteId": 565,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.029297851,
@@ -14825,6 +15133,7 @@
         {
           "spriteName": "mask_gun_idle_003",
           "spriteId": 562,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.04394629,
@@ -14847,6 +15156,7 @@
         {
           "spriteName": "mask_gun_idle_003",
           "spriteId": 562,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.04394629,
@@ -14869,6 +15179,7 @@
         {
           "spriteName": "mask_gun_idle_003",
           "spriteId": 562,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.04394629,
@@ -14891,6 +15202,7 @@
         {
           "spriteName": "mask_gun_idle_003",
           "spriteId": 562,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.04394629,
@@ -14913,6 +15225,7 @@
         {
           "spriteName": "mask_gun_idle_003",
           "spriteId": 562,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.04394629,
@@ -14935,6 +15248,7 @@
         {
           "spriteName": "mask_gun_idle_003",
           "spriteId": 562,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.04394629,
@@ -15040,6 +15354,7 @@
         {
           "spriteName": "matter_antimatter_gun_idle_001",
           "spriteId": 344,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0009775391,
@@ -15106,6 +15421,7 @@
         {
           "spriteName": "mauser_pistol_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.5166025,
@@ -15174,6 +15490,7 @@
         {
           "spriteName": "meat_thrower_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6035166,
@@ -15262,6 +15579,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -15362,6 +15680,7 @@
         {
           "spriteName": "mermaid_gun_idle_001",
           "spriteId": 927,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.04785254,
@@ -15384,6 +15703,7 @@
         {
           "spriteName": "mermaid_gun_idle_002",
           "spriteId": 929,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71875095,
@@ -15406,6 +15726,7 @@
         {
           "spriteName": "mermaid_gun_idle_003",
           "spriteId": 928,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8896494,
@@ -15428,6 +15749,7 @@
         {
           "spriteName": "mermaid_gun_idle_004",
           "spriteId": 924,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.70605564,
@@ -15450,6 +15772,7 @@
         {
           "spriteName": "mermaid_gun_idle_005",
           "spriteId": 935,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6679697,
@@ -15472,6 +15795,7 @@
         {
           "spriteName": "mermaid_gun_idle_006",
           "spriteId": 926,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.14941505,
@@ -15538,6 +15862,7 @@
         {
           "spriteName": "me_shotgun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.028321289,
@@ -15604,6 +15929,7 @@
         {
           "spriteName": "minigun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1367207,
@@ -15670,6 +15996,7 @@
         {
           "spriteName": "minigun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1367207,
@@ -15738,6 +16065,7 @@
         {
           "spriteName": "miner_ham_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.35156348,
@@ -15853,6 +16181,7 @@
         {
           "spriteName": "stinger_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.51367384,
@@ -15945,6 +16274,7 @@
         {
           "spriteName": "mjolnir_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.15234473,
@@ -16011,6 +16341,7 @@
         {
           "spriteName": "molotov_cocktail_launcher_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.018555664,
@@ -16077,6 +16408,7 @@
         {
           "spriteName": "molotov_cocktail_launcher_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.018555664,
@@ -16145,6 +16477,7 @@
         {
           "spriteName": "moonraker_laser_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.3984453,
@@ -16213,6 +16546,7 @@
         {
           "spriteName": "moonraker_laser_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.3984453,
@@ -16291,6 +16625,7 @@
         {
           "spriteName": "mutant_arm_idle_001",
           "spriteId": 56,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.3046953,
@@ -16313,6 +16648,7 @@
         {
           "spriteName": "mutant_arm_idle_002",
           "spriteId": 57,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.101570316,
@@ -16335,6 +16671,7 @@
         {
           "spriteName": "mutant_arm_idle_003",
           "spriteId": 58,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3125078,
@@ -16357,6 +16694,7 @@
         {
           "spriteName": "mutant_arm_idle_004",
           "spriteId": 59,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6171953,
@@ -16423,6 +16761,7 @@
         {
           "spriteName": "nailgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24804883,
@@ -16489,6 +16828,7 @@
         {
           "spriteName": "nailgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24804883,
@@ -16555,6 +16895,7 @@
         {
           "spriteName": "nikita_idle_001",
           "spriteId": 712,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.22558692,
@@ -16577,6 +16918,7 @@
         {
           "spriteName": "nikita_idle_002",
           "spriteId": 715,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.19433692,
@@ -16643,6 +16985,7 @@
         {
           "spriteName": "noisy_cricket_idle_001",
           "spriteId": 141,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.87988377,
@@ -16732,6 +17075,7 @@
         {
           "spriteName": "origami_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.33398536,
@@ -16816,6 +17160,7 @@
         {
           "spriteName": "origami_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.33398536,
@@ -16882,6 +17227,7 @@
         {
           "spriteName": "pea_shooter_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.88281345,
@@ -16948,6 +17294,7 @@
         {
           "spriteName": "pea_shooter_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.88281345,
@@ -17035,6 +17382,7 @@
         {
           "spriteName": "phoenix_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7636728,
@@ -17122,6 +17470,7 @@
         {
           "spriteName": "phoenix_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7636728,
@@ -17207,6 +17556,7 @@
         {
           "spriteName": "pillow_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.062500976,
@@ -17278,6 +17628,7 @@
         {
           "spriteName": "pitchfork_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.19043067,
@@ -17349,6 +17700,7 @@
         {
           "spriteName": "pitchfork_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.19043067,
@@ -17417,6 +17769,7 @@
         {
           "spriteName": "plasma_cell_gun_idle_001",
           "spriteId": 46,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24804786,
@@ -17439,6 +17792,7 @@
         {
           "spriteName": "plasma_cell_gun_idle_002",
           "spriteId": 45,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.28711036,
@@ -17461,6 +17815,7 @@
         {
           "spriteName": "plasma_cell_gun_idle_003",
           "spriteId": 57,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.4160166,
@@ -17483,6 +17838,7 @@
         {
           "spriteName": "plasma_cell_gun_idle_004",
           "spriteId": 50,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.28711036,
@@ -17505,6 +17861,7 @@
         {
           "spriteName": "plasma_cell_gun_idle_005",
           "spriteId": 52,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24804786,
@@ -17527,6 +17884,7 @@
         {
           "spriteName": "plasma_cell_gun_idle_006",
           "spriteId": 62,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.49121192,
@@ -17549,6 +17907,7 @@
         {
           "spriteName": "plasma_cell_gun_idle_007",
           "spriteId": 53,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.21093848,
@@ -17571,6 +17930,7 @@
         {
           "spriteName": "plasma_cell_gun_idle_008",
           "spriteId": 56,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.49121192,
@@ -17639,6 +17999,7 @@
         {
           "spriteName": "plasma2_cell_gun_idle_001",
           "spriteId": 1705,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.029297851,
@@ -17661,6 +18022,7 @@
         {
           "spriteName": "plasma2_cell_gun_idle_002",
           "spriteId": 1711,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.48828223,
@@ -17683,6 +18045,7 @@
         {
           "spriteName": "plasma2_cell_gun_idle_003",
           "spriteId": 1708,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.029297851,
@@ -17705,6 +18068,7 @@
         {
           "spriteName": "plasma2_cell_gun_idle_004",
           "spriteId": 1710,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.4580088,
@@ -17727,6 +18091,7 @@
         {
           "spriteName": "plasma2_cell_gun_idle_003",
           "spriteId": 1708,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.029297851,
@@ -17749,6 +18114,7 @@
         {
           "spriteName": "plasma2_cell_gun_idle_002",
           "spriteId": 1711,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.48828223,
@@ -17821,6 +18187,7 @@
         {
           "spriteName": "plasma_rifle_idle_001",
           "spriteId": 2,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.89843947,
@@ -17843,6 +18210,7 @@
         {
           "spriteName": "plasma_rifle_idle_002",
           "spriteId": 4,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2988301,
@@ -17865,6 +18233,7 @@
         {
           "spriteName": "plasma_rifle_idle_003",
           "spriteId": 1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.89843947,
@@ -17887,6 +18256,7 @@
         {
           "spriteName": "plasma_rifle_idle_004",
           "spriteId": 3,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2988301,
@@ -17973,6 +18343,7 @@
         {
           "spriteName": "plasma_rifle2_idle_001",
           "spriteId": 1063,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.052736327,
@@ -18095,6 +18466,7 @@
         {
           "spriteName": "polar_star_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.83593947,
@@ -18217,6 +18589,7 @@
         {
           "spriteName": "polar_star_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.83593947,
@@ -18284,6 +18657,7 @@
         {
           "spriteName": "poxshirt_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.65136814,
@@ -18379,6 +18753,7 @@
         {
           "spriteName": "proton_pack_ver2_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6171953,
@@ -18474,6 +18849,7 @@
         {
           "spriteName": "proton2_pack_idle_001",
           "spriteId": 32,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.18750781,
@@ -18562,6 +18938,7 @@
         {
           "spriteName": "pulsehandgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8769551,
@@ -18628,6 +19005,7 @@
         {
           "spriteName": "pulsehandgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8769551,
@@ -18770,6 +19148,7 @@
         {
           "spriteName": "pulse_rifle_idle_001",
           "spriteId": 589,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.75781447,
@@ -18792,6 +19171,7 @@
         {
           "spriteName": "pulse_rifle_idle_002",
           "spriteId": 586,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.93554884,
@@ -18859,6 +19239,7 @@
         {
           "spriteName": "bluetube_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.89843947,
@@ -18925,6 +19306,7 @@
         {
           "spriteName": "quad_laser_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.37402442,
@@ -18999,6 +19381,7 @@
         {
           "spriteName": "radiation_laser_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.75586134,
@@ -19070,6 +19453,7 @@
         {
           "spriteName": "raiden_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.007820313,
@@ -19175,6 +19559,7 @@
         {
           "spriteName": "raiden_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.007820313,
@@ -19244,6 +19629,7 @@
         {
           "spriteName": "railgun_prot_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.70605564,
@@ -19314,6 +19700,7 @@
         {
           "spriteName": "railgun_idle_001",
           "spriteId": 634,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9804697,
@@ -19336,6 +19723,7 @@
         {
           "spriteName": "railgun_idle_002",
           "spriteId": 637,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7714853,
@@ -19507,6 +19895,7 @@
         {
           "spriteName": "rattler_idle_001",
           "spriteId": 961,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.30859473,
@@ -19529,6 +19918,7 @@
         {
           "spriteName": "rattler_idle_002",
           "spriteId": 957,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0009775391,
@@ -19551,6 +19941,7 @@
         {
           "spriteName": "rattler_idle_003",
           "spriteId": 953,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2314463,
@@ -19573,6 +19964,7 @@
         {
           "spriteName": "rattler_idle_004",
           "spriteId": 950,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32324317,
@@ -19641,6 +20033,7 @@
         {
           "spriteName": "raw_iron_gun_idle_001",
           "spriteId": 414,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.41797072,
@@ -19663,6 +20056,7 @@
         {
           "spriteName": "raw_iron_gun_idle_001",
           "spriteId": 414,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.41797072,
@@ -19685,6 +20079,7 @@
         {
           "spriteName": "raw_iron_gun_idle_002",
           "spriteId": 418,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8867207,
@@ -19707,6 +20102,7 @@
         {
           "spriteName": "raw_iron_gun_idle_003",
           "spriteId": 416,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3847676,
@@ -19729,6 +20125,7 @@
         {
           "spriteName": "raw_iron_gun_idle_004",
           "spriteId": 417,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7539082,
@@ -19751,6 +20148,7 @@
         {
           "spriteName": "raw_iron_gun_idle_003",
           "spriteId": 416,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3847676,
@@ -19773,6 +20171,7 @@
         {
           "spriteName": "raw_iron_gun_idle_002",
           "spriteId": 418,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8867207,
@@ -19927,6 +20326,7 @@
         {
           "spriteName": "rectangle_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.27929786,
@@ -19996,6 +20396,7 @@
         {
           "spriteName": "robot_gunhand_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.63086134,
@@ -20065,6 +20466,7 @@
         {
           "spriteName": "robot_skullhand_idle_001",
           "spriteId": 138,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.78125197,
@@ -20087,6 +20489,7 @@
         {
           "spriteName": "robot_skullhand_idle_002",
           "spriteId": 422,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.79492384,
@@ -20109,6 +20512,7 @@
         {
           "spriteName": "robot_skullhand_idle_003",
           "spriteId": 423,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7988301,
@@ -20131,6 +20535,7 @@
         {
           "spriteName": "robot_skullhand_idle_004",
           "spriteId": 424,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8007832,
@@ -20153,6 +20558,7 @@
         {
           "spriteName": "robot_skullhand_idle_004",
           "spriteId": 424,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8007832,
@@ -20175,6 +20581,7 @@
         {
           "spriteName": "robot_skullhand_idle_003",
           "spriteId": 423,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7988301,
@@ -20197,6 +20604,7 @@
         {
           "spriteName": "robot_skullhand_idle_002",
           "spriteId": 422,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.79492384,
@@ -20219,6 +20627,7 @@
         {
           "spriteName": "robot_skullhand_idle_001",
           "spriteId": 138,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.78125197,
@@ -20293,6 +20702,7 @@
         {
           "spriteName": "rpg_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.031251952,
@@ -20360,6 +20770,7 @@
         {
           "spriteName": "rusty_poison_goop_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5332041,
@@ -20428,6 +20839,7 @@
         {
           "spriteName": "rusty_poison_goop_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5332041,
@@ -20497,6 +20909,7 @@
         {
           "spriteName": "Rust_Sidearm_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.023439454,
@@ -20566,6 +20979,7 @@
         {
           "spriteName": "unrusty_revolver_idle_001",
           "spriteId": 73,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.57031447,
@@ -20588,6 +21002,7 @@
         {
           "spriteName": "unrusty_revolver_idle_002",
           "spriteId": 426,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.64843947,
@@ -20610,6 +21025,7 @@
         {
           "spriteName": "unrusty_revolver_idle_003",
           "spriteId": 427,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.67187697,
@@ -20632,6 +21048,7 @@
         {
           "spriteName": "unrusty_revolver_idle_004",
           "spriteId": 425,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6289082,
@@ -20699,6 +21116,7 @@
         {
           "spriteName": "SAA_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7382832,
@@ -20775,6 +21193,7 @@
         {
           "spriteName": "sailgun_idle_001",
           "spriteId": 425,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.13574317,
@@ -20797,6 +21216,7 @@
         {
           "spriteName": "sailgun_idle_002",
           "spriteId": 418,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.078125976,
@@ -20819,6 +21239,7 @@
         {
           "spriteName": "sailgun_idle_003",
           "spriteId": 422,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.029297851,
@@ -20895,6 +21316,7 @@
         {
           "spriteName": "sailgun2_idle_001",
           "spriteId": 1585,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1611338,
@@ -20917,6 +21339,7 @@
         {
           "spriteName": "sailgun2_idle_002",
           "spriteId": 1577,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.32421973,
@@ -20939,6 +21362,7 @@
         {
           "spriteName": "sailgun2_idle_003",
           "spriteId": 1587,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.18261817,
@@ -21048,6 +21472,7 @@
         {
           "spriteName": "samus_arm_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71875197,
@@ -21156,6 +21581,7 @@
         {
           "spriteName": "sawed_off_shotgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7958994,
@@ -21225,6 +21651,7 @@
         {
           "spriteName": "battery_handgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.43359473,
@@ -21294,6 +21721,7 @@
         {
           "spriteName": "battery_handgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.43359473,
@@ -21360,6 +21788,7 @@
         {
           "spriteName": "egg_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.93750197,
@@ -21430,6 +21859,7 @@
         {
           "spriteName": "cannon_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.26367384,
@@ -21500,6 +21930,7 @@
         {
           "spriteName": "shark_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6679697,
@@ -21572,6 +22003,7 @@
         {
           "spriteName": "shellegun_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.57324314,
@@ -21638,6 +22070,7 @@
         {
           "spriteName": "shieldmet_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.38379005,
@@ -21704,6 +22137,7 @@
         {
           "spriteName": "shieldmet_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.82031447,
@@ -21831,6 +22265,7 @@
         {
           "spriteName": "shotgrub_idle_001",
           "spriteId": 612,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.67968845,
@@ -21853,6 +22288,7 @@
         {
           "spriteName": "shotgrub_idle_002",
           "spriteId": 607,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.67968845,
@@ -21875,6 +22311,7 @@
         {
           "spriteName": "shotgrub_idle_003",
           "spriteId": 611,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9355478,
@@ -21897,6 +22334,7 @@
         {
           "spriteName": "shotgrub_idle_004",
           "spriteId": 613,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.67968845,
@@ -22033,6 +22471,7 @@
         {
           "spriteName": "shotgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5429707,
@@ -22178,6 +22617,7 @@
         {
           "spriteName": "shotgun_axe_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.4003916,
@@ -22319,6 +22759,7 @@
         {
           "spriteName": "shotgun_hate_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.45703322,
@@ -22473,6 +22914,7 @@
         {
           "spriteName": "shotgun_love_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0009775391,
@@ -22546,6 +22988,7 @@
         {
           "spriteName": "skullGun_idle",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9550801,
@@ -22620,6 +23063,7 @@
         {
           "spriteName": "sling_idle_001",
           "spriteId": 779,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.028321289,
@@ -22642,6 +23086,7 @@
         {
           "spriteName": "sling_idle_002",
           "spriteId": 783,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.028321289,
@@ -22664,6 +23109,7 @@
         {
           "spriteName": "sling_idle_003",
           "spriteId": 776,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.59375095,
@@ -22686,6 +23132,7 @@
         {
           "spriteName": "sling_idle_004",
           "spriteId": 777,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.028321289,
@@ -22708,6 +23155,7 @@
         {
           "spriteName": "sling_idle_005",
           "spriteId": 786,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.18750098,
@@ -22730,6 +23178,7 @@
         {
           "spriteName": "sling_idle_006",
           "spriteId": 787,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.41699317,
@@ -22796,6 +23245,7 @@
         {
           "spriteName": "snakepoof_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.024415039,
@@ -22864,6 +23314,7 @@
         {
           "spriteName": "sniper_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0898457,
@@ -22933,6 +23384,7 @@
         {
           "spriteName": "snowball_launcher_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.117188476,
@@ -23032,6 +23484,7 @@
         {
           "spriteName": "snowball_launcher_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.117188476,
@@ -23101,6 +23554,7 @@
         {
           "spriteName": "sns_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.82812697,
@@ -23170,6 +23624,7 @@
         {
           "spriteName": "sns_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1914082,
@@ -23236,6 +23691,7 @@
         {
           "spriteName": "space_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.11133008,
@@ -23378,6 +23834,7 @@
         {
           "spriteName": "space_shotgun_idle_001",
           "spriteId": 5,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23400,6 +23857,7 @@
         {
           "spriteName": "space_shotgun_idle_001",
           "spriteId": 5,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23422,6 +23880,7 @@
         {
           "spriteName": "space_shotgun_idle_001",
           "spriteId": 5,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23444,6 +23903,7 @@
         {
           "spriteName": "space_shotgun_idle_001",
           "spriteId": 5,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23466,6 +23926,7 @@
         {
           "spriteName": "space_shotgun_idle_001",
           "spriteId": 5,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23488,6 +23949,7 @@
         {
           "spriteName": "space_shotgun_idle_002",
           "spriteId": 17,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23510,6 +23972,7 @@
         {
           "spriteName": "space_shotgun_idle_002",
           "spriteId": 17,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23532,6 +23995,7 @@
         {
           "spriteName": "space_shotgun_idle_002",
           "spriteId": 17,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23554,6 +24018,7 @@
         {
           "spriteName": "space_shotgun_idle_002",
           "spriteId": 17,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23576,6 +24041,7 @@
         {
           "spriteName": "space_shotgun_idle_002",
           "spriteId": 17,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23598,6 +24064,7 @@
         {
           "spriteName": "space_shotgun_idle_002",
           "spriteId": 17,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2519551,
@@ -23671,6 +24138,7 @@
         {
           "spriteName": "spine_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0019550782,
@@ -23740,6 +24208,7 @@
         {
           "spriteName": "SPMA_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9726582,
@@ -23809,6 +24278,7 @@
         {
           "spriteName": "SPMA_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2148457,
@@ -23875,6 +24345,7 @@
         {
           "spriteName": "super_space_turtle_gun_idle_001",
           "spriteId": 742,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.12695508,
@@ -23941,6 +24412,7 @@
         {
           "spriteName": "sticky_crossbow_draw_003",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9726582,
@@ -24008,6 +24480,7 @@
         {
           "spriteName": "super_soaker_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.32031447,
@@ -24088,6 +24561,7 @@
         {
           "spriteName": "super_meat_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.33105567,
@@ -24165,6 +24639,7 @@
         {
           "spriteName": "swordgun_idle_001",
           "spriteId": 737,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8027353,
@@ -24187,6 +24662,7 @@
         {
           "spriteName": "swordgun_idle_002",
           "spriteId": 735,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7441416,
@@ -24264,6 +24740,7 @@
         {
           "spriteName": "swordgun2_idle_001",
           "spriteId": 1541,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.84668064,
@@ -24331,6 +24808,7 @@
         {
           "spriteName": "syringe_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.31543067,
@@ -24398,6 +24876,7 @@
         {
           "spriteName": "rpg_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.31250197,
@@ -24470,6 +24949,7 @@
         {
           "spriteName": "tentacle_gun_idle_001",
           "spriteId": 62,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6484453,
@@ -24492,6 +24972,7 @@
         {
           "spriteName": "tentacle_gun_idle_002",
           "spriteId": 63,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6328203,
@@ -24514,6 +24995,7 @@
         {
           "spriteName": "tentacle_gun_idle_003",
           "spriteId": 64,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.007820313,
@@ -24536,6 +25018,7 @@
         {
           "spriteName": "tentacle_gun_idle_004",
           "spriteId": 65,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7812578,
@@ -24558,6 +25041,7 @@
         {
           "spriteName": "tentacle_gun_idle_005",
           "spriteId": 66,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7578203,
@@ -24580,6 +25064,7 @@
         {
           "spriteName": "tentacle_gun_idle_006",
           "spriteId": 67,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.007820313,
@@ -24651,6 +25136,7 @@
         {
           "spriteName": "tentacle_kaliber_gun_idle_001",
           "spriteId": 78,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.4609453,
@@ -24673,6 +25159,7 @@
         {
           "spriteName": "tentacle_kaliber_gun_idle_002",
           "spriteId": 76,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7421953,
@@ -24695,6 +25182,7 @@
         {
           "spriteName": "tentacle_kaliber_gun_idle_003",
           "spriteId": 73,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.007820313,
@@ -24717,6 +25205,7 @@
         {
           "spriteName": "tentacle_kaliber_gun_idle_004",
           "spriteId": 77,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6484453,
@@ -24739,6 +25228,7 @@
         {
           "spriteName": "tentacle_kaliber_gun_idle_005",
           "spriteId": 75,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7578203,
@@ -24761,6 +25251,7 @@
         {
           "spriteName": "tentacle_kaliber_gun_idle_006",
           "spriteId": 79,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2578203,
@@ -24876,6 +25367,7 @@
         {
           "spriteName": "tetris_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.51855564,
@@ -24942,6 +25434,7 @@
         {
           "spriteName": "tommygun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.50781447,
@@ -25008,6 +25501,7 @@
         {
           "spriteName": "tommygun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.50781447,
@@ -25079,6 +25573,7 @@
         {
           "spriteName": "tiger_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5693369,
@@ -25145,6 +25640,7 @@
         {
           "spriteName": "trash_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.11230566,
@@ -25218,6 +25714,7 @@
         {
           "spriteName": "trash_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.11230566,
@@ -25285,6 +25782,7 @@
         {
           "spriteName": "trick_handgun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.36035255,
@@ -25356,6 +25854,7 @@
         {
           "spriteName": "trident_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7304697,
@@ -25423,6 +25922,7 @@
         {
           "spriteName": "triple_crossbow_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.19921973,
@@ -25489,6 +25989,7 @@
         {
           "spriteName": "T_Shirt_Gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.23437695,
@@ -25555,6 +26056,7 @@
         {
           "spriteName": "tutorial_knight_revolver_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6943369,
@@ -25635,6 +26137,7 @@
         {
           "spriteName": "twin_energy_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77050877,
@@ -25715,6 +26218,7 @@
         {
           "spriteName": "twin_energy_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77050877,
@@ -25811,6 +26315,7 @@
         {
           "spriteName": "unicorn_horn2_idle_001",
           "spriteId": 561,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.37109572,
@@ -25833,6 +26338,7 @@
         {
           "spriteName": "unicorn_horn2_idle_002",
           "spriteId": 554,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1367207,
@@ -25855,6 +26361,7 @@
         {
           "spriteName": "unicorn_horn2_idle_003",
           "spriteId": 558,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0019550782,
@@ -25877,6 +26384,7 @@
         {
           "spriteName": "unicorn_horn2_idle_004",
           "spriteId": 556,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.058595702,
@@ -25899,6 +26407,7 @@
         {
           "spriteName": "unicorn_horn2_idle_005",
           "spriteId": 553,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.18945508,
@@ -25921,6 +26430,7 @@
         {
           "spriteName": "unicorn_horn2_idle_001",
           "spriteId": 561,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.37109572,
@@ -25994,6 +26504,7 @@
         {
           "spriteName": "urn_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.55761814,
@@ -26060,6 +26571,7 @@
         {
           "spriteName": "uzi_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.48242384,
@@ -26126,6 +26638,7 @@
         {
           "spriteName": "machine_pistol_idle_001",
           "spriteId": 1016,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8066426,
@@ -26148,6 +26661,7 @@
         {
           "spriteName": "machine_pistol_idle_002",
           "spriteId": 1020,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7363301,
@@ -26170,6 +26684,7 @@
         {
           "spriteName": "machine_pistol_idle_003",
           "spriteId": 1010,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9160176,
@@ -26192,6 +26707,7 @@
         {
           "spriteName": "machine_pistol_idle_004",
           "spriteId": 1011,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8710957,
@@ -26214,6 +26730,7 @@
         {
           "spriteName": "machine_pistol_idle_005",
           "spriteId": 1017,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.83593947,
@@ -26236,6 +26753,7 @@
         {
           "spriteName": "machine_pistol_idle_006",
           "spriteId": 1009,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.023439454,
@@ -26258,6 +26776,7 @@
         {
           "spriteName": "machine_pistol_idle_001",
           "spriteId": 1016,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8066426,
@@ -26280,6 +26799,7 @@
         {
           "spriteName": "machine_pistol_idle_001",
           "spriteId": 1016,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8066426,
@@ -26302,6 +26822,7 @@
         {
           "spriteName": "machine_pistol_idle_001",
           "spriteId": 1016,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8066426,
@@ -26324,6 +26845,7 @@
         {
           "spriteName": "machine_pistol_idle_001",
           "spriteId": 1016,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8066426,
@@ -26346,6 +26868,7 @@
         {
           "spriteName": "machine_pistol_idle_001",
           "spriteId": 1016,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8066426,
@@ -26368,6 +26891,7 @@
         {
           "spriteName": "machine_pistol_idle_001",
           "spriteId": 1016,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8066426,
@@ -26390,6 +26914,7 @@
         {
           "spriteName": "machine_pistol_idle_007",
           "spriteId": 1013,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8398457,
@@ -26412,6 +26937,7 @@
         {
           "spriteName": "machine_pistol_idle_007",
           "spriteId": 1013,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8398457,
@@ -26434,6 +26960,7 @@
         {
           "spriteName": "machine_pistol_idle_008",
           "spriteId": 1019,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77148634,
@@ -26456,6 +26983,7 @@
         {
           "spriteName": "machine_pistol_idle_008",
           "spriteId": 1019,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77148634,
@@ -26478,6 +27006,7 @@
         {
           "spriteName": "machine_pistol_idle_007",
           "spriteId": 1013,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8398457,
@@ -26500,6 +27029,7 @@
         {
           "spriteName": "machine_pistol_idle_007",
           "spriteId": 1013,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8398457,
@@ -26575,6 +27105,7 @@
         {
           "spriteName": "wicksis_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6054697,
@@ -26641,6 +27172,7 @@
         {
           "spriteName": "winchester_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.76074314,
@@ -26777,6 +27309,7 @@
         {
           "spriteName": "Winchester_Shotgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.61718947,
@@ -26845,6 +27378,7 @@
         {
           "spriteName": "wind_up_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6162119,
@@ -26916,6 +27450,7 @@
         {
           "spriteName": "wonderboy_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.07031445,
@@ -27025,6 +27560,7 @@
         {
           "spriteName": "wood_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.14453223,
@@ -27095,6 +27631,7 @@
         {
           "spriteName": "yari_rocket_launcher_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5097676,
@@ -27162,6 +27699,7 @@
         {
           "spriteName": "yellow_blaster_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3769551,
@@ -27230,6 +27768,7 @@
         {
           "spriteName": "zapper_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7910176,
@@ -27298,6 +27837,7 @@
         {
           "spriteName": "zapper_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7910176,
@@ -27612,6 +28152,7 @@
         {
           "spriteName": "zilla_combat_shotgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.058594726,
@@ -27683,6 +28224,7 @@
         {
           "spriteName": "zorgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.58398634,
@@ -27756,6 +28298,7 @@
         {
           "spriteName": "balloon_gun_idle_001",
           "spriteId": 1474,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6386728,
@@ -27778,6 +28321,7 @@
         {
           "spriteName": "balloon_gun_idle_002",
           "spriteId": 1489,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7050791,
@@ -27800,6 +28344,7 @@
         {
           "spriteName": "balloon_gun_idle_003",
           "spriteId": 1485,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6660166,
@@ -27822,6 +28367,7 @@
         {
           "spriteName": "balloon_gun_idle_004",
           "spriteId": 1469,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6386728,
@@ -27844,6 +28390,7 @@
         {
           "spriteName": "balloon_gun_idle_005",
           "spriteId": 1476,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.70605564,
@@ -27866,6 +28413,7 @@
         {
           "spriteName": "balloon_gun_idle_006",
           "spriteId": 1486,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6386728,
@@ -27967,6 +28515,7 @@
         {
           "spriteName": "shotgun_bat_fire_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0742207,
@@ -28033,6 +28582,7 @@
         {
           "spriteName": "bullet_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.1689463,
@@ -28099,6 +28649,7 @@
         {
           "spriteName": "critical_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6835957,
@@ -28205,6 +28756,7 @@
         {
           "spriteName": "gun_crown_idle_001",
           "spriteId": 137,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.44922072,
@@ -28271,6 +28823,7 @@
         {
           "spriteName": "devolver_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.38867286,
@@ -28379,6 +28932,7 @@
         {
           "spriteName": "dpad_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.15820411,
@@ -28450,6 +29004,7 @@
         {
           "spriteName": "dueling_laser_idle_001",
           "spriteId": 1297,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.024415039,
@@ -28472,6 +29027,7 @@
         {
           "spriteName": "dueling_laser_idle_001",
           "spriteId": 1297,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.024415039,
@@ -28494,6 +29050,7 @@
         {
           "spriteName": "dueling_laser_idle_001",
           "spriteId": 1297,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.024415039,
@@ -28516,6 +29073,7 @@
         {
           "spriteName": "dueling_laser_idle_001",
           "spriteId": 1297,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.024415039,
@@ -28538,6 +29096,7 @@
         {
           "spriteName": "dueling_laser_idle_001",
           "spriteId": 1297,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.024415039,
@@ -28560,6 +29119,7 @@
         {
           "spriteName": "dueling_laser_idle_001",
           "spriteId": 1297,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.024415039,
@@ -28582,6 +29142,7 @@
         {
           "spriteName": "dueling_laser_idle_001",
           "spriteId": 1297,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.024415039,
@@ -28604,6 +29165,7 @@
         {
           "spriteName": "dueling_laser_idle_002",
           "spriteId": 1317,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.85449314,
@@ -28626,6 +29188,7 @@
         {
           "spriteName": "dueling_laser_idle_003",
           "spriteId": 1313,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7949228,
@@ -28648,6 +29211,7 @@
         {
           "spriteName": "dueling_laser_idle_004",
           "spriteId": 1306,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.680665,
@@ -28670,6 +29234,7 @@
         {
           "spriteName": "dueling_laser_idle_005",
           "spriteId": 1298,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6308603,
@@ -28692,6 +29257,7 @@
         {
           "spriteName": "dueling_laser_idle_006",
           "spriteId": 1311,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7724619,
@@ -28714,6 +29280,7 @@
         {
           "spriteName": "dueling_laser_idle_007",
           "spriteId": 1307,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6660166,
@@ -28736,6 +29303,7 @@
         {
           "spriteName": "dueling_laser_idle_008",
           "spriteId": 1300,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6308603,
@@ -28802,6 +29370,7 @@
         {
           "spriteName": "evo_gun_1_idle_001",
           "spriteId": 192,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.82617384,
@@ -28824,6 +29393,7 @@
         {
           "spriteName": "evo_gun_1_idle_002",
           "spriteId": 193,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.85156447,
@@ -28846,6 +29416,7 @@
         {
           "spriteName": "evo_gun_1_idle_003",
           "spriteId": 194,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.94336134,
@@ -28868,6 +29439,7 @@
         {
           "spriteName": "evo_gun_1_idle_004",
           "spriteId": 195,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9472676,
@@ -28934,6 +29506,7 @@
         {
           "spriteName": "evo_gun_2_idle_001",
           "spriteId": 143,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.90429884,
@@ -28956,6 +29529,7 @@
         {
           "spriteName": "evo_gun_2_idle_002",
           "spriteId": 178,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8847676,
@@ -28978,6 +29552,7 @@
         {
           "spriteName": "evo_gun_2_idle_001",
           "spriteId": 143,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.90429884,
@@ -29000,6 +29575,7 @@
         {
           "spriteName": "evo_gun_2_idle_003",
           "spriteId": 145,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.56054884,
@@ -29066,6 +29642,7 @@
         {
           "spriteName": "evo_gun_3_idle_001",
           "spriteId": 160,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.66211134,
@@ -29088,6 +29665,7 @@
         {
           "spriteName": "evo_gun_3_idle_002",
           "spriteId": 161,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7597676,
@@ -29110,6 +29688,7 @@
         {
           "spriteName": "evo_gun_3_idle_003",
           "spriteId": 144,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.47265822,
@@ -29132,6 +29711,7 @@
         {
           "spriteName": "evo_gun_3_idle_004",
           "spriteId": 153,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6816426,
@@ -29226,6 +29806,7 @@
         {
           "spriteName": "evo_gun_4_idle_001",
           "spriteId": 185,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.64843947,
@@ -29248,6 +29829,7 @@
         {
           "spriteName": "evo_gun_4_idle_002",
           "spriteId": 159,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.75586134,
@@ -29270,6 +29852,7 @@
         {
           "spriteName": "evo_gun_4_idle_003",
           "spriteId": 187,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.37109572,
@@ -29292,6 +29875,7 @@
         {
           "spriteName": "evo_gun_4_idle_004",
           "spriteId": 166,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.5351582,
@@ -29363,6 +29947,7 @@
         {
           "spriteName": "evo_gun_5_fire_004",
           "spriteId": 147,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.5175801,
@@ -29385,6 +29970,7 @@
         {
           "spriteName": "evo_gun_5_idle_001",
           "spriteId": 169,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7148457,
@@ -29456,6 +30042,7 @@
         {
           "spriteName": "evo_gun_6_idle_001",
           "spriteId": 152,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.1835957,
@@ -29478,6 +30065,7 @@
         {
           "spriteName": "evo_gun_6_idle_002",
           "spriteId": 141,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.09179883,
@@ -29500,6 +30088,7 @@
         {
           "spriteName": "evo_gun_6_idle_003",
           "spriteId": 150,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.003908203,
@@ -29522,6 +30111,7 @@
         {
           "spriteName": "evo_gun_6_idle_004",
           "spriteId": 172,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.09179883,
@@ -29544,6 +30134,7 @@
         {
           "spriteName": "evo_gun_6_idle_005",
           "spriteId": 156,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.003908203,
@@ -29566,6 +30157,7 @@
         {
           "spriteName": "evo_gun_6_idle_006",
           "spriteId": 179,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.003908203,
@@ -29634,6 +30226,7 @@
         {
           "spriteName": "HOD_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.62207127,
@@ -29702,6 +30295,7 @@
         {
           "spriteName": "hld_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2314463,
@@ -29770,6 +30364,7 @@
         {
           "spriteName": "hld_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.2314463,
@@ -29843,6 +30438,7 @@
         {
           "spriteName": "50_kthuliber_pistol_idle_001",
           "spriteId": 207,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3847676,
@@ -29948,6 +30544,7 @@
         {
           "spriteName": "moon_crown_idle_001",
           "spriteId": 264,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.07031445,
@@ -29970,6 +30567,7 @@
         {
           "spriteName": "moon_crown_idle_002",
           "spriteId": 268,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.42773634,
@@ -29992,6 +30590,7 @@
         {
           "spriteName": "moon_crown_idle_003",
           "spriteId": 261,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.29687697,
@@ -30014,6 +30613,7 @@
         {
           "spriteName": "moon_crown_idle_004",
           "spriteId": 263,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.29687697,
@@ -30036,6 +30636,7 @@
         {
           "spriteName": "moon_crown_idle_005",
           "spriteId": 267,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.42773634,
@@ -30058,6 +30659,7 @@
         {
           "spriteName": "moon_crown_idle_006",
           "spriteId": 260,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.29687697,
@@ -30213,6 +30815,7 @@
         {
           "spriteName": "radgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.80468947,
@@ -30368,6 +30971,7 @@
         {
           "spriteName": "radgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.80468947,
@@ -30462,6 +31066,7 @@
         {
           "spriteName": "shotgun_idle_001 1",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.054689452,
@@ -30863,6 +31468,7 @@
         {
           "spriteName": "starpew_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.63574314,
@@ -30929,6 +31535,7 @@
         {
           "spriteName": "strafe_nailgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.35742384,
@@ -30995,6 +31602,7 @@
         {
           "spriteName": "uberbot_hand_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.42187697,
@@ -31068,6 +31676,7 @@
         {
           "spriteName": "void_core_rl_idle_001",
           "spriteId": 253,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.85156447,
@@ -31090,6 +31699,7 @@
         {
           "spriteName": "void_core_rl_idle_001",
           "spriteId": 253,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.85156447,
@@ -31112,6 +31722,7 @@
         {
           "spriteName": "void_core_rl_idle_001",
           "spriteId": 253,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.85156447,
@@ -31134,6 +31745,7 @@
         {
           "spriteName": "void_core_rl_idle_001",
           "spriteId": 253,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.85156447,
@@ -31156,6 +31768,7 @@
         {
           "spriteName": "void_core_rl_idle_002",
           "spriteId": 257,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.94531447,
@@ -31224,6 +31837,7 @@
         {
           "spriteName": "beholster_gun_idle_001",
           "spriteId": 501,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.75586134,
@@ -31246,6 +31860,7 @@
         {
           "spriteName": "beholster_gun_idle_002",
           "spriteId": 489,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.21679883,
@@ -31268,6 +31883,7 @@
         {
           "spriteName": "beholster_gun_idle_002",
           "spriteId": 489,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.21679883,
@@ -31290,6 +31906,7 @@
         {
           "spriteName": "beholster_gun_idle_002",
           "spriteId": 489,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.21679883,
@@ -31312,6 +31929,7 @@
         {
           "spriteName": "beholster_gun_idle_003",
           "spriteId": 498,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8066426,
@@ -31334,6 +31952,7 @@
         {
           "spriteName": "beholster_gun_idle_003",
           "spriteId": 498,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8066426,
@@ -31356,6 +31975,7 @@
         {
           "spriteName": "beholster_gun_idle_004",
           "spriteId": 491,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.48437697,
@@ -31378,6 +31998,7 @@
         {
           "spriteName": "beholster_gun_idle_004",
           "spriteId": 491,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.48437697,
@@ -31400,6 +32021,7 @@
         {
           "spriteName": "beholster_gun_idle_004",
           "spriteId": 491,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.48437697,
@@ -31422,6 +32044,7 @@
         {
           "spriteName": "beholster_gun_idle_005",
           "spriteId": 492,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8066426,
@@ -31444,6 +32067,7 @@
         {
           "spriteName": "beholster_gun_idle_005",
           "spriteId": 492,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8066426,
@@ -31466,6 +32090,7 @@
         {
           "spriteName": "beholster_gun_idle_006",
           "spriteId": 495,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9003926,
@@ -31488,6 +32113,7 @@
         {
           "spriteName": "beholster_gun_idle_007",
           "spriteId": 504,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.63086134,
@@ -31510,6 +32136,7 @@
         {
           "spriteName": "beholster_gun_idle_006",
           "spriteId": 495,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9003926,
@@ -31582,6 +32209,7 @@
         {
           "spriteName": "bulletbro_revolver_green_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5097676,
@@ -31654,6 +32282,7 @@
         {
           "spriteName": "bulletbro_revolver_red_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.62304884,
@@ -31726,6 +32355,7 @@
         {
           "spriteName": "bulletbro_angel_idle_001",
           "spriteId": 288,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.65429884,
@@ -31798,6 +32428,7 @@
         {
           "spriteName": "bulletbro_nome_idle_001",
           "spriteId": 307,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.9414082,
@@ -31870,6 +32501,7 @@
         {
           "spriteName": "bulletbro_tuco_idle_001",
           "spriteId": 299,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.39843947,
@@ -32006,6 +32638,7 @@
         {
           "spriteName": "Winchester_Shotgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.61718947,
@@ -32142,6 +32775,7 @@
         {
           "spriteName": "squad_green_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.058594726,
@@ -32208,6 +32842,7 @@
         {
           "spriteName": "squad_red_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.42480567,
@@ -32276,6 +32911,7 @@
         {
           "spriteName": "armgun_idle_001",
           "spriteId": 84,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.28125197,
@@ -32298,6 +32934,7 @@
         {
           "spriteName": "armgun_idle_002",
           "spriteId": 70,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6835957,
@@ -32320,6 +32957,7 @@
         {
           "spriteName": "armgun_idle_003",
           "spriteId": 66,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.28125197,
@@ -32342,6 +32980,7 @@
         {
           "spriteName": "armgun_idle_004",
           "spriteId": 86,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.16406445,
@@ -32364,6 +33003,7 @@
         {
           "spriteName": "armgun_idle_005",
           "spriteId": 73,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.35547072,
@@ -32430,6 +33070,7 @@
         {
           "spriteName": "Excaliber_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.78125197,
@@ -32507,6 +33148,7 @@
         {
           "spriteName": "BGH_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.38867384,
@@ -32610,6 +33252,7 @@
         {
           "spriteName": "boxing_glove_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.3066426,
@@ -32699,6 +33342,7 @@
         {
           "spriteName": "bub_gun_fire_004",
           "spriteId": 357,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.4863301,
@@ -32721,6 +33365,7 @@
         {
           "spriteName": "bub_gun_fire_005",
           "spriteId": 354,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.58593947,
@@ -32743,6 +33388,7 @@
         {
           "spriteName": "bub_gun_idle_001",
           "spriteId": 345,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5722676,
@@ -32765,6 +33411,7 @@
         {
           "spriteName": "bub_gun_idle_001",
           "spriteId": 345,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5722676,
@@ -32787,6 +33434,7 @@
         {
           "spriteName": "bub_gun_idle_002",
           "spriteId": 356,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6113301,
@@ -32809,6 +33457,7 @@
         {
           "spriteName": "bub_gun_idle_002",
           "spriteId": 356,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6113301,
@@ -32831,6 +33480,7 @@
         {
           "spriteName": "bub_gun_idle_003",
           "spriteId": 347,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6113301,
@@ -32853,6 +33503,7 @@
         {
           "spriteName": "bub_gun_idle_003",
           "spriteId": 347,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6113301,
@@ -32875,6 +33526,7 @@
         {
           "spriteName": "bub_gun_idle_004",
           "spriteId": 349,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.68750197,
@@ -32897,6 +33549,7 @@
         {
           "spriteName": "bub_gun_idle_004",
           "spriteId": 349,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.68750197,
@@ -32919,6 +33572,7 @@
         {
           "spriteName": "bub_gun_idle_005",
           "spriteId": 346,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6503926,
@@ -32941,6 +33595,7 @@
         {
           "spriteName": "bub_gun_idle_005",
           "spriteId": 346,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.6503926,
@@ -32963,6 +33618,7 @@
         {
           "spriteName": "bub_gun_idle_006",
           "spriteId": 352,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.64843947,
@@ -32985,6 +33641,7 @@
         {
           "spriteName": "bub_gun_idle_006",
           "spriteId": 352,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.64843947,
@@ -33051,6 +33708,7 @@
         {
           "spriteName": "combine_rifle_idle_001",
           "spriteId": 1462,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5527353,
@@ -33073,6 +33731,7 @@
         {
           "spriteName": "combine_rifle_idle_002",
           "spriteId": 1459,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7050791,
@@ -33095,6 +33754,7 @@
         {
           "spriteName": "combine_rifle_idle_003",
           "spriteId": 1461,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7304697,
@@ -33117,6 +33777,7 @@
         {
           "spriteName": "combine_rifle_idle_004",
           "spriteId": 1465,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9003916,
@@ -33139,6 +33800,7 @@
         {
           "spriteName": "combine_rifle_idle_005",
           "spriteId": 1456,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.81738377,
@@ -33161,6 +33823,7 @@
         {
           "spriteName": "combine_rifle_idle_006",
           "spriteId": 1457,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.7304697,
@@ -33227,6 +33890,7 @@
         {
           "spriteName": "controller_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.48339942,
@@ -33295,6 +33959,7 @@
         {
           "spriteName": "exotic_gun_idle_001",
           "spriteId": 215,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24414258,
@@ -33317,6 +33982,7 @@
         {
           "spriteName": "exotic_gun_idle_002",
           "spriteId": 208,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.35742384,
@@ -33339,6 +34005,7 @@
         {
           "spriteName": "exotic_gun_idle_003",
           "spriteId": 210,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.31836134,
@@ -33361,6 +34028,7 @@
         {
           "spriteName": "exotic_gun_idle_004",
           "spriteId": 205,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.25781447,
@@ -33383,6 +34051,7 @@
         {
           "spriteName": "exotic_gun_idle_005",
           "spriteId": 212,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.20508008,
@@ -33458,6 +34127,7 @@
         {
           "spriteName": "BGH_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.38867384,
@@ -33528,6 +34198,7 @@
         {
           "spriteName": "glasscan_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.34765822,
@@ -33598,6 +34269,7 @@
         {
           "spriteName": "glasscan_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.34765822,
@@ -33664,6 +34336,7 @@
         {
           "spriteName": "gonner_idle_001",
           "spriteId": 235,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.07031445,
@@ -33686,6 +34359,7 @@
         {
           "spriteName": "gonner_idle_002",
           "spriteId": 239,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.07031445,
@@ -33708,6 +34382,7 @@
         {
           "spriteName": "gonner_idle_003",
           "spriteId": 241,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.07031445,
@@ -33774,6 +34449,7 @@
         {
           "spriteName": "JK-47_idle_001",
           "spriteId": 1356,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.3486338,
@@ -33855,6 +34531,7 @@
         {
           "spriteName": "life_orb_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.52343947,
@@ -34014,6 +34691,7 @@
         {
           "spriteName": "lute_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.12500098,
@@ -34092,6 +34770,7 @@
         {
           "spriteName": "mutant_techarm_idle_001",
           "spriteId": 68,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.8593828,
@@ -34114,6 +34793,7 @@
         {
           "spriteName": "mutant_techarm_idle_002",
           "spriteId": 71,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.007820313,
@@ -34136,6 +34816,7 @@
         {
           "spriteName": "mutant_techarm_idle_003",
           "spriteId": 70,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7421953,
@@ -34158,6 +34839,7 @@
         {
           "spriteName": "mutant_techarm_idle_004",
           "spriteId": 69,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8593828,
@@ -34303,6 +34985,7 @@
         {
           "spriteName": "planet_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.49609572,
@@ -34376,6 +35059,7 @@
         {
           "spriteName": "predator_idle_E_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.5019541,
@@ -34444,6 +35128,7 @@
         {
           "spriteName": "dash_gun_idle_002",
           "spriteId": 221,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.32031447,
@@ -34466,6 +35151,7 @@
         {
           "spriteName": "dash_gun_idle_003",
           "spriteId": 226,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.18164258,
@@ -34488,6 +35174,7 @@
         {
           "spriteName": "dash_gun_idle_004",
           "spriteId": 228,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.45898634,
@@ -34510,6 +35197,7 @@
         {
           "spriteName": "dash_gun_idle_005",
           "spriteId": 225,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.24023633,
@@ -34532,6 +35220,7 @@
         {
           "spriteName": "dash_gun_idle_006",
           "spriteId": 220,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.36523634,
@@ -34554,6 +35243,7 @@
         {
           "spriteName": "dash_gun_idle_007",
           "spriteId": 223,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.27929884,
@@ -34625,6 +35315,7 @@
         {
           "spriteName": "screech_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9160176,
@@ -34753,6 +35444,7 @@
         {
           "spriteName": "shovel_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.042970702,
@@ -34822,6 +35514,7 @@
         {
           "spriteName": "sprun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77148634,
@@ -34895,6 +35588,7 @@
         {
           "spriteName": "tachyon_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.09375195,
@@ -34966,6 +35660,7 @@
         {
           "spriteName": "teapot_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77343947,
@@ -35034,6 +35729,7 @@
         {
           "spriteName": "lawgiver_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9101582,
@@ -35100,6 +35796,7 @@
         {
           "spriteName": "trigun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.43847755,
@@ -35166,6 +35863,7 @@
         {
           "spriteName": "lawgiver_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9101582,
@@ -35232,6 +35930,7 @@
         {
           "spriteName": "ak-47_shoot_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.85742384,
@@ -35326,6 +36025,7 @@
         {
           "spriteName": "shotlauncher_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.14062695,
@@ -35394,6 +36094,7 @@
         {
           "spriteName": "raw_iron_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.92187697,
@@ -35460,6 +36161,7 @@
         {
           "spriteName": "castle_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.52148634,
@@ -35527,6 +36229,7 @@
         {
           "spriteName": "exotic_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.4785176,
@@ -35656,6 +36359,7 @@
         {
           "spriteName": "proton_pack_ver2_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.73437697,
@@ -35792,6 +36496,7 @@
         {
           "spriteName": "shotgun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.48047072,
@@ -35863,6 +36568,7 @@
         {
           "spriteName": "hell_gun_idle_001",
           "spriteId": 404,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.66211134,
@@ -35929,6 +36635,7 @@
         {
           "spriteName": "raw_iron_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.92187697,
@@ -35996,6 +36703,7 @@
         {
           "spriteName": "flash_raygun_fire_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.38867384,
@@ -36071,6 +36779,7 @@
         {
           "spriteName": "chamber_rat_gun_idle_001",
           "spriteId": 413,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.003908203,
@@ -36144,6 +36853,7 @@
         {
           "spriteName": "chamber_office_penc_idle_001",
           "spriteId": 433,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.24218945,
@@ -36292,6 +37002,7 @@
         {
           "spriteName": "lower_case_r_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.35156447,
@@ -36367,6 +37078,7 @@
         {
           "spriteName": "glaive_idle_001",
           "spriteId": 214,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.67187697,
@@ -36503,6 +37215,7 @@
         {
           "spriteName": "gunderfury_LV10_idle_001",
           "spriteId": 275,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.46484572,
@@ -36572,6 +37285,7 @@
         {
           "spriteName": "purple_dragunfire_idle_001",
           "spriteId": 1033,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.9726582,
@@ -36594,6 +37308,7 @@
         {
           "spriteName": "purple_dragunfire_idle_002",
           "spriteId": 1029,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.89843947,
@@ -36616,6 +37331,7 @@
         {
           "spriteName": "purple_dragunfire_idle_003",
           "spriteId": 1025,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.94336134,
@@ -36638,6 +37354,7 @@
         {
           "spriteName": "purple_dragunfire_idle_002",
           "spriteId": 1029,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.89843947,
@@ -36707,6 +37424,7 @@
         {
           "spriteName": "raw_iron_gun_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.92187697,
@@ -36802,6 +37520,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -36912,6 +37631,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -37006,6 +37726,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -37094,6 +37815,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -37187,6 +37909,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -37275,6 +37998,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -37366,6 +38090,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -37457,6 +38182,7 @@
         {
           "spriteName": "mega_buster_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.53711134,
@@ -37644,6 +38370,7 @@
         {
           "spriteName": "shotgun_bat_fire_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.0742207,
@@ -37718,6 +38445,7 @@
         {
           "spriteName": "radiation_laser_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.75586134,
@@ -37808,6 +38536,7 @@
         {
           "spriteName": "resourceful_rat_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8164082,
@@ -37875,6 +38604,7 @@
         {
           "spriteName": "rubeadyne_rifle_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.09375195,
@@ -37963,6 +38693,7 @@
         {
           "spriteName": "samus_arm_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71875197,
@@ -38055,6 +38786,7 @@
         {
           "spriteName": "samus_arm_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71875197,
@@ -38151,6 +38883,7 @@
         {
           "spriteName": "samus_arm_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71875197,
@@ -38272,6 +39005,7 @@
         {
           "spriteName": "samus_arm_idle_001",
           "spriteId": -1,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.71875197,
@@ -38341,6 +39075,7 @@
         {
           "spriteName": "slinger_gun_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.8222676,
@@ -38409,6 +39144,7 @@
         {
           "spriteName": "space_turtine_gun_idle_001",
           "spriteId": 1166,
+          "flipped": true,
           "uvs": [
             {
               "x": 0.41211134,
@@ -38479,6 +39215,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_001",
           "spriteId": 312,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7441426,
@@ -38501,6 +39238,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_002",
           "spriteId": 308,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.6992207,
@@ -38523,6 +39261,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_003",
           "spriteId": 313,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.77148634,
@@ -38545,6 +39284,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_001",
           "spriteId": 312,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7441426,
@@ -38567,6 +39307,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_004",
           "spriteId": 304,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7695332,
@@ -38589,6 +39330,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_005",
           "spriteId": 303,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7382832,
@@ -38611,6 +39353,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_001",
           "spriteId": 312,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7441426,
@@ -38633,6 +39376,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_006",
           "spriteId": 299,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.67968947,
@@ -38655,6 +39399,7 @@
         {
           "spriteName": "lightning_bolt_gun_idle_007",
           "spriteId": 300,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.7617207,
@@ -38721,6 +39466,7 @@
         {
           "spriteName": "upper_case_R_idle_001",
           "spriteId": -1,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.52929884,
@@ -38794,6 +39540,7 @@
         {
           "spriteName": "wood_beam_idle_001",
           "spriteId": 22,
+          "flipped": false,
           "uvs": [
             {
               "x": 0.22656445,

@@ -348,7 +348,12 @@ export class GunModelGenerator {
               `Sprite data is missing a name for frame ${frame.spriteId} of clip ${chalk.green(animationName)}`
             );
           }
-          frames.push({ spriteName: spriteData.name, uvs: spriteData.uvs, spriteId: frame.spriteId });
+          frames.push({
+            spriteName: spriteData.name,
+            uvs: spriteData.uvs,
+            spriteId: frame.spriteId,
+            flipped: Boolean(spriteData.flipped),
+          });
           if (texturePath) {
             assert(texturePath === spriteTexturePath, "All frames must have the same texture path");
           } else {
@@ -394,6 +399,7 @@ export class GunModelGenerator {
           spriteName: res.spriteData.name,
           spriteId: -1, // no sprite ID
           uvs: res.spriteData.uvs,
+          flipped: Boolean(res.spriteData.flipped),
         },
       ],
     };

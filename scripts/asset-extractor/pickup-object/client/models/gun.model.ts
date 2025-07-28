@@ -173,6 +173,7 @@ export const Gun = PickupObject.extend({
       z.object({
         spriteName: z.string(),
         spriteId: z.number().min(-1),
+        flipped: z.boolean(),
         uvs: z.tuple([Position, Position, Position, Position]),
       })
     ),
