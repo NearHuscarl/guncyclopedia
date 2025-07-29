@@ -1,9 +1,9 @@
 import { memo, useMemo } from "react";
 import clsx from "clsx";
 import { useImageSize } from "./use-image-size";
-import type { TGun } from "@/client/generated/models/gun.model";
 import { useIsDebug } from "@/lib/hooks";
 import { useFrame } from "./use-frame";
+import type { TGun } from "@/client/generated/models/gun.model";
 
 function getMaxDimensions(animation: TGun["animation"], w: number, h: number, scale: number) {
   let maxW = 0;
@@ -33,9 +33,13 @@ type TAnimatedSpriteProps = { animation: TGun["animation"]; scale?: number };
 
 function AnimatedSpriteImpl({ animation, scale = 1 }: TAnimatedSpriteProps) {
   const frame = useFrame(animation);
-
+  const debug = useIsDebug();
   const { w, h } = useImageSize(animation.texturePath);
   const { maxW, maxH } = useMemo(() => getMaxDimensions(animation, w, h, scale), [animation, h, scale, w]);
+
+  if (w === 0 || h === 0) {
+    return null;
+  }
 
   // uvs are normalized coordinates in the range [0, 1]
   // top-left is (0, 0), bottom-right is (1, 1)
@@ -74,7 +78,6 @@ function AnimatedSpriteImpl({ animation, scale = 1 }: TAnimatedSpriteProps) {
     ? // order is left→right in code but applied right→left by CSS
       `translate(${offX}px, ${offY}px) translate(${effW}px, ${effH}px) rotate(90deg) scaleX(-1)`
     : `translate(${offX}px, ${offY}px)`;
-  const debug = useIsDebug();
 
   return (
     <div

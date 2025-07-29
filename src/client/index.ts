@@ -11,3 +11,44 @@ export const getPickupObjects = (): TPickupObject[] => {
 export const getGuns = memoize((): TGun[] => {
   return getPickupObjects().filter(isGun);
 });
+
+export function getGunStats() {
+  const guns = getGuns();
+  let maxReloadTime = 0;
+  let maxMagazineSize = 0;
+  let maxChargeTime = 0;
+  let maxCooldownTime = 0;
+  let maxSpread = 0;
+
+  for (const gun of guns) {
+    maxReloadTime = Math.max(maxReloadTime, gun.reloadTime);
+
+    for (const mode of gun.projectileModes) {
+      if (mode.magazineSize !== gun.maxAmmo) {
+        maxMagazineSize = Math.max(maxMagazineSize, mode.magazineSize);
+      }
+      if (mode.chargeTime !== undefined) {
+        maxChargeTime = Math.max(maxChargeTime, mode.chargeTime);
+      }
+      for (const projectile of mode.projectiles) {
+        maxCooldownTime = Math.max(maxCooldownTime, projectile.cooldownTime);
+
+        if (gun.name !== "Crown of Guns") {
+          maxSpread = Math.max(maxSpread, projectile.spread);
+        }
+      }
+    }
+  }
+
+  return {
+    guns,
+    stats: {
+      maxMaxAmmo: 1000,
+      maxReloadTime,
+      maxMagazineSize: Math.min(maxMagazineSize, 100),
+      maxChargeTime,
+      maxCooldownTime: Math.min(maxCooldownTime, 1),
+      maxSpread: Math.min(maxSpread, 30),
+    },
+  };
+}

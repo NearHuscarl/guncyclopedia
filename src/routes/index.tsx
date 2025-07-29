@@ -1,6 +1,6 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import z from "zod/v4";
-import { getGuns } from "@/client";
+import { getGunStats } from "@/client";
 import { Page } from "@/modules/page";
 
 const schema = z.object({
@@ -18,8 +18,10 @@ export const Route = createFileRoute("/")({
     }
   },
   loader: async () => {
+    const { guns, stats } = getGunStats();
     return {
-      guns: getGuns(),
+      guns,
+      stats,
     };
   },
   component: Page,

@@ -69,12 +69,12 @@ export type TProjectilePerShot = {
   spread: number;
   projectiles: TProjectileSequence;
 };
-export const ProjectilePerShot: z.ZodType<TProjectilePerShot> = z.object({
+export const ProjectilePerShot = z.object({
   shootStyle: z.enum(["SemiAutomatic", "Automatic", "Beam", "Charged", "Burst"]),
   cooldownTime: z.number(),
   spread: z.number(),
   projectiles: z.array(Projectile),
-});
+}) satisfies z.ZodType<TProjectilePerShot>;
 
 export interface TProjectileMode {
   mode: string;
@@ -83,12 +83,12 @@ export interface TProjectileMode {
   projectiles: TProjectilePerShot[];
 }
 
-export const ProjectileMode: z.ZodType<TProjectileMode> = z.object({
+export const ProjectileMode = z.object({
   mode: z.string(),
   chargeTime: z.number().optional(),
   magazineSize: z.number(),
   projectiles: z.array(ProjectilePerShot),
-});
+}) satisfies z.ZodType<TProjectileMode>;
 
 export const Gun = PickupObject.extend({
   type: z.literal("gun"),
@@ -149,7 +149,7 @@ export const Gun = PickupObject.extend({
       amount: z.number(),
     }),
   ),
-  projectileModes: z.array(ProjectileMode).nonempty(),
+  projectileModes: z.array(ProjectileMode),
   maxAmmo: z.number(),
   reloadTime: z.number(),
   featureFlags: z.array(

@@ -1,14 +1,18 @@
 import { DetailSection } from "./detail-section/detail-section";
+import { TopBar } from "./layout/top-bar";
 import { ItemGrid } from "./main/item-grid";
 
 export function Page() {
   return (
-    <div className="flex gap-2 h-screen">
-      <div className="flex-3">
-        <ItemGrid />
-      </div>
-      <div className="flex-1 overflow-y-auto">
-        <DetailSection />
+    <div className="flex flex-col h-screen">
+      <TopBar />
+      <div className="flex gap-2 flex-1 min-h-0">
+        <div className="flex-3 overflow-y-auto">
+          <ItemGrid />
+        </div>
+        <div className="w-lg overflow-y-auto">
+          <DetailSection />
+        </div>
       </div>
     </div>
   );
