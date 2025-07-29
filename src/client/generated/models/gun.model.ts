@@ -3,7 +3,9 @@ import { Percentage, Position } from "./schema.ts";
 import { PickupObject } from "./pickup-object.model.ts";
 
 const Projectile = z.object({
-  // basename of the meta file that associates with the prefab file
+  /**
+   * basename of the meta file that associates with the prefab file
+   */
   id: z.string(),
   ignoreDamageCaps: z.boolean().optional(),
   damage: z.number(),
@@ -145,7 +147,7 @@ export const Gun = PickupObject.extend({
       ]),
       modifyType: z.enum(["ADDITIVE", "MULTIPLICATIVE"]),
       amount: z.number(),
-    })
+    }),
   ),
   projectileModes: z.array(ProjectileMode).nonempty(),
   maxAmmo: z.number(),
@@ -160,7 +162,7 @@ export const Gun = PickupObject.extend({
       "hasStatusEffects",
       "hasTieredProjectiles",
       "hasHomingProjectiles",
-    ])
+    ]),
   ),
   blankReloadRadius: z.number().optional(),
   video: z.string().optional(),
@@ -168,6 +170,15 @@ export const Gun = PickupObject.extend({
     name: z.string(),
     fps: z.number(),
     loopStart: z.number(),
+    /**
+     * Wrap mode for the animation.
+     * - Loop: The animation loops indefinitely, starting from `loopStart`.
+     * - LoopFidget: The animation loops indefinitely, but wait for a random duration between `minFidgetDuration` and `maxFidgetDuration` before starting again.
+     * - LoopSection: Play the 'intro' frames [0 ... loopStart-1] once, then loop only the section [loopStart ... last] forever.
+     */
+    wrapMode: z.enum(["Loop", "LoopSection", "Once", "PingPong", "RandomFrame", "RandomLoop", "Single", "LoopFidget"]),
+    minFidgetDuration: z.number(),
+    maxFidgetDuration: z.number(),
     texturePath: z.string(),
     frames: z.array(
       z.object({
@@ -175,7 +186,7 @@ export const Gun = PickupObject.extend({
         spriteId: z.number().min(-1),
         flipped: z.boolean(),
         uvs: z.tuple([Position, Position, Position, Position]),
-      })
+      }),
     ),
   }),
 });

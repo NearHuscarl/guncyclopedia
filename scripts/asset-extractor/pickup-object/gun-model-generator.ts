@@ -16,6 +16,7 @@ import { VolleyRepository } from "../gun/volley.repository.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { SpriteService } from "../sprite/sprite.service.ts";
 import { SpriteAnimatorRepository } from "../sprite/sprite-animator.repository.ts";
+import { WrapMode } from "../sprite/sprite-animator.dto.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
@@ -27,6 +28,7 @@ const gunClassTextLookup = invert(GunClass);
 const shootStyleTextLookup = invert(ShootStyle);
 const modifyMethodTextLookup = invert(StatModifier.ModifyMethod);
 const statTypeTextLookup = invert(StatModifier.StatType);
+const wrapModeTextLookup = invert(WrapMode);
 
 const unusedGunIds = new Set([
   // https://enterthegungeon.fandom.com/wiki/Black_Revolver
@@ -82,8 +84,8 @@ export class GunModelGenerator {
     if (!volleyDto) {
       throw new Error(
         chalk.red(
-          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${gunDto.gun.rawVolley.guid} not found in VolleyRepository.`
-        )
+          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${gunDto.gun.rawVolley.guid} not found in VolleyRepository.`,
+        ),
       );
     }
     return volleyDto;
@@ -94,8 +96,8 @@ export class GunModelGenerator {
     if (!projDto) {
       throw new Error(
         chalk.red(
-          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`
-        )
+          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`,
+        ),
       );
     }
     return projDto;
@@ -199,7 +201,7 @@ export class GunModelGenerator {
     mode: string | number,
     gunDto: TGunDto,
     defaultModule: TProjectileModule,
-    modules: TProjectileModule[]
+    modules: TProjectileModule[],
   ): TProjectileMode {
     const projectilesPerShot: TProjectilePerShot[] = [];
     for (const module of modules) {
@@ -228,12 +230,12 @@ export class GunModelGenerator {
       if (projectilesPerShot[0].projectiles.length > 1) {
         throw new Error(
           chalk.red(
-            `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Beam gun must have only one type of projectile.`
-          )
+            `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Beam gun must have only one type of projectile.`,
+          ),
         );
       }
       chargeTime = Math.max(
-        ...projectilesPerShot.map((pps) => pps.projectiles.map((p) => p.beamChargeTime ?? 0)).flat()
+        ...projectilesPerShot.map((pps) => pps.projectiles.map((p) => p.beamChargeTime ?? 0)).flat(),
       );
     }
     return {
@@ -259,7 +261,7 @@ export class GunModelGenerator {
       this._featureFlags.add("hasTieredProjectiles");
       const modePrefix = gunDto.gun.LocalActiveReload ? "Reload - " : "";
       return projectileModules.map((mod, i) =>
-        this._buildModeFromProjectileModules(`${modePrefix}lvl ${i + 1}`, gunDto, defaultModule, [mod])
+        this._buildModeFromProjectileModules(`${modePrefix}lvl ${i + 1}`, gunDto, defaultModule, [mod]),
       );
     }
 
@@ -275,7 +277,7 @@ export class GunModelGenerator {
       const uniqChargeTimes = new Set(module.chargeProjectiles.map((p) => p.ChargeTime));
       if (uniqChargeTimes.size < module.chargeProjectiles.length) {
         throw new Error(
-          `${gunDto.gun.gunName}, A projectile module must not have multiple projectiles with the same charge time. This is undefined behavior`
+          `${gunDto.gun.gunName}, A projectile module must not have multiple projectiles with the same charge time. This is undefined behavior`,
         );
       }
 
@@ -341,11 +343,11 @@ export class GunModelGenerator {
           const { spriteData, texturePath: spriteTexturePath } = await this._spriteService.getSprite(
             frame.spriteCollection,
             frame.spriteId,
-            gunDto
+            gunDto,
           );
           if (!spriteData.name) {
             throw new Error(
-              `Sprite data is missing a name for frame ${frame.spriteId} of clip ${chalk.green(animationName)}`
+              `Sprite data is missing a name for frame ${frame.spriteId} of clip ${chalk.green(animationName)}`,
             );
           }
           frames.push({
@@ -365,14 +367,17 @@ export class GunModelGenerator {
           name: animationName,
           fps: clip.clipData.fps,
           loopStart: clip.clipData.loopStart,
+          wrapMode: wrapModeTextLookup[clip.clipData.wrapMode] as keyof typeof WrapMode,
+          minFidgetDuration: clip.clipData.minFidgetDuration,
+          maxFidgetDuration: clip.clipData.maxFidgetDuration,
           texturePath,
           frames,
         };
       } else {
         console.warn(
           chalk.yellow(
-            `Clip ${chalk.green(animationName)} not found in animation collection. Falling back to Ammonomicon sprite.`
-          )
+            `Clip ${chalk.green(animationName)} not found in animation collection. Falling back to Ammonomicon sprite.`,
+          ),
         );
       }
     }
@@ -394,6 +399,9 @@ export class GunModelGenerator {
       fps: 0,
       loopStart: 0,
       texturePath: res.texturePath,
+      wrapMode: "Single",
+      minFidgetDuration: 0,
+      maxFidgetDuration: 0,
       frames: [
         {
           spriteName: res.spriteData.name,

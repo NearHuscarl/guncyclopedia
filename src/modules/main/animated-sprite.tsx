@@ -1,25 +1,9 @@
-import { memo, useEffect, useMemo, useState } from "react";
+import { memo, useMemo } from "react";
+import clsx from "clsx";
 import { useImageSize } from "./use-image-size";
 import type { TGun } from "@/client/generated/models/gun.model";
 import { useIsDebug } from "@/lib/hooks";
-import clsx from "clsx";
-
-function useFrame(animation: TGun["animation"]) {
-  const [index, setIndex] = useState(animation.loopStart);
-
-  useEffect(() => {
-    if (animation.frames.length === 0) return;
-
-    const interval = 1000 / animation.fps;
-    const id = window.setInterval(() => {
-      setIndex((prev) => (prev + 1) % animation.frames.length);
-    }, interval);
-
-    return () => window.clearInterval(id);
-  }, [animation.fps, animation.frames.length, animation.name]);
-
-  return animation.frames[index];
-}
+import { useFrame } from "./use-frame";
 
 function getMaxDimensions(animation: TGun["animation"], w: number, h: number, scale: number) {
   let maxW = 0;
