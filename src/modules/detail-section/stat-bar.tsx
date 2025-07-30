@@ -2,6 +2,7 @@ import { type CSSProperties } from "react";
 import clsx from "clsx";
 import { Large } from "@/components/ui/typography";
 import { usePrevious } from "@/lib/hooks";
+import { formatNumber } from "@/lib/lang";
 
 type TStatBarProps = {
   label: string;
@@ -38,7 +39,7 @@ export function StatBar({ label, value, max, isNegativeStat, modifier = 0 }: TSt
     width: `${Math.abs(modPercentage)}%`,
   };
 
-  // Ensure the width transition does not jump after go from negative to average modifier
+  // Ensure the width's transition does not jump after going from negative to no modifier
   const modPercentageSign = Math.sign(modPercentage || prevModPercentage || 1);
   if (modPercentageSign === 1) {
     modifierStyle.left = `${basePercentage}%`;
@@ -50,7 +51,7 @@ export function StatBar({ label, value, max, isNegativeStat, modifier = 0 }: TSt
     <div className="mb-2">
       <div className="flex justify-between mb-2">
         <p className="text-muted-foreground text-lg font-semibold">{label}</p>
-        <Large>{Number((value + modifier).toFixed(1)).toString()}</Large>
+        <Large>{formatNumber(value + modifier)}</Large>
       </div>
       <div className="relative flex-1 h-2 bg-stone-800">
         <div

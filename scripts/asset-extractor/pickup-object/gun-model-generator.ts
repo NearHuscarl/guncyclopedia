@@ -469,6 +469,20 @@ export class GunModelGenerator {
         animation: await this._generateAnimation(gunDto),
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       };
+
+      // postprocess gun
+      for (const modes of gun.projectileModes) {
+        for (const projectilePerShot of modes.projectiles) {
+          const projectileIds = new Set<string>();
+          for (const projectile of projectilePerShot.projectiles) {
+            projectileIds.add(projectile.id);
+          }
+          if (projectileIds.size > 1) {
+            this._featureFlags.add("hasProjectilePool");
+          }
+        }
+      }
+
       gun.featureFlags = Array.from(this._featureFlags);
       return Gun.parse(gun);
     } catch (error) {

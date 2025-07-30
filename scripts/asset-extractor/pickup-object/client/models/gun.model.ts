@@ -162,6 +162,7 @@ export const Gun = PickupObject.extend({
       "hasStatusEffects",
       "hasTieredProjectiles",
       "hasHomingProjectiles",
+      "hasProjectilePool",
     ]),
   ),
   blankReloadRadius: z.number().optional(),
