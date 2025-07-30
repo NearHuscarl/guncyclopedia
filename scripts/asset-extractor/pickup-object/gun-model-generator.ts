@@ -293,6 +293,7 @@ export class GunModelGenerator {
       }
     }
     const res: TProjectileMode[] = [];
+    // TODO: image for projectile
     // TODO: bounce bullets
     // TODO: piecing bullets
     // TODO: SpawnProjModifier (The Scrambler, Particulator)

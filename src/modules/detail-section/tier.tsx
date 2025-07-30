@@ -10,7 +10,7 @@ export function Tier({ tier }: TTierProps) {
   return (
     <span
       className={clsx({
-        "font-bold text-2xl": true,
+        "font-bold text-xl": true,
         "text-gray-300": tier === "S",
         "text-red-500": tier === "A",
         "text-green-600": tier === "B",

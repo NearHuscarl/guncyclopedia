@@ -7,26 +7,24 @@ import { H2, H3 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import { Tier } from "./tier";
 import { StatBar } from "./stat-bar";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import type { TProjectilePerShot } from "@/client/generated/models/gun.model";
 
-function getProjectileData(projectiles: TProjectilePerShot[], projectilePerShotIndex: number) {
-  if (projectilePerShotIndex === -1) {
-    const res: TProjectilePerShot = {
-      cooldownTime: 0,
-      spread: 0,
-      shootStyle: projectiles[0].shootStyle,
-      projectiles: projectiles[0].projectiles,
-    };
+function getProjectileData(projectiles: TProjectilePerShot[]) {
+  const res: TProjectilePerShot = {
+    cooldownTime: 0,
+    spread: 0,
+    shootStyle: projectiles[0].shootStyle,
+    projectiles: projectiles[0].projectiles,
+  };
 
-    for (const proj of projectiles) {
-      res.cooldownTime = Math.max(res.cooldownTime, proj.cooldownTime);
-      res.spread = Math.max(res.spread, proj.spread);
-    }
-
-    return res;
+  for (const proj of projectiles) {
+    res.cooldownTime = Math.max(res.cooldownTime, proj.cooldownTime);
+    res.spread += proj.spread;
   }
+  res.spread /= projectiles.length;
 
-  return projectiles[projectilePerShotIndex] ?? projectiles[0];
+  return res;
 }
 
 export function DetailSection() {
@@ -51,10 +49,11 @@ export function DetailSection() {
 
   const { animation, name, ...other } = gun;
   const mode = gun.projectileModes[modeIndex] ?? gun.projectileModes[0];
-  const projectilePerShot = getProjectileData(mode.projectiles, projectilePerShotIndex);
+  const finalProjectile = getProjectileData(mode.projectiles);
+  const projectile = mode.projectiles[projectilePerShotIndex] ?? finalProjectile;
 
   return (
-    <div className="p-2 h-full flex flex-col min-h-0">
+    <div className="p-2 pr-0 h-full flex flex-col min-h-0">
       <div>
         <div className="flex justify-center gap-1">
           {gun.projectileModes.map(({ mode }, i, modes) => (
@@ -82,32 +81,56 @@ export function DetailSection() {
           <Tier tier={gun.quality} />
         </div>
       </div>
-      <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0">
+      <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 pr-2">
         <StatBar
           label="Magazine Size"
           value={mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize}
           max={Math.min(stats.maxMagazineSize, gun.maxAmmo)}
         />
         <StatBar label="Max Ammo" value={gun.maxAmmo} max={stats.maxMaxAmmo} />
-        <StatBar label="Reload Time" negativeStat value={gun.reloadTime} max={stats.maxReloadTime} />
+        <StatBar label="Reload Time" isNegativeStat value={gun.reloadTime} max={stats.maxReloadTime} />
         {mode.chargeTime !== undefined && (
-          <StatBar label="Charge Time" negativeStat value={mode.chargeTime} max={stats.maxChargeTime} />
+          <StatBar label="Charge Time" isNegativeStat value={mode.chargeTime} max={stats.maxChargeTime} />
         )}
         <div className="flex justify-between items-baseline">
           <H3 className="mt-6 mb-4">Projectile Stats</H3>
           <div className="flex gap-2 relative top-[3px]">
             {mode.projectiles.map((_, i) => {
-              return <div key={i} role="button" className="w-5 h-5 bg-stone-800 rounded-full cursor-pointer" />;
+              return (
+                <Tooltip delayDuration={1000}>
+                  <TooltipTrigger>
+                    <div
+                      key={i}
+                      className={clsx({
+                        "w-5 h-5 bg-stone-800 rounded-full cursor-pointer": true,
+                        "bg-primary! focus:bg-primary": projectilePerShotIndex === i,
+                      })}
+                      onMouseEnter={() => setProjectilePerShotIndex(i)}
+                      onMouseLeave={() => setProjectilePerShotIndex(-1)}
+                    />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Each circle represents a projectile per shot</p>
+                  </TooltipContent>
+                </Tooltip>
+              );
             })}
           </div>
         </div>
         <StatBar
           label="Cooldown Time"
-          negativeStat
-          value={projectilePerShot.cooldownTime}
+          isNegativeStat
+          value={finalProjectile.cooldownTime}
           max={stats.maxCooldownTime}
+          modifier={projectile.cooldownTime - finalProjectile.cooldownTime}
         />
-        <StatBar label="Spread" negativeStat value={projectilePerShot.spread} max={stats.maxSpread} />
+        <StatBar
+          label="Spread"
+          isNegativeStat
+          value={finalProjectile.spread}
+          max={stats.maxSpread}
+          modifier={projectile.spread - finalProjectile.spread}
+        />
         <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(other, null, 2)}</pre>
       </div>
     </div>
