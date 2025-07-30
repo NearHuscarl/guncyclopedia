@@ -1,7 +1,7 @@
 import z from "zod/v4";
 
 export const PickupObject = z.object({
-  id: z.number(),
+  id: z.number().int().nonnegative(),
   name: z.string(),
   quote: z.string(),
   description: z.string(),

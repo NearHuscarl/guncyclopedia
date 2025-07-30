@@ -149,7 +149,7 @@ export const Gun = PickupObject.extend({
       amount: z.number(),
     }),
   ),
-  projectileModes: z.array(ProjectileMode),
+  projectileModes: z.array(ProjectileMode).nonempty(),
   maxAmmo: z.number(),
   reloadTime: z.number(),
   featureFlags: z.array(
@@ -162,6 +162,7 @@ export const Gun = PickupObject.extend({
       "hasStatusEffects",
       "hasTieredProjectiles",
       "hasHomingProjectiles",
+      "hasProjectilePool",
     ]),
   ),
   blankReloadRadius: z.number().optional(),
@@ -172,7 +173,7 @@ export const Gun = PickupObject.extend({
     loopStart: z.number(),
     /**
      * Wrap mode for the animation.
-     * - Loop: The animation loops indefinitely, starting from `loopStart`.
+     * - Loop: The animation loops indefinitely, starting from `0`, NOT `loopStart`.
      * - LoopFidget: The animation loops indefinitely, but wait for a random duration between `minFidgetDuration` and `maxFidgetDuration` before starting again.
      * - LoopSection: Play the 'intro' frames [0 ... loopStart-1] once, then loop only the section [loopStart ... last] forever.
      */

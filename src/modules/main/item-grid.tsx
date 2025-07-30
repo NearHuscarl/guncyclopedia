@@ -1,13 +1,15 @@
+import { useMemo } from "react";
+import clsx from "clsx";
 import { useLoaderData } from "@tanstack/react-router";
-import { useUiStore } from "../shared/store/ui.store";
 import { Button } from "@/components/ui/button";
 import { AnimatedSprite } from "@/modules/shared/components/animated-sprite";
-import { useMemo } from "react";
 import { Gun } from "@/client/generated/models/gun.model";
+import { useAppState } from "../shared/hooks/useAppState";
+import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 
 function useGuns() {
   const { guns } = useLoaderData({ from: "/" });
-  const sortBy = useUiStore((state) => state.gun.sortBy);
+  const sortBy = useAppState((state) => state.sortBy);
 
   const effectiveGuns = useMemo(() => {
     if (sortBy === "none") return guns;
@@ -36,12 +38,21 @@ function useGuns() {
 
 export function ItemGrid() {
   const guns = useGuns();
-  const selectItem = useUiStore((state) => state.selectItem);
+  const setAppState = useAppStateMutation();
+  const selectedId = useAppState((state) => state.selectedId);
 
   return (
     <div className="flex flex-wrap gap-2 p-2 items-center content-start">
       {guns.map((gun) => (
-        <Button key={gun.id} variant="secondary" className="h-12 p-3" onClick={() => selectItem(gun.id)}>
+        <Button
+          key={gun.id}
+          variant="secondary"
+          onClick={() => setAppState({ selectedId: gun.id })}
+          className={clsx({
+            "h-12 p-3": true,
+            "bg-primary!": selectedId === gun.id,
+          })}
+        >
           <AnimatedSprite animation={gun.animation} scale={2.5} />
         </Button>
       ))}

@@ -1,11 +1,12 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useUiStore } from "../shared/store/ui.store";
+import { useAppState } from "../shared/hooks/useAppState";
+import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 
 export function TopBarMenu() {
-  const sortBy = useUiStore((state) => state.gun.sortBy);
-  const setSortBy = useUiStore((state) => state.setSortBy);
+  const sortBy = useAppState((state) => state.sortBy);
+  const setAppState = useAppStateMutation();
   return (
-    <Select value={sortBy} onValueChange={setSortBy}>
+    <Select value={sortBy} onValueChange={(v) => setAppState({ sortBy: v as typeof sortBy })}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Sort by" />
       </SelectTrigger>

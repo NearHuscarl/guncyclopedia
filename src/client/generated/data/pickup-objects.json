@@ -4763,7 +4763,8 @@
     "reloadTime": 0.3,
     "featureFlags": [
       "hasHomingProjectiles",
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasProjectilePool"
     ],
     "animation": {
       "name": "No_Animation",
@@ -17551,7 +17552,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasProjectilePool"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26080,7 +26083,9 @@
     ],
     "maxAmmo": 301,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasProjectilePool"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26442,7 +26447,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasProjectilePool"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -34259,7 +34266,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasProjectilePool"
+    ],
     "video": "https://youtu.be/icERwXyyCDU?t=1048",
     "animation": {
       "name": "bubble_lizard_gun_idle",
@@ -35938,7 +35947,8 @@
     "maxAmmo": 100,
     "reloadTime": 2,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasProjectilePool"
     ],
     "animation": {
       "name": "No_Animation",
@@ -38672,7 +38682,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.54,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasProjectilePool"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -39603,7 +39615,8 @@
     "featureFlags": [
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls",
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasProjectilePool"
     ],
     "animation": {
       "name": "No_Animation",
