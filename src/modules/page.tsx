@@ -10,7 +10,7 @@ export function Page() {
         <div className="flex-3 overflow-y-auto">
           <ItemGrid />
         </div>
-        <div className="w-lg overflow-y-auto">
+        <div className="w-lg">
           <DetailSection />
         </div>
       </div>
