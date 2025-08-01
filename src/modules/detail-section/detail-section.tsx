@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-import { useLoaderData } from "@tanstack/react-router";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
 import { H2, H3 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
@@ -10,6 +9,8 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { Circle } from "./circle";
 import { computeAverageProjectile } from "@/client";
 import { useAppState } from "../shared/hooks/useAppState";
+import { useGuns } from "../shared/hooks/useGuns";
+import { useLoaderData } from "../shared/hooks/useLoaderData";
 import type { TProjectile, TProjectilePerShot } from "@/client/generated/models/gun.model";
 
 function getProjectile(projectiles: TProjectilePerShot[]) {
@@ -34,10 +35,10 @@ function getProjectile(projectiles: TProjectilePerShot[]) {
 }
 
 export function DetailSection() {
-  const { guns } = useLoaderData({ from: "/" });
+  const guns = useGuns();
   const selectedId = useAppState((state) => state.selectedId);
   const gun = guns.find((gun) => gun.id === selectedId);
-  const { stats } = useLoaderData({ from: "/" });
+  const stats = useLoaderData((state) => state.stats);
   const [modeIndex, _setModeIndex] = useState(0);
   const [hoverProjectileIndex, setHoverProjectileIndex] = useState(-1);
   const [selectedProjectileIndex, _setSelectedProjectileIndex] = useState(-1);

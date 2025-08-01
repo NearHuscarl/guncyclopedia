@@ -8,7 +8,6 @@ export function useAppStateMutation() {
       from: "/",
       to: "/",
       search: (prev) => ({ ...prev, ...search }),
-      replace: true,
       viewTransition: false,
       reloadDocument: false,
     });

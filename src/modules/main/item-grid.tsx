@@ -1,14 +1,14 @@
 import { useMemo } from "react";
 import clsx from "clsx";
-import { useLoaderData } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { AnimatedSprite } from "@/modules/shared/components/animated-sprite";
 import { Gun } from "@/client/generated/models/gun.model";
 import { useAppState } from "../shared/hooks/useAppState";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
+import { useGuns } from "../shared/hooks/useGuns";
 
-function useGuns() {
-  const { guns } = useLoaderData({ from: "/" });
+function useGunResults() {
+  const guns = useGuns();
   const sortBy = useAppState((state) => state.sortBy);
 
   const effectiveGuns = useMemo(() => {
@@ -37,7 +37,7 @@ function useGuns() {
 }
 
 export function ItemGrid() {
-  const guns = useGuns();
+  const guns = useGunResults();
   const setAppState = useAppStateMutation();
   const selectedId = useAppState((state) => state.selectedId);
 

@@ -29,9 +29,9 @@ function getMaxDimensions(animation: TGun["animation"], w: number, h: number, sc
   return { maxW, maxH };
 }
 
-type TAnimatedSpriteProps = { animation: TGun["animation"]; scale?: number };
+type TAnimatedSpriteProps = { animation: TGun["animation"]; scale?: number; className?: string };
 
-function AnimatedSpriteImpl({ animation, scale = 1 }: TAnimatedSpriteProps) {
+function AnimatedSpriteImpl({ animation, scale = 1, className }: TAnimatedSpriteProps) {
   const frame = useFrame(animation);
   const debug = useIsDebug();
   const { w, h } = useImageSize(animation.texturePath);
@@ -81,6 +81,7 @@ function AnimatedSpriteImpl({ animation, scale = 1 }: TAnimatedSpriteProps) {
 
   return (
     <div
+      className={className}
       style={{
         width: maxW,
         height: maxH,
