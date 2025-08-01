@@ -1,9 +1,9 @@
 import { memo, useMemo } from "react";
 import clsx from "clsx";
 import { useImageSize } from "./use-image-size";
-import { useIsDebug } from "@/lib/hooks";
 import { useFrame } from "./use-frame";
 import type { TGun } from "@/client/generated/models/gun.model";
+import { useIsDebug } from "../hooks/useDebug";
 
 function getMaxDimensions(animation: TGun["animation"], w: number, h: number, scale: number) {
   let maxW = 0;

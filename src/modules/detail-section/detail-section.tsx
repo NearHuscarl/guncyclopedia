@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { useLoaderData } from "@tanstack/react-router";
-import { useUiStore } from "../shared/store/ui.store";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
 import { H2, H3 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
@@ -10,6 +9,7 @@ import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Circle } from "./circle";
 import { computeAverageProjectile } from "@/client";
+import { useAppState } from "../shared/hooks/useAppState";
 import type { TProjectile, TProjectilePerShot } from "@/client/generated/models/gun.model";
 
 function getProjectile(projectiles: TProjectilePerShot[]) {
@@ -35,8 +35,8 @@ function getProjectile(projectiles: TProjectilePerShot[]) {
 
 export function DetailSection() {
   const { guns } = useLoaderData({ from: "/" });
-  const selectedItemId = useUiStore((state) => state.selectedItemId);
-  const gun = guns.find((gun) => gun.id === selectedItemId);
+  const selectedId = useAppState((state) => state.selectedId);
+  const gun = guns.find((gun) => gun.id === selectedId);
   const { stats } = useLoaderData({ from: "/" });
   const [modeIndex, _setModeIndex] = useState(0);
   const [hoverProjectileIndex, setHoverProjectileIndex] = useState(-1);
@@ -58,7 +58,7 @@ export function DetailSection() {
     setModeIndex(0);
   }, [gun?.id]);
 
-  if (selectedItemId === -1 || !gun) {
+  if (selectedId === -1 || !gun) {
     return null;
   }
 

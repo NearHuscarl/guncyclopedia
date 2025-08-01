@@ -1,16 +1,11 @@
-import { useIsDebug, useSearchParams } from "@/lib/hooks";
-import { useNavigate } from "@tanstack/react-router";
+import { useIsDebug } from "../shared/hooks/useDebug";
+import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 
 export function AppDevtools() {
-  const navigate = useNavigate({ from: "/" });
   const isDebug = useIsDebug();
-  const search = useSearchParams();
+  const setAppState = useAppStateMutation();
   const toggleDebug = () => {
-    navigate({
-      to: "/",
-      search: { ...search, debug: !isDebug },
-      replace: true,
-    });
+    setAppState({ debug: !isDebug });
   };
 
   return (
