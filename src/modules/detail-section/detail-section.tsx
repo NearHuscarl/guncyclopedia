@@ -7,40 +7,12 @@ import { Tier } from "./tier";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Circle } from "./circle";
-import { createAggregatedProjectileData, getEstimatedShotsPerSecond } from "@/client";
 import { useAppState } from "../shared/hooks/useAppState";
 import { useSelectedGun } from "../shared/hooks/useGuns";
 import { useLoaderData } from "../shared/hooks/useLoaderData";
-import type { TProjectilePerShot } from "@/client/generated/models/gun.model";
-
-function getAggregatedProjectile(projectiles: TProjectilePerShot[]) {
-  const pp = projectiles.map((p) => createAggregatedProjectileData(p.projectiles, "avg"));
-  if (pp.length === 0) {
-    throw new Error("Cannot compute average projectile from an empty list.");
-  }
-  const finalProjectile: TProjectilePerShot = {
-    cooldownTime: 0,
-    spread: 0,
-    burstShotCount: projectiles[0].burstShotCount,
-    burstCooldownTime: projectiles[0].burstCooldownTime,
-    shootStyle: projectiles[0].shootStyle,
-    projectiles: [createAggregatedProjectileData(pp, "sum")],
-  };
-  for (let i = 0; i < projectiles.length; i++) {
-    const proj = projectiles[i];
-    finalProjectile.cooldownTime = Math.max(finalProjectile.cooldownTime, proj.cooldownTime);
-    finalProjectile.spread = Math.max(finalProjectile.spread, proj.spread);
-  }
-
-  return finalProjectile;
-}
-
-function getRange(value: number) {
-  return value >= 1000 ? Infinity : value;
-}
-function getSpeed(value: number) {
-  return value === -1 ? Infinity : value;
-}
+import { ProjectilesPerShot } from "./projectiles-per-shot";
+import { GunService } from "@/client/service/gun.service";
+import { ProjectileService } from "@/client/service/projectile.service";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
@@ -58,7 +30,7 @@ export function DetailSection() {
   const setSelectedProjectileIndex = (index: number) => {
     _setSelectedProjectileIndex(index === selectedProjectileIndex ? -1 : index);
   };
-  const currentProjectileIndex = hoverProjectileIndex === -1 ? selectedProjectileIndex : hoverProjectileIndex;
+  const currentProjectileIndex = hoverProjectileIndex !== -1 ? hoverProjectileIndex : selectedProjectileIndex;
 
   useEffect(() => {
     // Note: Don't remove this useEffect and use key={gun?.id} for parent component
@@ -71,18 +43,11 @@ export function DetailSection() {
   }
 
   const { animation, name, ...other } = gun;
-  const mode = gun.projectileModes[modeIndex] ?? gun.projectileModes[0];
-  const aggregatedProjectile = getAggregatedProjectile(mode.projectiles);
-  const projectile = mode.projectiles[currentProjectileIndex] ?? aggregatedProjectile;
-  const projectilePool = projectile.projectiles;
-  const projData = createAggregatedProjectileData(projectilePool, "avg");
-  const aggregatedProjData = aggregatedProjectile.projectiles[0];
-  const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
-  const shotsPerSecond = getEstimatedShotsPerSecond(gun.reloadTime, magazineSize, projectile, mode.chargeTime);
-  const dps = {
-    current: shotsPerSecond * projData.damage,
-    aggregated: shotsPerSecond * aggregatedProjData.damage,
-  };
+  const { dps, magazineSize, mode, projectilePerShot, projectile } = GunService.computeGunStats(
+    gun,
+    modeIndex,
+    currentProjectileIndex,
+  );
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
@@ -108,6 +73,9 @@ export function DetailSection() {
         <div className="flex items-center justify-center h-36">
           <AnimatedSprite key={gun.id} animation={animation} scale={6} />
         </div>
+        <blockquote className="flex justify-center w-full italic text-muted-foreground mb-4 font-sans font-semibold">
+          {JSON.stringify(gun.quote)}
+        </blockquote>
         <div className="flex justify-between items-baseline mb-6">
           <H2>{name}</H2>
           <Tier tier={gun.quality} />
@@ -131,86 +99,58 @@ export function DetailSection() {
         {mode.chargeTime !== undefined && (
           <StatBar label="Charge Time" isNegativeStat value={mode.chargeTime} max={stats.maxChargeTime} unit="s" />
         )}
-        <div className="flex gap-4 items-baseline mt-6">
-          <Tooltip>
-            <TooltipTrigger>
-              <H3 className="mb-4 border-b border-dashed border-stone-400/30 cursor-help">Projectiles per shot:</H3>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Each circle represents a projectile per shot</p>
-            </TooltipContent>
-          </Tooltip>
-          <div className="flex gap-2 relative top-[3px]" onMouseLeave={() => setHoverProjectileIndex(-1)}>
-            {mode.projectiles.map((p, i) => {
-              return (
-                <Tooltip key={i} delayDuration={800}>
-                  <TooltipTrigger>
-                    <Circle
-                      isSelected={hoverProjectileIndex === i || selectedProjectileIndex === i}
-                      onClick={() => setSelectedProjectileIndex(i)}
-                      onMouseEnter={() => setHoverProjectileIndex(i)}
-                    />
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    {p.projectiles.length === 1 && <p>{p.projectiles[0].id}</p>}
-                    {p.projectiles.length > 1 && (
-                      <div>
-                        <p>Pick one of the following projectiles from the pool for this shot:</p>
-                        <ul className="my-2 ml-3 list-disc [&>li]:mt-2">
-                          {p.projectiles.map((proj) => (
-                            <li key={proj.id}>{proj.id}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </TooltipContent>
-                </Tooltip>
-              );
-            })}
-          </div>
-        </div>
+        <ProjectilesPerShot
+          projectiles={mode.projectiles}
+          onSelect={setSelectedProjectileIndex}
+          onHover={setHoverProjectileIndex}
+          onBlur={() => setHoverProjectileIndex(-1)}
+          isSelected={(i) => hoverProjectileIndex === i || selectedProjectileIndex === i}
+        />
         <StatBar
           label="Cooldown Time"
           isNegativeStat
-          value={aggregatedProjectile.cooldownTime}
+          value={projectilePerShot.aggregated.cooldownTime}
           max={stats.maxCooldownTime}
-          modifier={projectile.cooldownTime - aggregatedProjectile.cooldownTime}
+          modifier={projectilePerShot.current.cooldownTime - projectilePerShot.aggregated.cooldownTime}
           unit="s"
         />
         <StatBar
           label="Spread"
           isNegativeStat
-          value={aggregatedProjectile.spread}
+          value={projectilePerShot.aggregated.spread}
           max={stats.maxSpread}
-          modifier={projectile.spread - aggregatedProjectile.spread}
+          modifier={projectilePerShot.current.spread - projectilePerShot.aggregated.spread}
           unit="°"
         />
         <StatBar
           label="Damage"
-          value={aggregatedProjData.damage}
+          value={projectile.aggregated.damage}
           max={100}
-          modifier={projData.damage - aggregatedProjData.damage}
+          modifier={projectile.current.damage - projectile.aggregated.damage}
         />
         <StatBar
           label="Range"
-          value={getRange(aggregatedProjData.range)}
+          value={ProjectileService.getRange(projectile.aggregated.range)}
           max={100}
-          modifier={getRange(projData.range - aggregatedProjData.range)}
+          modifier={ProjectileService.getRange(projectile.current.range - projectile.aggregated.range)}
         />
         <StatBar
           label="Speed"
-          value={getSpeed(aggregatedProjData.speed)}
+          value={ProjectileService.getSpeed(projectile.aggregated.speed)}
           max={100}
-          modifier={getSpeed(projData.speed) - getSpeed(aggregatedProjData.speed)}
+          modifier={
+            ProjectileService.getSpeed(projectile.current.speed) -
+            ProjectileService.getSpeed(projectile.aggregated.speed)
+          }
         />
         <StatBar
           label="Force"
-          value={aggregatedProjData.force}
+          value={projectile.aggregated.force}
           max={50}
-          modifier={projData.force - aggregatedProjData.force}
+          modifier={projectile.current.force - projectile.aggregated.force}
         />
         <div className="mt-6">
-          {projectilePool.length > 1 && (
+          {projectilePerShot.current.projectiles.length > 1 && (
             <div className="flex gap-4 items-baseline">
               <Tooltip>
                 <TooltipTrigger>
@@ -222,7 +162,7 @@ export function DetailSection() {
                 </TooltipContent>
               </Tooltip>
               <div className="flex gap-2 relative top-[3px]">
-                {projectilePool.map((p) => (
+                {projectilePerShot.current.projectiles.map((p) => (
                   <Tooltip key={p.id}>
                     <TooltipTrigger>
                       <Circle />

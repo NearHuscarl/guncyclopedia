@@ -1,7 +1,7 @@
 import memoize from "lodash/memoize";
 import pickupObjects from "./generated/data/pickup-objects.json";
 import { isGun } from "./generated/helpers/types";
-import type { TGun, TProjectile, TProjectilePerShot } from "./generated/models/gun.model";
+import type { TGun } from "./generated/models/gun.model";
 import type { TPickupObject } from "./generated/models/pickup-object.model";
 
 export const getPickupObjects = (): TPickupObject[] => {
@@ -11,123 +11,6 @@ export const getPickupObjects = (): TPickupObject[] => {
 export const getGuns = memoize((): TGun[] => {
   return getPickupObjects().filter(isGun);
 });
-
-type AggregateModeOption = "sum" | "avg";
-type AggregateMode = "sum" | "avg" | "max";
-
-/**
- * Compute an 'average' projectile from a list.
- *
- * - Numeric & percentage fields are averaged; missing values are `0`
- *   (`spawnWeight` is always `1` as there is only one projectile).
- * - Boolean fields default to `false`; the result is `true` if any
- *   projectile has `true`. E.g. if this gun has homing projectiles,
- *
- * @throws {Error} if the input array is empty.
- */
-export function createAggregatedProjectileData(projectiles: TProjectile[], mode: AggregateModeOption): TProjectile {
-  if (projectiles.length === 0) {
-    throw new Error("Cannot average an empty projectile list.");
-  }
-
-  // All numeric (and percentage) keys that should be averaged.
-  const numericKeys = [
-    ["damage", "avg", "sum"],
-    ["speed", "avg", "avg"],
-    ["range", "avg", "max"],
-    ["force", "avg", "sum"],
-    ["spawnWeight"],
-    ["poisonChance", "avg", "max"],
-    ["speedChance", "avg", "max"],
-    ["charmChance", "avg", "max"],
-    ["freezeChance", "avg", "max"],
-    ["fireChance", "avg", "max"],
-    ["stunChance", "avg", "max"],
-    ["cheeseChance", "avg", "max"],
-    ["numberOfBounces", "avg", "avg"],
-    ["chanceToDieOnBounce", "avg", "avg"],
-    ["penetration", "avg", "max"],
-    ["homingRadius", "avg", "avg"],
-    ["homingAngularVelocity", "avg", "avg"],
-    ["beamChargeTime", "max", "max"],
-    ["beamStatusEffectChancePerSecond", "max", "max"],
-    // TODO: add "dps" once you’ve decided to include it
-  ] as const satisfies [keyof TProjectile, avg?: AggregateMode, sum?: AggregateMode][];
-
-  // All boolean keys that are aggregated with logical‐AND.
-  const booleanKeys = [
-    "ignoreDamageCaps",
-    "canPenetrateObjects",
-    "isHoming",
-    "homingAnddamageAllEnemies",
-  ] as const satisfies (keyof TProjectile)[];
-
-  // ---------- aggregate ----------
-  const sums: Record<string, number> = {};
-  numericKeys.forEach(([k]) => (sums[k] = 0));
-
-  const hasTrue: Record<string, boolean> = {};
-  booleanKeys.forEach(([k]) => (hasTrue[k] = true));
-
-  for (const p of projectiles) {
-    for (const [k, avg, sum] of numericKeys) {
-      const m = mode === "avg" ? avg : sum;
-
-      if (m === "max") {
-        sums[k] = Math.max(sums[k], p[k] ?? 0);
-      } else if (m === "avg" || m === "sum") {
-        sums[k] += p[k] ?? 0;
-      }
-    }
-
-    booleanKeys.forEach((k) => {
-      const v = p[k] ?? true; // default to true
-      hasTrue[k] = hasTrue[k] || v;
-    });
-  }
-  for (const [k, avg, sum] of numericKeys) {
-    const m = mode === "avg" ? avg : sum;
-
-    if (m === "avg") {
-      sums[k] /= projectiles.length;
-    }
-  }
-
-  // ---------- build result ----------
-  const final: Partial<TProjectile> = { id: "average", spawnWeight: 1 };
-
-  numericKeys.forEach(([k]) => (final[k] = sums[k]));
-  booleanKeys.forEach((k) => (final[k] = hasTrue[k]));
-
-  return final as TProjectile;
-}
-
-/**
- * ExportedProject\Assets\Scripts\Assembly-CSharp\ProjectileModule.cs#GetEstimatedShotsPerSecond
- */
-export function getEstimatedShotsPerSecond(
-  reloadTime: number,
-  magazineSize: number,
-  projectile: TProjectilePerShot,
-  chargeTime?: number,
-) {
-  const { shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = projectile;
-  if (cooldownTime <= 0) {
-    return 0;
-  }
-  let timeBetweenShots = cooldownTime;
-  if (shootStyle === "Burst" && burstShotCount > 1 && burstCooldownTime > 0) {
-    const totalTimePerBurst = (burstShotCount - 1) * burstCooldownTime + cooldownTime;
-    timeBetweenShots = totalTimePerBurst / burstShotCount;
-  }
-  if (shootStyle === "Charged" && chargeTime) {
-    timeBetweenShots += chargeTime / magazineSize;
-  }
-  if (magazineSize >= 0) {
-    timeBetweenShots += reloadTime / magazineSize;
-  }
-  return 1 / timeBetweenShots;
-}
 
 export function getGunStats() {
   const guns = getGuns();

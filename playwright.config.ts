@@ -2,7 +2,8 @@ import { defineConfig, devices } from "@playwright/test";
 
 // TODO:
 // test guns with edge cases:
-// old goldie -> inspect each projectile per shot
+// old goldie -> inspect multiple projectiles per shot
+// heroine -> inspect fps due to charge time + magazine size > 0
 
 /**
  * Read environment variables from file.

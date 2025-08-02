@@ -49,7 +49,7 @@ export function ItemGrid() {
           variant="secondary"
           onClick={() => setAppState({ selectedId: gun.id })}
           className={clsx({
-            "h-12 p-3": true,
+            "h-14 p-3": true,
             "bg-primary!": selectedId === gun.id,
           })}
         >
