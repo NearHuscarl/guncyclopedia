@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
@@ -10,14 +9,52 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { useGuns } from "../shared/hooks/useGuns";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
+import { Muted } from "@/components/ui/typography";
+import type { TGun } from "@/client/generated/models/gun.model";
+
+function filterQuery(value: string, search: string) {
+  const queryWords = search.toLowerCase().split(/\s+/).filter(Boolean);
+  const target = value.toLowerCase();
+
+  const allMatch = queryWords.every((query) => target.includes(query));
+  return allMatch ? 1 : 0;
+}
+
+function getDisplayName(gun: TGun, gunLookup: Map<string, TGun[]>) {
+  const matches = gunLookup.get(gun.name);
+  if (!matches || matches?.length === 1) return gun.name;
+
+  return `${gun.name} (${gun.id})`;
+}
+
+function getNameComponent(gun: TGun, gunLookup: Map<string, TGun[]>) {
+  const matches = gunLookup.get(gun.name);
+  if (!matches || matches?.length === 1) return gun.name;
+
+  return (
+    <div className="line-clamp-2 overflow-hidden flex gap-1">
+      <span>{gun.name}</span> <Muted>({gun.id})</Muted>
+    </div>
+  );
+}
 
 export function Search() {
+  const [search, setSearch] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const [gunId, setGunId] = React.useState(-1);
   const setAppState = useAppStateMutation();
   const guns = useGuns();
   const sortedGuns = React.useMemo(() => [...guns].sort((a, b) => a.name.localeCompare(b.name)), [guns]);
-  const gunLookup = React.useMemo(() => new Map(guns.map((gun) => [gun.name, gun])), [guns]);
+  const gunLookup = React.useMemo(() => {
+    const lookup = new Map<string, TGun[]>();
+    for (const gun of sortedGuns) {
+      if (!lookup.has(gun.name)) {
+        lookup.set(gun.name, []);
+      }
+      lookup.get(gun.name)?.push(gun);
+    }
+    return lookup;
+  }, [sortedGuns]);
   const selectedGun = React.useMemo(() => guns.find((gun) => gun.id === gunId), [gunId, guns]);
 
   return (
@@ -36,36 +73,31 @@ export function Search() {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[250px] p-0">
-        <Command
-          filter={(value, search) => {
-            const queryWords = search.toLowerCase().split(/\s+/).filter(Boolean);
-            const target = value.toLowerCase();
-
-            const allMatch = queryWords.every((query) => target.includes(query));
-            return allMatch ? 1 : 0;
-          }}
-        >
-          <CommandInput placeholder="Search gun..." />
+        <Command shouldFilter={false}>
+          <CommandInput placeholder="Search gun..." value={search} onValueChange={setSearch} />
           <CommandList>
             <CommandEmpty>No gun found.</CommandEmpty>
             <CommandGroup>
-              {sortedGuns.map((gun) => (
-                <CommandItem
-                  key={gun.id}
-                  value={gun.name}
-                  onSelect={(currentValue) => {
-                    setGunId(gunLookup.get(currentValue)?.id ?? -1);
-                    setAppState({ selectedId: gun.id });
-                    setOpen(false);
-                  }}
-                >
-                  <div className="w-12 flex justify-center">
-                    <AnimatedSprite animation={gun.animation} scale={1} />
-                  </div>
-                  <span className="truncate whitespace-nowrap overflow-hidden">{gun.name}</span>
-                  <Check className={cn("ml-auto", gunId === gun.id ? "opacity-100" : "opacity-0")} />
-                </CommandItem>
-              ))}
+              {sortedGuns
+                .filter((gun) => filterQuery(getDisplayName(gun, gunLookup), search))
+                .slice(0, 9)
+                .map((gun) => (
+                  <CommandItem
+                    key={gun.id}
+                    value={gun.id.toString()}
+                    onSelect={() => {
+                      setGunId(gun.id);
+                      setAppState({ selectedId: gun.id });
+                      setOpen(false);
+                    }}
+                  >
+                    <div className="w-12 flex justify-center">
+                      <AnimatedSprite animation={gun.animation} scale={1} />
+                    </div>
+                    {getNameComponent(gun, gunLookup)}
+                    <Check className={cn("ml-auto", gunId === gun.id ? "opacity-100" : "opacity-0")} />
+                  </CommandItem>
+                ))}
             </CommandGroup>
           </CommandList>
         </Command>

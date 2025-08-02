@@ -8,6 +8,6 @@ export function pickRandom<T>(arr: T[]): T {
   return arr[index];
 }
 
-export function formatNumber(value: number, precision: number = 2): string {
+export function formatNumber(value: number, precision = 2): string {
   return value === Infinity ? "∞" : Number(value.toFixed(precision)).toString();
 }

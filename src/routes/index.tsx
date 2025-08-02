@@ -4,6 +4,7 @@ import { getGuns, getGunStats } from "@/client";
 import { Page } from "@/modules/page";
 import { pickRandom } from "@/lib/lang";
 import type { TAppState } from "@/modules/shared/hooks/useAppState";
+import { useGunStore } from "@/modules/shared/store/gun.store";
 
 const schema = z.object({
   debug: z.boolean().optional(),
@@ -32,11 +33,8 @@ export const Route = createFileRoute("/")({
   },
   loader: async () => {
     const { guns, stats } = getGunStats();
-    console.log("loader");
-    return {
-      guns,
-      stats,
-    };
+    useGunStore.getState().createGunLookup(guns);
+    return { guns, stats };
   },
 
   // Don't let search changes trigger the loader

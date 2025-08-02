@@ -1,6 +1,7 @@
 import { H1 } from "@/components/ui/typography";
-import { TopBarMenu } from "./top-bar-menu";
 import { Separator } from "@/components/ui/separator";
+import { TopBarMenu } from "./top-bar-menu";
+import { TopBarLinks } from "./top-bar-links";
 
 export function TopBar() {
   return (
@@ -8,8 +9,9 @@ export function TopBar() {
       <img src="/icon.png" alt="Icon" className="w-8 h-8" />
       <H1>Guncyclopedia</H1>
       <Separator orientation="vertical" className="mx-4 relative top-1" />
-      <div className="relative top-1">
+      <div className="flex justify-between relative top-1 w-full">
         <TopBarMenu />
+        <TopBarLinks />
       </div>
     </div>
   );

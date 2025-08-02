@@ -7,14 +7,14 @@ import { Tier } from "./tier";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Circle } from "./circle";
-import { computeAverageProjectile } from "@/client";
+import { createAggregatedProjectileData } from "@/client";
 import { useAppState } from "../shared/hooks/useAppState";
-import { useGuns } from "../shared/hooks/useGuns";
+import { useSelectedGun } from "../shared/hooks/useGuns";
 import { useLoaderData } from "../shared/hooks/useLoaderData";
-import type { TProjectile, TProjectilePerShot } from "@/client/generated/models/gun.model";
+import type { TProjectilePerShot } from "@/client/generated/models/gun.model";
 
-function getProjectile(projectiles: TProjectilePerShot[]) {
-  const pp = projectiles.map((p) => p.projectiles).flat();
+function getAggregatedProjectile(projectiles: TProjectilePerShot[]) {
+  const pp = projectiles.map((p) => createAggregatedProjectileData(p.projectiles, "avg"));
   if (pp.length === 0) {
     throw new Error("Cannot compute average projectile from an empty list.");
   }
@@ -22,22 +22,27 @@ function getProjectile(projectiles: TProjectilePerShot[]) {
     cooldownTime: 0,
     spread: 0,
     shootStyle: projectiles[0].shootStyle,
-    projectiles: [computeAverageProjectile(pp as [TProjectile, ...TProjectile[]])],
+    projectiles: [createAggregatedProjectileData(pp, "sum")],
   };
   for (let i = 0; i < projectiles.length; i++) {
     const proj = projectiles[i];
     finalProjectile.cooldownTime = Math.max(finalProjectile.cooldownTime, proj.cooldownTime);
-    finalProjectile.spread += proj.spread;
+    finalProjectile.spread = Math.max(finalProjectile.spread, proj.spread);
   }
-  finalProjectile.spread /= projectiles.length;
 
   return finalProjectile;
 }
 
+function getRange(value: number) {
+  return value >= 1000 ? Infinity : value;
+}
+function getSpeed(value: number) {
+  return value === -1 ? Infinity : value;
+}
+
 export function DetailSection() {
-  const guns = useGuns();
   const selectedId = useAppState((state) => state.selectedId);
-  const gun = guns.find((gun) => gun.id === selectedId);
+  const gun = useSelectedGun();
   const stats = useLoaderData((state) => state.stats);
   const [modeIndex, _setModeIndex] = useState(0);
   const [hoverProjectileIndex, setHoverProjectileIndex] = useState(-1);
@@ -65,12 +70,12 @@ export function DetailSection() {
 
   const { animation, name, ...other } = gun;
   const mode = gun.projectileModes[modeIndex] ?? gun.projectileModes[0];
-  const aggregatedProjectile = getProjectile(mode.projectiles);
+  const aggregatedProjectile = getAggregatedProjectile(mode.projectiles);
   const projectile = mode.projectiles[currentProjectileIndex] ?? aggregatedProjectile;
   const projectilePool = projectile.projectiles;
-  const averageProjectileData = mode.projectiles[currentProjectileIndex]
-    ? computeAverageProjectile(mode.projectiles[currentProjectileIndex].projectiles as [TProjectile, ...TProjectile[]])
-    : aggregatedProjectile.projectiles[0];
+  const projData = createAggregatedProjectileData(projectilePool, "avg");
+  const aggregatedProjData = aggregatedProjectile.projectiles[0];
+  const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
@@ -102,19 +107,21 @@ export function DetailSection() {
         </div>
       </div>
       <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 pr-2">
-        <StatBar
-          label="Magazine Size"
-          value={mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize}
-          max={Math.min(stats.maxMagazineSize, gun.maxAmmo)}
-        />
+        <StatBar label="Magazine Size" value={magazineSize} max={Math.min(stats.maxMagazineSize, gun.maxAmmo)} />
         <StatBar
           label="Max Ammo"
           value={gun.featureFlags.includes("hasInfiniteAmmo") ? Infinity : gun.maxAmmo}
           max={stats.maxMaxAmmo}
         />
-        <StatBar label="Reload Time" isNegativeStat value={gun.reloadTime} max={stats.maxReloadTime} />
+        <StatBar
+          label="Reload Time"
+          isNegativeStat
+          value={magazineSize === gun.maxAmmo ? 0 : gun.reloadTime}
+          max={stats.maxReloadTime}
+          unit="s"
+        />
         {mode.chargeTime !== undefined && (
-          <StatBar label="Charge Time" isNegativeStat value={mode.chargeTime} max={stats.maxChargeTime} />
+          <StatBar label="Charge Time" isNegativeStat value={mode.chargeTime} max={stats.maxChargeTime} unit="s" />
         )}
         <div className="flex gap-4 items-baseline mt-6">
           <Tooltip>
@@ -125,7 +132,7 @@ export function DetailSection() {
               <p>Each circle represents a projectile per shot</p>
             </TooltipContent>
           </Tooltip>
-          <div className="flex gap-2 relative top-[3px]">
+          <div className="flex gap-2 relative top-[3px]" onMouseLeave={() => setHoverProjectileIndex(-1)}>
             {mode.projectiles.map((p, i) => {
               return (
                 <Tooltip key={i} delayDuration={800}>
@@ -134,7 +141,6 @@ export function DetailSection() {
                       isSelected={hoverProjectileIndex === i || selectedProjectileIndex === i}
                       onClick={() => setSelectedProjectileIndex(i)}
                       onMouseEnter={() => setHoverProjectileIndex(i)}
-                      onMouseLeave={() => setHoverProjectileIndex(-1)}
                     />
                   </TooltipTrigger>
                   <TooltipContent>
@@ -161,6 +167,7 @@ export function DetailSection() {
           value={aggregatedProjectile.cooldownTime}
           max={stats.maxCooldownTime}
           modifier={projectile.cooldownTime - aggregatedProjectile.cooldownTime}
+          unit="s"
         />
         <StatBar
           label="Spread"
@@ -168,20 +175,32 @@ export function DetailSection() {
           value={aggregatedProjectile.spread}
           max={stats.maxSpread}
           modifier={projectile.spread - aggregatedProjectile.spread}
+          unit="°"
         />
-        <StatBar label="Damage" value={averageProjectileData.damage} max={100} />
+        <StatBar
+          label="Damage"
+          value={aggregatedProjData.damage}
+          max={100}
+          modifier={projData.damage - aggregatedProjData.damage}
+        />
         <StatBar
           label="Range"
-          value={averageProjectileData.range === 1000 ? Infinity : averageProjectileData.range}
+          value={getRange(aggregatedProjData.range)}
           max={100}
+          modifier={getRange(projData.range - aggregatedProjData.range)}
         />
         <StatBar
           label="Speed"
-          value={averageProjectileData.speed === -1 ? Infinity : averageProjectileData.speed}
+          value={getSpeed(aggregatedProjData.speed)}
           max={100}
+          modifier={getSpeed(projData.speed) - getSpeed(aggregatedProjData.speed)}
         />
-        {/* TODO: incorrect force calculation for shotgun, should be sum of all projectiles */}
-        <StatBar label="Force" value={averageProjectileData.force} max={50} />
+        <StatBar
+          label="Force"
+          value={aggregatedProjData.force}
+          max={50}
+          modifier={projData.force - aggregatedProjData.force}
+        />
         <div className="mt-6">
           {projectilePool.length > 1 && (
             <div className="flex gap-4 items-baseline">
