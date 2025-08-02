@@ -65,12 +65,16 @@ export type TProjectileSequence = TProjectile[]; // TProjectile[]
  */
 export type TProjectilePerShot = {
   shootStyle: "SemiAutomatic" | "Automatic" | "Beam" | "Charged" | "Burst";
+  burstShotCount: number;
+  burstCooldownTime: number;
   cooldownTime: number;
   spread: number;
   projectiles: TProjectileSequence;
 };
 export const ProjectilePerShot = z.object({
   shootStyle: z.enum(["SemiAutomatic", "Automatic", "Beam", "Charged", "Burst"]),
+  burstShotCount: z.number().nonnegative(),
+  burstCooldownTime: z.number().nonnegative(),
   cooldownTime: z.number(),
   spread: z.number(),
   projectiles: z.array(Projectile),

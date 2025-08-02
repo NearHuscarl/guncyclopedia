@@ -59,12 +59,14 @@ export const ProjectileModule = z.object({
     z.object({
       ChargeTime: z.number(),
       Projectile: AssetExternalReference,
-    })
+    }),
   ),
   /**
    * Spawn 1 additional projectile per shot. See [https://enterthegungeon.fandom.com/wiki/Gilded_Hydra](https://enterthegungeon.fandom.com/wiki/Gilded_Hydra) for example.
    */
   mirror: BinaryOption,
+  burstShotCount: z.number().nonnegative(),
+  burstCooldownTime: z.number().nonnegative(),
   cooldownTime: z.number(),
   angleVariance: z.number(),
   numberOfShotsInClip: z.number(),
@@ -110,7 +112,7 @@ const GunData = z
     {
       message: "Either `rawVolley`, `singleModule.projectiles` or `singleModule.chargeProjectiles` must be non-empty.",
       path: ["singleModule"], // error will be associated with this field
-    }
+    },
   );
 
 const SpriteData = z.object({

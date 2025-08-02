@@ -217,6 +217,8 @@ export class GunModelGenerator {
       projectilesPerShot.push({
         shootStyle: shootStyleTextLookup[module.shootStyle] as keyof typeof ShootStyle,
         cooldownTime: module.cooldownTime,
+        burstShotCount: module.burstShotCount,
+        burstCooldownTime: module.burstCooldownTime,
         spread: module.angleVariance,
         projectiles,
       });

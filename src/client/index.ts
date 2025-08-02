@@ -1,7 +1,7 @@
 import memoize from "lodash/memoize";
 import pickupObjects from "./generated/data/pickup-objects.json";
 import { isGun } from "./generated/helpers/types";
-import type { TGun, TProjectile } from "./generated/models/gun.model";
+import type { TGun, TProjectile, TProjectilePerShot } from "./generated/models/gun.model";
 import type { TPickupObject } from "./generated/models/pickup-object.model";
 
 export const getPickupObjects = (): TPickupObject[] => {
@@ -100,6 +100,33 @@ export function createAggregatedProjectileData(projectiles: TProjectile[], mode:
   booleanKeys.forEach((k) => (final[k] = hasTrue[k]));
 
   return final as TProjectile;
+}
+
+/**
+ * ExportedProject\Assets\Scripts\Assembly-CSharp\ProjectileModule.cs#GetEstimatedShotsPerSecond
+ */
+export function getEstimatedShotsPerSecond(
+  reloadTime: number,
+  magazineSize: number,
+  projectile: TProjectilePerShot,
+  chargeTime?: number,
+) {
+  const { shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = projectile;
+  if (cooldownTime <= 0) {
+    return 0;
+  }
+  let timeBetweenShots = cooldownTime;
+  if (shootStyle === "Burst" && burstShotCount > 1 && burstCooldownTime > 0) {
+    const totalTimePerBurst = (burstShotCount - 1) * burstCooldownTime + cooldownTime;
+    timeBetweenShots = totalTimePerBurst / burstShotCount;
+  }
+  if (shootStyle === "Charged" && chargeTime) {
+    timeBetweenShots += chargeTime / magazineSize;
+  }
+  if (magazineSize >= 0) {
+    timeBetweenShots += reloadTime / magazineSize;
+  }
+  return 1 / timeBetweenShots;
 }
 
 export function getGunStats() {

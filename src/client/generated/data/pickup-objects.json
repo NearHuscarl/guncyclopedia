@@ -16,6 +16,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 5,
             "projectiles": [
@@ -86,6 +88,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 3,
             "projectiles": [
@@ -156,6 +160,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.11,
             "spread": 4,
             "projectiles": [
@@ -226,6 +232,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.11,
             "spread": 4,
             "projectiles": [
@@ -365,6 +373,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.11,
             "spread": 4,
             "projectiles": [
@@ -527,6 +537,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 1,
             "projectiles": [
@@ -543,6 +555,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -559,6 +573,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -631,6 +647,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.9,
             "spread": 0,
             "projectiles": [
@@ -773,6 +791,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -848,6 +868,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -919,6 +941,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.2,
             "spread": 0,
             "projectiles": [
@@ -991,6 +1015,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.2,
             "spread": 0,
             "projectiles": [
@@ -1067,6 +1093,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 6,
             "projectiles": [
@@ -1139,6 +1167,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 6,
             "projectiles": [
@@ -1210,6 +1240,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -1280,6 +1312,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 6,
             "projectiles": [
@@ -1354,6 +1388,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 90,
             "projectiles": [
@@ -1427,6 +1463,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 90,
             "projectiles": [
@@ -1500,6 +1538,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.35,
             "spread": 8,
             "projectiles": [
@@ -1514,6 +1554,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.35,
             "spread": 5,
             "projectiles": [
@@ -1528,6 +1570,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.35,
             "spread": 5,
             "projectiles": [
@@ -1598,6 +1642,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.35,
             "spread": 0,
             "projectiles": [
@@ -1671,6 +1717,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -1789,6 +1837,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -1859,6 +1909,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -1936,6 +1988,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -2013,6 +2067,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 2,
             "projectiles": [
@@ -2087,6 +2143,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2109,6 +2167,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2124,6 +2184,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2139,6 +2201,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2154,6 +2218,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2169,6 +2235,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2184,6 +2252,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2199,6 +2269,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 12,
             "projectiles": [
@@ -2214,6 +2286,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 1,
             "projectiles": [
@@ -2229,6 +2303,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 8,
             "projectiles": [
@@ -2301,6 +2377,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2323,6 +2401,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2338,6 +2418,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2353,6 +2435,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2368,6 +2452,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2383,6 +2469,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2398,6 +2486,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 20,
             "projectiles": [
@@ -2413,6 +2503,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 12,
             "projectiles": [
@@ -2428,6 +2520,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 1,
             "projectiles": [
@@ -2443,6 +2537,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 8,
             "projectiles": [
@@ -2514,6 +2610,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 10,
             "projectiles": [
@@ -2584,6 +2682,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -2661,6 +2761,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 6,
             "projectiles": [
@@ -2785,6 +2887,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 6,
             "projectiles": [
@@ -2903,6 +3007,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -2924,6 +3030,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -2996,6 +3104,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.06,
             "cooldownTime": 0.4,
             "spread": 5,
             "projectiles": [
@@ -3066,6 +3176,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.06,
             "cooldownTime": 0.4,
             "spread": 5,
             "projectiles": [
@@ -3138,6 +3250,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0,
             "spread": 0,
             "projectiles": [
@@ -3159,6 +3273,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0,
             "spread": 0,
             "projectiles": [
@@ -3235,6 +3351,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.04,
             "spread": 0,
             "projectiles": [
@@ -3307,6 +3425,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 1,
             "projectiles": [
@@ -3380,6 +3500,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 1,
             "projectiles": [
@@ -3454,6 +3576,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 4,
             "spread": 0,
             "projectiles": [
@@ -3643,6 +3767,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.001,
             "spread": 0,
             "projectiles": [
@@ -3717,6 +3843,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.001,
             "spread": 0,
             "projectiles": [
@@ -3790,6 +3918,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 5,
             "projectiles": [
@@ -3806,6 +3936,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 5,
             "projectiles": [
@@ -3822,6 +3954,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 5,
             "projectiles": [
@@ -3894,6 +4028,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 1,
+            "burstCooldownTime": 0.05,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -4084,6 +4220,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 1,
+            "burstCooldownTime": 0.05,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -4269,6 +4407,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 7,
             "projectiles": [
@@ -4431,6 +4571,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 7,
             "projectiles": [
@@ -4617,6 +4759,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -4687,6 +4831,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 6,
+            "burstCooldownTime": 0.08,
             "cooldownTime": 0.2,
             "spread": 8,
             "projectiles": [
@@ -4818,6 +4964,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 5,
             "projectiles": [
@@ -4917,6 +5065,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 20,
             "projectiles": [
@@ -4935,6 +5085,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 20,
             "projectiles": [
@@ -5035,6 +5187,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 5,
             "projectiles": [
@@ -5177,6 +5331,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -5321,6 +5477,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.15,
             "spread": 6,
             "projectiles": [
@@ -5394,6 +5552,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 2,
+            "burstCooldownTime": 0.06,
             "cooldownTime": 0.21,
             "spread": 8,
             "projectiles": [
@@ -5465,6 +5625,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 5,
             "projectiles": [
@@ -5486,6 +5648,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 2,
             "projectiles": [
@@ -5559,6 +5723,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -5580,6 +5746,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -5650,6 +5818,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.45,
             "spread": 6,
             "projectiles": [
@@ -5725,6 +5895,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.45,
             "spread": 6,
             "projectiles": [
@@ -5800,6 +5972,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 7,
             "projectiles": [
@@ -5870,6 +6044,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 20,
             "projectiles": [
@@ -5884,6 +6060,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 25,
             "projectiles": [
@@ -5898,6 +6076,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 15,
             "projectiles": [
@@ -5912,6 +6092,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 20,
             "projectiles": [
@@ -5926,6 +6108,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 30,
             "projectiles": [
@@ -5940,6 +6124,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 20,
             "projectiles": [
@@ -6010,6 +6196,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6024,6 +6212,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6038,6 +6228,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6052,6 +6244,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6066,6 +6260,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6080,6 +6276,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6094,6 +6292,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6108,6 +6308,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6122,6 +6324,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -6284,6 +6488,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 6,
             "projectiles": [
@@ -6354,6 +6560,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 6,
             "projectiles": [
@@ -6562,6 +6770,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -6635,6 +6845,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -6709,6 +6921,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -6903,6 +7117,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 6,
             "projectiles": [
@@ -6974,6 +7190,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -6995,6 +7213,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -7066,6 +7286,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 3,
             "projectiles": [
@@ -7087,6 +7309,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 3,
             "projectiles": [
@@ -7158,6 +7382,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -7329,6 +7555,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -7468,6 +7696,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 7,
             "projectiles": [
@@ -7791,6 +8021,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 7,
             "projectiles": [
@@ -7935,6 +8167,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 7,
             "projectiles": [
@@ -8077,6 +8311,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 8,
             "projectiles": [
@@ -8150,6 +8386,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 8,
             "projectiles": [
@@ -8223,6 +8461,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 13,
             "projectiles": [
@@ -8293,6 +8533,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 2,
             "projectiles": [
@@ -8365,6 +8607,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 8,
             "projectiles": [
@@ -8435,6 +8679,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -8449,6 +8695,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -8463,6 +8711,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -8477,6 +8727,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -8547,6 +8799,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -8561,6 +8815,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -8631,6 +8887,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -8701,6 +8959,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 3,
             "projectiles": [
@@ -8777,6 +9037,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 4,
+            "burstCooldownTime": 0.05,
             "cooldownTime": 0.3,
             "spread": 7,
             "projectiles": [
@@ -8939,6 +9201,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 13,
             "projectiles": [
@@ -8953,6 +9217,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 7,
             "projectiles": [
@@ -8967,6 +9233,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 11,
             "projectiles": [
@@ -8981,6 +9249,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 11,
             "projectiles": [
@@ -8995,6 +9265,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 11,
             "projectiles": [
@@ -9009,6 +9281,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 11,
             "projectiles": [
@@ -9079,6 +9353,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 0,
             "projectiles": [
@@ -9150,6 +9426,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -9227,6 +9505,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 6,
             "projectiles": [
@@ -9320,6 +9600,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 1,
             "projectiles": [
@@ -9398,6 +9680,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 8,
             "projectiles": [
@@ -9495,6 +9779,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.22,
             "spread": 0,
             "projectiles": [
@@ -9912,6 +10198,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.22,
             "spread": 0,
             "projectiles": [
@@ -10105,6 +10393,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -10268,6 +10558,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -10343,6 +10635,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -10482,6 +10776,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -10557,6 +10853,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -10632,6 +10930,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -10704,6 +11004,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -10777,6 +11079,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -10848,6 +11152,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -10924,6 +11230,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -10999,6 +11307,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -11069,6 +11379,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 2,
             "projectiles": [
@@ -11143,6 +11455,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -11160,6 +11474,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -11177,6 +11493,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 25,
             "projectiles": [
@@ -11194,6 +11512,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 25,
             "projectiles": [
@@ -11211,6 +11531,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 10,
             "projectiles": [
@@ -11228,6 +11550,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 10,
             "projectiles": [
@@ -11245,6 +11569,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -11262,6 +11588,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -11335,6 +11663,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -11418,6 +11748,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -11432,6 +11764,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 3,
             "projectiles": [
@@ -11446,6 +11780,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 4,
             "projectiles": [
@@ -11460,6 +11796,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -11474,6 +11812,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 8,
             "projectiles": [
@@ -11488,6 +11828,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 14,
             "projectiles": [
@@ -11502,6 +11844,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 3,
             "projectiles": [
@@ -11516,6 +11860,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 12,
             "projectiles": [
@@ -11530,6 +11876,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 1,
             "projectiles": [
@@ -11544,6 +11892,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 8,
             "projectiles": [
@@ -11706,6 +12056,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 35,
             "projectiles": [
@@ -11783,6 +12135,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 7,
             "projectiles": [
@@ -11853,6 +12207,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 7,
             "projectiles": [
@@ -11923,6 +12279,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -11993,6 +12351,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.082,
             "cooldownTime": 0.35,
             "spread": 5,
             "projectiles": [
@@ -12063,6 +12423,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 7,
             "projectiles": [
@@ -12133,6 +12495,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -12148,6 +12512,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -12163,6 +12529,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 15,
             "projectiles": [
@@ -12178,6 +12546,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 15,
             "projectiles": [
@@ -12193,6 +12563,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 20,
             "projectiles": [
@@ -12266,6 +12638,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -12339,6 +12713,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 3,
             "projectiles": [
@@ -12353,6 +12729,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 2,
             "projectiles": [
@@ -12426,6 +12804,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -12497,6 +12877,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.02,
             "spread": 0,
             "projectiles": [
@@ -12641,6 +13023,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.02,
             "spread": 0,
             "projectiles": [
@@ -12786,6 +13170,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 15,
             "projectiles": [
@@ -12803,6 +13189,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -12820,6 +13208,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -12837,6 +13227,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -12854,6 +13246,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -12871,6 +13265,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -12944,6 +13340,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.04,
             "spread": 20,
             "projectiles": [
@@ -13014,6 +13412,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.04,
             "spread": 20,
             "projectiles": [
@@ -13028,6 +13428,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.04,
             "spread": 20,
             "projectiles": [
@@ -13098,6 +13500,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 10,
             "projectiles": [
@@ -13171,6 +13575,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 10,
             "projectiles": [
@@ -13336,6 +13742,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -13889,6 +14297,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 7,
             "projectiles": [
@@ -14057,6 +14467,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.75,
             "spread": 7,
             "projectiles": [
@@ -14073,6 +14485,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.75,
             "spread": 10,
             "projectiles": [
@@ -14089,6 +14503,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.75,
             "spread": 10,
             "projectiles": [
@@ -14105,6 +14521,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.75,
             "spread": 15,
             "projectiles": [
@@ -14121,6 +14539,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.75,
             "spread": 5,
             "projectiles": [
@@ -14137,6 +14557,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.75,
             "spread": 5,
             "projectiles": [
@@ -14209,6 +14631,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 6,
+            "burstCooldownTime": 0.08,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -14314,6 +14738,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 6,
+            "burstCooldownTime": 0.08,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -14419,6 +14845,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.8,
             "spread": 2,
             "projectiles": [
@@ -14491,6 +14919,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.1,
             "spread": 7,
             "projectiles": [
@@ -14561,6 +14991,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 6,
             "projectiles": [
@@ -14631,6 +15063,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.8,
             "spread": 0,
             "projectiles": [
@@ -14703,6 +15137,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.2,
             "spread": 4,
             "projectiles": [
@@ -14774,6 +15210,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 4,
+            "burstCooldownTime": 0.07,
             "cooldownTime": 0.07,
             "spread": 10,
             "projectiles": [
@@ -14844,6 +15282,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 6,
             "projectiles": [
@@ -14914,6 +15354,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 2,
             "projectiles": [
@@ -14986,6 +15428,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.001,
             "spread": 0,
             "projectiles": [
@@ -15058,6 +15502,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 7,
             "projectiles": [
@@ -15128,6 +15574,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 7,
             "projectiles": [
@@ -15198,6 +15646,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -15270,6 +15720,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 4,
             "projectiles": [
@@ -15340,6 +15792,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 10,
             "projectiles": [
@@ -15715,6 +16169,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -15736,6 +16192,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -15752,6 +16210,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -15824,6 +16284,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 8,
             "projectiles": [
@@ -15895,6 +16357,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -15967,6 +16431,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -15988,6 +16454,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -16058,6 +16526,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -16074,6 +16544,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 10,
             "projectiles": [
@@ -16090,6 +16562,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 20,
             "projectiles": [
@@ -16277,6 +16751,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -16347,6 +16823,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.035,
             "spread": 12,
             "projectiles": [
@@ -16417,6 +16895,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 9,
             "projectiles": [
@@ -16487,6 +16967,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 0,
             "projectiles": [
@@ -16559,6 +17041,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 1,
             "projectiles": [
@@ -16575,6 +17059,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -16590,6 +17076,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -16605,6 +17093,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -16679,6 +17169,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 0,
             "projectiles": [
@@ -16702,6 +17194,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 0,
             "projectiles": [
@@ -16774,6 +17268,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 5,
             "projectiles": [
@@ -16844,6 +17340,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 5,
             "projectiles": [
@@ -16915,6 +17413,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -16987,6 +17487,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -17065,6 +17567,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -17209,6 +17713,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.12,
             "spread": 10,
             "projectiles": [
@@ -17279,6 +17785,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.12,
             "spread": 0,
             "projectiles": [
@@ -17349,6 +17857,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 1,
             "projectiles": [
@@ -17442,6 +17952,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 5,
             "projectiles": [
@@ -17512,6 +18024,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -17607,6 +18121,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -17623,6 +18139,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -17695,6 +18213,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 10,
             "projectiles": [
@@ -17765,6 +18285,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.35,
             "spread": 10,
             "projectiles": [
@@ -17835,6 +18357,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 3,
             "projectiles": [
@@ -17851,6 +18375,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 2,
             "projectiles": [
@@ -17926,6 +18452,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 3,
             "projectiles": [
@@ -17942,6 +18470,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 2,
             "projectiles": [
@@ -18017,6 +18547,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -18031,6 +18563,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 2,
             "spread": 0,
             "projectiles": [
@@ -18106,6 +18640,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -18181,6 +18717,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -18256,6 +18794,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -18489,6 +19029,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.08,
             "spread": 5,
             "projectiles": [
@@ -18682,6 +19224,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -18827,6 +19371,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -18841,6 +19387,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -18911,6 +19459,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -18931,6 +19481,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 0,
             "projectiles": [
@@ -18945,6 +19497,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 0,
             "projectiles": [
@@ -18965,6 +19519,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 0,
             "projectiles": [
@@ -19037,6 +19593,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -19057,6 +19615,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 0,
             "projectiles": [
@@ -19071,6 +19631,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 0,
             "projectiles": [
@@ -19091,6 +19653,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -19163,6 +19727,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.35,
             "spread": 5,
             "projectiles": [
@@ -19241,6 +19807,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -19258,6 +19826,8 @@
           },
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -19340,6 +19910,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -19357,6 +19929,8 @@
           },
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -19433,6 +20007,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -19454,6 +20030,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -19524,6 +20102,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -19600,6 +20180,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 10,
             "projectiles": [
@@ -19614,6 +20196,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 10,
             "projectiles": [
@@ -19628,6 +20212,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 10,
             "projectiles": [
@@ -19642,6 +20228,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 10,
             "projectiles": [
@@ -19656,6 +20244,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 5,
             "projectiles": [
@@ -19670,6 +20260,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 5,
             "projectiles": [
@@ -19763,6 +20355,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 7,
             "projectiles": [
@@ -19834,6 +20428,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 5,
             "projectiles": [
@@ -19905,6 +20501,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -19983,6 +20581,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -20058,6 +20658,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 0,
             "projectiles": [
@@ -20074,6 +20676,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 0,
             "projectiles": [
@@ -20091,6 +20695,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 0,
             "projectiles": [
@@ -20167,6 +20773,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 4,
             "projectiles": [
@@ -20240,6 +20848,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 4,
             "projectiles": [
@@ -20342,6 +20952,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 5,
             "projectiles": [
@@ -20356,6 +20968,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 8,
             "projectiles": [
@@ -20371,6 +20985,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 11,
             "projectiles": [
@@ -20385,6 +21001,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 25,
             "projectiles": [
@@ -20399,6 +21017,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 20,
             "projectiles": [
@@ -20413,6 +21033,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 12,
             "projectiles": [
@@ -20427,6 +21049,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 18,
             "projectiles": [
@@ -20441,6 +21065,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 7,
             "projectiles": [
@@ -20580,6 +21206,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 15,
             "projectiles": [
@@ -20796,6 +21424,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 10,
             "projectiles": [
@@ -20812,6 +21442,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 6,
             "projectiles": [
@@ -20828,6 +21460,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 2,
             "projectiles": [
@@ -20844,6 +21478,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 14,
             "projectiles": [
@@ -20860,6 +21496,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 18,
             "projectiles": [
@@ -20876,6 +21514,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 7,
             "projectiles": [
@@ -20948,6 +21588,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -21021,6 +21663,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -21261,6 +21905,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 1,
             "projectiles": [
@@ -21333,6 +21979,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 4,
             "projectiles": [
@@ -21404,6 +22052,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 4,
             "projectiles": [
@@ -21476,6 +22126,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -21549,6 +22201,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -21691,6 +22345,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.12,
             "spread": 0,
             "projectiles": [
@@ -21763,6 +22419,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0,
             "spread": 0,
             "projectiles": [
@@ -21889,6 +22547,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0,
             "spread": 0,
             "projectiles": [
@@ -22015,6 +22675,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -22036,6 +22698,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -22057,6 +22721,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -22127,6 +22793,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 15,
             "projectiles": [
@@ -22141,6 +22809,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 20,
             "projectiles": [
@@ -22155,6 +22825,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 20,
             "projectiles": [
@@ -22169,6 +22841,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 10,
             "projectiles": [
@@ -22239,6 +22913,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 4,
             "projectiles": [
@@ -22312,6 +22988,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 4,
             "projectiles": [
@@ -22385,6 +23063,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -22456,6 +23136,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 6,
             "projectiles": [
@@ -22530,6 +23212,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 6,
             "projectiles": [
@@ -22609,6 +23293,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 2,
             "projectiles": [
@@ -22679,6 +23365,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -22749,6 +23437,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.06,
             "spread": 0,
             "projectiles": [
@@ -22819,6 +23509,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -22834,6 +23526,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 25,
             "projectiles": [
@@ -22849,6 +23543,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 25,
             "projectiles": [
@@ -22864,6 +23560,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 55,
             "projectiles": [
@@ -22879,6 +23577,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 55,
             "projectiles": [
@@ -23019,6 +23719,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -23033,6 +23735,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -23047,6 +23751,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -23061,6 +23767,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -23075,6 +23783,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 5,
             "projectiles": [
@@ -23089,6 +23799,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 5,
             "projectiles": [
@@ -23165,6 +23877,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 10,
             "projectiles": [
@@ -23179,6 +23893,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 10,
             "projectiles": [
@@ -23193,6 +23909,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 10,
             "projectiles": [
@@ -23207,6 +23925,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 10,
             "projectiles": [
@@ -23221,6 +23941,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 5,
             "projectiles": [
@@ -23235,6 +23957,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.65,
             "spread": 5,
             "projectiles": [
@@ -23308,6 +24032,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 14,
             "projectiles": [
@@ -23322,6 +24048,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 10,
             "projectiles": [
@@ -23336,6 +24064,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 40,
             "projectiles": [
@@ -23350,6 +24080,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 30,
             "projectiles": [
@@ -23366,6 +24098,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 15,
             "projectiles": [
@@ -23383,6 +24117,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -23459,6 +24195,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 14,
             "projectiles": [
@@ -23474,6 +24212,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 14,
             "projectiles": [
@@ -23489,6 +24229,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 14,
             "projectiles": [
@@ -23506,6 +24248,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 14,
             "projectiles": [
@@ -23522,6 +24266,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 14,
             "projectiles": [
@@ -23537,6 +24283,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 14,
             "projectiles": [
@@ -23611,6 +24359,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 0,
             "projectiles": [
@@ -23695,6 +24445,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -23881,6 +24633,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 0,
             "projectiles": [
@@ -23951,6 +24705,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 1,
             "projectiles": [
@@ -24023,6 +24779,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 10,
             "projectiles": [
@@ -24096,6 +24854,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 5,
             "projectiles": [
@@ -24111,6 +24871,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 20,
             "projectiles": [
@@ -24126,6 +24888,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 20,
             "projectiles": [
@@ -24199,6 +24963,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 10,
             "projectiles": [
@@ -24272,6 +25038,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 10,
             "projectiles": [
@@ -24345,6 +25113,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.082,
             "cooldownTime": 0.35,
             "spread": 3,
             "projectiles": [
@@ -24421,6 +25191,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 10,
             "projectiles": [
@@ -24435,6 +25207,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -24449,6 +25223,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 10,
             "projectiles": [
@@ -24463,6 +25239,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -24477,6 +25255,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 10,
             "projectiles": [
@@ -24491,6 +25271,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 10,
             "projectiles": [
@@ -24791,6 +25573,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -24868,6 +25652,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -24941,6 +25727,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -25014,6 +25802,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -25084,6 +25874,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -25155,6 +25947,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -25236,6 +26030,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -25315,6 +26111,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 0,
             "projectiles": [
@@ -25419,6 +26217,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 0,
             "projectiles": [
@@ -25495,6 +26295,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -25566,6 +26368,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 1,
             "projectiles": [
@@ -25637,6 +26441,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -25828,6 +26634,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -26017,6 +26825,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 0,
             "projectiles": [
@@ -26138,6 +26948,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 10,
             "projectiles": [
@@ -26208,6 +27020,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 10,
             "projectiles": [
@@ -26278,6 +27092,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 5,
             "projectiles": [
@@ -26353,6 +27169,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -26423,6 +27241,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.35,
             "spread": 0,
             "projectiles": [
@@ -26502,6 +27322,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 2,
             "projectiles": [
@@ -26573,6 +27395,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.08,
             "spread": 0,
             "projectiles": [
@@ -26648,6 +27472,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.08,
             "spread": 3,
             "projectiles": [
@@ -26719,6 +27545,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.35,
             "spread": 5,
             "projectiles": [
@@ -26789,6 +27617,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -26859,6 +27689,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -26873,6 +27705,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -26943,6 +27777,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -26957,6 +27793,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 5,
             "projectiles": [
@@ -27034,6 +27872,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -27052,6 +27892,8 @@
           },
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -27242,6 +28084,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.6,
             "spread": 0,
             "projectiles": [
@@ -27319,6 +28163,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 10,
             "projectiles": [
@@ -27389,6 +28235,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 3,
             "projectiles": [
@@ -27856,6 +28704,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -27929,6 +28779,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.72,
             "spread": 5,
             "projectiles": [
@@ -27999,6 +28851,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 11,
             "projectiles": [
@@ -28013,6 +28867,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 10,
             "projectiles": [
@@ -28027,6 +28883,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 13,
             "projectiles": [
@@ -28041,6 +28899,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 13,
             "projectiles": [
@@ -28055,6 +28915,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -28069,6 +28931,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -28139,6 +29003,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.13,
             "spread": 8,
             "projectiles": [
@@ -28211,6 +29077,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -28286,6 +29154,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 10,
             "projectiles": [
@@ -28301,6 +29171,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 2,
             "projectiles": [
@@ -28315,6 +29187,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -28329,6 +29203,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 50,
             "projectiles": [
@@ -28399,6 +29275,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.04,
             "spread": 45,
             "projectiles": [
@@ -28473,6 +29351,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.12,
             "spread": 5,
             "projectiles": [
@@ -28544,6 +29424,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -28616,6 +29498,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 5,
             "projectiles": [
@@ -28695,6 +29579,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -28709,6 +29595,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -28723,6 +29611,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -28737,6 +29627,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 30,
             "projectiles": [
@@ -28751,6 +29643,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 40,
             "projectiles": [
@@ -28765,6 +29659,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 15,
             "projectiles": [
@@ -28779,6 +29675,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -28793,6 +29691,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 50,
             "projectiles": [
@@ -28814,6 +29714,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -28831,6 +29733,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -28848,6 +29752,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -28865,6 +29771,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 30,
             "projectiles": [
@@ -28882,6 +29790,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 40,
             "projectiles": [
@@ -28899,6 +29809,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 15,
             "projectiles": [
@@ -28916,6 +29828,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -28933,6 +29847,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 50,
             "projectiles": [
@@ -29006,6 +29922,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
             "projectiles": [
@@ -29081,6 +29999,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.22,
             "spread": 5,
             "projectiles": [
@@ -29280,6 +30200,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -29303,6 +30225,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -29378,6 +30302,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -29448,6 +30374,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 8,
             "projectiles": [
@@ -29518,6 +30446,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0,
             "cooldownTime": 0.05,
             "spread": 180,
             "projectiles": [
@@ -29535,6 +30465,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0,
             "cooldownTime": 0.05,
             "spread": 180,
             "projectiles": [
@@ -29552,6 +30484,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0,
             "cooldownTime": 0.05,
             "spread": 180,
             "projectiles": [
@@ -29628,6 +30562,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 2,
+            "burstCooldownTime": 0.06,
             "cooldownTime": 0.14,
             "spread": 8,
             "projectiles": [
@@ -29698,6 +30634,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -29712,6 +30650,8 @@
           },
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -29726,6 +30666,8 @@
           },
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -29740,6 +30682,8 @@
           },
           {
             "shootStyle": "Burst",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -29810,6 +30754,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -30184,6 +31130,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 10,
             "projectiles": [
@@ -30323,6 +31271,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 10,
             "projectiles": [
@@ -30462,6 +31412,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -30601,6 +31553,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 1,
             "projectiles": [
@@ -30615,6 +31569,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 30,
             "projectiles": [
@@ -30629,6 +31585,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 15,
             "projectiles": [
@@ -30769,6 +31727,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.01,
             "spread": 0,
             "projectiles": [
@@ -30866,6 +31826,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -31057,6 +32019,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 7,
             "projectiles": [
@@ -31128,6 +32092,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.12,
             "spread": 4,
             "projectiles": [
@@ -31200,6 +32166,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.12,
             "spread": 0,
             "projectiles": [
@@ -31272,6 +32240,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 8,
             "projectiles": [
@@ -31349,6 +32319,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0,
             "cooldownTime": 0.05,
             "spread": 180,
             "projectiles": [
@@ -31366,6 +32338,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0,
             "cooldownTime": 0.05,
             "spread": 180,
             "projectiles": [
@@ -31383,6 +32357,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0,
             "cooldownTime": 0.05,
             "spread": 180,
             "projectiles": [
@@ -31579,6 +32555,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31599,6 +32577,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31619,6 +32599,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31639,6 +32621,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31659,6 +32643,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31738,6 +32724,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31758,6 +32746,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31778,6 +32768,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31798,6 +32790,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31818,6 +32812,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 5,
             "projectiles": [
@@ -31891,6 +32887,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 8,
             "projectiles": [
@@ -31905,6 +32903,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -31919,6 +32919,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
             "projectiles": [
@@ -31990,6 +32992,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -32013,6 +33017,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32029,6 +33035,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32052,6 +33060,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32068,6 +33078,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32091,6 +33103,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32107,6 +33121,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32123,6 +33139,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32139,6 +33157,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32155,6 +33175,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32171,6 +33193,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32187,6 +33211,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32203,6 +33229,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32219,6 +33247,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32242,6 +33272,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32258,6 +33290,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32274,6 +33308,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32290,6 +33326,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32306,6 +33344,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32322,6 +33362,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -32394,6 +33436,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.11,
             "spread": 4,
             "projectiles": [
@@ -32464,6 +33508,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 8,
             "projectiles": [
@@ -32534,6 +33580,8 @@
         "projectiles": [
           {
             "shootStyle": "Burst",
+            "burstShotCount": 4,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.2,
             "spread": 8,
             "projectiles": [
@@ -32703,6 +33751,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.15,
             "spread": 4,
             "projectiles": [
@@ -33080,6 +34130,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -33156,6 +34208,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 6,
             "projectiles": [
@@ -33232,6 +34286,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -33308,6 +34364,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -33384,6 +34442,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 6,
             "projectiles": [
@@ -33454,6 +34514,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 11,
             "projectiles": [
@@ -33468,6 +34530,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 10,
             "projectiles": [
@@ -33482,6 +34546,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 13,
             "projectiles": [
@@ -33496,6 +34562,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 13,
             "projectiles": [
@@ -33510,6 +34578,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 5,
             "projectiles": [
@@ -33524,6 +34594,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1.5,
             "spread": 5,
             "projectiles": [
@@ -33594,6 +34666,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 10,
             "projectiles": [
@@ -33608,6 +34682,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -33622,6 +34698,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
             "projectiles": [
@@ -33636,6 +34714,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 30,
             "projectiles": [
@@ -33650,6 +34730,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 25,
             "projectiles": [
@@ -33664,6 +34746,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 15,
             "projectiles": [
@@ -33734,6 +34818,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -33804,6 +34890,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 1,
             "projectiles": [
@@ -33968,6 +35056,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 10,
             "projectiles": [
@@ -34044,6 +35134,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.17,
             "spread": 8,
             "projectiles": [
@@ -34126,6 +35218,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -34150,6 +35244,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -34226,6 +35322,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 12,
             "projectiles": [
@@ -34621,6 +35719,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
             "cooldownTime": 0.1,
             "spread": 7,
             "projectiles": [
@@ -34806,6 +35906,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 10,
             "projectiles": [
@@ -34876,6 +35978,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 1,
             "projectiles": [
@@ -35046,6 +36150,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.22,
             "spread": 0,
             "projectiles": [
@@ -35120,6 +36226,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -35194,6 +36302,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -35267,6 +36377,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -35383,6 +36495,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.25,
             "spread": 4,
             "projectiles": [
@@ -35454,6 +36568,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -35468,6 +36584,8 @@
           },
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -35538,6 +36656,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -35553,6 +36673,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -35568,6 +36690,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -35583,6 +36707,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -35598,6 +36724,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -35613,6 +36741,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -35628,6 +36758,8 @@
           },
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
             "projectiles": [
@@ -35708,6 +36840,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -35852,6 +36986,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 0,
             "projectiles": [
@@ -36002,6 +37138,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.8,
             "spread": 5,
             "projectiles": [
@@ -36079,6 +37217,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 4,
             "projectiles": [
@@ -36266,6 +37406,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 0,
             "projectiles": [
@@ -36347,6 +37489,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -36361,6 +37505,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -36375,6 +37521,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -36389,6 +37537,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -36403,6 +37553,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -36473,6 +37625,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -36546,6 +37700,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.075,
             "spread": 5,
             "projectiles": [
@@ -36623,6 +37779,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 4,
             "projectiles": [
@@ -36699,6 +37857,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 1,
             "projectiles": [
@@ -36770,6 +37930,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 4,
             "projectiles": [
@@ -36840,6 +38002,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 10,
             "projectiles": [
@@ -36910,6 +38074,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.11,
             "spread": 4,
             "projectiles": [
@@ -36980,6 +38146,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.8,
             "spread": 10,
             "projectiles": [
@@ -36994,6 +38162,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.8,
             "spread": 20,
             "projectiles": [
@@ -37008,6 +38178,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.8,
             "spread": 30,
             "projectiles": [
@@ -37078,6 +38250,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -37150,6 +38324,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 10,
             "projectiles": [
@@ -37220,6 +38396,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 1,
             "projectiles": [
@@ -37298,6 +38476,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -37315,6 +38495,8 @@
           },
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -37332,6 +38514,8 @@
           },
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -37349,6 +38533,8 @@
           },
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -37424,6 +38610,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -37438,6 +38626,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -37452,6 +38642,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -37466,6 +38658,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -37480,6 +38674,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 5,
             "projectiles": [
@@ -37494,6 +38690,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 5,
             "projectiles": [
@@ -37565,6 +38763,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 10,
             "projectiles": [
@@ -37639,6 +38839,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -37709,6 +38911,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -37780,6 +38984,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 1,
             "projectiles": [
@@ -37866,6 +39072,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 0,
             "projectiles": [
@@ -37936,6 +39144,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 10,
             "projectiles": [
@@ -37952,6 +39162,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 6,
             "projectiles": [
@@ -37968,6 +39180,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 2,
             "projectiles": [
@@ -37984,6 +39198,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 14,
             "projectiles": [
@@ -38000,6 +39216,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 18,
             "projectiles": [
@@ -38016,6 +39234,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.66,
             "spread": 7,
             "projectiles": [
@@ -38089,6 +39309,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -38167,6 +39389,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -38181,6 +39405,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -38195,6 +39421,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -38209,6 +39437,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 10,
             "projectiles": [
@@ -38223,6 +39453,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 5,
             "projectiles": [
@@ -38237,6 +39469,8 @@
           },
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.7,
             "spread": 5,
             "projectiles": [
@@ -38307,6 +39541,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 7,
             "projectiles": [
@@ -38449,6 +39685,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -38523,6 +39761,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -38549,6 +39789,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -38621,6 +39863,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 12,
             "projectiles": [
@@ -38665,6 +39909,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -38738,6 +39984,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -38759,6 +40007,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -38836,6 +40086,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -38857,6 +40109,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -38928,6 +40182,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -38952,6 +40208,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39025,6 +40283,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39046,6 +40306,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39117,6 +40379,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39141,6 +40405,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39212,6 +40478,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39234,6 +40502,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39313,6 +40583,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -39330,6 +40602,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -39344,6 +40618,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 7,
             "projectiles": [
@@ -39358,6 +40634,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -39372,6 +40650,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -39386,6 +40666,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -39400,6 +40682,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 10,
             "projectiles": [
@@ -39421,6 +40705,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -39498,6 +40784,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -39575,6 +40863,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
             "projectiles": [
@@ -39670,6 +40960,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 11,
             "projectiles": [
@@ -39742,6 +41034,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -39763,6 +41057,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 0,
             "projectiles": [
@@ -39834,6 +41130,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39856,6 +41154,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39930,6 +41230,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -39954,6 +41256,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -40030,6 +41334,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -40044,6 +41350,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -40058,6 +41366,8 @@
           },
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -40079,6 +41389,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
             "projectiles": [
@@ -40154,6 +41466,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 0,
             "projectiles": [
@@ -40227,6 +41541,8 @@
         "projectiles": [
           {
             "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 7,
             "projectiles": [
@@ -40300,6 +41616,8 @@
         "projectiles": [
           {
             "shootStyle": "Charged",
+            "burstShotCount": 1,
+            "burstCooldownTime": 0.05,
             "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
@@ -40557,6 +41875,8 @@
         "projectiles": [
           {
             "shootStyle": "SemiAutomatic",
+            "burstShotCount": 0,
+            "burstCooldownTime": 0.08,
             "cooldownTime": 0.8,
             "spread": 0,
             "projectiles": [
@@ -40634,6 +41954,8 @@
         "projectiles": [
           {
             "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
             "cooldownTime": 0.05,
             "spread": 0,
             "projectiles": [

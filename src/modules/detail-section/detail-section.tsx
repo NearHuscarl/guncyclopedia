@@ -7,7 +7,7 @@ import { Tier } from "./tier";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Circle } from "./circle";
-import { createAggregatedProjectileData } from "@/client";
+import { createAggregatedProjectileData, getEstimatedShotsPerSecond } from "@/client";
 import { useAppState } from "../shared/hooks/useAppState";
 import { useSelectedGun } from "../shared/hooks/useGuns";
 import { useLoaderData } from "../shared/hooks/useLoaderData";
@@ -18,9 +18,11 @@ function getAggregatedProjectile(projectiles: TProjectilePerShot[]) {
   if (pp.length === 0) {
     throw new Error("Cannot compute average projectile from an empty list.");
   }
-  const finalProjectile = {
+  const finalProjectile: TProjectilePerShot = {
     cooldownTime: 0,
     spread: 0,
+    burstShotCount: projectiles[0].burstShotCount,
+    burstCooldownTime: projectiles[0].burstCooldownTime,
     shootStyle: projectiles[0].shootStyle,
     projectiles: [createAggregatedProjectileData(pp, "sum")],
   };
@@ -76,6 +78,11 @@ export function DetailSection() {
   const projData = createAggregatedProjectileData(projectilePool, "avg");
   const aggregatedProjData = aggregatedProjectile.projectiles[0];
   const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
+  const shotsPerSecond = getEstimatedShotsPerSecond(gun.reloadTime, magazineSize, projectile, mode.chargeTime);
+  const dps = {
+    current: shotsPerSecond * projData.damage,
+    aggregated: shotsPerSecond * aggregatedProjData.damage,
+  };
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
@@ -107,6 +114,7 @@ export function DetailSection() {
         </div>
       </div>
       <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 pr-2">
+        <StatBar label="DPS" value={dps.aggregated} max={100} modifier={dps.current - dps.aggregated} />
         <StatBar label="Magazine Size" value={magazineSize} max={Math.min(stats.maxMagazineSize, gun.maxAmmo)} />
         <StatBar
           label="Max Ammo"
