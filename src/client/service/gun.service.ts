@@ -31,7 +31,7 @@ export class GunService {
   }) {
     const { reloadTime, magazineSize, projectile, chargeTime } = input;
     const { shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = projectile;
-    if (cooldownTime <= 0) {
+    if (cooldownTime <= 0 && shootStyle !== "Charged") {
       return 0;
     }
     let timeBetweenShots = cooldownTime;

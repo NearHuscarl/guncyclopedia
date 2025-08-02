@@ -84,7 +84,7 @@ export class ProjectileService {
       ignoreDamageCaps: true,
       canPenetrateObjects: true,
       isHoming: true,
-      homingAnddamageAllEnemies: true,
+      damageAllEnemies: true,
     };
 
     // ---------- aggregate ----------

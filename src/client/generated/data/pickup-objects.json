@@ -4769,7 +4769,8 @@
                 "damage": 10,
                 "speed": 1,
                 "range": 1,
-                "force": 0
+                "force": 0,
+                "damageAllEnemies": true
               }
             ]
           }
@@ -4778,7 +4779,9 @@
     ],
     "maxAmmo": 60,
     "reloadTime": 2,
-    "featureFlags": [],
+    "featureFlags": [
+      "damageAllEnemies"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -20592,8 +20595,8 @@
                 "speed": -1,
                 "range": 30,
                 "force": 10,
-                "isHoming": true,
-                "homingAnddamageAllEnemies": true
+                "damageAllEnemies": true,
+                "isHoming": true
               }
             ]
           }
@@ -20603,7 +20606,8 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "damageAllEnemies"
     ],
     "animation": {
       "name": "No_Animation",
@@ -20669,8 +20673,8 @@
                 "speed": -1,
                 "range": 30,
                 "force": 10,
-                "isHoming": true,
-                "homingAnddamageAllEnemies": true
+                "damageAllEnemies": true,
+                "isHoming": true
               }
             ]
           },
@@ -20718,7 +20722,8 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "damageAllEnemies"
     ],
     "animation": {
       "name": "No_Animation",
@@ -26452,8 +26457,7 @@
                 "speed": -1,
                 "range": 30,
                 "force": 10,
-                "isHoming": true,
-                "homingAnddamageAllEnemies": false
+                "isHoming": true
               }
             ]
           }
@@ -26645,8 +26649,7 @@
                 "speed": -1,
                 "range": 30,
                 "force": 10,
-                "isHoming": true,
-                "homingAnddamageAllEnemies": false
+                "isHoming": true
               }
             ]
           }
@@ -31738,8 +31741,7 @@
                 "speed": -1,
                 "range": 30,
                 "force": 10,
-                "isHoming": true,
-                "homingAnddamageAllEnemies": false
+                "isHoming": true
               }
             ]
           }
@@ -38774,8 +38776,7 @@
                 "speed": -1,
                 "range": 30,
                 "force": 10,
-                "isHoming": true,
-                "homingAnddamageAllEnemies": false
+                "isHoming": true
               }
             ]
           }
@@ -40119,7 +40120,8 @@
                 "damage": 10,
                 "speed": 1,
                 "range": 1,
-                "force": 0
+                "force": 0,
+                "damageAllEnemies": true
               }
             ]
           }
@@ -40128,7 +40130,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.54,
-    "featureFlags": [],
+    "featureFlags": [
+      "damageAllEnemies"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,

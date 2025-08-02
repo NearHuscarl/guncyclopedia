@@ -37,9 +37,9 @@ const Projectile = z.object({
    */
   penetration: z.number().optional(),
   canPenetrateObjects: z.boolean().optional(),
+  damageAllEnemies: z.boolean().optional(),
 
   isHoming: z.boolean().optional(),
-  homingAnddamageAllEnemies: z.boolean().optional(),
   homingRadius: z.number().optional(),
   homingAngularVelocity: z.number().optional(),
 
@@ -167,6 +167,7 @@ export const Gun = PickupObject.extend({
       "hasTieredProjectiles",
       "hasHomingProjectiles",
       "hasProjectilePool",
+      "damageAllEnemies",
     ]),
   ),
   blankReloadRadius: z.number().optional(),

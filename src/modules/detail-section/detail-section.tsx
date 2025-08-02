@@ -13,10 +13,13 @@ import { useLoaderData } from "../shared/hooks/useLoaderData";
 import { ProjectilesPerShot } from "./projectiles-per-shot";
 import { GunService } from "@/client/service/gun.service";
 import { ProjectileService } from "@/client/service/projectile.service";
+import { useIsDebug } from "../shared/hooks/useDebug";
+import { Tags } from "./tags";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
   const gun = useSelectedGun();
+  const debug = useIsDebug();
   const stats = useLoaderData((state) => state.stats);
   const [modeIndex, _setModeIndex] = useState(0);
   const [hoverProjectileIndex, setHoverProjectileIndex] = useState(-1);
@@ -176,7 +179,8 @@ export function DetailSection() {
             </div>
           )}
         </div>
-        <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(other, null, 2)}</pre>
+        <Tags gun={gun} />
+        {debug && <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(other, null, 2)}</pre>}
       </div>
     </div>
   );

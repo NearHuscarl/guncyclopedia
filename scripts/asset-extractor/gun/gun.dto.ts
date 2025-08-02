@@ -90,7 +90,6 @@ const GunData = z
     /**
      * A reference to a ProjectileVolleyData asset that defines complex firing behavior, e.g.:
      * - Multiple projectiles per shot (Old Goldie, Crown of Guns)
-     * - Different types of projectiles fired per shot (Planet Gun)
      *
      * According to `Gun.cs#ForceFireProjectile()` and many other instances in Gun.cs, when projectile modules
      * inside volley are defined, singleModule is ignored completely.

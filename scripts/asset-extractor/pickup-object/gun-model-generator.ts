@@ -152,6 +152,9 @@ export class GunModelGenerator {
       proj.isHoming = true;
       proj.stunChance = 1; // CerebralBoreProjectile always stuns.
     }
+    if (projScript.endsWith("InstantlyDamageAllProjectile.cs.meta")) {
+      proj.damageAllEnemies = true;
+    }
     if (projDto.homingModifier) {
       proj.isHoming = true;
       proj.homingRadius = projDto.homingModifier.HomingRadius;
@@ -170,7 +173,9 @@ export class GunModelGenerator {
     }
     if (projDto.raidenBeamController) {
       proj.isHoming = true;
-      proj.homingAnddamageAllEnemies = projDto.raidenBeamController.maxTargets === -1;
+      if (projDto.raidenBeamController.maxTargets === -1) {
+        proj.damageAllEnemies = true;
+      }
     }
     if (gunDto.predatorGunController) {
       proj.isHoming = true;
@@ -180,6 +185,9 @@ export class GunModelGenerator {
 
     if (proj.isHoming) {
       this._featureFlags.add("hasHomingProjectiles");
+    }
+    if (proj.damageAllEnemies) {
+      this._featureFlags.add("damageAllEnemies");
     }
 
     return proj;
