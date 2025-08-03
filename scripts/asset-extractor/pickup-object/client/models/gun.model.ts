@@ -14,6 +14,23 @@ const Projectile = z.object({
   force: z.number(),
 
   /**
+   * Extra damage from explosion, ricochet, or custom projectile like blackhole
+   */
+  additionalDamage: z.array(
+    z.object({
+      type: z.enum(["dps", "instant"]).optional().default("instant"),
+      /**
+       * If `isEstimated` is true, the damage is an estimate based on the best outcome.
+       *
+       * E.g. for ricochets, the damage is computed as if all bounces hit an enemy.
+       */
+      isEstimated: z.boolean().optional(),
+      source: z.enum(["ricochet", "blackhole"]),
+      damage: z.number(),
+    }),
+  ),
+
+  /**
    * Chance to spawn this projectile = `spawnWeight / projectileModes.length`.
    */
   spawnWeight: z.number().optional(),
@@ -31,6 +48,7 @@ const Projectile = z.object({
    * Chance to die on bounce. Default is `0`.
    */
   chanceToDieOnBounce: Percentage.optional(),
+  damageMultiplierOnBounce: z.number().nonnegative().optional(),
 
   /**
    * The number of times the projectile can pierce through enemies or objects.

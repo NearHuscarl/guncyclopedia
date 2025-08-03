@@ -1,11 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { Github, BookOpenText } from "lucide-react";
+import { Github, BookOpenText, Youtube } from "lucide-react";
 import { useSelectedGun } from "../shared/hooks/useGuns";
 
 export function TopBarLinks() {
   const gun = useSelectedGun();
   return (
     <div>
+      {gun.video && (
+        <Button asChild variant="ghost" size="icon" aria-label="YouTube video" slot="a">
+          <a href={gun.video} target="_blank" rel="noopener noreferrer">
+            <Youtube />
+          </a>
+        </Button>
+      )}
       {gun.name && (
         <Button asChild variant="ghost" size="icon" aria-label="GitHub source code" slot="a">
           <a

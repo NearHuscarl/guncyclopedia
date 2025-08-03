@@ -75,6 +75,35 @@ export class GunModelGenerator {
     this._spriteAnimatorRepo = input.spriteAnimatorRepo;
   }
 
+  /**
+   * https://chatgpt.com/share/688f83f3-92e0-8010-ae87-780c262d6050
+   */
+  private _computeMaxRicochetDamage(
+    baseDamage: number,
+    numberOfBounces: number,
+    chanceToDieOnBounce: number,
+    damageMultiplierOnBounce: number,
+  ): number {
+    const survivalChance = 1 - chanceToDieOnBounce;
+    const finalDamage = baseDamage * damageMultiplierOnBounce;
+
+    // Special case: if it always survives, just return N * bounce damage
+    if (survivalChance === 1) {
+      return numberOfBounces * finalDamage;
+    }
+
+    const s = survivalChance;
+    const n = numberOfBounces;
+
+    // Step 1: compute expected number of successful bounces using geometric sum
+    const expectedBounces = (s * (1 - Math.pow(s, n))) / (1 - s);
+
+    // Step 2: each bounce deals partial damage, so apply multiplier
+    const expectedBounceDamage = expectedBounces * finalDamage;
+
+    return expectedBounceDamage;
+  }
+
   private _getGunVolley(gunDto: TGunDto): TVolleyDto | undefined {
     if (!this._assetService.referenceExists(gunDto.gun.rawVolley)) {
       return undefined;
@@ -111,6 +140,7 @@ export class GunModelGenerator {
       speed: projDto.projectile.baseData.speed,
       range: projDto.projectile.baseData.range,
       force: projDto.projectile.baseData.force,
+      additionalDamage: [],
     };
 
     if (projDto.projectile.ignoreDamageCaps) proj.ignoreDamageCaps = true;
@@ -133,8 +163,20 @@ export class GunModelGenerator {
 
     if (projDto.bounceProjModifier) {
       proj.numberOfBounces = projDto.bounceProjModifier.numberOfBounces;
+      proj.damageMultiplierOnBounce = projDto.bounceProjModifier.damageMultiplierOnBounce;
       if ((projDto.bounceProjModifier.chanceToDieOnBounce ?? 0) > 0)
         proj.chanceToDieOnBounce = projDto.bounceProjModifier.chanceToDieOnBounce;
+
+      proj.additionalDamage.push({
+        source: "ricochet",
+        isEstimated: true,
+        damage: this._computeMaxRicochetDamage(
+          proj.damage,
+          projDto.bounceProjModifier.numberOfBounces,
+          projDto.bounceProjModifier.chanceToDieOnBounce ?? 0,
+          projDto.bounceProjModifier.damageMultiplierOnBounce,
+        ),
+      });
     }
     if (projDto.pierceProjModifier) {
       proj.penetration = projDto.pierceProjModifier.penetration;
@@ -154,6 +196,13 @@ export class GunModelGenerator {
     }
     if (projScript.endsWith("InstantlyDamageAllProjectile.cs.meta")) {
       proj.damageAllEnemies = true;
+    }
+    if (projDto.blackHoleDoer) {
+      proj.additionalDamage.push({
+        type: "dps",
+        source: "blackhole",
+        damage: projDto.blackHoleDoer.damageToEnemiesPerSecond,
+      });
     }
     if (projDto.homingModifier) {
       proj.isHoming = true;

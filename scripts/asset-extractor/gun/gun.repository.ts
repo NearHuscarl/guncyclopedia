@@ -98,8 +98,8 @@ export class GunRepository {
       if (!res.encounterTrackable?.m_journalData.AmmonomiconSprite && !res.gun?.idleAnimation) {
         console.warn(
           chalk.yellow(
-            `Skip parsing gun: ${res.gun?.gunName} (${res.gun?.PickupObjectId}) because it has no idle sprite`
-          )
+            `Skip parsing gun: ${res.gun?.gunName} (${res.gun?.PickupObjectId}) because it has no idle sprite`,
+          ),
         );
         return undefined;
       }

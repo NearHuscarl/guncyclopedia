@@ -15,6 +15,7 @@ import { GunService } from "@/client/service/gun.service";
 import { ProjectileService } from "@/client/service/projectile.service";
 import { useIsDebug } from "../shared/hooks/useDebug";
 import { Tags } from "./tags";
+import { StatStackBar } from "./stat-stack-bar";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
@@ -46,7 +47,7 @@ export function DetailSection() {
   }
 
   const { animation, name, ...other } = gun;
-  const { dps, magazineSize, mode, projectilePerShot, projectile } = GunService.computeGunStats(
+  const { dps, damage, reloadTime, magazineSize, mode, projectilePerShot, projectile } = GunService.computeGunStats(
     gun,
     modeIndex,
     currentProjectileIndex,
@@ -85,7 +86,7 @@ export function DetailSection() {
         </div>
       </div>
       <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 pr-2">
-        <StatBar label="DPS" value={dps.aggregated} max={100} modifier={dps.current - dps.aggregated} />
+        <StatStackBar label="DPS" max={100} segments={dps.currentDetails} />
         <StatBar label="Magazine Size" value={magazineSize} max={Math.min(stats.maxMagazineSize, gun.maxAmmo)} />
         <StatBar
           label="Max Ammo"
@@ -95,8 +96,9 @@ export function DetailSection() {
         <StatBar
           label="Reload Time"
           isNegativeStat
-          value={magazineSize === gun.maxAmmo ? 0 : gun.reloadTime}
+          value={reloadTime}
           max={stats.maxReloadTime}
+          precision={2}
           unit="s"
         />
         {mode.chargeTime !== undefined && (
@@ -109,11 +111,13 @@ export function DetailSection() {
           onBlur={() => setHoverProjectileIndex(-1)}
           isSelected={(i) => hoverProjectileIndex === i || selectedProjectileIndex === i}
         />
+        <StatStackBar label="Damage" segments={damage.currentDetails} max={100} />
         <StatBar
           label="Cooldown Time"
           isNegativeStat
           value={projectilePerShot.aggregated.cooldownTime}
           max={stats.maxCooldownTime}
+          precision={2}
           modifier={projectilePerShot.current.cooldownTime - projectilePerShot.aggregated.cooldownTime}
           unit="s"
         />
@@ -124,12 +128,6 @@ export function DetailSection() {
           max={stats.maxSpread}
           modifier={projectilePerShot.current.spread - projectilePerShot.aggregated.spread}
           unit="°"
-        />
-        <StatBar
-          label="Damage"
-          value={projectile.aggregated.damage}
-          max={100}
-          modifier={projectile.current.damage - projectile.aggregated.damage}
         />
         <StatBar
           label="Range"

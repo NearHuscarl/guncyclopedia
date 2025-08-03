@@ -1,4 +1,4 @@
-import type { BooleanKeys, NumericKeys } from "@/lib/types";
+import type { ArrayKeys, BooleanKeys, NumericKeys } from "@/lib/types";
 import type { TProjectile, TProjectilePerShot } from "../generated/models/gun.model";
 
 type AggregateModeOption = "sum" | "avg";
@@ -8,6 +8,9 @@ type NumericAggregateConfig = {
 };
 type BooleanAggregateConfig = {
   [K in BooleanKeys<TProjectile>]: true;
+};
+type ArrayAggregateConfig = {
+  [K in ArrayKeys<TProjectile>]: true;
 };
 
 export class ProjectileService {
@@ -41,7 +44,7 @@ export class ProjectileService {
   }
 
   /**
-   * Compute an 'average' projectile from a list.
+   * Compute an 'aggregated' projectile from a list.
    *
    * - Numeric & percentage fields are averaged; missing values are `0`
    *   (`spawnWeight` is always `1` as there is only one projectile).
@@ -71,6 +74,7 @@ export class ProjectileService {
       cheeseChance: ["avg", "max"],
       numberOfBounces: ["avg", "avg"],
       chanceToDieOnBounce: ["avg", "avg"],
+      damageMultiplierOnBounce: ["avg", "avg"],
       penetration: ["avg", "max"],
       homingRadius: ["avg", "avg"],
       homingAngularVelocity: ["avg", "avg"],
@@ -86,14 +90,20 @@ export class ProjectileService {
       isHoming: true,
       damageAllEnemies: true,
     };
+    //
+    // @ts-expect-error alert linter to update new properties
+    const _aAggregateConfig: ArrayAggregateConfig = {
+      additionalDamage: true,
+    };
 
     // ---------- aggregate ----------
     const sums: Record<string, number> = {};
-
     Object.keys(nAggregateConfig).forEach((k) => (sums[k] = 0));
 
     const hasTrue: Record<string, boolean> = {};
     Object.keys(bAggregateConfig).forEach((k) => (hasTrue[k] = true));
+
+    const additionaDmg: Record<string, TProjectile["additionalDamage"][number]> = {};
 
     for (const p of projectiles) {
       for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
@@ -112,6 +122,25 @@ export class ProjectileService {
         const v = p[key] ?? true; // default to true
         hasTrue[key] = hasTrue[key] || v;
       });
+
+      if (mode === "sum") {
+        for (const d of p.additionalDamage) {
+          if (!additionaDmg[d.source]) {
+            additionaDmg[d.source] = { ...d, damage: 0 };
+          }
+          // other fields should be the same, so we can just sum the damage
+          additionaDmg[d.source].damage += d.damage;
+        }
+      } else if (mode === "avg") {
+        if (p.additionalDamage.length > 1) {
+          console.log(p);
+          throw new Error(
+            `Calculate average array field of additionalDamage with more than one element is not implemented.`,
+          );
+        } else if (p.additionalDamage.length === 1) {
+          additionaDmg[p.additionalDamage[0].source] = { ...p.additionalDamage[0] };
+        }
+      }
     }
     for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
       const key = k as NumericKeys<TProjectile>;
@@ -127,6 +156,7 @@ export class ProjectileService {
 
     Object.keys(nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));
     Object.keys(bAggregateConfig).forEach((k) => (final[k as BooleanKeys<TProjectile>] = hasTrue[k]));
+    final.additionalDamage = Object.values(additionaDmg);
 
     return final as TProjectile;
   }

@@ -47,7 +47,7 @@ export function getGunStats() {
       maxReloadTime,
       maxMagazineSize: Math.min(maxMagazineSize, 100),
       maxChargeTime,
-      maxCooldownTime: Math.min(maxCooldownTime, 1),
+      maxCooldownTime: Math.min(maxCooldownTime, 0.5),
       maxSpread: Math.min(maxSpread, 30),
     },
   };

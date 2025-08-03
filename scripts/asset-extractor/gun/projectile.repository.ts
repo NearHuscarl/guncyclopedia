@@ -8,6 +8,7 @@ import { restoreCache, saveCache } from "../utils/cache.ts";
 import { ProjectileDto } from "./projectile.dto.ts";
 import type {
   TBasicBeamControllerData,
+  TBlackHoleDoerData,
   TBounceProjModifierData,
   THomingModifierData,
   TPierceProjModifierData,
@@ -61,6 +62,9 @@ export class ProjectileRepository {
   private _isRaidenBeamControllerData(obj: unknown): obj is TRaidenBeamControllerData {
     return this._containsScript(obj, AssetService.RAIDEN_BEAM_CONTROLLER_SCRIPT);
   }
+  private _isBlackHoleDoer(obj: unknown): obj is TBlackHoleDoerData {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("BlackHoleDoer.cs.meta");
+  }
 
   private async _getAllProjectileRefabFiles() {
     const res: string[] = [];
@@ -101,6 +105,8 @@ export class ProjectileRepository {
           res.basicBeamController = block;
         } else if (this._isRaidenBeamControllerData(block)) {
           res.raidenBeamController = block;
+        } else if (this._isBlackHoleDoer(block)) {
+          res.blackHoleDoer = block;
         }
       }
 

@@ -53,6 +53,7 @@ const ProjectileData = MonoBehaviour.extend({
 const BounceProjModifierData = z.object({
   numberOfBounces: z.number(),
   chanceToDieOnBounce: z.number(),
+  damageMultiplierOnBounce: z.number(),
 });
 
 const PierceProjModifierData = z.object({
@@ -76,6 +77,11 @@ const RaidenBeamControllerData = z.object({
   maxTargets: z.number(),
 });
 
+const BlackHoleDoerData = z.object({
+  damageRadius: z.number(),
+  damageToEnemiesPerSecond: z.number(),
+});
+
 export const ProjectileDto = z.object({
   id: z.string(),
   projectile: ProjectileData,
@@ -84,6 +90,7 @@ export const ProjectileDto = z.object({
   homingModifier: HomingModifierData.optional(),
   basicBeamController: BasicBeamControllerData.optional(),
   raidenBeamController: RaidenBeamControllerData.optional(),
+  blackHoleDoer: BlackHoleDoerData.optional(),
 });
 
 export type TProjectileDto = z.input<typeof ProjectileDto>;
@@ -93,3 +100,4 @@ export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
 export type THomingModifierData = z.infer<typeof HomingModifierData>;
 export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;
+export type TBlackHoleDoerData = z.input<typeof BlackHoleDoerData>;
