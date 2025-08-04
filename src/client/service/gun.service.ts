@@ -63,8 +63,10 @@ export class GunService {
       return [
         `Potential damage from ricochets: <strong>${formatNumber(additionalDamage.damage, 2)}</strong><br />`,
         `- numberOfBounces: <strong>${numberOfBounces}</strong><br />`,
-        (chanceToDieOnBounce ?? 0) > 0 && `- chanceToDieOnBounce: <strong>${chanceToDieOnBounce}</strong><br />`,
-        damageMultiplierOnBounce !== 1 && `- damageMultiplierOnBounce: <strong>${damageMultiplierOnBounce}</strong>`,
+        (chanceToDieOnBounce ?? 0) > 0 &&
+          `- chanceToDieOnBounce: <strong>${formatNumber(chanceToDieOnBounce ?? 0, 2)}</strong><br />`,
+        damageMultiplierOnBounce !== 1 &&
+          `- damageMultiplierOnBounce: <strong>${formatNumber(damageMultiplierOnBounce ?? 1, 2)}</strong>`,
       ]
         .filter(Boolean)
         .join("\n");

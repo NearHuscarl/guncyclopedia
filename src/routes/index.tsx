@@ -10,6 +10,7 @@ const schema = z.object({
   debug: z.boolean().optional(),
   selectedId: z.number().int().nonnegative().optional(),
   sortBy: z.enum(["none", "quality", "maxAmmo", "cooldownTime"]).optional(),
+  color: z.string().optional(),
 });
 
 export const Route = createFileRoute("/")({

@@ -16,6 +16,7 @@ import { ProjectileService } from "@/client/service/projectile.service";
 import { useIsDebug } from "../shared/hooks/useDebug";
 import { Tags } from "./tags";
 import { StatStackBar } from "./stat-stack-bar";
+import { basicColors } from "@/client/generated/models/color.model";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
@@ -86,6 +87,16 @@ export function DetailSection() {
         </div>
       </div>
       <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 pr-2">
+        {debug &&
+          gun.animation.frames[0].colors.map((c) => {
+            return (
+              <div
+                className="w-5 h-5 inline-block"
+                title={c}
+                style={{ backgroundColor: basicColors[c][1] ?? basicColors[c][0] }}
+              />
+            );
+          })}
         <StatStackBar label="DPS" max={100} segments={dps.currentDetails} />
         <StatBar label="Magazine Size" value={magazineSize} max={Math.min(stats.maxMagazineSize, gun.maxAmmo)} />
         <StatBar

@@ -10,6 +10,7 @@ import { useGuns } from "../shared/hooks/useGuns";
 function useGunResults() {
   const guns = useGuns();
   const sortBy = useAppState((state) => state.sortBy);
+  const color = useAppState((state) => state.color);
 
   const effectiveGuns = useMemo(() => {
     if (sortBy === "none") return guns;
@@ -19,19 +20,21 @@ function useGunResults() {
       return acc;
     }, {});
 
-    return [...guns].sort((a, b) => {
-      switch (sortBy) {
-        case "quality":
-          return qualityWeights[b.quality] - qualityWeights[a.quality];
-        case "maxAmmo":
-          return b.maxAmmo - a.maxAmmo;
-        case "cooldownTime":
-          return b.reloadTime - a.reloadTime;
-        default:
-          return b.id - a.id;
-      }
-    });
-  }, [guns, sortBy]);
+    return guns
+      .filter((g) => (!color ? true : g.animation.frames[0].colors[0] === color))
+      .sort((a, b) => {
+        switch (sortBy) {
+          case "quality":
+            return qualityWeights[b.quality] - qualityWeights[a.quality];
+          case "maxAmmo":
+            return b.maxAmmo - a.maxAmmo;
+          case "cooldownTime":
+            return b.reloadTime - a.reloadTime;
+          default:
+            return b.id - a.id;
+        }
+      });
+  }, [guns, sortBy, color]);
 
   return effectiveGuns;
 }

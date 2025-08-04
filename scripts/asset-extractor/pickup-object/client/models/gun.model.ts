@@ -210,6 +210,10 @@ export const Gun = PickupObject.extend({
     frames: z.array(
       z.object({
         spriteName: z.string(),
+        /**
+         * List of dominant colors of the sprite. The first color is the most dominant (primary), followed by secondary, tertiary, etc.
+         */
+        colors: z.array(z.string()),
         spriteId: z.number().min(-1),
         flipped: z.boolean(),
         uvs: z.tuple([Position, Position, Position, Position]),

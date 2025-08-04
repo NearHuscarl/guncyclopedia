@@ -17,6 +17,7 @@ import { AssetService } from "../asset/asset-service.ts";
 import { SpriteService } from "../sprite/sprite.service.ts";
 import { SpriteAnimatorRepository } from "../sprite/sprite-animator.repository.ts";
 import { WrapMode } from "../sprite/sprite-animator.dto.ts";
+import { basicColors } from "./client/models/color.model.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
@@ -400,11 +401,11 @@ export class GunModelGenerator {
 
       if (clip.clipData) {
         for (const frame of clip.clipData.frames) {
-          const { spriteData, texturePath: spriteTexturePath } = await this._spriteService.getSprite(
-            frame.spriteCollection,
-            frame.spriteId,
-            gunDto,
-          );
+          const {
+            spriteData,
+            texturePath: spriteTexturePath,
+            colors,
+          } = await this._spriteService.getSprite(frame.spriteCollection, frame.spriteId, gunDto, basicColors);
           if (!spriteData.name) {
             throw new Error(
               `Sprite data is missing a name for frame ${frame.spriteId} of clip ${chalk.green(animationName)}`,
@@ -415,6 +416,7 @@ export class GunModelGenerator {
             uvs: spriteData.uvs,
             spriteId: frame.spriteId,
             flipped: Boolean(spriteData.flipped),
+            colors: colors,
           });
           if (texturePath) {
             assert(texturePath === spriteTexturePath, "All frames must have the same texture path");
@@ -449,9 +451,9 @@ export class GunModelGenerator {
     }
     let res: Awaited<ReturnType<typeof this._spriteService.getSprite>> | null = null;
     try {
-      res = await this._spriteService.getSprite(gunDto.sprite.collection, spriteName, gunDto);
+      res = await this._spriteService.getSprite(gunDto.sprite.collection, spriteName, gunDto, basicColors);
     } catch {
-      res = await this._spriteService.getSpriteFromAmmononicon(spriteName, gunDto);
+      res = await this._spriteService.getSpriteFromAmmononicon(spriteName, gunDto, basicColors);
     }
 
     return {
@@ -467,6 +469,7 @@ export class GunModelGenerator {
           spriteName: res.spriteData.name,
           spriteId: -1, // no sprite ID
           uvs: res.spriteData.uvs,
+          colors: res.colors,
           flipped: Boolean(res.spriteData.flipped),
         },
       ],

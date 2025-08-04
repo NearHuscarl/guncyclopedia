@@ -4,6 +4,7 @@ import { defineConfig, devices } from "@playwright/test";
 // test guns with edge cases:
 // old goldie -> inspect multiple projectiles per shot
 // heroine -> inspect fps due to charge time + magazine size > 0
+// color filter -> Tetrominator
 
 /**
  * Read environment variables from file.

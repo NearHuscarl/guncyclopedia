@@ -26,7 +26,7 @@ type TStatStackProps = {
  * pad the segments array to at least 5 items for smoother transitions (e.g. prevent hard
  * jumps when number of segments changes)
  */
-function padSegments<T extends { value: number }>(segments: T[], minLength: number = 5): T[] {
+function padSegments<T extends { value: number }>(segments: T[], minLength: number): T[] {
   const padded = [...segments];
   while (padded.length < minLength) {
     padded.push({ value: 0 } as T);
@@ -43,6 +43,8 @@ export function StatStackBar({ label, max, precision = 1, segments, isNegativeSt
     ) ?? 0;
   const bestValue = sumBy(segments, "value") ?? 0;
   const prevIsNegativeStat = usePrevious(isNegativeStat);
+  const maxNumberOfSegments = 5;
+  const gapInPx = 4; // gap between segments in pixels
 
   return (
     <div className="mb-2">
@@ -55,16 +57,20 @@ export function StatStackBar({ label, max, precision = 1, segments, isNegativeSt
         </Large>
       </div>
 
-      <div className="relative flex h-2 bg-stone-800 gap-1">
-        {padSegments(segments, 5).map(({ value, source, isEstimated }, i) => {
+      <div className="relative flex h-2 bg-stone-800">
+        {padSegments(segments, maxNumberOfSegments).map(({ value, source, isEstimated }, i) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const prevIsEstimated = usePrevious(isEstimated);
           const width = percentage(value);
+
+          const needsSeparator = width > 0 && i > 0;
+          const flexBasis = needsSeparator ? `calc(${width}% - ${gapInPx}px)` : `${width}%`;
+
           return (
             <Tooltip open={source === "" ? false : undefined}>
               <TooltipTrigger
                 key={i}
-                style={{ flexBasis: `${i === 0 ? `${width}%` : `calc(${width}% - 4px)`}` }}
+                style={{ flexBasis, marginLeft: needsSeparator ? gapInPx : 0 }}
                 className={clsx({
                   "bg-white transition-[flex-basis] duration-160 ease-out": true,
                   "bg-stone-600!":
