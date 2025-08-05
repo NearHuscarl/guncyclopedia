@@ -36,6 +36,8 @@
         }
       ],
       "mirror": 0,
+      "burstCooldownTime": 0.2,
+      "burstShotCount": 3,
       "cooldownTime": 0.07,
       "numberOfShotsInClip": 6,
       "projectiles": [

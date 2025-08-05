@@ -20,6 +20,8 @@
       "angleVariance": 8,
       "chargeProjectiles": [],
       "mirror": 0,
+      "burstCooldownTime": 0.2,
+      "burstShotCount": 3,
       "cooldownTime": 0.15,
       "numberOfShotsInClip": 25,
       "sequenceStyle": 1,

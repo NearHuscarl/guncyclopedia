@@ -50,6 +50,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
   const itemModelGenerator = new ItemModelGenerator({ translationRepo });
 
   console.log(chalk.green("Saving spritesheets from exported asset..."));
+  const start = performance.now();
   await spriteService.saveSpritesheets();
 
   for (const entry of encounterTrackableRepo.entries) {
@@ -78,4 +79,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
   console.log(chalk.green(`Collected ${totalCount} pickup objects: ${itemCount} items and ${gunCount} guns.`));
 
   await writeFile(path.join(DATA_PATH, "pickup-objects.json"), JSON.stringify(pickupObjects, null, 2), "utf-8");
+
+  console.log();
+  console.log(chalk.magenta(`createPickupObjects took ${(performance.now() - start) / 1000}s`));
 }

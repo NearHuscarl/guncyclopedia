@@ -24,6 +24,8 @@ MonoBehaviour:
       Projectile: {fileID: 114433998896312749, guid: 9494279407fcc3f428da8d2f2725319e, type: 2}
     angleVariance: 0
     mirror: 0
+    burstShotCount: 3
+    burstCooldownTime: 0.2
     cooldownTime: 0.07
     numberOfShotsInClip: 6
   UsesBossDamageModifier: 0

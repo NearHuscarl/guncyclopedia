@@ -22,6 +22,8 @@ MonoBehaviour:
     chargeProjectiles: []
     angleVariance: 8
     mirror: 0
+    burstShotCount: 3
+    burstCooldownTime: 0.2
     cooldownTime: 0.15
     numberOfShotsInClip: 25
   UsesBossDamageModifier: 0

@@ -39,6 +39,7 @@ export class ColorService {
   async findDominantColors(image: Sharp, colorLookup: Record<string, string[]>) {
     const data = await image.clone().ensureAlpha().raw().toBuffer();
     const matchedColors: Record<string, number> = {};
+    const closestColorLookup: Record<string, string> = {};
 
     for (let i = 0; i < data.length; i += 4) {
       const r = data[i];
@@ -48,8 +49,9 @@ export class ColorService {
 
       if (a === 0) continue; // skip transparent pixels
 
-      const inputHex = Color({ r, g, b }).hex();
-      const closestColor = this.getClosestKnownColors(inputHex, colorLookup);
+      closestColorLookup[`${r},${g},${b}`] ??= this.getClosestKnownColors(Color({ r, g, b }).hex(), colorLookup);
+      const closestColor = closestColorLookup[`${r},${g},${b}`];
+
       if (!closestColor) continue;
 
       matchedColors[closestColor] = (matchedColors[closestColor] || 0) + 1;
