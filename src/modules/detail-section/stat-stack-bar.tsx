@@ -67,7 +67,7 @@ export function StatStackBar({ label, max, precision = 1, segments, isNegativeSt
           const flexBasis = needsSeparator ? `calc(${width}% - ${gapInPx}px)` : `${width}%`;
 
           return (
-            <Tooltip open={source === "" ? false : undefined}>
+            <Tooltip key={i} open={source === "" ? false : undefined}>
               <TooltipTrigger
                 key={i}
                 style={{ flexBasis, marginLeft: needsSeparator ? gapInPx : 0 }}

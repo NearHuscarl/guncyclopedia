@@ -3,13 +3,15 @@ import z from "zod/v4";
 import { getGuns, getGunStats } from "@/client";
 import { Page } from "@/modules/page";
 import { pickRandom } from "@/lib/lang";
-import type { TAppState } from "@/modules/shared/hooks/useAppState";
 import { useGunStore } from "@/modules/shared/store/gun.store";
+import { Gun } from "@/client/generated/models/gun.model";
+import type { TAppState } from "@/modules/shared/hooks/useAppState";
 
 const schema = z.object({
   debug: z.boolean().optional(),
   selectedId: z.number().int().nonnegative().optional(),
   sortBy: z.enum(["none", "quality", "maxAmmo", "cooldownTime"]).optional(),
+  tag: Gun.shape.featureFlags.element.optional(),
   color: z.string().optional(),
 });
 

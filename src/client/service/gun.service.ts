@@ -62,7 +62,7 @@ export class GunService {
       const { numberOfBounces, chanceToDieOnBounce, damageMultiplierOnBounce } = projectileData;
       return [
         `Potential damage from ricochets: <strong>${formatNumber(additionalDamage.damage, 2)}</strong><br />`,
-        `- numberOfBounces: <strong>${numberOfBounces}</strong><br />`,
+        `- numberOfBounces: <strong>${formatNumber(numberOfBounces ?? 0, 2)}</strong><br />`,
         (chanceToDieOnBounce ?? 0) > 0 &&
           `- chanceToDieOnBounce: <strong>${formatNumber(chanceToDieOnBounce ?? 0, 2)}</strong><br />`,
         damageMultiplierOnBounce !== 1 &&

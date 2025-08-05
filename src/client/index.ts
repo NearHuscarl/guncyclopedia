@@ -14,6 +14,7 @@ export const getGuns = memoize((): TGun[] => {
 
 export function getGunStats() {
   const guns = getGuns();
+  const tagSet = new Set<TGun["featureFlags"][number]>();
   let maxReloadTime = 0;
   let maxMagazineSize = 0;
   let maxChargeTime = 0;
@@ -22,6 +23,7 @@ export function getGunStats() {
 
   for (const gun of guns) {
     maxReloadTime = Math.max(maxReloadTime, gun.reloadTime);
+    gun.featureFlags.forEach((flag) => tagSet.add(flag));
 
     for (const mode of gun.projectileModes) {
       if (mode.magazineSize !== gun.maxAmmo) {
@@ -49,6 +51,7 @@ export function getGunStats() {
       maxChargeTime,
       maxCooldownTime: Math.min(maxCooldownTime, 0.5),
       maxSpread: Math.min(maxSpread, 30),
+      tags: Array.from(tagSet).sort(),
     },
   };
 }
