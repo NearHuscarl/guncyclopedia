@@ -190,6 +190,7 @@ export function DetailSection() {
         </div>
         <Tags gun={gun} />
         {debug && <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(other, null, 2)}</pre>}
+        <div className="h-14" />
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import { Gun } from "@/client/generated/models/gun.model";
 import { useAppState } from "../shared/hooks/useAppState";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 import { useGuns } from "../shared/hooks/useGuns";
+import { usePreloadSpritesheets } from "../shared/hooks/usePreloadImages";
 
 const qualityWeights = Gun.shape.quality.options.reduce<Record<string, number>>((acc, quality, index) => {
   acc[quality] = index;
@@ -55,10 +56,15 @@ export function ItemGrid() {
   const guns = useGunResults();
   const setAppState = useAppStateMutation();
   const selectedId = useAppState((state) => state.selectedId);
+  const { isLoading, error } = usePreloadSpritesheets();
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
 
   return (
     <div className="flex flex-wrap gap-2 p-2 items-center content-start">
-      {guns.map((gun) => (
+      {(isLoading ? [] : guns).map((gun) => (
         <Button
           key={gun.id}
           variant="secondary"
