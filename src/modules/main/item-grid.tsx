@@ -18,8 +18,7 @@ function useGunResults() {
   const sortBy = useAppState((state) => state.sortBy);
   const tag = useAppState((state) => state.tag);
   const color = useAppState((state) => state.color);
-
-  const effectiveGuns = useMemo(() => {
+  return useMemo(() => {
     const res = guns.filter((g) => {
       let match = true;
       if (color && g.animation.frames[0].colors[0] !== color) {
@@ -48,15 +47,13 @@ function useGunResults() {
 
     return res;
   }, [guns, sortBy, color, tag]);
-
-  return effectiveGuns;
 }
 
 export function ItemGrid() {
   const guns = useGunResults();
   const setAppState = useAppStateMutation();
   const selectedId = useAppState((state) => state.selectedId);
-  const { isLoading, error } = usePreloadSpritesheets();
+  const { error } = usePreloadSpritesheets();
 
   if (error) {
     return <div>{error.message}</div>;
@@ -64,7 +61,7 @@ export function ItemGrid() {
 
   return (
     <div className="flex flex-wrap gap-2 p-2 items-center content-start">
-      {(isLoading ? [] : guns).map((gun) => (
+      {guns.map((gun) => (
         <Button
           key={gun.id}
           variant="secondary"

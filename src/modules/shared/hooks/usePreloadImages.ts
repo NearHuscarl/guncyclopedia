@@ -11,19 +11,18 @@ export function usePreloadSpritesheets() {
     async function preloadImages() {
       try {
         await Promise.all(
-          spritesheetPaths.map(
-            (src) =>
-              new Promise<void>((resolve, reject) => {
-                const img = new Image();
+          spritesheetPaths.map(({ path: src, width, height }) => {
+            addSpritesheet(src, { width, height });
+            return new Promise<void>((resolve, reject) => {
+              const img = new Image();
 
-                img.src = src;
-                img.onerror = () => reject(new Error(`Failed to preload: ${src}`));
-                img.onload = () => {
-                  addSpritesheet(src, { width: img.width, height: img.height });
-                  resolve();
-                };
-              }),
-          ),
+              img.src = src;
+              img.onerror = () => reject(new Error(`Failed to preload: ${src}`));
+              img.onload = () => {
+                resolve();
+              };
+            });
+          }),
         );
         setIsLoading(false);
       } catch (err) {

@@ -37,10 +37,6 @@ function AnimatedSpriteImpl({ animation, scale = 1, className }: TAnimatedSprite
   const { w, h } = useImageSize(animation.texturePath);
   const { maxW, maxH } = useMemo(() => getMaxDimensions(animation, w, h, scale), [animation, h, scale, w]);
 
-  if (w === 0 || h === 0) {
-    return null;
-  }
-
   // uvs are normalized coordinates in the range [0, 1]
   // top-left is (0, 0), bottom-right is (1, 1)
   const uvs = frame.uvs;
