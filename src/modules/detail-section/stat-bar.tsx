@@ -1,11 +1,13 @@
 import { type CSSProperties } from "react";
 import clsx from "clsx";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Large } from "@/components/ui/typography";
 import { usePrevious } from "@/lib/hooks";
 import { formatNumber } from "@/lib/lang";
 
 type TStatBarProps = {
   label: string;
+  labelTooltip?: string;
   value: number;
   max: number;
   precision?: number;
@@ -34,12 +36,21 @@ type TStatBarProps = {
  * <StatBar label="Damage" value={8.2} max={15} modifier={+1.3} />
  * <StatBar label="Reload Time" value={2.1} max={5} isNegativeStat modifier={-0.4} />
  */
-export function StatBar({ label, value, precision = 1, max, isNegativeStat, modifier = 0 }: TStatBarProps) {
+export function StatBar({
+  label,
+  labelTooltip,
+  value,
+  precision = 1,
+  max,
+  isNegativeStat,
+  modifier = 0,
+}: TStatBarProps) {
   const basePercentage = Math.min((value / max) * 100, 100);
   const modPercentage = (modifier / Math.max(value, max)) * 100;
   const isPositiveModifier = (modifier >= 0 && !isNegativeStat) || (modifier < 0 && isNegativeStat);
   const prevModPercentage = usePrevious(modPercentage);
   const modifierStyle: CSSProperties = {};
+  const labelElement = <p className="text-muted-foreground text-lg font-semibold">{label}</p>;
 
   // Ensure the width's transition does not jump after going from negative to no modifier
   const modPercentageSign = Math.sign(modPercentage || prevModPercentage || 1);
@@ -54,8 +65,17 @@ export function StatBar({ label, value, precision = 1, max, isNegativeStat, modi
   return (
     <div className="mb-2">
       <div className="flex justify-between mb-2">
-        <p className="text-muted-foreground text-lg font-semibold">{label}</p>
-        <Large>
+        {labelTooltip ? (
+          <Tooltip>
+            <TooltipTrigger>{labelElement}</TooltipTrigger>
+            <TooltipContent className="w-80 text-wrap">
+              <div dangerouslySetInnerHTML={{ __html: labelTooltip }} />
+            </TooltipContent>
+          </Tooltip>
+        ) : (
+          labelElement
+        )}
+        <Large className="font-mono font-normal">
           {formatNumber(value + modifier, precision)}
           {/* {unit} */}
         </Large>

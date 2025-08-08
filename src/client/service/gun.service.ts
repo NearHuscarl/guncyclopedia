@@ -3,21 +3,25 @@ import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "../
 import { ProjectileService } from "./projectile.service";
 import { formatNumber } from "@/lib/lang";
 
-type TStatsWithOffset = {
+interface IStat {
+  current: number;
+  aggregated: number;
+}
+
+interface IComplextStat extends IStat {
   currentDetails: {
     source: string;
     value: number;
   }[];
-  current: number;
-  aggregated: number;
-};
+}
 
 type TGunStats = {
-  dps: TStatsWithOffset;
-  damage: TStatsWithOffset;
+  dps: IComplextStat;
+  damage: IComplextStat;
+  precision: IStat;
   magazineSize: number;
   reloadTime: number;
-  shotsPerSecond: number;
+  fireRate: number;
   mode: TProjectileMode;
   projectilePerShot: {
     current: TProjectilePerShot;
@@ -121,7 +125,7 @@ export class GunService {
     const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
     const reloadTime = magazineSize === gun.maxAmmo ? 0 : gun.reloadTime;
     const shotsPerSecond = GunService.getEstimatedShotsPerSecond({
-      reloadTime,
+      reloadTime: gun.reloadTime, // Prize Pistol's edge case (only 1 max ammo)
       magazineSize,
       projectile,
       chargeTime: mode.chargeTime,
@@ -134,7 +138,11 @@ export class GunService {
     return {
       magazineSize,
       reloadTime,
-      shotsPerSecond,
+      precision: {
+        current: ProjectileService.toPrecision(projectile.spread),
+        aggregated: ProjectileService.toPrecision(aggregatedProjectile.spread),
+      },
+      fireRate: shotsPerSecond * 60,
       dps: {
         currentDetails: dpsCurrent.segments,
         current: dpsCurrent.damage,

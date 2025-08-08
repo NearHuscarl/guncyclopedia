@@ -19,7 +19,6 @@ export function getGunStats() {
   let maxMagazineSize = 0;
   let maxChargeTime = 0;
   let maxCooldownTime = 0;
-  let maxSpread = 0;
 
   for (const gun of guns) {
     maxReloadTime = Math.max(maxReloadTime, gun.reloadTime);
@@ -34,10 +33,6 @@ export function getGunStats() {
       }
       for (const projectile of mode.projectiles) {
         maxCooldownTime = Math.max(maxCooldownTime, projectile.cooldownTime);
-
-        if (gun.name !== "Crown of Guns") {
-          maxSpread = Math.max(maxSpread, projectile.spread);
-        }
       }
     }
   }
@@ -50,7 +45,6 @@ export function getGunStats() {
       maxMagazineSize: Math.min(maxMagazineSize, 100),
       maxChargeTime,
       maxCooldownTime: Math.min(maxCooldownTime, 0.5),
-      maxSpread: Math.min(maxSpread, 30),
       tags: Array.from(tagSet).sort(),
     },
   };

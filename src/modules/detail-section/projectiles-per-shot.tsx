@@ -18,7 +18,7 @@ export function ProjectilesPerShot(props: TProjectilesPerShotProps) {
     <div className="flex gap-4 items-baseline mt-6">
       <Tooltip>
         <TooltipTrigger>
-          <H3 className="mb-4 border-b border-dashed border-stone-400/30 cursor-help">Projectiles per shot:</H3>
+          <H3 className="mb-4 border-b border-dashed border-stone-300/30 cursor-help">Projectiles per shot:</H3>
         </TooltipTrigger>
         <TooltipContent>
           <p>Each circle represents a projectile per shot</p>

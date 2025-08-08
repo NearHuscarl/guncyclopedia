@@ -50,7 +50,7 @@ export function StatStackBar({ label, max, precision = 1, segments, isNegativeSt
     <div className="mb-2">
       <div className="flex justify-between mb-2">
         <p className="text-muted-foreground text-lg font-semibold">{label}</p>
-        <Large>
+        <Large className="font-mono font-normal">
           {bestValue - value > 0
             ? `${formatNumber(value, precision)} - ${formatNumber(bestValue, precision)}`
             : formatNumber(value, precision)}
@@ -72,7 +72,7 @@ export function StatStackBar({ label, max, precision = 1, segments, isNegativeSt
                 key={i}
                 style={{ flexBasis, marginLeft: needsSeparator ? gapInPx : 0 }}
                 className={clsx({
-                  "bg-white transition-[flex-basis] duration-160 ease-out": true,
+                  "bg-white transition-all duration-160 ease-out hover:bg-primary": true,
                   "bg-stone-600!":
                     (!isNegativeStat && isEstimated) ||
                     // ensure the transition color does not jump when going from having modifier to none

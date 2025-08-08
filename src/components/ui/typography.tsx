@@ -25,7 +25,7 @@ export function H3(props: TTypographyProps) {
 }
 
 export function Large(props: TTypographyProps) {
-  return <span className={`text-lg font-semibold ${props.className}`}>{props.children}</span>;
+  return <span className={`text-xl font-semibold ${props.className}`}>{props.children}</span>;
 }
 
 export function Muted(props: TTypographyProps) {

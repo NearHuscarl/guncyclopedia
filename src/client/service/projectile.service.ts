@@ -1,3 +1,4 @@
+import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys } from "@/lib/types";
 import type { TProjectile, TProjectilePerShot } from "../generated/models/gun.model";
 
@@ -19,6 +20,19 @@ export class ProjectileService {
   }
   static getSpeed(value: number) {
     return value === -1 ? Infinity : value;
+  }
+
+  /**
+   * Converts gun spread in degrees to a precision value (0–100).
+   *
+   * A higher spread means lower precision. This function inverts and scales
+   * the spread range [30 (worst) .. 0 (best)] into a precision percentage
+   * [0 (worst) .. 100 (best)].
+   */
+  static toPrecision(spread: number): number {
+    const maxSpread = 30;
+    const clamped = clamp(spread, 0, maxSpread);
+    return ((maxSpread - clamped) / maxSpread) * 100;
   }
 
   static createAggregatedProjectile(projectiles: TProjectilePerShot[]) {

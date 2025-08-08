@@ -48,11 +48,8 @@ export function DetailSection() {
   }
 
   const { animation, name, ...other } = gun;
-  const { dps, damage, reloadTime, magazineSize, mode, projectilePerShot, projectile } = GunService.computeGunStats(
-    gun,
-    modeIndex,
-    currentProjectileIndex,
-  );
+  const { dps, precision, fireRate, damage, reloadTime, magazineSize, mode, projectilePerShot, projectile } =
+    GunService.computeGunStats(gun, modeIndex, currentProjectileIndex);
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
@@ -124,21 +121,19 @@ export function DetailSection() {
         />
         <StatStackBar label="Damage" segments={damage.currentDetails} max={100} />
         <StatBar
-          label="Cooldown Time"
-          isNegativeStat
-          value={projectilePerShot.aggregated.cooldownTime}
-          max={stats.maxCooldownTime}
-          precision={2}
-          modifier={projectilePerShot.current.cooldownTime - projectilePerShot.aggregated.cooldownTime}
-          unit="s"
+          label="Fire Rate"
+          labelTooltip="Number of shots fired per minute. Calculation includes the <strong>cooldown time</strong>, <strong>charge time</strong> and <strong>reload time</strong>"
+          value={fireRate}
+          max={1000}
+          precision={0}
         />
         <StatBar
-          label="Spread"
-          isNegativeStat
-          value={projectilePerShot.aggregated.spread}
-          max={stats.maxSpread}
-          modifier={projectilePerShot.current.spread - projectilePerShot.aggregated.spread}
-          unit="°"
+          label="Precision"
+          labelTooltip={`Spread: <strong>${projectilePerShot.current.spread}°</strong><br/>Higher precision results in less bullet spread. Scales the spread range [30deg (worst) .. 0 (best)] into a precision percentage [0 (worst) .. 100 (best)]`}
+          value={precision.aggregated}
+          precision={0}
+          max={100}
+          modifier={precision.current - precision.aggregated}
         />
         <StatBar
           label="Range"
