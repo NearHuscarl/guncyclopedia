@@ -4,33 +4,25 @@ import { ProjectileService } from "./projectile.service";
 import { formatNumber } from "@/lib/lang";
 
 interface IStat {
-  current: number;
-  aggregated: number;
-}
-
-interface IComplextStat extends IStat {
-  currentDetails: {
+  total: number;
+  base: number;
+  details: {
     source: string;
     value: number;
   }[];
 }
 
 type TGunStats = {
-  dps: IComplextStat;
-  damage: IComplextStat;
-  precision: IStat;
+  dps: IStat;
+  damage: IStat;
+  precision: number;
+  maxAmmo: number;
   magazineSize: number;
   reloadTime: number;
   fireRate: number;
   mode: TProjectileMode;
-  projectilePerShot: {
-    current: TProjectilePerShot;
-    aggregated: TProjectilePerShot;
-  };
-  projectile: {
-    current: TProjectile;
-    aggregated: TProjectile;
-  };
+  projectilePerShot: TProjectilePerShot;
+  projectile: TProjectile;
 };
 
 export class GunService {
@@ -101,7 +93,8 @@ export class GunService {
     }
 
     return {
-      damage: baseDamage + sumBy(extraDamage, "value"),
+      base: baseDamage,
+      total: baseDamage + sumBy(extraDamage, "damage"),
       segments: [
         {
           source: `Base damage: <strong>${formatNumber(baseDamage, 2)}</strong>`,
@@ -121,9 +114,9 @@ export class GunService {
     const projectile = mode.projectiles[projectileIndex] ?? aggregatedProjectile;
     const projectilePool = projectile.projectiles;
     const projData = ProjectileService.createAggregatedProjectileData(projectilePool, "avg");
-    const aggregatedProjData = aggregatedProjectile.projectiles[0];
     const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
     const reloadTime = magazineSize === gun.maxAmmo ? 0 : gun.reloadTime;
+    const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? Infinity : gun.maxAmmo;
     const shotsPerSecond = GunService.getEstimatedShotsPerSecond({
       reloadTime: gun.reloadTime, // Prize Pistol's edge case (only 1 max ammo)
       magazineSize,
@@ -131,37 +124,27 @@ export class GunService {
       chargeTime: mode.chargeTime,
     });
     const dpsCurrent = this.getDamage(projData, "dps", shotsPerSecond);
-    const dpsAggregated = this.getDamage(aggregatedProjData, "dps", shotsPerSecond);
     const dmgCurrent = this.getDamage(projData, "instant", shotsPerSecond);
-    const dmgAggregated = this.getDamage(aggregatedProjData, "instant", shotsPerSecond);
 
     return {
+      maxAmmo,
       magazineSize,
       reloadTime,
-      precision: {
-        current: ProjectileService.toPrecision(projectile.spread),
-        aggregated: ProjectileService.toPrecision(aggregatedProjectile.spread),
-      },
+      precision: ProjectileService.toPrecision(projectile.spread),
       fireRate: shotsPerSecond * 60,
       dps: {
-        currentDetails: dpsCurrent.segments,
-        current: dpsCurrent.damage,
-        aggregated: dpsAggregated.damage,
+        details: dpsCurrent.segments,
+        total: dpsCurrent.total,
+        base: dpsCurrent.base,
       },
       damage: {
-        currentDetails: dmgCurrent.segments,
-        current: dmgCurrent.damage,
-        aggregated: dmgAggregated.damage,
+        details: dmgCurrent.segments,
+        total: dmgCurrent.total,
+        base: dmgCurrent.base,
       },
       mode,
-      projectilePerShot: {
-        current: projectile,
-        aggregated: aggregatedProjectile,
-      },
-      projectile: {
-        current: projData,
-        aggregated: aggregatedProjData,
-      },
+      projectilePerShot: projectile,
+      projectile: projData,
     };
   }
 }

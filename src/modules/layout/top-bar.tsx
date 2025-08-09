@@ -1,7 +1,7 @@
 import { H1 } from "@/components/ui/typography";
 import { Separator } from "@/components/ui/separator";
 import { TopBarMenu } from "./top-bar-menu";
-import { TopBarLinks } from "./top-bar-links";
+import { TopBarActions } from "./top-bar-actions";
 
 export function TopBar() {
   return (
@@ -11,7 +11,7 @@ export function TopBar() {
       <Separator orientation="vertical" className="mx-4 relative top-1" />
       <div className="flex justify-between relative top-1 w-full">
         <TopBarMenu />
-        <TopBarLinks />
+        <TopBarActions />
       </div>
     </div>
   );

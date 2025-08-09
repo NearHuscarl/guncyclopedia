@@ -7,6 +7,7 @@ import { useAppState } from "../shared/hooks/useAppState";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 import { useGuns } from "../shared/hooks/useGuns";
 import { usePreloadSpritesheets } from "../shared/hooks/usePreloadImages";
+import { useGunStore } from "../shared/store/gun.store";
 
 const qualityWeights = Gun.shape.quality.options.reduce<Record<string, number>>((acc, quality, index) => {
   acc[quality] = index;
@@ -50,6 +51,7 @@ function useGunResults() {
 }
 
 export function ItemGrid() {
+  const setHoverGun = useGunStore((state) => state.setHoverGun);
   const guns = useGunResults();
   const setAppState = useAppStateMutation();
   const selectedId = useAppState((state) => state.selectedId);
@@ -60,11 +62,12 @@ export function ItemGrid() {
   }
 
   return (
-    <div className="flex flex-wrap gap-2 p-2 items-center content-start">
+    <div className="flex flex-wrap gap-2 p-2 items-center content-start" onMouseLeave={() => setHoverGun(-1)}>
       {guns.map((gun) => (
         <Button
           key={gun.id}
           variant="secondary"
+          onMouseEnter={() => setHoverGun(gun.id)}
           onClick={() => setAppState({ selectedId: gun.id })}
           className={clsx({
             "h-14 p-3": true,

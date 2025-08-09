@@ -5,13 +5,11 @@ import { ColorSelect } from "./color-select";
 
 export function TopBarMenu() {
   return (
-    <div>
-      <div className="flex items-center gap-4">
-        <Search />
-        <SortSelect />
-        <ColorSelect />
-        <TagSelect />
-      </div>
+    <div className="flex items-center gap-4 flex-wrap">
+      <Search />
+      <SortSelect />
+      <ColorSelect />
+      <TagSelect />
     </div>
   );
 }

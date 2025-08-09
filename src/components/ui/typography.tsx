@@ -14,7 +14,7 @@ export function H1(props: TTypographyProps) {
 
 export function H2(props: TTypographyProps) {
   return (
-    <h2 className={`scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 ${props.className}`}>
+    <h2 className={`scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0 ${props.className}`}>
       {props.children}
     </h2>
   );

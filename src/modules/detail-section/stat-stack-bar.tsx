@@ -1,30 +1,112 @@
 import clsx from "clsx";
 import sumBy from "lodash/sumBy";
-import { Large } from "@/components/ui/typography";
+import clamp from "lodash/clamp";
 import { formatNumber } from "@/lib/lang";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { usePrevious } from "@/lib/hooks";
+import { useSelectedGun } from "../shared/hooks/useGuns";
+import type { HTMLAttributes } from "react";
+import { useGunStore } from "../shared/store/gun.store";
+import { NumericValue } from "./numeric-value";
+
+function createModifierComponent({
+  modifier,
+  value,
+  max,
+  gunId,
+  isNegativeStat,
+}: {
+  modifier: number;
+  value: number;
+  max: number;
+  gunId: number;
+  isNegativeStat?: boolean;
+}) {
+  let basePercentage = (value / max) * 100;
+  basePercentage = clamp(basePercentage, 0, 100);
+
+  let modifier2 = modifier;
+  if (value > max) {
+    // clamp modifier2 to make sure the ratio to max is respected.
+    // Select 'Shotgrub' > Select 'Chromesteel..' in comparision mode. Force
+    const overflowedBy = Math.abs(value - max);
+    modifier2 = Math.sign(modifier2) * (Math.abs(modifier2) - overflowedBy);
+  }
+
+  let modPercentage = (modifier2 / max) * 100;
+  const maxPositiveModifier = 100 - basePercentage;
+  const maxNegativeModifier = basePercentage;
+
+  modPercentage = clamp(modPercentage, -maxNegativeModifier, maxPositiveModifier);
+
+  const posScale = maxPositiveModifier > 0 && modPercentage > 0 ? modPercentage / maxPositiveModifier : 0;
+  const negScale = maxNegativeModifier > 0 && modPercentage < 0 ? -modPercentage / maxNegativeModifier : 0;
+
+  const posColor = isNegativeStat ? "bg-orange-500" : "bg-green-500";
+  const negColor = isNegativeStat ? "bg-green-500" : "bg-orange-500";
+
+  // (2)(3): When users change guns, the stat width is updated, which moves the mount position of the modifier portion violently.
+  // Solution: Remove the modifier immediately.
+  return {
+    positiveModifier: (
+      <div
+        key={`modifier-positive-${gunId}`} // (2)
+        data-testid={`modifier-positive-${gunId}`}
+        className="absolute h-full pointer-events-none"
+        style={{ left: `${basePercentage}%`, width: `${maxPositiveModifier}%` }}
+      >
+        <div
+          style={{ transform: `scaleX(${posScale})` }}
+          className={clsx(
+            "h-full origin-left transition-transform duration-160 ease-out will-change-transform",
+            posColor,
+          )}
+        />
+      </div>
+    ),
+    negativeModifier: (
+      <div
+        key={`modifier-negative-${gunId}`} // (3)
+        data-testid={`modifier-negative-${gunId}`}
+        className="absolute h-full pointer-events-none"
+        style={{ right: `${100 - basePercentage}%`, width: `${maxNegativeModifier}%` }}
+      >
+        <div
+          style={{ transform: `scaleX(${negScale})` }}
+          className={clsx(
+            "h-full origin-right transition-transform duration-160 ease-out will-change-transform",
+            negColor,
+          )}
+        />
+      </div>
+    ),
+  };
+}
 
 type TSegment = {
   value: number; // part of the total
-  source: string;
+  source?: string;
   /**
    * if true, the value is an estimate based on the best outcome
    */
   isEstimated?: boolean;
+  color?: string;
 };
 
 type TStatStackProps = {
   label: string;
+  labelTooltip?: string;
   max: number;
   precision?: number;
   segments: TSegment[];
+  modifier?: number;
+  valueResolver?: (value: number) => number;
   isNegativeStat?: boolean;
 };
 
 /**
  * pad the segments array to at least 5 items for smoother transitions (e.g. prevent hard
- * jumps when number of segments changes)
+ * jumps when the number of segments changes)
  */
 function padSegments<T extends { value: number }>(segments: T[], minLength: number): T[] {
   const padded = [...segments];
@@ -34,58 +116,99 @@ function padSegments<T extends { value: number }>(segments: T[], minLength: numb
   return padded;
 }
 
-export function StatStackBar({ label, max, precision = 1, segments, isNegativeStat }: TStatStackProps) {
+export function StatStackBar({
+  label,
+  labelTooltip,
+  max,
+  precision = 1,
+  segments,
+  isNegativeStat,
+  valueResolver,
+  modifier = 0,
+}: TStatStackProps) {
+  const gun = useSelectedGun();
+  const isComparisonMode = useGunStore((state) => state.isComparisonMode);
   const percentage = (v: number) => (Math.min(v, max) / max) * 100;
-  const value =
+  const baseValue =
     sumBy(
       segments.filter((s) => !s.isEstimated),
       "value",
     ) ?? 0;
-  const bestValue = sumBy(segments, "value") ?? 0;
+
+  const { negativeModifier, positiveModifier } = createModifierComponent({
+    gunId: gun.id,
+    max,
+    value: baseValue,
+    modifier,
+    isNegativeStat,
+  });
+
+  const totalValue = sumBy(segments, "value") ?? 0;
   const prevIsNegativeStat = usePrevious(isNegativeStat);
   const maxNumberOfSegments = 5;
   const gapInPx = 4; // gap between segments in pixels
+  const labelElement = <p className="text-muted-foreground font-semibold uppercase">{label}</p>;
 
   return (
     <div className="mb-2">
-      <div className="flex justify-between mb-2">
-        <p className="text-muted-foreground text-lg font-semibold">{label}</p>
-        <Large className="font-mono font-normal">
-          {bestValue - value > 0
-            ? `${formatNumber(value, precision)} - ${formatNumber(bestValue, precision)}`
-            : formatNumber(value, precision)}
-        </Large>
+      <div className="flex justify-between mb-2 items-baseline">
+        {labelTooltip ? (
+          <Tooltip>
+            <TooltipTrigger>{labelElement}</TooltipTrigger>
+            <TooltipContent className="w-80 text-wrap">
+              <div dangerouslySetInnerHTML={{ __html: labelTooltip }} />
+            </TooltipContent>
+          </Tooltip>
+        ) : (
+          labelElement
+        )}
+        <NumericValue>
+          {totalValue - baseValue > 0
+            ? `${formatNumber(valueResolver?.(baseValue) ?? baseValue, precision)} - ${formatNumber(valueResolver?.(totalValue) ?? totalValue, precision)}`
+            : formatNumber(valueResolver?.(baseValue) ?? baseValue, precision)}
+        </NumericValue>
       </div>
 
       <div className="relative flex h-2 bg-stone-800">
-        {padSegments(segments, maxNumberOfSegments).map(({ value, source, isEstimated }, i) => {
+        {padSegments(segments, maxNumberOfSegments).map(({ value, source = "", isEstimated, color }, i) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const prevIsEstimated = usePrevious(isEstimated);
           const width = percentage(value);
 
           const needsSeparator = width > 0 && i > 0;
           const flexBasis = needsSeparator ? `calc(${width}% - ${gapInPx}px)` : `${width}%`;
+          const barProps: HTMLAttributes<HTMLElement> = {
+            style: { flexBasis, marginLeft: needsSeparator ? gapInPx : 0, backgroundColor: color },
+            className: clsx({
+              "bg-white transition-all duration-160 ease-out hover:bg-primary!": true,
+              "bg-stone-600!":
+                (!isNegativeStat && isEstimated) ||
+                // ensure the transition color does not jump when going from having modifier to none
+                (value === 0 && !prevIsNegativeStat && prevIsEstimated),
+              "bg-red-600!": isNegativeStat,
+            }),
+          };
+
+          // Because of the solution for (2)(3), when the modifier is removed instantly, as the stat
+          // width grows/shrinks to 'catch up' with the modifier, it creates an annoying glitch
+          const key = isComparisonMode && i === 0 ? gun.id : i;
+
+          if (!source) {
+            return <div key={key} {...barProps} />;
+          }
 
           return (
-            <Tooltip key={i} open={source === "" ? false : undefined}>
-              <TooltipTrigger
-                key={i}
-                style={{ flexBasis, marginLeft: needsSeparator ? gapInPx : 0 }}
-                className={clsx({
-                  "bg-white transition-all duration-160 ease-out hover:bg-primary": true,
-                  "bg-stone-600!":
-                    (!isNegativeStat && isEstimated) ||
-                    // ensure the transition color does not jump when going from having modifier to none
-                    (value === 0 && !prevIsNegativeStat && prevIsEstimated),
-                  "bg-red-600!": isNegativeStat,
-                })}
-              />
+            <Tooltip key={key}>
+              <TooltipTrigger {...barProps} />
               <TooltipContent>
                 <div dangerouslySetInnerHTML={{ __html: source }} />
               </TooltipContent>
             </Tooltip>
           );
         })}
+        {/* Note that the modifiers are separate from the segments. I want the transition to anchor the end of the bar to visually represent the difference. */}
+        {positiveModifier}
+        {negativeModifier}
       </div>
     </div>
   );

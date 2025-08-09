@@ -8,7 +8,7 @@ import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Circle } from "./circle";
 import { useAppState } from "../shared/hooks/useAppState";
-import { useSelectedGun } from "../shared/hooks/useGuns";
+import { useHoverGun, useSelectedGun } from "../shared/hooks/useGuns";
 import { useLoaderData } from "../shared/hooks/useLoaderData";
 import { ProjectilesPerShot } from "./projectiles-per-shot";
 import { GunService } from "@/client/service/gun.service";
@@ -17,10 +17,15 @@ import { useIsDebug } from "../shared/hooks/useDebug";
 import { Tags } from "./tags";
 import { StatStackBar } from "./stat-stack-bar";
 import { basicColors } from "@/client/generated/models/color.model";
+import { ArrowLeftRight } from "lucide-react";
+import { AmmoIcon } from "@/components/icons/ammo";
+import { NumericValue } from "./numeric-value";
+import { formatNumber } from "@/lib/lang";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
   const gun = useSelectedGun();
+  const hoverGun = useHoverGun();
   const debug = useIsDebug();
   const stats = useLoaderData((state) => state.stats);
   const [modeIndex, _setModeIndex] = useState(0);
@@ -48,12 +53,12 @@ export function DetailSection() {
   }
 
   const { animation, name, ...other } = gun;
-  const { dps, precision, fireRate, damage, reloadTime, magazineSize, mode, projectilePerShot, projectile } =
-    GunService.computeGunStats(gun, modeIndex, currentProjectileIndex);
+  const gunStats = GunService.computeGunStats(gun, modeIndex, currentProjectileIndex);
+  const hoverGunStats = hoverGun ? GunService.computeGunStats(hoverGun, modeIndex, currentProjectileIndex) : gunStats;
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
-      <div>
+      <div className="pr-2">
         <div className="flex justify-center gap-1">
           {gun.projectileModes.map(({ mode }, i, modes) => (
             <Button
@@ -72,15 +77,34 @@ export function DetailSection() {
             </Button>
           ))}
         </div>
-        <div className="flex items-center justify-center h-36">
+        <div className="flex items-center justify-center h-36 gap-10">
           <AnimatedSprite key={gun.id} animation={animation} scale={6} />
+          {hoverGun && hoverGun.id !== gun.id && (
+            <>
+              <ArrowLeftRight className="fill-primary" />
+              <AnimatedSprite key={hoverGun.id} animation={hoverGun.animation} scale={6} />
+            </>
+          )}
         </div>
         <blockquote className="flex justify-center w-full italic text-muted-foreground mb-4 font-sans font-semibold">
           {JSON.stringify(gun.quote)}
         </blockquote>
-        <div className="flex justify-between items-baseline mb-6">
-          <H2>{name}</H2>
+        <div className="flex justify-between items-baseline">
+          <H2>{name || "N/A"}</H2>
           <Tier tier={gun.quality} />
+        </div>
+      </div>
+      <div className="flex justify-between pr-2 mb-6">
+        <div />
+        <div className="flex gap-2 align-baseline">
+          <NumericValue>
+            {gunStats.magazineSize}/{formatNumber(gunStats.maxAmmo)}
+          </NumericValue>
+          <div className="flex relative top-[1px]">
+            <AmmoIcon />
+            <AmmoIcon />
+            <AmmoIcon />
+          </div>
         </div>
       </div>
       <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 pr-2">
@@ -94,70 +118,96 @@ export function DetailSection() {
               />
             );
           })}
-        <StatStackBar label="DPS" max={100} segments={dps.currentDetails} />
-        <StatBar label="Magazine Size" value={magazineSize} max={Math.min(stats.maxMagazineSize, gun.maxAmmo)} />
+        <StatStackBar
+          label="DPS"
+          max={100}
+          segments={gunStats.dps.details}
+          modifier={hoverGunStats.dps.base - gunStats.dps.base}
+        />
+        <StatBar
+          label="Magazine Size"
+          value={gunStats.magazineSize}
+          max={Math.min(stats.maxMagazineSize, gun.maxAmmo)}
+          modifier={hoverGunStats.magazineSize - gunStats.magazineSize}
+        />
         <StatBar
           label="Max Ammo"
-          value={gun.featureFlags.includes("hasInfiniteAmmo") ? Infinity : gun.maxAmmo}
+          value={gunStats.maxAmmo}
           max={stats.maxMaxAmmo}
+          modifier={hoverGunStats.maxAmmo - gunStats.maxAmmo}
         />
         <StatBar
           label="Reload Time"
           isNegativeStat
-          value={reloadTime}
+          value={gunStats.reloadTime}
           max={stats.maxReloadTime}
           precision={2}
+          modifier={hoverGunStats.reloadTime - gunStats.reloadTime}
           unit="s"
         />
-        {mode.chargeTime !== undefined && (
-          <StatBar label="Charge Time" isNegativeStat value={mode.chargeTime} max={stats.maxChargeTime} unit="s" />
-        )}
+        {/* {gunStats.mode.chargeTime !== undefined && (
+          <StatBar
+            label="Charge Time"
+            isNegativeStat
+            value={gunStats.mode.chargeTime}
+            max={stats.maxChargeTime}
+            modifier={(hoverGunStats.mode.chargeTime ?? gunStats.mode.chargeTime) - gunStats.mode.chargeTime}
+            unit="s"
+          />
+        )} */}
         <ProjectilesPerShot
-          projectiles={mode.projectiles}
+          projectiles={gunStats.mode.projectiles}
           onSelect={setSelectedProjectileIndex}
           onHover={setHoverProjectileIndex}
           onBlur={() => setHoverProjectileIndex(-1)}
           isSelected={(i) => hoverProjectileIndex === i || selectedProjectileIndex === i}
         />
-        <StatStackBar label="Damage" segments={damage.currentDetails} max={100} />
+        <StatStackBar
+          label="Damage"
+          max={100}
+          segments={gunStats.damage.details}
+          modifier={hoverGunStats.damage.base - gunStats.damage.base}
+        />
         <StatBar
           label="Fire Rate"
           labelTooltip="Number of shots fired per minute. Calculation includes the <strong>cooldown time</strong>, <strong>charge time</strong> and <strong>reload time</strong>"
-          value={fireRate}
           max={1000}
           precision={0}
+          value={gunStats.fireRate}
+          modifier={hoverGunStats.fireRate - gunStats.fireRate}
         />
         <StatBar
           label="Precision"
-          labelTooltip={`Spread: <strong>${projectilePerShot.current.spread}°</strong><br/>Higher precision results in less bullet spread. Scales the spread range [30deg (worst) .. 0 (best)] into a precision percentage [0 (worst) .. 100 (best)]`}
-          value={precision.aggregated}
+          labelTooltip={`Spread: <strong>${gunStats.projectilePerShot.spread}°</strong><br/>Higher precision results in less bullet spread. Scales the spread range [30deg (worst) .. 0 (best)] into a precision percentage [0 (worst) .. 100 (best)]`}
+          value={gunStats.precision}
           precision={0}
           max={100}
-          modifier={precision.current - precision.aggregated}
+          modifier={hoverGunStats.precision - gunStats.precision}
         />
         <StatBar
           label="Range"
-          value={ProjectileService.getRange(projectile.aggregated.range)}
+          value={gunStats.projectile.range}
           max={100}
-          modifier={ProjectileService.getRange(projectile.current.range - projectile.aggregated.range)}
+          valueResolver={ProjectileService.getRange}
+          modifier={hoverGunStats.projectile.range - gunStats.projectile.range}
         />
         <StatBar
           label="Speed"
-          value={ProjectileService.getSpeed(projectile.aggregated.speed)}
+          value={ProjectileService.getSpeed(gunStats.projectile.speed)}
           max={100}
           modifier={
-            ProjectileService.getSpeed(projectile.current.speed) -
-            ProjectileService.getSpeed(projectile.aggregated.speed)
+            ProjectileService.getSpeed(hoverGunStats.projectile.speed) -
+            ProjectileService.getSpeed(gunStats.projectile.speed)
           }
         />
         <StatBar
           label="Force"
-          value={projectile.aggregated.force}
+          value={gunStats.projectile.force}
           max={50}
-          modifier={projectile.current.force - projectile.aggregated.force}
+          modifier={hoverGunStats.projectile.force - gunStats.projectile.force}
         />
         <div className="mt-6">
-          {projectilePerShot.current.projectiles.length > 1 && (
+          {gunStats.projectilePerShot.projectiles.length > 1 && (
             <div className="flex gap-4 items-baseline">
               <Tooltip>
                 <TooltipTrigger>
@@ -169,7 +219,7 @@ export function DetailSection() {
                 </TooltipContent>
               </Tooltip>
               <div className="flex gap-2 relative top-[3px]">
-                {projectilePerShot.current.projectiles.map((p) => (
+                {gunStats.projectilePerShot.projectiles.map((p) => (
                   <Tooltip key={p.id}>
                     <TooltipTrigger>
                       <Circle />

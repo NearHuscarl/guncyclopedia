@@ -1,14 +1,10 @@
-import { type CSSProperties } from "react";
-import clsx from "clsx";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Large } from "@/components/ui/typography";
-import { usePrevious } from "@/lib/hooks";
-import { formatNumber } from "@/lib/lang";
+import { StatStackBar } from "./stat-stack-bar";
 
 type TStatBarProps = {
   label: string;
   labelTooltip?: string;
   value: number;
+  valueResolver?: (value: number) => number;
   max: number;
   precision?: number;
   isNegativeStat?: boolean;
@@ -40,64 +36,22 @@ export function StatBar({
   label,
   labelTooltip,
   value,
+  valueResolver,
   precision = 1,
   max,
   isNegativeStat,
   modifier = 0,
 }: TStatBarProps) {
-  const basePercentage = Math.min((value / max) * 100, 100);
-  const modPercentage = (modifier / Math.max(value, max)) * 100;
-  const isPositiveModifier = (modifier >= 0 && !isNegativeStat) || (modifier < 0 && isNegativeStat);
-  const prevModPercentage = usePrevious(modPercentage);
-  const modifierStyle: CSSProperties = {};
-  const labelElement = <p className="text-muted-foreground text-lg font-semibold">{label}</p>;
-
-  // Ensure the width's transition does not jump after going from negative to no modifier
-  const modPercentageSign = Math.sign(modPercentage || prevModPercentage || 1);
-  if (modPercentageSign === 1) {
-    modifierStyle.left = `${basePercentage}%`;
-    modifierStyle.width = `${modPercentage}%`;
-  } else if (modPercentageSign === -1) {
-    modifierStyle.right = `${100 - basePercentage}%`;
-    modifierStyle.width = `${-modPercentage}%`;
-  }
-
   return (
-    <div className="mb-2">
-      <div className="flex justify-between mb-2">
-        {labelTooltip ? (
-          <Tooltip>
-            <TooltipTrigger>{labelElement}</TooltipTrigger>
-            <TooltipContent className="w-80 text-wrap">
-              <div dangerouslySetInnerHTML={{ __html: labelTooltip }} />
-            </TooltipContent>
-          </Tooltip>
-        ) : (
-          labelElement
-        )}
-        <Large className="font-mono font-normal">
-          {formatNumber(value + modifier, precision)}
-          {/* {unit} */}
-        </Large>
-      </div>
-      <div className="relative flex-1 h-2 bg-stone-800">
-        <div
-          style={{ width: `${basePercentage}%` }}
-          className={clsx({
-            "absolute h-full transition-[width] duration-160 ease-out": true,
-            "bg-red-500": isNegativeStat,
-            "bg-white": !isNegativeStat,
-          })}
-        />
-        <div
-          className={clsx({
-            "absolute h-full transition-[width] duration-160 ease-out": true,
-            "bg-green-500": isPositiveModifier,
-            "bg-orange-500": !isPositiveModifier,
-          })}
-          style={modifierStyle}
-        />
-      </div>
-    </div>
+    <StatStackBar
+      label={label}
+      labelTooltip={labelTooltip}
+      segments={[{ value, source: "" }]}
+      valueResolver={valueResolver}
+      precision={precision}
+      max={max}
+      isNegativeStat={isNegativeStat}
+      modifier={modifier}
+    />
   );
 }
