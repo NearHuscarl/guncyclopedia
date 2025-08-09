@@ -17,6 +17,7 @@ type TGunStats = {
   damage: IStat;
   precision: number;
   maxAmmo: number;
+  shootingStyle: TProjectilePerShot["shootStyle"];
   magazineSize: number;
   reloadTime: number;
   fireRate: number;
@@ -130,6 +131,7 @@ export class GunService {
       maxAmmo,
       magazineSize,
       reloadTime,
+      shootingStyle: projectile.shootStyle, // only raiden coil has 2 shooting styles.
       precision: ProjectileService.toPrecision(projectile.spread),
       fireRate: shotsPerSecond * 60,
       dps: {

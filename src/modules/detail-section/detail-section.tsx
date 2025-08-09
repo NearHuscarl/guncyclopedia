@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
-import { H2, H3 } from "@/components/ui/typography";
+import { H2, H3, Muted } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import { Tier } from "./tier";
 import { StatBar } from "./stat-bar";
@@ -18,9 +18,9 @@ import { Tags } from "./tags";
 import { StatStackBar } from "./stat-stack-bar";
 import { basicColors } from "@/client/generated/models/color.model";
 import { ArrowLeftRight } from "lucide-react";
-import { AmmoIcon } from "@/components/icons/ammo";
 import { NumericValue } from "./numeric-value";
 import { formatNumber } from "@/lib/lang";
+import { ShootingStyle } from "./shooting-style";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
@@ -91,33 +91,37 @@ export function DetailSection() {
         </blockquote>
         <div className="flex justify-between items-baseline">
           <H2>{name || "N/A"}</H2>
+          <div>
+            {debug &&
+              gun.animation.frames[0].colors.map((c) => {
+                return (
+                  <div
+                    key={c}
+                    className="w-5 h-5 inline-block"
+                    title={c}
+                    style={{ backgroundColor: basicColors[c][1] ?? basicColors[c][0] }}
+                  />
+                );
+              })}
+          </div>
           <Tier tier={gun.quality} />
         </div>
       </div>
-      <div className="flex justify-between pr-2 mb-6">
-        <div />
+      <div className="flex justify-between items-baseline pr-2 mb-6">
+        <Muted className="font-semibold uppercase">{gunStats.shootingStyle}</Muted>
         <div className="flex gap-2 align-baseline">
+          <Tooltip>
+            <TooltipTrigger>
           <NumericValue>
             {gunStats.magazineSize}/{formatNumber(gunStats.maxAmmo)}
           </NumericValue>
-          <div className="flex relative top-[1px]">
-            <AmmoIcon />
-            <AmmoIcon />
-            <AmmoIcon />
-          </div>
+            </TooltipTrigger>
+            <TooltipContent>Magazine Size / Max Ammunition.</TooltipContent>
+          </Tooltip>
+          <ShootingStyle shootingStyle={gunStats.shootingStyle} magazineSize={gunStats.magazineSize} />
         </div>
       </div>
       <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 pr-2">
-        {debug &&
-          gun.animation.frames[0].colors.map((c) => {
-            return (
-              <div
-                className="w-5 h-5 inline-block"
-                title={c}
-                style={{ backgroundColor: basicColors[c][1] ?? basicColors[c][0] }}
-              />
-            );
-          })}
         <StatStackBar
           label="DPS"
           max={100}
