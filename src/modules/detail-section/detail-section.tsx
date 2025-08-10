@@ -21,7 +21,7 @@ import { ArrowLeftRight } from "lucide-react";
 import { NumericValue } from "./numeric-value";
 import { formatNumber } from "@/lib/lang";
 import { ShootingStyle } from "./shooting-style";
-import { Bounce } from "@/components/icons/bounce";
+import { GunAttributes } from "./gun-attributes";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
@@ -123,26 +123,7 @@ export function DetailSection() {
       </div>
           <div className="flex justify-between items-baseline">
             <Muted className="font-semibold uppercase">{gunStats.shootingStyle}</Muted>
-            <div className="flex gap-4">
-              {gunStats.projectile.numberOfBounces || undefined ? (
-                <Tooltip>
-                  <TooltipTrigger>
-                    <div className="flex items-center gap-1">
-                      <NumericValue>{formatNumber(gunStats.projectile.numberOfBounces!, 1)}</NumericValue>
-                      <Bounce color="white" size={20} />
-                    </div>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    Number of bounces: <strong>{formatNumber(gunStats.projectile.numberOfBounces!, 1)}</strong>
-                  </TooltipContent>
-                </Tooltip>
-              ) : (
-                <div className="flex items-center gap-1 invisible">
-                  <NumericValue>{0}</NumericValue>
-                  <Bounce color="white" size={20} />
-                </div>
-              )}
-            </div>
+            <GunAttributes projectileData={gunStats.projectile} />
           </div>
         </div>
       </div>

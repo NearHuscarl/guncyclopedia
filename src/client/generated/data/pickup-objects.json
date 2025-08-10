@@ -22385,7 +22385,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 1.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -23223,7 +23225,8 @@
                 "isHoming": true,
                 "homingRadius": 2,
                 "homingAngularVelocity": 450,
-                "beamChargeTime": 0.2
+                "beamChargeTime": 0.2,
+                "beamStatusEffectChancePerSecond": 1
               }
             ]
           }
@@ -23233,6 +23236,7 @@
     "maxAmmo": 800,
     "reloadTime": 0,
     "featureFlags": [
+      "hasStatusEffects",
       "hasHomingProjectiles"
     ],
     "animation": {
@@ -23848,7 +23852,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects"
+    ],
     "animation": {
       "name": "rattler_idle",
       "fps": 4,
@@ -24936,7 +24942,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -25027,7 +25035,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26762,7 +26772,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects"
+    ],
     "animation": {
       "name": "shotgrub_idle",
       "fps": 6,
@@ -31099,7 +31111,9 @@
     ],
     "maxAmmo": 100,
     "reloadTime": 0.9,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43823,7 +43837,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects"
+    ],
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45832,7 +45848,8 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls"
+      "doesntDamageSecretWalls",
+      "hasStatusEffects"
     ],
     "animation": {
       "name": "No_Animation",
@@ -45907,7 +45924,8 @@
                 "isHoming": true,
                 "homingRadius": 2,
                 "homingAngularVelocity": 450,
-                "beamChargeTime": 0.2
+                "beamChargeTime": 0.2,
+                "beamStatusEffectChancePerSecond": 1
               }
             ]
           }
@@ -45917,6 +45935,7 @@
     "maxAmmo": 800,
     "reloadTime": 0,
     "featureFlags": [
+      "hasStatusEffects",
       "hasHomingProjectiles"
     ],
     "animation": {

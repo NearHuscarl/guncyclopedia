@@ -158,7 +158,15 @@ export class GunModelGenerator {
     if (projDto.projectile.AppliesFire) proj.fireChance = projDto.projectile.FireApplyChance;
     if (projDto.projectile.AppliesStun) proj.stunChance = projDto.projectile.StunApplyChance;
     if (projDto.projectile.AppliesCheese) proj.cheeseChance = projDto.projectile.CheeseApplyChance;
-    if (proj.charmChance || proj.freezeChance || proj.fireChance || proj.stunChance || proj.cheeseChance) {
+    if (
+      proj.poisonChance ||
+      proj.speedChance ||
+      proj.charmChance ||
+      proj.freezeChance ||
+      proj.fireChance ||
+      proj.stunChance ||
+      proj.cheeseChance
+    ) {
       this._featureFlags.add("hasStatusEffects");
     }
 

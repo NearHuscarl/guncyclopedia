@@ -1,9 +1,9 @@
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys } from "@/lib/types";
-import type { TProjectile, TProjectilePerShot } from "../generated/models/gun.model";
+import type { TProjectile, TProjectilePerShot, TStatusEffectProp } from "../generated/models/gun.model";
 
 type AggregateModeOption = "sum" | "avg";
-type AggregateMode = "sum" | "avg" | "max";
+type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TProjectile[]) => number);
 type NumericAggregateConfig = {
   [K in NumericKeys<TProjectile>]: [avg?: AggregateMode, sum?: AggregateMode];
 };
@@ -20,6 +20,21 @@ export class ProjectileService {
   }
   static getSpeed(value: number) {
     return value === -1 ? Infinity : value;
+  }
+
+  static calculateStatusEffectChance(projectiles: TProjectile[], statusEffectProp: TStatusEffectProp): number {
+    let probabilityNone = 1;
+
+    // Calculate the probability that none of the projectiles apply the effect
+    for (const projectile of projectiles) {
+      const statusEffectChance = projectile[statusEffectProp] ?? 0;
+      probabilityNone *= 1 - statusEffectChance;
+    }
+
+    // The probability of at least one applying the effect
+    const probabilityAtLeastOne = 1 - probabilityNone;
+
+    return probabilityAtLeastOne;
   }
 
   /**
@@ -79,13 +94,13 @@ export class ProjectileService {
       range: ["avg", "max"],
       force: ["avg", "sum"],
       spawnWeight: [],
-      poisonChance: ["avg", "max"],
-      speedChance: ["avg", "max"],
-      charmChance: ["avg", "max"],
-      freezeChance: ["avg", "max"],
-      fireChance: ["avg", "max"],
-      stunChance: ["avg", "max"],
-      cheeseChance: ["avg", "max"],
+      poisonChance: ["avg", (p) => this.calculateStatusEffectChance(p, "poisonChance")],
+      speedChance: ["avg", (p) => this.calculateStatusEffectChance(p, "speedChance")],
+      charmChance: ["avg", (p) => this.calculateStatusEffectChance(p, "charmChance")],
+      freezeChance: ["avg", (p) => this.calculateStatusEffectChance(p, "freezeChance")],
+      fireChance: ["avg", (p) => this.calculateStatusEffectChance(p, "fireChance")],
+      stunChance: ["avg", (p) => this.calculateStatusEffectChance(p, "stunChance")],
+      cheeseChance: ["avg", (p) => this.calculateStatusEffectChance(p, "cheeseChance")],
       numberOfBounces: ["avg", "avg"],
       chanceToDieOnBounce: ["avg", "avg"],
       damageMultiplierOnBounce: ["avg", "avg"],
@@ -115,9 +130,9 @@ export class ProjectileService {
     Object.keys(nAggregateConfig).forEach((k) => (sums[k] = 0));
 
     const hasTrue: Record<string, boolean> = {};
-    Object.keys(bAggregateConfig).forEach((k) => (hasTrue[k] = true));
+    Object.keys(bAggregateConfig).forEach((k) => (hasTrue[k] = false));
 
-    const additionaDmg: Record<string, TProjectile["additionalDamage"][number]> = {};
+    const additionaDmgLookup: Record<string, TProjectile["additionalDamage"][number]> = {};
 
     for (const p of projectiles) {
       for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
@@ -133,17 +148,17 @@ export class ProjectileService {
 
       Object.keys(bAggregateConfig).forEach((k) => {
         const key = k as BooleanKeys<TProjectile>;
-        const v = p[key] ?? true; // default to true
+        const v = p[key] ?? false;
         hasTrue[key] = hasTrue[key] || v;
       });
 
       if (mode === "sum") {
         for (const d of p.additionalDamage) {
-          if (!additionaDmg[d.source]) {
-            additionaDmg[d.source] = { ...d, damage: 0 };
+          if (!additionaDmgLookup[d.source]) {
+            additionaDmgLookup[d.source] = { ...d, damage: 0 };
           }
           // other fields should be the same, so we can just sum the damage
-          additionaDmg[d.source].damage += d.damage;
+          additionaDmgLookup[d.source].damage += d.damage;
         }
       } else if (mode === "avg") {
         if (p.additionalDamage.length > 1) {
@@ -152,7 +167,7 @@ export class ProjectileService {
             `Calculate average array field of additionalDamage with more than one element is not implemented.`,
           );
         } else if (p.additionalDamage.length === 1) {
-          additionaDmg[p.additionalDamage[0].source] = { ...p.additionalDamage[0] };
+          additionaDmgLookup[p.additionalDamage[0].source] = { ...p.additionalDamage[0] };
         }
       }
     }
@@ -162,6 +177,8 @@ export class ProjectileService {
 
       if (m === "avg") {
         sums[key] /= projectiles.length;
+      } else if (typeof m === "function") {
+        sums[key] = m(projectiles);
       }
     }
 
@@ -170,7 +187,7 @@ export class ProjectileService {
 
     Object.keys(nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));
     Object.keys(bAggregateConfig).forEach((k) => (final[k as BooleanKeys<TProjectile>] = hasTrue[k]));
-    final.additionalDamage = Object.values(additionaDmg);
+    final.additionalDamage = Object.values(additionaDmgLookup);
 
     return final as TProjectile;
   }

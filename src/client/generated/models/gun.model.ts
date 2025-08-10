@@ -2,6 +2,15 @@ import z from "zod/v4";
 import { Percentage, Position } from "./schema.ts";
 import { PickupObject } from "./pickup-object.model.ts";
 
+export type TStatusEffectProp =
+  | "poisonChance"
+  | "speedChance"
+  | "charmChance"
+  | "freezeChance"
+  | "fireChance"
+  | "stunChance"
+  | "cheeseChance";
+
 const Projectile = z.object({
   /**
    * basename of the meta file that associates with the prefab file
