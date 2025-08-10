@@ -1,4 +1,5 @@
 import sumBy from "lodash/sumBy";
+import startCase from "lodash/startCase";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "../generated/models/gun.model";
 import { ProjectileService } from "./projectile.service";
 import { formatNumber } from "@/lib/lang";
@@ -55,10 +56,12 @@ export class GunService {
   }
 
   private static _getTooltip(additionalDamage: TProjectile["additionalDamage"][number], projectileData: TProjectile) {
-    if (additionalDamage.source === "ricochet") {
+    const { source, damage } = additionalDamage;
+
+    if (source === "ricochet") {
       const { numberOfBounces, chanceToDieOnBounce, damageMultiplierOnBounce } = projectileData;
       return [
-        `Potential damage from ricochets: <strong>${formatNumber(additionalDamage.damage, 2)}</strong><br />`,
+        `Potential damage from ricochets: <strong>${formatNumber(damage, 2)}</strong><br />`,
         `- numberOfBounces: <strong>${formatNumber(numberOfBounces ?? 0, 2)}</strong><br />`,
         (chanceToDieOnBounce ?? 0) > 0 &&
           `- chanceToDieOnBounce: <strong>${formatNumber(chanceToDieOnBounce ?? 0, 2)}</strong><br />`,
@@ -67,10 +70,10 @@ export class GunService {
       ]
         .filter(Boolean)
         .join("\n");
-    } else if (additionalDamage.source === "blackhole") {
-      return `Black hole center: <strong>${formatNumber(additionalDamage.damage, 2)}</strong>`;
+    } else if (source === "blackhole") {
+      return `Black hole center: <strong>${formatNumber(damage, 2)}</strong>`;
     }
-    return "";
+    return `${startCase(source)} damage: <strong>${formatNumber(damage, 2)}</strong>`;
   }
 
   static getDamage(projectileData: TProjectile, type: "dps" | "instant", shotsPerSecond: number) {
@@ -109,12 +112,19 @@ export class GunService {
     };
   }
 
-  static computeGunStats(gun: TGun, modeIndex: number, projectileIndex: number): TGunStats {
+  static computeGunStats(
+    gun: TGun,
+    modeIndex: number,
+    projectileIndex: number,
+    projectileDataIndex: number,
+  ): TGunStats {
     const mode = gun.projectileModes[modeIndex] ?? gun.projectileModes[0];
-    const aggregatedProjectile = ProjectileService.createAggregatedProjectile(mode.projectiles);
-    const projectile = mode.projectiles[projectileIndex] ?? aggregatedProjectile;
+    const projectile =
+      mode.projectiles[projectileIndex] ?? ProjectileService.createAggregatedProjectile(mode.projectiles);
     const projectilePool = projectile.projectiles;
-    const projData = ProjectileService.createAggregatedProjectileData(projectilePool, "avg");
+    const projData =
+      mode.projectiles[projectileIndex]?.projectiles[projectileDataIndex] ??
+      ProjectileService.createAggregatedProjectileData(projectilePool, "avg");
     const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
     const reloadTime = magazineSize === gun.maxAmmo ? 0 : gun.reloadTime;
     const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? Infinity : gun.maxAmmo;

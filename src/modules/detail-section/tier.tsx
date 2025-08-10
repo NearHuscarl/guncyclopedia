@@ -21,7 +21,7 @@ export function Tier({ tier, className }: TTierProps) {
   return (
     <Tooltip>
       <TooltipTrigger className={className}>
-        <img key={tier} src={chestImageSrc} className={"inline-block w-6 h-6"} />
+        <img key={tier} src={chestImageSrc} className={"inline-block w-6 h-6 filter brightness-150"} />
       </TooltipTrigger>
       <TooltipContent>{isKnownTier ? `Tier ${tier}` : tier}</TooltipContent>
     </Tooltip>

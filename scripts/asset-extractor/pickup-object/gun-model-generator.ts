@@ -145,28 +145,62 @@ export class GunModelGenerator {
     };
 
     if (projDto.projectile.ignoreDamageCaps) proj.ignoreDamageCaps = true;
-    if (projDto.projectile.AppliesPoison) proj.poisonChance = projDto.projectile.PoisonApplyChance;
-    if (projDto.projectile.AppliesSpeedModifier) {
-      // Some mistakes where AppliesSpeedModifier doesn't mean anything
-      // ExportedProject\Assets\GameObject\Railgun_Variant_Projectile.prefab
-      if (projDto.projectile.speedEffect.SpeedMultiplier < 1) {
-        proj.speedChance = projDto.projectile.SpeedApplyChance;
-      }
+
+    if (projDto.projectile.AppliesPoison) {
+      proj.poisonChance = projDto.projectile.PoisonApplyChance;
+      proj.poisonDuration = projDto.projectile.healthEffect.duration;
+      proj.additionalDamage.push({
+        source: "poison",
+        type: "dps",
+        damage: projDto.projectile.healthEffect.DamagePerSecondToEnemies,
+        canNotStack: true,
+        isEstimated: projDto.projectile.PoisonApplyChance < 1,
+      });
+      this._featureFlags.add("hasStatusEffects");
     }
-    if (projDto.projectile.AppliesCharm) proj.charmChance = projDto.projectile.CharmApplyChance;
-    if (projDto.projectile.AppliesFreeze) proj.freezeChance = projDto.projectile.FreezeApplyChance;
-    if (projDto.projectile.AppliesFire) proj.fireChance = projDto.projectile.FireApplyChance;
-    if (projDto.projectile.AppliesStun) proj.stunChance = projDto.projectile.StunApplyChance;
-    if (projDto.projectile.AppliesCheese) proj.cheeseChance = projDto.projectile.CheeseApplyChance;
     if (
-      proj.poisonChance ||
-      proj.speedChance ||
-      proj.charmChance ||
-      proj.freezeChance ||
-      proj.fireChance ||
-      proj.stunChance ||
-      proj.cheeseChance
+      projDto.projectile.AppliesSpeedModifier &&
+      // Some mistakes where AppliesSpeedModifier doesn't mean anything
+      // ExportedProject/Assets/GameObject/Railgun_Variant_Projectile.prefab
+      projDto.projectile.speedEffect.SpeedMultiplier !== 1
     ) {
+      proj.speedChance = projDto.projectile.SpeedApplyChance;
+      proj.speedDuration = projDto.projectile.speedEffect.duration;
+      proj.speedMultiplier = projDto.projectile.speedEffect.SpeedMultiplier;
+      this._featureFlags.add("hasStatusEffects");
+    }
+    if (projDto.projectile.AppliesCharm) {
+      proj.charmChance = projDto.projectile.CharmApplyChance;
+      proj.charmDuration = projDto.projectile.charmEffect.duration;
+      this._featureFlags.add("hasStatusEffects");
+    }
+    if (projDto.projectile.AppliesFreeze) {
+      proj.freezeChance = projDto.projectile.FreezeApplyChance;
+      proj.freezeDuration = projDto.projectile.freezeEffect.duration;
+      proj.freezeAmount = projDto.projectile.freezeEffect.FreezeAmount;
+      this._featureFlags.add("hasStatusEffects");
+    }
+    if (projDto.projectile.AppliesFire) {
+      proj.fireChance = projDto.projectile.FireApplyChance;
+      proj.fireDuration = projDto.projectile.fireEffect.duration;
+      proj.additionalDamage.push({
+        source: "fire",
+        type: "dps",
+        damage: projDto.projectile.fireEffect.DamagePerSecondToEnemies,
+        canNotStack: true,
+        isEstimated: projDto.projectile.FireApplyChance < 1,
+      });
+      this._featureFlags.add("hasStatusEffects");
+    }
+    if (projDto.projectile.AppliesStun) {
+      proj.stunChance = projDto.projectile.StunApplyChance;
+      proj.stunDuration = projDto.projectile.AppliedStunDuration;
+      this._featureFlags.add("hasStatusEffects");
+    }
+    if (projDto.projectile.AppliesCheese) {
+      proj.cheeseChance = projDto.projectile.CheeseApplyChance;
+      proj.cheeseDuration = projDto.projectile.cheeseEffect.duration;
+      proj.cheeseAmount = projDto.projectile.cheeseEffect.CheeseAmount;
       this._featureFlags.add("hasStatusEffects");
     }
 
@@ -198,10 +232,14 @@ export class GunModelGenerator {
     if (projScript.endsWith("BoomerangProjectile.cs.meta")) {
       proj.isHoming = true;
       proj.stunChance = 1; // Boomerang always stuns. See BoomerangProjectile.cs#StunDuration
+      proj.stunDuration = projDto.projectile.StunDuration;
+      this._featureFlags.add("hasStatusEffects");
     }
     if (projScript.endsWith("CerebralBoreProjectile.cs.meta")) {
       proj.isHoming = true;
       proj.stunChance = 1; // CerebralBoreProjectile always stuns.
+      proj.stunDuration = 1; // CerebralBoreProjectile#HandleBoring()
+      this._featureFlags.add("hasStatusEffects");
     }
     if (projScript.endsWith("InstantlyDamageAllProjectile.cs.meta")) {
       proj.damageAllEnemies = true;

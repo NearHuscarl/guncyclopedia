@@ -14,6 +14,27 @@ const CoreDamageType = {
   SpecialBossDamage: 0x80,
 };
 
+const GameActorEffect = z.object({
+  /**
+   * For all status effects, assuming `stackMode = EffectStackingMode.Refresh`
+   *
+   * E.g. the effect duration is reset whenever the effect is reapplied
+   */
+  duration: z.number(),
+});
+const GameActorSpeedEffect = GameActorEffect.extend({
+  SpeedMultiplier: z.number(),
+});
+const GameActorHealthEffect = GameActorEffect.extend({
+  DamagePerSecondToEnemies: z.number(),
+});
+const GameActorFreezeEffect = GameActorEffect.extend({
+  FreezeAmount: z.number(),
+});
+const GameActorCheeseEffect = GameActorEffect.extend({
+  CheeseAmount: z.number(),
+});
+
 const ProjectileData = MonoBehaviour.extend({
   ignoreDamageCaps: BinaryOption,
   baseData: z.object({
@@ -27,27 +48,37 @@ const ProjectileData = MonoBehaviour.extend({
 
   AppliesPoison: BinaryOption,
   PoisonApplyChance: Percentage,
+  healthEffect: GameActorHealthEffect,
 
   AppliesSpeedModifier: BinaryOption,
   SpeedApplyChance: z.number(), // not Percentage because of a malformed projectile
-  speedEffect: z.object({
-    SpeedMultiplier: z.number(),
-  }),
+  speedEffect: GameActorSpeedEffect,
 
   AppliesCharm: BinaryOption,
   CharmApplyChance: Percentage,
+  charmEffect: GameActorEffect,
 
   AppliesFreeze: BinaryOption,
   FreezeApplyChance: Percentage,
+  freezeEffect: GameActorFreezeEffect,
 
   AppliesFire: BinaryOption,
   FireApplyChance: Percentage,
+  fireEffect: GameActorHealthEffect,
 
   AppliesStun: BinaryOption,
   StunApplyChance: Percentage,
+  AppliedStunDuration: z.number(),
 
   AppliesCheese: BinaryOption,
   CheeseApplyChance: Percentage,
+  cheeseEffect: GameActorCheeseEffect,
+
+  /**
+   * `BoomerangProjectile` subclass
+   */
+  StunDuration: z.number().optional(),
+  // TODO: what the heck is bleed effect?
 });
 
 const BounceProjModifierData = z.object({

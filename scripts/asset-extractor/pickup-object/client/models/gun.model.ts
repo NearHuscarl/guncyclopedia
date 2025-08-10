@@ -34,7 +34,11 @@ const Projectile = z.object({
        * E.g. for ricochets, the damage is computed as if all bounces hit an enemy.
        */
       isEstimated: z.boolean().optional(),
-      source: z.enum(["ricochet", "blackhole"]),
+      /**
+       * If `canNotStack` is true, all damages with the same source can only be applied once.
+       */
+      canNotStack: z.boolean().optional(),
+      source: z.enum(["ricochet", "blackhole", "fire", "poison"]),
       damage: z.number(),
     }),
   ),
@@ -45,12 +49,28 @@ const Projectile = z.object({
   spawnWeight: z.number().optional(),
 
   poisonChance: Percentage.optional(),
+  poisonDuration: z.number().optional(),
+
   speedChance: Percentage.optional(),
+  speedDuration: z.number().optional(),
+  speedMultiplier: z.number().optional(),
+
   charmChance: Percentage.optional(),
+  charmDuration: z.number().optional(),
+
   freezeChance: Percentage.optional(),
+  freezeDuration: z.number().optional(),
+  freezeAmount: z.number().optional(),
+
   fireChance: Percentage.optional(),
+  fireDuration: z.number().optional(),
+
   stunChance: Percentage.optional(),
+  stunDuration: z.number().optional(),
+
   cheeseChance: Percentage.optional(),
+  cheeseDuration: z.number().optional(),
+  cheeseAmount: z.number().optional(),
 
   numberOfBounces: z.number().optional(),
   /**

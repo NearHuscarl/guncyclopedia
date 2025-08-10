@@ -928,6 +928,7 @@
                 "force": 80,
                 "additionalDamage": [],
                 "stunChance": 0.3,
+                "stunDuration": 3,
                 "penetration": 1,
                 "canPenetrateObjects": true
               }
@@ -1176,6 +1177,8 @@
                 "force": 25,
                 "additionalDamage": [],
                 "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 150,
                 "penetration": 5,
                 "canPenetrateObjects": true
               }
@@ -1508,7 +1511,10 @@
                 "force": 8,
                 "additionalDamage": [],
                 "speedChance": 1,
-                "stunChance": 1
+                "speedDuration": 120,
+                "speedMultiplier": 0.4,
+                "stunChance": 1,
+                "stunDuration": 1
               }
             ]
           }
@@ -3826,6 +3832,7 @@
                 "force": 8,
                 "additionalDamage": [],
                 "charmChance": 0.75,
+                "charmDuration": 6,
                 "penetration": 0,
                 "canPenetrateObjects": true
               }
@@ -4686,8 +4693,17 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 4,
                 "canPenetrateObjects": false
               }
@@ -5641,9 +5657,18 @@
                 "speed": 18,
                 "range": 1000,
                 "force": 15,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "spawnWeight": 1,
-                "fireChance": 1
+                "fireChance": 1,
+                "fireDuration": 4
               },
               {
                 "id": "Microtransaction_Bobble_Marine_Projectile",
@@ -5682,7 +5707,8 @@
                 "force": 15,
                 "additionalDamage": [],
                 "spawnWeight": 2,
-                "charmChance": 1
+                "charmChance": 1,
+                "charmDuration": 7
               }
             ]
           }
@@ -5766,6 +5792,7 @@
                 "force": 8,
                 "additionalDamage": [],
                 "stunChance": 1,
+                "stunDuration": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
                 "isHoming": true
@@ -5778,6 +5805,7 @@
     "maxAmmo": 75,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasStatusEffects",
       "hasHomingProjectiles"
     ],
     "animation": {
@@ -5878,6 +5906,7 @@
                 "force": 8,
                 "additionalDamage": [],
                 "stunChance": 1,
+                "stunDuration": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
                 "isHoming": true
@@ -5899,6 +5928,7 @@
                 "force": 8,
                 "additionalDamage": [],
                 "stunChance": 1,
+                "stunDuration": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
                 "isHoming": true
@@ -5911,6 +5941,7 @@
     "maxAmmo": 75,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasStatusEffects",
       "hasHomingProjectiles"
     ],
     "animation": {
@@ -6354,7 +6385,9 @@
                 "range": 35,
                 "force": 10,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           }
@@ -6721,6 +6754,8 @@
                 "force": 11,
                 "additionalDamage": [],
                 "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 55,
                 "penetration": 0,
                 "canPenetrateObjects": true
               }
@@ -6803,6 +6838,8 @@
                 "force": 11,
                 "additionalDamage": [],
                 "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 55,
                 "penetration": 0,
                 "canPenetrateObjects": true
               }
@@ -7949,8 +7986,17 @@
                 "speed": 100,
                 "range": 40,
                 "force": 30,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 6
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "isHoming": true,
                 "homingRadius": 2,
                 "homingAngularVelocity": 450,
@@ -8462,12 +8508,33 @@
                 "speed": 90,
                 "range": 500,
                 "force": 35,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 3
+                  },
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "poisonChance": 1,
+                "poisonDuration": 2.5,
                 "charmChance": 1,
+                "charmDuration": 6,
                 "freezeChance": 1,
+                "freezeDuration": 3,
+                "freezeAmount": 200,
                 "fireChance": 1,
+                "fireDuration": 4,
                 "stunChance": 1,
+                "stunDuration": 3,
                 "beamChargeTime": 0.6,
                 "beamStatusEffectChancePerSecond": 0.6
               }
@@ -9231,8 +9298,17 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 21,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": true,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 0.08,
+                "fireDuration": 2.5,
                 "penetration": 2,
                 "canPenetrateObjects": true
               }
@@ -9398,8 +9474,17 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 27,
-                "additionalDamage": [],
-                "fireChance": 0.08
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": true,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
+                "fireChance": 0.08,
+                "fireDuration": 2.5
               }
             ]
           }
@@ -12145,6 +12230,7 @@
                 "force": 13,
                 "additionalDamage": [],
                 "stunChance": 0.2,
+                "stunDuration": 2.5,
                 "penetration": 1,
                 "canPenetrateObjects": false
               }
@@ -12396,8 +12482,17 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 0,
                 "canPenetrateObjects": true
               }
@@ -12480,8 +12575,17 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 120,
                 "penetration": 0,
                 "canPenetrateObjects": true
               }
@@ -12805,6 +12909,8 @@
                 "force": 10,
                 "additionalDamage": [],
                 "freezeChance": 1,
+                "freezeDuration": 3,
+                "freezeAmount": 200,
                 "beamChargeTime": 0.4,
                 "beamStatusEffectChancePerSecond": 1
               }
@@ -12887,6 +12993,8 @@
                 "force": 10,
                 "additionalDamage": [],
                 "freezeChance": 1,
+                "freezeDuration": 3,
+                "freezeAmount": 200,
                 "beamChargeTime": 0.4,
                 "beamStatusEffectChancePerSecond": 1
               }
@@ -13048,6 +13156,13 @@
                 "force": 4,
                 "additionalDamage": [
                   {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  },
+                  {
                     "type": "instant",
                     "isEstimated": true,
                     "source": "ricochet",
@@ -13055,6 +13170,7 @@
                   }
                 ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1
               }
@@ -14335,7 +14451,9 @@
                 "range": 10,
                 "force": 8,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           },
@@ -14353,7 +14471,9 @@
                 "range": 10,
                 "force": 8,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           },
@@ -14371,7 +14491,9 @@
                 "range": 10,
                 "force": 8,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           },
@@ -14389,7 +14511,9 @@
                 "range": 10,
                 "force": 8,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           },
@@ -14407,7 +14531,9 @@
                 "range": 10,
                 "force": 8,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           }
@@ -14488,7 +14614,9 @@
                 "range": 100,
                 "force": 8,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 70
               }
             ]
           }
@@ -14586,7 +14714,9 @@
                 "range": 3,
                 "force": 0,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 80
               }
             ]
           }
@@ -14755,8 +14885,17 @@
                 "speed": 30,
                 "range": 3,
                 "force": 10,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 10,
                 "canPenetrateObjects": false
               }
@@ -14926,8 +15065,17 @@
                 "speed": 30,
                 "range": 3,
                 "force": 10,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 120,
                 "penetration": 10,
                 "canPenetrateObjects": false
               }
@@ -20870,8 +21018,17 @@
                 "speed": 10,
                 "range": 3,
                 "force": 10,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 10,
                 "canPenetrateObjects": false
               }
@@ -20972,8 +21129,17 @@
                 "speed": 10,
                 "range": 3,
                 "force": 10,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 10,
                 "canPenetrateObjects": false
               }
@@ -21074,6 +21240,7 @@
                 "force": 12,
                 "additionalDamage": [],
                 "stunChance": 1,
+                "stunDuration": 5,
                 "penetration": 4,
                 "canPenetrateObjects": false
               }
@@ -21154,8 +21321,17 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 4,
                 "canPenetrateObjects": false
               }
@@ -21237,8 +21413,17 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 120,
                 "penetration": 4,
                 "canPenetrateObjects": false
               }
@@ -22375,8 +22560,17 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 60,
-                "additionalDamage": [],
-                "poisonChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 3
+                  }
+                ],
+                "poisonChance": 1,
+                "poisonDuration": 5
               }
             ]
           }
@@ -23220,8 +23414,17 @@
                 "speed": -1,
                 "range": 50,
                 "force": 20,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 4
+                  }
+                ],
                 "poisonChance": 1,
+                "poisonDuration": 3.5,
                 "isHoming": true,
                 "homingRadius": 2,
                 "homingAngularVelocity": 450,
@@ -23740,8 +23943,17 @@
                 "speed": 200,
                 "range": 1000,
                 "force": 4,
-                "additionalDamage": [],
-                "poisonChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 5
+                  }
+                ],
+                "poisonChance": 1,
+                "poisonDuration": 10
               }
             ]
           },
@@ -24932,8 +25144,17 @@
                 "speed": 20,
                 "range": 25,
                 "force": 13,
-                "additionalDamage": [],
-                "poisonChance": 0.5
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": true,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 3
+                  }
+                ],
+                "poisonChance": 0.5,
+                "poisonDuration": 2.5
               }
             ]
           }
@@ -25018,6 +25239,13 @@
                 "force": 13,
                 "additionalDamage": [
                   {
+                    "type": "dps",
+                    "isEstimated": true,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 3
+                  },
+                  {
                     "type": "instant",
                     "isEstimated": true,
                     "source": "ricochet",
@@ -25025,6 +25253,7 @@
                   }
                 ],
                 "poisonChance": 0.5,
+                "poisonDuration": 5,
                 "numberOfBounces": 2,
                 "damageMultiplierOnBounce": 0
               }
@@ -26690,8 +26919,17 @@
                 "speed": 20,
                 "range": 25,
                 "force": 13,
-                "additionalDamage": [],
-                "poisonChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 5
+                  }
+                ],
+                "poisonChance": 1,
+                "poisonDuration": 10
               }
             ]
           },
@@ -26708,8 +26946,17 @@
                 "speed": 20,
                 "range": 25,
                 "force": 13,
-                "additionalDamage": [],
-                "poisonChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 5
+                  }
+                ],
+                "poisonChance": 1,
+                "poisonDuration": 10
               }
             ]
           },
@@ -26726,8 +26973,17 @@
                 "speed": 20,
                 "range": 25,
                 "force": 13,
-                "additionalDamage": [],
-                "poisonChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 5
+                  }
+                ],
+                "poisonChance": 1,
+                "poisonDuration": 10
               }
             ]
           },
@@ -26744,8 +27000,17 @@
                 "speed": 20,
                 "range": 25,
                 "force": 13,
-                "additionalDamage": [],
-                "poisonChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 5
+                  }
+                ],
+                "poisonChance": 1,
+                "poisonDuration": 10
               }
             ]
           },
@@ -26762,8 +27027,17 @@
                 "speed": 20,
                 "range": 25,
                 "force": 13,
-                "additionalDamage": [],
-                "poisonChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 5
+                  }
+                ],
+                "poisonChance": 1,
+                "poisonDuration": 10
               }
             ]
           }
@@ -27447,7 +27721,8 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
-                "charmChance": 0.25
+                "charmChance": 0.25,
+                "charmDuration": 10
               }
             ]
           },
@@ -27465,7 +27740,8 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
-                "charmChance": 0.25
+                "charmChance": 0.25,
+                "charmDuration": 10
               }
             ]
           },
@@ -27484,6 +27760,7 @@
                 "force": 8,
                 "additionalDamage": [],
                 "charmChance": 0.25,
+                "charmDuration": 10,
                 "penetration": 8,
                 "canPenetrateObjects": false
               }
@@ -27511,6 +27788,7 @@
                   }
                 ],
                 "charmChance": 0.25,
+                "charmDuration": 10,
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1
               }
@@ -27530,7 +27808,8 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
-                "charmChance": 0.25
+                "charmChance": 0.25,
+                "charmDuration": 10
               }
             ]
           },
@@ -27556,6 +27835,7 @@
                   }
                 ],
                 "charmChance": 0.25,
+                "charmDuration": 10,
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1
               }
@@ -28124,7 +28404,9 @@
                 "range": 35,
                 "force": 10,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           }
@@ -28204,7 +28486,9 @@
                 "range": 35,
                 "force": 10,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           },
@@ -28222,7 +28506,9 @@
                 "range": 35,
                 "force": 10,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           },
@@ -28240,7 +28526,9 @@
                 "range": 35,
                 "force": 10,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           }
@@ -31102,7 +31390,9 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
-                "speedChance": 1
+                "speedChance": 1,
+                "speedDuration": 10,
+                "speedMultiplier": 0.4
               }
             ]
           }
@@ -39742,6 +40032,7 @@
                 "force": 40,
                 "additionalDamage": [],
                 "stunChance": 0.3,
+                "stunDuration": 3,
                 "penetration": 10,
                 "canPenetrateObjects": false
               }
@@ -39770,6 +40061,7 @@
                 "force": 400,
                 "additionalDamage": [],
                 "stunChance": 0.3,
+                "stunDuration": 3,
                 "penetration": 10,
                 "canPenetrateObjects": false
               }
@@ -41362,7 +41654,8 @@
                 "range": 10,
                 "force": 13,
                 "additionalDamage": [],
-                "charmChance": 0.085
+                "charmChance": 0.085,
+                "charmDuration": 6
               }
             ]
           },
@@ -41380,7 +41673,8 @@
                 "range": 10,
                 "force": 13,
                 "additionalDamage": [],
-                "charmChance": 0.085
+                "charmChance": 0.085,
+                "charmDuration": 6
               }
             ]
           },
@@ -41398,7 +41692,8 @@
                 "range": 10,
                 "force": 13,
                 "additionalDamage": [],
-                "charmChance": 0.085
+                "charmChance": 0.085,
+                "charmDuration": 6
               }
             ]
           },
@@ -41416,7 +41711,8 @@
                 "range": 10,
                 "force": 13,
                 "additionalDamage": [],
-                "charmChance": 0.085
+                "charmChance": 0.085,
+                "charmDuration": 6
               }
             ]
           },
@@ -41434,7 +41730,8 @@
                 "range": 10,
                 "force": 13,
                 "additionalDamage": [],
-                "charmChance": 0.085
+                "charmChance": 0.085,
+                "charmDuration": 6
               }
             ]
           },
@@ -41452,7 +41749,8 @@
                 "range": 10,
                 "force": 13,
                 "additionalDamage": [],
-                "charmChance": 0.085
+                "charmChance": 0.085,
+                "charmDuration": 6
               }
             ]
           },
@@ -41470,7 +41768,8 @@
                 "range": 10,
                 "force": 13,
                 "additionalDamage": [],
-                "charmChance": 0.085
+                "charmChance": 0.085,
+                "charmDuration": 6
               }
             ]
           }
@@ -41729,9 +42028,18 @@
                 "speed": 19,
                 "range": 1000,
                 "force": 20,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "spawnWeight": 1,
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 0,
                 "canPenetrateObjects": true
               },
@@ -41741,9 +42049,18 @@
                 "speed": 19,
                 "range": 1000,
                 "force": 26,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 5
+                  }
+                ],
                 "spawnWeight": 1,
                 "poisonChance": 1,
+                "poisonDuration": 10,
                 "penetration": 0,
                 "canPenetrateObjects": true
               },
@@ -41800,6 +42117,8 @@
                 "additionalDamage": [],
                 "spawnWeight": 1,
                 "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 120,
                 "penetration": 0,
                 "canPenetrateObjects": true
               },
@@ -41812,6 +42131,8 @@
                 "additionalDamage": [],
                 "spawnWeight": 1,
                 "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 200,
                 "penetration": 0,
                 "canPenetrateObjects": true
               }
@@ -42200,6 +42521,7 @@
                 "force": 0,
                 "additionalDamage": [],
                 "stunChance": 0.01,
+                "stunDuration": 3,
                 "penetration": 3,
                 "canPenetrateObjects": true
               }
@@ -43827,8 +44149,17 @@
                 "speed": 15,
                 "range": 1000,
                 "force": 11,
-                "additionalDamage": [],
-                "poisonChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 3
+                  }
+                ],
+                "poisonChance": 1,
+                "poisonDuration": 2.5
               }
             ]
           }
@@ -43916,6 +44247,8 @@
                   }
                 ],
                 "cheeseChance": 1,
+                "cheeseDuration": 10,
+                "cheeseAmount": 50,
                 "numberOfBounces": 5,
                 "chanceToDieOnBounce": 0.1,
                 "damageMultiplierOnBounce": 1,
@@ -44321,6 +44654,7 @@
                   }
                 ],
                 "stunChance": 1,
+                "stunDuration": 5,
                 "numberOfBounces": 100,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 1,
@@ -44335,6 +44669,7 @@
     "maxAmmo": 100,
     "reloadTime": 1,
     "featureFlags": [
+      "hasStatusEffects",
       "hasHomingProjectiles"
     ],
     "video": "https://youtu.be/x2GsWu0qJ9E?t=811",
@@ -44569,8 +44904,17 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 27,
-                "additionalDamage": [],
-                "fireChance": 0.08
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": true,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
+                "fireChance": 0.08,
+                "fireDuration": 2.5
               }
             ]
           }
@@ -45085,6 +45429,7 @@
                 "force": 8,
                 "additionalDamage": [],
                 "stunChance": 1,
+                "stunDuration": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
                 "isHoming": true
@@ -45097,6 +45442,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [
+      "hasStatusEffects",
       "hasHomingProjectiles"
     ],
     "animation": {
@@ -45272,8 +45618,17 @@
                 "speed": 23,
                 "range": 1000,
                 "force": 35,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 4,
                 "canPenetrateObjects": false
               }
@@ -45595,7 +45950,8 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
-                "stunChance": 1
+                "stunChance": 1,
+                "stunDuration": 1
               }
             ]
           }
@@ -45705,8 +46061,17 @@
                 "speed": 22,
                 "range": 2.5,
                 "force": 120,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 7.5
+                  }
+                ],
                 "poisonChance": 1,
+                "poisonDuration": 10,
                 "penetration": 10,
                 "canPenetrateObjects": false
               }
@@ -45834,8 +46199,17 @@
                 "speed": 22,
                 "range": 2.5,
                 "force": 120,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 7.5
+                  }
+                ],
                 "poisonChance": 1,
+                "poisonDuration": 10,
                 "penetration": 10,
                 "canPenetrateObjects": false
               }
@@ -45919,8 +46293,17 @@
                 "speed": 50,
                 "range": 50,
                 "force": 20,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "poison",
+                    "damage": 5
+                  }
+                ],
                 "poisonChance": 1,
+                "poisonDuration": 7,
                 "isHoming": true,
                 "homingRadius": 2,
                 "homingAngularVelocity": 450,
@@ -46008,7 +46391,9 @@
                 "force": 9,
                 "additionalDamage": [],
                 "spawnWeight": 3,
-                "cheeseChance": 1
+                "cheeseChance": 1,
+                "cheeseDuration": 10,
+                "cheeseAmount": 50
               },
               {
                 "id": "Cheese_Projectile_Wedge",
@@ -46018,7 +46403,9 @@
                 "force": 9,
                 "additionalDamage": [],
                 "spawnWeight": 2,
-                "cheeseChance": 1
+                "cheeseChance": 1,
+                "cheeseDuration": 10,
+                "cheeseAmount": 50
               },
               {
                 "id": "Cheese_Projectile_Wheel",
@@ -46028,7 +46415,9 @@
                 "force": 9,
                 "additionalDamage": [],
                 "spawnWeight": 1,
-                "cheeseChance": 1
+                "cheeseChance": 1,
+                "cheeseDuration": 10,
+                "cheeseAmount": 50
               }
             ]
           }
@@ -46303,7 +46692,9 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 30
               }
             ]
           }
@@ -46328,7 +46719,9 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
-                "freezeChance": 1
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 130
               }
             ]
           }
@@ -46409,8 +46802,17 @@
                 "speed": 600,
                 "range": 1000,
                 "force": 4,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 1,
                 "canPenetrateObjects": true
               }
@@ -46436,8 +46838,17 @@
                 "speed": 26,
                 "range": 1000,
                 "force": 32,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
                 "fireChance": 1,
+                "fireDuration": 4,
                 "penetration": 1,
                 "canPenetrateObjects": true
               }
@@ -46824,8 +47235,17 @@
                 "speed": 120,
                 "range": 1000,
                 "force": 90,
-                "additionalDamage": [],
-                "fireChance": 1
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
+                "fireChance": 1,
+                "fireDuration": 10
               }
             ]
           }

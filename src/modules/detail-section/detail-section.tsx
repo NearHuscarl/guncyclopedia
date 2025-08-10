@@ -32,16 +32,24 @@ export function DetailSection() {
   const [modeIndex, _setModeIndex] = useState(0);
   const [hoverProjectileIndex, setHoverProjectileIndex] = useState(-1);
   const [selectedProjectileIndex, _setSelectedProjectileIndex] = useState(-1);
+  const [hoverProjectileDataIndex, setHoverProjectileDataIndex] = useState(-1);
+  const [selectedProjectileDataIndex, _setSelectedProjectileDataIndex] = useState(-1);
   const setModeIndex = (index: number) => {
     _setModeIndex(index);
     // Reset projectile index when mode changes
     setHoverProjectileIndex(-1);
     _setSelectedProjectileIndex(-1);
+    setHoverProjectileDataIndex(-1);
+    _setSelectedProjectileDataIndex(-1);
   };
   const setSelectedProjectileIndex = (index: number) => {
     _setSelectedProjectileIndex(index === selectedProjectileIndex ? -1 : index);
   };
-  const currentProjectileIndex = hoverProjectileIndex !== -1 ? hoverProjectileIndex : selectedProjectileIndex;
+  const setSelectedProjectileDataIndex = (index: number) => {
+    _setSelectedProjectileDataIndex(index === selectedProjectileDataIndex ? -1 : index);
+  };
+  const projectileIndex = hoverProjectileIndex !== -1 ? hoverProjectileIndex : selectedProjectileIndex;
+  const projectileDataIndex = hoverProjectileDataIndex !== -1 ? hoverProjectileDataIndex : selectedProjectileDataIndex;
 
   useEffect(() => {
     // Note: Don't remove this useEffect and use key={gun?.id} for parent component
@@ -54,8 +62,10 @@ export function DetailSection() {
   }
 
   const { animation, name, ...other } = gun;
-  const gunStats = GunService.computeGunStats(gun, modeIndex, currentProjectileIndex);
-  const hoverGunStats = hoverGun ? GunService.computeGunStats(hoverGun, modeIndex, currentProjectileIndex) : gunStats;
+  const gunStats = GunService.computeGunStats(gun, modeIndex, projectileIndex, projectileDataIndex);
+  const hoverGunStats = hoverGun
+    ? GunService.computeGunStats(hoverGun, modeIndex, projectileIndex, projectileDataIndex)
+    : gunStats;
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
@@ -170,7 +180,7 @@ export function DetailSection() {
           onSelect={setSelectedProjectileIndex}
           onHover={setHoverProjectileIndex}
           onBlur={() => setHoverProjectileIndex(-1)}
-          isSelected={(i) => hoverProjectileIndex === i || selectedProjectileIndex === i}
+          isSelected={(i) => projectileIndex === i}
         />
         <StatStackBar
           label="Damage"
@@ -218,7 +228,7 @@ export function DetailSection() {
         />
         <div className="mt-6">
           {gunStats.projectilePerShot.projectiles.length > 1 && (
-            <div className="flex gap-4 items-baseline">
+            <div className="flex gap-4 items-baseline" onMouseLeave={() => setHoverProjectileDataIndex(-1)}>
               <Tooltip>
                 <TooltipTrigger>
                   <H3 className="mb-4 border-b border-dashed border-stone-400/30 cursor-help">Projectile pool:</H3>
@@ -229,10 +239,14 @@ export function DetailSection() {
                 </TooltipContent>
               </Tooltip>
               <div className="flex gap-2 relative top-[3px]">
-                {gunStats.projectilePerShot.projectiles.map((p) => (
+                {gunStats.projectilePerShot.projectiles.map((p, i) => (
                   <Tooltip key={p.id}>
                     <TooltipTrigger>
-                      <Circle />
+                      <Circle
+                        onClick={() => setSelectedProjectileDataIndex(i)}
+                        onMouseEnter={() => setHoverProjectileDataIndex(i)}
+                        isSelected={projectileDataIndex === i}
+                      />
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>{p.id}</p>

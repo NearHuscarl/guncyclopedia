@@ -72,6 +72,32 @@ export class ProjectileService {
     return finalProjectile;
   }
 
+  private static _aggregateAdditionalDamage(projectiles: TProjectile[], mode: AggregateModeOption) {
+    const additionaDmgLookup: Record<string, TProjectile["additionalDamage"][number]> = {};
+
+    for (const p of projectiles) {
+      for (const d of p.additionalDamage) {
+        if (!additionaDmgLookup[d.source]) {
+          additionaDmgLookup[d.source] = { ...d, damage: 0 };
+        }
+        if (d.canNotStack) {
+          additionaDmgLookup[d.source].damage = Math.max(additionaDmgLookup[d.source].damage, d.damage);
+        } else {
+          // other fields should be the same, so we can just sum the damage
+          additionaDmgLookup[d.source].damage += d.damage;
+        }
+      }
+    }
+
+    if (mode === "avg") {
+      for (const key in additionaDmgLookup) {
+        additionaDmgLookup[key].damage /= projectiles.length;
+      }
+    }
+
+    return Object.values(additionaDmgLookup);
+  }
+
   /**
    * Compute an 'aggregated' projectile from a list.
    *
@@ -95,12 +121,22 @@ export class ProjectileService {
       force: ["avg", "sum"],
       spawnWeight: [],
       poisonChance: ["avg", (p) => this.calculateStatusEffectChance(p, "poisonChance")],
+      poisonDuration: ["avg", "avg"],
       speedChance: ["avg", (p) => this.calculateStatusEffectChance(p, "speedChance")],
+      speedDuration: ["avg", "avg"],
+      speedMultiplier: ["avg", "max"],
       charmChance: ["avg", (p) => this.calculateStatusEffectChance(p, "charmChance")],
+      charmDuration: ["avg", "avg"],
       freezeChance: ["avg", (p) => this.calculateStatusEffectChance(p, "freezeChance")],
+      freezeDuration: ["avg", "avg"],
+      freezeAmount: ["avg", "max"],
       fireChance: ["avg", (p) => this.calculateStatusEffectChance(p, "fireChance")],
+      fireDuration: ["avg", "avg"],
       stunChance: ["avg", (p) => this.calculateStatusEffectChance(p, "stunChance")],
+      stunDuration: ["avg", "avg"],
       cheeseChance: ["avg", (p) => this.calculateStatusEffectChance(p, "cheeseChance")],
+      cheeseDuration: ["avg", "avg"],
+      cheeseAmount: ["avg", "max"],
       numberOfBounces: ["avg", "avg"],
       chanceToDieOnBounce: ["avg", "avg"],
       damageMultiplierOnBounce: ["avg", "avg"],
@@ -109,7 +145,6 @@ export class ProjectileService {
       homingAngularVelocity: ["avg", "avg"],
       beamChargeTime: ["max", "max"],
       beamStatusEffectChancePerSecond: ["max", "max"],
-      // TODO: add "dps" once you’ve decided to include it
     };
 
     // All boolean keys that are aggregated with logical‐AND.
@@ -119,7 +154,6 @@ export class ProjectileService {
       isHoming: true,
       damageAllEnemies: true,
     };
-    //
     // @ts-expect-error alert linter to update new properties
     const _aAggregateConfig: ArrayAggregateConfig = {
       additionalDamage: true,
@@ -131,8 +165,6 @@ export class ProjectileService {
 
     const hasTrue: Record<string, boolean> = {};
     Object.keys(bAggregateConfig).forEach((k) => (hasTrue[k] = false));
-
-    const additionaDmgLookup: Record<string, TProjectile["additionalDamage"][number]> = {};
 
     for (const p of projectiles) {
       for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
@@ -151,25 +183,6 @@ export class ProjectileService {
         const v = p[key] ?? false;
         hasTrue[key] = hasTrue[key] || v;
       });
-
-      if (mode === "sum") {
-        for (const d of p.additionalDamage) {
-          if (!additionaDmgLookup[d.source]) {
-            additionaDmgLookup[d.source] = { ...d, damage: 0 };
-          }
-          // other fields should be the same, so we can just sum the damage
-          additionaDmgLookup[d.source].damage += d.damage;
-        }
-      } else if (mode === "avg") {
-        if (p.additionalDamage.length > 1) {
-          console.log(p);
-          throw new Error(
-            `Calculate average array field of additionalDamage with more than one element is not implemented.`,
-          );
-        } else if (p.additionalDamage.length === 1) {
-          additionaDmgLookup[p.additionalDamage[0].source] = { ...p.additionalDamage[0] };
-        }
-      }
     }
     for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
       const key = k as NumericKeys<TProjectile>;
@@ -183,11 +196,14 @@ export class ProjectileService {
     }
 
     // ---------- build result ----------
-    const final: Partial<TProjectile> = { id: "average", spawnWeight: 1 };
+    const final: Partial<TProjectile> = {
+      id: "average",
+      spawnWeight: 1,
+      additionalDamage: this._aggregateAdditionalDamage(projectiles, mode),
+    };
 
     Object.keys(nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));
     Object.keys(bAggregateConfig).forEach((k) => (final[k as BooleanKeys<TProjectile>] = hasTrue[k]));
-    final.additionalDamage = Object.values(additionaDmgLookup);
 
     return final as TProjectile;
   }
