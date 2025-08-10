@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import sumBy from "lodash/sumBy";
 import clamp from "lodash/clamp";
 import { formatNumber } from "@/lib/lang";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -104,16 +103,33 @@ type TStatStackProps = {
   isNegativeStat?: boolean;
 };
 
-/**
- * pad the segments array to at least 5 items for smoother transitions (e.g. prevent hard
- * jumps when the number of segments changes)
- */
-function padSegments<T extends { value: number }>(segments: T[], minLength: number): T[] {
-  const padded = [...segments];
-  while (padded.length < minLength) {
-    padded.push({ value: 0 } as T);
+function prepareSegment(segments: TSegment[], max: number) {
+  let baseValue = 0;
+  let totalValue = 0;
+  const paddedSegments: TSegment[] = [];
+
+  for (const segment of segments) {
+    if (!segment.isEstimated) {
+      baseValue += segment.value;
+    }
+
+    // Ensure each segment value does not exceed the max value
+    paddedSegments.push({ ...segment, value: Math.min(segment.value, Math.max(max - totalValue, 0)) });
+    totalValue += segment.value;
   }
-  return padded;
+
+  // pad the segments array to at least 5 items for smoother transitions (e.g. prevent hard
+  // jumps when the number of segments changes)
+  const maxNumberOfSegments = 5;
+  while (paddedSegments.length < maxNumberOfSegments) {
+    paddedSegments.push({ value: 0 });
+  }
+
+  return {
+    paddedSegments,
+    baseValue,
+    totalValue,
+  };
 }
 
 export function StatStackBar({
@@ -129,12 +145,7 @@ export function StatStackBar({
   const gun = useSelectedGun();
   const isComparisonMode = useGunStore((state) => state.isComparisonMode);
   const percentage = (v: number) => (Math.min(v, max) / max) * 100;
-  const baseValue =
-    sumBy(
-      segments.filter((s) => !s.isEstimated),
-      "value",
-    ) ?? 0;
-
+  const { paddedSegments, baseValue, totalValue } = prepareSegment(segments, max);
   const { negativeModifier, positiveModifier } = createModifierComponent({
     gunId: gun.id,
     max,
@@ -143,9 +154,7 @@ export function StatStackBar({
     isNegativeStat,
   });
 
-  const totalValue = sumBy(segments, "value") ?? 0;
   const prevIsNegativeStat = usePrevious(isNegativeStat);
-  const maxNumberOfSegments = 5;
   const gapInPx = 4; // gap between segments in pixels
   const labelElement = <p className="text-muted-foreground font-semibold uppercase">{label}</p>;
 
@@ -170,7 +179,7 @@ export function StatStackBar({
       </div>
 
       <div className="relative flex h-2 bg-stone-800">
-        {padSegments(segments, maxNumberOfSegments).map(({ value, source = "", isEstimated, color }, i) => {
+        {paddedSegments.map(({ value, source = "", isEstimated, color }, i) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const prevIsEstimated = usePrevious(isEstimated);
           const width = percentage(value);
