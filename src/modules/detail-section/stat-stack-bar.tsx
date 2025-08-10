@@ -4,9 +4,9 @@ import { formatNumber } from "@/lib/lang";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { usePrevious } from "@/lib/hooks";
 import { useSelectedGun } from "../shared/hooks/useGuns";
-import type { HTMLAttributes } from "react";
 import { useGunStore } from "../shared/store/gun.store";
 import { NumericValue } from "./numeric-value";
+import type { HTMLAttributes, ReactNode } from "react";
 
 function createModifierComponent({
   modifier,
@@ -93,7 +93,7 @@ type TSegment = {
 };
 
 type TStatStackProps = {
-  label: string;
+  label: ReactNode;
   labelTooltip?: string;
   max: number;
   precision?: number;

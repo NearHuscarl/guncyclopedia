@@ -11,6 +11,7 @@
     "create-db:ammo": "cross-env DEBUG=gun:common,gun:ammo yarn create-db",
     "create-db:firerate": "cross-env DEBUG=gun:common,gun:firerate yarn create-db",
     "extract-assets": "node --experimental-strip-types scripts/asset-extractor/index.ts",
+    "extract-assets:chest": "node --experimental-strip-types scripts/asset-extractor/chest.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",

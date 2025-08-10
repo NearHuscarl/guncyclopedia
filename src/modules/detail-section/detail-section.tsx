@@ -21,6 +21,7 @@ import { ArrowLeftRight } from "lucide-react";
 import { NumericValue } from "./numeric-value";
 import { formatNumber } from "@/lib/lang";
 import { ShootingStyle } from "./shooting-style";
+import { Bounce } from "@/components/icons/bounce";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
@@ -58,7 +59,7 @@ export function DetailSection() {
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
-      <div className="pr-2">
+      <div>
         <div className="flex justify-center gap-1">
           {gun.projectileModes.map(({ mode }, i, modes) => (
             <Button
@@ -87,10 +88,14 @@ export function DetailSection() {
           )}
         </div>
         <blockquote className="flex justify-center w-full italic text-muted-foreground mb-4 font-sans font-semibold">
-          {JSON.stringify(gun.quote)}
+          {JSON.stringify(gun.quote || "...")}
         </blockquote>
+        <div className="bg-stone-900 px-2 py-2 rounded-tl-sm">
         <div className="flex justify-between items-baseline">
+            <div className="flex gap-4 items-baseline">
           <H2>{name || "N/A"}</H2>
+              <Tier tier={gun.quality} className="relative top-[-6px]" />
+            </div>
           <div>
             {debug &&
               gun.animation.frames[0].colors.map((c) => {
@@ -104,12 +109,7 @@ export function DetailSection() {
                 );
               })}
           </div>
-          <Tier tier={gun.quality} />
-        </div>
-      </div>
-      <div className="flex justify-between items-baseline pr-2 mb-6">
-        <Muted className="font-semibold uppercase">{gunStats.shootingStyle}</Muted>
-        <div className="flex gap-2 align-baseline">
+            <div className="flex gap-2 items-center">
           <Tooltip>
             <TooltipTrigger>
           <NumericValue>
@@ -121,7 +121,32 @@ export function DetailSection() {
           <ShootingStyle shootingStyle={gunStats.shootingStyle} magazineSize={gunStats.magazineSize} />
         </div>
       </div>
-      <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 pr-2">
+          <div className="flex justify-between items-baseline">
+            <Muted className="font-semibold uppercase">{gunStats.shootingStyle}</Muted>
+            <div className="flex gap-4">
+              {gunStats.projectile.numberOfBounces || undefined ? (
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className="flex items-center gap-1">
+                      <NumericValue>{formatNumber(gunStats.projectile.numberOfBounces!, 1)}</NumericValue>
+                      <Bounce color="white" size={20} />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Number of bounces: <strong>{formatNumber(gunStats.projectile.numberOfBounces!, 1)}</strong>
+                  </TooltipContent>
+                </Tooltip>
+              ) : (
+                <div className="flex items-center gap-1 invisible">
+                  <NumericValue>{0}</NumericValue>
+                  <Bounce color="white" size={20} />
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 px-2 border-l border-stone-900">
         <StatStackBar
           label="DPS"
           max={100}

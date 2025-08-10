@@ -1,9 +1,5 @@
 import { stone600 } from "@/modules/shared/settings/tailwind";
-
-type TIconProps = {
-  size?: number;
-  color?: string;
-};
+import type { TIconProps } from "./types";
 
 export function AmmoIcon({ size = 25, color = stone600 }: TIconProps) {
   const originalW = 6;

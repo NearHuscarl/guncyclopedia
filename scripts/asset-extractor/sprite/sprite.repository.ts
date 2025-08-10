@@ -15,7 +15,7 @@ type TCollectionPath = string;
 export class SpriteRepository {
   static readonly AMMONONICON_SPRITE_PATH = path.join(
     ASSET_EXTRACTOR_ROOT,
-    "assets/ExportedProject/Assets/GameObject/Ammonomicon Encounter Icon Collection.prefab"
+    "assets/ExportedProject/Assets/GameObject/Ammonomicon Encounter Icon Collection.prefab",
   );
   private static readonly _SEARCH_FILES = [
     "assets/ExportedProject/Assets/sprites/weapons/weaponcollection02 data/WeaponCollection02.prefab",
@@ -32,16 +32,18 @@ export class SpriteRepository {
   private _sprites = new Map<TCollectionPath, TSpriteCollectionDto>();
   private _spriteLookup = new Map<TCollectionPath, Record<string, TSpriteCollectionDto["spriteDefinitions"][number]>>();
   private readonly _assetService: AssetService;
+  private readonly _skipCache: boolean;
 
   readonly searchFiles: string[];
 
-  private constructor(assetService: AssetService, searchFiles: string[]) {
+  private constructor(assetService: AssetService, searchFiles: string[], skipCache: boolean) {
     this._assetService = assetService;
+    this._skipCache = skipCache;
     this.searchFiles = searchFiles;
   }
 
-  static async create(_assetService: AssetService, searchFiles = SpriteRepository._SEARCH_FILES) {
-    const instance = new SpriteRepository(_assetService, searchFiles);
+  static async create(_assetService: AssetService, searchFiles = SpriteRepository._SEARCH_FILES, skipCache = false) {
+    const instance = new SpriteRepository(_assetService, searchFiles, skipCache);
     return await instance.load();
   }
   private _isSpriteCollectionData(obj: unknown): obj is TSpriteCollectionDto {
@@ -65,14 +67,14 @@ export class SpriteRepository {
 
             const texturePath = material.m_SavedProperties.m_TexEnvs._MainTex.m_Texture.$$scriptPath.replace(
               /\.meta$/,
-              ""
+              "",
             );
 
             if (!block.$$texturePath) {
               block.$$texturePath = texturePath;
             } else if (block.$$texturePath !== texturePath) {
               throw new Error(
-                `Inconsistent texture paths for sprite collection in ${filePath}: ${block.$$texturePath} vs ${texturePath}`
+                `Inconsistent texture paths for sprite collection in ${filePath}: ${block.$$texturePath} vs ${texturePath}`,
               );
             }
           }
@@ -95,7 +97,7 @@ export class SpriteRepository {
   private async _loadSpriteData() {
     console.log(chalk.green("Loading sprite data..."));
 
-    this._sprites = await restoreCache("sprite.repository");
+    if (!this._skipCache) this._sprites = await restoreCache("sprite.repository");
 
     if (this._sprites.size > 0) {
       const totalSprites = sumBy(Array.from(this._sprites.values()), (cur) => cur.spriteDefinitions.length);
@@ -116,7 +118,7 @@ export class SpriteRepository {
     console.log();
     console.log(chalk.magenta(`Took ${(performance.now() - start) / 1000}s`));
 
-    await saveCache("sprite.repository", this._sprites);
+    if (!this._skipCache) await saveCache("sprite.repository", this._sprites);
     return;
   }
 
@@ -125,10 +127,26 @@ export class SpriteRepository {
     for (const [path, spriteDto] of this._sprites.entries()) {
       this._spriteLookup.set(
         normalizePath(path),
-        Object.fromEntries(spriteDto.spriteDefinitions.map((sprite) => [sprite.name, sprite]))
+        Object.fromEntries(spriteDto.spriteDefinitions.map((sprite) => [sprite.name, sprite])),
       );
     }
     return this;
+  }
+
+  getSprites(assetReference: { $$scriptPath: string }) {
+    const scriptPath = path.isAbsolute(assetReference.$$scriptPath)
+      ? assetReference.$$scriptPath
+      : path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", assetReference.$$scriptPath.replace(/\.meta$/, ""));
+    const collection = this._sprites.get(normalizePath(scriptPath));
+
+    if (!collection) {
+      throw new Error(`Sprite collection not found for script path: ${chalk.green(scriptPath)}`);
+    }
+
+    return {
+      spriteCollection: collection?.spriteDefinitions ?? [],
+      texturePath: path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", collection.$$texturePath),
+    };
   }
 
   getSprite(assetReference: { $$scriptPath: string }, nameOrIndex: string | number) {

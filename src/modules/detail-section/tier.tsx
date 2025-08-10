@@ -1,25 +1,29 @@
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import type { TGun } from "@/client/generated/models/gun.model";
-import clsx from "clsx";
 
 type TTierProps = {
+  className?: string;
   tier: TGun["quality"];
 };
 
-export function Tier({ tier }: TTierProps) {
+const chestImageLookup: Record<string, string> = {
+  S: "/chest/black_chest.png",
+  A: "/chest/red_chest.png",
+  B: "/chest/green_chest.png",
+  C: "/chest/blue_chest.png",
+  D: "/chest/wood_chest.png",
+  unknown: "/chest/unknown.png",
+};
+
+export function Tier({ tier, className }: TTierProps) {
   const isKnownTier = ["S", "A", "B", "C", "D"].includes(tier);
+  const chestImageSrc = chestImageLookup[tier] || chestImageLookup.unknown;
   return (
-    <span
-      className={clsx({
-        "font-bold text-xl": true,
-        "text-gray-300": tier === "S",
-        "text-red-500": tier === "A",
-        "text-green-600": tier === "B",
-        "text-sky-500": tier === "C",
-        "text-amber-800": tier === "D",
-        "text-stone-700": !isKnownTier,
-      })}
-    >
-      {isKnownTier ? `Tier ${tier}` : tier}
-    </span>
+    <Tooltip>
+      <TooltipTrigger className={className}>
+        <img key={tier} src={chestImageSrc} className={"inline-block w-6 h-6"} />
+      </TooltipTrigger>
+      <TooltipContent>{isKnownTier ? `Tier ${tier}` : tier}</TooltipContent>
+    </Tooltip>
   );
 }
