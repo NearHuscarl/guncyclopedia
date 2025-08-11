@@ -14,7 +14,7 @@ import { ProjectilesPerShot } from "./projectiles-per-shot";
 import { GunService } from "@/client/service/gun.service";
 import { ProjectileService } from "@/client/service/projectile.service";
 import { useIsDebug } from "../shared/hooks/useDebug";
-import { Tags } from "./tags";
+import { Features } from "./features";
 import { StatStackBar } from "./stat-stack-bar";
 import { basicColors } from "@/client/generated/models/color.model";
 import { ArrowLeftRight } from "lucide-react";
@@ -257,7 +257,7 @@ export function DetailSection() {
             </div>
           )}
         </div>
-        <Tags gun={gun} />
+        <Features gun={gun} />
         {debug && <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(other, null, 2)}</pre>}
         <div className="h-14" />
       </div>

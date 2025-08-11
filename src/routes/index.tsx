@@ -1,22 +1,13 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
-import z from "zod/v4";
 import { getGuns, getGunStats } from "@/client";
 import { Page } from "@/modules/page";
 import { pickRandom } from "@/lib/lang";
 import { useGunStore } from "@/modules/shared/store/gun.store";
-import { Gun } from "@/client/generated/models/gun.model";
+import { SearchParams } from "@/modules/shared/route/schema";
 import type { TAppState } from "@/modules/shared/hooks/useAppState";
 
-const schema = z.object({
-  debug: z.boolean().optional(),
-  selectedId: z.number().int().nonnegative().optional(),
-  sortBy: z.enum(["none", "quality", "maxAmmo", "cooldownTime"]).optional(),
-  tag: Gun.shape.featureFlags.element.optional(),
-  color: z.string().optional(),
-});
-
 export const Route = createFileRoute("/")({
-  validateSearch: (raw) => schema.parse(raw),
+  validateSearch: (raw) => SearchParams.parse(raw),
   beforeLoad({ search }) {
     const newSearch: Partial<TAppState> = {};
     if (search.debug === undefined && import.meta.env.DEV) {

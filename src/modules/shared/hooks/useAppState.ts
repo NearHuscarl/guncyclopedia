@@ -1,9 +1,13 @@
-import type { AnyRouter, RegisteredRouter } from "@tanstack/react-router";
 import { useSearch } from "@tanstack/react-router";
+import type { AnyRouter } from "@tanstack/react-router";
+import type { TSearchParams } from "../route/schema";
 
-export type TAppState = ReturnType<typeof useSearch<RegisteredRouter, "/">>;
-export type TSelectCallback<T> = Parameters<typeof useSearch<RegisteredRouter, "/", true, true, T>>[0]["select"];
+export type TAppState = TSearchParams;
+export type TSelectAppCallback<T> = (state: TAppState) => T;
 
-export function useAppState<T>(select?: TSelectCallback<T>): T {
+export function useAppState(): TAppState;
+export function useAppState<T>(select: TSelectAppCallback<T>): T;
+
+export function useAppState<T>(select?: TSelectAppCallback<T>): T {
   return useSearch<AnyRouter, "/", true, true, T>({ from: "/", select });
 }

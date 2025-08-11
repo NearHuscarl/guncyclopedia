@@ -1,5 +1,5 @@
 import { DetailSection } from "./detail-section/detail-section";
-import { TopBar } from "./layout/top-bar";
+import { TopBar } from "./top-bar/top-bar";
 import { ItemGrid } from "./main/item-grid";
 
 export function Page() {

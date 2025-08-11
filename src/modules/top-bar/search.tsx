@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { useGuns } from "../shared/hooks/useGuns";
+import { useGuns, useSelectedGun } from "../shared/hooks/useGuns";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 import { Muted } from "@/components/ui/typography";
@@ -41,7 +41,7 @@ function getNameComponent(gun: TGun, gunLookup: Map<string, TGun[]>) {
 export function Search() {
   const [search, setSearch] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const [gunId, setGunId] = React.useState(-1);
+  const selectedGun = useSelectedGun();
   const setAppState = useAppStateMutation();
   const guns = useGuns();
   const sortedGuns = React.useMemo(() => [...guns].sort((a, b) => a.name.localeCompare(b.name)), [guns]);
@@ -55,7 +55,6 @@ export function Search() {
     }
     return lookup;
   }, [sortedGuns]);
-  const selectedGun = React.useMemo(() => guns.find((gun) => gun.id === gunId), [gunId, guns]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -64,7 +63,7 @@ export function Search() {
           <div className="flex items-center gap-2">
             {selectedGun && (
               <div className="w-12 flex justify-center">
-                <AnimatedSprite key={gunId} animation={selectedGun.animation} scale={1} />
+                <AnimatedSprite key={selectedGun.id} animation={selectedGun.animation} scale={1} />
               </div>
             )}
             {selectedGun?.name ?? "Find gun..."}
@@ -86,7 +85,6 @@ export function Search() {
                     key={gun.id}
                     value={gun.id.toString()}
                     onSelect={() => {
-                      setGunId(gun.id);
                       setAppState({ selectedId: gun.id });
                       setOpen(false);
                     }}
@@ -95,7 +93,7 @@ export function Search() {
                       <AnimatedSprite animation={gun.animation} scale={1} />
                     </div>
                     {getNameComponent(gun, gunLookup)}
-                    <Check className={cn("ml-auto", gunId === gun.id ? "opacity-100" : "opacity-0")} />
+                    <Check className={cn("ml-auto", selectedGun.id === gun.id ? "opacity-100" : "opacity-0")} />
                   </CommandItem>
                 ))}
             </CommandGroup>

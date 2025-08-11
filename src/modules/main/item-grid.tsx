@@ -5,9 +5,10 @@ import { AnimatedSprite } from "@/modules/shared/components/animated-sprite";
 import { Gun } from "@/client/generated/models/gun.model";
 import { useAppState } from "../shared/hooks/useAppState";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
-import { useGuns } from "../shared/hooks/useGuns";
+import { useFilteredGuns } from "../shared/hooks/useGuns";
 import { usePreloadSpritesheets } from "../shared/hooks/usePreloadImages";
 import { useGunStore } from "../shared/store/gun.store";
+import { useFilter } from "../shared/hooks/useFilter";
 
 const qualityWeights = Gun.shape.quality.options.reduce<Record<string, number>>((acc, quality, index) => {
   acc[quality] = index;
@@ -15,24 +16,13 @@ const qualityWeights = Gun.shape.quality.options.reduce<Record<string, number>>(
 }, {});
 
 function useGunResults() {
-  const guns = useGuns();
   const sortBy = useAppState((state) => state.sortBy);
-  const tag = useAppState((state) => state.tag);
-  const color = useAppState((state) => state.color);
-  return useMemo(() => {
-    const res = guns.filter((g) => {
-      let match = true;
-      if (color && g.animation.frames[0].colors[0] !== color) {
-        match = false;
-      }
-      if (tag && !g.featureFlags.includes(tag)) {
-        match = false;
-      }
-      return match;
-    });
+  const filter = useFilter();
+  const filteredGuns = useFilteredGuns(filter);
 
+  return useMemo(() => {
     if (sortBy !== "none") {
-      res.sort((a, b) => {
+      filteredGuns.sort((a, b) => {
         switch (sortBy) {
           case "quality":
             return qualityWeights[b.quality] - qualityWeights[a.quality];
@@ -46,8 +36,8 @@ function useGunResults() {
       });
     }
 
-    return res;
-  }, [guns, sortBy, color, tag]);
+    return filteredGuns;
+  }, [filteredGuns, sortBy]);
 }
 
 export function ItemGrid() {
