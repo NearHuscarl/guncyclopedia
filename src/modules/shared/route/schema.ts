@@ -8,6 +8,7 @@ export const SearchParams = z.object({
   filter: z
     .object({
       feature: Gun.shape.featureFlags.element.optional(),
+      quality: Gun.shape.quality.optional(),
       primaryColor: z.string().optional(),
       secondaryColor: z.string().optional(),
     })

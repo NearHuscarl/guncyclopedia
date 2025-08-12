@@ -1,11 +1,24 @@
 import clsx from "clsx";
 import startCase from "lodash/startCase";
-import { useFilter } from "../shared/hooks/useFilter";
+import { useFilter, type TFilter } from "../shared/hooks/useFilter";
 import { Muted } from "@/components/ui/typography";
 import { Chip } from "../shared/components/chip";
 import { useFilterStateMutation } from "../shared/hooks/useFilterStateMutation";
 import { useAppState } from "../shared/hooks/useAppState";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
+import { ColorItem } from "./shared/components/color-item";
+import { ChestItem } from "./shared/components/chest-item";
+import type { TGun } from "@/client/generated/models/gun.model";
+
+function getValueComponent(filterKey: keyof TFilter, value: string) {
+  if (filterKey === "primaryColor" || filterKey === "secondaryColor") {
+    return <ColorItem color={value} size="small" />;
+  }
+  if (filterKey === "quality") {
+    return <ChestItem quality={value as TGun["quality"]} size="small" />;
+  }
+  return <span>{startCase(value)}</span>;
+}
 
 type TAppStateProps = {
   className?: string;
@@ -14,7 +27,7 @@ type TAppStateProps = {
 export function AppState({ className }: TAppStateProps) {
   const filter = useFilter() ?? {};
   const sortBy = useAppState((state) => state.sortBy);
-  const filterEntries = Object.entries(filter);
+  const filterEntries = Object.entries(filter) as [keyof TFilter, string][];
   const setFilter = useFilterStateMutation();
   const setAppState = useAppStateMutation();
 
@@ -26,7 +39,7 @@ export function AppState({ className }: TAppStateProps) {
         return (
           <Chip key={key} onDelete={() => setFilter({ [key]: undefined })}>
             <Muted className="text-xs">{`${key}: `}</Muted>
-            {startCase(value)}
+            {getValueComponent(key, value)}
           </Chip>
         );
       })}

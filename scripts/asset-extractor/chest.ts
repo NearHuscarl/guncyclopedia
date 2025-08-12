@@ -1,4 +1,5 @@
 import path from "node:path";
+import { mkdir } from "node:fs/promises";
 import { ASSET_EXTRACTOR_ROOT, PUBLIC_PATH } from "./constants.ts";
 import { AssetService } from "./asset/asset-service.ts";
 import { SpriteRepository } from "./sprite/sprite.repository.ts";
@@ -9,6 +10,7 @@ async function exportChestTextures(spriteRepo: SpriteRepository, spriteService: 
     $$scriptPath: "Assets/sprites/items/chests/chest_collection data/Chest_Collection.prefab.meta",
   };
 
+  await mkdir(path.join(PUBLIC_PATH, "chest_debug"), { recursive: true });
   const { spriteCollection, texturePath } = spriteRepo.getSprites(assetReference);
   for (const spriteData of spriteCollection) {
     if (!spriteData?.name) {

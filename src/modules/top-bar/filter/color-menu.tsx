@@ -1,10 +1,10 @@
 import { useMemo } from "react";
-import startCase from "lodash/startCase";
 import { MenubarCheckboxItem, MenubarSub, MenubarSubContent, MenubarSubTrigger } from "@/components/ui/menubar";
 import { useAppState } from "../../shared/hooks/useAppState";
 import { useFilterStateMutation } from "../../shared/hooks/useFilterStateMutation";
 import { basicColors } from "@/client/generated/models/color.model";
 import { useFilteredGuns } from "@/modules/shared/hooks/useGuns";
+import { ColorItem } from "../shared/components/color-item";
 
 function useSecondaryColors(primaryColor?: string) {
   const guns = useFilteredGuns({ primaryColor });
@@ -35,7 +35,6 @@ export function ColorMenu() {
         <MenubarSubTrigger>Primary Color</MenubarSubTrigger>
         <MenubarSubContent>
           {["None"].concat(Object.keys(basicColors)).map((colorKey) => {
-            const backgroundColor = basicColors[colorKey]?.[1] ?? basicColors[colorKey]?.[0];
             return (
               <MenubarCheckboxItem
                 key={colorKey}
@@ -46,11 +45,7 @@ export function ColorMenu() {
                   setFilter({ primaryColor: r, secondaryColor: undefined });
                 }}
               >
-                <div
-                  className="w-4 h-4 inline-block mr-1 border border-stone-700"
-                  style={{ backgroundColor, borderColor: backgroundColor }}
-                />
-                {startCase(colorKey)}
+                <ColorItem color={colorKey} />
               </MenubarCheckboxItem>
             );
           })}
@@ -60,7 +55,6 @@ export function ColorMenu() {
         <MenubarSubTrigger>Secondary Color</MenubarSubTrigger>
         <MenubarSubContent>
           {["None"].concat(secondaryColors).map((colorKey) => {
-            const backgroundColor = basicColors[colorKey]?.[1] ?? basicColors[colorKey]?.[0];
             return (
               <MenubarCheckboxItem
                 key={colorKey}
@@ -71,11 +65,7 @@ export function ColorMenu() {
                   setFilter({ secondaryColor: r });
                 }}
               >
-                <div
-                  className="w-4 h-4 inline-block mr-1 border border-stone-700"
-                  style={{ backgroundColor, borderColor: backgroundColor }}
-                />
-                {startCase(colorKey)}
+                <ColorItem color={colorKey} />
               </MenubarCheckboxItem>
             );
           })}

@@ -91,6 +91,7 @@ export class ProjectileService {
 
     if (mode === "avg") {
       for (const key in additionaDmgLookup) {
+        if (additionaDmgLookup[key].canNotStack) continue;
         additionaDmgLookup[key].damage /= projectiles.length;
       }
     }

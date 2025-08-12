@@ -113,9 +113,7 @@ export class GunModelGenerator {
     const volleyDto = this._volleyRepo.getVolley(gunDto.gun.rawVolley);
     if (!volleyDto) {
       throw new Error(
-        chalk.red(
-          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${gunDto.gun.rawVolley.guid} not found in VolleyRepository.`,
-        ),
+        `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${gunDto.gun.rawVolley.guid} not found in VolleyRepository.`,
       );
     }
     return volleyDto;
@@ -125,9 +123,7 @@ export class GunModelGenerator {
     const projDto = this._projectileRepo.getProjectile(assetReference);
     if (!projDto) {
       throw new Error(
-        chalk.red(
-          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`,
-        ),
+        `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`,
       );
     }
     return projDto;
@@ -335,9 +331,7 @@ export class GunModelGenerator {
     if (defaultModule.shootStyle === ShootStyle.Beam) {
       if (projectilesPerShot[0].projectiles.length > 1) {
         throw new Error(
-          chalk.red(
-            `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Beam gun must have only one type of projectile.`,
-          ),
+          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Beam gun must have only one type of projectile.`,
         );
       }
       chargeTime = Math.max(

@@ -2,6 +2,7 @@ import { MenubarContent, MenubarMenu, MenubarTrigger, MenubarSeparator, MenubarI
 import { Funnel } from "lucide-react";
 import { ColorMenu } from "./color-menu";
 import { FeatureMenu } from "./feature-menu";
+import { QualityMenu } from "./quality-menu";
 
 export function Filter() {
   return (
@@ -11,6 +12,7 @@ export function Filter() {
       </MenubarTrigger>
       <MenubarContent>
         <MenubarItem disabled>Filter by...</MenubarItem>
+        <QualityMenu />
         <MenubarSeparator />
         <ColorMenu />
         <MenubarSeparator />

@@ -1,7 +1,7 @@
 import { useAppState, type TAppState } from "./useAppState";
 
 type TSelectFilterCallback<R> = (filter: TFilter) => R;
-type TFilter = NonNullable<TAppState["filter"]>;
+export type TFilter = NonNullable<TAppState["filter"]>;
 
 export function useFilter(): TAppState["filter"];
 export function useFilter<R = TFilter>(select: TSelectFilterCallback<R>): R;

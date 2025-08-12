@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
 import { H2, H3, Muted } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
-import { Tier } from "./tier";
+import { Quality } from "./quality";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Circle } from "./circle";
@@ -16,12 +16,12 @@ import { ProjectileService } from "@/client/service/projectile.service";
 import { useIsDebug } from "../shared/hooks/useDebug";
 import { Features } from "./features";
 import { StatStackBar } from "./stat-stack-bar";
-import { basicColors } from "@/client/generated/models/color.model";
 import { ArrowLeftRight } from "lucide-react";
 import { NumericValue } from "./numeric-value";
 import { formatNumber } from "@/lib/lang";
 import { ShootingStyle } from "./shooting-style";
 import { GunAttributes } from "./gun-attributes";
+import { ColorItem } from "../top-bar/shared/components/color-item";
 
 export function DetailSection() {
   const selectedId = useAppState((state) => state.selectedId);
@@ -104,21 +104,9 @@ export function DetailSection() {
         <div className="flex justify-between items-baseline">
             <div className="flex gap-4 items-baseline">
           <H2>{name || "N/A"}</H2>
-              <Tier tier={gun.quality} className="relative top-[-6px]" />
+              <Quality tier={gun.quality} className="relative top-[-6px]" />
             </div>
-          <div>
-            {debug &&
-              gun.animation.frames[0].colors.map((c) => {
-                return (
-                  <div
-                    key={c}
-                    className="w-5 h-5 inline-block"
-                    title={c}
-                    style={{ backgroundColor: basicColors[c][1] ?? basicColors[c][0] }}
-                  />
-                );
-              })}
-          </div>
+            <div>{debug && gun.animation.frames[0].colors.map((c) => <ColorItem color={c} key={c} />)}</div>
             <div className="flex gap-2 items-center">
           <Tooltip>
             <TooltipTrigger>
