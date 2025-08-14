@@ -8,7 +8,8 @@ import { useAppState } from "../shared/hooks/useAppState";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 import { ColorItem } from "./shared/components/color-item";
 import { ChestItem } from "./shared/components/chest-item";
-import type { TGun } from "@/client/generated/models/gun.model";
+import { ShootStyleItem } from "./shared/components/shoot-style-item";
+import type { TGun, TProjectilePerShot } from "@/client/generated/models/gun.model";
 
 function getValueComponent(filterKey: keyof TFilter, value: string) {
   if (filterKey === "primaryColor" || filterKey === "secondaryColor") {
@@ -16,6 +17,9 @@ function getValueComponent(filterKey: keyof TFilter, value: string) {
   }
   if (filterKey === "quality") {
     return <ChestItem quality={value as TGun["quality"]} size="small" />;
+  }
+  if (filterKey === "shootStyle") {
+    return <ShootStyleItem value={value as TProjectilePerShot["shootStyle"]} />;
   }
   return <span>{startCase(value)}</span>;
 }

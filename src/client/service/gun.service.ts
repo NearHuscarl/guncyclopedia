@@ -13,12 +13,12 @@ interface IStat {
   }[];
 }
 
-type TGunStats = {
+export type TGunStats = {
   dps: IStat;
   damage: IStat;
   precision: number;
   maxAmmo: number;
-  shootingStyle: TProjectilePerShot["shootStyle"];
+  shootStyle: TProjectilePerShot["shootStyle"];
   magazineSize: number;
   reloadTime: number;
   fireRate: number;
@@ -141,7 +141,7 @@ export class GunService {
       maxAmmo,
       magazineSize,
       reloadTime,
-      shootingStyle: projectile.shootStyle, // only raiden coil has 2 shooting styles.
+      shootStyle: projectile.shootStyle, // only raiden coil has 2 shoot styles.
       precision: ProjectileService.toPrecision(projectile.spread),
       fireRate: shotsPerSecond * 60,
       dps: {

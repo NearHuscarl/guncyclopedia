@@ -2,8 +2,8 @@ import { AmmoIcon } from "@/components/icons/ammo";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import type { TProjectilePerShot } from "@/client/generated/models/gun.model";
 
-type TShootingStyleProps = {
-  shootingStyle: TProjectilePerShot["shootStyle"];
+type TAmmoSetProps = {
+  shootStyle: TProjectilePerShot["shootStyle"];
   magazineSize: number;
 };
 
@@ -15,13 +15,13 @@ const weight: Record<TProjectilePerShot["shootStyle"], number> = {
   Automatic: 3,
 };
 
-export function ShootingStyle({ shootingStyle, magazineSize }: TShootingStyleProps) {
-  const score = magazineSize === 1 ? 1 : weight[shootingStyle];
+export function AmmoSet({ shootStyle, magazineSize }: TAmmoSetProps) {
+  const score = magazineSize === 1 ? 1 : weight[shootStyle];
 
   return (
     <Tooltip>
       <TooltipTrigger>
-        <div className="flex relative">
+        <div className="flex relative top-[-2px]">
           <AmmoIcon color={score >= 1 ? "white" : undefined} />
           <AmmoIcon color={score >= 2 ? "white" : undefined} />
           <AmmoIcon color={score === 3 ? "white" : undefined} />

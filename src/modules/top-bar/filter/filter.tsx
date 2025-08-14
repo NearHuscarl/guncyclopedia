@@ -3,6 +3,7 @@ import { Funnel } from "lucide-react";
 import { ColorMenu } from "./color-menu";
 import { FeatureMenu } from "./feature-menu";
 import { QualityMenu } from "./quality-menu";
+import { ShootStyleMenu } from "./shoot-style-menu";
 
 export function Filter() {
   return (
@@ -13,6 +14,7 @@ export function Filter() {
       <MenubarContent>
         <MenubarItem disabled>Filter by...</MenubarItem>
         <QualityMenu />
+        <ShootStyleMenu />
         <MenubarSeparator />
         <ColorMenu />
         <MenubarSeparator />

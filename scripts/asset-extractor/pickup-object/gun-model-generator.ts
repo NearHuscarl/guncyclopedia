@@ -351,7 +351,7 @@ export class GunModelGenerator {
     const modulesAreTiers = Boolean(volleyDto?.ModulesAreTiers);
     const projectileModules = volleyDto ? volleyDto.projectiles : [gunDto.gun.singleModule];
 
-    // see Gun.cs#DefaultModule. Some attributes within the module like numberOfShotsInClip/shootingStyle
+    // see Gun.cs#DefaultModule. Some attributes within the module like numberOfShotsInClip/shootStyle
     // should be tied to a gun, not the projectile data. DefaultModule is used to retrieve those attributes
     // for the gun model
     const defaultModule = projectileModules[0];

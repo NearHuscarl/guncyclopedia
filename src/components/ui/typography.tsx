@@ -31,5 +31,9 @@ export function Large(props: TTypographyProps) {
 }
 
 export function Muted(props: TTypographyProps) {
-  return <p className={`text-muted-foreground text-sm ${props.className}`}>{props.children}</p>;
+  return (
+    <p {...props} className={`text-muted-foreground text-sm ${props.className}`}>
+      {props.children}
+    </p>
+  );
 }

@@ -12,18 +12,34 @@ MonoBehaviour:
     force: 10
   AppliesPoison: 0
   PoisonApplyChance: 1
+  healthEffect:
+    duration: 10
+    DamagePerSecondToEnemies: 10
   AppliesSpeedModifier: 0
   SpeedApplyChance: 1
   speedEffect:
+    duration: 10
     SpeedMultiplier: 1
   AppliesCharm: 0
   CharmApplyChance: 1
+  charmEffect:
+    duration: 10
   AppliesFreeze: 0
   FreezeApplyChance: 1
+  freezeEffect:
+    duration: 10
+    FreezeAmount: 10
   AppliesFire: 0
   FireApplyChance: 1
+  fireEffect:
+    duration: 10
+    DamagePerSecondToEnemies: 10
   AppliesStun: 0
+  AppliedStunDuration: 1
   StunApplyChance: 1
   AppliesCheese: 0
   CheeseApplyChance: 1
+  cheeseEffect:
+    duration: 10
+    CheeseAmount: 50
   damagesWalls: 1

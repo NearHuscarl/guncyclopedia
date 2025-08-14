@@ -1,5 +1,5 @@
 import z from "zod/v4";
-import { Gun } from "@/client/generated/models/gun.model";
+import { Gun, ProjectilePerShot } from "@/client/generated/models/gun.model";
 
 export const SearchParams = z.object({
   debug: z.boolean().optional(),
@@ -8,6 +8,7 @@ export const SearchParams = z.object({
   filter: z
     .object({
       feature: Gun.shape.featureFlags.element.optional(),
+      shootStyle: ProjectilePerShot.shape.shootStyle.optional(),
       quality: Gun.shape.quality.optional(),
       primaryColor: z.string().optional(),
       secondaryColor: z.string().optional(),

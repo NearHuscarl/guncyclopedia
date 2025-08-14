@@ -10,19 +10,43 @@
       "type": 3
     },
     "AppliesCharm": 0,
-    "AppliesCheese": 0,
-    "AppliesFire": 0,
-    "AppliesFreeze": 0,
-    "AppliesPoison": 0,
-    "AppliesSpeedModifier": 0,
-    "AppliesStun": 0,
     "CharmApplyChance": 1,
-    "CheeseApplyChance": 1,
+    "charmEffect": {
+      "duration": 10
+    },
+    "AppliesFire": 0,
     "FireApplyChance": 1,
+    "fireEffect": {
+      "DamagePerSecondToEnemies": 10,
+      "duration": 10
+    },
+    "AppliesFreeze": 0,
     "FreezeApplyChance": 1,
+    "freezeEffect": {
+      "FreezeAmount": 10,
+      "duration": 10
+    },
+    "AppliesCheese": 0,
+    "CheeseApplyChance": 1,
+    "cheeseEffect": {
+      "CheeseAmount": 50,
+      "duration": 10
+    },
+    "AppliesPoison": 0,
     "PoisonApplyChance": 1,
+    "healthEffect": {
+      "DamagePerSecondToEnemies": 10,
+      "duration": 10
+    },
+    "AppliesSpeedModifier": 0,
     "SpeedApplyChance": 1,
+    "speedEffect": {
+      "SpeedMultiplier": 1,
+      "duration": 10
+    },
+    "AppliesStun": 0,
     "StunApplyChance": 1,
+    "AppliedStunDuration": 1,
     "baseData": {
       "damage": 6,
       "force": 10,
@@ -31,9 +55,6 @@
     },
     "damageTypes": 0,
     "damagesWalls": 1,
-    "speedEffect": {
-      "SpeedMultiplier": 1
-    },
     "ignoreDamageCaps": 0
   }
 }
