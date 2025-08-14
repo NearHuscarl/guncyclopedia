@@ -34,14 +34,14 @@ export function ColorMenu() {
       <MenubarSub>
         <MenubarSubTrigger>Primary Color</MenubarSubTrigger>
         <MenubarSubContent>
-          {["None"].concat(Object.keys(basicColors)).map((colorKey) => {
+          {["All"].concat(Object.keys(basicColors)).map((colorKey) => {
             return (
               <MenubarCheckboxItem
                 key={colorKey}
                 className="flex items-center"
-                checked={colorKey === (primaryColor ?? "None")}
+                checked={colorKey === (primaryColor ?? "All")}
                 onCheckedChange={(checked) => {
-                  const r = colorKey === "None" || !checked ? undefined : colorKey;
+                  const r = colorKey === "All" || !checked ? undefined : colorKey;
                   setFilter({ primaryColor: r, secondaryColor: undefined });
                 }}
               >
@@ -54,14 +54,14 @@ export function ColorMenu() {
       <MenubarSub>
         <MenubarSubTrigger>Secondary Color</MenubarSubTrigger>
         <MenubarSubContent>
-          {["None"].concat(secondaryColors).map((colorKey) => {
+          {["All"].concat(secondaryColors).map((colorKey) => {
             return (
               <MenubarCheckboxItem
                 key={colorKey}
                 className="flex items-center"
-                checked={colorKey === (secondaryColor ?? "None")}
+                checked={colorKey === (secondaryColor ?? "All")}
                 onCheckedChange={(checked) => {
-                  const r = colorKey === "None" || !checked ? undefined : colorKey;
+                  const r = colorKey === "All" || !checked ? undefined : colorKey;
                   setFilter({ secondaryColor: r });
                 }}
               >

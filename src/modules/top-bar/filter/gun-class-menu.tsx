@@ -2,30 +2,30 @@ import { MenubarCheckboxItem, MenubarSub, MenubarSubContent, MenubarSubTrigger }
 import { useFilterStateMutation } from "../../shared/hooks/useFilterStateMutation";
 import { useFilter } from "@/modules/shared/hooks/useFilter";
 import { Gun } from "@/client/generated/models/gun.model";
-import { ChestItem } from "../shared/components/chest-item";
+import { UppercasedItem } from "../shared/components/uppercased-item";
 
-const sortedQualities = [...Gun.shape.quality.options].reverse();
+const options = [...Gun.shape.gunClass.options];
 
-export function QualityMenu() {
+export function GunClassMenu() {
   const setFilter = useFilterStateMutation();
-  const quality = useFilter((state) => state.quality);
+  const gunClass = useFilter((state) => state.gunClass);
 
   return (
     <MenubarSub>
-      <MenubarSubTrigger>Quality</MenubarSubTrigger>
+      <MenubarSubTrigger>Gun Class</MenubarSubTrigger>
       <MenubarSubContent>
-        {["All"].concat(sortedQualities).map((q) => {
+        {["All"].concat(options).map((o) => {
           return (
             <MenubarCheckboxItem
-              key={q}
+              key={o}
               className="flex items-center"
-              checked={q === (quality ?? "All")}
+              checked={o === (gunClass ?? "All")}
               onCheckedChange={(checked) => {
-                const r = q === "All" || !checked ? undefined : q;
-                setFilter({ quality: r as typeof quality });
+                const r = o === "All" || !checked ? undefined : o;
+                setFilter({ gunClass: r as typeof gunClass });
               }}
             >
-              <ChestItem quality={q as typeof quality} />
+              <UppercasedItem value={o} />
             </MenubarCheckboxItem>
           );
         })}

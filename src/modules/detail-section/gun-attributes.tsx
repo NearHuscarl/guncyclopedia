@@ -5,10 +5,11 @@ import { formatNumber } from "@/lib/lang";
 import { fuchsia500, green500, orange500, red600, sky500, slate400, yellow500 } from "../shared/settings/tailwind";
 import { Penetration } from "@/components/icons/penetration";
 import { Bounce } from "@/components/icons/bounce";
-import type { TProjectile } from "@/client/generated/models/gun.model";
-import type { ReactNode } from "react";
 import { Stun } from "@/components/icons/stun";
 import { Cheese } from "@/components/icons/cheese";
+import { FightsacreAttack } from "@/components/icons/fightsacre-attack";
+import type { ReactNode } from "react";
+import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
 
 function createStatusEffectAttribute(
   chance: number | undefined,
@@ -39,9 +40,11 @@ function createStatusEffectAttribute(
 
 type TGunAttributesProps = {
   projectileData: TProjectile;
+  gun?: TGun;
 };
 
-export function GunAttributes({ projectileData }: TGunAttributesProps) {
+export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
+  const blankDuringReload = gun?.featureFlags.some((f) => f === "blankDuringReload");
   return (
     <div className="flex gap-2">
       {/* Keep the line height consistent */}
@@ -106,6 +109,14 @@ export function GunAttributes({ projectileData }: TGunAttributesProps) {
         <>
           Cheese amount: <strong>{projectileData.cheeseAmount}</strong>
         </>,
+      )}
+      {blankDuringReload && (
+        <Tooltip>
+          <TooltipTrigger>
+            <FightsacreAttack />
+          </TooltipTrigger>
+          <TooltipContent>Blank during reload.</TooltipContent>
+        </Tooltip>
       )}
       {projectileData.isHoming && (
         <Tooltip>

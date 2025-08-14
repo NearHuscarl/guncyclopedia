@@ -122,7 +122,7 @@ export function DetailSection() {
           </div>
           <div className="flex justify-between items-baseline">
             <ShootStyle value={gunStats.shootStyle} />
-            <GunAttributes projectileData={gunStats.projectile} />
+            <GunAttributes projectileData={gunStats.projectile} gun={gun} />
           </div>
         </div>
       </div>

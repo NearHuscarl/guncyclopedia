@@ -1,31 +1,31 @@
+import startCase from "lodash/startCase";
 import { MenubarCheckboxItem, MenubarSub, MenubarSubContent, MenubarSubTrigger } from "@/components/ui/menubar";
 import { useFilterStateMutation } from "../../shared/hooks/useFilterStateMutation";
 import { useFilter } from "@/modules/shared/hooks/useFilter";
-import { Gun } from "@/client/generated/models/gun.model";
-import { ChestItem } from "../shared/components/chest-item";
+import { RangeLabel } from "@/client/service/projectile.service";
 
-const sortedQualities = [...Gun.shape.quality.options].reverse();
+const options = [...RangeLabel.options];
 
-export function QualityMenu() {
+export function RangeMenu() {
   const setFilter = useFilterStateMutation();
-  const quality = useFilter((state) => state.quality);
+  const range = useFilter((state) => state.range);
 
   return (
     <MenubarSub>
-      <MenubarSubTrigger>Quality</MenubarSubTrigger>
+      <MenubarSubTrigger>Range</MenubarSubTrigger>
       <MenubarSubContent>
-        {["All"].concat(sortedQualities).map((q) => {
+        {["All"].concat(options).map((o) => {
           return (
             <MenubarCheckboxItem
-              key={q}
+              key={o}
               className="flex items-center"
-              checked={q === (quality ?? "All")}
+              checked={o === (range ?? "All")}
               onCheckedChange={(checked) => {
-                const r = q === "All" || !checked ? undefined : q;
-                setFilter({ quality: r as typeof quality });
+                const r = o === "All" || !checked ? undefined : o;
+                setFilter({ range: r as typeof range });
               }}
             >
-              <ChestItem quality={q as typeof quality} />
+              {startCase(o)}
             </MenubarCheckboxItem>
           );
         })}

@@ -27,7 +27,7 @@ export function useHoverGun() {
 export function useFilteredGuns(filter: TSearchParams["filter"]) {
   const guns = useGuns();
   const gunStatsLookup = useGunStore((state) => state.gunStatsLookup);
-  const { primaryColor, secondaryColor, feature, quality, shootStyle } = filter ?? {};
+  const { primaryColor, secondaryColor, feature, quality, shootStyle, gunClass, range } = filter ?? {};
 
   return useMemo(() => {
     const res = guns.filter((g) => {
@@ -44,12 +44,18 @@ export function useFilteredGuns(filter: TSearchParams["filter"]) {
       if (quality && g.quality !== quality) {
         match = false;
       }
+      if (gunClass && g.gunClass !== gunClass) {
+        match = false;
+      }
       if (shootStyle && gunStatsLookup[g.id].shootStyle !== shootStyle) {
+        match = false;
+      }
+      if (range && gunStatsLookup[g.id].range !== range) {
         match = false;
       }
       return match;
     });
 
     return res;
-  }, [guns, gunStatsLookup, primaryColor, secondaryColor, feature, quality, shootStyle]);
+  }, [guns, primaryColor, secondaryColor, feature, quality, shootStyle, gunStatsLookup, gunClass, range]);
 }

@@ -1,3 +1,4 @@
+import z from "zod/v4";
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys } from "@/lib/types";
 import type { TProjectile, TProjectilePerShot, TStatusEffectProp } from "../generated/models/gun.model";
@@ -14,12 +15,23 @@ type ArrayAggregateConfig = {
   [K in ArrayKeys<TProjectile>]: true;
 };
 
+export const RangeLabel = z.enum(["short-range", "mid-range", "long-range"]);
+export type TRangeLabel = z.infer<typeof RangeLabel>;
+
 export class ProjectileService {
   static getRange(value: number) {
     return value >= 1000 ? Infinity : value;
   }
   static getSpeed(value: number) {
     return value === -1 ? Infinity : value;
+  }
+  static getRangeLabel(projectile: TProjectile): TRangeLabel {
+    if (projectile.range <= 15) {
+      return "short-range";
+    } else if (projectile.range <= 60) {
+      return "mid-range";
+    }
+    return "long-range";
   }
 
   static calculateStatusEffectChance(projectiles: TProjectile[], statusEffectProp: TStatusEffectProp): number {

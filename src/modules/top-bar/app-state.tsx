@@ -8,7 +8,7 @@ import { useAppState } from "../shared/hooks/useAppState";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 import { ColorItem } from "./shared/components/color-item";
 import { ChestItem } from "./shared/components/chest-item";
-import { ShootStyleItem } from "./shared/components/shoot-style-item";
+import { UppercasedItem } from "./shared/components/uppercased-item";
 import type { TGun, TProjectilePerShot } from "@/client/generated/models/gun.model";
 
 function getValueComponent(filterKey: keyof TFilter, value: string) {
@@ -19,7 +19,7 @@ function getValueComponent(filterKey: keyof TFilter, value: string) {
     return <ChestItem quality={value as TGun["quality"]} size="small" />;
   }
   if (filterKey === "shootStyle") {
-    return <ShootStyleItem value={value as TProjectilePerShot["shootStyle"]} />;
+    return <UppercasedItem value={value as TProjectilePerShot["shootStyle"]} />;
   }
   return <span>{startCase(value)}</span>;
 }

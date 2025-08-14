@@ -13,14 +13,14 @@ export function FeatureMenu() {
     <MenubarSub>
       <MenubarSubTrigger>Feature</MenubarSubTrigger>
       <MenubarSubContent>
-        {["None"].concat(features).map((f) => {
+        {["All"].concat(features).map((f) => {
           return (
             <MenubarCheckboxItem
               key={f}
               className="flex items-center"
-              checked={f === (feature ?? "None")}
+              checked={f === (feature ?? "All")}
               onCheckedChange={(checked) => {
-                const r = f === "None" || !checked ? undefined : f;
+                const r = f === "All" || !checked ? undefined : f;
                 setFilter({ feature: r as typeof feature });
               }}
             >

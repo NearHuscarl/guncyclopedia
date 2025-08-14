@@ -1,7 +1,7 @@
 import sumBy from "lodash/sumBy";
 import startCase from "lodash/startCase";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "../generated/models/gun.model";
-import { ProjectileService } from "./projectile.service";
+import { ProjectileService, type TRangeLabel } from "./projectile.service";
 import { formatNumber } from "@/lib/lang";
 
 interface IStat {
@@ -17,6 +17,7 @@ export type TGunStats = {
   dps: IStat;
   damage: IStat;
   precision: number;
+  range: TRangeLabel;
   maxAmmo: number;
   shootStyle: TProjectilePerShot["shootStyle"];
   magazineSize: number;
@@ -144,6 +145,7 @@ export class GunService {
       shootStyle: projectile.shootStyle, // only raiden coil has 2 shoot styles.
       precision: ProjectileService.toPrecision(projectile.spread),
       fireRate: shotsPerSecond * 60,
+      range: ProjectileService.getRangeLabel(projData),
       dps: {
         details: dpsCurrent.segments,
         total: dpsCurrent.total,

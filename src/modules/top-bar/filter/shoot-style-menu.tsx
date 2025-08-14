@@ -2,7 +2,7 @@ import { MenubarCheckboxItem, MenubarSub, MenubarSubContent, MenubarSubTrigger }
 import { useFilterStateMutation } from "../../shared/hooks/useFilterStateMutation";
 import { useFilter } from "@/modules/shared/hooks/useFilter";
 import { ProjectilePerShot, type TProjectilePerShot } from "@/client/generated/models/gun.model";
-import { ShootStyleItem } from "../shared/components/shoot-style-item";
+import { UppercasedItem } from "../shared/components/uppercased-item";
 
 const sortWeight: Record<TProjectilePerShot["shootStyle"], number> = {
   Automatic: 0,
@@ -21,18 +21,18 @@ export function ShootStyleMenu() {
     <MenubarSub>
       <MenubarSubTrigger>Shoot Style</MenubarSubTrigger>
       <MenubarSubContent>
-        {["None"].concat(options).map((o) => {
+        {["All"].concat(options).map((o) => {
           return (
             <MenubarCheckboxItem
               key={o}
               className="flex items-center"
-              checked={o === (shootStyle ?? "None")}
+              checked={o === (shootStyle ?? "All")}
               onCheckedChange={(checked) => {
-                const r = o === "None" || !checked ? undefined : o;
+                const r = o === "All" || !checked ? undefined : o;
                 setFilter({ shootStyle: r as typeof shootStyle });
               }}
             >
-              <ShootStyleItem value={o as typeof shootStyle} />
+              <UppercasedItem value={o} />
             </MenubarCheckboxItem>
           );
         })}
