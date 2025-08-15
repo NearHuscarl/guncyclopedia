@@ -135,8 +135,8 @@ export class GunService {
       projectile,
       chargeTime: mode.chargeTime,
     });
-    const dpsCurrent = this.getDamage(projData, "dps", shotsPerSecond);
-    const dmgCurrent = this.getDamage(projData, "instant", shotsPerSecond);
+    const dps = this.getDamage(projData, "dps", shotsPerSecond);
+    const damage = this.getDamage(projData, "instant", shotsPerSecond);
 
     return {
       maxAmmo,
@@ -147,14 +147,14 @@ export class GunService {
       fireRate: shotsPerSecond * 60,
       range: ProjectileService.getRangeLabel(projData),
       dps: {
-        details: dpsCurrent.segments,
-        total: dpsCurrent.total,
-        base: dpsCurrent.base,
+        details: dps.segments,
+        total: dps.total,
+        base: dps.base,
       },
       damage: {
-        details: dmgCurrent.segments,
-        total: dmgCurrent.total,
-        base: dmgCurrent.base,
+        details: damage.segments,
+        total: damage.total,
+        base: damage.base,
       },
       mode,
       projectilePerShot: projectile,

@@ -7,7 +7,8 @@ import { Penetration } from "@/components/icons/penetration";
 import { Bounce } from "@/components/icons/bounce";
 import { Stun } from "@/components/icons/stun";
 import { Cheese } from "@/components/icons/cheese";
-import { FightsacreAttack } from "@/components/icons/fightsacre-attack";
+import { FightsabreAttack } from "@/components/icons/fightsabre-attack";
+import { BlankDuringReload } from "@/components/icons/blank-during-reload";
 import type { ReactNode } from "react";
 import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
 
@@ -44,7 +45,6 @@ type TGunAttributesProps = {
 };
 
 export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
-  const blankDuringReload = gun?.featureFlags.some((f) => f === "blankDuringReload");
   return (
     <div className="flex gap-2">
       {/* Keep the line height consistent */}
@@ -110,12 +110,28 @@ export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
           Cheese amount: <strong>{projectileData.cheeseAmount}</strong>
         </>,
       )}
-      {blankDuringReload && (
+      {gun?.attribute.blankDuringReload && (
         <Tooltip>
           <TooltipTrigger>
-            <FightsacreAttack />
+            <BlankDuringReload />
           </TooltipTrigger>
-          <TooltipContent>Blank during reload.</TooltipContent>
+          <TooltipContent className="text-wrap">
+            Destroy bullets during reload for <strong>{gun.reloadTime}s</strong> within{" "}
+            <strong>{gun.attribute.blankReloadRadius}</strong> radius.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.attribute.reflectDuringReload && (
+        <Tooltip>
+          <TooltipTrigger>
+            <FightsabreAttack />
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap">
+            Reflect bullets during reload for <strong>{gun.reloadTime}s</strong> within{" "}
+            <strong>{gun.attribute.blankReloadRadius}</strong> radius.
+            <br />
+            Reflected bullets deal <strong>{gun.attribute.reflectDuringReloadDmgModifier! * 100}%</strong> more damage.
+          </TooltipContent>
         </Tooltip>
       )}
       {projectileData.isHoming && (

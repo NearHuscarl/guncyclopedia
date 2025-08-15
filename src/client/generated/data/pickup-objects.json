@@ -37,6 +37,7 @@
     "maxAmmo": 350,
     "reloadTime": 0.78,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -115,6 +116,7 @@
     "maxAmmo": 600,
     "reloadTime": 0.78,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -193,6 +195,7 @@
     "maxAmmo": 500,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -271,6 +274,7 @@
     "maxAmmo": 500,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "AKey-47_idle",
       "fps": 8,
@@ -433,6 +437,7 @@
     "maxAmmo": 500,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "AKey-47_2_idle",
       "fps": 8,
@@ -687,6 +692,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -767,6 +773,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "ant2_gun_idle",
       "fps": 6,
@@ -942,6 +949,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1028,6 +1036,7 @@
     "maxAmmo": 1,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1108,6 +1117,7 @@
     "maxAmmo": 50,
     "reloadTime": 2.1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1192,6 +1202,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1279,6 +1290,7 @@
     "maxAmmo": 50,
     "reloadTime": 0.01,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1366,6 +1378,7 @@
     "maxAmmo": 50,
     "reloadTime": 0.01,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1443,6 +1456,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1526,6 +1540,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "baretta_tranq_idle",
       "fps": 30,
@@ -1605,6 +1620,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1686,6 +1702,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1798,6 +1815,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1877,6 +1895,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -1963,6 +1982,7 @@
     "maxAmmo": 30,
     "reloadTime": 1.56,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "black_hole_gun_idle",
       "fps": 10,
@@ -2094,6 +2114,7 @@
     "maxAmmo": 60,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -2174,10 +2195,12 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls",
-      "blankDuringReload"
+      "doesntDamageSecretWalls"
     ],
-    "blankReloadRadius": 3,
+    "attribute": {
+      "blankDuringReload": true,
+      "blankReloadRadius": 3
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -2259,10 +2282,12 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls",
-      "blankDuringReload"
+      "doesntDamageSecretWalls"
     ],
-    "blankReloadRadius": 3,
+    "attribute": {
+      "blankDuringReload": true,
+      "blankReloadRadius": 3
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -2352,6 +2377,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -2681,6 +2707,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -3011,6 +3038,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -3090,6 +3118,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -3168,6 +3197,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -3262,6 +3292,7 @@
     "maxAmmo": 60,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "bomb_gun_idle",
       "fps": 8,
@@ -3411,6 +3442,7 @@
     "maxAmmo": 60,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "bomb2_gun_idle",
       "fps": 8,
@@ -3572,6 +3604,7 @@
     "maxAmmo": 100,
     "reloadTime": 0.12,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "bow_idle",
       "fps": 1,
@@ -3652,6 +3685,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -3738,6 +3772,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -3846,6 +3881,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "bow_idle_charmed",
       "fps": 1,
@@ -3929,6 +3965,7 @@
     "maxAmmo": 100,
     "reloadTime": 0.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -4012,6 +4049,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -4094,6 +4132,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -4185,6 +4224,7 @@
     "maxAmmo": 25,
     "reloadTime": 2.4,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "BSG_idle",
       "fps": 8,
@@ -4415,6 +4455,7 @@
     "maxAmmo": 60,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "bulletbow_idle",
       "fps": 9,
@@ -4506,6 +4547,7 @@
     "maxAmmo": 60,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "bulletbow2_idle",
       "fps": 9,
@@ -4625,6 +4667,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -4717,6 +4760,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "Burning_Hand_idle",
       "fps": 8,
@@ -4934,6 +4978,7 @@
     "maxAmmo": 200,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Burning2_Hand_idle",
       "fps": 8,
@@ -5157,6 +5202,7 @@
     "maxAmmo": 1000,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Cactus_idle",
       "fps": 8,
@@ -5342,6 +5388,7 @@
     "maxAmmo": 1000,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Cactus2_idle",
       "fps": 12,
@@ -5558,6 +5605,7 @@
     "featureFlags": [
       "damageAllEnemies"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -5722,6 +5770,7 @@
       "hasStatusEffects",
       "hasProjectilePool"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -5808,6 +5857,7 @@
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "cerebral_bore_idle",
       "fps": 8,
@@ -5944,6 +5994,7 @@
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "cerebral2_bore_idle",
       "fps": 8,
@@ -6062,6 +6113,7 @@
     "maxAmmo": 75,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "charge_shot_idle",
       "fps": 4,
@@ -6228,6 +6280,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "claw_idle",
       "fps": 6,
@@ -6399,6 +6452,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -6476,6 +6530,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -6580,6 +6635,7 @@
     "maxAmmo": 50,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -6682,6 +6738,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -6769,6 +6826,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -6853,6 +6911,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -6930,6 +6989,7 @@
     "maxAmmo": 100,
     "reloadTime": 0.75,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -7093,6 +7153,7 @@
     "maxAmmo": 80,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -7308,6 +7369,7 @@
     "maxAmmo": 80,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Crossbow2_Shotgun_idle",
       "fps": 22,
@@ -7505,6 +7567,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -7583,6 +7646,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "crystal2_gun_idle",
       "fps": 12,
@@ -7834,6 +7898,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -7916,6 +7981,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -8014,6 +8080,7 @@
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "Demon_Head_idle",
       "fps": 2,
@@ -8232,6 +8299,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -8336,6 +8404,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -8439,6 +8508,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -8548,6 +8618,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "disintegrator_idle",
       "fps": 10,
@@ -8744,6 +8815,7 @@
     "maxAmmo": 60,
     "reloadTime": 2.4,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "distortion_launcher_idle",
       "fps": 8,
@@ -8910,6 +8982,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "DL45_idle",
       "fps": 6,
@@ -9322,6 +9395,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "Dragonbreath_idle",
       "fps": 6,
@@ -9496,6 +9570,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "Dragonbreath2_idle",
       "fps": 6,
@@ -9665,6 +9740,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Dueling_Pistol_idle",
       "fps": 10,
@@ -9753,6 +9829,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Dueling_Pistol2_idle",
       "fps": 10,
@@ -9833,6 +9910,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "E12_Blaster_Rifle_idle",
       "fps": 6,
@@ -9913,6 +9991,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "E12_Blaster2_Rifle_idle",
       "fps": 6,
@@ -9992,6 +10071,7 @@
     "maxAmmo": 999,
     "reloadTime": 0.3,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -10122,6 +10202,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -10217,6 +10298,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -10295,6 +10377,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -10373,6 +10456,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "electric2_rifle_idle",
       "fps": 12,
@@ -10457,6 +10541,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "electro_shark_idle",
       "fps": 8,
@@ -10732,6 +10817,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -10812,6 +10898,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -10894,6 +10981,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -10979,6 +11067,7 @@
     "maxAmmo": 800,
     "reloadTime": 1.14,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "engine_gun_idle",
       "fps": 12,
@@ -11091,6 +11180,7 @@
     "maxAmmo": 500,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -11174,10 +11264,14 @@
     "maxAmmo": 500,
     "reloadTime": 1.5,
     "featureFlags": [
-      "reflectDuringReload",
-      "blankDuringReload"
+      "reflectDuringReload"
     ],
-    "blankReloadRadius": 1.8,
+    "attribute": {
+      "reflectDuringReload": true,
+      "reflectDuringReloadDmgModifier": 1.5,
+      "blankReloadRadius": 1.8
+    },
+    "video": "https://youtu.be/TtqLSkuOM5g?t=74",
     "animation": {
       "name": "excaliber_green_idle",
       "fps": 10,
@@ -11286,6 +11380,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Eyeball_Gun_idle",
       "fps": 8,
@@ -11809,6 +11904,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Eyeball_Sgun_idle",
       "fps": 8,
@@ -12048,6 +12144,7 @@
     "maxAmmo": 500,
     "reloadTime": 0.78,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "finished_gun_idle",
       "fps": 12,
@@ -12244,6 +12341,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -12322,6 +12420,7 @@
     "maxAmmo": 300,
     "reloadTime": 0.78,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Fish2_Barrel_Gun_idle",
       "fps": 4,
@@ -12506,6 +12605,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -12599,6 +12699,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -12680,6 +12781,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -12759,6 +12861,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -12837,6 +12940,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -12924,6 +13028,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -13008,6 +13113,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -13084,6 +13190,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.4,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -13184,6 +13291,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -13471,6 +13579,7 @@
     "maxAmmo": 50,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -13552,6 +13661,7 @@
     "maxAmmo": 22,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Golden_Gun_idle",
       "fps": 6,
@@ -13793,6 +13903,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Gold_Double_Barrel_Shotgun_idle",
       "fps": 10,
@@ -13990,6 +14101,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14068,6 +14180,7 @@
     "maxAmmo": 450,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14146,6 +14259,7 @@
     "maxAmmo": 450,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "h4mmer2_idle",
       "fps": 3,
@@ -14225,6 +14339,7 @@
     "maxAmmo": 150,
     "reloadTime": 0.024,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14303,6 +14418,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14381,6 +14497,7 @@
     "maxAmmo": 200,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14545,6 +14662,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14628,6 +14746,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14728,6 +14847,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14815,6 +14935,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -14909,6 +15030,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "jet_engine_idle",
       "fps": 10,
@@ -15089,6 +15211,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "jet2_engine_idle",
       "fps": 6,
@@ -15359,6 +15482,7 @@
     "maxAmmo": 1,
     "reloadTime": 2.1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -15436,6 +15560,7 @@
     "maxAmmo": 900,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -15531,6 +15656,7 @@
     "maxAmmo": 900,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -15612,6 +15738,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -15693,6 +15820,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "rogue_special_idle",
       "fps": 16,
@@ -15889,6 +16017,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Lamp_idle",
       "fps": 8,
@@ -16539,6 +16668,7 @@
     "maxAmmo": 400,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "lawgiver_idle",
       "fps": 8,
@@ -16822,6 +16952,7 @@
     "maxAmmo": 80,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -16939,6 +17070,7 @@
     "maxAmmo": 900,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17056,6 +17188,7 @@
     "maxAmmo": 900,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17135,6 +17268,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.3,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "M1_idle",
       "fps": 30,
@@ -17213,6 +17347,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17290,6 +17425,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17370,6 +17506,7 @@
     "maxAmmo": 180,
     "reloadTime": 1.3,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "M1_rifle2_idle",
       "fps": 30,
@@ -17457,6 +17594,7 @@
     "maxAmmo": 60,
     "reloadTime": 0.78,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17534,6 +17672,7 @@
     "maxAmmo": 600,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17611,6 +17750,7 @@
     "maxAmmo": 500,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17692,6 +17832,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17774,6 +17915,7 @@
     "maxAmmo": 75,
     "reloadTime": 1.02,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17852,6 +17994,7 @@
     "maxAmmo": 140,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -17930,6 +18073,7 @@
     "maxAmmo": 140,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -18010,6 +18154,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -18087,6 +18232,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -18179,6 +18325,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "mask_gun_idle",
       "fps": 6,
@@ -18680,6 +18827,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "matter_antimatter_gun_idle",
       "fps": 1,
@@ -18757,6 +18905,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -18835,6 +18984,7 @@
     "maxAmmo": 60,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "video": "https://youtu.be/-dDqU55gydI?t=41",
     "animation": {
       "name": "No_Animation",
@@ -18939,6 +19089,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19056,6 +19207,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "mermaid_gun_idle",
       "fps": 6,
@@ -19280,6 +19432,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19359,6 +19512,7 @@
     "maxAmmo": 900,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19435,6 +19589,7 @@
     "maxAmmo": 1000,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19513,6 +19668,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19649,6 +19805,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19754,6 +19911,7 @@
     "maxAmmo": 60,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19831,6 +19989,7 @@
     "maxAmmo": 80,
     "reloadTime": 2.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19909,6 +20068,7 @@
     "maxAmmo": 80,
     "reloadTime": 2.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -19989,6 +20149,7 @@
     "maxAmmo": 700,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -20068,6 +20229,7 @@
     "maxAmmo": 700,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -20157,6 +20319,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "mutant_arm_idle",
       "fps": 4,
@@ -20320,6 +20483,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -20398,6 +20562,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -20476,6 +20641,7 @@
     "maxAmmo": 50,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "nikita_idle",
       "fps": 4,
@@ -20580,6 +20746,7 @@
     "maxAmmo": 30,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "noisy_cricket_idle",
       "fps": 12,
@@ -20684,6 +20851,7 @@
     "featureFlags": [
       "hasProjectilePool"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -20781,6 +20949,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -20857,6 +21026,7 @@
     "maxAmmo": 1000,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -20933,6 +21103,7 @@
     "maxAmmo": 1000,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -21042,6 +21213,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -21153,6 +21325,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -21254,6 +21427,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -21345,6 +21519,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -21437,6 +21612,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -21517,6 +21693,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.38,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "plasma_cell_gun_idle",
       "fps": 10,
@@ -21793,6 +21970,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.38,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "plasma2_cell_gun_idle",
       "fps": 6,
@@ -22023,6 +22201,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Plasma_Rifle_idle",
       "fps": 10,
@@ -22207,6 +22386,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Plasma_Rifle2_idle",
       "fps": 10,
@@ -22349,6 +22529,7 @@
     "featureFlags": [
       "hasTieredProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -22492,6 +22673,7 @@
     "featureFlags": [
       "hasTieredProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -22582,6 +22764,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -22692,6 +22875,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -22801,6 +22985,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "proton2_pack_idle",
       "fps": 30,
@@ -22905,6 +23090,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -22982,6 +23168,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -23150,6 +23337,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.8,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Pulse_Rifle_idle",
       "fps": 5,
@@ -23268,6 +23456,7 @@
     "maxAmmo": 300,
     "reloadTime": 0.48,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -23345,6 +23534,7 @@
     "maxAmmo": 50,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -23442,6 +23632,7 @@
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -23526,6 +23717,7 @@
       "hasHomingProjectiles",
       "damageAllEnemies"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -23652,6 +23844,7 @@
       "hasHomingProjectiles",
       "damageAllEnemies"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -23735,6 +23928,7 @@
     "maxAmmo": 40,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -23826,6 +24020,7 @@
     "maxAmmo": 40,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "railgun_idle",
       "fps": 4,
@@ -24067,6 +24262,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "rattler_idle",
       "fps": 4,
@@ -24231,6 +24427,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Raw_Iron_Gun_idle",
       "fps": 6,
@@ -24634,6 +24831,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -24715,6 +24913,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -24795,6 +24994,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "robot_skullhand_idle",
       "fps": 12,
@@ -25077,6 +25277,7 @@
     "maxAmmo": 40,
     "reloadTime": 3,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -25166,6 +25367,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -25267,6 +25469,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -25351,6 +25554,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -25433,6 +25637,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "unrusty_revolver_idle",
       "fps": 8,
@@ -25612,6 +25817,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -25708,6 +25914,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "sailgun_idle",
       "fps": 10,
@@ -25860,6 +26067,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "sailgun2_idle",
       "fps": 10,
@@ -26043,6 +26251,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26172,6 +26381,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26261,6 +26471,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26351,6 +26562,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26430,6 +26642,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26520,6 +26733,7 @@
     "maxAmmo": 30,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26610,6 +26824,7 @@
     "maxAmmo": 50,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26695,6 +26910,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.08,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26773,6 +26989,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -26851,6 +27068,7 @@
     "maxAmmo": 350,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -27049,6 +27267,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "shotgrub_idle",
       "fps": 6,
@@ -27296,6 +27515,9 @@
     "maxAmmo": 150,
     "reloadTime": 1.8,
     "featureFlags": [],
+    "attribute": {
+      "reflectDuringReloadDmgModifier": 1
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -27464,10 +27686,11 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1.2,
-    "featureFlags": [
-      "blankDuringReload"
-    ],
-    "blankReloadRadius": 1.25,
+    "featureFlags": [],
+    "attribute": {
+      "blankDuringReload": true,
+      "blankReloadRadius": 1.25
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -27645,6 +27868,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -27849,6 +28073,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -27935,6 +28160,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -28030,6 +28256,7 @@
     "maxAmmo": 80,
     "reloadTime": 0.9,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "sling_idle",
       "fps": 4,
@@ -28254,6 +28481,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -28334,6 +28562,7 @@
     "maxAmmo": 80,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -28418,6 +28647,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -28540,6 +28770,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -28620,6 +28851,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -28702,6 +28934,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -28781,6 +29014,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -28950,6 +29184,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "space_shotgun_idle",
       "fps": 10,
@@ -29315,6 +29550,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -29397,6 +29633,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -29479,6 +29716,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -29558,6 +29796,7 @@
     "maxAmmo": 350,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "SST_Gun_idle",
       "fps": 12,
@@ -29637,6 +29876,7 @@
     "maxAmmo": 100,
     "reloadTime": 0.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -29716,6 +29956,7 @@
     "maxAmmo": 900,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -29815,6 +30056,7 @@
     "maxAmmo": 300,
     "reloadTime": 0.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -29899,10 +30141,11 @@
     ],
     "maxAmmo": 280,
     "reloadTime": 0.48,
-    "featureFlags": [
-      "blankDuringReload"
-    ],
-    "blankReloadRadius": 1.5,
+    "featureFlags": [],
+    "attribute": {
+      "blankDuringReload": true,
+      "blankReloadRadius": 1.5
+    },
     "animation": {
       "name": "swordgun_idle",
       "fps": 7,
@@ -30018,10 +30261,11 @@
     ],
     "maxAmmo": 280,
     "reloadTime": 0.48,
-    "featureFlags": [
-      "blankDuringReload"
-    ],
-    "blankReloadRadius": 2.5,
+    "featureFlags": [],
+    "attribute": {
+      "blankDuringReload": true,
+      "blankReloadRadius": 2.5
+    },
     "animation": {
       "name": "swordgun2_idle",
       "fps": 7,
@@ -30100,6 +30344,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -30179,6 +30424,7 @@
     "maxAmmo": 30,
     "reloadTime": 1.8,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -30260,6 +30506,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "video": "https://youtu.be/zJ1MiifNI5A?t=22",
     "animation": {
       "name": "tentacle_idle",
@@ -30478,6 +30725,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "tentacle_kaliber_idle",
       "fps": 6,
@@ -30747,6 +30995,7 @@
     "featureFlags": [
       "hasProjectilePool"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -30826,6 +31075,7 @@
     "maxAmmo": 350,
     "reloadTime": 0.78,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -30903,6 +31153,7 @@
     "maxAmmo": 350,
     "reloadTime": 0.78,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -30985,6 +31236,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31063,6 +31315,7 @@
     "maxAmmo": 50,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31152,6 +31405,7 @@
     "featureFlags": [
       "hasProjectilePool"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31240,6 +31494,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31318,10 +31573,11 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1,
-    "featureFlags": [
-      "blankDuringReload"
-    ],
-    "blankReloadRadius": 1.5,
+    "featureFlags": [],
+    "attribute": {
+      "blankDuringReload": true,
+      "blankReloadRadius": 1.5
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31404,6 +31660,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31484,6 +31741,7 @@
     "maxAmmo": 250,
     "reloadTime": 0.9,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31562,6 +31820,7 @@
     "maxAmmo": 120,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31658,6 +31917,7 @@
     "maxAmmo": 250,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31754,6 +32014,7 @@
     "maxAmmo": 250,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -31866,6 +32127,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "Unicorn_Horn2_idle",
       "fps": 7,
@@ -32090,6 +32352,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -32167,6 +32430,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -32244,6 +32508,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Uzi2_idle",
       "fps": 16,
@@ -32805,10 +33070,11 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.7,
-    "featureFlags": [
-      "blankDuringReload"
-    ],
-    "blankReloadRadius": 1.25,
+    "featureFlags": [],
+    "attribute": {
+      "blankDuringReload": true,
+      "blankReloadRadius": 1.25
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -32886,6 +33152,7 @@
     "maxAmmo": 130,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -33050,6 +33317,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -33130,6 +33398,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -33213,6 +33482,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -33350,6 +33620,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -33433,6 +33704,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -33521,6 +33793,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -33603,6 +33876,7 @@
     "maxAmmo": 150,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -33682,6 +33956,7 @@
     "maxAmmo": 150,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -34116,6 +34391,7 @@
     "maxAmmo": 240,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -34198,6 +34474,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -34282,6 +34559,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "balloon_gun_idle",
       "fps": 4,
@@ -34538,6 +34816,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -34615,6 +34894,7 @@
     "maxAmmo": 250,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -34693,6 +34973,7 @@
     "maxAmmo": 250,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -34817,6 +35098,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "video": "https://youtu.be/LI8hGCKaRE8?t=15",
     "animation": {
       "name": "gun_crown_idle",
@@ -34897,6 +35179,7 @@
     "maxAmmo": 100,
     "reloadTime": 0.78,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -35025,6 +35308,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -35106,6 +35390,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "dueling_laser_idle",
       "fps": 12,
@@ -35534,6 +35819,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "evo_gun_1_idle",
       "fps": 5,
@@ -35692,6 +35978,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "evo_gun_2_idle",
       "fps": 5,
@@ -35850,6 +36137,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "evo_gun_3_idle",
       "fps": 5,
@@ -36042,6 +36330,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "evo_gun_4_idle",
       "fps": 5,
@@ -36208,6 +36497,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "evo_gun_5_idle",
       "fps": 8,
@@ -36317,6 +36607,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "evo_gun_6_idle",
       "fps": 8,
@@ -36531,6 +36822,7 @@
     "maxAmmo": 800,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -36610,6 +36902,7 @@
     "maxAmmo": 12,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -36691,6 +36984,7 @@
     "maxAmmo": 18,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -36777,6 +37071,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "kthuliber_gun_idle",
       "fps": 4,
@@ -36900,6 +37195,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "moon_crown_idle",
       "fps": 12,
@@ -37222,6 +37518,7 @@
       "activeReload",
       "hasTieredProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -37404,6 +37701,7 @@
       "activeReload",
       "hasTieredProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -37519,6 +37817,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -37990,6 +38289,7 @@
     "maxAmmo": 100,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -38068,6 +38368,7 @@
     "maxAmmo": 400,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -38144,6 +38445,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.8,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -38228,6 +38530,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "voidcore_rl_idle",
       "fps": 4,
@@ -38415,6 +38718,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "Beholster_Gun_idle",
       "fps": 5,
@@ -38865,6 +39169,7 @@
     "maxAmmo": 250,
     "reloadTime": 0.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -38948,6 +39253,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -39032,6 +39338,7 @@
     "maxAmmo": 250,
     "reloadTime": 0.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "gun_angel_idle",
       "fps": 12,
@@ -39114,6 +39421,7 @@
     "maxAmmo": 250,
     "reloadTime": 0.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "gun_nome_idle",
       "fps": 12,
@@ -39198,6 +39506,7 @@
     "maxAmmo": 250,
     "reloadTime": 0.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "gun_tuc_idle",
       "fps": 12,
@@ -39360,6 +39669,7 @@
     "maxAmmo": 100,
     "reloadTime": 1.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -39523,6 +39833,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -39602,6 +39913,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -39683,6 +39995,7 @@
     "maxAmmo": 300,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "armgun_idle",
       "fps": 12,
@@ -39868,6 +40181,7 @@
     "maxAmmo": 300,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -39956,6 +40270,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -40075,6 +40390,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -40181,6 +40497,7 @@
     "featureFlags": [
       "hasProjectilePool"
     ],
+    "attribute": {},
     "video": "https://youtu.be/icERwXyyCDU?t=1048",
     "animation": {
       "name": "bubble_lizard_gun_idle",
@@ -40624,6 +40941,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "combine_rifle_idle",
       "fps": 8,
@@ -40836,6 +41154,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.75,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -40915,6 +41234,7 @@
     "maxAmmo": 50,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "exotic_gun_idle",
       "fps": 10,
@@ -41119,6 +41439,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [],
+    "attribute": {},
     "video": "https://youtu.be/N-JLNlLRAXA?t=930",
     "animation": {
       "name": "No_Animation",
@@ -41201,6 +41522,7 @@
     "maxAmmo": 25,
     "reloadTime": 2.4,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -41283,6 +41605,7 @@
     "maxAmmo": 25,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -41361,6 +41684,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "gunner_idle",
       "fps": 6,
@@ -41489,6 +41813,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "jk47_idle",
       "fps": 16,
@@ -41585,6 +41910,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -41781,6 +42107,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -41872,6 +42199,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "mutant_techarm_idle",
       "fps": 4,
@@ -42147,6 +42475,7 @@
       "hasStatusEffects",
       "hasProjectilePool"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -42232,6 +42561,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -42311,6 +42641,7 @@
     "maxAmmo": 180,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "recharge_gun_idle",
       "fps": 10,
@@ -42535,6 +42866,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -42688,6 +43020,7 @@
     "maxAmmo": 180,
     "reloadTime": 1.7,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -42769,6 +43102,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -42853,6 +43187,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -42937,6 +43272,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43017,6 +43353,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.4,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43093,6 +43430,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.4,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43172,6 +43510,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.4,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43248,6 +43587,7 @@
     "maxAmmo": 500,
     "reloadTime": 0.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43360,6 +43700,7 @@
     "maxAmmo": 70,
     "reloadTime": 2.2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43441,6 +43782,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43521,6 +43863,7 @@
     "maxAmmo": 500,
     "reloadTime": 1.3,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43607,6 +43950,7 @@
     "maxAmmo": 50,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43758,6 +44102,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -43920,6 +44265,9 @@
     "maxAmmo": 500,
     "reloadTime": 1.8,
     "featureFlags": [],
+    "attribute": {
+      "reflectDuringReloadDmgModifier": 1
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -44002,6 +44350,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "chamber_hell_gun_idle",
       "fps": 6,
@@ -44079,6 +44428,7 @@
     "maxAmmo": 500,
     "reloadTime": 0.1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -44171,6 +44521,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -44267,6 +44618,7 @@
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "chamber_rat_gun_idle",
       "fps": 1,
@@ -44353,6 +44705,7 @@
     "maxAmmo": 900,
     "reloadTime": 0.9,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "chamber_office_pencil_idle",
       "fps": 5,
@@ -44577,6 +44930,7 @@
     "maxAmmo": 200,
     "reloadTime": 2,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -44672,6 +45026,7 @@
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "video": "https://youtu.be/x2GsWu0qJ9E?t=811",
     "animation": {
       "name": "glaive_idle",
@@ -44835,6 +45190,7 @@
     "maxAmmo": 200,
     "reloadTime": 1,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "gunderfury_LV10_idle",
       "fps": 10,
@@ -44926,6 +45282,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "Dragonbreath3_idle",
       "fps": 6,
@@ -45095,6 +45452,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45207,6 +45565,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45335,6 +45694,7 @@
     "featureFlags": [
       "hasProjectilePool"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45445,6 +45805,7 @@
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45550,6 +45911,7 @@
     "featureFlags": [
       "damageAllEnemies"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45666,6 +46028,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45768,6 +46131,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45881,6 +46245,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -45987,6 +46352,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -46225,6 +46591,7 @@
       "doesntDamageSecretWalls",
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -46321,6 +46688,7 @@
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -46432,6 +46800,7 @@
       "hasStatusEffects",
       "hasProjectilePool"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -46518,6 +46887,7 @@
     "maxAmmo": 900,
     "reloadTime": 0.9,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -46622,6 +46992,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -46733,6 +47104,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -46862,6 +47234,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -47004,6 +47377,7 @@
     "featureFlags": [
       "hasHomingProjectiles"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -47085,6 +47459,7 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls"
     ],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -47165,6 +47540,7 @@
     "maxAmmo": 600,
     "reloadTime": 1.6,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "super_space_machinegun_idle",
       "fps": 16,
@@ -47257,6 +47633,7 @@
     "featureFlags": [
       "hasStatusEffects"
     ],
+    "attribute": {},
     "video": "https://youtu.be/NnYbPvpN9hk?t=739",
     "animation": {
       "name": "sunlight_spear_idle",
@@ -47551,6 +47928,7 @@
     "maxAmmo": 100,
     "reloadTime": 2.5,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -47635,6 +48013,7 @@
     "maxAmmo": 900,
     "reloadTime": 0.9,
     "featureFlags": [],
+    "attribute": {},
     "animation": {
       "name": "wood_beam_idle",
       "fps": 2,

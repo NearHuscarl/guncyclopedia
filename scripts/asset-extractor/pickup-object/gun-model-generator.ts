@@ -431,6 +431,16 @@ export class GunModelGenerator {
     return res;
   }
 
+  private _buildAttribute(gunDto: TGunDto): TGun["attribute"] {
+    return {
+      reflectDuringReload: Boolean(gunDto.gun.reflectDuringReload) || undefined,
+      reflectDuringReloadDmgModifier: gunDto.gunExtraSettingSynergyProcessor?.ReflectedBulletDamageModifier,
+      blankDuringReload: (gunDto.gun.blankDuringReload && !gunDto.gun.reflectDuringReload) || undefined,
+      blankReloadRadius:
+        gunDto.gun.blankDuringReload || gunDto.gun.reflectDuringReload ? gunDto.gun.blankReloadRadius : undefined,
+    };
+  }
+
   private async _generateAnimation(gunDto: TGunDto): Promise<TGun["animation"]> {
     const animationName = gunDto.gun.idleAnimation;
 
@@ -540,7 +550,6 @@ export class GunModelGenerator {
       if (entry.doesntDamageSecretWalls) this._featureFlags.add("doesntDamageSecretWalls");
       if (gunDto.gun.reflectDuringReload) this._featureFlags.add("reflectDuringReload");
       if (gunDto.gun.LocalActiveReload) this._featureFlags.add("activeReload");
-      if (gunDto.gun.blankDuringReload) this._featureFlags.add("blankDuringReload");
 
       const allStatModifiers = gunDto.gun.currentGunStatModifiers.concat(gunDto.gun.passiveStatModifiers ?? []);
 
@@ -567,7 +576,7 @@ export class GunModelGenerator {
         reloadTime: gunDto.gun.reloadTime,
         featureFlags: [],
         projectileModes: this._buildProjectileModes(gunDto),
-        blankReloadRadius: gunDto.gun.blankDuringReload ? gunDto.gun.blankReloadRadius : undefined,
+        attribute: this._buildAttribute(gunDto),
         animation: await this._generateAnimation(gunDto),
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       };

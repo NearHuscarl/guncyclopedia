@@ -211,7 +211,6 @@ export const Gun = PickupObject.extend({
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls",
       "reflectDuringReload",
-      "blankDuringReload",
       "activeReload",
       "hasStatusEffects",
       "hasTieredProjectiles",
@@ -220,7 +219,15 @@ export const Gun = PickupObject.extend({
       "damageAllEnemies",
     ]),
   ),
-  blankReloadRadius: z.number().optional(),
+  attribute: z.object({
+    reflectDuringReload: z.boolean().optional(),
+    reflectDuringReloadDmgModifier: z.number().optional(),
+    blankDuringReload: z.boolean().optional(),
+    /**
+     * Used when `reflectDuringReload` or `blankDuringReload` is true
+     */
+    blankReloadRadius: z.number().optional(),
+  }),
   video: z.string().optional(),
   animation: z.object({
     name: z.string(),

@@ -1,6 +1,6 @@
 import type { TIconProps } from "./types";
 
-export function FightsacreAttack({ size = 20, color = "white" }: TIconProps) {
+export function FightsabreAttack({ size = 20, color = "white" }: TIconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="100" height="100" fill-opacity="0.5" />

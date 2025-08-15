@@ -21,7 +21,7 @@ export function AmmoSet({ shootStyle, magazineSize }: TAmmoSetProps) {
   return (
     <Tooltip>
       <TooltipTrigger>
-        <div className="flex relative top-[-2px]">
+        <div className="flex relative top-[-1px]">
           <AmmoIcon color={score >= 1 ? "white" : undefined} />
           <AmmoIcon color={score >= 2 ? "white" : undefined} />
           <AmmoIcon color={score === 3 ? "white" : undefined} />

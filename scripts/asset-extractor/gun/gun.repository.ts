@@ -11,6 +11,7 @@ import type {
   TEncounterTrackableData,
   TGunData,
   TGunDto,
+  TGunExtraSettingSynergyProcessorData,
   TPredatorGunControllerData,
   TSpriteAnimatorData,
   TSpriteData,
@@ -54,6 +55,12 @@ export class GunRepository {
       this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("PredatorGunController.cs.meta")
     );
   }
+  private _isGunExtraSettingSynergyProcessorData(obj: unknown): obj is TGunExtraSettingSynergyProcessorData {
+    return (
+      this._assetService.isMonoBehaviour(obj) &&
+      obj.m_Script.$$scriptPath.endsWith("GunExtraSettingSynergyProcessor.cs.meta")
+    );
+  }
   private _isEncounterTrackable(obj: unknown): obj is TEncounterTrackableData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("EncounterTrackable.cs.meta");
   }
@@ -90,6 +97,8 @@ export class GunRepository {
           res.spriteAnimator = block;
         } else if (this._isPredatorGunControllerData(block)) {
           res.predatorGunController = block;
+        } else if (this._isGunExtraSettingSynergyProcessorData(block)) {
+          res.gunExtraSettingSynergyProcessor = block;
         } else if (this._isEncounterTrackable(block)) {
           res.encounterTrackable = block;
         }

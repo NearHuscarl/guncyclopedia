@@ -127,6 +127,10 @@ const PredatorGunControllerData = z.object({
   HomingAngularVelocity: z.number(),
 });
 
+const GunExtraSettingSynergyProcessorData = z.object({
+  ReflectedBulletDamageModifier: z.number(),
+});
+
 const EncounterTrackable = z.object({
   m_journalData: z.object({
     AmmonomiconSprite: z.string().nullable(),
@@ -137,8 +141,9 @@ export const GunDto = z.object({
   gun: GunData,
   sprite: SpriteData,
   spriteAnimator: SpriteAnimatorData,
-  encounterTrackable: EncounterTrackable.optional(),
   predatorGunController: PredatorGunControllerData.optional(),
+  gunExtraSettingSynergyProcessor: GunExtraSettingSynergyProcessorData.optional(),
+  encounterTrackable: EncounterTrackable.optional(),
 });
 
 export type TGunDto = z.input<typeof GunDto>;
@@ -146,5 +151,7 @@ export type TGunData = z.input<typeof GunData>;
 export type TSpriteData = z.input<typeof SpriteData>;
 export type TSpriteAnimatorData = z.input<typeof SpriteAnimatorData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
+export type TGunExtraSettingSynergyProcessorData = z.input<typeof GunExtraSettingSynergyProcessorData>;
 export type TEncounterTrackableData = z.input<typeof EncounterTrackable>;
+
 export type TProjectileModule = z.input<typeof ProjectileModule>;
