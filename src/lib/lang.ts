@@ -11,3 +11,7 @@ export function pickRandom<T>(arr: T[]): T {
 export function formatNumber(value: number, precision = 2): string {
   return value === Infinity ? "∞" : Number(value.toFixed(precision)).toString();
 }
+
+export function toPercent(value: number): string {
+  return (value * 100).toFixed(0) + "%";
+}

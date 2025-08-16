@@ -359,9 +359,8 @@ export class GunModelGenerator {
     // each module is a separate mode
     if (modulesAreTiers) {
       this._featureFlags.add("hasTieredProjectiles");
-      const modePrefix = gunDto.gun.LocalActiveReload ? "Reload - " : "";
       return projectileModules.map((mod, i) =>
-        this._buildModeFromProjectileModules(`${modePrefix}lvl ${i + 1}`, gunDto, defaultModule, [mod]),
+        this._buildModeFromProjectileModules(`Lvl ${i + 1}`, gunDto, defaultModule, [mod]),
       );
     }
 
@@ -438,6 +437,7 @@ export class GunModelGenerator {
       blankDuringReload: (gunDto.gun.blankDuringReload && !gunDto.gun.reflectDuringReload) || undefined,
       blankReloadRadius:
         gunDto.gun.blankDuringReload || gunDto.gun.reflectDuringReload ? gunDto.gun.blankReloadRadius : undefined,
+      activeReload: Boolean(gunDto.gun.LocalActiveReload) || undefined,
     };
   }
 

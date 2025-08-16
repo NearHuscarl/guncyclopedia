@@ -45,6 +45,7 @@ export function ItemGrid() {
   const guns = useGunResults();
   const setAppState = useAppStateMutation();
   const selectedId = useAppState((state) => state.selectedId);
+  const isComparisonMode = useAppState((state) => state.isComparisonMode);
   const { error } = usePreloadSpritesheets();
 
   if (error) {
@@ -57,7 +58,7 @@ export function ItemGrid() {
         <Button
           key={gun.id}
           variant="secondary"
-          onMouseEnter={() => setHoverGun(gun.id)}
+          onMouseEnter={() => isComparisonMode && setHoverGun(gun.id)}
           onClick={() => setAppState({ selectedId: gun.id })}
           className={clsx({
             "h-14 p-3": true,

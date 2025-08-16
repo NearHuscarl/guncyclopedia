@@ -59,7 +59,12 @@ export function Search() {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="outline" role="combobox" aria-expanded={open} className="w-[250px] justify-between">
+        <Button
+          variant="outline"
+          role="combobox"
+          aria-expanded={open}
+          className="w-[250px] justify-between border-none bg-stone-900!"
+        >
           <div className="flex items-center gap-2">
             {selectedGun && (
               <div className="w-12 flex justify-center">

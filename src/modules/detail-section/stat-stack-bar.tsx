@@ -4,8 +4,8 @@ import { formatNumber } from "@/lib/lang";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { usePrevious } from "@/lib/hooks";
 import { useSelectedGun } from "../shared/hooks/useGuns";
-import { useGunStore } from "../shared/store/gun.store";
 import { NumericValue } from "./numeric-value";
+import { useAppState } from "../shared/hooks/useAppState";
 import type { HTMLAttributes, ReactNode } from "react";
 
 function createModifierComponent({
@@ -44,7 +44,7 @@ function createModifierComponent({
   const posColor = isNegativeStat ? "bg-orange-500" : "bg-green-500";
   const negColor = isNegativeStat ? "bg-green-500" : "bg-orange-500";
 
-  // (2)(3): When users change guns, the stat width is updated, which moves the mount position of the modifier portion violently.
+  // (2)(3): When user changes guns, the stat width is updated, which moves the mount position of the modifier portion violently.
   // Solution: Remove the modifier immediately.
   return {
     positiveModifier: (
@@ -143,7 +143,7 @@ export function StatStackBar({
   modifier = 0,
 }: TStatStackProps) {
   const gun = useSelectedGun();
-  const isComparisonMode = useGunStore((state) => state.isComparisonMode);
+  const isComparisonMode = useAppState((state) => state.isComparisonMode);
   const percentage = (v: number) => (Math.min(v, max) / max) * 100;
   const { paddedSegments, baseValue, totalValue } = prepareSegment(segments, max);
   const { negativeModifier, positiveModifier } = createModifierComponent({
@@ -157,6 +157,9 @@ export function StatStackBar({
   const prevIsNegativeStat = usePrevious(isNegativeStat);
   const gapInPx = 4; // gap between segments in pixels
   const labelElement = <p className="text-muted-foreground font-semibold uppercase">{label}</p>;
+
+  const displayBaseValue = valueResolver?.(baseValue + modifier) ?? baseValue + modifier;
+  const displayTotalValue = valueResolver?.(totalValue) ?? totalValue;
 
   return (
     <div className="mb-2">
@@ -172,9 +175,9 @@ export function StatStackBar({
           labelElement
         )}
         <NumericValue>
-          {totalValue - baseValue > 0
-            ? `${formatNumber(valueResolver?.(baseValue) ?? baseValue, precision)} - ${formatNumber(valueResolver?.(totalValue) ?? totalValue, precision)}`
-            : formatNumber(valueResolver?.(baseValue) ?? baseValue, precision)}
+          {totalValue - baseValue > 0 && !modifier
+            ? `${formatNumber(displayBaseValue, precision)} - ${formatNumber(displayTotalValue, precision)}`
+            : formatNumber(displayBaseValue, precision)}
         </NumericValue>
       </div>
 
@@ -199,7 +202,7 @@ export function StatStackBar({
           };
 
           // Because of the solution for (2)(3), when the modifier is removed instantly, as the stat
-          // width grows/shrinks to 'catch up' with the modifier, it creates an annoying glitch
+          // width grows/shrinks to 'catch up' with the modifier, resulting in an annoying glitch
           const key = isComparisonMode && i === 0 ? gun.id : i;
 
           if (!source) {

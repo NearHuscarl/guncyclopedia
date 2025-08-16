@@ -5,6 +5,7 @@ import { RangeLabel } from "@/client/service/projectile.service";
 export const SearchParams = z.object({
   debug: z.boolean().optional(),
   selectedId: z.number().int().nonnegative().optional(),
+  isComparisonMode: z.boolean().optional(),
   sortBy: z.enum(["none", "quality", "maxAmmo", "cooldownTime"]).optional(),
   filter: z
     .object({

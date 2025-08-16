@@ -7,7 +7,6 @@ import { Quality } from "./quality";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Circle } from "./circle";
-import { useAppState } from "../shared/hooks/useAppState";
 import { useHoverGun, useSelectedGun } from "../shared/hooks/useGuns";
 import { useLoaderData } from "../shared/hooks/useLoaderData";
 import { ProjectilesPerShot } from "./projectiles-per-shot";
@@ -25,7 +24,6 @@ import { ColorItem } from "../top-bar/shared/components/color-item";
 import { ShootStyle } from "./shoot-style";
 
 export function DetailSection() {
-  const selectedId = useAppState((state) => state.selectedId);
   const gun = useSelectedGun();
   const hoverGun = useHoverGun();
   const debug = useIsDebug();
@@ -58,21 +56,18 @@ export function DetailSection() {
     setModeIndex(0);
   }, [gun?.id]);
 
-  if (selectedId === -1 || !gun) {
-    return null;
-  }
-
-  const { animation, name, ...other } = gun;
   const gunStats = GunService.computeGunStats(gun, modeIndex, projectileIndex, projectileDataIndex);
   const hoverGunStats = hoverGun
     ? GunService.computeGunStats(hoverGun, modeIndex, projectileIndex, projectileDataIndex)
     : gunStats;
+  const selectedGun = hoverGun || gun;
+  const selectedStats = hoverGunStats || gunStats;
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
       <div>
         <div className="flex justify-center gap-1">
-          {gun.projectileModes.map(({ mode }, i, modes) => (
+          {selectedGun.projectileModes.map(({ mode }, i, modes) => (
             <Button
               key={mode}
               variant="secondary"
@@ -90,7 +85,7 @@ export function DetailSection() {
           ))}
         </div>
         <div className="flex items-center justify-center h-36 gap-10">
-          <AnimatedSprite key={gun.id} animation={animation} scale={6} />
+          <AnimatedSprite key={gun.id} animation={gun.animation} scale={6} />
           {hoverGun && hoverGun.id !== gun.id && (
             <>
               <ArrowLeftRight className="fill-primary" />
@@ -99,30 +94,30 @@ export function DetailSection() {
           )}
         </div>
         <blockquote className="flex justify-center w-full italic text-muted-foreground mb-4 font-sans font-semibold">
-          {JSON.stringify(gun.quote || "...")}
+          {JSON.stringify(selectedGun.quote || "...")}
         </blockquote>
         <div className="bg-stone-900 px-2 py-2 rounded-tl-sm">
           <div className="flex justify-between items-baseline">
             <div className="flex gap-4 items-baseline">
-              <H2>{name || "N/A"}</H2>
-              <Quality tier={gun.quality} className="relative top-[-6px]" />
+              <H2>{selectedGun.name || "N/A"}</H2>
+              <Quality tier={selectedGun.quality} className="relative top-[-6px]" />
             </div>
-            <div>{debug && gun.animation.frames[0].colors.map((c) => <ColorItem color={c} key={c} />)}</div>
+            <div>{debug && selectedGun.animation.frames[0].colors.map((c) => <ColorItem color={c} key={c} />)}</div>
             <div className="flex gap-2 items-center">
               <Tooltip>
                 <TooltipTrigger>
                   <NumericValue>
-                    {gunStats.magazineSize}/{formatNumber(gunStats.maxAmmo)}
+                    {selectedStats.magazineSize}/{formatNumber(selectedStats.maxAmmo)}
                   </NumericValue>
                 </TooltipTrigger>
                 <TooltipContent>Magazine Size / Max Ammunition.</TooltipContent>
               </Tooltip>
-              <AmmoSet shootStyle={gunStats.shootStyle} magazineSize={gunStats.magazineSize} />
+              <AmmoSet shootStyle={selectedStats.shootStyle} magazineSize={selectedStats.magazineSize} />
             </div>
           </div>
           <div className="flex justify-between items-baseline">
-            <ShootStyle value={gunStats.shootStyle} />
-            <GunAttributes projectileData={gunStats.projectile} gun={gun} />
+            <ShootStyle value={selectedStats.shootStyle} />
+            <GunAttributes projectileData={selectedStats.projectile} gun={selectedGun} />
           </div>
         </div>
       </div>
@@ -136,7 +131,7 @@ export function DetailSection() {
         <StatBar
           label="Magazine Size"
           value={gunStats.magazineSize}
-          max={Math.min(stats.maxMagazineSize, gun.maxAmmo)}
+          max={Math.min(stats.maxMagazineSize, selectedGun.maxAmmo)}
           modifier={hoverGunStats.magazineSize - gunStats.magazineSize}
         />
         <StatBar
@@ -246,8 +241,10 @@ export function DetailSection() {
             </div>
           )}
         </div>
-        <Features gun={gun} />
-        {debug && <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(other, null, 2)}</pre>}
+        <Features gun={selectedGun} />
+        {debug && (
+          <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(selectedGun, null, 2)}</pre>
+        )}
         <div className="h-14" />
       </div>
     </div>

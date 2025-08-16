@@ -10,8 +10,6 @@ type TGunState = {
   createGunLookup: (guns: TGun[]) => void;
   hoverGunId: number;
   setHoverGun: (id: number) => void;
-  isComparisonMode: boolean;
-  setComparisonMode: (isComparisonMode: boolean) => void;
 };
 
 export const useGunStore = create<TGunState>()(
@@ -36,22 +34,10 @@ export const useGunStore = create<TGunState>()(
       setHoverGun: (id) => {
         set(
           (state) => {
-            if (state.isComparisonMode) {
-              state.hoverGunId = id;
-            }
+            state.hoverGunId = id;
           },
           undefined,
           { type: "setHoverGun", id },
-        );
-      },
-      isComparisonMode: false,
-      setComparisonMode: (isComparisonMode) => {
-        set(
-          (state) => {
-            state.isComparisonMode = isComparisonMode;
-          },
-          undefined,
-          { type: "isComparisonMode", isComparisonMode },
         );
       },
     })),

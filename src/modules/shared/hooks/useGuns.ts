@@ -15,7 +15,7 @@ export function useSelectedGun() {
 
 export function useHoverGun() {
   const hoverGunId = useGunStore((state) => state.hoverGunId);
-  const isComparisonMode = useGunStore((state) => state.isComparisonMode);
+  const isComparisonMode = useAppState((state) => state.isComparisonMode);
   const gun = useGunStore((state) => state.gunLookup[hoverGunId ?? -1]);
 
   if (!isComparisonMode) {

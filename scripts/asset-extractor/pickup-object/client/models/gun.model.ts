@@ -227,6 +227,11 @@ export const Gun = PickupObject.extend({
      * Used when `reflectDuringReload` or `blankDuringReload` is true
      */
     blankReloadRadius: z.number().optional(),
+
+    /**
+     * https://enterthegungeon.fandom.com/wiki/Rad_Gun
+     */
+    activeReload: z.boolean().optional(),
   }),
   video: z.string().optional(),
   animation: z.object({

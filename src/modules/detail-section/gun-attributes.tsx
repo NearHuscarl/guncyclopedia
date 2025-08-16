@@ -1,7 +1,7 @@
 import { Biohazard, Crosshair, Flame, Heart, Snail, Snowflake } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NumericValue } from "./numeric-value";
-import { formatNumber } from "@/lib/lang";
+import { formatNumber, toPercent } from "@/lib/lang";
 import { fuchsia500, green500, orange500, red600, sky500, slate400, yellow500 } from "../shared/settings/tailwind";
 import { Penetration } from "@/components/icons/penetration";
 import { Bounce } from "@/components/icons/bounce";
@@ -11,30 +11,20 @@ import { FightsabreAttack } from "@/components/icons/fightsabre-attack";
 import { BlankDuringReload } from "@/components/icons/blank-during-reload";
 import type { ReactNode } from "react";
 import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
+import { ActiveReload } from "@/components/icons/active-reload";
 
-function createStatusEffectAttribute(
-  chance: number | undefined,
-  duration: number,
-  effectName: string,
-  twColor: string,
-  icon: ReactNode,
-  extraTooltipContent?: ReactNode,
-) {
+function createStatusEffectAttribute(chance: number | undefined, twColor: string, icon: ReactNode, tooltip: ReactNode) {
   if (!chance) return null;
 
   return (
     <Tooltip>
       <TooltipTrigger>
         <div className="flex items-center gap-0.5">
-          <NumericValue className={twColor}>{formatNumber(chance * 100, 0)}%</NumericValue>
+          <NumericValue className={twColor}>{toPercent(chance)}</NumericValue>
           {icon}
         </div>
       </TooltipTrigger>
-      <TooltipContent>
-        <strong>{formatNumber(chance * 100, 0)}%</strong> chance to <strong>{effectName}</strong> an enemy after each
-        shot for <strong>{formatNumber(duration, 1)}s</strong>.<br />
-        {extraTooltipContent}
-      </TooltipContent>
+      <TooltipContent>{tooltip}</TooltipContent>
     </Tooltip>
   );
 }
@@ -54,61 +44,98 @@ export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
       </div>
       {createStatusEffectAttribute(
         projectileData.poisonChance,
-        projectileData.poisonDuration!,
-        "poison",
         "text-green-500",
         <Biohazard size={20} color={green500} />,
+        <>
+          <strong>Poison</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.poisonChance || 0)}</strong> chance to poison an enemy for{" "}
+          <strong>{formatNumber(projectileData.poisonDuration || 0, 1)}s</strong>.
+        </>,
       )}
       {createStatusEffectAttribute(
         projectileData.charmChance,
-        projectileData.charmDuration!,
-        "charm",
         "text-fuchsia-500",
         <Heart size={20} color={fuchsia500} />,
+        <>
+          <strong>Charm</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.charmChance || 0)}</strong> chance to charm an enemy for{" "}
+          <strong>{formatNumber(projectileData.charmDuration || 0, 1)}s</strong>.
+        </>,
       )}
       {createStatusEffectAttribute(
         projectileData.freezeChance,
-        projectileData.freezeDuration!,
-        "freeze",
         "text-sky-500",
         <Snowflake size={20} color={sky500} />,
         <>
+          <strong>Freeze</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.freezeChance || 0)}</strong> chance to freeze an enemy for{" "}
+          <strong>{formatNumber(projectileData.freezeDuration || 0, 1)}s</strong>.
+          <br />
           Freeze amount: <strong>{projectileData.freezeAmount}</strong>
         </>,
       )}
       {createStatusEffectAttribute(
         projectileData.fireChance,
-        projectileData.fireDuration!,
-        "burn",
         "text-red-600",
         <Flame size={20} color={red600} />,
+        <>
+          <strong>Fire</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.fireChance || 0)}</strong> chance to burn an enemy for{" "}
+          <strong>{formatNumber(projectileData.fireDuration || 0, 1)}s</strong>.
+        </>,
       )}
       {createStatusEffectAttribute(
         projectileData.stunChance,
-        projectileData.stunDuration!,
-        "stun",
         "text-slate-400",
         <Stun size={20} color={slate400} />,
+        <>
+          <strong>Stun</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.stunChance || 0)}</strong> chance to stun an enemy for{" "}
+          <strong>{formatNumber(projectileData.stunDuration || 0, 1)}s</strong>.
+        </>,
       )}
       {createStatusEffectAttribute(
         projectileData.speedChance,
-        projectileData.speedDuration!,
-        "slow down",
         "text-orange-500",
         <Snail size={20} color={orange500} />,
         <>
-          Slow down enemy by <strong>{formatNumber((1 - projectileData.speedMultiplier!) * 100, 0)}%</strong>
+          <strong>Slow</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.speedChance || 0)}</strong> chance to slow down an enemy by{" "}
+          <strong>{toPercent(1 - projectileData.speedMultiplier!)}</strong> for{" "}
+          <strong>{formatNumber(projectileData.speedDuration || 0, 1)}s</strong>.
         </>,
       )}
       {createStatusEffectAttribute(
         projectileData.cheeseChance,
-        projectileData.cheeseDuration!,
-        "encheese",
         "text-yellow-500",
         <Cheese size={20} color={yellow500} />,
         <>
+          <strong>Cheese</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.cheeseChance || 0)}</strong> chance to encheese an enemy for{" "}
+          <strong>{formatNumber(projectileData.cheeseDuration || 0, 1)}s</strong>
+          .<br />
           Cheese amount: <strong>{projectileData.cheeseAmount}</strong>
         </>,
+      )}
+      {gun?.attribute.activeReload && (
+        <Tooltip>
+          <TooltipTrigger>
+            <ActiveReload />
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Active Reload</strong>
+            <br />
+            Pressing reload or firing at the right time will increase the gun's damage. Each successful reload will also
+            make the reload time shorter, making another successful reload harder to pull off.
+          </TooltipContent>
+        </Tooltip>
       )}
       {gun?.attribute.blankDuringReload && (
         <Tooltip>
@@ -116,6 +143,8 @@ export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
             <BlankDuringReload />
           </TooltipTrigger>
           <TooltipContent className="text-wrap">
+            <strong>Blank During Reload</strong>
+            <br />
             Destroy bullets during reload for <strong>{gun.reloadTime}s</strong> within{" "}
             <strong>{gun.attribute.blankReloadRadius}</strong> radius.
           </TooltipContent>
@@ -127,6 +156,8 @@ export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
             <FightsabreAttack />
           </TooltipTrigger>
           <TooltipContent className="text-wrap">
+            <strong>Reflect During Reload</strong>
+            <br />
             Reflect bullets during reload for <strong>{gun.reloadTime}s</strong> within{" "}
             <strong>{gun.attribute.blankReloadRadius}</strong> radius.
             <br />
@@ -145,7 +176,7 @@ export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            Homing projectile.
+            <strong>Homing Projectile</strong>
             <br />
             {(projectileData.homingRadius || undefined) && (
               <>
@@ -164,7 +195,7 @@ export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            Piercing projectile.
+            <strong>Piercing Projectile</strong>
             <br />
             Number of penetration: <strong>{formatNumber(projectileData.penetration!, 1)}</strong>
           </TooltipContent>
@@ -179,6 +210,8 @@ export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
             </div>
           </TooltipTrigger>
           <TooltipContent>
+            <strong>Bouncing Projectile</strong>
+            <br />
             Number of bounces: <strong>{formatNumber(projectileData.numberOfBounces!, 1)}</strong>
           </TooltipContent>
         </Tooltip>

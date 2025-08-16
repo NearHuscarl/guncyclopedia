@@ -1,9 +1,10 @@
 import { H1 } from "@/components/ui/typography";
 import { Separator } from "@/components/ui/separator";
-import { TopBarActions } from "./top-bar-actions";
+import { TopBarLinks } from "./top-bar-links";
 import { MainMenu } from "./main-menu";
 import { Search } from "./search";
 import { AppState } from "./app-state";
+import { Toolbar } from "./toolbar";
 
 export function TopBar() {
   return (
@@ -16,8 +17,9 @@ export function TopBar() {
           <div className="flex gap-2">
             <Search />
             <MainMenu />
+            <Toolbar />
           </div>
-          <TopBarActions />
+          <TopBarLinks />
         </div>
       </div>
       <AppState className="px-2" />

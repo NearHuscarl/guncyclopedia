@@ -22438,7 +22438,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "lvl 1",
+        "mode": "Lvl 1",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -22461,7 +22461,7 @@
         ]
       },
       {
-        "mode": "lvl 2",
+        "mode": "Lvl 2",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -22501,7 +22501,7 @@
         ]
       },
       {
-        "mode": "lvl 3",
+        "mode": "Lvl 3",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -22582,7 +22582,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "lvl 1",
+        "mode": "Lvl 1",
         "magazineSize": 30,
         "projectiles": [
           {
@@ -22605,7 +22605,7 @@
         ]
       },
       {
-        "mode": "lvl 2",
+        "mode": "Lvl 2",
         "magazineSize": 30,
         "projectiles": [
           {
@@ -22645,7 +22645,7 @@
         ]
       },
       {
-        "mode": "lvl 3",
+        "mode": "Lvl 3",
         "magazineSize": 30,
         "projectiles": [
           {
@@ -37397,7 +37397,7 @@
     ],
     "projectileModes": [
       {
-        "mode": "Reload - lvl 1",
+        "mode": "Lvl 1",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -37420,7 +37420,7 @@
         ]
       },
       {
-        "mode": "Reload - lvl 2",
+        "mode": "Lvl 2",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -37443,7 +37443,7 @@
         ]
       },
       {
-        "mode": "Reload - lvl 3",
+        "mode": "Lvl 3",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -37466,7 +37466,7 @@
         ]
       },
       {
-        "mode": "Reload - lvl 4",
+        "mode": "Lvl 4",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -37489,7 +37489,7 @@
         ]
       },
       {
-        "mode": "Reload - lvl 5",
+        "mode": "Lvl 5",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -37518,7 +37518,9 @@
       "activeReload",
       "hasTieredProjectiles"
     ],
-    "attribute": {},
+    "attribute": {
+      "activeReload": true
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
@@ -37580,7 +37582,7 @@
     ],
     "projectileModes": [
       {
-        "mode": "Reload - lvl 1",
+        "mode": "Lvl 1",
         "magazineSize": 20,
         "projectiles": [
           {
@@ -37603,7 +37605,7 @@
         ]
       },
       {
-        "mode": "Reload - lvl 2",
+        "mode": "Lvl 2",
         "magazineSize": 20,
         "projectiles": [
           {
@@ -37626,7 +37628,7 @@
         ]
       },
       {
-        "mode": "Reload - lvl 3",
+        "mode": "Lvl 3",
         "magazineSize": 20,
         "projectiles": [
           {
@@ -37649,7 +37651,7 @@
         ]
       },
       {
-        "mode": "Reload - lvl 4",
+        "mode": "Lvl 4",
         "magazineSize": 20,
         "projectiles": [
           {
@@ -37672,7 +37674,7 @@
         ]
       },
       {
-        "mode": "Reload - lvl 5",
+        "mode": "Lvl 5",
         "magazineSize": 20,
         "projectiles": [
           {
@@ -37701,7 +37703,9 @@
       "activeReload",
       "hasTieredProjectiles"
     ],
-    "attribute": {},
+    "attribute": {
+      "activeReload": true
+    },
     "animation": {
       "name": "No_Animation",
       "fps": 0,
