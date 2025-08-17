@@ -438,7 +438,7 @@ export class GunModelGenerator {
   }
 
   private _buildAttribute(gunDto: TGunDto): TGun["attribute"] {
-    return {
+    const attributes: TGun["attribute"] = {
       reflectDuringReload: Boolean(gunDto.gun.reflectDuringReload) || undefined,
       reflectDuringReloadDmgModifier: gunDto.gunExtraSettingSynergyProcessor?.ReflectedBulletDamageModifier,
       blankDuringReload: (gunDto.gun.blankDuringReload && !gunDto.gun.reflectDuringReload) || undefined,
@@ -446,6 +446,14 @@ export class GunModelGenerator {
         gunDto.gun.blankDuringReload || gunDto.gun.reflectDuringReload ? gunDto.gun.blankReloadRadius : undefined,
       activeReload: Boolean(gunDto.gun.LocalActiveReload) || undefined,
     };
+
+    for (const value of Object.values(attributes)) {
+      if (value === true) {
+        this._featureFlags.add("hasSpecialAbilities");
+      }
+    }
+
+    return attributes;
   }
 
   private _buildAnimation(spriteAnimatorData: TSpriteAnimatorData, debugId: string) {
@@ -641,8 +649,6 @@ export class GunModelGenerator {
 
       if (entry.isInfiniteAmmoGun) this._featureFlags.add("hasInfiniteAmmo");
       if (entry.doesntDamageSecretWalls) this._featureFlags.add("doesntDamageSecretWalls");
-      if (gunDto.gun.reflectDuringReload) this._featureFlags.add("reflectDuringReload");
-      if (gunDto.gun.LocalActiveReload) this._featureFlags.add("activeReload");
 
       const allStatModifiers = gunDto.gun.currentGunStatModifiers.concat(gunDto.gun.passiveStatModifiers ?? []);
 
@@ -652,6 +658,9 @@ export class GunModelGenerator {
           modifyType: StatModifier.ModifyMethod.MULTIPLICATIVE,
           amount: gunDto.gun.CustomBossDamageModifier >= 0 ? gunDto.gun.CustomBossDamageModifier : 0.8,
         });
+      }
+      if (allStatModifiers.length > 0) {
+        this._featureFlags.add("hasStatModifiers");
       }
       const gun: TGun = {
         ...texts,

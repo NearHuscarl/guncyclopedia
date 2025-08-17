@@ -1,4 +1,4 @@
-import { Biohazard, Crosshair, Flame, Heart, Snail, Snowflake } from "lucide-react";
+import { Biohazard, Crosshair, Flame, Heart, Receipt, Skull, Snail, Snowflake, Wind } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NumericValue } from "./numeric-value";
 import { formatNumber, toPercent } from "@/lib/lang";
@@ -9,9 +9,125 @@ import { Stun } from "@/components/icons/stun";
 import { Cheese } from "@/components/icons/cheese";
 import { FightsabreAttack } from "@/components/icons/fightsabre-attack";
 import { BlankDuringReload } from "@/components/icons/blank-during-reload";
+import { ActiveReload } from "@/components/icons/active-reload";
+import { Sunglasses } from "@/components/icons/sunglasses";
+import { Boss } from "@/components/icons/boss";
+import { Handfist } from "@/components/icons/handfist";
 import type { ReactNode } from "react";
 import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
-import { ActiveReload } from "@/components/icons/active-reload";
+
+type TStatModifier = TGun["playerStatModifiers"][number];
+type TStatToBoost = TStatModifier["statToBoost"];
+
+type TStatModifierComponentProps = {
+  modifier: TStatModifier;
+  className?: string;
+  tooltip: ReactNode;
+  icon: ReactNode;
+};
+
+function createPlayerStatsComponent({ modifier, className, icon, tooltip }: TStatModifierComponentProps) {
+  const { modifyType, amount } = modifier;
+  return (
+    <Tooltip>
+      <TooltipTrigger>
+        <div className="flex items-center gap-0.5">
+          <NumericValue className={className}>
+            {modifyType === "ADDITIVE" && "+"}
+            {modifyType === "MULTIPLICATIVE" ? toPercent(amount) : amount}
+          </NumericValue>
+          {icon}
+        </div>
+      </TooltipTrigger>
+      <TooltipContent>{tooltip}</TooltipContent>
+    </Tooltip>
+  );
+}
+
+const playerStatsComponentLookup: { [K in TStatToBoost]?: (modifier: TStatModifier) => ReactNode } = {
+  Curse: (modifier) =>
+    createPlayerStatsComponent({
+      modifier,
+      className: "text-purple-600",
+      icon: <Skull size={22} className="text-purple-600" />,
+      tooltip: <strong>Curse</strong>,
+    }),
+  MovementSpeed: (modifier) =>
+    createPlayerStatsComponent({
+      modifier,
+      className: "text-yellow-500",
+      icon: <Wind size={22} className="text-yellow-500" />,
+      tooltip: <strong>Movement Speed</strong>,
+    }),
+  GlobalPriceMultiplier: (modifier) =>
+    createPlayerStatsComponent({
+      modifier,
+      className: "text-green-500",
+      icon: <Receipt size={22} className="text-green-500" />,
+      tooltip: (
+        <>
+          <strong>Global Price Multiplier</strong>
+          <br />
+          <span>
+            Decreases shop price by <strong>{toPercent(1 - modifier.amount)}</strong>
+          </span>
+        </>
+      ),
+    }),
+  Coolness: (modifier) =>
+    createPlayerStatsComponent({
+      modifier,
+      className: "text-orange-500",
+      icon: <Sunglasses size={22} className="fill-orange-500" />,
+      tooltip: <strong>Coolness</strong>,
+    }),
+  DamageToBosses: (modifier) =>
+    createPlayerStatsComponent({
+      modifier,
+      className: "text-[#C77000]",
+      icon: <Boss size={25} />,
+      tooltip: (
+        <>
+          <strong>Damage To Bosses</strong>
+          <br />
+          <span>
+            Deals <strong>{toPercent(modifier.amount)}</strong> damage to bosses.
+          </span>
+        </>
+      ),
+    }),
+  Health: (modifier) =>
+    createPlayerStatsComponent({
+      modifier,
+      className: "text-red-500",
+      icon: <Heart size={20} className="stroke-red-500" />,
+      tooltip: (
+        <>
+          <strong>Health</strong>
+          <br />
+          <span>
+            Adds <strong>{modifier.amount}</strong> empty heart container.
+          </span>
+        </>
+      ),
+    }),
+  // TODO: apply extra damage
+  Damage: (modifier) =>
+    createPlayerStatsComponent({
+      modifier,
+      className: "text-teal-500",
+      icon: <Handfist size={20} className="stroke-teal-500" />,
+      tooltip: (
+        <>
+          <strong>Health</strong>
+          <br />
+          <span>
+            Adds <strong>{modifier.amount}</strong> empty heart container.
+          </span>
+        </>
+      ),
+    }),
+};
 
 function createStatusEffectAttribute(chance: number | undefined, twColor: string, icon: ReactNode, tooltip: ReactNode) {
   if (!chance) return null;
@@ -36,12 +152,13 @@ type TGunAttributesProps = {
 
 export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-3">
       {/* Keep the line height consistent */}
       <div className="flex items-center invisible">
         <NumericValue>{0}</NumericValue>
         <Bounce color="white" size={20} />
       </div>
+      {gun?.playerStatModifiers.map((m) => playerStatsComponentLookup[m.statToBoost]?.(m) || null).filter(Boolean)}
       {createStatusEffectAttribute(
         projectileData.poisonChance,
         "text-green-500",

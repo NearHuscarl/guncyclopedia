@@ -9,7 +9,7 @@ import { Chamber } from "@/components/icons/chamber";
 import { primaryColor } from "../shared/settings/tailwind";
 import type { TProjectile, TProjectilePerShot } from "@/client/generated/models/gun.model";
 
-type TProjectilesPerShotProps = {
+type TVolleyProps = {
   id: string;
   projectiles: TProjectilePerShot[];
   isSelected: (index: number) => boolean;
@@ -18,7 +18,7 @@ type TProjectilesPerShotProps = {
   onBlur: () => void;
 };
 
-export function Volley(props: TProjectilesPerShotProps) {
+export function Volley(props: TVolleyProps) {
   const { id, projectiles, isSelected, onSelect, onHover, onBlur } = props;
   const [tooltipOpen, setTooltipOpen] = useState(false);
 

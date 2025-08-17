@@ -117,7 +117,7 @@ export function DetailSection() {
                     {selectedStats.magazineSize}/{formatNumber(selectedStats.maxAmmo)}
                   </NumericValue>
                 </TooltipTrigger>
-                <TooltipContent>Magazine Size / Max Ammunition.</TooltipContent>
+                <TooltipContent>Magazine Size / Max Ammunition</TooltipContent>
               </Tooltip>
               <AmmoSet shootStyle={selectedStats.shootStyle} magazineSize={selectedStats.magazineSize} />
             </div>
@@ -172,7 +172,7 @@ export function DetailSection() {
           {!showProjectilePool && (
             <Volley
           id={`${selectedGun.id}-${modeIndex}`}
-          projectiles={gunStats.mode.projectiles}
+              projectiles={selectedStats.mode.projectiles}
           onSelect={setSelectedProjectileIndex}
           onHover={setHoverProjectileIndex}
           onBlur={() => setHoverProjectileIndex(-1)}
@@ -182,7 +182,7 @@ export function DetailSection() {
           {showProjectilePool && (
             <ProjectilePool
               id={`${selectedGun.id}-${modeIndex}`}
-              projectiles={gunStats.projectilePerShot.projectiles}
+              projectiles={selectedStats.projectilePerShot.projectiles}
               onBlur={() => setHoverProjectileDataIndex(-1)}
               onSelect={setSelectedProjectileDataIndex}
               onHover={setHoverProjectileDataIndex}

@@ -5156,7 +5156,8 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls"
+      "doesntDamageSecretWalls",
+      "hasSpecialAbilities"
     ],
     "attribute": {
       "blankDuringReload": true,
@@ -5392,7 +5393,8 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls"
+      "doesntDamageSecretWalls",
+      "hasSpecialAbilities"
     ],
     "attribute": {
       "blankDuringReload": true,
@@ -7424,7 +7426,9 @@
     ],
     "maxAmmo": 60,
     "reloadTime": 2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "black",
@@ -7668,7 +7672,9 @@
     ],
     "maxAmmo": 60,
     "reloadTime": 2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "black",
@@ -19586,7 +19592,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "sky",
@@ -20628,7 +20636,9 @@
     ],
     "maxAmmo": 800,
     "reloadTime": 1.14,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -20887,7 +20897,8 @@
     "maxAmmo": 500,
     "reloadTime": 1.5,
     "featureFlags": [
-      "reflectDuringReload"
+      "hasStatModifiers",
+      "hasSpecialAbilities"
     ],
     "attribute": {
       "reflectDuringReload": true,
@@ -21876,7 +21887,9 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 0.78,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "lightGray",
@@ -25373,7 +25386,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "brown",
@@ -29568,7 +29583,9 @@
     ],
     "maxAmmo": 80,
     "reloadTime": 2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -37596,6 +37613,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
+      "hasStatModifiers",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -40938,7 +40956,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "black",
@@ -41223,7 +41243,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -42476,6 +42498,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
+      "hasStatModifiers",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -42884,6 +42907,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
+      "hasStatModifiers",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -43543,7 +43567,9 @@
     ],
     "maxAmmo": 120,
     "reloadTime": 1.8,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "red",
@@ -45794,6 +45820,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [
+      "hasStatModifiers",
       "hasStatusEffects"
     ],
     "attribute": {},
@@ -46714,7 +46741,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -47296,7 +47325,9 @@
     ],
     "maxAmmo": 40,
     "reloadTime": 3,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "black",
@@ -50603,7 +50634,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1.08,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "yellow",
@@ -52356,7 +52389,10 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers",
+      "hasSpecialAbilities"
+    ],
     "attribute": {
       "blankDuringReload": true,
       "blankReloadRadius": 1.25
@@ -53287,6 +53323,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.2,
     "featureFlags": [
+      "hasStatModifiers",
       "hasStatusEffects"
     ],
     "attribute": {},
@@ -53654,7 +53691,9 @@
     ],
     "maxAmmo": 80,
     "reloadTime": 0.9,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "yellow",
@@ -55545,7 +55584,9 @@
     ],
     "maxAmmo": 120,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -56766,7 +56807,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 0.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "red",
@@ -56886,7 +56929,10 @@
     ],
     "maxAmmo": 280,
     "reloadTime": 0.48,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers",
+      "hasSpecialAbilities"
+    ],
     "attribute": {
       "blankDuringReload": true,
       "blankReloadRadius": 1.5
@@ -57034,7 +57080,10 @@
     ],
     "maxAmmo": 280,
     "reloadTime": 0.48,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers",
+      "hasSpecialAbilities"
+    ],
     "attribute": {
       "blankDuringReload": true,
       "blankReloadRadius": 2.5
@@ -59756,7 +59805,9 @@
     ],
     "maxAmmo": 300,
     "reloadTime": 1,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
     "attribute": {
       "blankDuringReload": true,
       "blankReloadRadius": 1.5
@@ -61120,6 +61171,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
+      "hasStatModifiers",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -62389,7 +62441,10 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 0.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers",
+      "hasSpecialAbilities"
+    ],
     "attribute": {
       "blankDuringReload": true,
       "blankReloadRadius": 1.25
@@ -65268,7 +65323,9 @@
     ],
     "maxAmmo": 240,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -65873,7 +65930,8 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasInfiniteAmmo",
-      "doesntDamageSecretWalls"
+      "doesntDamageSecretWalls",
+      "hasStatModifiers"
     ],
     "attribute": {},
     "colors": [
@@ -70807,8 +70865,9 @@
     "maxAmmo": 250,
     "reloadTime": 1.2,
     "featureFlags": [
-      "activeReload",
-      "hasTieredProjectiles"
+      "hasStatModifiers",
+      "hasTieredProjectiles",
+      "hasSpecialAbilities"
     ],
     "attribute": {
       "activeReload": true
@@ -71484,8 +71543,9 @@
     "maxAmmo": 250,
     "reloadTime": 1.4,
     "featureFlags": [
-      "activeReload",
-      "hasTieredProjectiles"
+      "hasStatModifiers",
+      "hasTieredProjectiles",
+      "hasSpecialAbilities"
     ],
     "attribute": {
       "activeReload": true
@@ -75803,7 +75863,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 0.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -75921,7 +75983,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "orange",
@@ -76040,7 +76104,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 0.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray"
@@ -76157,7 +76223,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 0.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -76276,7 +76344,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 0.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -78165,6 +78235,7 @@
     "maxAmmo": 750,
     "reloadTime": 2,
     "featureFlags": [
+      "hasStatModifiers",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -78285,6 +78356,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasStatModifiers",
       "hasStatusEffects"
     ],
     "attribute": {},
@@ -79728,7 +79800,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "video": "https://youtu.be/N-JLNlLRAXA?t=930",
     "colors": [
@@ -81578,6 +81652,7 @@
     "maxAmmo": 800,
     "reloadTime": 0,
     "featureFlags": [
+      "hasStatModifiers",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -84166,7 +84241,9 @@
     ],
     "maxAmmo": 180,
     "reloadTime": 1.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "sky",
@@ -87205,6 +87282,7 @@
     "maxAmmo": 1000,
     "reloadTime": 0,
     "featureFlags": [
+      "hasStatModifiers",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -88563,7 +88641,9 @@
     ],
     "maxAmmo": 900,
     "reloadTime": 0.9,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "yellow",
@@ -93389,6 +93469,7 @@
     "featureFlags": [
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls",
+      "hasStatModifiers",
       "hasStatusEffects"
     ],
     "attribute": {},
@@ -96518,7 +96599,9 @@
     ],
     "maxAmmo": 900,
     "reloadTime": 0.9,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatModifiers"
+    ],
     "attribute": {},
     "colors": [
       "yellow",
