@@ -29,6 +29,7 @@ async function exportChestTextures(
 // References:
 // Status Effects: assets/ExportedProject/Assets/sprites/vfx/character vfx collection data/Character VFX Collection.prefab
 // Shrine, pedestal: assets/ExportedProject/Assets/sprites/environment/environment_gungeon_collection data/Environment_Gungeon_Collection.prefab
+// Lots of cool icons: ExportedProject/Assets/art/ui/GameUIAtlas.png
 export async function main() {
   const chestCollectionPath = path.join(
     ASSET_EXTRACTOR_ROOT,

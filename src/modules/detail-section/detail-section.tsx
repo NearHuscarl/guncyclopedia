@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
-import { H2 } from "@/components/ui/typography";
+import { H2, H3 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import { Quality } from "./quality";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { useHoverGun, useSelectedGun } from "../shared/hooks/useGuns";
 import { useLoaderData } from "../shared/hooks/useLoaderData";
-import { ProjectilePool, ProjectilesPerShot } from "./projectiles-per-shot";
+import { ProjectilePool, Volley } from "./volley";
 import { GunService } from "@/client/service/gun.service";
 import { ProjectileService } from "@/client/service/projectile.service";
 import { useIsDebug } from "../shared/hooks/useDebug";
@@ -49,19 +49,25 @@ export function DetailSection() {
   const projectileIndex = hoverProjectileIndex !== -1 ? hoverProjectileIndex : selectedProjectileIndex;
   const projectileDataIndex = hoverProjectileDataIndex !== -1 ? hoverProjectileDataIndex : selectedProjectileDataIndex;
 
-  useEffect(() => {
-    // Note: Don't remove this useEffect and use key={gun?.id} for parent component
-    // The state is needed to apply transitions for stats when switching guns
-    setModeIndex(0);
-  }, [gun?.id]);
-
   const gunStats = GunService.computeGunStats(gun, modeIndex, projectileIndex, projectileDataIndex);
   const hoverGunStats = hoverGun
     ? GunService.computeGunStats(hoverGun, modeIndex, projectileIndex, projectileDataIndex)
     : gunStats;
   const selectedGun = hoverGun || gun;
   const selectedStats = hoverGunStats || gunStats;
-  const isAggregatedProjectile = gunStats.projectilePerShot.projectiles.length === 1;
+  const showProjectilePool = selectedGun.projectileModes[0].projectiles[0].projectiles.length > 1;
+
+  useEffect(() => {
+    // Note: Don't remove this useEffect and use key={gun?.id} for parent component
+    // The state is needed to apply transitions for stats when switching guns
+    setModeIndex(0);
+
+    // force showing projectile pool if it exists (there will be no volley)
+    if (showProjectilePool) {
+      _setSelectedProjectileIndex(0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gun.id]);
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
@@ -161,7 +167,10 @@ export function DetailSection() {
             unit="s"
           />
         )} */}
-        <ProjectilesPerShot
+        <div className="flex gap-2 items-center">
+          <H3>Projectile Stats</H3>
+          {!showProjectilePool && (
+            <Volley
           id={`${selectedGun.id}-${modeIndex}`}
           projectiles={gunStats.mode.projectiles}
           onSelect={setSelectedProjectileIndex}
@@ -169,6 +178,18 @@ export function DetailSection() {
           onBlur={() => setHoverProjectileIndex(-1)}
           isSelected={(i) => projectileIndex === i}
         />
+          )}
+          {showProjectilePool && (
+            <ProjectilePool
+              id={`${selectedGun.id}-${modeIndex}`}
+              projectiles={gunStats.projectilePerShot.projectiles}
+              onBlur={() => setHoverProjectileDataIndex(-1)}
+              onSelect={setSelectedProjectileDataIndex}
+              onHover={setHoverProjectileDataIndex}
+              isSelected={(i) => projectileDataIndex === i}
+            />
+          )}
+        </div>
         <StatStackBar
           label="Damage"
           max={100}
@@ -213,17 +234,7 @@ export function DetailSection() {
           max={50}
           modifier={hoverGunStats.projectile.force - gunStats.projectile.force}
         />
-        {!isAggregatedProjectile && (
-          <ProjectilePool
-            id={`${selectedGun.id}-${modeIndex}`}
-            projectiles={gunStats.projectilePerShot.projectiles}
-            onBlur={() => setHoverProjectileDataIndex(-1)}
-            onSelect={setSelectedProjectileDataIndex}
-            onHover={setHoverProjectileDataIndex}
-            isSelected={(i) => projectileDataIndex === i}
-                      />
-        )}
-        <Features gun={selectedGun} className={isAggregatedProjectile ? "mt-4" : ""} />
+        <Features gun={selectedGun} className="mt-4" />
         {debug && (
           <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(selectedGun, null, 2)}</pre>
         )}

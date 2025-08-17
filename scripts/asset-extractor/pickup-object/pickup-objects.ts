@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import chalk from "chalk";
 import { EncounterTrackableRepository } from "../encouter-trackable/encounter-trackable.repository.ts";
@@ -78,6 +78,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
   const totalCount = chalk.yellow(pickupObjects.length);
   console.log(chalk.green(`Collected ${totalCount} pickup objects: ${itemCount} items and ${gunCount} guns.`));
 
+  await mkdir(DATA_PATH, { recursive: true });
   await writeFile(path.join(DATA_PATH, "pickup-objects.json"), JSON.stringify(pickupObjects, null, 2), "utf-8");
 
   console.log();

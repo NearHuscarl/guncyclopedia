@@ -4,7 +4,7 @@ import type { TAnimation } from "@/client/generated/models/animation.model";
 
 export function useFrame(animation: TAnimation) {
   const startIndex = animation.wrapMode === "LoopSection" ? animation.loopStart : 0;
-  const [index, setIndex] = useState(startIndex);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     if (animation.frames.length === 1) return;

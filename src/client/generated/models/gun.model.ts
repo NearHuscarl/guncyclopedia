@@ -106,6 +106,9 @@ const Projectile = z.object({
   // TODO: research ProjectileModule.cs#GetEstimatedShotsPerSecond
   // dps: z.undefined(),
 
+  /**
+   * Some projectiles are invisible hence no animation.
+   */
   animation: Animation.optional(),
 });
 
