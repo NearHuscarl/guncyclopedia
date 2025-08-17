@@ -7,14 +7,13 @@ import { AssetService } from "../asset/asset-service.ts";
 import { GunDto } from "./gun.dto.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { performance } from "node:perf_hooks";
+import type { TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
 import type {
   TEncounterTrackableData,
   TGunData,
   TGunDto,
   TGunExtraSettingSynergyProcessorData,
   TPredatorGunControllerData,
-  TSpriteAnimatorData,
-  TSpriteData,
 } from "./gun.dto.ts";
 
 export class GunRepository {

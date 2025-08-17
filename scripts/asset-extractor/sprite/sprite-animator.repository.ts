@@ -14,6 +14,7 @@ type TCollectionPath = string;
 
 export class SpriteAnimatorRepository {
   private static readonly _SEARCH_FILES = [
+    // guns
     "assets/ExportedProject/Assets/GameObject/Dolphin_WeaponAnimation.prefab",
     "assets/ExportedProject/Assets/GameObject/BeamWeaponAnimation.prefab",
     "assets/ExportedProject/Assets/GameObject/GunAnimation3.prefab",
@@ -21,6 +22,16 @@ export class SpriteAnimatorRepository {
     "assets/ExportedProject/Assets/sprites/weapons/GunAnimation02.prefab",
     "assets/ExportedProject/Assets/sprites/weapons/GunBeamAnimation.prefab",
     "assets/ExportedProject/Assets/GameObject/Boss_West_Bros_Animation.prefab",
+    // projectiles
+    "assets/ExportedProject/Assets/sprites/projectiles/ProjectileAnimation.prefab",
+    "assets/ExportedProject/Assets/sprites/projectiles/dolphin_projectiles/Dolphin_Projectile_Animation.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/VFX Beam Animation.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/VFX_Item Animation.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/VFX Animations.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/VFX Animations 002.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/VFX Animations 003.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/dolphin vfx/Dolphing_VFX_Animation_001.prefab",
+    "assets/ExportedProject/Assets/sprites/projectiles/Projectile2Animation.prefab",
   ].map((p) => path.join(ASSET_EXTRACTOR_ROOT, p));
 
   private _clips = new Map<TCollectionPath, TSpriteAnimatorDto>();
@@ -39,7 +50,7 @@ export class SpriteAnimatorRepository {
   static async create(
     _assetService: AssetService,
     _spriteRepository: SpriteRepository,
-    searchFiles = SpriteAnimatorRepository._SEARCH_FILES
+    searchFiles = SpriteAnimatorRepository._SEARCH_FILES,
   ) {
     const instance = new SpriteAnimatorRepository(_assetService, _spriteRepository, searchFiles);
     return await instance.load();
@@ -60,17 +71,9 @@ export class SpriteAnimatorRepository {
             const scriptPath = path.join(
               ASSET_EXTRACTOR_ROOT,
               "assets/ExportedProject",
-              frame.spriteCollection.$$scriptPath
+              frame.spriteCollection.$$scriptPath,
             );
-            const texturePath = this._spriteRepository.getSpriteTexturePath(scriptPath);
-
-            if (!block.$$texturePath) {
-              block.$$texturePath = texturePath;
-            } else if (block.$$texturePath !== texturePath) {
-              throw new Error(
-                `Inconsistent texture paths for animation in ${filePath}: ${block.$$texturePath} vs ${texturePath}`
-              );
-            }
+            frame.$$texturePath = this._spriteRepository.getSpriteTexturePath(scriptPath);
           }
         }
         return SpriteAnimatorDto.parse(block);
@@ -122,10 +125,27 @@ export class SpriteAnimatorRepository {
     return this;
   }
 
-  getClip(assetReference: { $$scriptPath: string }, name: string) {
-    const scriptPath = path.isAbsolute(assetReference.$$scriptPath)
+  private _getScriptPath(assetReference: { $$scriptPath: string }) {
+    return path.isAbsolute(assetReference.$$scriptPath)
       ? assetReference.$$scriptPath
       : path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", assetReference.$$scriptPath.replace(/\.meta$/, ""));
+  }
+
+  getClipByIndex(assetReference: { $$scriptPath: string }, index: number) {
+    const scriptPath = this._getScriptPath(assetReference);
+    const collection = this._clips.get(normalizePath(scriptPath));
+
+    if (!collection) {
+      throw new Error(
+        `Cannot find clip index ${chalk.yellow(index)} because Animation collection is not found: ${chalk.green(scriptPath)}`,
+      );
+    }
+
+    return collection.clips[index];
+  }
+
+  getClip(assetReference: { $$scriptPath: string }, name: string) {
+    const scriptPath = this._getScriptPath(assetReference);
     let collection = this._clips.get(normalizePath(scriptPath));
     let clipData = this._clipLookup.get(normalizePath(scriptPath))?.[name];
 
@@ -135,9 +155,9 @@ export class SpriteAnimatorRepository {
           console.warn(
             chalk.yellow(
               `Warning: ${chalk.green(name)} clip is not found in collection ${chalk.green(
-                scriptPath
-              )}, but it exists in ${chalk.green(path)}`
-            )
+                scriptPath,
+              )}, but it exists in ${chalk.green(path)}`,
+            ),
           );
           collection = this._clips.get(path);
           clipData = clips[name];
@@ -146,14 +166,11 @@ export class SpriteAnimatorRepository {
       }
       if (!collection) {
         throw new Error(
-          `Cannot find ${chalk.green(name)} clip because Animation collection is not found: ${chalk.green(scriptPath)}`
+          `Cannot find ${chalk.green(name)} clip because Animation collection is not found: ${chalk.green(scriptPath)}`,
         );
       }
     }
 
-    return {
-      clipData,
-      texturePath: path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", collection.$$texturePath),
-    };
+    return clipData;
   }
 }

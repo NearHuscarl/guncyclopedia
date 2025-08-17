@@ -1,6 +1,7 @@
 import z from "zod/v4";
 import { AssetExternalReference, AssetExternalReferences, BinaryOption } from "../utils/schema.ts";
 import { StatModifierSchema } from "../player/player.dto.ts";
+import { SpriteAnimatorData, SpriteData } from "./component.dto.ts";
 
 export const ItemQuality = {
   EXCLUDED: -100,
@@ -114,14 +115,6 @@ const GunData = z
     },
   );
 
-const SpriteData = z.object({
-  collection: AssetExternalReference.required(),
-});
-
-const SpriteAnimatorData = z.object({
-  library: AssetExternalReference.required(),
-});
-
 const PredatorGunControllerData = z.object({
   HomingRadius: z.number(),
   HomingAngularVelocity: z.number(),
@@ -148,8 +141,6 @@ export const GunDto = z.object({
 
 export type TGunDto = z.input<typeof GunDto>;
 export type TGunData = z.input<typeof GunData>;
-export type TSpriteData = z.input<typeof SpriteData>;
-export type TSpriteAnimatorData = z.input<typeof SpriteAnimatorData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
 export type TGunExtraSettingSynergyProcessorData = z.input<typeof GunExtraSettingSynergyProcessorData>;
 export type TEncounterTrackableData = z.input<typeof EncounterTrackable>;

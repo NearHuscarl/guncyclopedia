@@ -25,6 +25,9 @@ export class ProjectileService {
   static getSpeed(value: number) {
     return value === -1 ? Infinity : value;
   }
+  static getMaxAmmo(value: number) {
+    return value >= 10_000 ? Infinity : value;
+  }
   static getRangeLabel(projectile: TProjectile): TRangeLabel {
     if (projectile.range <= 15) {
       return "short-range";
@@ -84,7 +87,11 @@ export class ProjectileService {
     return finalProjectile;
   }
 
-  private static _aggregateAdditionalDamage(projectiles: TProjectile[], mode: AggregateModeOption) {
+  private static _aggregateAdditionalDamage(
+    projectiles: TProjectile[],
+    mode: AggregateModeOption,
+    sums: Record<string, number>,
+  ) {
     const additionaDmgLookup: Record<string, TProjectile["additionalDamage"][number]> = {};
 
     for (const p of projectiles) {
@@ -105,6 +112,13 @@ export class ProjectileService {
       for (const key in additionaDmgLookup) {
         if (additionaDmgLookup[key].canNotStack) continue;
         additionaDmgLookup[key].damage /= projectiles.length;
+      }
+    }
+
+    for (const key in additionaDmgLookup) {
+      const chance = sums[`${key}Chance`];
+      if (chance !== undefined && chance < 1) {
+        additionaDmgLookup[key].isEstimated = true;
       }
     }
 
@@ -212,7 +226,7 @@ export class ProjectileService {
     const final: Partial<TProjectile> = {
       id: "average",
       spawnWeight: 1,
-      additionalDamage: this._aggregateAdditionalDamage(projectiles, mode),
+      additionalDamage: this._aggregateAdditionalDamage(projectiles, mode, sums),
     };
 
     Object.keys(nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));

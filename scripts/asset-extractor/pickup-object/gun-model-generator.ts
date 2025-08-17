@@ -18,11 +18,16 @@ import { SpriteService } from "../sprite/sprite.service.ts";
 import { SpriteAnimatorRepository } from "../sprite/sprite-animator.repository.ts";
 import { WrapMode } from "../sprite/sprite-animator.dto.ts";
 import { basicColors } from "./client/models/color.model.ts";
+import { ColorService } from "../color/color.service.ts";
+import { SpriteRepository } from "../sprite/sprite.repository.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
 import type { TVolleyDto } from "../gun/volley.dto.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
+import type { TProjectileDto } from "../gun/projectile.dto.ts";
+import type { TAnimation } from "./client/models/animation.model.ts";
+import type { TSpriteAnimatorData } from "../gun/component.dto.ts";
 
 const gunQualityTextLookup = invert(ItemQuality);
 const gunClassTextLookup = invert(GunClass);
@@ -64,9 +69,10 @@ export class GunModelGenerator {
   private readonly _assetService: AssetService;
   private readonly _spriteService: SpriteService;
   private readonly _spriteAnimatorRepo: SpriteAnimatorRepository;
+  private readonly _colorService = new ColorService();
   private readonly _featureFlags: Set<TGun["featureFlags"][number]> = new Set();
 
-  constructor(input: GunModelGeneratorCtor) {
+  private constructor(input: GunModelGeneratorCtor) {
     this._gunRepo = input.gunRepo;
     this._projectileRepo = input.projectileRepo;
     this._volleyRepo = input.volleyRepo;
@@ -74,6 +80,9 @@ export class GunModelGenerator {
     this._assetService = input.assetService;
     this._spriteService = input.spriteService;
     this._spriteAnimatorRepo = input.spriteAnimatorRepo;
+  }
+  static async create(input: GunModelGeneratorCtor) {
+    return new GunModelGenerator(input);
   }
 
   /**
@@ -138,6 +147,7 @@ export class GunModelGenerator {
       range: projDto.projectile.baseData.range,
       force: projDto.projectile.baseData.force,
       additionalDamage: [],
+      animation: this._buildProjectileAnimation(projDto),
     };
 
     if (projDto.projectile.ignoreDamageCaps) proj.ignoreDamageCaps = true;
@@ -392,9 +402,6 @@ export class GunModelGenerator {
       }
     }
     const res: TProjectileMode[] = [];
-    // TODO: image for projectile
-    // TODO: bounce bullets
-    // TODO: piecing bullets
     // TODO: SpawnProjModifier (The Scrambler, Particulator)
     // TODO: homing bullet
     // TODO: handle explosionData. See CerebralBoreProjectile.prefab
@@ -441,21 +448,95 @@ export class GunModelGenerator {
     };
   }
 
-  private async _generateAnimation(gunDto: TGunDto): Promise<TGun["animation"]> {
+  private _buildAnimation(spriteAnimatorData: TSpriteAnimatorData, debugId: string) {
+    const { library, defaultClipId } = spriteAnimatorData;
+    const clip = this._spriteAnimatorRepo.getClipByIndex(library, defaultClipId);
+    const frames: TAnimation["frames"] = [];
+    let texturePath = "";
+
+    for (let i = 0; i < clip.frames.length; i++) {
+      const frame = clip.frames[i];
+      const { spriteData, texturePath: frameTexturePath } = this._spriteService.getSpriteSync(
+        frame.spriteCollection.$$scriptPath,
+        frame.spriteId,
+      );
+      if (!spriteData.name) {
+        throw new Error(`Sprite data is missing a name for frame ${frame.spriteId}. ${chalk.green(debugId)}`);
+      }
+      if (texturePath) {
+        assert(texturePath === frameTexturePath, "All frames must have the same texture path");
+      } else {
+        texturePath = frameTexturePath;
+      }
+      frames.push({
+        spriteName: spriteData.name,
+        uvs: spriteData.uvs,
+        spriteId: frame.spriteId,
+        flipped: Boolean(spriteData.flipped),
+      });
+    }
+
+    return {
+      name: clip.name || "",
+      fps: clip.fps,
+      loopStart: clip.loopStart,
+      wrapMode: wrapModeTextLookup[clip.wrapMode] as keyof typeof WrapMode,
+      minFidgetDuration: clip.minFidgetDuration,
+      maxFidgetDuration: clip.maxFidgetDuration,
+      texturePath,
+      frames,
+    };
+  }
+
+  private _buildProjectileAnimation(projectileDto: TProjectileDto): TAnimation | undefined {
+    if (projectileDto.spriteAnimator) {
+      return this._buildAnimation(projectileDto.spriteAnimator, `projectile id: ${projectileDto.id}`);
+    }
+    if (projectileDto.sprite) {
+      const res = this._spriteService.getSpriteSync(
+        projectileDto.sprite.collection.$$scriptPath,
+        projectileDto.sprite._spriteId,
+      );
+
+      return {
+        name: "No_Animation",
+        fps: 0,
+        loopStart: 0,
+        texturePath: res.texturePath,
+        wrapMode: "Single",
+        minFidgetDuration: 0,
+        maxFidgetDuration: 0,
+        frames: [
+          {
+            spriteName: res.spriteData.name,
+            spriteId: projectileDto.sprite._spriteId,
+            uvs: res.spriteData.uvs,
+            flipped: Boolean(res.spriteData.flipped),
+          },
+        ],
+      };
+    }
+    console.log(chalk.yellow(`No sprite animator or sprite found for projectile ${chalk.green(projectileDto.id)}`));
+  }
+
+  private async _buildGunAnimation(gunDto: TGunDto): Promise<{ colors: string[]; animation: TAnimation }> {
     const animationName = gunDto.gun.idleAnimation;
+    let colors: string[] = [];
 
     if (animationName) {
       let texturePath = "";
       const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, animationName);
-      const frames: TGun["animation"]["frames"] = [];
+      const frames: TAnimation["frames"] = [];
 
-      if (clip.clipData) {
-        for (const frame of clip.clipData.frames) {
-          const {
-            spriteData,
-            texturePath: spriteTexturePath,
-            colors,
-          } = await this._spriteService.getSprite(frame.spriteCollection, frame.spriteId, gunDto, basicColors);
+      if (clip) {
+        for (let i = 0; i < clip.frames.length; i++) {
+          const frame = clip.frames[i];
+          const { spriteData, texturePath: spriteTexturePath } = await this._spriteService.getSprite(
+            frame.spriteCollection.$$scriptPath,
+            frame.spriteId,
+            async (image) =>
+              void (i === 0 && (colors = await this._colorService.findDominantColors(image, basicColors))),
+          );
           if (!spriteData.name) {
             throw new Error(
               `Sprite data is missing a name for frame ${frame.spriteId} of clip ${chalk.green(animationName)}`,
@@ -466,7 +547,6 @@ export class GunModelGenerator {
             uvs: spriteData.uvs,
             spriteId: frame.spriteId,
             flipped: Boolean(spriteData.flipped),
-            colors: colors,
           });
           if (texturePath) {
             assert(texturePath === spriteTexturePath, "All frames must have the same texture path");
@@ -476,14 +556,17 @@ export class GunModelGenerator {
         }
 
         return {
-          name: animationName,
-          fps: clip.clipData.fps,
-          loopStart: clip.clipData.loopStart,
-          wrapMode: wrapModeTextLookup[clip.clipData.wrapMode] as keyof typeof WrapMode,
-          minFidgetDuration: clip.clipData.minFidgetDuration,
-          maxFidgetDuration: clip.clipData.maxFidgetDuration,
-          texturePath,
-          frames,
+          colors,
+          animation: {
+            name: clip.name!,
+            fps: clip.fps,
+            loopStart: clip.loopStart,
+            wrapMode: wrapModeTextLookup[clip.wrapMode] as keyof typeof WrapMode,
+            minFidgetDuration: clip.minFidgetDuration,
+            maxFidgetDuration: clip.maxFidgetDuration,
+            texturePath,
+            frames,
+          },
         };
       } else {
         console.warn(
@@ -501,28 +584,38 @@ export class GunModelGenerator {
     }
     let res: Awaited<ReturnType<typeof this._spriteService.getSprite>> | null = null;
     try {
-      res = await this._spriteService.getSprite(gunDto.sprite.collection, spriteName, gunDto, basicColors);
+      res = await this._spriteService.getSprite(
+        gunDto.sprite.collection.$$scriptPath,
+        spriteName,
+        async (image) => void (colors = await this._colorService.findDominantColors(image, basicColors)),
+      );
     } catch {
-      res = await this._spriteService.getSpriteFromAmmononicon(spriteName, gunDto, basicColors);
+      res = await this._spriteService.getSprite(
+        SpriteRepository.AMMONONICON_SPRITE_PATH,
+        spriteName,
+        async (image) => void (colors = await this._colorService.findDominantColors(image, basicColors)),
+      );
     }
 
     return {
-      name: "No_Animation",
-      fps: 0,
-      loopStart: 0,
-      texturePath: res.texturePath,
-      wrapMode: "Single",
-      minFidgetDuration: 0,
-      maxFidgetDuration: 0,
-      frames: [
-        {
-          spriteName: res.spriteData.name,
-          spriteId: -1, // no sprite ID
-          uvs: res.spriteData.uvs,
-          colors: res.colors,
-          flipped: Boolean(res.spriteData.flipped),
-        },
-      ],
+      colors,
+      animation: {
+        name: "No_Animation",
+        fps: 0,
+        loopStart: 0,
+        texturePath: res.texturePath,
+        wrapMode: "Single",
+        minFidgetDuration: 0,
+        maxFidgetDuration: 0,
+        frames: [
+          {
+            spriteName: res.spriteData.name,
+            spriteId: -1, // no sprite ID
+            uvs: res.spriteData.uvs,
+            flipped: Boolean(res.spriteData.flipped),
+          },
+        ],
+      },
     };
   }
 
@@ -577,7 +670,7 @@ export class GunModelGenerator {
         featureFlags: [],
         projectileModes: this._buildProjectileModes(gunDto),
         attribute: this._buildAttribute(gunDto),
-        animation: await this._generateAnimation(gunDto),
+        ...(await this._buildGunAnimation(gunDto)),
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       };
 

@@ -1,6 +1,7 @@
 import z from "zod/v4";
-import { Percentage, Position } from "./schema.ts";
 import { PickupObject } from "./pickup-object.model.ts";
+import { Animation } from "./animation.model.ts";
+import { Percentage } from "./schema.ts";
 
 export type TStatusEffectProp =
   | "poisonChance"
@@ -104,6 +105,8 @@ const Projectile = z.object({
   beamStatusEffectChancePerSecond: Percentage.optional(),
   // TODO: research ProjectileModule.cs#GetEstimatedShotsPerSecond
   // dps: z.undefined(),
+
+  animation: Animation.optional(),
 });
 
 /**
@@ -234,33 +237,11 @@ export const Gun = PickupObject.extend({
     activeReload: z.boolean().optional(),
   }),
   video: z.string().optional(),
-  animation: z.object({
-    name: z.string(),
-    fps: z.number(),
-    loopStart: z.number(),
-    /**
-     * Wrap mode for the animation.
-     * - Loop: The animation loops indefinitely, starting from `0`, NOT `loopStart`.
-     * - LoopFidget: The animation loops indefinitely, but wait for a random duration between `minFidgetDuration` and `maxFidgetDuration` before starting again.
-     * - LoopSection: Play the 'intro' frames [0 ... loopStart-1] once, then loop only the section [loopStart ... last] forever.
-     */
-    wrapMode: z.enum(["Loop", "LoopSection", "Once", "PingPong", "RandomFrame", "RandomLoop", "Single", "LoopFidget"]),
-    minFidgetDuration: z.number(),
-    maxFidgetDuration: z.number(),
-    texturePath: z.string(),
-    frames: z.array(
-      z.object({
-        spriteName: z.string(),
-        /**
-         * List of dominant colors of the sprite. The first color is the most dominant (primary), followed by secondary, tertiary, etc.
-         */
-        colors: z.array(z.string()),
-        spriteId: z.number().min(-1),
-        flipped: z.boolean(),
-        uvs: z.tuple([Position, Position, Position, Position]),
-      }),
-    ),
-  }),
+  /**
+   * List of dominant colors of the sprite. The first color is the most dominant (primary), followed by secondary, tertiary, etc.
+   */
+  colors: z.array(z.string()),
+  animation: Animation,
 });
 
 export type TProjectile = z.input<typeof Projectile>;

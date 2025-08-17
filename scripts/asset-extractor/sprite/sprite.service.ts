@@ -3,23 +3,17 @@ import { cp, mkdir } from "node:fs/promises";
 import sharp from "sharp";
 import chalk from "chalk";
 import { SpriteRepository } from "./sprite.repository.ts";
-import { DATA_PATH, PUBLIC_PATH } from "../constants.ts";
+import { PUBLIC_PATH } from "../constants.ts";
 import { normalizePath } from "../utils/path.ts";
-import { ColorService } from "../color/color.service.ts";
-import type { TGunDto } from "../gun/gun.dto.ts";
 import type { TSpriteCollectionDto } from "./sprite.dto.ts";
 
 export class SpriteService {
-  private static readonly _DEBUG_OUTPUT_PATH = path.join(DATA_PATH, "debug/guns");
   private readonly _spriteRepository: SpriteRepository;
-  private readonly _colorService = new ColorService();
-  private readonly _debug = true;
 
   private constructor(spriteRepository: SpriteRepository) {
     this._spriteRepository = spriteRepository;
   }
   static async create(spriteRepository: SpriteRepository) {
-    await mkdir(SpriteService._DEBUG_OUTPUT_PATH, { recursive: true });
     return new SpriteService(spriteRepository);
   }
 
@@ -55,14 +49,7 @@ export class SpriteService {
     return image;
   }
 
-  private async _getSprite(input: {
-    spriteSheetRefabPath: string;
-    spriteNameOrIndex: string | number;
-    gunDto: TGunDto;
-    colorLookup: Record<string, string[]>;
-  }) {
-    const { spriteSheetRefabPath, spriteNameOrIndex, gunDto, colorLookup } = input;
-
+  getSpriteSync(spriteSheetRefabPath: string, spriteNameOrIndex: string | number) {
     const { spriteData, texturePath } = this._spriteRepository.getSprite(
       { $$scriptPath: spriteSheetRefabPath },
       spriteNameOrIndex,
@@ -73,51 +60,36 @@ export class SpriteService {
       );
     }
 
-    const image = await this.getImage(texturePath, spriteData);
-    const colors = await this._colorService.findDominantColors(image, colorLookup);
-
-    if (this._debug) {
-      const imageOutputPath = path.join(
-        SpriteService._DEBUG_OUTPUT_PATH,
-        typeof spriteNameOrIndex === "number"
-          ? `${gunDto.gun.PickupObjectId}-${spriteNameOrIndex}.png`
-          : `${gunDto.gun.PickupObjectId}.png`,
-      );
-      await image.toFile(imageOutputPath);
-    }
-
     return {
-      colors,
       spriteData: { ...spriteData, name: spriteData.name },
       texturePath: normalizePath(path.relative(PUBLIC_PATH, this.toOutputPath(texturePath))),
     };
   }
 
   async getSprite(
-    spriteCollectionRef: { $$scriptPath: string },
+    spriteSheetRefabPath: string,
     spriteNameOrIndex: string | number,
-    gunDto: TGunDto,
-    colorLookup: Record<string, string[]>,
+    processImageCallback?: (image: sharp.Sharp) => Promise<void>,
   ) {
-    return this._getSprite({
-      spriteSheetRefabPath: spriteCollectionRef.$$scriptPath,
+    const { spriteData, texturePath } = this._spriteRepository.getSprite(
+      { $$scriptPath: spriteSheetRefabPath },
       spriteNameOrIndex,
-      gunDto,
-      colorLookup,
-    });
-  }
+    );
+    if (!spriteData?.name) {
+      throw new Error(
+        `Sprite ${chalk.green(spriteNameOrIndex)} not found. Script path: ${chalk.green(spriteSheetRefabPath)}`,
+      );
+    }
 
-  async getSpriteFromAmmononicon(
-    spriteNameOrIndex: string | number,
-    gunDto: TGunDto,
-    colorLookup: Record<string, string[]>,
-  ) {
-    return this._getSprite({
-      spriteSheetRefabPath: SpriteRepository.AMMONONICON_SPRITE_PATH,
-      spriteNameOrIndex,
-      gunDto,
-      colorLookup,
-    });
+    if (processImageCallback) {
+      const image = await this.getImage(texturePath, spriteData);
+      await processImageCallback(image);
+    }
+
+    return {
+      spriteData: { ...spriteData, name: spriteData.name },
+      texturePath: normalizePath(path.relative(PUBLIC_PATH, this.toOutputPath(texturePath))),
+    };
   }
 
   toOutputPath(spritesheetPath: string) {

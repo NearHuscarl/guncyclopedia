@@ -38,7 +38,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
     spriteAnimatorRepo,
   } = options;
   const pickupObjects: TPickupObject[] = [];
-  const gunModelGenerator = new GunModelGenerator({
+  const gunModelGenerator = await GunModelGenerator.create({
     gunRepo,
     projectileRepo,
     volleyRepo,

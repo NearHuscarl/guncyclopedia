@@ -2,10 +2,10 @@ import { memo, useMemo } from "react";
 import clsx from "clsx";
 import { useImageSize } from "./use-image-size";
 import { useFrame } from "./use-frame";
-import type { TGun } from "@/client/generated/models/gun.model";
 import { useIsDebug } from "../hooks/useDebug";
+import type { TAnimation } from "@/client/generated/models/animation.model";
 
-function getMaxDimensions(animation: TGun["animation"], w: number, h: number, scale: number) {
+function getMaxDimensions(animation: TAnimation, w: number, h: number, scale: number) {
   let maxW = 0;
   let maxH = 0;
 
@@ -29,7 +29,7 @@ function getMaxDimensions(animation: TGun["animation"], w: number, h: number, sc
   return { maxW, maxH };
 }
 
-type TAnimatedSpriteProps = { animation: TGun["animation"]; scale?: number; className?: string };
+type TAnimatedSpriteProps = { animation: TAnimation; scale?: number; className?: string };
 
 function AnimatedSpriteImpl({ animation, scale = 1, className }: TAnimatedSpriteProps) {
   const frame = useFrame(animation);

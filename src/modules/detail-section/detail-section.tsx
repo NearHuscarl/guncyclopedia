@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
-import { H2, H3 } from "@/components/ui/typography";
+import { H2 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 import { Quality } from "./quality";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Circle } from "./circle";
 import { useHoverGun, useSelectedGun } from "../shared/hooks/useGuns";
 import { useLoaderData } from "../shared/hooks/useLoaderData";
-import { ProjectilesPerShot } from "./projectiles-per-shot";
+import { ProjectilePool, ProjectilesPerShot } from "./projectiles-per-shot";
 import { GunService } from "@/client/service/gun.service";
 import { ProjectileService } from "@/client/service/projectile.service";
 import { useIsDebug } from "../shared/hooks/useDebug";
@@ -62,6 +61,7 @@ export function DetailSection() {
     : gunStats;
   const selectedGun = hoverGun || gun;
   const selectedStats = hoverGunStats || gunStats;
+  const isAggregatedProjectile = gunStats.projectilePerShot.projectiles.length === 1;
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
@@ -70,6 +70,7 @@ export function DetailSection() {
           {selectedGun.projectileModes.map(({ mode }, i, modes) => (
             <Button
               key={mode}
+              size="sm"
               variant="secondary"
               onClick={() => setModeIndex(i)}
               className={clsx({
@@ -102,7 +103,7 @@ export function DetailSection() {
               <H2>{selectedGun.name || "N/A"}</H2>
               <Quality tier={selectedGun.quality} className="relative top-[-6px]" />
             </div>
-            <div>{debug && selectedGun.animation.frames[0].colors.map((c) => <ColorItem color={c} key={c} />)}</div>
+            <div>{debug && selectedGun.colors.map((c) => <ColorItem color={c} key={c} />)}</div>
             <div className="flex gap-2 items-center">
               <Tooltip>
                 <TooltipTrigger>
@@ -139,6 +140,7 @@ export function DetailSection() {
           value={gunStats.maxAmmo}
           max={stats.maxMaxAmmo}
           modifier={hoverGunStats.maxAmmo - gunStats.maxAmmo}
+          valueResolver={ProjectileService.getMaxAmmo}
         />
         <StatBar
           label="Reload Time"
@@ -160,6 +162,7 @@ export function DetailSection() {
           />
         )} */}
         <ProjectilesPerShot
+          id={`${selectedGun.id}-${modeIndex}`}
           projectiles={gunStats.mode.projectiles}
           onSelect={setSelectedProjectileIndex}
           onHover={setHoverProjectileIndex}
@@ -210,38 +213,17 @@ export function DetailSection() {
           max={50}
           modifier={hoverGunStats.projectile.force - gunStats.projectile.force}
         />
-        <div className="mt-6">
-          {gunStats.projectilePerShot.projectiles.length > 1 && (
-            <div className="flex gap-4 items-baseline" onMouseLeave={() => setHoverProjectileDataIndex(-1)}>
-              <Tooltip>
-                <TooltipTrigger>
-                  <H3 className="mb-4 border-b border-dashed border-stone-400/30 cursor-help">Projectile pool:</H3>
-                </TooltipTrigger>
-                <TooltipContent>
-                  {/* TODO: random or sequential */}
-                  <p>List of projectiles to choose from when firing a single projectile</p>
-                </TooltipContent>
-              </Tooltip>
-              <div className="flex gap-2 relative top-[3px]">
-                {gunStats.projectilePerShot.projectiles.map((p, i) => (
-                  <Tooltip key={p.id}>
-                    <TooltipTrigger>
-                      <Circle
-                        onClick={() => setSelectedProjectileDataIndex(i)}
-                        onMouseEnter={() => setHoverProjectileDataIndex(i)}
-                        isSelected={projectileDataIndex === i}
+        {!isAggregatedProjectile && (
+          <ProjectilePool
+            id={`${selectedGun.id}-${modeIndex}`}
+            projectiles={gunStats.projectilePerShot.projectiles}
+            onBlur={() => setHoverProjectileDataIndex(-1)}
+            onSelect={setSelectedProjectileDataIndex}
+            onHover={setHoverProjectileDataIndex}
+            isSelected={(i) => projectileDataIndex === i}
                       />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{p.id}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-        <Features gun={selectedGun} />
+        )}
+        <Features gun={selectedGun} className={isAggregatedProjectile ? "mt-4" : ""} />
         {debug && (
           <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(selectedGun, null, 2)}</pre>
         )}

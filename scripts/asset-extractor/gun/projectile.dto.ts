@@ -1,6 +1,7 @@
 import z from "zod/v4";
 import { BinaryOption, Percentage } from "../utils/schema.ts";
 import { MonoBehaviour } from "../asset/asset.dto.ts";
+import { SpriteAnimatorData, SpriteData } from "./component.dto.ts";
 
 const CoreDamageType = {
   None: 0,
@@ -116,6 +117,8 @@ const BlackHoleDoerData = z.object({
 export const ProjectileDto = z.object({
   id: z.string(),
   projectile: ProjectileData,
+  sprite: SpriteData.optional(),
+  spriteAnimator: SpriteAnimatorData.optional(),
   bounceProjModifier: BounceProjModifierData.optional(),
   pierceProjModifier: PierceProjModifierData.optional(),
   homingModifier: HomingModifierData.optional(),

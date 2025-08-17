@@ -32,10 +32,10 @@ export function useFilteredGuns(filter: TSearchParams["filter"]) {
   return useMemo(() => {
     const res = guns.filter((g) => {
       let match = true;
-      if (primaryColor && g.animation.frames[0].colors[0] !== primaryColor) {
+      if (primaryColor && g.colors[0] !== primaryColor) {
         match = false;
       }
-      if (secondaryColor && g.animation.frames[0].colors[1] !== secondaryColor) {
+      if (secondaryColor && g.colors[1] !== secondaryColor) {
         match = false;
       }
       if (feature && !g.featureFlags.includes(feature)) {

@@ -18,6 +18,7 @@ export class SpriteRepository {
     "assets/ExportedProject/Assets/GameObject/Ammonomicon Encounter Icon Collection.prefab",
   );
   private static readonly _SEARCH_FILES = [
+    // guns
     "assets/ExportedProject/Assets/sprites/weapons/weaponcollection02 data/WeaponCollection02.prefab",
     "assets/ExportedProject/Assets/sprites/weapons/weaponcollection data/WeaponCollection.prefab",
     "assets/ExportedProject/Assets/sprites/weapons/weaponbeamcollection data/WeaponBeamCollection.prefab",
@@ -25,6 +26,16 @@ export class SpriteRepository {
     "assets/ExportedProject/Assets/GameObject/BeamWeaponCollection.prefab",
     "assets/ExportedProject/Assets/GameObject/Dolphin_WeaponCollection.prefab",
     "assets/ExportedProject/Assets/GameObject/Boss_West_Bros_Collection.prefab",
+    // projectiles
+    "assets/ExportedProject/Assets/sprites/projectiles/projectilecollection data/ProjectileCollection.prefab",
+    "assets/ExportedProject/Assets/sprites/projectiles/dolphin_projectiles/dolphin_projectiles data/Dolphin_Projectiles.prefab",
+    "assets/ExportedProject/Assets/sprites/projectiles/projectile2collection data/Projectile2Collection.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/vfx beam collection data/VFX Beam Collection.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/vfx_item_collection data/VFX_Item_Collection.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/vfx collection data/VFX Collection.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/vfx collection 002 data/VFX Collection 002.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/vfx_collection_003 data/VFX_Collection_003.prefab",
+    "assets/ExportedProject/Assets/sprites/vfx/dolphin vfx/dolphin_vfx_collection_001 data/Dolphin_VFX_Collection_001.prefab",
   ]
     .map((p) => path.join(ASSET_EXTRACTOR_ROOT, p))
     .concat(SpriteRepository.AMMONONICON_SPRITE_PATH);

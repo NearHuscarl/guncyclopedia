@@ -128,7 +128,7 @@ export class GunService {
       ProjectileService.createAggregatedProjectileData(projectilePool, "avg");
     const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
     const reloadTime = magazineSize === gun.maxAmmo ? 0 : gun.reloadTime;
-    const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? Infinity : gun.maxAmmo;
+    const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? 10_000 : gun.maxAmmo;
     const shotsPerSecond = GunService.getEstimatedShotsPerSecond({
       reloadTime: gun.reloadTime, // Prize Pistol's edge case (only 1 max ammo)
       magazineSize,

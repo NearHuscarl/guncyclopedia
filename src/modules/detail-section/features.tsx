@@ -1,15 +1,16 @@
 import startCase from "lodash/startCase";
 import { H3 } from "@/components/ui/typography";
 import { Badge } from "@/components/ui/badge";
+import clsx from "clsx";
 import type { TGun } from "@/client/generated/models/gun.model";
 
-export function Features({ gun }: { gun: TGun }) {
+export function Features({ gun, className }: { gun: TGun; className?: string }) {
   if (gun.featureFlags.length === 0) {
     return null;
   }
 
   return (
-    <div className="flex items-baseline gap-4">
+    <div className={clsx("flex items-baseline gap-4", className)}>
       <H3>Features:</H3>
       <div className="flex flex-wrap gap-2">
         {gun.featureFlags.map((f) => (

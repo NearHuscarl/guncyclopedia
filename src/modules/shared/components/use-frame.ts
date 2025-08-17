@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { randomBetween } from "@/lib/lang";
-import type { TGun } from "@/client/generated/models/gun.model";
+import type { TAnimation } from "@/client/generated/models/animation.model";
 
-export function useFrame(animation: TGun["animation"]) {
+export function useFrame(animation: TAnimation) {
   const startIndex = animation.wrapMode === "LoopSection" ? animation.loopStart : 0;
   const [index, setIndex] = useState(startIndex);
 

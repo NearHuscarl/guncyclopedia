@@ -13,7 +13,7 @@ function useSecondaryColors(primaryColor?: string) {
     const secondaryColors = new Set<string>();
 
     guns.forEach((g) => {
-      const color = g.animation.frames[0].colors[1];
+      const color = g.colors[1];
       if (color) {
         secondaryColors.add(color);
       }

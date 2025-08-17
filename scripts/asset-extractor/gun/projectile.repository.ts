@@ -6,6 +6,7 @@ import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { ProjectileDto } from "./projectile.dto.ts";
+import type { TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
 import type {
   TBasicBeamControllerData,
   TBlackHoleDoerData,
@@ -65,6 +66,12 @@ export class ProjectileRepository {
   private _isBlackHoleDoer(obj: unknown): obj is TBlackHoleDoerData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("BlackHoleDoer.cs.meta");
   }
+  private _isSpriteData(obj: unknown): obj is TSpriteData {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSprite.cs.meta");
+  }
+  private _isSpriteAnimatorData(obj: unknown): obj is TSpriteAnimatorData {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteAnimator.cs.meta");
+  }
 
   private async _getAllProjectileRefabFiles() {
     const res: string[] = [];
@@ -95,6 +102,10 @@ export class ProjectileRepository {
 
           res.id = this._getProjectileKey({ $$scriptPath: metaFilePath });
           res.projectile = block;
+        } else if (this._isSpriteData(block)) {
+          res.sprite = block;
+        } else if (this._isSpriteAnimatorData(block)) {
+          res.spriteAnimator = block;
         } else if (this._isBounceModifierData(block)) {
           res.bounceProjModifier = block;
         } else if (this._isPierceModifierData(block)) {

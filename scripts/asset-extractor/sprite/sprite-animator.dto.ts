@@ -13,12 +13,12 @@ export const WrapMode = {
 } as const;
 
 export const SpriteAnimatorDto = z.object({
-  $$texturePath: z.string(),
   clips: z.array(
     z.object({
       name: z.string().nullable(),
       frames: z.array(
         z.object({
+          $$texturePath: z.string(),
           spriteCollection: AssetExternalReference.required(),
           spriteId: z.number(),
         }),
