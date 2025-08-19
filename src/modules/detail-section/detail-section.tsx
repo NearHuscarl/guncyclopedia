@@ -24,6 +24,14 @@ import { ShootStyle } from "./shoot-style";
 import { useGunStore } from "../shared/store/gun.store";
 import type { TGun } from "@/client/generated/models/gun.model";
 
+// Attributes
+// Long Range | Mid Range | Close Range: range
+// High Firerate | Steady Firerate: ROF
+// Hard Hitting: High Projectile Damage
+// Aggressive: High ROF, Low Precision
+// Accurate: At least Steady ROF, High Precision
+// Unpredictable: Large damage range
+
 function MainGunSprite({ gun, hoverGun }: { gun: TGun; hoverGun?: TGun }) {
   const useChargeAnimation = useGunStore((state) => state.useChargeAnimation);
   return (
@@ -128,7 +136,7 @@ export function DetailSection() {
               <Tooltip>
                 <TooltipTrigger>
                   <NumericValue>
-                    {selectedStats.magazineSize}/{formatNumber(selectedStats.maxAmmo)}
+                    {selectedStats.magazineSize}/{formatNumber(ProjectileService.getMaxAmmo(selectedStats.maxAmmo))}
                   </NumericValue>
                 </TooltipTrigger>
                 <TooltipContent>Magazine Size / Max Ammunition</TooltipContent>
@@ -185,13 +193,13 @@ export function DetailSection() {
           <H3>Projectile Stats</H3>
           {!showProjectilePool && (
             <Volley
-          id={`${selectedGun.id}-${modeIndex}`}
+              id={`${selectedGun.id}-${modeIndex}`}
               projectiles={selectedStats.mode.projectiles}
-          onSelect={setSelectedProjectileIndex}
-          onHover={setHoverProjectileIndex}
-          onBlur={() => setHoverProjectileIndex(-1)}
-          isSelected={(i) => projectileIndex === i}
-        />
+              onSelect={setSelectedProjectileIndex}
+              onHover={setHoverProjectileIndex}
+              onBlur={() => setHoverProjectileIndex(-1)}
+              isSelected={(i) => projectileIndex === i}
+            />
           )}
           {showProjectilePool && (
             <ProjectilePool

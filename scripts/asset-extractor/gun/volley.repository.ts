@@ -15,7 +15,7 @@ export class VolleyRepository {
   private static readonly _SEARCH_DIRECTORIES = [
     "assets/ExportedProject/Assets/MonoBehaviour",
     "assets/ExportedProject/Assets/data/gunvolleys",
-  ];
+  ].map((dir) => path.join(ASSET_EXTRACTOR_ROOT, dir));
 
   private _volleys = new Map<Guid, TVolleyDto>();
   private readonly _assetService: AssetService;
@@ -42,14 +42,14 @@ export class VolleyRepository {
     const res: string[] = [];
 
     for (const dir of this._searchDirectories) {
-      const files = await readdir(path.join(ASSET_EXTRACTOR_ROOT, dir));
+      const files = await readdir(dir);
 
       for (const file of files) {
         if (!file.endsWith(".asset")) continue;
-        const content = await readFile(path.join(ASSET_EXTRACTOR_ROOT, dir, file), "utf-8");
+        const content = await readFile(path.join(dir, file), "utf-8");
         if (!content.includes("UsesBeamRotationLimiter")) continue; // quick check to filter out non-volley prefabs
 
-        res.push(path.join(ASSET_EXTRACTOR_ROOT, dir, file));
+        res.push(path.join(dir, file));
       }
     }
 
@@ -94,10 +94,10 @@ export class VolleyRepository {
     for (let i = 0; i < prefabFiles.length; i++) {
       const file = prefabFiles[i];
       process.stdout.write(chalk.grey(`\rloading volleys from ${i + 1}/${prefabFiles.length} files...`));
-      const projDto = await this._parseVolley(file);
-      if (!projDto) continue;
+      const volleyDto = await this._parseVolley(file);
+      if (!volleyDto) continue;
 
-      this._volleys.set(projDto.$$id, projDto);
+      this._volleys.set(volleyDto.$$id, volleyDto);
     }
 
     console.log();

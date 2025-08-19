@@ -9,7 +9,7 @@ import type { TEnconterDatabase } from "./encounter-trackable.dto.ts";
 export class EncounterTrackableRepository {
   private static readonly _DEFAULT_DB_PATH = path.join(
     ASSET_EXTRACTOR_ROOT,
-    "assets/ExportedProject/Assets/data/databases/EncounterDatabase.asset"
+    "assets/ExportedProject/Assets/data/databases/EncounterDatabase.asset",
   );
 
   private _encounterDb: TEnconterDatabase | null = null;
@@ -36,7 +36,7 @@ export class EncounterTrackableRepository {
     } catch (error) {
       if (error instanceof z.ZodError) {
         console.error(chalk.red(`Error parsing EncounterDatabase`));
-        console.error(z.prettifyError(error));
+        console.error(z.prettifyError(error).slice(0, 300));
         process.exit(1);
       } else {
         throw error;

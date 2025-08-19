@@ -49,3 +49,12 @@ export const StatModifierSchema = z.object({
   modifyType: z.enum(StatModifier.ModifyMethod),
   amount: z.number(),
 });
+
+export const PlayerDto = z.object({
+  $$id: z.string(),
+  startingGunIds: z.array(z.number()),
+  startingActiveItemIds: z.array(z.number()),
+  startingPassiveItemIds: z.array(z.number()),
+});
+
+export type TPlayerDto = z.input<typeof PlayerDto>;

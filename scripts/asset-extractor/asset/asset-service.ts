@@ -78,6 +78,14 @@ export class AssetService {
     return true;
   }
 
+  /**
+   * There is no alias in the prefab file and yaml confuses when it sees values like `*1234` even though it's just a string
+   */
+  private _quoteAliasValues(src: string): string {
+    // mapping value: key: *alias -> key: "*alias"
+    return src.replace(/(:\s*)\*([^\s,}\]#]+)/g, (_m, pre, name) => `${pre}"*${name}"`);
+  }
+
   async parseAssetMeta(filePath: string): Promise<TAssetMeta> {
     const text = await readFile(filePath, "utf8");
     const parsedMeta = parseYaml(text);
@@ -105,10 +113,12 @@ export class AssetService {
       const [_, _typeID, fileID, typeName] = headerMatch;
 
       const serializedBlock = parseYaml(
-        block
-          .replace(headerRegex, "")
-          .replace(/^\s{2}/gm, "")
-          .trim()
+        this._quoteAliasValues(
+          block
+            .replace(headerRegex, "")
+            .replace(/^\s{2}/gm, "")
+            .trim(),
+        ),
       );
       const blockWithResolvedScriptPaths = cloneDeepWith(serializedBlock, (value) => {
         if (isPlainObject(value) && "guid" in value) {
