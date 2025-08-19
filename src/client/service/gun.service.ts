@@ -31,16 +31,13 @@ export type TGunStats = {
 };
 
 export class GunService {
-  /**
-   * `ExportedProject\Assets\Scripts\Assembly-CSharp\ProjectileModule.cs#GetEstimatedShotsPerSecond`
-   */
-  static getEstimatedShotsPerSecond(input: {
+  static getTimeBetweenShot(input: {
     reloadTime: number;
     magazineSize: number;
     projectile: TProjectilePerShot;
     chargeTime?: number;
   }) {
-    const { reloadTime, magazineSize, projectile, chargeTime } = input;
+    const { magazineSize, projectile, chargeTime } = input;
     const { shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = projectile;
     if (cooldownTime <= 0 && shootStyle !== "Charged") {
       return 0;
@@ -52,6 +49,21 @@ export class GunService {
     } else if (shootStyle === "Charged" && chargeTime) {
       timeBetweenShots += chargeTime;
     }
+    return timeBetweenShots;
+  }
+
+  /**
+   * `ExportedProject\Assets\Scripts\Assembly-CSharp\ProjectileModule.cs#GetEstimatedShotsPerSecond`
+   */
+  static getEstimatedShotsPerSecond(input: {
+    reloadTime: number;
+    magazineSize: number;
+    projectile: TProjectilePerShot;
+    chargeTime?: number;
+  }) {
+    const { reloadTime, magazineSize } = input;
+    let timeBetweenShots = this.getTimeBetweenShot(input);
+
     if (magazineSize > 0) {
       timeBetweenShots += reloadTime / magazineSize;
     }
@@ -85,7 +97,8 @@ export class GunService {
     projectileData: TProjectile,
     type: "dps" | "instant",
     shotsPerSecond: number,
-    playerStatModifiers: TGun["playerStatModifiers"],
+    gun: TGun,
+    reloadToFireRatio: number,
   ): IStat {
     const baseDamage = type === "dps" ? shotsPerSecond * projectileData.damage : projectileData.damage;
     const extraDamage: IStat["details"] = [];
@@ -106,9 +119,19 @@ export class GunService {
       }
     }
 
-    for (const statModifier of playerStatModifiers) {
+    for (const statModifier of gun.playerStatModifiers) {
       if (statModifier.statToBoost === "Damage") {
         extraDamage.push({ value: baseDamage * (statModifier.amount - 1), source: "damageMultiplier" });
+      }
+    }
+
+    if (gun.attribute.auraOnReload) {
+      extraDamage.push({ value: gun.attribute.auraOnReloadDps! * reloadToFireRatio, source: "Aura on reload" });
+      if (gun.attribute.auraOnReloadIgniteDps) {
+        extraDamage.push({
+          value: gun.attribute.auraOnReloadIgniteDps * reloadToFireRatio,
+          source: "Ignite aura on reload",
+        });
       }
     }
 
@@ -141,14 +164,18 @@ export class GunService {
     const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
     const reloadTime = magazineSize === gun.maxAmmo ? 0 : gun.reloadTime;
     const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? 10_000 : gun.maxAmmo;
-    const shotsPerSecond = GunService.getEstimatedShotsPerSecond({
+    const timingInput = {
       reloadTime: gun.reloadTime, // Prize Pistol's edge case (only 1 max ammo)
       magazineSize,
       projectile,
       chargeTime: mode.chargeTime,
-    });
-    const dps = this.getDamage(projData, "dps", shotsPerSecond, gun.playerStatModifiers);
-    const damage = this.getDamage(projData, "instant", shotsPerSecond, gun.playerStatModifiers);
+    };
+    const shotsPerSecond = GunService.getEstimatedShotsPerSecond(timingInput);
+    const timeBetweenShots = GunService.getTimeBetweenShot(timingInput);
+    const reloadToFireRatio = reloadTime / (reloadTime + timeBetweenShots * magazineSize);
+
+    const dps = this.getDamage(projData, "dps", shotsPerSecond, gun, reloadToFireRatio);
+    const damage = this.getDamage(projData, "instant", shotsPerSecond, gun, reloadToFireRatio);
 
     return {
       maxAmmo,

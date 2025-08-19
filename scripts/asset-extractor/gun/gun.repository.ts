@@ -9,6 +9,7 @@ import { restoreCache, saveCache } from "../utils/cache.ts";
 import { performance } from "node:perf_hooks";
 import type { TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
 import type {
+  TAuraOnReloadModifierData,
   TEncounterTrackableData,
   TGunData,
   TGunDto,
@@ -60,6 +61,11 @@ export class GunRepository {
       obj.m_Script.$$scriptPath.endsWith("GunExtraSettingSynergyProcessor.cs.meta")
     );
   }
+  private _isAuraOnReloadModifierData(obj: unknown): obj is TAuraOnReloadModifierData {
+    return (
+      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("AuraOnReloadModifier.cs.meta")
+    );
+  }
   private _isEncounterTrackable(obj: unknown): obj is TEncounterTrackableData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("EncounterTrackable.cs.meta");
   }
@@ -98,6 +104,8 @@ export class GunRepository {
           res.predatorGunController = block;
         } else if (this._isGunExtraSettingSynergyProcessorData(block)) {
           res.gunExtraSettingSynergyProcessor = block;
+        } else if (this._isAuraOnReloadModifierData(block)) {
+          res.auraOnReloadModifier = block;
         } else if (this._isEncounterTrackable(block)) {
           res.encounterTrackable = block;
         }

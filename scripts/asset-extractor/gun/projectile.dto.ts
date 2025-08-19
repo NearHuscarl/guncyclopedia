@@ -26,7 +26,7 @@ const GameActorEffect = z.object({
 const GameActorSpeedEffect = GameActorEffect.extend({
   SpeedMultiplier: z.number(),
 });
-const GameActorHealthEffect = GameActorEffect.extend({
+export const GameActorHealthEffect = GameActorEffect.extend({
   DamagePerSecondToEnemies: z.number(),
 });
 const GameActorFreezeEffect = GameActorEffect.extend({

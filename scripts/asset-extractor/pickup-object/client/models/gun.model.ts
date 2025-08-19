@@ -244,6 +244,11 @@ export const Gun = PickupObject.extend({
      * https://enterthegungeon.fandom.com/wiki/Rad_Gun
      */
     activeReload: z.boolean().optional(),
+
+    auraOnReload: z.boolean().optional(),
+    auraOnReloadRadius: z.number().optional(),
+    auraOnReloadDps: z.number().optional(),
+    auraOnReloadIgniteDps: z.number().optional(),
   }),
   video: z.string().optional(),
   /**

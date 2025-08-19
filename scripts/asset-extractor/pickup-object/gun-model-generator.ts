@@ -428,7 +428,7 @@ export class GunModelGenerator {
     const res: TProjectileMode[] = [];
     // TODO: SpawnProjModifier (The Scrambler, Particulator)
     // TODO: homing bullet
-    // TODO: handle explosionData. See CerebralBoreProjectile.prefab
+    // TODO: ShovelGunModifier
     // TODO: trick gun (Gungeon Ant)
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: round that has explosion on impact count as another source of damage
@@ -469,6 +469,13 @@ export class GunModelGenerator {
       blankReloadRadius:
         gunDto.gun.blankDuringReload || gunDto.gun.reflectDuringReload ? gunDto.gun.blankReloadRadius : undefined,
       activeReload: Boolean(gunDto.gun.LocalActiveReload) || undefined,
+
+      auraOnReload: Boolean(gunDto.auraOnReloadModifier) || undefined,
+      auraOnReloadRadius: gunDto.auraOnReloadModifier?.AuraRadius,
+      auraOnReloadDps: gunDto.auraOnReloadModifier?.DamagePerSecond,
+      auraOnReloadIgniteDps: gunDto.auraOnReloadModifier?.IgnitesEnemies
+        ? gunDto.auraOnReloadModifier?.IgniteEffect.DamagePerSecondToEnemies
+        : undefined,
     };
 
     for (const value of Object.values(attributes)) {

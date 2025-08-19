@@ -2,6 +2,7 @@ import z from "zod/v4";
 import { AssetExternalReference, AssetExternalReferences, BinaryOption } from "../utils/schema.ts";
 import { StatModifierSchema } from "../player/player.dto.ts";
 import { SpriteAnimatorData, SpriteData } from "./component.dto.ts";
+import { GameActorHealthEffect } from "./projectile.dto.ts";
 
 export const ItemQuality = {
   EXCLUDED: -100,
@@ -129,6 +130,13 @@ const GunExtraSettingSynergyProcessorData = z.object({
   ReflectedBulletDamageModifier: z.number(),
 });
 
+const AuraOnReloadModifierData = z.object({
+  AuraRadius: z.number(),
+  DamagePerSecond: z.number(),
+  IgnitesEnemies: BinaryOption,
+  IgniteEffect: GameActorHealthEffect,
+});
+
 const EncounterTrackable = z.object({
   m_journalData: z.object({
     AmmonomiconSprite: z.string().nullable(),
@@ -141,6 +149,7 @@ export const GunDto = z.object({
   spriteAnimator: SpriteAnimatorData,
   predatorGunController: PredatorGunControllerData.optional(),
   gunExtraSettingSynergyProcessor: GunExtraSettingSynergyProcessorData.optional(),
+  auraOnReloadModifier: AuraOnReloadModifierData.optional(),
   encounterTrackable: EncounterTrackable.optional(),
 });
 
@@ -148,6 +157,7 @@ export type TGunDto = z.input<typeof GunDto>;
 export type TGunData = z.input<typeof GunData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
 export type TGunExtraSettingSynergyProcessorData = z.input<typeof GunExtraSettingSynergyProcessorData>;
+export type TAuraOnReloadModifierData = z.input<typeof AuraOnReloadModifierData>;
 export type TEncounterTrackableData = z.input<typeof EncounterTrackable>;
 
 export type TProjectileModule = z.input<typeof ProjectileModule>;

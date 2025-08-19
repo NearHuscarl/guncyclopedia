@@ -27,6 +27,7 @@ import { Boss } from "@/components/icons/boss";
 import { useGunStore } from "../shared/store/gun.store";
 import { DamageMultiplier } from "@/components/icons/damage-multiplier";
 import { Explosion } from "@/components/icons/explosion";
+import { AuraOnReload } from "@/components/icons/aura-on-reload";
 import type { ReactNode } from "react";
 import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -100,7 +101,7 @@ const playerStatsComponentLookup: { [K in TStatToBoost]?: (modifier: TStatModifi
     createPlayerStatsComponent({
       modifier,
       className: "text-[#C77000]",
-      icon: <Boss size={25} />,
+      icon: <Boss size={20} />,
       tooltip: (
         <>
           <strong>Damage To Bosses</strong>
@@ -333,6 +334,24 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
                 Homing radius: <strong>{formatNumber(projectileData.homingRadius!, 0)}</strong>
               </>
             )}
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.attribute.auraOnReload && (
+        <Tooltip>
+          <TooltipTrigger>
+            <div className="flex items-center gap-1">
+              {(gun?.attribute.auraOnReloadRadius || undefined) && (
+                <NumericValue>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</NumericValue>
+              )}
+              <AuraOnReload />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Aura On Reload</strong>
+            <br />
+            While reloading, a circular field surrounds the player that damages nearby enemies within{" "}
+            <strong>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</strong> radius.
           </TooltipContent>
         </Tooltip>
       )}

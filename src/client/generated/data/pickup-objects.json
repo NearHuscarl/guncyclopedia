@@ -49781,9 +49781,14 @@
     "maxAmmo": 300,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasSpecialAbilities"
     ],
-    "attribute": {},
+    "attribute": {
+      "auraOnReload": true,
+      "auraOnReloadRadius": 5,
+      "auraOnReloadDps": 5
+    },
     "colors": [
       "black",
       "gray",
@@ -97980,9 +97985,15 @@
     "maxAmmo": 250,
     "reloadTime": 3,
     "featureFlags": [
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasSpecialAbilities"
     ],
-    "attribute": {},
+    "attribute": {
+      "auraOnReload": true,
+      "auraOnReloadRadius": 5,
+      "auraOnReloadDps": 10,
+      "auraOnReloadIgniteDps": 4
+    },
     "colors": [
       "lightGray",
       "gray",
