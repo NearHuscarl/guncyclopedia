@@ -10,12 +10,14 @@ interface IStat {
   details: {
     source: string;
     value: number;
+    isEstimated?: boolean;
   }[];
 }
 
 export type TGunStats = {
   dps: IStat;
   damage: IStat;
+  force: IStat;
   precision: number;
   range: TRangeLabel;
   maxAmmo: number;
@@ -56,13 +58,13 @@ export class GunService {
     return 1 / timeBetweenShots;
   }
 
-  private static _getTooltip(additionalDamage: TProjectile["additionalDamage"][number], projectileData: TProjectile) {
-    const { source, damage } = additionalDamage;
+  private static _getTooltip(additionalDamage: IStat["details"][number], projectileData: TProjectile) {
+    const { source, value } = additionalDamage;
 
     if (source === "ricochet") {
       const { numberOfBounces, chanceToDieOnBounce, damageMultiplierOnBounce } = projectileData;
       return [
-        `Potential damage from ricochets: <strong>${formatNumber(damage, 2)}</strong><br />`,
+        `Potential damage from ricochets: <strong>${formatNumber(value, 2)}</strong><br />`,
         `- numberOfBounces: <strong>${formatNumber(numberOfBounces ?? 0, 2)}</strong><br />`,
         (chanceToDieOnBounce ?? 0) > 0 &&
           `- chanceToDieOnBounce: <strong>${formatNumber(chanceToDieOnBounce ?? 0, 2)}</strong><br />`,
@@ -72,44 +74,54 @@ export class GunService {
         .filter(Boolean)
         .join("\n");
     } else if (source === "blackhole") {
-      return `Black hole center: <strong>${formatNumber(damage, 2)}</strong>`;
+      return `Black hole center: <strong>${formatNumber(value, 2)}</strong>`;
+    } else if (source === "damageMultiplier") {
+      return `Damage modifier: <strong>${formatNumber(value, 2)}</strong>`;
     }
-    return `${startCase(source)} damage: <strong>${formatNumber(damage, 2)}</strong>`;
+    return `${startCase(source)} damage: <strong>${formatNumber(value, 2)}</strong>`;
   }
 
-  static getDamage(projectileData: TProjectile, type: "dps" | "instant", shotsPerSecond: number) {
+  static getDamage(
+    projectileData: TProjectile,
+    type: "dps" | "instant",
+    shotsPerSecond: number,
+    playerStatModifiers: TGun["playerStatModifiers"],
+  ): IStat {
     const baseDamage = type === "dps" ? shotsPerSecond * projectileData.damage : projectileData.damage;
-    const extraDamage: TProjectile["additionalDamage"] = [];
+    const extraDamage: IStat["details"] = [];
 
     if (type === "dps") {
       for (const d of projectileData.additionalDamage) {
         if (d.type === "instant") {
-          extraDamage.push({ ...d, damage: d.damage * shotsPerSecond });
+          extraDamage.push({ ...d, value: d.damage * shotsPerSecond });
         } else if (d.type === "dps") {
-          extraDamage.push(d);
+          extraDamage.push({ ...d, value: d.damage });
         }
       }
     } else {
       for (const d of projectileData.additionalDamage) {
         if (d.type === "instant") {
-          extraDamage.push(d);
+          extraDamage.push({ ...d, value: d.damage });
         }
+      }
+    }
+
+    for (const statModifier of playerStatModifiers) {
+      if (statModifier.statToBoost === "Damage") {
+        extraDamage.push({ value: baseDamage * (statModifier.amount - 1), source: "damageMultiplier" });
       }
     }
 
     return {
       base: baseDamage,
       total: baseDamage + sumBy(extraDamage, "damage"),
-      segments: [
+      details: [
         {
           source: `Base damage: <strong>${formatNumber(baseDamage, 2)}</strong>`,
           value: baseDamage,
         },
-        ...extraDamage.map((dmg) => {
-          const { isEstimated } = dmg;
-          return { source: this._getTooltip(dmg, projectileData), value: dmg.damage, isEstimated };
-        }),
-      ],
+        ...extraDamage.map((d) => ({ ...d, source: this._getTooltip(d, projectileData) })),
+      ].sort((a, b) => Number(a.isEstimated ?? 0) - Number(b.isEstimated ?? 0)),
     };
   }
 
@@ -135,8 +147,8 @@ export class GunService {
       projectile,
       chargeTime: mode.chargeTime,
     });
-    const dps = this.getDamage(projData, "dps", shotsPerSecond);
-    const damage = this.getDamage(projData, "instant", shotsPerSecond);
+    const dps = this.getDamage(projData, "dps", shotsPerSecond, gun.playerStatModifiers);
+    const damage = this.getDamage(projData, "instant", shotsPerSecond, gun.playerStatModifiers);
 
     return {
       maxAmmo,
@@ -146,15 +158,22 @@ export class GunService {
       precision: ProjectileService.toPrecision(projectile.spread),
       fireRate: shotsPerSecond * 60,
       range: ProjectileService.getRangeLabel(projData),
-      dps: {
-        details: dps.segments,
-        total: dps.total,
-        base: dps.base,
-      },
-      damage: {
-        details: damage.segments,
-        total: damage.total,
-        base: damage.base,
+      dps,
+      damage,
+      force: {
+        details: [
+          { source: `Base force: <strong>${projData.force}</strong>`, value: projData.force },
+          ...(projData.explosionForce
+            ? [
+                {
+                  source: `Explosion force: <strong>${projData.explosionForce}</strong>`,
+                  value: projData.explosionForce,
+                },
+              ]
+            : []),
+        ],
+        total: projData.force + (projData.explosionForce ?? 0),
+        base: projData.force,
       },
       mode,
       projectilePerShot: projectile,

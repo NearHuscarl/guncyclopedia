@@ -1629,6 +1629,7 @@
                 "penetration": 10,
                 "canPenetrateObjects": true,
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -1671,7 +1672,9 @@
     ],
     "maxAmmo": 100,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "red",
@@ -3991,6 +3994,7 @@
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -4033,7 +4037,9 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 0.01,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "yellow",
@@ -4224,6 +4230,7 @@
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -4266,7 +4273,9 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 0.01,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "yellow",
@@ -5866,6 +5875,7 @@
                   }
                 ],
                 "explosionRadius": 2,
+                "explosionForce": 50,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -5908,7 +5918,9 @@
     ],
     "maxAmmo": 60,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -8733,6 +8745,7 @@
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 4,
+                "explosionForce": 100,
                 "animation": {
                   "name": "bomb_projectile",
                   "fps": 8,
@@ -8845,7 +8858,8 @@
     "maxAmmo": 60,
     "reloadTime": 2,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasExplosiveProjectile"
     ],
     "attribute": {},
     "colors": [
@@ -9412,6 +9426,7 @@
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 4,
+                "explosionForce": 100,
                 "animation": {
                   "name": "bomb_gold_projectile",
                   "fps": 8,
@@ -9524,7 +9539,8 @@
     "maxAmmo": 60,
     "reloadTime": 2,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasExplosiveProjectile"
     ],
     "attribute": {},
     "colors": [
@@ -12114,6 +12130,7 @@
                   }
                 ],
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "isHoming": true,
                 "animation": {
                   "name": "Robotech_Exhaust",
@@ -12181,6 +12198,7 @@
     "maxAmmo": 40,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -12263,6 +12281,7 @@
                   }
                 ],
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "isHoming": true,
                 "animation": {
                   "name": "Robotech_Exhaust",
@@ -12330,6 +12349,7 @@
     "maxAmmo": 40,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -13574,6 +13594,7 @@
                 "penetration": 50,
                 "canPenetrateObjects": true,
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "bulletbow_trail_middle",
                   "fps": 12,
@@ -13708,7 +13729,9 @@
     ],
     "maxAmmo": 60,
     "reloadTime": 1,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -33610,9 +33633,14 @@
                     "damage": 6
                   }
                 ],
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 55,
                 "numberOfBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 2,
+                "explosionForce": 8,
+                "explosionFreezeRadius": 3,
                 "animation": {
                   "name": "glacier_projectile",
                   "fps": 10,
@@ -33770,7 +33798,10 @@
     ],
     "maxAmmo": 120,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -39041,6 +39072,7 @@
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 4,
+                "explosionForce": 100,
                 "animation": {
                   "name": "Grenade_Projectile",
                   "fps": 33,
@@ -39428,7 +39460,9 @@
     ],
     "maxAmmo": 60,
     "reloadTime": 0.78,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -44443,6 +44477,7 @@
                 "penetration": 10,
                 "canPenetrateObjects": true,
                 "explosionRadius": 3,
+                "explosionForce": 75,
                 "animation": {
                   "name": "Robotech_Exhaust",
                   "fps": 15,
@@ -44734,6 +44769,7 @@
     "maxAmmo": 50,
     "reloadTime": 2,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -46695,6 +46731,7 @@
                   }
                 ],
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "nikita_missile",
                   "fps": 8,
@@ -46783,7 +46820,9 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "sky",
@@ -46885,6 +46924,7 @@
                   }
                 ],
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -46927,7 +46967,9 @@
     ],
     "maxAmmo": 30,
     "reloadTime": 2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "teal",
@@ -47495,6 +47537,7 @@
                   }
                 ],
                 "explosionRadius": 2,
+                "explosionForce": 75,
                 "animation": {
                   "name": "poxcannon_projectile",
                   "fps": 20,
@@ -47698,7 +47741,9 @@
     ],
     "maxAmmo": 1000,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "green"
@@ -56833,6 +56878,7 @@
                 "penetration": 10,
                 "canPenetrateObjects": true,
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -56876,7 +56922,8 @@
     "maxAmmo": 40,
     "reloadTime": 3,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasExplosiveProjectile"
     ],
     "attribute": {},
     "colors": [
@@ -58059,6 +58106,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.5,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -58554,6 +58602,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.5,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -68280,6 +68329,7 @@
                   }
                 ],
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "player_bulletman_projectile",
                   "fps": 8,
@@ -68483,7 +68533,9 @@
     ],
     "maxAmmo": 30,
     "reloadTime": 1.8,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "black",
@@ -70157,6 +70209,7 @@
                   }
                 ],
                 "explosionRadius": 2,
+                "explosionForce": 15,
                 "animation": {
                   "name": "trash2_gun_projectile_bullet",
                   "fps": 10,
@@ -70367,6 +70420,7 @@
                   }
                 ],
                 "explosionRadius": 2,
+                "explosionForce": 15,
                 "animation": {
                   "name": "trash2_gun_projectile_shell",
                   "fps": 10,
@@ -70571,6 +70625,7 @@
     "maxAmmo": 250,
     "reloadTime": 1.2,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasProjectilePool"
     ],
     "attribute": {},
@@ -74479,6 +74534,7 @@
                 "numberOfBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 1.5,
+                "explosionForce": 10,
                 "animation": {
                   "name": "pinecone_projectile",
                   "fps": 7,
@@ -74996,7 +75052,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "yellow",
@@ -75078,6 +75136,7 @@
                   }
                 ],
                 "explosionRadius": 2,
+                "explosionForce": 15,
                 "isHoming": true,
                 "animation": {
                   "name": "Robotech_Exhaust",
@@ -75145,6 +75204,7 @@
     "maxAmmo": 140,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -87266,6 +87326,7 @@
                 "penetration": 10,
                 "canPenetrateObjects": true,
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "isHoming": true,
                 "homingRadius": 10,
                 "homingAngularVelocity": 540,
@@ -87312,6 +87373,7 @@
     "maxAmmo": 120,
     "reloadTime": 2,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -91670,6 +91732,7 @@
                 "penetration": 10,
                 "canPenetrateObjects": true,
                 "explosionRadius": 3,
+                "explosionForce": 75,
                 "animation": {
                   "name": "Robotech_Exhaust",
                   "fps": 15,
@@ -91735,7 +91798,9 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "sky",
@@ -95597,6 +95662,7 @@
                 "penetration": 0,
                 "canPenetrateObjects": true,
                 "explosionRadius": 4.5,
+                "explosionForce": 100,
                 "animation": {
                   "name": "planet_jupiter",
                   "fps": 10,
@@ -96196,6 +96262,7 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasStatusEffects",
+      "hasExplosiveProjectile",
       "hasProjectilePool"
     ],
     "attribute": {},
@@ -98783,6 +98850,7 @@
                   }
                 ],
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -98841,6 +98909,7 @@
                   }
                 ],
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -98899,6 +98968,7 @@
                   }
                 ],
                 "explosionRadius": 3,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -98941,7 +99011,9 @@
     ],
     "maxAmmo": 70,
     "reloadTime": 2.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -99811,9 +99883,14 @@
                     "damage": 6
                   }
                 ],
+                "freezeChance": 1,
+                "freezeDuration": 10,
+                "freezeAmount": 70,
                 "numberOfBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 2,
+                "explosionForce": 8,
+                "explosionFreezeRadius": 3,
                 "animation": {
                   "name": "chamber_catacomb_projectile",
                   "fps": 8,
@@ -100201,7 +100278,10 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "sky",
@@ -115628,6 +115708,7 @@
                   }
                 ],
                 "explosionRadius": 4.5,
+                "explosionForce": 100,
                 "animation": {
                   "name": "No_Animation",
                   "fps": 0,
@@ -115670,7 +115751,9 @@
     ],
     "maxAmmo": 100,
     "reloadTime": 2.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "lightGray",

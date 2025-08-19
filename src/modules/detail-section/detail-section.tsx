@@ -242,11 +242,11 @@ export function DetailSection() {
             ProjectileService.getSpeed(gunStats.projectile.speed)
           }
         />
-        <StatBar
+        <StatStackBar
           label="Force"
-          value={gunStats.projectile.force}
           max={50}
-          modifier={hoverGunStats.projectile.force - gunStats.projectile.force}
+          segments={gunStats.force.details}
+          modifier={hoverGunStats.force.base - gunStats.force.base}
         />
         <Features gun={selectedGun} className="mt-4" />
         {debug && (

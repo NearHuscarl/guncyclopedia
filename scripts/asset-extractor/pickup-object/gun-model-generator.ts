@@ -234,6 +234,26 @@ export class GunModelGenerator {
       proj.penetration = projDto.pierceProjModifier.penetration;
       proj.canPenetrateObjects = Boolean(projDto.pierceProjModifier.penetratesBreakables);
     }
+    if (projDto.explosiveModifier?.doExplosion) {
+      if (projDto.explosiveModifier.explosionData.doDamage) {
+        proj.explosionRadius = projDto.explosiveModifier.explosionData.damageRadius;
+        proj.additionalDamage.push({
+          source: "explosion",
+          damage: projDto.explosiveModifier.explosionData.damage,
+        });
+      }
+      if (projDto.explosiveModifier.explosionData.doForce) {
+        proj.explosionForce = projDto.explosiveModifier.explosionData.force;
+      }
+      if (projDto.explosiveModifier.explosionData.isFreezeExplosion) {
+        proj.explosionFreezeRadius = projDto.explosiveModifier.explosionData.freezeRadius;
+        proj.freezeChance = 1;
+        proj.freezeDuration = projDto.explosiveModifier.explosionData.freezeEffect.duration;
+        proj.freezeAmount = projDto.explosiveModifier.explosionData.freezeEffect.FreezeAmount;
+        this._featureFlags.add("hasStatusEffects");
+      }
+      this._featureFlags.add("hasExplosiveProjectile");
+    }
     const projScript = projDto.projectile.m_Script.$$scriptPath;
     if (projScript.endsWith("RobotechProjectile.cs.meta") || projScript.endsWith("BeeProjectile.cs.meta")) {
       proj.isHoming = true;

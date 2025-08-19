@@ -10,6 +10,7 @@ import {
   Snowflake,
   Wind,
 } from "lucide-react";
+import clsx from "clsx";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NumericValue } from "./numeric-value";
 import { formatNumber, toPercent } from "@/lib/lang";
@@ -25,6 +26,7 @@ import { Sunglasses } from "@/components/icons/sunglasses";
 import { Boss } from "@/components/icons/boss";
 import { useGunStore } from "../shared/store/gun.store";
 import { DamageMultiplier } from "@/components/icons/damage-multiplier";
+import { Explosion } from "@/components/icons/explosion";
 import type { ReactNode } from "react";
 import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -166,7 +168,7 @@ type TGunAttributesProps = {
 export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesProps) {
   const setUseChargeAnimation = useGunStore((state) => state.setUseChargeAnimation);
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-3">
       {/* Keep the line height consistent */}
       <div className="flex items-center invisible">
         <NumericValue>{0}</NumericValue>
@@ -191,17 +193,6 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
       )}
       {gun?.playerStatModifiers.map((m) => playerStatsComponentLookup[m.statToBoost]?.(m) || null).filter(Boolean)}
       {createStatusEffectAttribute(
-        projectileData.poisonChance,
-        "text-green-500",
-        <Biohazard size={20} color={green500} />,
-        <>
-          <strong>Poison</strong>
-          <br />
-          Projectile has <strong>{toPercent(projectileData.poisonChance || 0)}</strong> chance to poison an enemy for{" "}
-          <strong>{formatNumber(projectileData.poisonDuration || 0, 1)}s</strong>.
-        </>,
-      )}
-      {createStatusEffectAttribute(
         projectileData.charmChance,
         "text-fuchsia-500",
         <Heart size={20} color={fuchsia500} />,
@@ -210,6 +201,40 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <br />
           Projectile has <strong>{toPercent(projectileData.charmChance || 0)}</strong> chance to charm an enemy for{" "}
           <strong>{formatNumber(projectileData.charmDuration || 0, 1)}s</strong>.
+        </>,
+      )}
+      {createStatusEffectAttribute(
+        projectileData.fireChance,
+        "text-red-600",
+        <Flame size={20} color={red600} />,
+        <>
+          <strong>Fire</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.fireChance || 0)}</strong> chance to burn an enemy for{" "}
+          <strong>{formatNumber(projectileData.fireDuration || 0, 1)}s</strong>.
+        </>,
+      )}
+      {createStatusEffectAttribute(
+        projectileData.speedChance,
+        "text-orange-500",
+        <Snail size={20} color={orange500} />,
+        <>
+          <strong>Slow</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.speedChance || 0)}</strong> chance to slow down an enemy by{" "}
+          <strong>{toPercent(1 - projectileData.speedMultiplier!)}</strong> for{" "}
+          <strong>{formatNumber(projectileData.speedDuration || 0, 1)}s</strong>.
+        </>,
+      )}
+      {createStatusEffectAttribute(
+        projectileData.poisonChance,
+        "text-green-500",
+        <Biohazard size={20} color={green500} />,
+        <>
+          <strong>Poison</strong>
+          <br />
+          Projectile has <strong>{toPercent(projectileData.poisonChance || 0)}</strong> chance to poison an enemy for{" "}
+          <strong>{formatNumber(projectileData.poisonDuration || 0, 1)}s</strong>.
         </>,
       )}
       {createStatusEffectAttribute(
@@ -226,17 +251,6 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </>,
       )}
       {createStatusEffectAttribute(
-        projectileData.fireChance,
-        "text-red-600",
-        <Flame size={20} color={red600} />,
-        <>
-          <strong>Fire</strong>
-          <br />
-          Projectile has <strong>{toPercent(projectileData.fireChance || 0)}</strong> chance to burn an enemy for{" "}
-          <strong>{formatNumber(projectileData.fireDuration || 0, 1)}s</strong>.
-        </>,
-      )}
-      {createStatusEffectAttribute(
         projectileData.stunChance,
         "text-slate-400",
         <Stun size={20} color={slate400} />,
@@ -245,18 +259,6 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <br />
           Projectile has <strong>{toPercent(projectileData.stunChance || 0)}</strong> chance to stun an enemy for{" "}
           <strong>{formatNumber(projectileData.stunDuration || 0, 1)}s</strong>.
-        </>,
-      )}
-      {createStatusEffectAttribute(
-        projectileData.speedChance,
-        "text-orange-500",
-        <Snail size={20} color={orange500} />,
-        <>
-          <strong>Slow</strong>
-          <br />
-          Projectile has <strong>{toPercent(projectileData.speedChance || 0)}</strong> chance to slow down an enemy by{" "}
-          <strong>{toPercent(1 - projectileData.speedMultiplier!)}</strong> for{" "}
-          <strong>{formatNumber(projectileData.speedDuration || 0, 1)}s</strong>.
         </>,
       )}
       {createStatusEffectAttribute(
@@ -320,7 +322,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
               {(projectileData.homingRadius || undefined) && (
                 <NumericValue>{formatNumber(projectileData.homingRadius!, 0)}</NumericValue>
               )}
-              <Crosshair size={20} />
+              <Crosshair size={18} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -329,6 +331,32 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             {(projectileData.homingRadius || undefined) && (
               <>
                 Homing radius: <strong>{formatNumber(projectileData.homingRadius!, 0)}</strong>
+              </>
+            )}
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(projectileData.explosionRadius || undefined) && (
+        <Tooltip>
+          <TooltipTrigger>
+            <div className="flex items-center gap-1">
+              <NumericValue className={clsx({ "text-sky-500": projectileData.explosionFreezeRadius })}>
+                {formatNumber(projectileData.explosionRadius!, 1)}
+              </NumericValue>
+              <Explosion
+                size={20}
+                className={clsx({ "[&_path]:fill-sky-500!": projectileData.explosionFreezeRadius })}
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Explosive Projectile</strong>
+            <br />
+            Explosion radius: <strong>{formatNumber(projectileData.explosionRadius!, 1)}</strong>
+            {(projectileData.explosionFreezeRadius || undefined) && (
+              <>
+                <br />
+                Freeze radius: <strong>{formatNumber(projectileData.explosionFreezeRadius!, 1)}</strong>
               </>
             )}
           </TooltipContent>

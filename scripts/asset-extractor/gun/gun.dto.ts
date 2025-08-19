@@ -82,6 +82,9 @@ const GunData = z
     currentGunStatModifiers: z.array(StatModifierSchema),
     passiveStatModifiers: z.array(StatModifierSchema).optional(),
     UsesBossDamageModifier: BinaryOption,
+    /**
+     * Note: this is a separate modifier that is applied on top of `StatModifier.DamageToBosses`.
+     */
     CustomBossDamageModifier: z.number(),
     maxAmmo: z.number(),
     reloadTime: z.number(),

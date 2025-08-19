@@ -39,7 +39,7 @@ const Projectile = z.object({
        * If `canNotStack` is true, all damages with the same source can only be applied once.
        */
       canNotStack: z.boolean().optional(),
-      source: z.enum(["ricochet", "blackhole", "fire", "poison", "damageMultiplier"]),
+      source: z.enum(["ricochet", "blackhole", "fire", "poison", "explosion", "damageMultiplier"]),
       damage: z.number(),
     }),
   ),
@@ -85,6 +85,11 @@ const Projectile = z.object({
    */
   penetration: z.number().optional(),
   canPenetrateObjects: z.boolean().optional(),
+
+  explosionRadius: z.number().optional(),
+  explosionForce: z.number().optional(),
+  explosionFreezeRadius: z.number().optional(),
+
   /**
    * Instantly damage all enemies in the room/viewport
    */
@@ -219,6 +224,7 @@ export const Gun = PickupObject.extend({
       "hasStatusEffects",
       "hasTieredProjectiles",
       "hasHomingProjectiles",
+      "hasExplosiveProjectile",
       "hasProjectilePool",
       "hasSpecialAbilities",
       "hasStatModifiers",

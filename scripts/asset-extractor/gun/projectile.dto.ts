@@ -93,6 +93,29 @@ const PierceProjModifierData = z.object({
   penetratesBreakables: BinaryOption,
 });
 
+const ExplosiveModifierData = z.object({
+  /**
+   * normally true, if false then explosion doesn't deal any damage and only has distortion wave effect (Particulator)
+   */
+  doExplosion: BinaryOption,
+  explosionData: z.object({
+    damageRadius: z.number(),
+    /**
+     * Ice_Giant_Gun_Projectile creates a freezing explosion without dealing any damage
+     */
+    doDamage: BinaryOption,
+    damage: z.number(),
+    doForce: BinaryOption,
+    /**
+     * Stacked with base force.
+     */
+    force: z.number(),
+    isFreezeExplosion: BinaryOption,
+    freezeRadius: z.number(),
+    freezeEffect: GameActorFreezeEffect,
+  }),
+});
+
 const HomingModifierData = z.object({
   HomingRadius: z.number(),
   AngularVelocity: z.number(),
@@ -121,6 +144,7 @@ export const ProjectileDto = z.object({
   spriteAnimator: SpriteAnimatorData.optional(),
   bounceProjModifier: BounceProjModifierData.optional(),
   pierceProjModifier: PierceProjModifierData.optional(),
+  explosiveModifier: ExplosiveModifierData.optional(),
   homingModifier: HomingModifierData.optional(),
   basicBeamController: BasicBeamControllerData.optional(),
   raidenBeamController: RaidenBeamControllerData.optional(),
@@ -131,6 +155,7 @@ export type TProjectileDto = z.input<typeof ProjectileDto>;
 export type TProjectileData = z.infer<typeof ProjectileData>;
 export type TBounceProjModifierData = z.infer<typeof BounceProjModifierData>;
 export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
+export type TExplosiveModifierData = z.infer<typeof ExplosiveModifierData>;
 export type THomingModifierData = z.infer<typeof HomingModifierData>;
 export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;

@@ -169,10 +169,13 @@ export class ProjectileService {
       chanceToDieOnBounce: ["avg", "avg"],
       damageMultiplierOnBounce: ["avg", "avg"],
       penetration: ["avg", "max"],
-      homingRadius: ["avg", "avg"],
+      homingRadius: ["avg", "max"],
       homingAngularVelocity: ["avg", "avg"],
       beamChargeTime: ["max", "max"],
       beamStatusEffectChancePerSecond: ["max", "max"],
+      explosionForce: ["avg", "sum"],
+      explosionRadius: ["avg", "max"],
+      explosionFreezeRadius: ["avg", "max"],
     };
 
     // All boolean keys that are aggregated with logical‐AND.

@@ -11,6 +11,7 @@ import type {
   TBasicBeamControllerData,
   TBlackHoleDoerData,
   TBounceProjModifierData,
+  TExplosiveModifierData,
   THomingModifierData,
   TPierceProjModifierData,
   TProjectileData,
@@ -53,6 +54,9 @@ export class ProjectileRepository {
   }
   private _isPierceModifierData(obj: unknown): obj is TPierceProjModifierData {
     return this._containsScript(obj, AssetService.PIERCE_PROJ_MODIFIER_SCRIPT);
+  }
+  private _isExplosiveModifierData(obj: unknown): obj is TExplosiveModifierData {
+    return this._containsScript(obj, "ExplosiveModifier.cs.meta");
   }
   private _isHomingModifierData(obj: unknown): obj is THomingModifierData {
     return this._containsScript(obj, AssetService.HOMING_MODIFIER_SCRIPT);
@@ -110,6 +114,8 @@ export class ProjectileRepository {
           res.bounceProjModifier = block;
         } else if (this._isPierceModifierData(block)) {
           res.pierceProjModifier = block;
+        } else if (this._isExplosiveModifierData(block)) {
+          res.explosiveModifier = block;
         } else if (this._isHomingModifierData(block)) {
           res.homingModifier = block;
         } else if (this._isBasicBeamControllerData(block)) {
