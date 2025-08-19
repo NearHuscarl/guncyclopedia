@@ -16472,11 +16472,19 @@
                 "speed": 20,
                 "range": 1000,
                 "force": 8,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "source": "explosion",
+                    "damage": 25
+                  }
+                ],
                 "stunChance": 1,
                 "stunDuration": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
+                "explosionRadius": 2,
+                "explosionForce": 25,
                 "isHoming": true,
                 "animation": {
                   "name": "cerebral_bore_projectile",
@@ -16567,6 +16575,7 @@
     "maxAmmo": 75,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
@@ -16664,11 +16673,19 @@
                 "speed": 20,
                 "range": 1000,
                 "force": 8,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "source": "explosion",
+                    "damage": 25
+                  }
+                ],
                 "stunChance": 1,
                 "stunDuration": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
+                "explosionRadius": 2,
+                "explosionForce": 25,
                 "isHoming": true,
                 "animation": {
                   "name": "cerebral_bore_projectile",
@@ -16766,11 +16783,19 @@
                 "speed": 20,
                 "range": 1000,
                 "force": 8,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "source": "explosion",
+                    "damage": 25
+                  }
+                ],
                 "stunChance": 1,
                 "stunDuration": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
+                "explosionRadius": 2,
+                "explosionForce": 25,
                 "isHoming": true,
                 "animation": {
                   "name": "cerebral_bore_projectile",
@@ -16861,6 +16886,7 @@
     "maxAmmo": 75,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],
@@ -106150,11 +106176,19 @@
                 "speed": 20,
                 "range": 1000,
                 "force": 8,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "source": "explosion",
+                    "damage": 25
+                  }
+                ],
                 "stunChance": 1,
                 "stunDuration": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
+                "explosionRadius": 2,
+                "explosionForce": 25,
                 "isHoming": true,
                 "animation": {
                   "name": "cerebral_bore_projectile",
@@ -106245,6 +106279,7 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [
+      "hasExplosiveProjectile",
       "hasStatusEffects",
       "hasHomingProjectiles"
     ],

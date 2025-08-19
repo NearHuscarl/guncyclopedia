@@ -11,6 +11,7 @@ import type {
   TBasicBeamControllerData,
   TBlackHoleDoerData,
   TBounceProjModifierData,
+  TCerebralBoreProjectileData,
   TExplosiveModifierData,
   THomingModifierData,
   TPierceProjModifierData,
@@ -48,6 +49,9 @@ export class ProjectileRepository {
 
   private _isProjectileData(obj: unknown): obj is TProjectileData {
     return this._containsScript(obj, AssetService.PROJECTILE_SCRIPT);
+  }
+  isCerebralBoreProjectile(obj: unknown): obj is TCerebralBoreProjectileData {
+    return this._containsScript(obj, "CerebralBoreProjectile.cs.meta");
   }
   private _isBounceModifierData(obj: unknown): obj is TBounceProjModifierData {
     return this._containsScript(obj, AssetService.BOUNCE_PROJ_MODIFIER_SCRIPT);

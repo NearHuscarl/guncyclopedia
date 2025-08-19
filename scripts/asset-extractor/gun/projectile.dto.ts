@@ -36,52 +36,6 @@ const GameActorCheeseEffect = GameActorEffect.extend({
   CheeseAmount: z.number(),
 });
 
-const ProjectileData = MonoBehaviour.extend({
-  ignoreDamageCaps: BinaryOption,
-  baseData: z.object({
-    damage: z.number(),
-    speed: z.number(),
-    range: z.number(),
-    force: z.number(),
-  }),
-  damageTypes: z.enum(CoreDamageType),
-  damagesWalls: BinaryOption,
-
-  AppliesPoison: BinaryOption,
-  PoisonApplyChance: Percentage,
-  healthEffect: GameActorHealthEffect,
-
-  AppliesSpeedModifier: BinaryOption,
-  SpeedApplyChance: z.number(), // not Percentage because of a malformed projectile
-  speedEffect: GameActorSpeedEffect,
-
-  AppliesCharm: BinaryOption,
-  CharmApplyChance: Percentage,
-  charmEffect: GameActorEffect,
-
-  AppliesFreeze: BinaryOption,
-  FreezeApplyChance: Percentage,
-  freezeEffect: GameActorFreezeEffect,
-
-  AppliesFire: BinaryOption,
-  FireApplyChance: Percentage,
-  fireEffect: GameActorHealthEffect,
-
-  AppliesStun: BinaryOption,
-  StunApplyChance: Percentage,
-  AppliedStunDuration: z.number(),
-
-  AppliesCheese: BinaryOption,
-  CheeseApplyChance: Percentage,
-  cheeseEffect: GameActorCheeseEffect,
-
-  /**
-   * `BoomerangProjectile` subclass
-   */
-  StunDuration: z.number().optional(),
-  // TODO: what the heck is bleed effect?
-});
-
 const BounceProjModifierData = z.object({
   numberOfBounces: z.number(),
   chanceToDieOnBounce: z.number(),
@@ -137,9 +91,59 @@ const BlackHoleDoerData = z.object({
   damageToEnemiesPerSecond: z.number(),
 });
 
+const ProjectileData = MonoBehaviour.extend({
+  ignoreDamageCaps: BinaryOption,
+  baseData: z.object({
+    damage: z.number(),
+    speed: z.number(),
+    range: z.number(),
+    force: z.number(),
+  }),
+  damageTypes: z.enum(CoreDamageType),
+  damagesWalls: BinaryOption,
+
+  AppliesPoison: BinaryOption,
+  PoisonApplyChance: Percentage,
+  healthEffect: GameActorHealthEffect,
+
+  AppliesSpeedModifier: BinaryOption,
+  SpeedApplyChance: z.number(), // not Percentage because of a malformed projectile
+  speedEffect: GameActorSpeedEffect,
+
+  AppliesCharm: BinaryOption,
+  CharmApplyChance: Percentage,
+  charmEffect: GameActorEffect,
+
+  AppliesFreeze: BinaryOption,
+  FreezeApplyChance: Percentage,
+  freezeEffect: GameActorFreezeEffect,
+
+  AppliesFire: BinaryOption,
+  FireApplyChance: Percentage,
+  fireEffect: GameActorHealthEffect,
+
+  AppliesStun: BinaryOption,
+  StunApplyChance: Percentage,
+  AppliedStunDuration: z.number(),
+
+  AppliesCheese: BinaryOption,
+  CheeseApplyChance: Percentage,
+  cheeseEffect: GameActorCheeseEffect,
+
+  /**
+   * `BoomerangProjectile` subclass
+   */
+  StunDuration: z.number().optional(),
+  // TODO: what the heck is bleed effect?
+});
+
+const CerebralBoreProjectileData = ProjectileData.extend({
+  explosionData: ExplosiveModifierData.shape.explosionData,
+});
+
 export const ProjectileDto = z.object({
   id: z.string(),
-  projectile: ProjectileData,
+  projectile: z.union([CerebralBoreProjectileData, ProjectileData]),
   sprite: SpriteData.optional(),
   spriteAnimator: SpriteAnimatorData.optional(),
   bounceProjModifier: BounceProjModifierData.optional(),
@@ -153,6 +157,7 @@ export const ProjectileDto = z.object({
 
 export type TProjectileDto = z.input<typeof ProjectileDto>;
 export type TProjectileData = z.infer<typeof ProjectileData>;
+export type TCerebralBoreProjectileData = z.infer<typeof CerebralBoreProjectileData>;
 export type TBounceProjModifierData = z.infer<typeof BounceProjModifierData>;
 export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
 export type TExplosiveModifierData = z.infer<typeof ExplosiveModifierData>;
