@@ -115,6 +115,7 @@ export class ProjectileService {
       }
     }
 
+    // post-processing
     for (const key in additionaDmgLookup) {
       const chance = sums[`${key}Chance`];
       if (chance !== undefined && chance < 1) {

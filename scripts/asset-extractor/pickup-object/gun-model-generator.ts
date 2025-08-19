@@ -23,11 +23,10 @@ import { SpriteRepository } from "../sprite/sprite.repository.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
-import type { TVolleyDto } from "../gun/volley.dto.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
 import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import type { TAnimation } from "./client/models/animation.model.ts";
-import type { TSpriteAnimatorData } from "../gun/component.dto.ts";
+import type { TSpriteAnimatorDto } from "../sprite/sprite-animator.dto.ts";
 
 const gunQualityTextLookup = invert(ItemQuality);
 const gunClassTextLookup = invert(GunClass);
@@ -114,9 +113,9 @@ export class GunModelGenerator {
     return expectedBounceDamage;
   }
 
-  private _getGunVolley(gunDto: TGunDto): TVolleyDto | undefined {
+  private _getProjectileModules(gunDto: TGunDto): { projectileModules: TProjectileModule[]; modulesAreTiers: boolean } {
     if (!this._assetService.referenceExists(gunDto.gun.rawVolley)) {
-      return undefined;
+      return { projectileModules: [gunDto.gun.singleModule], modulesAreTiers: false };
     }
 
     const volleyDto = this._volleyRepo.getVolley(gunDto.gun.rawVolley);
@@ -125,7 +124,11 @@ export class GunModelGenerator {
         `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${gunDto.gun.rawVolley.guid} not found in VolleyRepository.`,
       );
     }
-    return volleyDto;
+
+    return {
+      projectileModules: volleyDto.projectiles,
+      modulesAreTiers: Boolean(volleyDto?.ModulesAreTiers),
+    };
   }
 
   private _getProjectile(gunDto: TGunDto, assetReference: Required<TAssetExternalReference>) {
@@ -357,9 +360,7 @@ export class GunModelGenerator {
   }
 
   private _buildProjectileModes(gunDto: TGunDto): TProjectileMode[] {
-    const volleyDto = this._getGunVolley(gunDto);
-    const modulesAreTiers = Boolean(volleyDto?.ModulesAreTiers);
-    const projectileModules = volleyDto ? volleyDto.projectiles : [gunDto.gun.singleModule];
+    const { modulesAreTiers, projectileModules } = this._getProjectileModules(gunDto);
 
     // see Gun.cs#DefaultModule. Some attributes within the module like numberOfShotsInClip/shootStyle
     // should be tied to a gun, not the projectile data. DefaultModule is used to retrieve those attributes
@@ -456,9 +457,7 @@ export class GunModelGenerator {
     return attributes;
   }
 
-  private _buildAnimation(spriteAnimatorData: TSpriteAnimatorData, debugId: string) {
-    const { library, defaultClipId } = spriteAnimatorData;
-    const clip = this._spriteAnimatorRepo.getClipByIndex(library, defaultClipId);
+  private _buildAnimation(clip: TSpriteAnimatorDto["clips"][number], debugId: string) {
     const frames: TAnimation["frames"] = [];
     let texturePath = "";
 
@@ -498,7 +497,9 @@ export class GunModelGenerator {
 
   private _buildProjectileAnimation(projectileDto: TProjectileDto): TAnimation | undefined {
     if (projectileDto.spriteAnimator) {
-      return this._buildAnimation(projectileDto.spriteAnimator, `projectile id: ${projectileDto.id}`);
+      const { library, defaultClipId } = projectileDto.spriteAnimator;
+      const clip = this._spriteAnimatorRepo.getClipByIndex(library, defaultClipId);
+      return this._buildAnimation(clip, `projectile id: ${projectileDto.id}`);
     }
     if (projectileDto.sprite) {
       const res = this._spriteService.getSpriteSync(
@@ -527,7 +528,27 @@ export class GunModelGenerator {
     console.log(chalk.yellow(`No sprite animator or sprite found for projectile ${chalk.green(projectileDto.id)}`));
   }
 
-  private async _buildGunAnimation(gunDto: TGunDto): Promise<{ colors: string[]; animation: TAnimation }> {
+  private async _buildGunChargeAnimation(gunDto: TGunDto): Promise<TAnimation | undefined> {
+    const { projectileModules } = this._getProjectileModules(gunDto);
+    const isChargeGun = projectileModules.some(
+      (m) =>
+        m.chargeProjectiles.some((m) => m.ChargeTime > 0) ||
+        m.projectiles.filter(this._assetService.referenceExists).some((m) => {
+          const projDto = this._getProjectile(gunDto, m);
+          return projDto?.basicBeamController?.usesChargeDelay && projDto?.basicBeamController?.chargeDelay;
+        }),
+    );
+    if (!isChargeGun) return;
+
+    const animationName = gunDto.gun.chargeAnimation ?? gunDto.gun.shootAnimation;
+    if (!animationName) return;
+    const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, animationName);
+    if (!clip) return;
+
+    return this._buildAnimation(clip, "");
+  }
+
+  private async _buildGunIdleAnimation(gunDto: TGunDto): Promise<{ colors: string[]; animation: TAnimation }> {
     const animationName = gunDto.gun.idleAnimation;
     let colors: string[] = [];
 
@@ -627,6 +648,28 @@ export class GunModelGenerator {
     };
   }
 
+  private _buildStatModifiers(gunDto: TGunDto): TGun["playerStatModifiers"] {
+    const allStatModifiers = gunDto.gun.currentGunStatModifiers.concat(gunDto.gun.passiveStatModifiers ?? []);
+
+    // hidden stat modifier not presented anywhere on the wiki
+    if (gunDto.gun.UsesBossDamageModifier === 1) {
+      allStatModifiers.push({
+        statToBoost: StatModifier.StatType.DamageToBosses,
+        modifyType: StatModifier.ModifyMethod.MULTIPLICATIVE,
+        amount: gunDto.gun.CustomBossDamageModifier >= 0 ? gunDto.gun.CustomBossDamageModifier : 0.8,
+      });
+    }
+    if (allStatModifiers.length > 0) {
+      this._featureFlags.add("hasStatModifiers");
+    }
+
+    return allStatModifiers.map((m) => ({
+      statToBoost: statTypeTextLookup[m.statToBoost] as keyof typeof StatModifier.StatType,
+      modifyType: modifyMethodTextLookup[m.modifyType] as keyof typeof StatModifier.ModifyMethod,
+      amount: m.amount,
+    }));
+  }
+
   async generate(entry: TEnconterDatabase["Entries"][number]) {
     try {
       this._featureFlags.clear();
@@ -650,18 +693,9 @@ export class GunModelGenerator {
       if (entry.isInfiniteAmmoGun) this._featureFlags.add("hasInfiniteAmmo");
       if (entry.doesntDamageSecretWalls) this._featureFlags.add("doesntDamageSecretWalls");
 
-      const allStatModifiers = gunDto.gun.currentGunStatModifiers.concat(gunDto.gun.passiveStatModifiers ?? []);
+      const { colors, animation: idleAnimation } = await this._buildGunIdleAnimation(gunDto);
+      const chargeAnimation = await this._buildGunChargeAnimation(gunDto);
 
-      if (gunDto.gun.UsesBossDamageModifier === 1) {
-        allStatModifiers.push({
-          statToBoost: StatModifier.StatType.DamageToBosses,
-          modifyType: StatModifier.ModifyMethod.MULTIPLICATIVE,
-          amount: gunDto.gun.CustomBossDamageModifier >= 0 ? gunDto.gun.CustomBossDamageModifier : 0.8,
-        });
-      }
-      if (allStatModifiers.length > 0) {
-        this._featureFlags.add("hasStatModifiers");
-      }
       const gun: TGun = {
         ...texts,
         type: "gun",
@@ -669,17 +703,17 @@ export class GunModelGenerator {
         gunNameInternal: gunDto.gun.gunName,
         quality: gunQualityTextLookup[gunDto.gun.quality] as keyof typeof ItemQuality,
         gunClass: gunClassTextLookup[gunDto.gun.gunClass] as keyof typeof GunClass,
-        playerStatModifiers: allStatModifiers.map((m) => ({
-          statToBoost: statTypeTextLookup[m.statToBoost] as keyof typeof StatModifier.StatType,
-          modifyType: modifyMethodTextLookup[m.modifyType] as keyof typeof StatModifier.ModifyMethod,
-          amount: m.amount,
-        })),
+        playerStatModifiers: this._buildStatModifiers(gunDto),
         maxAmmo: gunDto.gun.maxAmmo,
         reloadTime: gunDto.gun.reloadTime,
         featureFlags: [],
         projectileModes: this._buildProjectileModes(gunDto),
         attribute: this._buildAttribute(gunDto),
-        ...(await this._buildGunAnimation(gunDto)),
+        colors,
+        animation: {
+          idle: idleAnimation,
+          charge: chargeAnimation,
+        },
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       };
 

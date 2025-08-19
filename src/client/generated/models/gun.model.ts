@@ -39,7 +39,7 @@ const Projectile = z.object({
        * If `canNotStack` is true, all damages with the same source can only be applied once.
        */
       canNotStack: z.boolean().optional(),
-      source: z.enum(["ricochet", "blackhole", "fire", "poison"]),
+      source: z.enum(["ricochet", "blackhole", "fire", "poison", "damageMultiplier"]),
       damage: z.number(),
     }),
   ),
@@ -244,7 +244,10 @@ export const Gun = PickupObject.extend({
    * List of dominant colors of the sprite. The first color is the most dominant (primary), followed by secondary, tertiary, etc.
    */
   colors: z.array(z.string()),
-  animation: Animation,
+  animation: z.object({
+    idle: Animation,
+    charge: Animation.optional(),
+  }),
 });
 
 export type TProjectile = z.input<typeof Projectile>;

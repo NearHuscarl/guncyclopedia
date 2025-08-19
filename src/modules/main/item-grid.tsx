@@ -65,7 +65,7 @@ export function ItemGrid() {
             "bg-primary!": selectedId === gun.id,
           })}
         >
-          <AnimatedSprite animation={gun.animation} scale={2.5} />
+          <AnimatedSprite animation={gun.animation.idle} scale={2.5} />
         </Button>
       ))}
     </div>

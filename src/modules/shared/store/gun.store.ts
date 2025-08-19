@@ -10,6 +10,8 @@ type TGunState = {
   createGunLookup: (guns: TGun[]) => void;
   hoverGunId: number;
   setHoverGun: (id: number) => void;
+  useChargeAnimation: boolean;
+  setUseChargeAnimation: (useChargeAnimation: boolean) => void;
 };
 
 export const useGunStore = create<TGunState>()(
@@ -38,6 +40,16 @@ export const useGunStore = create<TGunState>()(
           },
           undefined,
           { type: "setHoverGun", id },
+        );
+      },
+      useChargeAnimation: false,
+      setUseChargeAnimation: (useChargeAnimation) => {
+        set(
+          (state) => {
+            state.useChargeAnimation = useChargeAnimation;
+          },
+          undefined,
+          { type: "setUseChargeAnimation", useChargeAnimation },
         );
       },
     })),

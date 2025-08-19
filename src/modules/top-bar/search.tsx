@@ -68,7 +68,7 @@ export function Search() {
           <div className="flex items-center gap-2">
             {selectedGun && (
               <div className="w-12 flex justify-center">
-                <AnimatedSprite key={selectedGun.id} animation={selectedGun.animation} scale={1} />
+                <AnimatedSprite key={selectedGun.id} animation={selectedGun.animation.idle} scale={1} />
               </div>
             )}
             {selectedGun?.name ?? "Find gun..."}
@@ -95,7 +95,7 @@ export function Search() {
                     }}
                   >
                     <div className="w-12 flex justify-center">
-                      <AnimatedSprite animation={gun.animation} scale={1} />
+                      <AnimatedSprite animation={gun.animation.idle} scale={1} />
                     </div>
                     {getNameComponent(gun, gunLookup)}
                     <Check className={cn("ml-auto", selectedGun.id === gun.id ? "opacity-100" : "opacity-0")} />

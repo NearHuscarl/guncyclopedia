@@ -21,6 +21,28 @@ import { AmmoSet } from "./ammo-set";
 import { GunAttributes } from "./gun-attributes";
 import { ColorItem } from "../top-bar/shared/components/color-item";
 import { ShootStyle } from "./shoot-style";
+import { useGunStore } from "../shared/store/gun.store";
+import type { TGun } from "@/client/generated/models/gun.model";
+
+function MainGunSprite({ gun, hoverGun }: { gun: TGun; hoverGun?: TGun }) {
+  const useChargeAnimation = useGunStore((state) => state.useChargeAnimation);
+  return (
+    <div className="flex items-center justify-center h-36 gap-10">
+      <AnimatedSprite
+        key={`${gun.id}-${useChargeAnimation ? "charge" : "idle"}`}
+        // TODO: moonscraper charge animation doesn't exist
+        animation={useChargeAnimation ? (gun.animation.charge ?? gun.animation.idle) : gun.animation.idle}
+        scale={6}
+      />
+      {hoverGun && hoverGun.id !== gun.id && (
+        <>
+          <ArrowLeftRight className="fill-primary" />
+          <AnimatedSprite key={hoverGun.id} animation={hoverGun.animation.idle} scale={6} />
+        </>
+      )}
+    </div>
+  );
+}
 
 export function DetailSection() {
   const gun = useSelectedGun();
@@ -91,15 +113,7 @@ export function DetailSection() {
             </Button>
           ))}
         </div>
-        <div className="flex items-center justify-center h-36 gap-10">
-          <AnimatedSprite key={gun.id} animation={gun.animation} scale={6} />
-          {hoverGun && hoverGun.id !== gun.id && (
-            <>
-              <ArrowLeftRight className="fill-primary" />
-              <AnimatedSprite key={hoverGun.id} animation={hoverGun.animation} scale={6} />
-            </>
-          )}
-        </div>
+        <MainGunSprite gun={gun} hoverGun={hoverGun} />
         <blockquote className="flex justify-center w-full italic text-muted-foreground mb-4 font-sans font-semibold">
           {JSON.stringify(selectedGun.quote || "...")}
         </blockquote>
@@ -124,7 +138,7 @@ export function DetailSection() {
           </div>
           <div className="flex justify-between items-baseline">
             <ShootStyle value={selectedStats.shootStyle} />
-            <GunAttributes projectileData={selectedStats.projectile} gun={selectedGun} />
+            <GunAttributes projectileData={selectedStats.projectile} gun={selectedGun} gunStats={selectedStats} />
           </div>
         </div>
       </div>

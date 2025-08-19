@@ -1,4 +1,15 @@
-import { Biohazard, Crosshair, Flame, Heart, Receipt, Skull, Snail, Snowflake, Wind } from "lucide-react";
+import {
+  BatteryCharging,
+  Biohazard,
+  Crosshair,
+  Flame,
+  Heart,
+  Receipt,
+  Skull,
+  Snail,
+  Snowflake,
+  Wind,
+} from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NumericValue } from "./numeric-value";
 import { formatNumber, toPercent } from "@/lib/lang";
@@ -12,9 +23,11 @@ import { BlankDuringReload } from "@/components/icons/blank-during-reload";
 import { ActiveReload } from "@/components/icons/active-reload";
 import { Sunglasses } from "@/components/icons/sunglasses";
 import { Boss } from "@/components/icons/boss";
-import { Handfist } from "@/components/icons/handfist";
+import { useGunStore } from "../shared/store/gun.store";
+import { DamageMultiplier } from "@/components/icons/damage-multiplier";
 import type { ReactNode } from "react";
 import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
+import type { TGunStats } from "@/client/service/gun.service";
 
 type TStatModifier = TGun["playerStatModifiers"][number];
 type TStatToBoost = TStatModifier["statToBoost"];
@@ -111,18 +124,17 @@ const playerStatsComponentLookup: { [K in TStatToBoost]?: (modifier: TStatModifi
         </>
       ),
     }),
-  // TODO: apply extra damage
   Damage: (modifier) =>
     createPlayerStatsComponent({
       modifier,
       className: "text-teal-500",
-      icon: <Handfist size={20} className="stroke-teal-500" />,
+      icon: <DamageMultiplier size={20} className="stroke-teal-500" />,
       tooltip: (
         <>
-          <strong>Health</strong>
+          <strong>Damage</strong>
           <br />
           <span>
-            Adds <strong>{modifier.amount}</strong> empty heart container.
+            Increase base damage by <strong>{toPercent(modifier.amount - 1)}</strong>.
           </span>
         </>
       ),
@@ -136,7 +148,7 @@ function createStatusEffectAttribute(chance: number | undefined, twColor: string
     <Tooltip>
       <TooltipTrigger>
         <div className="flex items-center gap-0.5">
-          <NumericValue className={twColor}>{toPercent(chance)}</NumericValue>
+          {chance < 1 && <NumericValue className={twColor}>{toPercent(chance)}</NumericValue>}
           {icon}
         </div>
       </TooltipTrigger>
@@ -148,16 +160,35 @@ function createStatusEffectAttribute(chance: number | undefined, twColor: string
 type TGunAttributesProps = {
   projectileData: TProjectile;
   gun?: TGun;
+  gunStats?: TGunStats;
 };
 
-export function GunAttributes({ projectileData, gun }: TGunAttributesProps) {
+export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesProps) {
+  const setUseChargeAnimation = useGunStore((state) => state.setUseChargeAnimation);
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-2">
       {/* Keep the line height consistent */}
       <div className="flex items-center invisible">
         <NumericValue>{0}</NumericValue>
         <Bounce color="white" size={20} />
       </div>
+      {(gunStats?.mode.chargeTime || undefined) && (
+        <Tooltip>
+          <TooltipTrigger>
+            <div
+              className="flex items-center gap-1"
+              onMouseEnter={() => setUseChargeAnimation(true)}
+              onMouseLeave={() => setUseChargeAnimation(false)}
+            >
+              <NumericValue className="text-pink-500">{formatNumber(gunStats?.mode.chargeTime ?? 0, 1)}s</NumericValue>
+              <BatteryCharging className="text-pink-500" />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Charge Time</strong>
+          </TooltipContent>
+        </Tooltip>
+      )}
       {gun?.playerStatModifiers.map((m) => playerStatsComponentLookup[m.statToBoost]?.(m) || null).filter(Boolean)}
       {createStatusEffectAttribute(
         projectileData.poisonChance,

@@ -101,6 +101,8 @@ const GunData = z
       reloadSpeedMultiplier: z.number(),
     }),
     idleAnimation: z.string().nullable(),
+    shootAnimation: z.string().nullable(),
+    chargeAnimation: z.string().nullable(),
     LocalActiveReload: BinaryOption,
   })
   .refine(
