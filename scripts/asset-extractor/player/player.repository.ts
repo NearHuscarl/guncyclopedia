@@ -37,43 +37,56 @@ export class PlayerRepository {
    *
    * Item ids serializer algorithm:
    * 1. Use little endian: 2d030000 -> 0x0000032d -> 813 -> id of item
-   * 2. If containing giberrish: )e010000 -> look at ')' on keyboard (9) -> 0x0000019e -> 414
+   * 2. If encountering unkown character: map to the correct hexadecimal char
+   *    from reverse engineering the source code.
    *
    * Examples:
    * ```
    * "4d000000"         -> [77]
    * "62010000"         -> [354]
-   * ")e010000"         -> [414]     // ')' -> '9'  => "9e010000" -> 0x0000019e
-   * "(c020000,a000000" -> [652, 10] // '(' -> '8', pad "c020000" -> "0c020000"
-   * "5000000002000000" -> [80, 2]   // two back-to-back 4-byte LE ints
+   * "4d00000062010000" -> [77, 354]
    * ```
    */
   private _decodeItemIds(input: string) {
     if (!input) return [];
 
-    const numLookup = {
-      ")": 0,
-      "(": 9,
-      "*": 8,
-      "&": 7,
-      "^": 6,
-      "%": 5,
-      $: 4,
-      "#": 3,
-      "@": 2,
-      "!": 1,
+    const hexaCharacterLookup = {
+      "(": 8,
+      ")": 9,
+      "*": "A",
+      "+": "B",
+      ",": "C",
+      "-": "D",
     };
 
-    // 1) Normalize: replace known '“gibberish with intended hex digits.
-    //    Based on your keyboard note: ')' => 9, '(' => 8
+    // Tested characters:
+    // - Pilot (PlayerRogue) https://enterthegungeon.fandom.com/wiki/The_Pilot
+    // - Robot (PlayerRobot) https://enterthegungeon.fandom.com/wiki/The_Robot
+    // - Ninja (PlayerNinja) https://enterthegungeon.fandom.com/wiki/The_Ninja
+    // - Marine (PlayerMarine) https://enterthegungeon.fandom.com/wiki/The_Marine
+    // - Lamey (PlayerLamey) https://enterthegungeon.fandom.com/wiki/Lamey
+    //   -> Correct but why does https://enterthegungeon.fandom.com/wiki/Lamey_Gun use the Unfinished Gun sprite?
+    // - Gunslinger (PlayerGunslinger) https://enterthegungeon.fandom.com/wiki/The_Gunslinger
+    // - Hunter (PlayerGuide) https://enterthegungeon.fandom.com/wiki/The_Hunter
+    // - Eevee (PlayerEevee) https://enterthegungeon.fandom.com/wiki/Eevee
+    // - Cosmonaut (PlayerCosmonaut) https://enterthegungeon.fandom.com/wiki/The_Cosmonaut
+    // - Cultist (PlayerCoopCultist) https://enterthegungeon.fandom.com/wiki/The_Cultist
+    // - Convict (PlayerConvict) https://enterthegungeon.fandom.com/wiki/The_Convict
+    // - Bullet (PlayerBullet) https://enterthegungeon.fandom.com/wiki/The_Bullet
+
+    // 1) Normalize: replace unknown character with the correct hexa char.
     const numArrStr = input
       .trim()
       .split("")
-      .map((char) => numLookup[char] ?? char)
+      .map((char) => {
+        if (/[0-9a-f]/.test(char)) return char;
+        if (hexaCharacterLookup[char] !== undefined) return hexaCharacterLookup[char];
+        throw new Error(`${char} from "${input}" is not mapped!`);
+      })
       .join("");
 
-    // 2) If commas exist, split; otherwise chunk every 8 chars.
-    const tokens = numArrStr.includes(",") ? numArrStr.split(",").filter(Boolean) : (numArrStr.match(/.{1,8}/g) ?? []);
+    // 2) split into chunks of 8 chars.
+    const tokens = numArrStr.match(/.{1,8}/g) ?? [];
 
     // 3) Clean each token to valid hex, pad to 8 (left), then LE->int
     const out: number[] = [];
@@ -86,7 +99,9 @@ export class PlayerRepository {
       if (hex.length > 8) hex = hex.slice(-8);
 
       // Validate again; skip if now empty.
-      if (!/^[0-9a-f]{8}$/.test(hex)) continue;
+      if (!/^[0-9a-f]{8}$/.test(hex)) {
+        throw new Error(`"${hex}" is not a valid hexadecimal number.`);
+      }
 
       // Little-endian 4-byte to int: reverse byte pairs.
       const be = hex.slice(6, 8) + hex.slice(4, 6) + hex.slice(2, 4) + hex.slice(0, 2);
@@ -127,6 +142,7 @@ export class PlayerRepository {
         const $$id = this._getPlayerKey({ $$scriptPath: metaFilePath });
         block.startingActiveItemIds = this._decodeItemIds(block.startingActiveItemIds.toString());
         block.startingPassiveItemIds = this._decodeItemIds(block.startingPassiveItemIds.toString());
+        block.startingAlternateGunIds = this._decodeItemIds(block.startingAlternateGunIds.toString());
         block.startingGunIds = this._decodeItemIds(block.startingGunIds.toString());
 
         return PlayerDto.parse({ ...block, $$id });

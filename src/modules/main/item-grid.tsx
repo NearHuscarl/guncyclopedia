@@ -53,7 +53,7 @@ export function ItemGrid() {
   }
 
   return (
-    <div className="flex flex-wrap gap-2 p-2 items-center content-start" onMouseLeave={() => setHoverGun(-1)}>
+    <div className="flex flex-wrap gap-2 items-center content-start" onMouseLeave={() => setHoverGun(-1)}>
       {guns.map((gun) => (
         <Button
           key={gun.id}
