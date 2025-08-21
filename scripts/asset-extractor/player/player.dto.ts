@@ -1,4 +1,6 @@
 import z from "zod/v4";
+import { AssetExternalReference } from "../utils/schema.ts";
+import { SpriteData } from "../asset/component.dto.ts";
 
 export const StatType = {
   MovementSpeed: 0,
@@ -50,11 +52,19 @@ export const StatModifierSchema = z.object({
   amount: z.number(),
 });
 
-export const PlayerDto = z.object({
+export const PlayerControllerData = z.object({
   $$id: z.string(),
   startingGunIds: z.array(z.number()),
+  startingAlternateGunIds: z.array(z.number()),
   startingActiveItemIds: z.array(z.number()),
   startingPassiveItemIds: z.array(z.number()),
+  minimapIconPrefab: AssetExternalReference.required(),
+});
+
+export const PlayerDto = z.object({
+  playerController: PlayerControllerData,
+  sprite: SpriteData,
 });
 
 export type TPlayerDto = z.input<typeof PlayerDto>;
+export type TPlayerControllerData = z.input<typeof PlayerControllerData>;

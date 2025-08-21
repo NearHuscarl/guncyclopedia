@@ -1,7 +1,7 @@
 import z from "zod/v4";
 import { AssetExternalReference, AssetExternalReferences, BinaryOption } from "../utils/schema.ts";
 import { StatModifierSchema } from "../player/player.dto.ts";
-import { SpriteAnimatorData, SpriteData } from "./component.dto.ts";
+import { SpriteAnimatorData, SpriteData } from "../asset/component.dto.ts";
 import { GameActorHealthEffect } from "./projectile.dto.ts";
 
 export const ItemQuality = {

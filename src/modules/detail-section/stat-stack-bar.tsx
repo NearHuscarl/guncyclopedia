@@ -201,16 +201,16 @@ export function StatStackBar({
             }),
           };
 
-          // Because of the solution for (2)(3), when the modifier is removed instantly, as the stat
+          // Because of the solution for (2)(3), when the modifier is removed instantly, the stat
           // width grows/shrinks to 'catch up' with the modifier, resulting in an annoying glitch
           const key = isComparisonMode && i === 0 ? gun.id : i;
 
-          if (!source) {
-            return <div key={key} {...barProps} />;
-          }
-
           return (
-            <Tooltip key={key}>
+            <Tooltip
+              key={key}
+              // NOTE: don't render a div element conditionally to reuse the same component instance for the transition effect.
+              delayDuration={source ? 0 : 100_000}
+            >
               <TooltipTrigger {...barProps} />
               <TooltipContent>
                 <div dangerouslySetInnerHTML={{ __html: source }} />

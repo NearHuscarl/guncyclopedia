@@ -1,3 +1,4 @@
+import fs from "node:fs/promises";
 import path from "node:path";
 import chalk from "chalk";
 import z from "zod/v4";
@@ -7,7 +8,7 @@ import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import type { TSpriteCollectionDto } from "./sprite.dto.ts";
-import type { TMaterialBlock } from "../asset/asset.dto.ts";
+import type { TMaterial } from "../asset/asset.dto.ts";
 import { normalizePath } from "../utils/path.ts";
 
 type TCollectionPath = string;
@@ -36,6 +37,8 @@ export class SpriteRepository {
     "assets/ExportedProject/Assets/sprites/vfx/vfx collection 002 data/VFX Collection 002.prefab",
     "assets/ExportedProject/Assets/sprites/vfx/vfx_collection_003 data/VFX_Collection_003.prefab",
     "assets/ExportedProject/Assets/sprites/vfx/dolphin vfx/dolphin_vfx_collection_001 data/Dolphin_VFX_Collection_001.prefab",
+    // minimap
+    "assets/ExportedProject/Assets/sprites/ui/minimapcollection data/MinimapCollection.prefab",
   ]
     .map((p) => path.join(ASSET_EXTRACTOR_ROOT, p))
     .concat(SpriteRepository.AMMONONICON_SPRITE_PATH);
@@ -63,34 +66,52 @@ export class SpriteRepository {
     );
   }
 
+  private async _fileExists(filePath: string) {
+    try {
+      await fs.access(filePath);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
   private async _parseSprite(filePath: string) {
     const refab = await this._assetService.parseSerializedAsset(filePath);
 
     try {
-      for (const block of refab) {
-        if (this._isSpriteCollectionData(block)) {
-          for (const spriteData of block.spriteDefinitions) {
-            const blocks2 = await this._assetService.parseSerializedAssetFromReference(spriteData.material);
-            const material = blocks2[0] as TMaterialBlock;
+      for (const component of refab) {
+        if (this._isSpriteCollectionData(component)) {
+          for (const spriteData of component.spriteDefinitions) {
+            const prefab2 = await this._assetService.parseSerializedAssetFromReference(spriteData.material);
+            const material = prefab2[0] as TMaterial;
+            let texturePath = "";
+
             if (!material?.m_SavedProperties.m_TexEnvs._MainTex.m_Texture.$$scriptPath) {
-              throw new Error(`Missing texture path for sprite ${spriteData.name} in ${filePath}`);
+              // TODO: check if removing material lookup is possible.
+              // throw new Error(`Missing texture path for sprite ${spriteData.name} in ${filePath}`);
+              const dir = path.dirname(filePath);
+              const textureNames = ["atlas0.png", "atlas0.png.bytes"];
+
+              for (const textureName of textureNames) {
+                if (await this._fileExists(path.join(dir, textureName))) {
+                  texturePath = path.join(dir, textureName);
+                  break;
+                }
+              }
+            } else {
+              texturePath = material.m_SavedProperties.m_TexEnvs._MainTex.m_Texture.$$scriptPath.replace(/\.meta$/, "");
             }
 
-            const texturePath = material.m_SavedProperties.m_TexEnvs._MainTex.m_Texture.$$scriptPath.replace(
-              /\.meta$/,
-              "",
-            );
-
-            if (!block.$$texturePath) {
-              block.$$texturePath = texturePath;
-            } else if (block.$$texturePath !== texturePath) {
+            if (!component.$$texturePath) {
+              component.$$texturePath = texturePath;
+            } else if (component.$$texturePath !== texturePath) {
               throw new Error(
-                `Inconsistent texture paths for sprite collection in ${filePath}: ${block.$$texturePath} vs ${texturePath}`,
+                `Inconsistent texture paths for sprite collection in ${filePath}: ${component.$$texturePath} vs ${texturePath}`,
               );
             }
           }
 
-          return SpriteCollectionDto.parse(block);
+          return SpriteCollectionDto.parse(component);
         }
       }
       throw new Error(`No sprite collection found in ${filePath}`);
@@ -145,9 +166,7 @@ export class SpriteRepository {
   }
 
   getSprites(assetReference: { $$scriptPath: string }) {
-    const scriptPath = path.isAbsolute(assetReference.$$scriptPath)
-      ? assetReference.$$scriptPath
-      : path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", assetReference.$$scriptPath.replace(/\.meta$/, ""));
+    const scriptPath = assetReference.$$scriptPath.replace(/\.meta$/, "");
     const collection = this._sprites.get(normalizePath(scriptPath));
 
     if (!collection) {
@@ -156,14 +175,12 @@ export class SpriteRepository {
 
     return {
       spriteCollection: collection?.spriteDefinitions ?? [],
-      texturePath: path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", collection.$$texturePath),
+      texturePath: collection.$$texturePath,
     };
   }
 
   getSprite(assetReference: { $$scriptPath: string }, nameOrIndex: string | number) {
-    const scriptPath = path.isAbsolute(assetReference.$$scriptPath)
-      ? assetReference.$$scriptPath
-      : path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", assetReference.$$scriptPath.replace(/\.meta$/, ""));
+    const scriptPath = assetReference.$$scriptPath.replace(/\.meta$/, "");
     const collection = this._sprites.get(normalizePath(scriptPath));
     const spriteData =
       typeof nameOrIndex === "string"
@@ -176,7 +193,7 @@ export class SpriteRepository {
 
     return {
       spriteData,
-      texturePath: path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", collection.$$texturePath),
+      texturePath: collection.$$texturePath,
     };
   }
 
@@ -185,6 +202,6 @@ export class SpriteRepository {
     if (!texturePath) {
       throw new Error(`Texture path not found for sprite collection: ${chalk.green(scriptPath)}`);
     }
-    return path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", texturePath);
+    return texturePath;
   }
 }

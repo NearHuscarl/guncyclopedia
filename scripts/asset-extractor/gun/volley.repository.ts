@@ -58,22 +58,23 @@ export class VolleyRepository {
 
   private async _parseVolley(filePath: string) {
     const refab = await this._assetService.parseSerializedAsset(filePath);
-    for (const block of refab) {
-      if (!this._isVolleyDto(block)) {
-        continue;
-      }
 
-      try {
+    try {
+      for (const component of refab) {
+        if (!this._isVolleyDto(component)) {
+          continue;
+        }
+
         const metaFilePath = filePath + ".meta";
         const $$id = this._getVolleyKey({ $$scriptPath: metaFilePath });
-        return VolleyDto.parse({ ...block, $$id });
-      } catch (error) {
-        if (error instanceof z.ZodError) {
-          console.error(chalk.red(`Error parsing volley dto at ${filePath}`));
-          console.error(z.prettifyError(error));
-        }
-        throw error;
+        return VolleyDto.parse({ ...component, $$id });
       }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        console.error(chalk.red(`Error parsing volley dto at ${filePath}`));
+        console.error(z.prettifyError(error));
+      }
+      throw error;
     }
   }
 

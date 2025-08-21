@@ -7,12 +7,12 @@ export const AssetMeta = z.object({
   guid: z.string(),
 });
 
-const UnityAssetBlock = z.object({
+const Component = z.object({
   $$fileID: z.number(),
-  $$typeName: z.string(),
+  $$component: z.string(),
 });
 
-export const MonoBehaviour = UnityAssetBlock.extend({
+export const MonoBehaviour = Component.extend({
   m_Script: z.object({
     $$scriptPath: z.string(),
     fileID: z.number(),
@@ -21,7 +21,7 @@ export const MonoBehaviour = UnityAssetBlock.extend({
   }),
 });
 
-export const MaterialBlock = UnityAssetBlock.extend({
+export const Material = Component.extend({
   m_SavedProperties: z.object({
     m_TexEnvs: z.object({
       _MainTex: z.object({
@@ -31,9 +31,9 @@ export const MaterialBlock = UnityAssetBlock.extend({
   }),
 });
 
-export type TMaterialBlock = z.infer<typeof MaterialBlock>;
+export type TMaterial = z.infer<typeof Material>;
 
 export type TAssetMeta = z.infer<typeof AssetMeta>;
-type TUnityAssetBlock = z.infer<typeof UnityAssetBlock>;
+type TComponent = z.infer<typeof Component>;
 export type TMonoBehaviour = z.infer<typeof MonoBehaviour>;
-export type TUnityAsset = (TUnityAssetBlock | TMonoBehaviour)[];
+export type TUnityAsset = (TComponent | TMonoBehaviour)[];

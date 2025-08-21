@@ -63,20 +63,16 @@ export class SpriteAnimatorRepository {
     const refab = await this._assetService.parseSerializedAsset(filePath);
 
     try {
-      for (const block of refab) {
-        if (!this._isSpriteAnimatorData(block)) continue;
+      for (const component of refab) {
+        if (!this._isSpriteAnimatorData(component)) continue;
 
-        for (const clip of block.clips) {
+        for (const clip of component.clips) {
           for (const frame of clip.frames) {
-            const scriptPath = path.join(
-              ASSET_EXTRACTOR_ROOT,
-              "assets/ExportedProject",
-              frame.spriteCollection.$$scriptPath,
-            );
+            const scriptPath = frame.spriteCollection.$$scriptPath;
             frame.$$texturePath = this._spriteRepository.getSpriteTexturePath(scriptPath);
           }
         }
-        return SpriteAnimatorDto.parse(block);
+        return SpriteAnimatorDto.parse(component);
       }
       throw new Error(`No sprite animation found in ${filePath}`);
     } catch (error) {
@@ -126,9 +122,7 @@ export class SpriteAnimatorRepository {
   }
 
   private _getScriptPath(assetReference: { $$scriptPath: string }) {
-    return path.isAbsolute(assetReference.$$scriptPath)
-      ? assetReference.$$scriptPath
-      : path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject", assetReference.$$scriptPath.replace(/\.meta$/, ""));
+    return assetReference.$$scriptPath.replace(/\.meta$/, "");
   }
 
   getClipByIndex(assetReference: { $$scriptPath: string }, index: number) {

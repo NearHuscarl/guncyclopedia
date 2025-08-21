@@ -22,7 +22,11 @@ async function exportChestTextures(
       continue;
     }
     const image = await spriteService.getImage(texturePath, spriteData);
-    await image.toFile(path.join(PUBLIC_PATH, `chest_debug/${spriteData.name}.png`));
+    try {
+      await image.toFile(path.join(PUBLIC_PATH, `chest_debug/${spriteData.name.replaceAll("/", "_")}.png`));
+    } catch (err) {
+      console.error(err);
+    }
   }
 }
 
@@ -33,7 +37,7 @@ async function exportChestTextures(
 export async function main() {
   const chestCollectionPath = path.join(
     ASSET_EXTRACTOR_ROOT,
-    "assets/ExportedProject/Assets/sprites/weapons/weaponcollection02 data/WeaponCollection02.prefab",
+    "assets/ExportedProject/Assets/sprites/ui/minimapcollection data/MinimapCollection.prefab",
   );
   const assetService = await AssetService.create();
   const spriteRepo = await SpriteRepository.create(assetService, [chestCollectionPath], true);

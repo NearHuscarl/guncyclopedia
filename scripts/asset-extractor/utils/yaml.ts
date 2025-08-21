@@ -1,12 +1,13 @@
 import yaml from "yaml";
+import type { DocumentOptions, ParseOptions, SchemaOptions, ToJSOptions } from "yaml";
 
-export function parseYaml(content: string): ReturnType<typeof yaml.parse> {
+export type TYamlOptions = ParseOptions & DocumentOptions & SchemaOptions & ToJSOptions;
+
+export function parseYaml(content: string, options?: TYamlOptions): ReturnType<typeof yaml.parse> {
   return yaml.parse(content, {
     strict: false,
-    // https://eemeli.org/yaml/#built-in-custom-tags
-    // avoid parsing floatExp, we only use plain number.
-    schema: "failsafe",
-    customTags: ["int", "float"],
+    schema: "core",
     version: "1.1",
+    ...options,
   });
 }

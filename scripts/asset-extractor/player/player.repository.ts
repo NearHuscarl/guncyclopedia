@@ -5,8 +5,9 @@ import z from "zod/v4";
 import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
+import { PlayerDto } from "./player.dto.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
-import { PlayerDto, type TPlayerDto } from "./player.dto.ts";
+import type { TPlayerControllerData, TPlayerDto } from "./player.dto.ts";
 
 type Guid = string;
 
@@ -29,7 +30,7 @@ export class PlayerRepository {
     return await instance.load();
   }
 
-  private _isPlayerDto(obj: unknown): obj is TPlayerDto {
+  private _isPlayerController(obj: unknown): obj is TPlayerControllerData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("PlayerController.cs.meta");
   }
 
@@ -131,28 +132,43 @@ export class PlayerRepository {
   }
 
   private async _parsePlayer(filePath: string) {
-    const refab = await this._assetService.parseSerializedAsset(filePath);
-    for (const block of refab) {
-      if (!this._isPlayerDto(block)) {
-        continue;
-      }
+    const refab = await this._assetService.parseSerializedAsset(filePath, {
+      // https://eemeli.org/yaml/#built-in-custom-tags
+      // avoid parsing floatExp, we only use plain number.
+      schema: "failsafe",
+      customTags: ["int", "float"],
+    });
+    const res: Partial<TPlayerDto> = {};
 
-      try {
-        const metaFilePath = filePath + ".meta";
-        const $$id = this._getPlayerKey({ $$scriptPath: metaFilePath });
-        block.startingActiveItemIds = this._decodeItemIds(block.startingActiveItemIds.toString());
-        block.startingPassiveItemIds = this._decodeItemIds(block.startingPassiveItemIds.toString());
-        block.startingAlternateGunIds = this._decodeItemIds(block.startingAlternateGunIds.toString());
-        block.startingGunIds = this._decodeItemIds(block.startingGunIds.toString());
+    try {
+      for (const component of refab) {
+        if (this._isPlayerController(component)) {
+          const metaFilePath = filePath + ".meta";
+          const $$id = this._getPlayerKey({ $$scriptPath: metaFilePath });
+          component.startingActiveItemIds = this._decodeItemIds(component.startingActiveItemIds.toString());
+          component.startingPassiveItemIds = this._decodeItemIds(component.startingPassiveItemIds.toString());
+          component.startingAlternateGunIds = this._decodeItemIds(component.startingAlternateGunIds.toString());
+          component.startingGunIds = this._decodeItemIds(component.startingGunIds.toString());
+          res.playerController = { ...component, $$id };
 
-        return PlayerDto.parse({ ...block, $$id });
-      } catch (error) {
-        if (error instanceof z.ZodError) {
-          console.error(chalk.red(`Error parsing player dto at ${filePath}`));
-          console.error(z.prettifyError(error));
+          const prefab2 = await this._assetService.parseSerializedAssetFromReference(
+            res.playerController.minimapIconPrefab,
+          );
+
+          for (const component2 of prefab2) {
+            if (this._assetService.isSpriteData(component2)) {
+              res.sprite = component2;
+              return PlayerDto.parse(res);
+            }
+          }
         }
-        throw error;
       }
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        console.error(chalk.red(`Error parsing player dto at ${filePath}`));
+        console.error(z.prettifyError(error));
+      }
+      throw error;
     }
   }
 
@@ -173,10 +189,10 @@ export class PlayerRepository {
     for (let i = 0; i < prefabFiles.length; i++) {
       const file = prefabFiles[i];
       process.stdout.write(chalk.grey(`\rloading players from ${i + 1}/${prefabFiles.length} files...`));
-      const projDto = await this._parsePlayer(file);
-      if (!projDto) continue;
+      const playerDto = await this._parsePlayer(file);
+      if (!playerDto) continue;
 
-      this._players.set(projDto.$$id, projDto);
+      this._players.set(playerDto.playerController.$$id, playerDto);
     }
 
     console.log();

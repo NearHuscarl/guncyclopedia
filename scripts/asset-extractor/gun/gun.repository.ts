@@ -7,7 +7,6 @@ import { AssetService } from "../asset/asset-service.ts";
 import { GunDto } from "./gun.dto.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { performance } from "node:perf_hooks";
-import type { TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
 import type {
   TAuraOnReloadModifierData,
   TEncounterTrackableData,
@@ -43,12 +42,6 @@ export class GunRepository {
 
   private _isGunData(obj: unknown): obj is TGunData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.GUN_SCRIPT);
-  }
-  private _isSpriteData(obj: unknown): obj is TSpriteData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSprite.cs.meta");
-  }
-  private _isSpriteAnimatorData(obj: unknown): obj is TSpriteAnimatorData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteAnimator.cs.meta");
   }
   private _isPredatorGunControllerData(obj: unknown): obj is TPredatorGunControllerData {
     return (
@@ -93,21 +86,21 @@ export class GunRepository {
     const res: Partial<TGunDto> = {};
 
     try {
-      for (const block of refab) {
-        if (this._isGunData(block)) {
-          res.gun = block;
-        } else if (this._isSpriteData(block)) {
-          res.sprite = block;
-        } else if (this._isSpriteAnimatorData(block)) {
-          res.spriteAnimator = block;
-        } else if (this._isPredatorGunControllerData(block)) {
-          res.predatorGunController = block;
-        } else if (this._isGunExtraSettingSynergyProcessorData(block)) {
-          res.gunExtraSettingSynergyProcessor = block;
-        } else if (this._isAuraOnReloadModifierData(block)) {
-          res.auraOnReloadModifier = block;
-        } else if (this._isEncounterTrackable(block)) {
-          res.encounterTrackable = block;
+      for (const component of refab) {
+        if (this._isGunData(component)) {
+          res.gun = component;
+        } else if (this._assetService.isSpriteData(component)) {
+          res.sprite = component;
+        } else if (this._assetService.isSpriteAnimatorData(component)) {
+          res.spriteAnimator = component;
+        } else if (this._isPredatorGunControllerData(component)) {
+          res.predatorGunController = component;
+        } else if (this._isGunExtraSettingSynergyProcessorData(component)) {
+          res.gunExtraSettingSynergyProcessor = component;
+        } else if (this._isAuraOnReloadModifierData(component)) {
+          res.auraOnReloadModifier = component;
+        } else if (this._isEncounterTrackable(component)) {
+          res.encounterTrackable = component;
         }
       }
 

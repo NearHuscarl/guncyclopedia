@@ -11,7 +11,7 @@ describe("asset-service.ts", () => {
   });
 
   describe("parseSerializedAsset", () => {
-    it("should parse Unity YAML blocks correctly", async () => {
+    it("should parse Unity YAML components correctly", async () => {
       const assetService = await AssetService.create();
 
       vi.spyOn(assetService, "getPathByGuid").mockImplementation(() => "Assets/Scripts/Assembly-CSharp/Gun.cs.meta");

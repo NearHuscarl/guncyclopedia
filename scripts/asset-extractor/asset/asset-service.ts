@@ -10,6 +10,8 @@ import { parseYaml } from "../utils/yaml.ts";
 import { AssetMeta, MonoBehaviour } from "./asset.dto.ts";
 import type { TAssetMeta, TUnityAsset, Guid, TMonoBehaviour } from "./asset.dto.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
+import type { TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
+import type { TYamlOptions } from "../utils/yaml.ts";
 
 export class AssetService {
   static readonly GUN_SCRIPT = "Gun.cs.meta";
@@ -67,6 +69,13 @@ export class AssetService {
     return MonoBehaviour.safeParse(obj).success;
   }
 
+  isSpriteData(obj: unknown): obj is TSpriteData {
+    return this.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSprite.cs.meta");
+  }
+  isSpriteAnimatorData(obj: unknown): obj is TSpriteAnimatorData {
+    return this.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteAnimator.cs.meta");
+  }
+
   getPathByGuid(guid: string): string | undefined {
     return this._assetPaths.get(guid);
   }
@@ -93,46 +102,49 @@ export class AssetService {
   }
 
   async parseSerializedAssetFromReference(reference: Required<TAssetExternalReference>): Promise<TUnityAsset> {
-    const absoluteFilePath = path.join(this._DEFAULT_META_ROOT_DIR, reference.$$scriptPath.replace(/\.meta$/, ""));
-    return this.parseSerializedAsset(absoluteFilePath);
+    return this.parseSerializedAsset(reference.$$scriptPath.replace(/\.meta$/, ""));
   }
 
-  async parseSerializedAsset(filePath: string): Promise<TUnityAsset> {
+  async parseSerializedAsset(filePath: string, options?: TYamlOptions): Promise<TUnityAsset> {
     const unityFlavoredYaml = await readFile(filePath, "utf8");
     // example split pattern '--- !u!114 &114082853474172005'
-    const blocks = unityFlavoredYaml.split(/^--- !u!/gm).slice(1); // skip the YAML preamble
+    const components = unityFlavoredYaml.split(/^--- !u!/gm).slice(1); // skip the YAML preamble
     const res: TUnityAsset = [];
 
-    for (const block of blocks) {
+    for (const component of components) {
       const headerRegex = /^(\d+) &(\d+)\n(\w+):/;
-      const headerMatch = block.match(headerRegex);
+      const headerMatch = component.match(headerRegex);
       if (!headerMatch) {
-        throw new Error(`Invalid block header in file: ${filePath}`);
+        throw new Error(`Invalid component header in file: ${filePath}`);
       }
 
       const [_, _typeID, fileID, typeName] = headerMatch;
 
-      const serializedBlock = parseYaml(
+      const serializedComp = parseYaml(
         this._quoteAliasValues(
-          block
+          component
             .replace(headerRegex, "")
             .replace(/^\s{2}/gm, "")
             .trim(),
         ),
+        options,
       );
-      const blockWithResolvedScriptPaths = cloneDeepWith(serializedBlock, (value) => {
+      const compWithResolvedScriptPaths = cloneDeepWith(serializedComp, (value) => {
         if (isPlainObject(value) && "guid" in value) {
           const scriptPath = this.getPathByGuid(value.guid);
           if (scriptPath) {
-            return { $$scriptPath: scriptPath, ...value };
+            return {
+              $$scriptPath: path.join(this._metaRootDir, scriptPath),
+              ...value,
+            };
           }
         }
       });
 
       res.push({
         $$fileID: parseInt(fileID, 10),
-        $$typeName: typeName,
-        ...blockWithResolvedScriptPaths,
+        $$component: typeName,
+        ...compWithResolvedScriptPaths,
       });
     }
 

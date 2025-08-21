@@ -6,7 +6,6 @@ import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { ProjectileDto } from "./projectile.dto.ts";
-import type { TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
 import type {
   TBasicBeamControllerData,
   TBlackHoleDoerData,
@@ -74,12 +73,6 @@ export class ProjectileRepository {
   private _isBlackHoleDoer(obj: unknown): obj is TBlackHoleDoerData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("BlackHoleDoer.cs.meta");
   }
-  private _isSpriteData(obj: unknown): obj is TSpriteData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSprite.cs.meta");
-  }
-  private _isSpriteAnimatorData(obj: unknown): obj is TSpriteAnimatorData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteAnimator.cs.meta");
-  }
 
   private async _getAllProjectileRefabFiles() {
     const res: string[] = [];
@@ -104,30 +97,30 @@ export class ProjectileRepository {
     const res: Partial<TProjectileDto> = {};
 
     try {
-      for (const block of refab) {
-        if (this._isProjectileData(block) && !res.projectile) {
+      for (const component of refab) {
+        if (this._isProjectileData(component) && !res.projectile) {
           const metaFilePath = filePath + ".meta";
 
           res.id = this._getProjectileKey({ $$scriptPath: metaFilePath });
-          res.projectile = block;
-        } else if (this._isSpriteData(block)) {
-          res.sprite = block;
-        } else if (this._isSpriteAnimatorData(block)) {
-          res.spriteAnimator = block;
-        } else if (this._isBounceModifierData(block)) {
-          res.bounceProjModifier = block;
-        } else if (this._isPierceModifierData(block)) {
-          res.pierceProjModifier = block;
-        } else if (this._isExplosiveModifierData(block)) {
-          res.explosiveModifier = block;
-        } else if (this._isHomingModifierData(block)) {
-          res.homingModifier = block;
-        } else if (this._isBasicBeamControllerData(block)) {
-          res.basicBeamController = block;
-        } else if (this._isRaidenBeamControllerData(block)) {
-          res.raidenBeamController = block;
-        } else if (this._isBlackHoleDoer(block)) {
-          res.blackHoleDoer = block;
+          res.projectile = component;
+        } else if (this._assetService.isSpriteData(component)) {
+          res.sprite = component;
+        } else if (this._assetService.isSpriteAnimatorData(component)) {
+          res.spriteAnimator = component;
+        } else if (this._isBounceModifierData(component)) {
+          res.bounceProjModifier = component;
+        } else if (this._isPierceModifierData(component)) {
+          res.pierceProjModifier = component;
+        } else if (this._isExplosiveModifierData(component)) {
+          res.explosiveModifier = component;
+        } else if (this._isHomingModifierData(component)) {
+          res.homingModifier = component;
+        } else if (this._isBasicBeamControllerData(component)) {
+          res.basicBeamController = component;
+        } else if (this._isRaidenBeamControllerData(component)) {
+          res.raidenBeamController = component;
+        } else if (this._isBlackHoleDoer(component)) {
+          res.blackHoleDoer = component;
         }
       }
 

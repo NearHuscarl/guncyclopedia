@@ -1,7 +1,7 @@
 import z from "zod/v4";
 import { BinaryOption, Percentage } from "../utils/schema.ts";
 import { MonoBehaviour } from "../asset/asset.dto.ts";
-import { SpriteAnimatorData, SpriteData } from "./component.dto.ts";
+import { SpriteAnimatorData, SpriteData } from "../asset/component.dto.ts";
 
 const CoreDamageType = {
   None: 0,
