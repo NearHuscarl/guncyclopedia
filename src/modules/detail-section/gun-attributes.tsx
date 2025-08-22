@@ -28,9 +28,23 @@ import { useGunStore } from "../shared/store/gun.store";
 import { DamageMultiplier } from "@/components/icons/damage-multiplier";
 import { Explosion } from "@/components/icons/explosion";
 import { AuraOnReload } from "@/components/icons/aura-on-reload";
+import { PlayerBullet } from "@/components/icons/player-bullet";
+import { PlayerConvict } from "@/components/icons/player-convict";
+import { PlayerCultist } from "@/components/icons/player-cultist";
+import { PlayerCultist2 } from "@/components/icons/player-cultist-2";
+import { PlayerCosmonaut } from "@/components/icons/player-cosmonaut";
+import { PlayerEevee } from "@/components/icons/player-eevee";
+import { PlayerGuide } from "@/components/icons/player-guide";
+import { PlayerLamey } from "@/components/icons/player-lamey";
+import { PlayerMarine } from "@/components/icons/player-marine";
+import { PlayerNinja } from "@/components/icons/player-ninja";
+import { PlayerRobot } from "@/components/icons/player-robot";
+import { PlayerRogue } from "@/components/icons/player-rogue";
+import { PlayerSlinger } from "@/components/icons/player-slinger";
 import type { ReactNode } from "react";
 import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
+import type { TPlayerName } from "@/client/generated/models/player.model";
 
 type TStatModifier = TGun["playerStatModifiers"][number];
 type TStatToBoost = TStatModifier["statToBoost"];
@@ -160,6 +174,21 @@ function createStatusEffectAttribute(chance: number | undefined, twColor: string
   );
 }
 
+const playerLookup: { [key in TPlayerName]?: [string, ReactNode, ReactNode?] } = {
+  PlayerGuide: ["The Hunter", <PlayerGuide />],
+  PlayerConvict: ["The Convict", <PlayerConvict />],
+  PlayerMarine: ["The Marine", <PlayerMarine />],
+  PlayerRogue: ["The Pilot", <PlayerRogue />],
+  PlayerCoopCultist: ["The Cultist", <PlayerCultist />, <PlayerCultist2 />],
+  PlayerBullet: ["The Bullet", <PlayerBullet />],
+  PlayerRobot: ["The Robot", <PlayerRobot />],
+  PlayerGunslinger: ["The Gunslinger", <PlayerSlinger />],
+  PlayerCosmonaut: ["The Cosmonaut", <PlayerCosmonaut />],
+  PlayerEevee: ["Eevee", <PlayerEevee />],
+  PlayerLamey: ["Lamey", <PlayerLamey />],
+  PlayerNinja: ["The Ninja", <PlayerNinja />],
+};
+
 type TGunAttributesProps = {
   projectileData: TProjectile;
   gun?: TGun;
@@ -175,6 +204,38 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         <NumericValue>{0}</NumericValue>
         <Bounce color="white" size={20} />
       </div>
+      {gun?.startingItemOf && (
+        <Tooltip>
+          <TooltipTrigger>{gun?.startingItemOf.map((item) => playerLookup[item]?.[1] ?? null)}</TooltipTrigger>
+          <TooltipContent>
+            <strong>Starting Weapon</strong>
+            <br />
+            This is{" "}
+            <strong>
+              {gun?.startingItemOf.map((item) => playerLookup[item]?.[0] ?? item.replace("Player", "")).join(", ")}
+            </strong>
+            's starting gun.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.startingAlternateItemOf && (
+        <Tooltip>
+          <TooltipTrigger>
+            {gun?.startingAlternateItemOf.map((item) => playerLookup[item]?.[2] ?? playerLookup[item]?.[1] ?? null)}
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Starting Weapon</strong>
+            <br />
+            This is{" "}
+            <strong>
+              {gun?.startingAlternateItemOf
+                .map((item) => playerLookup[item]?.[0] ?? item.replace("Player", ""))
+                .join(", ")}
+            </strong>
+            's starting gun when playing as the Player 2 in co-op mode.
+          </TooltipContent>
+        </Tooltip>
+      )}
       {(gunStats?.mode.chargeTime || undefined) && (
         <Tooltip>
           <TooltipTrigger>

@@ -6,17 +6,14 @@ import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { PlayerDto } from "./player.dto.ts";
-import type { TAssetExternalReference } from "../utils/schema.ts";
 import type { TPlayerControllerData, TPlayerDto } from "./player.dto.ts";
-
-type Guid = string;
 
 export class PlayerRepository {
   private static readonly _SEARCH_DIRECTORIES = ["assets/ExportedProject/Assets/resourcesbundle"].map((dir) =>
     path.join(ASSET_EXTRACTOR_ROOT, dir),
   );
 
-  private _players = new Map<Guid, TPlayerDto>();
+  private _players = new Map<string, TPlayerDto>();
   private readonly _assetService: AssetService;
   private readonly _searchDirectories: string[];
 
@@ -206,7 +203,7 @@ export class PlayerRepository {
     return path.basename(assetReference.$$scriptPath, ".prefab.meta").replaceAll(" ", "_");
   }
 
-  getPlayer(assetReference: Required<TAssetExternalReference>) {
-    return this._players.get(this._getPlayerKey(assetReference));
+  getPlayers() {
+    return this._players.values();
   }
 }

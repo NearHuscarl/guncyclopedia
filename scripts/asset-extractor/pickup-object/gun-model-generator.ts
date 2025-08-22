@@ -4,6 +4,7 @@ import z from "zod/v4";
 import invert from "lodash/invert.js";
 import countBy from "lodash/countBy.js";
 import keyBy from "lodash/keyBy.js";
+import isEqual from "lodash/isEqual.js";
 import cloneDeep from "lodash/cloneDeep.js";
 import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
 import { videos } from "../gun/gun.meta.ts";
@@ -20,6 +21,7 @@ import { WrapMode } from "../sprite/sprite-animator.dto.ts";
 import { basicColors } from "./client/models/color.model.ts";
 import { ColorService } from "../color/color.service.ts";
 import { SpriteRepository } from "../sprite/sprite.repository.ts";
+import { PlayerService } from "../player/player.service.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
@@ -58,6 +60,7 @@ type GunModelGeneratorCtor = {
   assetService: AssetService;
   spriteService: SpriteService;
   spriteAnimatorRepo: SpriteAnimatorRepository;
+  playerService: PlayerService;
 };
 
 export class GunModelGenerator {
@@ -68,6 +71,7 @@ export class GunModelGenerator {
   private readonly _assetService: AssetService;
   private readonly _spriteService: SpriteService;
   private readonly _spriteAnimatorRepo: SpriteAnimatorRepository;
+  private readonly _playerService: PlayerService;
   private readonly _colorService = new ColorService();
   private readonly _featureFlags: Set<TGun["featureFlags"][number]> = new Set();
 
@@ -79,6 +83,7 @@ export class GunModelGenerator {
     this._assetService = input.assetService;
     this._spriteService = input.spriteService;
     this._spriteAnimatorRepo = input.spriteAnimatorRepo;
+    this._playerService = input.playerService;
   }
   static async create(input: GunModelGeneratorCtor) {
     return new GunModelGenerator(input);
@@ -431,6 +436,7 @@ export class GunModelGenerator {
     // TODO: ShovelGunModifier
     // TODO: trick gun (Gungeon Ant)
     // TODO: search for *modifier.cs to collect more attributes for the projectile
+    // TODO: Hexagun: chicken morpher ability
     // TODO: round that has explosion on impact count as another source of damage
     // TODO: link 2 guns (e.g. Gun with EXCLUDED or SPECIAL quality)
     // TODO: fear effect
@@ -725,11 +731,15 @@ export class GunModelGenerator {
 
       const { colors, animation: idleAnimation } = await this._buildGunIdleAnimation(gunDto);
       const chargeAnimation = await this._buildGunChargeAnimation(gunDto);
+      const startingItemOf = this._playerService.getOwners(entry.pickupObjectId, "startingGunIds");
+      const startingAlternateItemOf = this._playerService.getOwners(entry.pickupObjectId, "startingAlternateGunIds");
 
       const gun: TGun = {
         ...texts,
         type: "gun",
         id: entry.pickupObjectId,
+        startingItemOf,
+        startingAlternateItemOf: isEqual(startingItemOf, startingAlternateItemOf) ? undefined : startingAlternateItemOf,
         gunNameInternal: gunDto.gun.gunName,
         quality: gunQualityTextLookup[gunDto.gun.quality] as keyof typeof ItemQuality,
         gunClass: gunClassTextLookup[gunDto.gun.gunClass] as keyof typeof GunClass,

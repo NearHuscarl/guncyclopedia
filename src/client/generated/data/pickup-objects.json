@@ -4,6 +4,9 @@
     "name": "38 Special",
     "quote": "For The Inquisitive",
     "description": "The sidearm of choice for investigative efforts.",
+    "startingItemOf": [
+      "PlayerNinja"
+    ],
     "type": "gun",
     "gunNameInternal": "38 Special",
     "quality": "D",
@@ -234,6 +237,9 @@
     "name": "AK-47",
     "quote": "Accept No Substitutes",
     "description": "The AK-47 is in many ways the gun against which all other guns are judged. This affordable and reliable piece of hardware has proven itself in nearly any terrain or situation. Desert, jungle, snow, and dungeon were all accounted for in its timeless design. It can even fire underwater.",
+    "startingItemOf": [
+      "PlayerNinja"
+    ],
     "type": "gun",
     "gunNameInternal": "AK-47",
     "quality": "B",
@@ -5968,6 +5974,9 @@
     "name": "Blasphemy",
     "quote": "To The Point",
     "description": "Betrayer!",
+    "startingItemOf": [
+      "PlayerBullet"
+    ],
     "type": "gun",
     "gunNameInternal": "Blasphemy",
     "quality": "B",
@@ -6138,6 +6147,9 @@
     "name": "Blasphemy",
     "quote": "To The Point",
     "description": "Betrayer!",
+    "startingAlternateItemOf": [
+      "PlayerBullet"
+    ],
     "type": "gun",
     "gunNameInternal": "Blasphemy",
     "quality": "SPECIAL",
@@ -18896,6 +18908,9 @@
     "name": "Crossbow",
     "quote": "The Original",
     "description": "One of the earliest examples of trigger fired projectiles.",
+    "startingItemOf": [
+      "PlayerGuide"
+    ],
     "type": "gun",
     "gunNameInternal": "Crossbow",
     "quality": "D",
@@ -20689,6 +20704,9 @@
     "name": "Dart Gun",
     "quote": "Sticky",
     "description": "Just because children are young, doesn't mean they don't have pasts they would like to change. Perhaps some young soul wished to make sure his or her sibling took the blame for spilling grape juice on the couch. Much less worthy causes have been championed in the Gungeon.",
+    "startingItemOf": [
+      "PlayerCoopCultist"
+    ],
     "type": "gun",
     "gunNameInternal": "Dart Gun",
     "quality": "SPECIAL",
@@ -20808,6 +20826,9 @@
     "name": "Dart Gun",
     "quote": "Sticky",
     "description": "Just because children are young, doesn't mean they don't have pasts they would like to change. Perhaps some young soul wished to make sure his or her sibling took the blame for spilling grape juice on the couch. Much less worthy causes have been championed in the Gungeon.",
+    "startingAlternateItemOf": [
+      "PlayerCoopCultist"
+    ],
     "type": "gun",
     "gunNameInternal": "Dart Gun",
     "quality": "SPECIAL",
@@ -35508,6 +35529,9 @@
     "name": "Rogue Special",
     "quote": "Underhanded And Efficient",
     "description": "The Rogue Special, given to the Pilot by his partner. It's never let him down.\nThis hip shooter has been known to fire half-cocked and often gets itself into more trouble than it can handle.",
+    "startingItemOf": [
+      "PlayerRogue"
+    ],
     "type": "gun",
     "gunNameInternal": "Rogue Special",
     "quality": "SPECIAL",
@@ -35626,6 +35650,9 @@
     "name": "Rogue Special",
     "quote": "Underhanded And Efficient",
     "description": "The Rogue Special, given to the Pilot by his partner. It's never let him down.\nThis hip shooter has been known to fire half-cocked and often gets itself into more trouble than it can handle.",
+    "startingAlternateItemOf": [
+      "PlayerRogue"
+    ],
     "type": "gun",
     "gunNameInternal": "Rogue Special",
     "quality": "SPECIAL",
@@ -40025,6 +40052,9 @@
     "name": "Magnum",
     "quote": "5 Shots Or 6?",
     "description": "This gun is unusually filthy for a handgun in the Gungeon. The Gundead spend much of their time polishing and greasing guns, though they conspicuously leave the Magnum alone.",
+    "startingItemOf": [
+      "PlayerNinja"
+    ],
     "type": "gun",
     "gunNameInternal": "Magnum",
     "quality": "B",
@@ -40371,6 +40401,9 @@
     "name": "Makarov",
     "quote": "The People's Gun",
     "description": "The Makarov was brought to the Gungeon by a lost Cosmonaut. Some say that brave, lost soul still wanders the Gungeon. This gun is no better or worse than any other gun.",
+    "startingItemOf": [
+      "PlayerCosmonaut"
+    ],
     "type": "gun",
     "gunNameInternal": "Makarov",
     "quality": "D",
@@ -56405,6 +56438,9 @@
     "name": "Robot's Right Hand",
     "quote": "Built To Kill",
     "description": "The right hand of an assault robot that fled to the Gungeon. When weilded by the Robot, combines with Junk to increase all damage output.\nIt is a simple projectile delivery system. Reliable, but it's short barrel is lacking in intricacy. Under the control of a targeting AI it becomes fearsome indeed.",
+    "startingItemOf": [
+      "PlayerRobot"
+    ],
     "type": "gun",
     "gunNameInternal": "Gunhand",
     "quality": "SPECIAL",
@@ -56522,6 +56558,9 @@
     "name": "Robot's Right Hand",
     "quote": "Built To Kill",
     "description": "The right hand of an assault robot that fled to the Gungeon.\nIt is a simple projectile delivery system. Reliable, but it's short barrel is lacking in intricacy. Under the control of a targeting AI it becomes fearsome indeed.",
+    "startingAlternateItemOf": [
+      "PlayerRobot"
+    ],
     "type": "gun",
     "gunNameInternal": "Gunhand",
     "quality": "SPECIAL",
@@ -57409,6 +57448,9 @@
     "name": "Rusty Sidearm",
     "quote": "Still Works. Mostly.",
     "description": "The Rusty Sidearm was brought to the Gungeon by the Hunter.\nDespite its extremely dated design and some signs of rust, this gun appears relatively new. Very strange...",
+    "startingItemOf": [
+      "PlayerGuide"
+    ],
     "type": "gun",
     "gunNameInternal": "Rusty Sidearm",
     "quality": "SPECIAL",
@@ -57528,6 +57570,9 @@
     "name": "Rusty Sidearm",
     "quote": "Still Works. Mostly.",
     "description": "The Rusty Sidearm was brought to the Gungeon by the Hunter.\nDespite its extremely dated design and some signs of rust, this gun appears relatively new. Very strange...",
+    "startingAlternateItemOf": [
+      "PlayerGuide"
+    ],
     "type": "gun",
     "gunNameInternal": "Rusty Sidearm",
     "quality": "SPECIAL",
@@ -59375,6 +59420,9 @@
     "name": "Sawed-Off",
     "quote": "No Butts About It",
     "description": "A shotgun modified for easy concealment. The shorter barrel widens the spread, but up-close, it's just as deadly as its full-barreled cousin.",
+    "startingItemOf": [
+      "PlayerConvict"
+    ],
     "type": "gun",
     "gunNameInternal": "Sawed-Off Shotgun",
     "quality": "D",
@@ -65803,6 +65851,9 @@
     "name": "Budget Revolver",
     "quote": "Affordable Arms",
     "description": "This Budget Revolver was brought to the Gungeon by an infamous fugitive.\nProvided by the Hegemony Regional Magistrate. The Convict won their plea to face the Gungeon in lieu of life imprisonment; undo their crimes, or face an eternity in Gungeon. With no cost to the state, it was an acceptable arrangement.\nCheaply made and prone to jams, the Budget Revolver used by only the most desperate Gungeoneers.",
+    "startingItemOf": [
+      "PlayerConvict"
+    ],
     "type": "gun",
     "gunNameInternal": "Budget Revolver",
     "quality": "SPECIAL",
@@ -65922,6 +65973,9 @@
     "name": "Budget Revolver",
     "quote": "Affordable Arms",
     "description": "This Budget Revolver was brought to the Gungeon by an infamous fugitive.\nProvided by the Hegemony Regional Magistrate. The Convict won their plea to face the Gungeon in lieu of life imprisonment; undo their crimes, or face an eternity in Gungeon. With no cost to the state, it was an acceptable arrangement.\nCheaply made and prone to jams, the Budget Revolver used by only the most desperate Gungeoneers.",
+    "startingAlternateItemOf": [
+      "PlayerConvict"
+    ],
     "type": "gun",
     "gunNameInternal": "Budget Revolver",
     "quality": "SPECIAL",
@@ -66956,6 +67010,9 @@
     "name": "Marine Sidearm",
     "quote": "Always With You",
     "description": "The Marine Sidearm was brought to the Gungeon by a low-ranking Primerdyne soldier.\nThough this gun appears sturdy, it has been known to fail when it is most needed.",
+    "startingItemOf": [
+      "PlayerMarine"
+    ],
     "type": "gun",
     "gunNameInternal": "Marine Sidearm",
     "quality": "SPECIAL",
@@ -67075,6 +67132,9 @@
     "name": "Marine Sidearm",
     "quote": "Always With You",
     "description": "The Marine Sidearm was brought to the Gungeon by a low-ranking Primerdyne soldier.\nThough this gun appears sturdy, it has been known to fail when it is most needed.",
+    "startingAlternateItemOf": [
+      "PlayerMarine"
+    ],
     "type": "gun",
     "gunNameInternal": "Marine Sidearm",
     "quality": "SPECIAL",
@@ -103987,6 +104047,9 @@
     "name": "Unfinished Gun",
     "quote": "Still Warm",
     "description": "This gun is still in the process of being forged! It barely functions in its current state, but could be a viable choice in a truly desperate situation. A small hourglass is embossed on the cylinder.",
+    "startingItemOf": [
+      "PlayerLamey"
+    ],
     "type": "gun",
     "gunNameInternal": "Lamey",
     "quality": "EXCLUDED",
@@ -114785,6 +114848,9 @@
     "name": "Slinger",
     "quote": "Farewell to arms",
     "description": "Brought to the Gungeon by a legendary gunplay expert.\nCalled the gunslinger by his foes not because of his ability to aim and shoot but because of his unusual habit of literally slinging his gun once it is out of ammo and replacing it with another from his magical belt of a million guns.\n///end of file",
+    "startingItemOf": [
+      "PlayerGunslinger"
+    ],
     "type": "gun",
     "gunNameInternal": "Slinger",
     "quality": "SPECIAL",

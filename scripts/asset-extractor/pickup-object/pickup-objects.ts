@@ -13,7 +13,7 @@ import { AssetService } from "../asset/asset-service.ts";
 import { SpriteService } from "../sprite/sprite.service.ts";
 import { SpriteAnimatorRepository } from "../sprite/sprite-animator.repository.ts";
 import { isGun, isItem } from "./client/helpers/types.ts";
-import { PlayerRepository } from "../player/player.repository.ts";
+import { PlayerService } from "../player/player.service.ts";
 import type { TPickupObject } from "./client/models/pickup-object.model.ts";
 
 type TCreatePickupObjectsInput = {
@@ -25,7 +25,7 @@ type TCreatePickupObjectsInput = {
   assetService: AssetService;
   spriteService: SpriteService;
   spriteAnimatorRepo: SpriteAnimatorRepository;
-  playerRepo: PlayerRepository;
+  playerService: PlayerService;
 };
 
 export async function createPickupObjects(options: TCreatePickupObjectsInput) {
@@ -38,7 +38,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
     assetService,
     spriteService,
     spriteAnimatorRepo,
-    playerRepo,
+    playerService,
   } = options;
   const pickupObjects: TPickupObject[] = [];
   const gunModelGenerator = await GunModelGenerator.create({
@@ -49,6 +49,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
     assetService,
     spriteService,
     spriteAnimatorRepo,
+    playerService,
   });
   const itemModelGenerator = new ItemModelGenerator({ translationRepo });
 
