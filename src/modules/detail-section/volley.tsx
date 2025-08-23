@@ -7,7 +7,8 @@ import { AnimatedSprite } from "../shared/components/animated-sprite";
 import { Marker } from "@/components/icons/marker";
 import { Chamber } from "@/components/icons/chamber";
 import { primaryColor } from "../shared/settings/tailwind";
-import type { TProjectile, TProjectilePerShot } from "@/client/generated/models/gun.model";
+import type { TProjectilePerShot } from "@/client/generated/models/gun.model";
+import type { TProjectile } from "@/client/generated/models/projectile.model";
 
 type TVolleyProps = {
   id: string;

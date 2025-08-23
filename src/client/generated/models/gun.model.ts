@@ -1,121 +1,8 @@
 import z from "zod/v4";
 import { PickupObject } from "./pickup-object.model.ts";
-import { Animation } from "./animation.model.ts";
-import { Percentage } from "./schema.ts";
-
-export type TStatusEffectProp =
-  | "poisonChance"
-  | "speedChance"
-  | "charmChance"
-  | "freezeChance"
-  | "fireChance"
-  | "stunChance"
-  | "cheeseChance";
-
-const Projectile = z.object({
-  /**
-   * basename of the meta file that associates with the prefab file
-   */
-  id: z.string(),
-  ignoreDamageCaps: z.boolean().optional(),
-  damage: z.number(),
-  speed: z.number(),
-  range: z.number(),
-  force: z.number(),
-
-  /**
-   * Extra damage from explosion, ricochet, or custom projectile like blackhole
-   */
-  additionalDamage: z.array(
-    z.object({
-      type: z.enum(["dps", "instant"]).optional().default("instant"),
-      /**
-       * If `isEstimated` is true, the damage is an estimate based on the best outcome.
-       *
-       * E.g. for ricochets, the damage is computed as if all bounces hit an enemy.
-       */
-      isEstimated: z.boolean().optional(),
-      /**
-       * If `canNotStack` is true, all damages with the same source can only be applied once.
-       */
-      canNotStack: z.boolean().optional(),
-      source: z.enum(["ricochet", "blackhole", "fire", "poison", "explosion", "damageMultiplier"]),
-      damage: z.number(),
-    }),
-  ),
-
-  /**
-   * Chance to spawn this projectile = `spawnWeight / projectileModes.length`.
-   */
-  spawnWeight: z.number().optional(),
-
-  poisonChance: Percentage.optional(),
-  poisonDuration: z.number().optional(),
-
-  speedChance: Percentage.optional(),
-  speedDuration: z.number().optional(),
-  speedMultiplier: z.number().optional(),
-
-  charmChance: Percentage.optional(),
-  charmDuration: z.number().optional(),
-
-  freezeChance: Percentage.optional(),
-  freezeDuration: z.number().optional(),
-  freezeAmount: z.number().optional(),
-
-  fireChance: Percentage.optional(),
-  fireDuration: z.number().optional(),
-
-  stunChance: Percentage.optional(),
-  stunDuration: z.number().optional(),
-
-  cheeseChance: Percentage.optional(),
-  cheeseDuration: z.number().optional(),
-  cheeseAmount: z.number().optional(),
-
-  numberOfBounces: z.number().optional(),
-  /**
-   * Chance to die on bounce. Default is `0`.
-   */
-  chanceToDieOnBounce: Percentage.optional(),
-  damageMultiplierOnBounce: z.number().nonnegative().optional(),
-
-  /**
-   * The number of times the projectile can pierce through enemies or objects.
-   */
-  penetration: z.number().optional(),
-  canPenetrateObjects: z.boolean().optional(),
-
-  explosionRadius: z.number().optional(),
-  explosionForce: z.number().optional(),
-  explosionFreezeRadius: z.number().optional(),
-
-  /**
-   * Instantly damage all enemies in the room/viewport
-   */
-  damageAllEnemies: z.boolean().optional(),
-
-  isHoming: z.boolean().optional(),
-  homingRadius: z.number().optional(),
-  homingAngularVelocity: z.number().optional(),
-
-  beamChargeTime: z.number().optional(),
-  /**
-   * Chance to apply a status effect per second.
-   *
-   * If a beam weapon has status effects, the default is `1`
-   *
-   * For [Science Cannon](https://enterthegungeon.fandom.com/wiki/Science_Cannon), multiple effects can be applied at the same time.
-   */
-  beamStatusEffectChancePerSecond: Percentage.optional(),
-  // TODO: research ProjectileModule.cs#GetEstimatedShotsPerSecond
-  // dps: z.undefined(),
-
-  /**
-   * Some projectiles are invisible hence no animation.
-   */
-  animation: Animation.optional(),
-});
+import { Animation, CompactedFrame, RichFrame } from "./animation.model.ts";
+import { Projectile } from "./projectile.model.ts";
+import type { TProjectile } from "./projectile.model.ts";
 
 /**
  * randomize/cycle through the projectile array for each shot
@@ -251,7 +138,7 @@ export const Gun = PickupObject.extend({
     auraOnReloadIgniteDps: z.number().optional(),
 
     /**
-     * Gun that switch between 2 firing modes upon reload
+     * Gun that switch between 2 firing modes after a reload
      */
     trickGun: z.boolean().optional(),
   }),
@@ -269,5 +156,31 @@ export const Gun = PickupObject.extend({
   }),
 });
 
-export type TProjectile = z.input<typeof Projectile>;
+const createDerivedGunSchema = <T extends z.ZodTypeAny>(frameSchema: T) => {
+  const AnimationSchema = Animation.extend({ frames: z.array(frameSchema) });
+  const ProjectileSchema = Projectile.extend({
+    animation: AnimationSchema.optional(),
+  });
+  const ProjectilePerShotSchema = ProjectilePerShot.extend({
+    projectiles: z.array(ProjectileSchema),
+  });
+  const ProjectileModeSchema = ProjectileMode.extend({
+    projectiles: z.array(ProjectilePerShotSchema),
+  });
+
+  return Gun.extend({
+    projectileModes: z.array(ProjectileModeSchema).nonempty(),
+    animation: z.object({
+      idle: AnimationSchema,
+      reload: AnimationSchema.optional(),
+      alternateIdle: AnimationSchema.optional(),
+      alternateReload: AnimationSchema.optional(),
+      charge: AnimationSchema.optional(),
+    }),
+  });
+};
+
+export const GunForStorage = createDerivedGunSchema(CompactedFrame);
+export const GunFromStorage = createDerivedGunSchema(RichFrame);
+
 export type TGun = z.input<typeof Gun>;

@@ -52,9 +52,10 @@ import { PlayerRogue } from "@/components/icons/player-rogue";
 import { PlayerSlinger } from "@/components/icons/player-slinger";
 import { TrickGun } from "@/components/icons/trick-gun";
 import type { ReactNode } from "react";
-import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
+import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
 import type { TPlayerName } from "@/client/generated/models/player.model";
+import type { TProjectile } from "@/client/generated/models/projectile.model";
 
 const TOOLTIP_DELAY = 100;
 const ATTRIBUTE_CLASSES = "gap-0.5 cursor-help!";

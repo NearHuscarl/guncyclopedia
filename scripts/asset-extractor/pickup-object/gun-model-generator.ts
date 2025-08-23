@@ -8,7 +8,7 @@ import isEqual from "lodash/isEqual.js";
 import cloneDeep from "lodash/cloneDeep.js";
 import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
 import { videos } from "../gun/gun.meta.ts";
-import { Gun } from "./client/models/gun.model.ts";
+import { GunForStorage } from "./client/models/gun.model.ts";
 import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
@@ -23,8 +23,9 @@ import { ColorService } from "../color/color.service.ts";
 import { SpriteRepository } from "../sprite/sprite.repository.ts";
 import { PlayerService } from "../player/player.service.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
-import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
+import type { TGun, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
+import type { TProjectile } from "./client/models/projectile.model.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
 import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import type { TAnimation } from "./client/models/animation.model.ts";
@@ -527,9 +528,7 @@ export class GunModelGenerator {
         texturePath = frameTexturePath;
       }
       frames.push({
-        spriteName: spriteData.name,
         uvs: spriteData.uvs,
-        spriteId: frame.spriteId,
         flipped: Boolean(spriteData.flipped),
       });
     }
@@ -576,8 +575,6 @@ export class GunModelGenerator {
         maxFidgetDuration: 0,
         frames: [
           {
-            spriteName: res.spriteData.name,
-            spriteId: projectileDto.sprite._spriteId,
             uvs: res.spriteData.uvs,
             flipped: Boolean(res.spriteData.flipped),
           },
@@ -626,9 +623,7 @@ export class GunModelGenerator {
             );
           }
           frames.push({
-            spriteName: spriteData.name,
             uvs: spriteData.uvs,
-            spriteId: frame.spriteId,
             flipped: Boolean(spriteData.flipped),
           });
           if (texturePath) {
@@ -692,8 +687,6 @@ export class GunModelGenerator {
         maxFidgetDuration: 0,
         frames: [
           {
-            spriteName: res.spriteData.name,
-            spriteId: -1, // no sprite ID
             uvs: res.spriteData.uvs,
             flipped: Boolean(res.spriteData.flipped),
           },
@@ -794,7 +787,7 @@ export class GunModelGenerator {
       }
 
       gun.featureFlags = Array.from(this._featureFlags);
-      return Gun.parse(gun);
+      return GunForStorage.parse(gun);
     } catch (error) {
       if (error instanceof z.ZodError) {
         console.error(chalk.red(`Error parsing GUN pickup-object with ID ${entry.pickupObjectId}:`));
