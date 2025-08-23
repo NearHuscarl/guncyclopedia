@@ -46,6 +46,9 @@ import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
 import type { TPlayerName } from "@/client/generated/models/player.model";
 
+const TOOLTIP_DELAY = 100;
+const ATTRIBUTE_CLASSES = "gap-0.5 cursor-help!";
+
 type TStatModifier = TGun["playerStatModifiers"][number];
 type TStatToBoost = TStatModifier["statToBoost"];
 
@@ -59,9 +62,9 @@ type TStatModifierComponentProps = {
 function createPlayerStatsComponent({ modifier, className, icon, tooltip }: TStatModifierComponentProps) {
   const { modifyType, amount } = modifier;
   return (
-    <Tooltip>
+    <Tooltip key={modifier.statToBoost} delayDuration={TOOLTIP_DELAY}>
       <TooltipTrigger>
-        <div className="flex items-center gap-0.5">
+        <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
           <NumericValue className={className}>
             {modifyType === "ADDITIVE" && "+"}
             {modifyType === "MULTIPLICATIVE" ? toPercent(amount) : amount}
@@ -162,9 +165,9 @@ function createStatusEffectAttribute(chance: number | undefined, twColor: string
   if (!chance) return null;
 
   return (
-    <Tooltip>
+    <Tooltip delayDuration={TOOLTIP_DELAY}>
       <TooltipTrigger>
-        <div className="flex items-center gap-0.5">
+        <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
           {chance < 1 && <NumericValue className={twColor}>{toPercent(chance)}</NumericValue>}
           {icon}
         </div>
@@ -205,8 +208,10 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         <Bounce color="white" size={20} />
       </div>
       {gun?.startingItemOf && (
-        <Tooltip>
-          <TooltipTrigger>{gun?.startingItemOf.map((item) => playerLookup[item]?.[1] ?? null)}</TooltipTrigger>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger className={ATTRIBUTE_CLASSES}>
+            {gun?.startingItemOf.map((item) => playerLookup[item]?.[1] ?? null)}
+          </TooltipTrigger>
           <TooltipContent>
             <strong>Starting Weapon</strong>
             <br />
@@ -219,8 +224,8 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {gun?.startingAlternateItemOf && (
-        <Tooltip>
-          <TooltipTrigger>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger className={ATTRIBUTE_CLASSES}>
             {gun?.startingAlternateItemOf.map((item) => playerLookup[item]?.[2] ?? playerLookup[item]?.[1] ?? null)}
           </TooltipTrigger>
           <TooltipContent>
@@ -237,10 +242,10 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {(gunStats?.mode.chargeTime || undefined) && (
-        <Tooltip>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div
-              className="flex items-center gap-1"
+              className={clsx("flex items-center gap-1!", ATTRIBUTE_CLASSES)}
               onMouseEnter={() => setUseChargeAnimation(true)}
               onMouseLeave={() => setUseChargeAnimation(false)}
             >
@@ -337,8 +342,8 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </>,
       )}
       {gun?.attribute.activeReload && (
-        <Tooltip>
-          <TooltipTrigger>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger className={ATTRIBUTE_CLASSES}>
             <ActiveReload />
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-96">
@@ -350,8 +355,8 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {gun?.attribute.blankDuringReload && (
-        <Tooltip>
-          <TooltipTrigger>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger className={ATTRIBUTE_CLASSES}>
             <BlankDuringReload />
           </TooltipTrigger>
           <TooltipContent className="text-wrap">
@@ -363,8 +368,8 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {gun?.attribute.reflectDuringReload && (
-        <Tooltip>
-          <TooltipTrigger>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger className={ATTRIBUTE_CLASSES}>
             <FightsabreAttack />
           </TooltipTrigger>
           <TooltipContent className="text-wrap">
@@ -378,9 +383,9 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {projectileData.isHoming && (
-        <Tooltip>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
-            <div className="flex items-center gap-1">
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               {(projectileData.homingRadius || undefined) && (
                 <NumericValue>{formatNumber(projectileData.homingRadius!, 0)}</NumericValue>
               )}
@@ -399,9 +404,9 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {gun?.attribute.auraOnReload && (
-        <Tooltip>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
-            <div className="flex items-center gap-1">
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               {(gun?.attribute.auraOnReloadRadius || undefined) && (
                 <NumericValue>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</NumericValue>
               )}
@@ -417,9 +422,9 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {(projectileData.explosionRadius || undefined) && (
-        <Tooltip>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
-            <div className="flex items-center gap-1">
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               <NumericValue className={clsx({ "text-sky-500": projectileData.explosionFreezeRadius })}>
                 {formatNumber(projectileData.explosionRadius!, 1)}
               </NumericValue>
@@ -443,9 +448,9 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {(projectileData.penetration || undefined) && (
-        <Tooltip>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
-            <div className="flex items-center gap-1">
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               <NumericValue>{formatNumber(projectileData.penetration!, 1)}</NumericValue>
               <Penetration size={20} />
             </div>
@@ -458,9 +463,9 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         </Tooltip>
       )}
       {(projectileData.numberOfBounces || undefined) && (
-        <Tooltip>
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
-            <div className="flex items-center gap-1">
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               <NumericValue>{formatNumber(projectileData.numberOfBounces!, 1)}</NumericValue>
               <Bounce color="white" size={20} />
             </div>

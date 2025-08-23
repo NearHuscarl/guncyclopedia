@@ -1,5 +1,5 @@
-import type { TGun } from "@/client/generated/models/gun.model";
 import clsx from "clsx";
+import type { TGun } from "@/client/generated/models/gun.model";
 
 const chestImageLookup: Record<string, string> = {
   S: "/chest/black_chest.png",

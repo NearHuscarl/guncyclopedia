@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Chest } from "../shared/components/chest";
 import type { TGun } from "@/client/generated/models/gun.model";
@@ -12,7 +13,7 @@ export function Quality({ tier, className }: TTierProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Chest tier={tier} className={className} />
+        <Chest tier={tier} className={clsx("cursor-help", className)} />
       </TooltipTrigger>
       <TooltipContent>{isKnownTier ? `Tier ${tier}` : tier}</TooltipContent>
     </Tooltip>

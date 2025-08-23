@@ -18,9 +18,7 @@ export function usePreloadSpritesheets() {
 
               img.src = src;
               img.onerror = () => reject(new Error(`Failed to preload: ${src}`));
-              img.onload = () => {
-                resolve();
-              };
+              img.onload = () => resolve();
             });
           }),
         );

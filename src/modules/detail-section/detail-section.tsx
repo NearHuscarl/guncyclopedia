@@ -135,7 +135,7 @@ export function DetailSection() {
             <div className="flex gap-2 items-center">
               <Tooltip>
                 <TooltipTrigger>
-                  <NumericValue>
+                  <NumericValue className="cursor-help">
                     {selectedStats.magazineSize}/{formatNumber(ProjectileService.getMaxAmmo(selectedStats.maxAmmo))}
                   </NumericValue>
                 </TooltipTrigger>

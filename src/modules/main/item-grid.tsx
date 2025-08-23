@@ -6,7 +6,7 @@ import { Gun } from "@/client/generated/models/gun.model";
 import { useAppState } from "../shared/hooks/useAppState";
 import { useAppStateMutation } from "../shared/hooks/useAppStateMutation";
 import { useFilteredGuns } from "../shared/hooks/useGuns";
-import { usePreloadSpritesheets } from "../shared/hooks/usePreloadImages";
+import { usePreloadSpritesheets } from "../shared/hooks/usePreloadSpritesheets";
 import { useGunStore } from "../shared/store/gun.store";
 import { useFilter } from "../shared/hooks/useFilter";
 

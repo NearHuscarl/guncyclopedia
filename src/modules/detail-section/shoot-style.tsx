@@ -1,6 +1,9 @@
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import { Muted } from "@/components/ui/typography";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { usePrefetchImages } from "../shared/hooks/usePrefetchImages";
+import { useUnmountRef } from "@/lib/hooks";
 import { type TProjectilePerShot } from "@/client/generated/models/gun.model";
 
 type TShootStyleProps = {
@@ -16,17 +19,58 @@ const shootStyleHelp: Record<TProjectilePerShot["shootStyle"], string> = {
   Burst: "Similar to Automatic but fire a bursts of multiple projectiles in a short time before the normal cooldown.",
 };
 
+function getImageSrc(shootStyle: string) {
+  return `/shoot-style/${shootStyle.toLowerCase()}.gif`;
+}
+
 export function ShootStyle({ value }: TShootStyleProps) {
+  const { isFetched: imagesReady, prefetchImages } = usePrefetchImages(Object.keys(shootStyleHelp).map(getImageSrc));
+  const [hoverReady, setHoverReady] = useState(false);
+  const timerRef = useRef<number>(undefined);
+  const [open, setOpen] = useState(false);
+  const unmountRef = useUnmountRef();
+
+  const startHover = () => {
+    window.clearTimeout(timerRef.current);
+    setHoverReady(false);
+    timerRef.current = window.setTimeout(() => !unmountRef.current && setHoverReady(true), 700);
+
+    if (!imagesReady) {
+      prefetchImages();
+    }
+  };
+  const endHover = () => {
+    window.clearTimeout(timerRef.current);
+    setHoverReady(false);
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    setOpen(hoverReady && imagesReady);
+  }, [hoverReady, imagesReady]);
+
   return (
-    <Tooltip>
+    <Tooltip
+      open={open}
+      // Also close if user scrolls/escapes, Radix will call onOpenChange(false)
+      onOpenChange={(next) => !next && setOpen(false)}
+    >
       <TooltipTrigger asChild>
-        <Muted className="font-semibold uppercase">{value}</Muted>
+        <Muted
+          className="font-semibold uppercase cursor-help"
+          onPointerEnter={startHover}
+          onFocus={startHover}
+          onPointerLeave={endHover}
+          onBlur={endHover}
+        >
+          {value}
+        </Muted>
       </TooltipTrigger>
       <TooltipContent side="left" className="w-[410px] text-wrap">
         {Object.entries(shootStyleHelp).map(([s, help]) => (
           <div key={s} className="flex gap-2 mb-1">
             <div className="w-16">
-              <img className="w-full h-full object-contain" src={`/shoot-style/${s.toLowerCase()}.gif`} />
+              <img className="w-full h-full object-contain" src={getImageSrc(s)} />
             </div>
             <div className="flex-1">
               <Muted

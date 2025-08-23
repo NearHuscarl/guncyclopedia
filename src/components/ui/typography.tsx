@@ -1,8 +1,6 @@
-import type { PropsWithChildren } from "react";
+import type { JSX, PropsWithChildren } from "react";
 
-type TTypographyProps = PropsWithChildren<{
-  className?: string;
-}>;
+type TTypographyProps = PropsWithChildren<JSX.IntrinsicElements["div"]>;
 
 export function H1(props: TTypographyProps) {
   return (

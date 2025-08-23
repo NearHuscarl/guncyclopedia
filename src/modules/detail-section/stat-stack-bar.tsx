@@ -166,7 +166,9 @@ export function StatStackBar({
       <div className="flex justify-between mb-2 items-baseline">
         {labelTooltip ? (
           <Tooltip>
-            <TooltipTrigger>{labelElement}</TooltipTrigger>
+            <TooltipTrigger asChild>
+              <div className="cursor-help">{labelElement}</div>
+            </TooltipTrigger>
             <TooltipContent className="w-80 text-wrap">
               <div dangerouslySetInnerHTML={{ __html: labelTooltip }} />
             </TooltipContent>
@@ -209,7 +211,7 @@ export function StatStackBar({
             <Tooltip
               key={key}
               // NOTE: don't render a div element conditionally to reuse the same component instance for the transition effect.
-              delayDuration={source ? 0 : 100_000}
+              delayDuration={source ? 100 : 100_000}
             >
               <TooltipTrigger {...barProps} />
               <TooltipContent>

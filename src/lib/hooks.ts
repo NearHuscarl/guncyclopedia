@@ -9,3 +9,17 @@ export function usePrevious<T>(value: T): T | undefined {
 
   return ref.current;
 }
+
+export function useUnmountRef() {
+  const ref = useRef(false);
+
+  useEffect(() => {
+    ref.current = false; // strict mode will re-run this effect
+
+    return () => {
+      ref.current = true;
+    };
+  }, []);
+
+  return ref;
+}
