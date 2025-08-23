@@ -51,13 +51,15 @@ function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mo
             : [gun.animation.alternateReload, gun.animation.idle]
           ).filter((a) => !isUndefined(a))}
         />
-      ) : (
-        <AnimatedSprite
+      ) : !useChargeAnimation ? (
+        <AnimatedSpriteSeries
           key={`${gun.id}-${animationName}`}
           scale={6}
           // TODO: moonscraper charge animation doesn't exist
-          animation={gun.animation[animationName] ?? gun.animation.idle}
+          animations={[gun.animation.intro ?? gun.animation.reload, gun.animation.idle].filter((a) => !isUndefined(a))}
         />
+      ) : (
+        <AnimatedSprite key={`${gun.id}-${animationName}`} scale={6} animation={gun.animation.charge!} />
       )}
       {hoverGun && hoverGun.id !== gun.id && (
         <>

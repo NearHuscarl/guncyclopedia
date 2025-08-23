@@ -1,7 +1,8 @@
 import z from "zod/v4";
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys } from "@/lib/types";
-import type { TProjectile, TProjectilePerShot, TStatusEffectProp } from "../generated/models/gun.model";
+import type { TProjectilePerShot } from "../generated/models/gun.model";
+import type { TProjectile, TStatusEffectProp } from "../generated/models/projectile.model";
 
 type AggregateModeOption = "sum" | "avg";
 type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TProjectile[]) => number);

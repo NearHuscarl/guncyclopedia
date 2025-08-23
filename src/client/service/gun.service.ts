@@ -1,8 +1,9 @@
 import sumBy from "lodash/sumBy";
 import startCase from "lodash/startCase";
-import type { TGun, TProjectile, TProjectileMode, TProjectilePerShot } from "../generated/models/gun.model";
 import { ProjectileService, type TRangeLabel } from "./projectile.service";
 import { formatNumber } from "@/lib/lang";
+import type { TGun, TProjectileMode, TProjectilePerShot } from "../generated/models/gun.model";
+import type { TProjectile } from "../generated/models/projectile.model";
 
 interface IStat {
   total: number;
@@ -162,8 +163,8 @@ export class GunService {
       mode.projectiles[projectileIndex]?.projectiles[projectileDataIndex] ??
       ProjectileService.createAggregatedProjectileData(projectilePool, "avg");
     const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
-    const reloadTime = magazineSize === gun.maxAmmo ? 0 : gun.reloadTime;
     const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? 10_000 : gun.maxAmmo;
+    const reloadTime = gun.reloadTime;
     const timingInput = {
       reloadTime: gun.reloadTime, // Prize Pistol's edge case (only 1 max ammo)
       magazineSize,

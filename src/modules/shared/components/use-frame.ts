@@ -12,8 +12,6 @@ export function useFrame(animation: TAnimation, onFinished?: () => void) {
   });
 
   useEffect(() => {
-    if (animation.frames.length === 1) return;
-
     let timerId: number;
     const scheduleNext = (current: number) => {
       const lastFrame = current === animation.frames.length - 1;
@@ -26,11 +24,11 @@ export function useFrame(animation: TAnimation, onFinished?: () => void) {
           : // normal per-frame delay
             1000 / animation.fps;
 
-      if (animation.wrapMode === "Once" && lastFrame) {
-        onFinishedRef.current?.();
-        return;
-      }
       timerId = window.setTimeout(() => {
+        if ((animation.wrapMode === "Once" && lastFrame) || animation.frames.length === 1) {
+          onFinishedRef.current?.();
+          return;
+        }
         setIndex((prev) => (prev + 1 === animation.frames.length ? startIndex : prev + 1));
       }, delay);
     };

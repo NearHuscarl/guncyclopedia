@@ -150,6 +150,7 @@ export const Gun = PickupObject.extend({
   animation: z.object({
     idle: Animation,
     reload: Animation.optional(),
+    intro: Animation.optional(),
     alternateIdle: Animation.optional(),
     alternateReload: Animation.optional(),
     charge: Animation.optional(),
@@ -173,6 +174,7 @@ const createDerivedGunSchema = <T extends z.ZodTypeAny>(frameSchema: T) => {
     animation: z.object({
       idle: AnimationSchema,
       reload: AnimationSchema.optional(),
+      intro: AnimationSchema.optional(),
       alternateIdle: AnimationSchema.optional(),
       alternateReload: AnimationSchema.optional(),
       charge: AnimationSchema.optional(),

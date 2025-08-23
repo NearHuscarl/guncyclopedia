@@ -545,12 +545,17 @@ export class GunModelGenerator {
     };
   }
 
-  private _buildAnimationFromName(gunDto: TGunDto, animationName?: string | null): TAnimation | undefined {
+  private _buildAnimationFromName(
+    gunDto: TGunDto,
+    animationName?: string | null,
+    override?: Partial<TAnimation>,
+  ): TAnimation | undefined {
     if (!animationName) return;
     const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, animationName);
     if (!clip) return;
 
-    return this._buildAnimation(clip, `Animation name: ${animationName}`);
+    const animation = this._buildAnimation(clip, `Animation name: ${animationName}`);
+    return { ...animation, ...override };
   }
 
   private _buildProjectileAnimation(projectileDto: TProjectileDto): TAnimation | undefined {
@@ -763,10 +768,14 @@ export class GunModelGenerator {
         colors,
         animation: {
           idle: idleAnimation,
+          // Fix Turbo-Gun reload animation getting stuck in a loop
+          reload: this._buildAnimationFromName(gunDto, gunDto.gun.reloadAnimation, { wrapMode: "Once" }),
+          intro: this._buildAnimationFromName(gunDto, gunDto.gun.introAnimation, { wrapMode: "Once" }),
           ...(gunDto.gun.IsTrickGun && {
-            reload: this._buildAnimationFromName(gunDto, gunDto.gun.reloadAnimation),
             alternateIdle: this._buildAnimationFromName(gunDto, gunDto.gun.alternateIdleAnimation),
-            alternateReload: this._buildAnimationFromName(gunDto, gunDto.gun.alternateReloadAnimation),
+            alternateReload: this._buildAnimationFromName(gunDto, gunDto.gun.alternateReloadAnimation, {
+              wrapMode: "Once",
+            }),
           }),
           charge: chargeAnimation,
         },

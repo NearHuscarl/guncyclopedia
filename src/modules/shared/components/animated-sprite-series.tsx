@@ -15,7 +15,7 @@ export function AnimatedSpriteSeries({ animations, className, scale }: TAnimated
       className={className}
       onFinished={() => {
         if (animationIndex < animations.length - 1) {
-          setAnimationIndex((prev) => prev + 1);
+          setAnimationIndex(animationIndex + 1);
         }
       }}
     />
