@@ -118,15 +118,19 @@ export class GunModelGenerator {
     return expectedBounceDamage;
   }
 
-  private _getProjectileModules(gunDto: TGunDto): { projectileModules: TProjectileModule[]; modulesAreTiers: boolean } {
-    if (!this._assetService.referenceExists(gunDto.gun.rawVolley)) {
+  private _getProjectileModules(
+    gunDto: TGunDto,
+    alternateVolley = false,
+  ): { projectileModules: TProjectileModule[]; modulesAreTiers: boolean } {
+    const volley = alternateVolley ? gunDto.gun.alternateVolley : gunDto.gun.rawVolley;
+    if (!this._assetService.referenceExists(volley)) {
       return { projectileModules: [gunDto.gun.singleModule], modulesAreTiers: false };
     }
 
-    const volleyDto = this._volleyRepo.getVolley(gunDto.gun.rawVolley);
+    const volleyDto = this._volleyRepo.getVolley(volley);
     if (!volleyDto) {
       throw new Error(
-        `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${gunDto.gun.rawVolley.guid} not found in VolleyRepository.`,
+        `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${volley.guid} not found in VolleyRepository.`,
       );
     }
 
@@ -395,12 +399,21 @@ export class GunModelGenerator {
     // for the gun model
     const defaultModule = projectileModules[0];
 
-    // each module is a separate mode
+    // each module is a separate tier level (mode)
     if (modulesAreTiers) {
       this._featureFlags.add("hasTieredProjectiles");
       return projectileModules.map((mod, i) =>
         this._buildModeFromProjectileModules(`Lvl ${i + 1}`, gunDto, defaultModule, [mod]),
       );
+    }
+
+    if (gunDto.gun.IsTrickGun) {
+      const { projectileModules: alternateModules } = this._getProjectileModules(gunDto, true);
+
+      return [
+        this._buildModeFromProjectileModules(`Normal`, gunDto, defaultModule, projectileModules),
+        this._buildModeFromProjectileModules(`Alternate`, gunDto, alternateModules[0], alternateModules),
+      ];
     }
 
     // TODO: handle fucking Starpew volley
@@ -482,6 +495,8 @@ export class GunModelGenerator {
       auraOnReloadIgniteDps: gunDto.auraOnReloadModifier?.IgnitesEnemies
         ? gunDto.auraOnReloadModifier?.IgniteEffect.DamagePerSecondToEnemies
         : undefined,
+
+      trickGun: Boolean(gunDto.gun.IsTrickGun) || undefined,
     };
 
     for (const value of Object.values(attributes)) {
@@ -531,6 +546,14 @@ export class GunModelGenerator {
     };
   }
 
+  private _buildAnimationFromName(gunDto: TGunDto, animationName?: string | null): TAnimation | undefined {
+    if (!animationName) return;
+    const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, animationName);
+    if (!clip) return;
+
+    return this._buildAnimation(clip, `Animation name: ${animationName}`);
+  }
+
   private _buildProjectileAnimation(projectileDto: TProjectileDto): TAnimation | undefined {
     if (projectileDto.spriteAnimator) {
       const { library, defaultClipId } = projectileDto.spriteAnimator;
@@ -576,12 +599,7 @@ export class GunModelGenerator {
     );
     if (!isChargeGun) return;
 
-    const animationName = gunDto.gun.chargeAnimation ?? gunDto.gun.shootAnimation;
-    if (!animationName) return;
-    const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, animationName);
-    if (!clip) return;
-
-    return this._buildAnimation(clip, "");
+    return this._buildAnimationFromName(gunDto, gunDto.gun.chargeAnimation ?? gunDto.gun.shootAnimation);
   }
 
   private async _buildGunIdleAnimation(gunDto: TGunDto): Promise<{ colors: string[]; animation: TAnimation }> {
@@ -752,6 +770,11 @@ export class GunModelGenerator {
         colors,
         animation: {
           idle: idleAnimation,
+          ...(gunDto.gun.IsTrickGun && {
+            reload: this._buildAnimationFromName(gunDto, gunDto.gun.reloadAnimation),
+            alternateIdle: this._buildAnimationFromName(gunDto, gunDto.gun.alternateIdleAnimation),
+            alternateReload: this._buildAnimationFromName(gunDto, gunDto.gun.alternateReloadAnimation),
+          }),
           charge: chargeAnimation,
         },
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,

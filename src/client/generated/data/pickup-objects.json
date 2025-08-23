@@ -914,7 +914,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 6,
         "projectiles": [
           {
@@ -1308,12 +1308,488 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "magazineSize": 6,
+        "projectiles": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.5,
+            "spread": 1,
+            "projectiles": [
+              {
+                "id": "Ant_Fireball_Projectile",
+                "damage": 1.5,
+                "speed": 10,
+                "range": 1000,
+                "force": 35,
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
+                "fireChance": 1,
+                "fireDuration": 2.5,
+                "penetration": 4,
+                "canPenetrateObjects": false,
+                "animation": {
+                  "name": "Fireball_Projectile",
+                  "fps": 15,
+                  "loopStart": 0,
+                  "wrapMode": "Loop",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "fireball_projectile_001",
+                      "spriteId": 190,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.9160176,
+                          "y": 0.21289161
+                        },
+                        {
+                          "x": 0.9160176,
+                          "y": 0.24218652
+                        },
+                        {
+                          "x": 0.93945116,
+                          "y": 0.21289161
+                        },
+                        {
+                          "x": 0.93945116,
+                          "y": 0.24218652
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_002",
+                      "spriteId": 192,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.91406447,
+                          "y": 0.24414161
+                        },
+                        {
+                          "x": 0.91406447,
+                          "y": 0.27343652
+                        },
+                        {
+                          "x": 0.93749803,
+                          "y": 0.24414161
+                        },
+                        {
+                          "x": 0.93749803,
+                          "y": 0.27343652
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_003",
+                      "spriteId": 188,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.51562697,
+                          "y": 0.23535255
+                        },
+                        {
+                          "x": 0.51562697,
+                          "y": 0.2607412
+                        },
+                        {
+                          "x": 0.53906053,
+                          "y": 0.23535255
+                        },
+                        {
+                          "x": 0.53906053,
+                          "y": 0.2607412
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_004",
+                      "spriteId": 191,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.9160176,
+                          "y": 0.15625098
+                        },
+                        {
+                          "x": 0.9160176,
+                          "y": 0.1826162
+                        },
+                        {
+                          "x": 0.9433574,
+                          "y": 0.15625098
+                        },
+                        {
+                          "x": 0.9433574,
+                          "y": 0.1826162
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_005",
+                      "spriteId": 189,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.5175801,
+                          "y": 0.17773536
+                        },
+                        {
+                          "x": 0.5175801,
+                          "y": 0.2060537
+                        },
+                        {
+                          "x": 0.54101366,
+                          "y": 0.17773536
+                        },
+                        {
+                          "x": 0.54101366,
+                          "y": 0.2060537
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.5,
+            "spread": 20,
+            "projectiles": [
+              {
+                "id": "Ant_Fireball_Projectile",
+                "damage": 1.5,
+                "speed": 10,
+                "range": 1000,
+                "force": 35,
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
+                "fireChance": 1,
+                "fireDuration": 2.5,
+                "penetration": 4,
+                "canPenetrateObjects": false,
+                "animation": {
+                  "name": "Fireball_Projectile",
+                  "fps": 15,
+                  "loopStart": 0,
+                  "wrapMode": "Loop",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "fireball_projectile_001",
+                      "spriteId": 190,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.9160176,
+                          "y": 0.21289161
+                        },
+                        {
+                          "x": 0.9160176,
+                          "y": 0.24218652
+                        },
+                        {
+                          "x": 0.93945116,
+                          "y": 0.21289161
+                        },
+                        {
+                          "x": 0.93945116,
+                          "y": 0.24218652
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_002",
+                      "spriteId": 192,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.91406447,
+                          "y": 0.24414161
+                        },
+                        {
+                          "x": 0.91406447,
+                          "y": 0.27343652
+                        },
+                        {
+                          "x": 0.93749803,
+                          "y": 0.24414161
+                        },
+                        {
+                          "x": 0.93749803,
+                          "y": 0.27343652
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_003",
+                      "spriteId": 188,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.51562697,
+                          "y": 0.23535255
+                        },
+                        {
+                          "x": 0.51562697,
+                          "y": 0.2607412
+                        },
+                        {
+                          "x": 0.53906053,
+                          "y": 0.23535255
+                        },
+                        {
+                          "x": 0.53906053,
+                          "y": 0.2607412
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_004",
+                      "spriteId": 191,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.9160176,
+                          "y": 0.15625098
+                        },
+                        {
+                          "x": 0.9160176,
+                          "y": 0.1826162
+                        },
+                        {
+                          "x": 0.9433574,
+                          "y": 0.15625098
+                        },
+                        {
+                          "x": 0.9433574,
+                          "y": 0.1826162
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_005",
+                      "spriteId": 189,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.5175801,
+                          "y": 0.17773536
+                        },
+                        {
+                          "x": 0.5175801,
+                          "y": 0.2060537
+                        },
+                        {
+                          "x": 0.54101366,
+                          "y": 0.17773536
+                        },
+                        {
+                          "x": 0.54101366,
+                          "y": 0.2060537
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.5,
+            "spread": 20,
+            "projectiles": [
+              {
+                "id": "Ant_Fireball_Projectile",
+                "damage": 1.5,
+                "speed": 10,
+                "range": 1000,
+                "force": 35,
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
+                "fireChance": 1,
+                "fireDuration": 2.5,
+                "penetration": 4,
+                "canPenetrateObjects": false,
+                "animation": {
+                  "name": "Fireball_Projectile",
+                  "fps": 15,
+                  "loopStart": 0,
+                  "wrapMode": "Loop",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "fireball_projectile_001",
+                      "spriteId": 190,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.9160176,
+                          "y": 0.21289161
+                        },
+                        {
+                          "x": 0.9160176,
+                          "y": 0.24218652
+                        },
+                        {
+                          "x": 0.93945116,
+                          "y": 0.21289161
+                        },
+                        {
+                          "x": 0.93945116,
+                          "y": 0.24218652
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_002",
+                      "spriteId": 192,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.91406447,
+                          "y": 0.24414161
+                        },
+                        {
+                          "x": 0.91406447,
+                          "y": 0.27343652
+                        },
+                        {
+                          "x": 0.93749803,
+                          "y": 0.24414161
+                        },
+                        {
+                          "x": 0.93749803,
+                          "y": 0.27343652
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_003",
+                      "spriteId": 188,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.51562697,
+                          "y": 0.23535255
+                        },
+                        {
+                          "x": 0.51562697,
+                          "y": 0.2607412
+                        },
+                        {
+                          "x": 0.53906053,
+                          "y": 0.23535255
+                        },
+                        {
+                          "x": 0.53906053,
+                          "y": 0.2607412
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_004",
+                      "spriteId": 191,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.9160176,
+                          "y": 0.15625098
+                        },
+                        {
+                          "x": 0.9160176,
+                          "y": 0.1826162
+                        },
+                        {
+                          "x": 0.9433574,
+                          "y": 0.15625098
+                        },
+                        {
+                          "x": 0.9433574,
+                          "y": 0.1826162
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "fireball_projectile_005",
+                      "spriteId": 189,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.5175801,
+                          "y": 0.17773536
+                        },
+                        {
+                          "x": 0.5175801,
+                          "y": 0.2060537
+                        },
+                        {
+                          "x": 0.54101366,
+                          "y": 0.17773536
+                        },
+                        {
+                          "x": 0.54101366,
+                          "y": 0.2060537
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 100,
     "reloadTime": 1.2,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "teal",
       "sky",
@@ -1332,6 +1808,327 @@
           {
             "spriteName": "blue_ant_idle_001",
             "spriteId": -1,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.016602539,
+                "y": 0.41796973
+              },
+              {
+                "x": 0.016602539,
+                "y": 0.44433495
+              },
+              {
+                "x": 0.027342774,
+                "y": 0.41796973
+              },
+              {
+                "x": 0.027342774,
+                "y": 0.44433495
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "ant_flipbutt",
+        "fps": 10,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "blue_ant_flipbutt_001",
+            "spriteId": 1201,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.17773536,
+                "y": 0.5458994
+              },
+              {
+                "x": 0.17773536,
+                "y": 0.5712881
+              },
+              {
+                "x": 0.18847558,
+                "y": 0.5458994
+              },
+              {
+                "x": 0.18847558,
+                "y": 0.5712881
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_flipbutt_002",
+            "spriteId": 1191,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.19921973,
+                "y": 0.6582041
+              },
+              {
+                "x": 0.19921973,
+                "y": 0.6816397
+              },
+              {
+                "x": 0.20898339,
+                "y": 0.6582041
+              },
+              {
+                "x": 0.20898339,
+                "y": 0.6816397
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_flipbutt_003",
+            "spriteId": 1194,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.25781348,
+                "y": 0.6464853
+              },
+              {
+                "x": 0.2714834,
+                "y": 0.6464853
+              },
+              {
+                "x": 0.25781348,
+                "y": 0.663085
+              },
+              {
+                "x": 0.2714834,
+                "y": 0.663085
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_flipbutt_004",
+            "spriteId": 1202,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.18164161,
+                "y": 0.7050791
+              },
+              {
+                "x": 0.19531152,
+                "y": 0.7050791
+              },
+              {
+                "x": 0.18164161,
+                "y": 0.72167873
+              },
+              {
+                "x": 0.19531152,
+                "y": 0.72167873
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_flipbutt_005",
+            "spriteId": 1199,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.26074317,
+                "y": 0.6230478
+              },
+              {
+                "x": 0.26074317,
+                "y": 0.6445303
+              },
+              {
+                "x": 0.2714834,
+                "y": 0.6230478
+              },
+              {
+                "x": 0.2714834,
+                "y": 0.6445303
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_flipbutt_006",
+            "spriteId": 1204,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.899415,
+                "y": 0.4238291
+              },
+              {
+                "x": 0.899415,
+                "y": 0.4482412
+              },
+              {
+                "x": 0.90917873,
+                "y": 0.4238291
+              },
+              {
+                "x": 0.90917873,
+                "y": 0.4482412
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "ant_fliphead",
+        "fps": 10,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "blue_ant_fliphead_001",
+            "spriteId": 1206,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.024415039,
+                "y": 0.71386814
+              },
+              {
+                "x": 0.0449209,
+                "y": 0.71386814
+              },
+              {
+                "x": 0.024415039,
+                "y": 0.72656155
+              },
+              {
+                "x": 0.0449209,
+                "y": 0.72656155
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_fliphead_002",
+            "spriteId": 1192,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.09863379,
+                "y": 0.72656345
+              },
+              {
+                "x": 0.11035059,
+                "y": 0.72656345
+              },
+              {
+                "x": 0.09863379,
+                "y": 0.7460928
+              },
+              {
+                "x": 0.11035059,
+                "y": 0.7460928
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_fliphead_003",
+            "spriteId": 1197,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.17968848,
+                "y": 0.50000095
+              },
+              {
+                "x": 0.17968848,
+                "y": 0.5166006
+              },
+              {
+                "x": 0.19726464,
+                "y": 0.50000095
+              },
+              {
+                "x": 0.19726464,
+                "y": 0.5166006
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_fliphead_004",
+            "spriteId": 1193,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.743165,
+                "y": 0.38964942
+              },
+              {
+                "x": 0.743165,
+                "y": 0.41015527
+              },
+              {
+                "x": 0.75488186,
+                "y": 0.38964942
+              },
+              {
+                "x": 0.75488186,
+                "y": 0.41015527
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_fliphead_005",
+            "spriteId": 1195,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.31054786,
+                "y": 0.44629005
+              },
+              {
+                "x": 0.31054786,
+                "y": 0.47070214
+              },
+              {
+                "x": 0.32226464,
+                "y": 0.44629005
+              },
+              {
+                "x": 0.32226464,
+                "y": 0.47070214
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_fliphead_006",
+            "spriteId": 1198,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.60156345,
+                "y": 0.26074317
+              },
+              {
+                "x": 0.60156345,
+                "y": 0.2841787
+              },
+              {
+                "x": 0.61425686,
+                "y": 0.26074317
+              },
+              {
+                "x": 0.61425686,
+                "y": 0.2841787
+              }
+            ]
+          },
+          {
+            "spriteName": "blue_ant_idle_001",
+            "spriteId": 73,
             "flipped": true,
             "uvs": [
               {
@@ -32942,7 +33739,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 6,
         "projectiles": [
           {
@@ -32997,12 +33794,130 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "magazineSize": 12,
+        "projectiles": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.1,
+            "spread": 0,
+            "projectiles": [
+              {
+                "id": "Hybrid_Magic_Wand_Projectile",
+                "damage": 12,
+                "speed": 600,
+                "range": 1000,
+                "force": 4,
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": true,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
+                "fireChance": 0.3,
+                "fireDuration": 1,
+                "animation": {
+                  "name": "hybrid_magic_wand_middle",
+                  "fps": 12,
+                  "loopStart": 0,
+                  "wrapMode": "Once",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/vfx_beam_collection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "hybrid_magic_middle_001",
+                      "spriteId": 358,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.0332041,
+                          "y": 0.24511817
+                        },
+                        {
+                          "x": 0.04199121,
+                          "y": 0.24511817
+                        },
+                        {
+                          "x": 0.0332041,
+                          "y": 0.25390527
+                        },
+                        {
+                          "x": 0.04199121,
+                          "y": 0.25390527
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "hybrid_magic_middle_002",
+                      "spriteId": 359,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.04394629,
+                          "y": 0.24511817
+                        },
+                        {
+                          "x": 0.0527334,
+                          "y": 0.24511817
+                        },
+                        {
+                          "x": 0.04394629,
+                          "y": 0.25390527
+                        },
+                        {
+                          "x": 0.0527334,
+                          "y": 0.25390527
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "hybrid_magic_middle_003",
+                      "spriteId": 360,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.011719727,
+                          "y": 0.24511817
+                        },
+                        {
+                          "x": 0.020506836,
+                          "y": 0.24511817
+                        },
+                        {
+                          "x": 0.011719727,
+                          "y": 0.25390527
+                        },
+                        {
+                          "x": 0.020506836,
+                          "y": 0.25390527
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 200,
     "reloadTime": 1,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "pink",
       "yellow",
@@ -33022,6 +33937,258 @@
           {
             "spriteName": "hybrid_gun_idle_001",
             "spriteId": -1,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.10254004,
+                "y": 0.6835947
+              },
+              {
+                "x": 0.10254004,
+                "y": 0.70312405
+              },
+              {
+                "x": 0.1152334,
+                "y": 0.6835947
+              },
+              {
+                "x": 0.1152334,
+                "y": 0.70312405
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "hybrid_magic_gunwand_reload",
+        "fps": 10,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "hybrid_gunwand_reload_001",
+            "spriteId": 895,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.6865244,
+                "y": 0.32129005
+              },
+              {
+                "x": 0.6865244,
+                "y": 0.33984277
+              },
+              {
+                "x": 0.70312405,
+                "y": 0.32129005
+              },
+              {
+                "x": 0.70312405,
+                "y": 0.33984277
+              }
+            ]
+          },
+          {
+            "spriteName": "hybrid_gunwand_reload_002",
+            "spriteId": 893,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.26855567,
+                "y": 0.5800791
+              },
+              {
+                "x": 0.28124902,
+                "y": 0.5800791
+              },
+              {
+                "x": 0.26855567,
+                "y": 0.5996084
+              },
+              {
+                "x": 0.28124902,
+                "y": 0.5996084
+              }
+            ]
+          },
+          {
+            "spriteName": "hybrid_gunwand_reload_003",
+            "spriteId": 904,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.11230566,
+                "y": 0.7304697
+              },
+              {
+                "x": 0.13183495,
+                "y": 0.7304697
+              },
+              {
+                "x": 0.11230566,
+                "y": 0.74218655
+              },
+              {
+                "x": 0.13183495,
+                "y": 0.74218655
+              }
+            ]
+          },
+          {
+            "spriteName": "hybrid_gunwand_reload_004",
+            "spriteId": 905,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.11816504,
+                "y": 0.6728525
+              },
+              {
+                "x": 0.13769433,
+                "y": 0.6728525
+              },
+              {
+                "x": 0.11816504,
+                "y": 0.6855459
+              },
+              {
+                "x": 0.13769433,
+                "y": 0.6855459
+              }
+            ]
+          },
+          {
+            "spriteName": "hybrid_wand_idle_001",
+            "spriteId": 890,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.11816504,
+                "y": 0.6728525
+              },
+              {
+                "x": 0.13769433,
+                "y": 0.6728525
+              },
+              {
+                "x": 0.11816504,
+                "y": 0.6855459
+              },
+              {
+                "x": 0.13769433,
+                "y": 0.6855459
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "hybrid_magic_wandgun_reload",
+        "fps": 10,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "hybrid_wandgun_reload_001",
+            "spriteId": 900,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.46191505,
+                "y": 0.2392588
+              },
+              {
+                "x": 0.48046777,
+                "y": 0.2392588
+              },
+              {
+                "x": 0.46191505,
+                "y": 0.25781152
+              },
+              {
+                "x": 0.48046777,
+                "y": 0.25781152
+              }
+            ]
+          },
+          {
+            "spriteName": "hybrid_wandgun_reload_002",
+            "spriteId": 894,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.25097755,
+                "y": 0.59375095
+              },
+              {
+                "x": 0.2636709,
+                "y": 0.59375095
+              },
+              {
+                "x": 0.25097755,
+                "y": 0.6132803
+              },
+              {
+                "x": 0.2636709,
+                "y": 0.6132803
+              }
+            ]
+          },
+          {
+            "spriteName": "hybrid_wandgun_reload_003",
+            "spriteId": 902,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5146494,
+                "y": 0.42871192
+              },
+              {
+                "x": 0.53613186,
+                "y": 0.42871192
+              },
+              {
+                "x": 0.5146494,
+                "y": 0.4404287
+              },
+              {
+                "x": 0.53613186,
+                "y": 0.4404287
+              }
+            ]
+          },
+          {
+            "spriteName": "hybrid_wandgun_reload_004",
+            "spriteId": 901,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.06933691,
+                "y": 0.7011728
+              },
+              {
+                "x": 0.06933691,
+                "y": 0.72167873
+              },
+              {
+                "x": 0.082030274,
+                "y": 0.7011728
+              },
+              {
+                "x": 0.082030274,
+                "y": 0.72167873
+              }
+            ]
+          },
+          {
+            "spriteName": "hybrid_gun_idle_001",
+            "spriteId": 898,
             "flipped": true,
             "uvs": [
               {
@@ -38333,7 +39500,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 30,
         "projectiles": [
           {
@@ -38388,12 +39555,435 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "magazineSize": 3,
+        "projectiles": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.5,
+            "spread": 0,
+            "projectiles": [
+              {
+                "id": "Grenade_Projectile",
+                "damage": 10,
+                "speed": 20,
+                "range": 20,
+                "force": 20,
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "ricochet",
+                    "damage": 10
+                  },
+                  {
+                    "type": "instant",
+                    "source": "explosion",
+                    "damage": 25
+                  }
+                ],
+                "numberOfBounces": 1,
+                "damageMultiplierOnBounce": 1,
+                "explosionRadius": 4,
+                "explosionForce": 100,
+                "animation": {
+                  "name": "Grenade_Projectile",
+                  "fps": 33,
+                  "loopStart": 0,
+                  "wrapMode": "Loop",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "grenade_spin_001",
+                      "spriteId": 176,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.89062697,
+                          "y": 0.44531348
+                        },
+                        {
+                          "x": 0.9121074,
+                          "y": 0.44531348
+                        },
+                        {
+                          "x": 0.89062697,
+                          "y": 0.4560537
+                        },
+                        {
+                          "x": 0.9121074,
+                          "y": 0.4560537
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_002",
+                      "spriteId": 178,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.71093947,
+                          "y": 0.48828223
+                        },
+                        {
+                          "x": 0.7304668,
+                          "y": 0.48828223
+                        },
+                        {
+                          "x": 0.71093947,
+                          "y": 0.4980459
+                        },
+                        {
+                          "x": 0.7304668,
+                          "y": 0.4980459
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_003",
+                      "spriteId": 183,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.43359572,
+                          "y": 0.55957127
+                        },
+                        {
+                          "x": 0.43359572,
+                          "y": 0.569335
+                        },
+                        {
+                          "x": 0.45507616,
+                          "y": 0.55957127
+                        },
+                        {
+                          "x": 0.45507616,
+                          "y": 0.569335
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_004",
+                      "spriteId": 173,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.8164082,
+                          "y": 0.47754005
+                        },
+                        {
+                          "x": 0.83593553,
+                          "y": 0.47754005
+                        },
+                        {
+                          "x": 0.8164082,
+                          "y": 0.4873037
+                        },
+                        {
+                          "x": 0.83593553,
+                          "y": 0.4873037
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_005",
+                      "spriteId": 179,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.46484572,
+                          "y": 0.55175877
+                        },
+                        {
+                          "x": 0.46484572,
+                          "y": 0.5615225
+                        },
+                        {
+                          "x": 0.48632616,
+                          "y": 0.55175877
+                        },
+                        {
+                          "x": 0.48632616,
+                          "y": 0.5615225
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_006",
+                      "spriteId": 168,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.49804884,
+                          "y": 0.5458994
+                        },
+                        {
+                          "x": 0.49804884,
+                          "y": 0.5556631
+                        },
+                        {
+                          "x": 0.5195293,
+                          "y": 0.5458994
+                        },
+                        {
+                          "x": 0.5195293,
+                          "y": 0.5556631
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_007",
+                      "spriteId": 181,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.7617207,
+                          "y": 0.4892588
+                        },
+                        {
+                          "x": 0.78124803,
+                          "y": 0.4892588
+                        },
+                        {
+                          "x": 0.7617207,
+                          "y": 0.49902245
+                        },
+                        {
+                          "x": 0.78124803,
+                          "y": 0.49902245
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_008",
+                      "spriteId": 171,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.7675801,
+                          "y": 0.47754005
+                        },
+                        {
+                          "x": 0.7871074,
+                          "y": 0.47754005
+                        },
+                        {
+                          "x": 0.7675801,
+                          "y": 0.4873037
+                        },
+                        {
+                          "x": 0.7871074,
+                          "y": 0.4873037
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_009",
+                      "spriteId": 180,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.64648634,
+                          "y": 0.50293064
+                        },
+                        {
+                          "x": 0.66601366,
+                          "y": 0.50293064
+                        },
+                        {
+                          "x": 0.64648634,
+                          "y": 0.51269436
+                        },
+                        {
+                          "x": 0.66601366,
+                          "y": 0.51269436
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_010",
+                      "spriteId": 182,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.73437697,
+                          "y": 0.49316505
+                        },
+                        {
+                          "x": 0.7539043,
+                          "y": 0.49316505
+                        },
+                        {
+                          "x": 0.73437697,
+                          "y": 0.50292873
+                        },
+                        {
+                          "x": 0.7539043,
+                          "y": 0.50292873
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_011",
+                      "spriteId": 175,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.7910176,
+                          "y": 0.48730567
+                        },
+                        {
+                          "x": 0.8105449,
+                          "y": 0.48730567
+                        },
+                        {
+                          "x": 0.7910176,
+                          "y": 0.49706933
+                        },
+                        {
+                          "x": 0.8105449,
+                          "y": 0.49706933
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_012",
+                      "spriteId": 170,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.7929707,
+                          "y": 0.47558692
+                        },
+                        {
+                          "x": 0.81249803,
+                          "y": 0.47558692
+                        },
+                        {
+                          "x": 0.7929707,
+                          "y": 0.48535058
+                        },
+                        {
+                          "x": 0.81249803,
+                          "y": 0.48535058
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_013",
+                      "spriteId": 169,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.81836134,
+                          "y": 0.4658213
+                        },
+                        {
+                          "x": 0.83788866,
+                          "y": 0.4658213
+                        },
+                        {
+                          "x": 0.81836134,
+                          "y": 0.47558495
+                        },
+                        {
+                          "x": 0.83788866,
+                          "y": 0.47558495
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_014",
+                      "spriteId": 177,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.7382832,
+                          "y": 0.4814463
+                        },
+                        {
+                          "x": 0.75781053,
+                          "y": 0.4814463
+                        },
+                        {
+                          "x": 0.7382832,
+                          "y": 0.49120995
+                        },
+                        {
+                          "x": 0.75781053,
+                          "y": 0.49120995
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_015",
+                      "spriteId": 172,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.59179884,
+                          "y": 0.4892588
+                        },
+                        {
+                          "x": 0.6132793,
+                          "y": 0.4892588
+                        },
+                        {
+                          "x": 0.59179884,
+                          "y": 0.49999902
+                        },
+                        {
+                          "x": 0.6132793,
+                          "y": 0.49999902
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "grenade_spin_016",
+                      "spriteId": 174,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.9628926,
+                          "y": 0.43359473
+                        },
+                        {
+                          "x": 0.98632616,
+                          "y": 0.43359473
+                        },
+                        {
+                          "x": 0.9628926,
+                          "y": 0.44433495
+                        },
+                        {
+                          "x": 0.98632616,
+                          "y": 0.44433495
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 500,
     "reloadTime": 1.2,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasExplosiveProjectile",
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "gray",
       "teal"
@@ -38411,6 +40001,304 @@
           {
             "spriteName": "m16_mg_idle_001",
             "spriteId": -1,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.3457051,
+                "y": 0.020508789
+              },
+              {
+                "x": 0.3457051,
+                "y": 0.054686524
+              },
+              {
+                "x": 0.36718553,
+                "y": 0.020508789
+              },
+              {
+                "x": 0.36718553,
+                "y": 0.054686524
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "M16_mggl_reload",
+        "fps": 5,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "m16_mggl_reload_001",
+            "spriteId": 804,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.51367384,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.58007616,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.51367384,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.58007616,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mggl_reload_002",
+            "spriteId": 801,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.37304884,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.43945116,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.37304884,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.43945116,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mggl_reload_003",
+            "spriteId": 805,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.58398634,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.65038866,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.58398634,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.65038866,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mggl_reload_004",
+            "spriteId": 802,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.44336134,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.50976366,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.44336134,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.50976366,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mggl_reload_004",
+            "spriteId": 802,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.44336134,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.50976366,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.44336134,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.50976366,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_gl_idle_001",
+            "spriteId": 797,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.1757832,
+                "y": 0.024415039
+              },
+              {
+                "x": 0.1757832,
+                "y": 0.058592774
+              },
+              {
+                "x": 0.19726367,
+                "y": 0.024415039
+              },
+              {
+                "x": 0.19726367,
+                "y": 0.058592774
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "M16_glmg_reload",
+        "fps": 5,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "m16_mggl_reload_004",
+            "spriteId": 802,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.44336134,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.50976366,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.44336134,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.50976366,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mggl_reload_002",
+            "spriteId": 801,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.37304884,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.43945116,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.37304884,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.43945116,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mggl_reload_001",
+            "spriteId": 804,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.51367384,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.58007616,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.51367384,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.58007616,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mggl_reload_003",
+            "spriteId": 805,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.58398634,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.65038866,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.58398634,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.65038866,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mggl_reload_001",
+            "spriteId": 804,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.51367384,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.58007616,
+                "y": 0.0009775391
+              },
+              {
+                "x": 0.51367384,
+                "y": 0.015624023
+              },
+              {
+                "x": 0.58007616,
+                "y": 0.015624023
+              }
+            ]
+          },
+          {
+            "spriteName": "m16_mg_idle_001",
+            "spriteId": 798,
             "flipped": true,
             "uvs": [
               {
@@ -39684,7 +41572,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 50,
         "projectiles": [
           {
@@ -39739,12 +41627,82 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "magazineSize": 1,
+        "projectiles": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.5,
+            "spread": 0,
+            "projectiles": [
+              {
+                "id": "Rockethand_Missile",
+                "damage": 20,
+                "speed": 10,
+                "range": 200,
+                "force": 10,
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "source": "explosion",
+                    "damage": 30
+                  }
+                ],
+                "explosionRadius": 3,
+                "explosionForce": 70,
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "rocket_arm_001",
+                      "spriteId": 588,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.25586134,
+                          "y": 0.46679786
+                        },
+                        {
+                          "x": 0.25586134,
+                          "y": 0.48144433
+                        },
+                        {
+                          "x": 0.2714824,
+                          "y": 0.46679786
+                        },
+                        {
+                          "x": 0.2714824,
+                          "y": 0.48144433
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 500,
     "reloadTime": 1,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasExplosiveProjectile",
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "teal",
       "sky",
@@ -39764,6 +41722,396 @@
           {
             "spriteName": "machine_gun_idle_001",
             "spriteId": -1,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.7490244,
+                "y": 0.5146494
+              },
+              {
+                "x": 0.7490244,
+                "y": 0.52636623
+              },
+              {
+                "x": 0.75781155,
+                "y": 0.5146494
+              },
+              {
+                "x": 0.75781155,
+                "y": 0.52636623
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "machine_gun_rocketflip",
+        "fps": 10,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "machine_gun_fliphand_001",
+            "spriteId": 1215,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6835947,
+                "y": 0.5351572
+              },
+              {
+                "x": 0.694335,
+                "y": 0.5351572
+              },
+              {
+                "x": 0.6835947,
+                "y": 0.54394436
+              },
+              {
+                "x": 0.694335,
+                "y": 0.54394436
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_002",
+            "spriteId": 1208,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.75293064,
+                "y": 0.46679786
+              },
+              {
+                "x": 0.7666006,
+                "y": 0.46679786
+              },
+              {
+                "x": 0.75293064,
+                "y": 0.47558495
+              },
+              {
+                "x": 0.7666006,
+                "y": 0.47558495
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_003",
+            "spriteId": 1207,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.69629,
+                "y": 0.5458994
+              },
+              {
+                "x": 0.70605373,
+                "y": 0.5458994
+              },
+              {
+                "x": 0.69629,
+                "y": 0.55468655
+              },
+              {
+                "x": 0.70605373,
+                "y": 0.55468655
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_004",
+            "spriteId": 1209,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.98925877,
+                "y": 0.43847755
+              },
+              {
+                "x": 0.98925877,
+                "y": 0.44531152
+              },
+              {
+                "x": 0.9980459,
+                "y": 0.43847755
+              },
+              {
+                "x": 0.9980459,
+                "y": 0.44531152
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_005",
+            "spriteId": 1211,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.87988377,
+                "y": 0.1191416
+              },
+              {
+                "x": 0.8837881,
+                "y": 0.1191416
+              },
+              {
+                "x": 0.87988377,
+                "y": 0.1279287
+              },
+              {
+                "x": 0.8837881,
+                "y": 0.1279287
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_006",
+            "spriteId": 1213,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.9882822,
+                "y": 0.42871192
+              },
+              {
+                "x": 0.9882822,
+                "y": 0.43652245
+              },
+              {
+                "x": 0.99706936,
+                "y": 0.42871192
+              },
+              {
+                "x": 0.99706936,
+                "y": 0.43652245
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_007",
+            "spriteId": 1214,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.805665,
+                "y": 0.42285255
+              },
+              {
+                "x": 0.805665,
+                "y": 0.43847558
+              },
+              {
+                "x": 0.8144522,
+                "y": 0.42285255
+              },
+              {
+                "x": 0.8144522,
+                "y": 0.43847558
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_008",
+            "spriteId": 1212,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.4550791,
+                "y": 0.6474619
+              },
+              {
+                "x": 0.4550791,
+                "y": 0.66406155
+              },
+              {
+                "x": 0.4638662,
+                "y": 0.6474619
+              },
+              {
+                "x": 0.4638662,
+                "y": 0.66406155
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_009",
+            "spriteId": 1210,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.75293064,
+                "y": 0.4501963
+              },
+              {
+                "x": 0.75293064,
+                "y": 0.46484277
+              },
+              {
+                "x": 0.7617178,
+                "y": 0.4501963
+              },
+              {
+                "x": 0.7617178,
+                "y": 0.46484277
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_010",
+            "spriteId": 1216,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.805665,
+                "y": 0.42285255
+              },
+              {
+                "x": 0.805665,
+                "y": 0.43847558
+              },
+              {
+                "x": 0.8144522,
+                "y": 0.42285255
+              },
+              {
+                "x": 0.8144522,
+                "y": 0.43847558
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "machine_gun_handflip",
+        "fps": 6,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "machine_gun_fliphand_005",
+            "spriteId": 1211,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.87988377,
+                "y": 0.1191416
+              },
+              {
+                "x": 0.8837881,
+                "y": 0.1191416
+              },
+              {
+                "x": 0.87988377,
+                "y": 0.1279287
+              },
+              {
+                "x": 0.8837881,
+                "y": 0.1279287
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_004",
+            "spriteId": 1209,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.98925877,
+                "y": 0.43847755
+              },
+              {
+                "x": 0.98925877,
+                "y": 0.44531152
+              },
+              {
+                "x": 0.9980459,
+                "y": 0.43847755
+              },
+              {
+                "x": 0.9980459,
+                "y": 0.44531152
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_003",
+            "spriteId": 1207,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.69629,
+                "y": 0.5458994
+              },
+              {
+                "x": 0.70605373,
+                "y": 0.5458994
+              },
+              {
+                "x": 0.69629,
+                "y": 0.55468655
+              },
+              {
+                "x": 0.70605373,
+                "y": 0.55468655
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_002",
+            "spriteId": 1208,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.75293064,
+                "y": 0.46679786
+              },
+              {
+                "x": 0.7666006,
+                "y": 0.46679786
+              },
+              {
+                "x": 0.75293064,
+                "y": 0.47558495
+              },
+              {
+                "x": 0.7666006,
+                "y": 0.47558495
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_fliphand_001",
+            "spriteId": 1215,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6835947,
+                "y": 0.5351572
+              },
+              {
+                "x": 0.694335,
+                "y": 0.5351572
+              },
+              {
+                "x": 0.6835947,
+                "y": 0.54394436
+              },
+              {
+                "x": 0.694335,
+                "y": 0.54394436
+              }
+            ]
+          },
+          {
+            "spriteName": "machine_gun_idle_001",
+            "spriteId": 182,
             "flipped": true,
             "uvs": [
               {
@@ -44347,7 +46695,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -44450,12 +46798,142 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "magazineSize": 12,
+        "projectiles": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.1,
+            "spread": 0,
+            "projectiles": [
+              {
+                "id": "Mining_Laser_Dog_Projectile",
+                "damage": 8,
+                "speed": 600,
+                "range": 1000,
+                "force": 4,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "minelaser_dog_middle",
+                  "fps": 12,
+                  "loopStart": 0,
+                  "wrapMode": "Once",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/vfx_beam_collection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "deadspace_dog_beam_middle_001",
+                      "spriteId": 352,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.19336036,
+                          "y": 0.3095713
+                        },
+                        {
+                          "x": 0.21581933,
+                          "y": 0.3095713
+                        },
+                        {
+                          "x": 0.19336036,
+                          "y": 0.33203027
+                        },
+                        {
+                          "x": 0.21581933,
+                          "y": 0.33203027
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "deadspace_dog_beam_middle_002",
+                      "spriteId": 341,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.0009775391,
+                          "y": 0.63769627
+                        },
+                        {
+                          "x": 0.023436524,
+                          "y": 0.63769627
+                        },
+                        {
+                          "x": 0.0009775391,
+                          "y": 0.6601553
+                        },
+                        {
+                          "x": 0.023436524,
+                          "y": 0.6601553
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "deadspace_dog_beam_middle_003",
+                      "spriteId": 351,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.1689463,
+                          "y": 0.3095713
+                        },
+                        {
+                          "x": 0.19140527,
+                          "y": 0.3095713
+                        },
+                        {
+                          "x": 0.1689463,
+                          "y": 0.33203027
+                        },
+                        {
+                          "x": 0.19140527,
+                          "y": 0.33203027
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "deadspace_dog_beam_middle_004",
+                      "spriteId": 349,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.12011816,
+                          "y": 0.3095713
+                        },
+                        {
+                          "x": 0.14257714,
+                          "y": 0.3095713
+                        },
+                        {
+                          "x": 0.12011816,
+                          "y": 0.33203027
+                        },
+                        {
+                          "x": 0.14257714,
+                          "y": 0.33203027
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 250,
     "reloadTime": 1.2,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "gray",
       "yellow",
@@ -44491,6 +46969,166 @@
               {
                 "x": 0.36425683,
                 "y": 0.58496
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "miner_hamtdog_reload",
+        "fps": 10,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "miner_reload_001",
+            "spriteId": 887,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.36328223,
+                "y": 0.45410255
+              },
+              {
+                "x": 0.38281152,
+                "y": 0.45410255
+              },
+              {
+                "x": 0.36328223,
+                "y": 0.46874902
+              },
+              {
+                "x": 0.38281152,
+                "y": 0.46874902
+              }
+            ]
+          },
+          {
+            "spriteName": "miner_reload_002",
+            "spriteId": 880,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.13867286,
+                "y": 0.7246103
+              },
+              {
+                "x": 0.13867286,
+                "y": 0.7441397
+              },
+              {
+                "x": 0.15038964,
+                "y": 0.7246103
+              },
+              {
+                "x": 0.15038964,
+                "y": 0.7441397
+              }
+            ]
+          },
+          {
+            "spriteName": "miner_reload_003",
+            "spriteId": 878,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.6230478,
+                "y": 0.4580088
+              },
+              {
+                "x": 0.6230478,
+                "y": 0.47753808
+              },
+              {
+                "x": 0.6337881,
+                "y": 0.4580088
+              },
+              {
+                "x": 0.6337881,
+                "y": 0.47753808
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "miner_dogtham_reload",
+        "fps": 10,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "miner_reload_003",
+            "spriteId": 878,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.6230478,
+                "y": 0.4580088
+              },
+              {
+                "x": 0.6230478,
+                "y": 0.47753808
+              },
+              {
+                "x": 0.6337881,
+                "y": 0.4580088
+              },
+              {
+                "x": 0.6337881,
+                "y": 0.47753808
+              }
+            ]
+          },
+          {
+            "spriteName": "miner_reload_002",
+            "spriteId": 880,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.13867286,
+                "y": 0.7246103
+              },
+              {
+                "x": 0.13867286,
+                "y": 0.7441397
+              },
+              {
+                "x": 0.15038964,
+                "y": 0.7246103
+              },
+              {
+                "x": 0.15038964,
+                "y": 0.7441397
+              }
+            ]
+          },
+          {
+            "spriteName": "miner_reload_001",
+            "spriteId": 887,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.36328223,
+                "y": 0.45410255
+              },
+              {
+                "x": 0.38281152,
+                "y": 0.45410255
+              },
+              {
+                "x": 0.36328223,
+                "y": 0.46874902
+              },
+              {
+                "x": 0.38281152,
+                "y": 0.46874902
               }
             ]
           }
@@ -61385,7 +64023,7 @@
     ],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 12,
         "projectiles": [
           {
@@ -61440,14 +64078,509 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "chargeTime": 0.4,
+        "magazineSize": 20,
+        "projectiles": [
+          {
+            "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.2,
+            "spread": 0,
+            "projectiles": [
+              {
+                "id": "Shellegun_Red_Beam",
+                "damage": 20,
+                "speed": 100,
+                "range": 40,
+                "force": 30,
+                "additionalDamage": [
+                  {
+                    "type": "dps",
+                    "isEstimated": false,
+                    "canNotStack": true,
+                    "source": "fire",
+                    "damage": 4
+                  }
+                ],
+                "fireChance": 1,
+                "fireDuration": 4,
+                "beamChargeTime": 0.4,
+                "beamStatusEffectChancePerSecond": 1,
+                "animation": {
+                  "name": "Demon_Head_beam",
+                  "fps": 17,
+                  "loopStart": 4,
+                  "wrapMode": "Loop",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/Texture2D/atlas0_184.png",
+                  "frames": [
+                    {
+                      "spriteName": "demon_head_middle_001",
+                      "spriteId": 42,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.20313281,
+                          "y": 0.1953164
+                        },
+                        {
+                          "x": 0.20313281,
+                          "y": 0.3203086
+                        },
+                        {
+                          "x": 0.24217969,
+                          "y": 0.1953164
+                        },
+                        {
+                          "x": 0.24217969,
+                          "y": 0.3203086
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "demon_head_middle_002",
+                      "spriteId": 43,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.17188281,
+                          "y": 0.3281289
+                        },
+                        {
+                          "x": 0.17188281,
+                          "y": 0.4531211
+                        },
+                        {
+                          "x": 0.22655469,
+                          "y": 0.3281289
+                        },
+                        {
+                          "x": 0.22655469,
+                          "y": 0.4531211
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.2,
+            "spread": 0,
+            "projectiles": [
+              {
+                "id": "Shellegun_Fake_Beam",
+                "damage": 1.5,
+                "speed": 100,
+                "range": 90,
+                "force": 0,
+                "additionalDamage": [],
+                "beamChargeTime": 0.4,
+                "beamStatusEffectChancePerSecond": 1,
+                "animation": {
+                  "name": "shellegun_fake_middle",
+                  "fps": 12,
+                  "loopStart": 0,
+                  "wrapMode": "Loop",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/vfx_beam_collection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "shellegun_beam_trail_001",
+                      "spriteId": 455,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.5068369,
+                          "y": 0.26562598
+                        },
+                        {
+                          "x": 0.5068369,
+                          "y": 0.32812402
+                        },
+                        {
+                          "x": 0.538085,
+                          "y": 0.26562598
+                        },
+                        {
+                          "x": 0.538085,
+                          "y": 0.32812402
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_002",
+                      "spriteId": 442,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.3876963,
+                          "y": 0.21191505
+                        },
+                        {
+                          "x": 0.45019433,
+                          "y": 0.21191505
+                        },
+                        {
+                          "x": 0.3876963,
+                          "y": 0.24316308
+                        },
+                        {
+                          "x": 0.45019433,
+                          "y": 0.24316308
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_003",
+                      "spriteId": 456,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.0009775391,
+                          "y": 0.67480564
+                        },
+                        {
+                          "x": 0.0009775391,
+                          "y": 0.73730373
+                        },
+                        {
+                          "x": 0.032225586,
+                          "y": 0.67480564
+                        },
+                        {
+                          "x": 0.032225586,
+                          "y": 0.73730373
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_004",
+                      "spriteId": 444,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.55468845,
+                          "y": 0.28418067
+                        },
+                        {
+                          "x": 0.61718655,
+                          "y": 0.28418067
+                        },
+                        {
+                          "x": 0.55468845,
+                          "y": 0.3154287
+                        },
+                        {
+                          "x": 0.61718655,
+                          "y": 0.3154287
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_005",
+                      "spriteId": 451,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.7978525,
+                          "y": 0.4658213
+                        },
+                        {
+                          "x": 0.7978525,
+                          "y": 0.52831936
+                        },
+                        {
+                          "x": 0.8291006,
+                          "y": 0.4658213
+                        },
+                        {
+                          "x": 0.8291006,
+                          "y": 0.52831936
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_006",
+                      "spriteId": 447,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.6835947,
+                          "y": 0.3144541
+                        },
+                        {
+                          "x": 0.7460928,
+                          "y": 0.3144541
+                        },
+                        {
+                          "x": 0.6835947,
+                          "y": 0.34570214
+                        },
+                        {
+                          "x": 0.7460928,
+                          "y": 0.34570214
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_007",
+                      "spriteId": 441,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.32324317,
+                          "y": 0.21191505
+                        },
+                        {
+                          "x": 0.3857412,
+                          "y": 0.21191505
+                        },
+                        {
+                          "x": 0.32324317,
+                          "y": 0.24316308
+                        },
+                        {
+                          "x": 0.3857412,
+                          "y": 0.24316308
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_008",
+                      "spriteId": 448,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.6191416,
+                          "y": 0.34765723
+                        },
+                        {
+                          "x": 0.6816397,
+                          "y": 0.34765723
+                        },
+                        {
+                          "x": 0.6191416,
+                          "y": 0.37890527
+                        },
+                        {
+                          "x": 0.6816397,
+                          "y": 0.37890527
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_009",
+                      "spriteId": 443,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.5068369,
+                          "y": 0.26562598
+                        },
+                        {
+                          "x": 0.5068369,
+                          "y": 0.32812402
+                        },
+                        {
+                          "x": 0.538085,
+                          "y": 0.26562598
+                        },
+                        {
+                          "x": 0.538085,
+                          "y": 0.32812402
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_010",
+                      "spriteId": 452,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.86425877,
+                          "y": 0.5214853
+                        },
+                        {
+                          "x": 0.92675686,
+                          "y": 0.5214853
+                        },
+                        {
+                          "x": 0.86425877,
+                          "y": 0.5527334
+                        },
+                        {
+                          "x": 0.92675686,
+                          "y": 0.5527334
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_011",
+                      "spriteId": 449,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.6835947,
+                          "y": 0.34765723
+                        },
+                        {
+                          "x": 0.7460928,
+                          "y": 0.34765723
+                        },
+                        {
+                          "x": 0.6835947,
+                          "y": 0.37890527
+                        },
+                        {
+                          "x": 0.7460928,
+                          "y": 0.37890527
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_012",
+                      "spriteId": 450,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.7480478,
+                          "y": 0.37500098
+                        },
+                        {
+                          "x": 0.7480478,
+                          "y": 0.43749902
+                        },
+                        {
+                          "x": 0.7792959,
+                          "y": 0.37500098
+                        },
+                        {
+                          "x": 0.7792959,
+                          "y": 0.43749902
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_013",
+                      "spriteId": 454,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.9287119,
+                          "y": 0.57324314
+                        },
+                        {
+                          "x": 0.9287119,
+                          "y": 0.63574123
+                        },
+                        {
+                          "x": 0.95996,
+                          "y": 0.57324314
+                        },
+                        {
+                          "x": 0.95996,
+                          "y": 0.63574123
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_014",
+                      "spriteId": 445,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.6191416,
+                          "y": 0.3144541
+                        },
+                        {
+                          "x": 0.6816397,
+                          "y": 0.3144541
+                        },
+                        {
+                          "x": 0.6191416,
+                          "y": 0.34570214
+                        },
+                        {
+                          "x": 0.6816397,
+                          "y": 0.34570214
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_015",
+                      "spriteId": 446,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.55468845,
+                          "y": 0.3173838
+                        },
+                        {
+                          "x": 0.61718655,
+                          "y": 0.3173838
+                        },
+                        {
+                          "x": 0.55468845,
+                          "y": 0.34863183
+                        },
+                        {
+                          "x": 0.61718655,
+                          "y": 0.34863183
+                        }
+                      ]
+                    },
+                    {
+                      "spriteName": "shellegun_beam_trail_016",
+                      "spriteId": 453,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.86425877,
+                          "y": 0.55468845
+                        },
+                        {
+                          "x": 0.92675686,
+                          "y": 0.55468845
+                        },
+                        {
+                          "x": 0.86425877,
+                          "y": 0.58593655
+                        },
+                        {
+                          "x": 0.92675686,
+                          "y": 0.58593655
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 300,
     "reloadTime": 1.08,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasStatusEffects",
+      "hasSpecialAbilities"
     ],
-    "attribute": {},
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "yellow",
       "gray",
@@ -61466,6 +64599,442 @@
           {
             "spriteName": "shellegun_gun_idle_001",
             "spriteId": -1,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.57324314,
+                "y": 0.5175791
+              },
+              {
+                "x": 0.5878897,
+                "y": 0.5175791
+              },
+              {
+                "x": 0.57324314,
+                "y": 0.5302725
+              },
+              {
+                "x": 0.5878897,
+                "y": 0.5302725
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "shellegun_gunhead_reload",
+        "fps": 8,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "shellegun_headgun_reload_008",
+            "spriteId": 968,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.46093848,
+                "y": 0.60156345
+              },
+              {
+                "x": 0.47558495,
+                "y": 0.60156345
+              },
+              {
+                "x": 0.46093848,
+                "y": 0.6132803
+              },
+              {
+                "x": 0.47558495,
+                "y": 0.6132803
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_007",
+            "spriteId": 972,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.8320322,
+                "y": 0.45312598
+              },
+              {
+                "x": 0.84374905,
+                "y": 0.45312598
+              },
+              {
+                "x": 0.8320322,
+                "y": 0.4638662
+              },
+              {
+                "x": 0.84374905,
+                "y": 0.4638662
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_006",
+            "spriteId": 976,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.7617197,
+                "y": 0.48242286
+              },
+              {
+                "x": 0.77246,
+                "y": 0.48242286
+              },
+              {
+                "x": 0.7617197,
+                "y": 0.49316308
+              },
+              {
+                "x": 0.77246,
+                "y": 0.49316308
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_005",
+            "spriteId": 973,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.67187595,
+                "y": 0.5380869
+              },
+              {
+                "x": 0.6806631,
+                "y": 0.5380869
+              },
+              {
+                "x": 0.67187595,
+                "y": 0.5488272
+              },
+              {
+                "x": 0.6806631,
+                "y": 0.5488272
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_004",
+            "spriteId": 969,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.7255869,
+                "y": 0.5019541
+              },
+              {
+                "x": 0.7255869,
+                "y": 0.5146475
+              },
+              {
+                "x": 0.73437405,
+                "y": 0.5019541
+              },
+              {
+                "x": 0.73437405,
+                "y": 0.5146475
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_003",
+            "spriteId": 977,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6474619,
+                "y": 0.37597755
+              },
+              {
+                "x": 0.6621084,
+                "y": 0.37597755
+              },
+              {
+                "x": 0.6474619,
+                "y": 0.3935537
+              },
+              {
+                "x": 0.6621084,
+                "y": 0.3935537
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_002",
+            "spriteId": 970,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.09179785,
+                "y": 0.5957041
+              },
+              {
+                "x": 0.10644434,
+                "y": 0.5957041
+              },
+              {
+                "x": 0.09179785,
+                "y": 0.61425686
+              },
+              {
+                "x": 0.10644434,
+                "y": 0.61425686
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_001",
+            "spriteId": 975,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.024415039,
+                "y": 0.7851572
+              },
+              {
+                "x": 0.024415039,
+                "y": 0.79980373
+              },
+              {
+                "x": 0.040038086,
+                "y": 0.7851572
+              },
+              {
+                "x": 0.040038086,
+                "y": 0.79980373
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_head_idle_001",
+            "spriteId": 966,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5292978,
+                "y": 0.49316505
+              },
+              {
+                "x": 0.54394436,
+                "y": 0.49316505
+              },
+              {
+                "x": 0.5292978,
+                "y": 0.50781155
+              },
+              {
+                "x": 0.54394436,
+                "y": 0.50781155
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "shellegun_headgun_reload",
+        "fps": 8,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "shellegun_headgun_reload_001",
+            "spriteId": 975,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.024415039,
+                "y": 0.7851572
+              },
+              {
+                "x": 0.024415039,
+                "y": 0.79980373
+              },
+              {
+                "x": 0.040038086,
+                "y": 0.7851572
+              },
+              {
+                "x": 0.040038086,
+                "y": 0.79980373
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_002",
+            "spriteId": 970,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.09179785,
+                "y": 0.5957041
+              },
+              {
+                "x": 0.10644434,
+                "y": 0.5957041
+              },
+              {
+                "x": 0.09179785,
+                "y": 0.61425686
+              },
+              {
+                "x": 0.10644434,
+                "y": 0.61425686
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_003",
+            "spriteId": 977,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6474619,
+                "y": 0.37597755
+              },
+              {
+                "x": 0.6621084,
+                "y": 0.37597755
+              },
+              {
+                "x": 0.6474619,
+                "y": 0.3935537
+              },
+              {
+                "x": 0.6621084,
+                "y": 0.3935537
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_004",
+            "spriteId": 969,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.7255869,
+                "y": 0.5019541
+              },
+              {
+                "x": 0.7255869,
+                "y": 0.5146475
+              },
+              {
+                "x": 0.73437405,
+                "y": 0.5019541
+              },
+              {
+                "x": 0.73437405,
+                "y": 0.5146475
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_005",
+            "spriteId": 973,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.67187595,
+                "y": 0.5380869
+              },
+              {
+                "x": 0.6806631,
+                "y": 0.5380869
+              },
+              {
+                "x": 0.67187595,
+                "y": 0.5488272
+              },
+              {
+                "x": 0.6806631,
+                "y": 0.5488272
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_006",
+            "spriteId": 976,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.7617197,
+                "y": 0.48242286
+              },
+              {
+                "x": 0.77246,
+                "y": 0.48242286
+              },
+              {
+                "x": 0.7617197,
+                "y": 0.49316308
+              },
+              {
+                "x": 0.77246,
+                "y": 0.49316308
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_007",
+            "spriteId": 972,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.8320322,
+                "y": 0.45312598
+              },
+              {
+                "x": 0.84374905,
+                "y": 0.45312598
+              },
+              {
+                "x": 0.8320322,
+                "y": 0.4638662
+              },
+              {
+                "x": 0.84374905,
+                "y": 0.4638662
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_headgun_reload_008",
+            "spriteId": 968,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.46093848,
+                "y": 0.60156345
+              },
+              {
+                "x": 0.47558495,
+                "y": 0.60156345
+              },
+              {
+                "x": 0.46093848,
+                "y": 0.6132803
+              },
+              {
+                "x": 0.47558495,
+                "y": 0.6132803
+              }
+            ]
+          },
+          {
+            "spriteName": "shellegun_gun_idle_001",
+            "spriteId": 981,
             "flipped": false,
             "uvs": [
               {
@@ -70775,7 +74344,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 6,
         "projectiles": [
           {
@@ -70839,12 +74408,481 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "magazineSize": 6,
+        "projectiles": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 10,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 10,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 10,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 10,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 5,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 5,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 15,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 15,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.8,
+            "spread": 15,
+            "projectiles": [
+              {
+                "id": "TrickProjectile_02",
+                "damage": 2,
+                "speed": 25,
+                "range": 12,
+                "force": 5,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "bullet_variant_011",
+                      "spriteId": 2,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5507822
+                        },
+                        {
+                          "x": 0.93554884,
+                          "y": 0.5566397
+                        },
+                        {
+                          "x": 0.94726366,
+                          "y": 0.5566397
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 200,
     "reloadTime": 1.2,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "gray",
       "brown"
@@ -70862,6 +74900,603 @@
           {
             "spriteName": "trick_handgun_idle_001",
             "spriteId": -1,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.36035255,
+                "y": 0.69629
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.69629
+              },
+              {
+                "x": 0.36035255,
+                "y": 0.70605373
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.70605373
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "trick_shotgun_intro",
+        "fps": 9,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "trick_handgun_spin_001",
+            "spriteId": 354,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6552744,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.6552744,
+                "y": 0.48925683
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.48925683
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_spin_002",
+            "spriteId": 363,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6708994,
+                "y": 0.4785166
+              },
+              {
+                "x": 0.68456936,
+                "y": 0.4785166
+              },
+              {
+                "x": 0.6708994,
+                "y": 0.49218652
+              },
+              {
+                "x": 0.68456936,
+                "y": 0.49218652
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_shotgun_spin_001",
+            "spriteId": 366,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.680665,
+                "y": 0.37109473
+              },
+              {
+                "x": 0.6962881,
+                "y": 0.37109473
+              },
+              {
+                "x": 0.680665,
+                "y": 0.38671777
+              },
+              {
+                "x": 0.6962881,
+                "y": 0.38671777
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_spin_001",
+            "spriteId": 354,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6552744,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.6552744,
+                "y": 0.48925683
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.48925683
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_spin_002",
+            "spriteId": 363,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6708994,
+                "y": 0.4785166
+              },
+              {
+                "x": 0.68456936,
+                "y": 0.4785166
+              },
+              {
+                "x": 0.6708994,
+                "y": 0.49218652
+              },
+              {
+                "x": 0.68456936,
+                "y": 0.49218652
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_spin_001",
+            "spriteId": 354,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6552744,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.6552744,
+                "y": 0.48925683
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.48925683
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_shotgun_intro_002",
+            "spriteId": 353,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.27343848,
+                "y": 0.6542978
+              },
+              {
+                "x": 0.28808495,
+                "y": 0.6542978
+              },
+              {
+                "x": 0.27343848,
+                "y": 0.6679678
+              },
+              {
+                "x": 0.28808495,
+                "y": 0.6679678
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_shotgun_intro_003",
+            "spriteId": 370,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.21093848,
+                "y": 0.67968845
+              },
+              {
+                "x": 0.21093848,
+                "y": 0.6992178
+              },
+              {
+                "x": 0.21874902,
+                "y": 0.67968845
+              },
+              {
+                "x": 0.21874902,
+                "y": 0.6992178
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_shotgun_fire_002",
+            "spriteId": 352,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.6660166,
+                "y": 0.4501963
+              },
+              {
+                "x": 0.6660166,
+                "y": 0.47363183
+              },
+              {
+                "x": 0.67480373,
+                "y": 0.4501963
+              },
+              {
+                "x": 0.67480373,
+                "y": 0.47363183
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_shotgun_idle_001",
+            "spriteId": 373,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.5957041,
+                "y": 0.06543066
+              },
+              {
+                "x": 0.5957041,
+                "y": 0.08886621
+              },
+              {
+                "x": 0.6035147,
+                "y": 0.06543066
+              },
+              {
+                "x": 0.6035147,
+                "y": 0.08886621
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_shotgun_idle_001",
+            "spriteId": 373,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.5957041,
+                "y": 0.06543066
+              },
+              {
+                "x": 0.5957041,
+                "y": 0.08886621
+              },
+              {
+                "x": 0.6035147,
+                "y": 0.06543066
+              },
+              {
+                "x": 0.6035147,
+                "y": 0.08886621
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_shotgun_idle_001",
+            "spriteId": 373,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.5957041,
+                "y": 0.06543066
+              },
+              {
+                "x": 0.5957041,
+                "y": 0.08886621
+              },
+              {
+                "x": 0.6035147,
+                "y": 0.06543066
+              },
+              {
+                "x": 0.6035147,
+                "y": 0.08886621
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "trick_handgun_intro",
+        "fps": 10,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "trick_handgun_spin_001",
+            "spriteId": 354,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6552744,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.6552744,
+                "y": 0.48925683
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.48925683
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_spin_002",
+            "spriteId": 363,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6708994,
+                "y": 0.4785166
+              },
+              {
+                "x": 0.68456936,
+                "y": 0.4785166
+              },
+              {
+                "x": 0.6708994,
+                "y": 0.49218652
+              },
+              {
+                "x": 0.68456936,
+                "y": 0.49218652
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_spin_003",
+            "spriteId": 365,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.63281345,
+                "y": 0.48535255
+              },
+              {
+                "x": 0.6464834,
+                "y": 0.48535255
+              },
+              {
+                "x": 0.63281345,
+                "y": 0.49902245
+              },
+              {
+                "x": 0.6464834,
+                "y": 0.49902245
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_spin_002",
+            "spriteId": 363,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6708994,
+                "y": 0.4785166
+              },
+              {
+                "x": 0.68456936,
+                "y": 0.4785166
+              },
+              {
+                "x": 0.6708994,
+                "y": 0.49218652
+              },
+              {
+                "x": 0.68456936,
+                "y": 0.49218652
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_spin_001",
+            "spriteId": 354,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6552744,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.47558692
+              },
+              {
+                "x": 0.6552744,
+                "y": 0.48925683
+              },
+              {
+                "x": 0.66894436,
+                "y": 0.48925683
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_flip_003",
+            "spriteId": 360,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.42089942,
+                "y": 0.6660166
+              },
+              {
+                "x": 0.43163964,
+                "y": 0.6660166
+              },
+              {
+                "x": 0.42089942,
+                "y": 0.67968655
+              },
+              {
+                "x": 0.43163964,
+                "y": 0.67968655
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_intro_001",
+            "spriteId": 371,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.6699228,
+                "y": 0.56250095
+              },
+              {
+                "x": 0.6806631,
+                "y": 0.56250095
+              },
+              {
+                "x": 0.6699228,
+                "y": 0.57031155
+              },
+              {
+                "x": 0.6806631,
+                "y": 0.57031155
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_idle_001",
+            "spriteId": 355,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.36035255,
+                "y": 0.69629
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.69629
+              },
+              {
+                "x": 0.36035255,
+                "y": 0.70605373
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.70605373
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_idle_001",
+            "spriteId": 355,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.36035255,
+                "y": 0.69629
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.69629
+              },
+              {
+                "x": 0.36035255,
+                "y": 0.70605373
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.70605373
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_idle_001",
+            "spriteId": 355,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.36035255,
+                "y": 0.69629
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.69629
+              },
+              {
+                "x": 0.36035255,
+                "y": 0.70605373
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.70605373
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_idle_001",
+            "spriteId": 355,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.36035255,
+                "y": 0.69629
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.69629
+              },
+              {
+                "x": 0.36035255,
+                "y": 0.70605373
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.70605373
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_idle_001",
+            "spriteId": 355,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.36035255,
+                "y": 0.69629
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.69629
+              },
+              {
+                "x": 0.36035255,
+                "y": 0.70605373
+              },
+              {
+                "x": 0.37499902,
+                "y": 0.70605373
+              }
+            ]
+          },
+          {
+            "spriteName": "trick_handgun_idle_001",
+            "spriteId": 355,
             "flipped": false,
             "uvs": [
               {
@@ -71042,7 +75677,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 3,
         "projectiles": [
           {
@@ -71100,14 +75735,176 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "magazineSize": 3,
+        "projectiles": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
+            "cooldownTime": 0.08,
+            "spread": 3,
+            "projectiles": [
+              {
+                "id": "Arrow_Triple_Shotgun",
+                "damage": 7,
+                "speed": 25,
+                "range": 1000,
+                "force": 16,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "arrow_big_001",
+                      "spriteId": 593,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.24023633,
+                          "y": 0.33105567
+                        },
+                        {
+                          "x": 0.24023633,
+                          "y": 0.34765527
+                        },
+                        {
+                          "x": 0.25195116,
+                          "y": 0.33105567
+                        },
+                        {
+                          "x": 0.25195116,
+                          "y": 0.34765527
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
+            "cooldownTime": 0.08,
+            "spread": 8,
+            "projectiles": [
+              {
+                "id": "Arrow_Triple_Shotgun",
+                "damage": 7,
+                "speed": 25,
+                "range": 1000,
+                "force": 16,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "arrow_big_001",
+                      "spriteId": 593,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.24023633,
+                          "y": 0.33105567
+                        },
+                        {
+                          "x": 0.24023633,
+                          "y": 0.34765527
+                        },
+                        {
+                          "x": 0.25195116,
+                          "y": 0.33105567
+                        },
+                        {
+                          "x": 0.25195116,
+                          "y": 0.34765527
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.1,
+            "cooldownTime": 0.08,
+            "spread": 6,
+            "projectiles": [
+              {
+                "id": "Arrow_Triple_Shotgun",
+                "damage": 7,
+                "speed": 25,
+                "range": 1000,
+                "force": 16,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "arrow_big_001",
+                      "spriteId": 593,
+                      "flipped": true,
+                      "uvs": [
+                        {
+                          "x": 0.24023633,
+                          "y": 0.33105567
+                        },
+                        {
+                          "x": 0.24023633,
+                          "y": 0.34765527
+                        },
+                        {
+                          "x": 0.25195116,
+                          "y": 0.33105567
+                        },
+                        {
+                          "x": 0.25195116,
+                          "y": 0.34765527
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 100,
     "reloadTime": 0.9,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasSpecialAbilities"
     ],
-    "attribute": {},
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "yellow",
       "orange",
@@ -71128,6 +75925,626 @@
           {
             "spriteName": "triple_crossbow_idle_001",
             "spriteId": -1,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.19921973,
+                "y": 0.555665
+              },
+              {
+                "x": 0.22070214,
+                "y": 0.555665
+              },
+              {
+                "x": 0.19921973,
+                "y": 0.5683584
+              },
+              {
+                "x": 0.22070214,
+                "y": 0.5683584
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "triplecrossbow_reload",
+        "fps": 14,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "triple_crossbow_reload_001",
+            "spriteId": 758,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.066407226,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.066407226,
+                "y": 0.6572256
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.6572256
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_001",
+            "spriteId": 758,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.066407226,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.066407226,
+                "y": 0.6572256
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.6572256
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_001",
+            "spriteId": 758,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.066407226,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.066407226,
+                "y": 0.6572256
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.6572256
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_002",
+            "spriteId": 766,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.2783213,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2783213,
+                "y": 0.38378808
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.38378808
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_003",
+            "spriteId": 759,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5068369,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5068369,
+                "y": 0.26953027
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.26953027
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_004",
+            "spriteId": 770,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5820322,
+                "y": 0.46386817
+              },
+              {
+                "x": 0.59667873,
+                "y": 0.46386817
+              },
+              {
+                "x": 0.5820322,
+                "y": 0.47851464
+              },
+              {
+                "x": 0.59667873,
+                "y": 0.47851464
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_005",
+            "spriteId": 763,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5068369,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5068369,
+                "y": 0.26953027
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.26953027
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_006",
+            "spriteId": 768,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5820322,
+                "y": 0.46386817
+              },
+              {
+                "x": 0.59667873,
+                "y": 0.46386817
+              },
+              {
+                "x": 0.5820322,
+                "y": 0.47851464
+              },
+              {
+                "x": 0.59667873,
+                "y": 0.47851464
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_007",
+            "spriteId": 765,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5068369,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5068369,
+                "y": 0.26953027
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.26953027
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_008",
+            "spriteId": 764,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.2783213,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2783213,
+                "y": 0.38378808
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.38378808
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_008",
+            "spriteId": 764,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.2783213,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2783213,
+                "y": 0.38378808
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.38378808
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_001",
+            "spriteId": 758,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.066407226,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.066407226,
+                "y": 0.6572256
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.6572256
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_idle_001",
+            "spriteId": 769,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.19921973,
+                "y": 0.555665
+              },
+              {
+                "x": 0.22070214,
+                "y": 0.555665
+              },
+              {
+                "x": 0.19921973,
+                "y": 0.5683584
+              },
+              {
+                "x": 0.22070214,
+                "y": 0.5683584
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "triplecrossbow_reload",
+        "fps": 14,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "triple_crossbow_reload_001",
+            "spriteId": 758,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.066407226,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.066407226,
+                "y": 0.6572256
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.6572256
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_001",
+            "spriteId": 758,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.066407226,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.066407226,
+                "y": 0.6572256
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.6572256
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_001",
+            "spriteId": 758,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.066407226,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.066407226,
+                "y": 0.6572256
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.6572256
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_002",
+            "spriteId": 766,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.2783213,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2783213,
+                "y": 0.38378808
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.38378808
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_003",
+            "spriteId": 759,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5068369,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5068369,
+                "y": 0.26953027
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.26953027
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_004",
+            "spriteId": 770,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5820322,
+                "y": 0.46386817
+              },
+              {
+                "x": 0.59667873,
+                "y": 0.46386817
+              },
+              {
+                "x": 0.5820322,
+                "y": 0.47851464
+              },
+              {
+                "x": 0.59667873,
+                "y": 0.47851464
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_005",
+            "spriteId": 763,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5068369,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5068369,
+                "y": 0.26953027
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.26953027
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_006",
+            "spriteId": 768,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5820322,
+                "y": 0.46386817
+              },
+              {
+                "x": 0.59667873,
+                "y": 0.46386817
+              },
+              {
+                "x": 0.5820322,
+                "y": 0.47851464
+              },
+              {
+                "x": 0.59667873,
+                "y": 0.47851464
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_007",
+            "spriteId": 765,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.5068369,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.2519541
+              },
+              {
+                "x": 0.5068369,
+                "y": 0.26953027
+              },
+              {
+                "x": 0.5244131,
+                "y": 0.26953027
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_008",
+            "spriteId": 764,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.2783213,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2783213,
+                "y": 0.38378808
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.38378808
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_008",
+            "spriteId": 764,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.2783213,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2783213,
+                "y": 0.38378808
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.36328223
+              },
+              {
+                "x": 0.2949209,
+                "y": 0.38378808
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_reload_001",
+            "spriteId": 758,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.066407226,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.64550877
+              },
+              {
+                "x": 0.066407226,
+                "y": 0.6572256
+              },
+              {
+                "x": 0.08886621,
+                "y": 0.6572256
+              }
+            ]
+          },
+          {
+            "spriteName": "triple_crossbow_idle_001",
+            "spriteId": 769,
             "flipped": false,
             "uvs": [
               {
@@ -91488,7 +96905,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 30,
         "projectiles": [
           {
@@ -91543,12 +96960,84 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "magazineSize": 1,
+        "projectiles": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.5,
+            "spread": 0,
+            "projectiles": [
+              {
+                "id": "Combine_Bounce_Projectile",
+                "damage": 100,
+                "speed": 19,
+                "range": 150,
+                "force": 2.5,
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "ricochet",
+                    "damage": 400
+                  }
+                ],
+                "numberOfBounces": 4,
+                "damageMultiplierOnBounce": 1,
+                "penetration": 2,
+                "canPenetrateObjects": true,
+                "animation": {
+                  "name": "No_Animation",
+                  "fps": 0,
+                  "loopStart": 0,
+                  "wrapMode": "Single",
+                  "minFidgetDuration": 0,
+                  "maxFidgetDuration": 0,
+                  "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "halflife_bounce_projectile_001001",
+                      "spriteId": 679,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.69531447,
+                          "y": 0.41699317
+                        },
+                        {
+                          "x": 0.72656053,
+                          "y": 0.41699317
+                        },
+                        {
+                          "x": 0.69531447,
+                          "y": 0.4326162
+                        },
+                        {
+                          "x": 0.72656053,
+                          "y": 0.4326162
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 500,
     "reloadTime": 1.2,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "gray",
       "sky"
@@ -91698,6 +97187,120 @@
               {
                 "x": 0.74218655,
                 "y": 0.2714834
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "combine_riflepulse",
+        "fps": 6,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "combine_riflepulse_idle_001",
+            "spriteId": 1466,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.0009775391,
+                "y": 0.3457041
+              },
+              {
+                "x": 0.0009775391,
+                "y": 0.37597558
+              },
+              {
+                "x": 0.014647461,
+                "y": 0.3457041
+              },
+              {
+                "x": 0.014647461,
+                "y": 0.37597558
+              }
+            ]
+          },
+          {
+            "spriteName": "combine_riflepulse_idle_001",
+            "spriteId": 1466,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.0009775391,
+                "y": 0.3457041
+              },
+              {
+                "x": 0.0009775391,
+                "y": 0.37597558
+              },
+              {
+                "x": 0.014647461,
+                "y": 0.3457041
+              },
+              {
+                "x": 0.014647461,
+                "y": 0.37597558
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "combine_riflepulse",
+        "fps": 6,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/weaponcollection02_data/atlas0.png",
+        "frames": [
+          {
+            "spriteName": "combine_riflepulse_idle_001",
+            "spriteId": 1466,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.0009775391,
+                "y": 0.3457041
+              },
+              {
+                "x": 0.0009775391,
+                "y": 0.37597558
+              },
+              {
+                "x": 0.014647461,
+                "y": 0.3457041
+              },
+              {
+                "x": 0.014647461,
+                "y": 0.37597558
+              }
+            ]
+          },
+          {
+            "spriteName": "combine_riflepulse_idle_001",
+            "spriteId": 1466,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.0009775391,
+                "y": 0.3457041
+              },
+              {
+                "x": 0.0009775391,
+                "y": 0.37597558
+              },
+              {
+                "x": 0.014647461,
+                "y": 0.3457041
+              },
+              {
+                "x": 0.014647461,
+                "y": 0.37597558
               }
             ]
           }
@@ -102587,7 +108190,7 @@
     ],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "chargeTime": 0,
         "magazineSize": 100,
         "projectiles": [
@@ -102643,14 +108246,75 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Alternate",
+        "chargeTime": 0,
+        "magazineSize": 100,
+        "projectiles": [
+          {
+            "shootStyle": "Beam",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.05,
+            "spread": 0,
+            "projectiles": [
+              {
+                "id": "Chamber_Office_Beam_Eraser",
+                "damage": 1,
+                "speed": 40,
+                "range": 10,
+                "force": 1,
+                "additionalDamage": [],
+                "animation": {
+                  "name": "chamber_office_eraser_middle",
+                  "fps": 5,
+                  "loopStart": 0,
+                  "wrapMode": "Loop",
+                  "minFidgetDuration": 1,
+                  "maxFidgetDuration": 2,
+                  "texturePath": "spritesheet/dolphin_vfx_collection_001_data/atlas0.png",
+                  "frames": [
+                    {
+                      "spriteName": "chamber_office_beam_erase_middle_001",
+                      "spriteId": 591,
+                      "flipped": false,
+                      "uvs": [
+                        {
+                          "x": 0.42187598,
+                          "y": 0.9755869
+                        },
+                        {
+                          "x": 0.44238183,
+                          "y": 0.9755869
+                        },
+                        {
+                          "x": 0.42187598,
+                          "y": 0.98437405
+                        },
+                        {
+                          "x": 0.44238183,
+                          "y": 0.98437405
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 900,
     "reloadTime": 0.9,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasSpecialAbilities"
     ],
-    "attribute": {},
+    "attribute": {
+      "trickGun": true
+    },
     "colors": [
       "yellow",
       "orange",
@@ -102667,6 +108331,384 @@
         "maxFidgetDuration": 2,
         "texturePath": "spritesheet/Texture2D/atlas0_171.png",
         "frames": [
+          {
+            "spriteName": "chamber_office_penc_idle_001",
+            "spriteId": 433,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.24218945,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.28320116,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.24218945,
+                "y": 0.35351366
+              },
+              {
+                "x": 0.28320116,
+                "y": 0.35351366
+              }
+            ]
+          }
+        ]
+      },
+      "reload": {
+        "name": "chamber_office_pencil_eraser_reload",
+        "fps": 7,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/Texture2D/atlas0_171.png",
+        "frames": [
+          {
+            "spriteName": "chamber_office_penctoerase_reload_001",
+            "spriteId": 437,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.72656447,
+                "y": 0.45898634
+              },
+              {
+                "x": 0.76757616,
+                "y": 0.45898634
+              },
+              {
+                "x": 0.72656447,
+                "y": 0.48437303
+              },
+              {
+                "x": 0.76757616,
+                "y": 0.48437303
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_002",
+            "spriteId": 439,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.6035176,
+                "y": 0.46484572
+              },
+              {
+                "x": 0.6035176,
+                "y": 0.5039043
+              },
+              {
+                "x": 0.63476366,
+                "y": 0.46484572
+              },
+              {
+                "x": 0.63476366,
+                "y": 0.5039043
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_003",
+            "spriteId": 436,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.32422072,
+                "y": 0.5332051
+              },
+              {
+                "x": 0.32422072,
+                "y": 0.5507793
+              },
+              {
+                "x": 0.3652324,
+                "y": 0.5332051
+              },
+              {
+                "x": 0.3652324,
+                "y": 0.5507793
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_004",
+            "spriteId": 440,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.65625197,
+                "y": 0.5820332
+              },
+              {
+                "x": 0.65625197,
+                "y": 0.61718553
+              },
+              {
+                "x": 0.68945116,
+                "y": 0.5820332
+              },
+              {
+                "x": 0.68945116,
+                "y": 0.61718553
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_005",
+            "spriteId": 438,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.2910176,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.33202928,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.2910176,
+                "y": 0.35351366
+              },
+              {
+                "x": 0.33202928,
+                "y": 0.35351366
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_006",
+            "spriteId": 434,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.50000197,
+                "y": 0.64648634
+              },
+              {
+                "x": 0.54101366,
+                "y": 0.64648634
+              },
+              {
+                "x": 0.50000197,
+                "y": 0.6699199
+              },
+              {
+                "x": 0.54101366,
+                "y": 0.6699199
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_erase_idle_001",
+            "spriteId": 441,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.2910176,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.33202928,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.2910176,
+                "y": 0.35351366
+              },
+              {
+                "x": 0.33202928,
+                "y": 0.35351366
+              }
+            ]
+          }
+        ]
+      },
+      "alternateIdle": {
+        "name": "chamber_office_eraser_idle",
+        "fps": 5,
+        "loopStart": 0,
+        "wrapMode": "Loop",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/Texture2D/atlas0_171.png",
+        "frames": [
+          {
+            "spriteName": "chamber_office_erase_idle_001",
+            "spriteId": 441,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.2910176,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.33202928,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.2910176,
+                "y": 0.35351366
+              },
+              {
+                "x": 0.33202928,
+                "y": 0.35351366
+              }
+            ]
+          }
+        ]
+      },
+      "alternateReload": {
+        "name": "chamber_office_eraser_pencil_reload",
+        "fps": 7,
+        "loopStart": 0,
+        "wrapMode": "Once",
+        "minFidgetDuration": 1,
+        "maxFidgetDuration": 2,
+        "texturePath": "spritesheet/Texture2D/atlas0_171.png",
+        "frames": [
+          {
+            "spriteName": "chamber_office_penctoerase_reload_006",
+            "spriteId": 434,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.50000197,
+                "y": 0.64648634
+              },
+              {
+                "x": 0.54101366,
+                "y": 0.64648634
+              },
+              {
+                "x": 0.50000197,
+                "y": 0.6699199
+              },
+              {
+                "x": 0.54101366,
+                "y": 0.6699199
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_005",
+            "spriteId": 438,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.2910176,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.33202928,
+                "y": 0.33593947
+              },
+              {
+                "x": 0.2910176,
+                "y": 0.35351366
+              },
+              {
+                "x": 0.33202928,
+                "y": 0.35351366
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_004",
+            "spriteId": 440,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.65625197,
+                "y": 0.5820332
+              },
+              {
+                "x": 0.65625197,
+                "y": 0.61718553
+              },
+              {
+                "x": 0.68945116,
+                "y": 0.5820332
+              },
+              {
+                "x": 0.68945116,
+                "y": 0.61718553
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_003",
+            "spriteId": 436,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.32422072,
+                "y": 0.5332051
+              },
+              {
+                "x": 0.32422072,
+                "y": 0.5507793
+              },
+              {
+                "x": 0.3652324,
+                "y": 0.5332051
+              },
+              {
+                "x": 0.3652324,
+                "y": 0.5507793
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_002",
+            "spriteId": 439,
+            "flipped": true,
+            "uvs": [
+              {
+                "x": 0.6035176,
+                "y": 0.46484572
+              },
+              {
+                "x": 0.6035176,
+                "y": 0.5039043
+              },
+              {
+                "x": 0.63476366,
+                "y": 0.46484572
+              },
+              {
+                "x": 0.63476366,
+                "y": 0.5039043
+              }
+            ]
+          },
+          {
+            "spriteName": "chamber_office_penctoerase_reload_001",
+            "spriteId": 437,
+            "flipped": false,
+            "uvs": [
+              {
+                "x": 0.72656447,
+                "y": 0.45898634
+              },
+              {
+                "x": 0.76757616,
+                "y": 0.45898634
+              },
+              {
+                "x": 0.72656447,
+                "y": 0.48437303
+              },
+              {
+                "x": 0.76757616,
+                "y": 0.48437303
+              }
+            ]
+          },
           {
             "spriteName": "chamber_office_penc_idle_001",
             "spriteId": 433,

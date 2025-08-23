@@ -27,7 +27,7 @@ export function Volley(props: TVolleyProps) {
       {projectiles.length > 1 ? (
         <Tooltip open={tooltipOpen} onOpenChange={setTooltipOpen}>
           <TooltipTrigger>
-            <Chamber size={22} color={primaryColor} className="relative top-[2px]" />
+            <Chamber size={22} color={primaryColor} className="relative top-[2px] cursor-help" />
           </TooltipTrigger>
           <TooltipContent>
             <strong>Volley</strong>
@@ -49,7 +49,7 @@ export function Volley(props: TVolleyProps) {
           return (
             <Tooltip key={`${id}-${i}`} delayDuration={1000}>
               <TooltipTrigger>
-                <div className="relative top-[2px] ">
+                <div className="relative top-[2px] cursor-help">
                   {p.projectiles.length === 1 && p.projectiles[0].animation ? (
                     <div onClick={() => onSelect(i)} onMouseEnter={() => onHover(i)}>
                       <AnimatedSprite key={`${id}-${i}`} animation={p.projectiles[0].animation} />

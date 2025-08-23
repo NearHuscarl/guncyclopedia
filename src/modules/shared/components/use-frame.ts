@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { randomBetween } from "@/lib/lang";
 import type { TAnimation } from "@/client/generated/models/animation.model";
 
-export function useFrame(animation: TAnimation) {
+export function useFrame(animation: TAnimation, onFinished?: () => void) {
   const startIndex = animation.wrapMode === "LoopSection" ? animation.loopStart : 0;
   const [index, setIndex] = useState(0);
+  const onFinishedRef = useRef(onFinished);
+
+  useEffect(() => {
+    onFinishedRef.current = onFinished;
+  });
 
   useEffect(() => {
     if (animation.frames.length === 1) return;
@@ -21,6 +26,10 @@ export function useFrame(animation: TAnimation) {
           : // normal per-frame delay
             1000 / animation.fps;
 
+      if (animation.wrapMode === "Once" && lastFrame) {
+        onFinishedRef.current?.();
+        return;
+      }
       timerId = window.setTimeout(() => {
         setIndex((prev) => (prev + 1 === animation.frames.length ? startIndex : prev + 1));
       }, delay);

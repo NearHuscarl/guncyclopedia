@@ -1,6 +1,6 @@
-import type { TIconProps } from "./types";
+import type { IIconProps } from "./types";
 
-export function Chamber({ size = 25, color = "white", className }: TIconProps) {
+export function Chamber({ size = 25, color = "white", className }: IIconProps) {
   return (
     <svg
       width={size}

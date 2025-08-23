@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import type { TIconProps } from "./types";
+import type { IIconProps } from "./types";
 
-export function Handfist({ size = 25, className }: TIconProps) {
+export function Handfist({ size = 25, className }: IIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
-import type { TIconProps } from "./types";
+import type { IIconProps } from "./types";
 
-export function Boss({ size = 25 }: TIconProps) {
+export function Boss({ size = 25 }: IIconProps) {
   return (
     <svg width={size} viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="13" height="17" />

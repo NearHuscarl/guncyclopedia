@@ -104,9 +104,17 @@ const GunData = z
     activeReloadData: z.object({
       reloadSpeedMultiplier: z.number(),
     }),
+    reloadAnimation: z.string().nullable(),
     idleAnimation: z.string().nullable(),
     shootAnimation: z.string().nullable(),
     chargeAnimation: z.string().nullable(),
+    IsTrickGun: BinaryOption,
+    alternateVolley: AssetExternalReference,
+    alternateIdleAnimation: z.string().nullable(),
+    /**
+     * Gungeon Ant flip the ant when running reload animation but doesn't have `alternateIdleAnimation`
+     */
+    alternateReloadAnimation: z.string().nullable(),
     LocalActiveReload: BinaryOption,
   })
   .refine(

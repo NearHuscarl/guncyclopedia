@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import isUndefined from "lodash/isUndefined";
 import clsx from "clsx";
-import { AnimatedSprite } from "../shared/components/animated-sprite";
 import { H2, H3 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
+import { AnimatedSprite } from "../shared/components/animated-sprite";
+import { AnimatedSpriteSeries } from "../shared/components/animated-sprite-series";
 import { Quality } from "./quality";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -32,16 +34,31 @@ import type { TGun } from "@/client/generated/models/gun.model";
 // Accurate: At least Steady ROF, High Precision
 // Unpredictable: Large damage range
 
-function MainGunSprite({ gun, hoverGun }: { gun: TGun; hoverGun?: TGun }) {
+function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mode: string }) {
   const useChargeAnimation = useGunStore((state) => state.useChargeAnimation);
+  let animationName: keyof TGun["animation"] = "idle";
+
+  if (useChargeAnimation) animationName = "charge";
+
   return (
     <div className="flex items-center justify-center h-36 gap-10">
-      <AnimatedSprite
-        key={`${gun.id}-${useChargeAnimation ? "charge" : "idle"}`}
-        // TODO: moonscraper charge animation doesn't exist
-        animation={useChargeAnimation ? (gun.animation.charge ?? gun.animation.idle) : gun.animation.idle}
-        scale={6}
-      />
+      {gun.attribute.trickGun ? (
+        <AnimatedSpriteSeries
+          key={`${gun.id}-${mode}`}
+          scale={6}
+          animations={(mode === "Alternate"
+            ? [gun.animation.reload, gun.animation.alternateIdle]
+            : [gun.animation.alternateReload, gun.animation.idle]
+          ).filter((a) => !isUndefined(a))}
+        />
+      ) : (
+        <AnimatedSprite
+          key={`${gun.id}-${animationName}`}
+          scale={6}
+          // TODO: moonscraper charge animation doesn't exist
+          animation={gun.animation[animationName] ?? gun.animation.idle}
+        />
+      )}
       {hoverGun && hoverGun.id !== gun.id && (
         <>
           <ArrowLeftRight className="fill-primary" />
@@ -121,7 +138,7 @@ export function DetailSection() {
             </Button>
           ))}
         </div>
-        <MainGunSprite gun={gun} hoverGun={hoverGun} />
+        <MainGunSprite gun={gun} hoverGun={hoverGun} mode={gunStats.mode.mode} />
         <blockquote className="flex justify-center w-full italic text-muted-foreground mb-4 font-sans font-semibold">
           {JSON.stringify(selectedGun.quote || "...")}
         </blockquote>

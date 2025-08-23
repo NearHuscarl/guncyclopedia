@@ -249,6 +249,11 @@ export const Gun = PickupObject.extend({
     auraOnReloadRadius: z.number().optional(),
     auraOnReloadDps: z.number().optional(),
     auraOnReloadIgniteDps: z.number().optional(),
+
+    /**
+     * Gun that switch between 2 firing modes upon reload
+     */
+    trickGun: z.boolean().optional(),
   }),
   video: z.string().optional(),
   /**
@@ -257,6 +262,9 @@ export const Gun = PickupObject.extend({
   colors: z.array(z.string()),
   animation: z.object({
     idle: Animation,
+    reload: Animation.optional(),
+    alternateIdle: Animation.optional(),
+    alternateReload: Animation.optional(),
     charge: Animation.optional(),
   }),
 });

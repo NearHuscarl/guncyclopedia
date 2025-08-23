@@ -14,7 +14,16 @@ import clsx from "clsx";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NumericValue } from "./numeric-value";
 import { formatNumber, toPercent } from "@/lib/lang";
-import { fuchsia500, green500, orange500, red600, sky500, slate400, yellow500 } from "../shared/settings/tailwind";
+import {
+  fuchsia500,
+  green500,
+  orange500,
+  primaryColor,
+  red600,
+  sky500,
+  slate400,
+  yellow500,
+} from "../shared/settings/tailwind";
 import { Penetration } from "@/components/icons/penetration";
 import { Bounce } from "@/components/icons/bounce";
 import { Stun } from "@/components/icons/stun";
@@ -41,6 +50,7 @@ import { PlayerNinja } from "@/components/icons/player-ninja";
 import { PlayerRobot } from "@/components/icons/player-robot";
 import { PlayerRogue } from "@/components/icons/player-rogue";
 import { PlayerSlinger } from "@/components/icons/player-slinger";
+import { TrickGun } from "@/components/icons/trick-gun";
 import type { ReactNode } from "react";
 import type { TGun, TProjectile } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -474,6 +484,24 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <strong>Bouncing Projectile</strong>
             <br />
             Number of bounces: <strong>{formatNumber(projectileData.numberOfBounces!, 1)}</strong>
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.attribute.trickGun && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <TrickGun
+                size={18}
+                color1={gunStats?.mode.mode === "Normal" ? primaryColor : "white"}
+                color2={gunStats?.mode.mode === "Alternate" ? primaryColor : "white"}
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Trick Gun</strong>
+            <br />
+            Alternates between 2 firing modes upon reloading
           </TooltipContent>
         </Tooltip>
       )}

@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import type { TIconProps } from "./types";
+import type { IIconProps } from "./types";
 
-export function Explosion({ size = 20, className }: TIconProps) {
+export function Explosion({ size = 20, className }: IIconProps) {
   return (
     <svg
       width={size}

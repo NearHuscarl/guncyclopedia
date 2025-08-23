@@ -1,6 +1,6 @@
-import type { TIconProps } from "./types";
+import type { IIconProps } from "./types";
 
-export function Marker({ size = 15, color = "white", className }: TIconProps) {
+export function Marker({ size = 15, color = "white", className }: IIconProps) {
   return (
     <svg
       width={size}

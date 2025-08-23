@@ -29,10 +29,10 @@ function getMaxDimensions(animation: TAnimation, w: number, h: number, scale: nu
   return { maxW, maxH };
 }
 
-type TAnimatedSpriteProps = { animation: TAnimation; scale?: number; className?: string };
+type TAnimatedSpriteProps = { animation: TAnimation; scale?: number; className?: string; onFinished?: () => void };
 
-function AnimatedSpriteImpl({ animation, scale = 1, className }: TAnimatedSpriteProps) {
-  const frame = useFrame(animation);
+function AnimatedSpriteImpl({ animation, scale = 1, className, onFinished }: TAnimatedSpriteProps) {
+  const frame = useFrame(animation, onFinished);
   const debug = useIsDebug();
   const { w, h } = useImageSize(animation.texturePath);
   const { maxW, maxH } = useMemo(() => getMaxDimensions(animation, w, h, scale), [animation, h, scale, w]);
