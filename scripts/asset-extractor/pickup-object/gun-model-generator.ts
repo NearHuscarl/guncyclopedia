@@ -717,6 +717,43 @@ export class GunModelGenerator {
       }
     }
 
+    // Most intro animations for gun actually use the reload animation, but some guns have unusually high reload speed for the first frame.
+    // So we need to cut the first frame short so the intro does not drag on.
+    const reloadAnimation = gun.animation.reload;
+    if (reloadAnimation) {
+      const duration = reloadAnimation.fps * reloadAnimation.frames.length;
+      if (duration >= 1.5) {
+        const firstFrameInstance = JSON.stringify(reloadAnimation.frames[0]);
+        let isFirstFrame = true;
+        const shortenenFrames: TAnimation["frames"] = [];
+        let firstFrameDuration = 0;
+
+        for (const frame of reloadAnimation.frames) {
+          const frameInstance = JSON.stringify(frame);
+
+          if (isFirstFrame) {
+            isFirstFrame = frameInstance === firstFrameInstance;
+          }
+
+          if (isFirstFrame) {
+            firstFrameDuration += 1 / reloadAnimation.fps;
+          }
+          if (firstFrameDuration >= 0.6 && isFirstFrame) continue;
+          shortenenFrames.push(frame);
+        }
+
+        if (reloadAnimation.frames.length !== shortenenFrames.length) {
+          console.log(
+            chalk.gray(
+              `Shortened reload animation for gun ${chalk.green(gun.name)} from ${reloadAnimation.frames.length} to ${shortenenFrames.length} frames`,
+            ),
+          );
+        }
+
+        reloadAnimation.frames = shortenenFrames;
+      }
+    }
+
     for (const modes of gun.projectileModes) {
       for (const projectilePerShot of modes.projectiles) {
         const projectileIds = new Set<string>();
