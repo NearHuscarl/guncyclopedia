@@ -177,14 +177,17 @@ export class ProjectileService {
       explosionForce: ["avg", "sum"],
       explosionRadius: ["avg", "max"],
       explosionFreezeRadius: ["avg", "max"],
+      goopCollisionRadius: ["avg", "max"],
     };
 
-    // All boolean keys that are aggregated with logical‐AND.
+    // All boolean keys that are aggregated with logical-OR.
     const bAggregateConfig: BooleanAggregateConfig = {
       ignoreDamageCaps: true,
       canPenetrateObjects: true,
       isHoming: true,
       damageAllEnemies: true,
+      hasOilGoop: true,
+      spawnGoopOnCollision: true,
     };
     // @ts-expect-error alert linter to update new properties
     const _aAggregateConfig: ArrayAggregateConfig = {

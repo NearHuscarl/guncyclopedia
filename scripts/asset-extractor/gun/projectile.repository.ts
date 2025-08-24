@@ -12,7 +12,9 @@ import type {
   TBounceProjModifierData,
   TCerebralBoreProjectileData,
   TExplosiveModifierData,
+  TGoopModifierData,
   THomingModifierData,
+  TGoodDefinitionData,
   TPierceProjModifierData,
   TProjectileData,
   TProjectileDto,
@@ -63,6 +65,12 @@ export class ProjectileRepository {
   }
   private _isHomingModifierData(obj: unknown): obj is THomingModifierData {
     return this._containsScript(obj, AssetService.HOMING_MODIFIER_SCRIPT);
+  }
+  private _isGoopModifierData(obj: unknown): obj is TGoopModifierData {
+    return this._containsScript(obj, "GoopModifier.cs.meta");
+  }
+  private _isGoopDefinitionData(obj: unknown): obj is TGoodDefinitionData {
+    return this._containsScript(obj, "GoopDefinition.cs.meta");
   }
   private _isBasicBeamControllerData(obj: unknown): obj is TBasicBeamControllerData {
     return this._containsScript(obj, "BasicBeamController.cs.meta");
@@ -115,6 +123,17 @@ export class ProjectileRepository {
           res.explosiveModifier = component;
         } else if (this._isHomingModifierData(component)) {
           res.homingModifier = component;
+        } else if (this._isGoopModifierData(component)) {
+          res.goopModifier = component;
+
+          const prefab2 = await this._assetService.parseSerializedAssetFromReference(component.goopDefinition);
+
+          for (const component2 of prefab2) {
+            if (this._isGoopDefinitionData(component2)) {
+              res.goopModifier.goopDefinitionData = component2;
+              break;
+            }
+          }
         } else if (this._isBasicBeamControllerData(component)) {
           res.basicBeamController = component;
         } else if (this._isRaidenBeamControllerData(component)) {

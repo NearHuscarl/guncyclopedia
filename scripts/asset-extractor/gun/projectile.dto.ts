@@ -1,5 +1,5 @@
 import z from "zod/v4";
-import { BinaryOption, Percentage } from "../utils/schema.ts";
+import { AssetExternalReference, BinaryOption, Percentage } from "../utils/schema.ts";
 import { MonoBehaviour } from "../asset/asset.dto.ts";
 import { SpriteAnimatorData, SpriteData } from "../asset/component.dto.ts";
 
@@ -73,6 +73,23 @@ const ExplosiveModifierData = z.object({
 const HomingModifierData = z.object({
   HomingRadius: z.number(),
   AngularVelocity: z.number(),
+});
+
+const GoopDefinitionData = z.object({
+  CanBeIgnited: BinaryOption,
+  fireDamagePerSecondToEnemies: z.number(),
+});
+
+const GoopModifierData = z.object({
+  SpawnGoopInFlight: BinaryOption,
+  SpawnGoopOnCollision: BinaryOption,
+  CollisionSpawnRadius: z.number(),
+  goopDefinition: AssetExternalReference.required(),
+  goopDefinitionData: GoopDefinitionData.optional(),
+  /**
+   * Does this modifier require a specific synergy to function?
+   */
+  IsSynergyContingent: BinaryOption,
 });
 
 const BasicBeamControllerData = z.object({
@@ -150,6 +167,7 @@ export const ProjectileDto = z.object({
   pierceProjModifier: PierceProjModifierData.optional(),
   explosiveModifier: ExplosiveModifierData.optional(),
   homingModifier: HomingModifierData.optional(),
+  goopModifier: GoopModifierData.optional(),
   basicBeamController: BasicBeamControllerData.optional(),
   raidenBeamController: RaidenBeamControllerData.optional(),
   blackHoleDoer: BlackHoleDoerData.optional(),
@@ -162,6 +180,8 @@ export type TBounceProjModifierData = z.infer<typeof BounceProjModifierData>;
 export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
 export type TExplosiveModifierData = z.infer<typeof ExplosiveModifierData>;
 export type THomingModifierData = z.infer<typeof HomingModifierData>;
+export type TGoodDefinitionData = z.infer<typeof GoopDefinitionData>;
+export type TGoopModifierData = z.infer<typeof GoopModifierData>;
 export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;
 export type TBlackHoleDoerData = z.input<typeof BlackHoleDoerData>;

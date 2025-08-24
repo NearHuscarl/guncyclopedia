@@ -38,21 +38,6 @@ const modifyMethodTextLookup = invert(StatModifier.ModifyMethod);
 const statTypeTextLookup = invert(StatModifier.StatType);
 const wrapModeTextLookup = invert(WrapMode);
 
-const unusedGunIds = new Set([
-  // https://enterthegungeon.fandom.com/wiki/Black_Revolver
-  405,
-  // https://enterthegungeon.wiki.gg/wiki/Ice_Ogre_Head
-  226,
-  // https://enterthegungeon.fandom.com/wiki/Megaphone
-  361,
-  // https://enterthegungeon.fandom.com/wiki/Portaler
-  391,
-  // https://enterthegungeon.fandom.com/wiki/Gundertale
-  509,
-  // https://the-advanced-ammonomicon.fandom.com/wiki/Flamethrower
-  46,
-]);
-
 type GunModelGeneratorCtor = {
   gunRepo: GunRepository;
   projectileRepo: ProjectileRepository;
@@ -267,6 +252,31 @@ export class GunModelGenerator {
       }
       this._featureFlags.add("hasExplosiveProjectile");
     }
+
+    // TODO: handle synergy
+    if (projDto.goopModifier?.goopDefinitionData && !projDto.goopModifier.IsSynergyContingent) {
+      if (projDto.goopModifier.goopDefinitionData.CanBeIgnited) {
+        if (projDto.goopModifier.SpawnGoopOnCollision) {
+          proj.hasOilGoop = true;
+          proj.spawnGoopOnCollision = true;
+          proj.goopCollisionRadius = projDto.goopModifier.CollisionSpawnRadius;
+          // TODO: only add this if the gun has fire projectiles. Handle: Fossilized gun, Molotov launcher
+          proj.additionalDamage.push({
+            source: "oilGoop",
+            isEstimated: true,
+            canNotStack: true,
+            type: "dps",
+            damage: projDto.goopModifier.goopDefinitionData.fireDamagePerSecondToEnemies,
+          });
+          this._featureFlags.add("hasGoop");
+        }
+        if (projDto.goopModifier.SpawnGoopInFlight) {
+          // TODO: composition gun with synergy
+        }
+      }
+    }
+
+    // homing
     const projScript = projDto.projectile.m_Script.$$scriptPath;
     if (projScript.endsWith("RobotechProjectile.cs.meta") || projScript.endsWith("BeeProjectile.cs.meta")) {
       proj.isHoming = true;
@@ -452,7 +462,7 @@ export class GunModelGenerator {
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: Hexagun: chicken morpher ability
     // TODO: round that has explosion on impact count as another source of damage
-    // TODO: link 2 guns (e.g. Gun with EXCLUDED or SPECIAL quality)
+    // TODO: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
     // TODO: fear effect
     // Edge cases:
     // Gungeon Ant: calculate reload time again based on the active reload multiplier
@@ -565,21 +575,21 @@ export class GunModelGenerator {
 
     const res = this._spriteService.getSprite(spriteData.collection.$$scriptPath, spriteData._spriteId);
 
-      return {
+    return {
       name: res.spriteData.name,
-        fps: 0,
-        loopStart: 0,
-        texturePath: res.texturePath,
-        wrapMode: "Single",
-        minFidgetDuration: 0,
-        maxFidgetDuration: 0,
-        frames: [
-          {
-            uvs: res.spriteData.uvs,
-            flipped: Boolean(res.spriteData.flipped),
-          },
-        ],
-      };
+      fps: 0,
+      loopStart: 0,
+      texturePath: res.texturePath,
+      wrapMode: "Single",
+      minFidgetDuration: 0,
+      maxFidgetDuration: 0,
+      frames: [
+        {
+          uvs: res.spriteData.uvs,
+          flipped: Boolean(res.spriteData.flipped),
+        },
+      ],
+    };
   }
 
   private _buildProjectileAnimation(projectileDto: TProjectileDto): TAnimation | undefined {
@@ -598,11 +608,12 @@ export class GunModelGenerator {
     const { projectileModules } = this._getProjectileModules(gunDto);
     const isChargeGun = projectileModules.some(
       (m) =>
-        m.chargeProjectiles.some((m) => m.ChargeTime > 0) ||
-        m.projectiles.filter(this._assetService.referenceExists).some((m) => {
-          const projDto = this._getProjectile(gunDto, m);
-          return projDto?.basicBeamController?.usesChargeDelay && projDto?.basicBeamController?.chargeDelay;
-        }),
+        (m.shootStyle === ShootStyle.Charged && m.chargeProjectiles.some((m) => m.ChargeTime > 0)) ||
+        (m.shootStyle === ShootStyle.Beam &&
+          m.projectiles.filter(this._assetService.referenceExists).some((m) => {
+            const projDto = this._getProjectile(gunDto, m);
+            return projDto?.basicBeamController?.usesChargeDelay && projDto?.basicBeamController?.chargeDelay;
+          })),
     );
     if (!isChargeGun) return;
 
@@ -640,14 +651,14 @@ export class GunModelGenerator {
         }
 
         return {
-            name: clip.name!,
-            fps: clip.fps,
-            loopStart: clip.loopStart,
-            wrapMode: wrapModeTextLookup[clip.wrapMode] as keyof typeof WrapMode,
-            minFidgetDuration: clip.minFidgetDuration,
-            maxFidgetDuration: clip.maxFidgetDuration,
-            texturePath,
-            frames,
+          name: clip.name!,
+          fps: clip.fps,
+          loopStart: clip.loopStart,
+          wrapMode: wrapModeTextLookup[clip.wrapMode] as keyof typeof WrapMode,
+          minFidgetDuration: clip.minFidgetDuration,
+          maxFidgetDuration: clip.maxFidgetDuration,
+          texturePath,
+          frames,
         };
       } else {
         console.warn(
@@ -663,8 +674,8 @@ export class GunModelGenerator {
       return animationFromSprite;
     }
 
-      throw new Error(chalk.red(`No valid sprite found for gun ${gunDto.gun.gunName}`));
-    }
+    throw new Error(chalk.red(`No valid sprite found for gun ${gunDto.gun.gunName}`));
+  }
 
   private async _buildDominantColors(gunDto: TGunDto): Promise<string[]> {
     if (gunDto.gun.idleAnimation) {
@@ -774,10 +785,6 @@ export class GunModelGenerator {
   async generate(entry: TEnconterDatabase["Entries"][number]) {
     try {
       this._featureFlags.clear();
-
-      if (unusedGunIds.has(entry.pickupObjectId)) {
-        return;
-      }
 
       const texts = {
         name: this._translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? ""),

@@ -115,6 +115,7 @@ export const Gun = PickupObject.extend({
       "hasProjectilePool",
       "hasSpecialAbilities",
       "hasStatModifiers",
+      "hasGoop",
       "damageAllEnemies",
     ]),
   ),

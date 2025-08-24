@@ -51,6 +51,7 @@ import { PlayerRobot } from "@/components/icons/player-robot";
 import { PlayerRogue } from "@/components/icons/player-rogue";
 import { PlayerSlinger } from "@/components/icons/player-slinger";
 import { TrickGun } from "@/components/icons/trick-gun";
+import { OilGoop } from "@/components/icons/oil-goop";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -393,6 +394,48 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           </TooltipContent>
         </Tooltip>
       )}
+      {gun?.attribute.auraOnReload && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              {(gun?.attribute.auraOnReloadRadius || undefined) && (
+                <NumericValue>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</NumericValue>
+              )}
+              <AuraOnReload />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Aura On Reload</strong>
+            <br />
+            While reloading, a circular field surrounds the player that damages nearby enemies within{" "}
+            <strong>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</strong> radius.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectileData.hasOilGoop && projectileData.spawnGoopOnCollision && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              {(Math.floor(projectileData.goopCollisionRadius || 0) || undefined) && (
+                <NumericValue className="text-slate-500">
+                  {formatNumber(projectileData.goopCollisionRadius!, 1)}
+                </NumericValue>
+              )}
+              <OilGoop size={16} className="[&>path]:fill-slate-500" />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-72">
+            <strong>Oil Goop</strong>
+            <br />
+            {(projectileData.goopCollisionRadius || undefined) && (
+              <>
+                Projectile leaves behind <strong>oil goop</strong> on collision with the surface within a radius of{" "}
+                <strong>{formatNumber(projectileData.goopCollisionRadius!, 1)}</strong>.
+              </>
+            )}
+          </TooltipContent>
+        </Tooltip>
+      )}
       {projectileData.isHoming && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
@@ -411,24 +454,6 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
                 Homing radius: <strong>{formatNumber(projectileData.homingRadius!, 0)}</strong>
               </>
             )}
-          </TooltipContent>
-        </Tooltip>
-      )}
-      {gun?.attribute.auraOnReload && (
-        <Tooltip delayDuration={TOOLTIP_DELAY}>
-          <TooltipTrigger>
-            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              {(gun?.attribute.auraOnReloadRadius || undefined) && (
-                <NumericValue>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</NumericValue>
-              )}
-              <AuraOnReload />
-            </div>
-          </TooltipTrigger>
-          <TooltipContent className="text-wrap w-96">
-            <strong>Aura On Reload</strong>
-            <br />
-            While reloading, a circular field surrounds the player that damages nearby enemies within{" "}
-            <strong>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</strong> radius.
           </TooltipContent>
         </Tooltip>
       )}
@@ -462,7 +487,9 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              <NumericValue>{formatNumber(projectileData.penetration!, 1)}</NumericValue>
+              {(Math.floor(projectileData.penetration || 0) || undefined) && (
+                <NumericValue>{formatNumber(projectileData.penetration!, 1)}</NumericValue>
+              )}
               <Penetration size={20} />
             </div>
           </TooltipTrigger>
@@ -477,7 +504,9 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              <NumericValue>{formatNumber(projectileData.numberOfBounces!, 1)}</NumericValue>
+              {(Math.floor(projectileData.numberOfBounces || 0) || undefined) && (
+                <NumericValue>{formatNumber(projectileData.numberOfBounces!, 1)}</NumericValue>
+              )}
               <Bounce color="white" size={20} />
             </div>
           </TooltipTrigger>

@@ -38,7 +38,7 @@ export const Projectile = z.object({
        * If `canNotStack` is true, all damages with the same source can only be applied once.
        */
       canNotStack: z.boolean().optional(),
-      source: z.enum(["ricochet", "blackhole", "fire", "poison", "explosion", "damageMultiplier"]),
+      source: z.enum(["ricochet", "blackhole", "fire", "poison", "explosion", "oilGoop", "damageMultiplier"]),
       damage: z.number(),
     }),
   ),
@@ -109,6 +109,10 @@ export const Projectile = z.object({
   beamStatusEffectChancePerSecond: Percentage.optional(),
   // TODO: research ProjectileModule.cs#GetEstimatedShotsPerSecond
   // dps: z.undefined(),
+
+  hasOilGoop: z.boolean().optional(),
+  spawnGoopOnCollision: z.boolean().optional(),
+  goopCollisionRadius: z.number().optional(),
 
   /**
    * Some projectiles are invisible hence no animation.
