@@ -90,7 +90,11 @@ export class GunRepository {
         if (this._isGunData(component)) {
           res.gun = component;
         } else if (this._assetService.isSpriteData(component)) {
-          res.sprite = component;
+          if (component.collection.$$scriptPath.toLowerCase().includes("vfx")) {
+            res.spriteVfx = component;
+          } else {
+            res.sprite = component;
+          }
         } else if (this._assetService.isSpriteAnimatorData(component)) {
           res.spriteAnimator = component;
         } else if (this._isPredatorGunControllerData(component)) {

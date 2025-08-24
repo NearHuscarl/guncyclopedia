@@ -5,6 +5,45 @@ import { useFrame } from "./use-frame";
 import { useIsDebug } from "../hooks/useDebug";
 import type { TAnimation } from "@/client/generated/models/animation.model";
 
+function normQuarterTurn(deg: number, flipped: boolean): 0 | 90 | 180 | 270 {
+  const r = (deg + 360 + (flipped ? 90 : 0)) % 360;
+  if (r < 45) return 0;
+  if (r < 135) return 90;
+  if (r < 225) return 180;
+  if (r < 315) return 270;
+  return 0;
+}
+
+function buildTransform(
+  rotate: 0 | 90 | 180 | 270,
+  flipped: boolean,
+  cssW: number,
+  cssH: number,
+  offX: number,
+  offY: number,
+) {
+  const transformParts: string[] = [];
+
+  if (flipped) {
+    transformParts.push("scaleX(-1)", `translate(${cssW}px, 0px)`);
+  }
+  // https://www.figma.com/design/loAXQ0w6kwPLrqCcMuwZig/Guncyclopedia-Icons?node-id=110-48&t=S4tL5fDB9wrvCncb-4
+  if (rotate === 90) {
+    transformParts.push("rotate(90deg)", `translate(${cssH}px, 0px)`);
+  }
+  if (rotate === 180) {
+    transformParts.push("rotate(180deg)", `translate(${cssW}px, ${cssH}px)`);
+  }
+  if (rotate === 270) {
+    transformParts.push("rotate(270deg)", `translate(0px, ${cssH}px)`);
+  }
+
+  transformParts.push(`translate(${offX}px, ${offY}px)`);
+
+  // transform is applied from right to left
+  return transformParts.reverse().join(" ");
+}
+
 function getMaxDimensions(animation: TAnimation, w: number, h: number, scale: number) {
   let maxW = 0;
   let maxH = 0;
@@ -19,8 +58,9 @@ function getMaxDimensions(animation: TAnimation, w: number, h: number, scale: nu
     const spriteW = (x1 - x0) * w * scale;
     const spriteH = (y1 - y0) * h * scale;
 
-    const frameW = frame.flipped ? spriteH : spriteW;
-    const frameH = frame.flipped ? spriteW : spriteH;
+    const rot = normQuarterTurn(animation.rotate ?? 0, frame.flipped);
+    const frameW = rot === 90 || rot === 270 ? spriteH : spriteW;
+    const frameH = rot === 90 || rot === 270 ? spriteW : spriteH;
 
     maxW = Math.max(maxW, frameW);
     maxH = Math.max(maxH, frameH);
@@ -57,23 +97,18 @@ function AnimatedSpriteImpl({ animation, scale = 1, className, onFinished }: TAn
   const bgSizeW = w * scale;
   const bgSizeH = h * scale;
 
-  // axis-aligned box after the flip/rotate
-  const effW = frame.flipped ? cssH : cssW;
-  const effH = frame.flipped ? cssW : cssH;
+  // normalize rotation to a quarter turn
+  const rotate = normQuarterTurn(animation.rotate ?? 0, frame.flipped);
 
-  // center that AABB inside the max box
+  // axis-aligned box after rotation (flip doesn't alter size)
+  const effW = rotate === 90 || rotate === 270 ? cssH : cssW;
+  const effH = rotate === 90 || rotate === 270 ? cssW : cssH;
+
+  // center the final AABB
   const offX = (maxW - effW) / 2;
   const offY = (maxH - effH) / 2;
 
-  // Build transform with origin at top-left.
-  // For flipped = false: just move into place.
-  // For flipped = true: rotate 90° CW, then push down by original width (cssW),
-  // then mirror horizontally (scaleX(-1)) which moves to negative X, then push right by cssH.
-  // Finally, add the centering offset (offX, offY).
-  const transform = frame.flipped
-    ? // order is left→right in code but applied right→left by CSS
-      `translate(${offX}px, ${offY}px) translate(${effW}px, ${effH}px) rotate(90deg) scaleX(-1)`
-    : `translate(${offX}px, ${offY}px)`;
+  const transform = buildTransform(rotate, frame.flipped, cssW, cssH, offX, offY);
 
   return (
     <div

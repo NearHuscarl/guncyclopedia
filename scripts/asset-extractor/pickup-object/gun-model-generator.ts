@@ -20,7 +20,6 @@ import { SpriteAnimatorRepository } from "../sprite/sprite-animator.repository.t
 import { WrapMode } from "../sprite/sprite-animator.dto.ts";
 import { basicColors } from "./client/models/color.model.ts";
 import { ColorService } from "../color/color.service.ts";
-import { SpriteRepository } from "../sprite/sprite.repository.ts";
 import { PlayerService } from "../player/player.service.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
@@ -30,6 +29,7 @@ import type { TAssetExternalReference } from "../utils/schema.ts";
 import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import type { TAnimation } from "./client/models/animation.model.ts";
 import type { TSpriteAnimatorDto } from "../sprite/sprite-animator.dto.ts";
+import type { TSpriteData } from "../asset/component.dto.ts";
 
 const gunQualityTextLookup = invert(ItemQuality);
 const gunClassTextLookup = invert(GunClass);
@@ -448,7 +448,7 @@ export class GunModelGenerator {
     // TODO: SpawnProjModifier (The Scrambler, Particulator)
     // TODO: homing bullet
     // TODO: ShovelGunModifier
-    // TODO: trick gun (Gungeon Ant)
+    // TODO: trick gun (Gungeon Ant) (oil & mag size)
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: Hexagun: chicken morpher ability
     // TODO: round that has explosion on impact count as another source of damage
@@ -457,6 +457,8 @@ export class GunModelGenerator {
     // Edge cases:
     // Gungeon Ant: calculate reload time again based on the active reload multiplier
     // Rad Gun: create 2 modes for different type of projectiles when alternate reloading
+    // TODO: add muzzleFlashEffects in idle animation for The Fat Line
+    // TODO: add unused reload animation for The Fat Line (?)
 
     // // TODO: test casey's case again
     // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.
@@ -515,7 +517,7 @@ export class GunModelGenerator {
 
     for (let i = 0; i < clip.frames.length; i++) {
       const frame = clip.frames[i];
-      const { spriteData, texturePath: frameTexturePath } = this._spriteService.getSpriteSync(
+      const { spriteData, texturePath: frameTexturePath } = this._spriteService.getSprite(
         frame.spriteCollection.$$scriptPath,
         frame.spriteId,
       );
@@ -558,20 +560,13 @@ export class GunModelGenerator {
     return { ...animation, ...override };
   }
 
-  private _buildProjectileAnimation(projectileDto: TProjectileDto): TAnimation | undefined {
-    if (projectileDto.spriteAnimator) {
-      const { library, defaultClipId } = projectileDto.spriteAnimator;
-      const clip = this._spriteAnimatorRepo.getClipByIndex(library, defaultClipId);
-      return this._buildAnimation(clip, `projectile id: ${projectileDto.id}`);
-    }
-    if (projectileDto.sprite) {
-      const res = this._spriteService.getSpriteSync(
-        projectileDto.sprite.collection.$$scriptPath,
-        projectileDto.sprite._spriteId,
-      );
+  private _buildAnimationFromSprite(spriteData: TSpriteData): TAnimation | undefined {
+    if (!spriteData) return;
+
+    const res = this._spriteService.getSprite(spriteData.collection.$$scriptPath, spriteData._spriteId);
 
       return {
-        name: "No_Animation",
+      name: res.spriteData.name,
         fps: 0,
         loopStart: 0,
         texturePath: res.texturePath,
@@ -585,6 +580,16 @@ export class GunModelGenerator {
           },
         ],
       };
+  }
+
+  private _buildProjectileAnimation(projectileDto: TProjectileDto): TAnimation | undefined {
+    if (projectileDto.spriteAnimator) {
+      const { library, defaultClipId } = projectileDto.spriteAnimator;
+      const clip = this._spriteAnimatorRepo.getClipByIndex(library, defaultClipId);
+      return this._buildAnimation(clip, `projectile id: ${projectileDto.id}`);
+    }
+    if (projectileDto.sprite) {
+      return this._buildAnimationFromSprite(projectileDto.sprite);
     }
     console.log(chalk.yellow(`No sprite animator or sprite found for projectile ${chalk.green(projectileDto.id)}`));
   }
@@ -604,10 +609,8 @@ export class GunModelGenerator {
     return this._buildAnimationFromName(gunDto, gunDto.gun.chargeAnimation ?? gunDto.gun.shootAnimation);
   }
 
-  private async _buildGunIdleAnimation(gunDto: TGunDto): Promise<{ colors: string[]; animation: TAnimation }> {
+  private async _buildGunIdleAnimation(gunDto: TGunDto): Promise<TAnimation> {
     const animationName = gunDto.gun.idleAnimation;
-    let colors: string[] = [];
-
     if (animationName) {
       let texturePath = "";
       const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, animationName);
@@ -616,11 +619,9 @@ export class GunModelGenerator {
       if (clip) {
         for (let i = 0; i < clip.frames.length; i++) {
           const frame = clip.frames[i];
-          const { spriteData, texturePath: spriteTexturePath } = await this._spriteService.getSprite(
+          const { spriteData, texturePath: spriteTexturePath } = this._spriteService.getSprite(
             frame.spriteCollection.$$scriptPath,
             frame.spriteId,
-            async (image) =>
-              void (i === 0 && (colors = await this._colorService.findDominantColors(image, basicColors))),
           );
           if (!spriteData.name) {
             throw new Error(
@@ -639,8 +640,6 @@ export class GunModelGenerator {
         }
 
         return {
-          colors,
-          animation: {
             name: clip.name!,
             fps: clip.fps,
             loopStart: clip.loopStart,
@@ -649,55 +648,41 @@ export class GunModelGenerator {
             maxFidgetDuration: clip.maxFidgetDuration,
             texturePath,
             frames,
-          },
         };
       } else {
         console.warn(
           chalk.yellow(
-            `Clip ${chalk.green(animationName)} not found in animation collection. Falling back to Ammonomicon sprite.`,
+            `Clip ${chalk.green(animationName)} not found in animation collection. Falling back to the default sprite.`,
           ),
         );
       }
     }
 
-    const spriteName = gunDto.encounterTrackable?.m_journalData.AmmonomiconSprite;
+    const animationFromSprite = this._buildAnimationFromSprite(gunDto.sprite);
+    if (animationFromSprite) {
+      return animationFromSprite;
+    }
 
-    if (!spriteName) {
       throw new Error(chalk.red(`No valid sprite found for gun ${gunDto.gun.gunName}`));
     }
-    let res: Awaited<ReturnType<typeof this._spriteService.getSprite>> | null = null;
-    try {
-      res = await this._spriteService.getSprite(
-        gunDto.sprite.collection.$$scriptPath,
-        spriteName,
-        async (image) => void (colors = await this._colorService.findDominantColors(image, basicColors)),
-      );
-    } catch {
-      res = await this._spriteService.getSprite(
-        SpriteRepository.AMMONONICON_SPRITE_PATH,
-        spriteName,
-        async (image) => void (colors = await this._colorService.findDominantColors(image, basicColors)),
-      );
+
+  private async _buildDominantColors(gunDto: TGunDto): Promise<string[]> {
+    if (gunDto.gun.idleAnimation) {
+      const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, gunDto.gun.idleAnimation);
+      if (clip) {
+        const image = await this._spriteService.getSpriteImage(
+          clip?.frames[0].spriteCollection.$$scriptPath,
+          clip?.frames[0].spriteId,
+        );
+        return this._colorService.findDominantColors(image, basicColors);
+      }
     }
 
-    return {
-      colors,
-      animation: {
-        name: "No_Animation",
-        fps: 0,
-        loopStart: 0,
-        texturePath: res.texturePath,
-        wrapMode: "Single",
-        minFidgetDuration: 0,
-        maxFidgetDuration: 0,
-        frames: [
-          {
-            uvs: res.spriteData.uvs,
-            flipped: Boolean(res.spriteData.flipped),
-          },
-        ],
-      },
-    };
+    const image = await this._spriteService.getSpriteImage(
+      gunDto.sprite.collection.$$scriptPath,
+      gunDto.sprite._spriteId,
+    );
+    return this._colorService.findDominantColors(image, basicColors);
   }
 
   private _buildStatModifiers(gunDto: TGunDto): TGun["playerStatModifiers"] {
@@ -722,6 +707,33 @@ export class GunModelGenerator {
     }));
   }
 
+  private _postProcessGunModel(gun: TGun) {
+    // force casey final sprite to stay horizontally to fit in the ui element.
+    if ([541, 616].includes(gun.id)) {
+      for (const animation in gun.animation) {
+        if (gun.animation[animation] && animation !== "charge") {
+          gun.animation[animation] = { ...gun.animation[animation], rotate: 90 } as TAnimation;
+        }
+      }
+    }
+
+    for (const modes of gun.projectileModes) {
+      for (const projectilePerShot of modes.projectiles) {
+        const projectileIds = new Set<string>();
+        for (const projectile of projectilePerShot.projectiles) {
+          projectileIds.add(projectile.id);
+        }
+        if (projectileIds.size > 1) {
+          this._featureFlags.add("hasProjectilePool");
+        }
+      }
+    }
+
+    gun.featureFlags = Array.from(this._featureFlags);
+
+    return gun;
+  }
+
   async generate(entry: TEnconterDatabase["Entries"][number]) {
     try {
       this._featureFlags.clear();
@@ -736,6 +748,11 @@ export class GunModelGenerator {
         description: this._translationRepo.getItemTranslation(entry.journalData.AmmonomiconFullEntry ?? ""),
       };
 
+      // Remove that big-ass hammer
+      if (!texts.name) {
+        return;
+      }
+
       const gunDto = this._gunRepo.getGun(entry.pickupObjectId);
       if (!gunDto) {
         console.warn(chalk.yellow(`Gun with ID ${entry.pickupObjectId} (${texts.name}) not found in GunRepository.`));
@@ -745,8 +762,6 @@ export class GunModelGenerator {
       if (entry.isInfiniteAmmoGun) this._featureFlags.add("hasInfiniteAmmo");
       if (entry.doesntDamageSecretWalls) this._featureFlags.add("doesntDamageSecretWalls");
 
-      const { colors, animation: idleAnimation } = await this._buildGunIdleAnimation(gunDto);
-      const chargeAnimation = await this._buildGunChargeAnimation(gunDto);
       const startingItemOf = this._playerService.getOwners(entry.pickupObjectId, "startingGunIds");
       const startingAlternateItemOf = this._playerService.getOwners(entry.pickupObjectId, "startingAlternateGunIds");
 
@@ -765,9 +780,9 @@ export class GunModelGenerator {
         featureFlags: [],
         projectileModes: this._buildProjectileModes(gunDto),
         attribute: this._buildAttribute(gunDto),
-        colors,
+        colors: await this._buildDominantColors(gunDto),
         animation: {
-          idle: idleAnimation,
+          idle: await this._buildGunIdleAnimation(gunDto),
           // Fix Turbo-Gun reload animation getting stuck in a loop
           reload: this._buildAnimationFromName(gunDto, gunDto.gun.reloadAnimation, { wrapMode: "Once" }),
           intro: this._buildAnimationFromName(gunDto, gunDto.gun.introAnimation, { wrapMode: "Once" }),
@@ -777,26 +792,12 @@ export class GunModelGenerator {
               wrapMode: "Once",
             }),
           }),
-          charge: chargeAnimation,
+          charge: await this._buildGunChargeAnimation(gunDto),
         },
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       };
 
-      // postprocess gun
-      for (const modes of gun.projectileModes) {
-        for (const projectilePerShot of modes.projectiles) {
-          const projectileIds = new Set<string>();
-          for (const projectile of projectilePerShot.projectiles) {
-            projectileIds.add(projectile.id);
-          }
-          if (projectileIds.size > 1) {
-            this._featureFlags.add("hasProjectilePool");
-          }
-        }
-      }
-
-      gun.featureFlags = Array.from(this._featureFlags);
-      return GunForStorage.parse(gun);
+      return GunForStorage.parse(this._postProcessGunModel(gun));
     } catch (error) {
       if (error instanceof z.ZodError) {
         console.error(chalk.red(`Error parsing GUN pickup-object with ID ${entry.pickupObjectId}:`));

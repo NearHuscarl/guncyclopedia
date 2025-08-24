@@ -41,6 +41,7 @@ export const RichFrame = z.string().transform((s, ctx) => {
 export const Animation = z.object({
   name: z.string(),
   fps: z.number(),
+  rotate: z.union([z.literal(90), z.literal(180), z.literal(270), z.literal(360)]).optional(),
   loopStart: z.number(),
   /**
    * Wrap mode for the animation.

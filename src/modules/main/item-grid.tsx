@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 import clsx from "clsx";
 import { Button } from "@/components/ui/button";
 import { AnimatedSprite } from "@/modules/shared/components/animated-sprite";
@@ -40,13 +40,40 @@ function useGunResults() {
   }, [filteredGuns, sortBy]);
 }
 
+type TGridItemProps = {
+  id: number;
+  isSelected: boolean;
+  isComparisonMode?: boolean;
+};
+
+const GridItemImpl = ({ id, isSelected, isComparisonMode }: TGridItemProps) => {
+  const setHoverGun = useGunStore((state) => state.setHoverGun);
+  const setAppState = useAppStateMutation();
+  const gun = useGunStore((state) => state.gunLookup[id]);
+
+  return (
+    <Button
+      variant="secondary"
+      onMouseEnter={() => isComparisonMode && setHoverGun(gun.id)}
+      onClick={() => setAppState({ selectedId: gun.id })}
+      className={clsx({
+        "h-14 p-3": true,
+        "bg-primary!": isSelected,
+      })}
+    >
+      <AnimatedSprite animation={gun.animation.idle} scale={2.5} />
+    </Button>
+  );
+};
+
+const GridItem = memo(GridItemImpl);
+
 export function ItemGrid() {
   const setHoverGun = useGunStore((state) => state.setHoverGun);
   const guns = useGunResults();
-  const setAppState = useAppStateMutation();
+  const { error } = usePreloadSpritesheets();
   const selectedId = useAppState((state) => state.selectedId);
   const isComparisonMode = useAppState((state) => state.isComparisonMode);
-  const { error } = usePreloadSpritesheets();
 
   if (error) {
     return <div>{error.message}</div>;
@@ -55,18 +82,7 @@ export function ItemGrid() {
   return (
     <div className="flex flex-wrap gap-2 items-center content-start" onMouseLeave={() => setHoverGun(-1)}>
       {guns.map((gun) => (
-        <Button
-          key={gun.id}
-          variant="secondary"
-          onMouseEnter={() => isComparisonMode && setHoverGun(gun.id)}
-          onClick={() => setAppState({ selectedId: gun.id })}
-          className={clsx({
-            "h-14 p-3": true,
-            "bg-primary!": selectedId === gun.id,
-          })}
-        >
-          <AnimatedSprite animation={gun.animation.idle} scale={2.5} />
-        </Button>
+        <GridItem key={gun.id} id={gun.id} isSelected={selectedId === gun.id} isComparisonMode={isComparisonMode} />
       ))}
     </div>
   );

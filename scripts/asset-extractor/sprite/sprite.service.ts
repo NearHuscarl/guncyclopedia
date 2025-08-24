@@ -49,7 +49,7 @@ export class SpriteService {
     return image;
   }
 
-  getSpriteSync(spriteSheetRefabPath: string, spriteNameOrIndex: string | number) {
+  getSprite(spriteSheetRefabPath: string, spriteNameOrIndex: string | number) {
     const { spriteData, texturePath } = this._spriteRepository.getSprite(
       { $$scriptPath: spriteSheetRefabPath },
       spriteNameOrIndex,
@@ -66,11 +66,7 @@ export class SpriteService {
     };
   }
 
-  async getSprite(
-    spriteSheetRefabPath: string,
-    spriteNameOrIndex: string | number,
-    processImageCallback?: (image: sharp.Sharp) => Promise<void>,
-  ) {
+  async getSpriteImage(spriteSheetRefabPath: string, spriteNameOrIndex: string | number): Promise<sharp.Sharp> {
     const { spriteData, texturePath } = this._spriteRepository.getSprite(
       { $$scriptPath: spriteSheetRefabPath },
       spriteNameOrIndex,
@@ -81,15 +77,7 @@ export class SpriteService {
       );
     }
 
-    if (processImageCallback) {
-      const image = await this.getImage(texturePath, spriteData);
-      await processImageCallback(image);
-    }
-
-    return {
-      spriteData: { ...spriteData, name: spriteData.name },
-      texturePath: normalizePath(path.relative(PUBLIC_PATH, this.toOutputPath(texturePath))),
-    };
+    return this.getImage(texturePath, spriteData);
   }
 
   toOutputPath(spritesheetPath: string) {

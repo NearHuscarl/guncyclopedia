@@ -155,6 +155,7 @@ const EncounterTrackable = z.object({
 export const GunDto = z.object({
   gun: GunData,
   sprite: SpriteData,
+  spriteVfx: SpriteData.optional(),
   spriteAnimator: SpriteAnimatorData,
   predatorGunController: PredatorGunControllerData.optional(),
   gunExtraSettingSynergyProcessor: GunExtraSettingSynergyProcessorData.optional(),
