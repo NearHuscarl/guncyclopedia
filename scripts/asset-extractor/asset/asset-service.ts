@@ -8,9 +8,10 @@ import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { parseYaml } from "../utils/yaml.ts";
 import { AssetMeta, MonoBehaviour } from "./asset.dto.ts";
+import { RootGameObject } from "./component.dto.ts";
 import type { TAssetMeta, TUnityAsset, Guid, TMonoBehaviour } from "./asset.dto.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
-import type { TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
+import type { TRootGameObject, TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
 import type { TYamlOptions } from "../utils/yaml.ts";
 
 export class AssetService {
@@ -63,6 +64,10 @@ export class AssetService {
     // await saveCache<Guid, string>("guid-bookmarks", this._guidBookmarks);
     await saveCache<Guid, string>("guid-to-asset-path", this._assetPaths);
     return this;
+  }
+
+  isRootGameObject(obj: unknown): obj is TRootGameObject {
+    return RootGameObject.safeParse(obj).success;
   }
 
   isMonoBehaviour(obj: unknown): obj is TMonoBehaviour {

@@ -5263,6 +5263,8 @@
                 "additionalDamage": [],
                 "penetration": 1,
                 "canPenetrateObjects": false,
+                "chanceToTransmogrify": 0.1,
+                "transmogrifyTarget": "Chicken",
                 "animation": {
                   "name": "Magic_Bullet_Projectile_Anim",
                   "fps": 15,
@@ -5299,6 +5301,8 @@
                 "additionalDamage": [],
                 "penetration": 1,
                 "canPenetrateObjects": false,
+                "chanceToTransmogrify": 0.1,
+                "transmogrifyTarget": "Chicken",
                 "animation": {
                   "name": "Magic_Bullet_Projectile_Anim",
                   "fps": 15,
@@ -5335,6 +5339,8 @@
                 "additionalDamage": [],
                 "penetration": 1,
                 "canPenetrateObjects": false,
+                "chanceToTransmogrify": 0.1,
+                "transmogrifyTarget": "Chicken",
                 "animation": {
                   "name": "Magic_Bullet_Projectile_Anim",
                   "fps": 15,
@@ -5360,7 +5366,9 @@
     ],
     "maxAmmo": 150,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
     "attribute": {},
     "colors": [
       "brown",
@@ -17144,6 +17152,8 @@
                 "additionalDamage": [],
                 "penetration": 1,
                 "canPenetrateObjects": false,
+                "chanceToTransmogrify": 0.1,
+                "transmogrifyTarget": "Chicken",
                 "animation": {
                   "name": "magic_bullet_chunk_001",
                   "fps": 0,
@@ -17164,7 +17174,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
     "attribute": {},
     "colors": [
       "yellow",
@@ -17253,6 +17265,8 @@
                 "additionalDamage": [],
                 "penetration": 1,
                 "canPenetrateObjects": true,
+                "chanceToTransmogrify": 0.2,
+                "transmogrifyTarget": "Chicken",
                 "animation": {
                   "name": "magic_sniper_trail_middle",
                   "fps": 10,
@@ -17274,7 +17288,9 @@
     ],
     "maxAmmo": 75,
     "reloadTime": 1.02,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
     "attribute": {},
     "colors": [
       "orange",
@@ -28331,6 +28347,8 @@
                 "range": 1000,
                 "force": 10,
                 "additionalDamage": [],
+                "chanceToTransmogrify": 0.25,
+                "transmogrifyTarget": "Snake",
                 "animation": {
                   "name": "excaliber_green_projectile",
                   "fps": 0,
@@ -28351,7 +28369,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
     "attribute": {},
     "colors": [
       "sky",

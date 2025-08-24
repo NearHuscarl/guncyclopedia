@@ -9,7 +9,8 @@ export type TStatusEffectProp =
   | "freezeChance"
   | "fireChance"
   | "stunChance"
-  | "cheeseChance";
+  | "cheeseChance"
+  | "chanceToTransmogrify";
 
 export const Projectile = z.object({
   /**
@@ -113,6 +114,9 @@ export const Projectile = z.object({
   hasOilGoop: z.boolean().optional(),
   spawnGoopOnCollision: z.boolean().optional(),
   goopCollisionRadius: z.number().optional(),
+
+  chanceToTransmogrify: z.number().optional(),
+  transmogrifyTarget: z.string().optional(),
 
   /**
    * Some projectiles are invisible hence no animation.

@@ -8,6 +8,7 @@ import {
   Skull,
   Snail,
   Snowflake,
+  WandSparkles,
   Wind,
 } from "lucide-react";
 import clsx from "clsx";
@@ -429,10 +430,28 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <br />
             {(projectileData.goopCollisionRadius || undefined) && (
               <>
-                Projectile leaves behind <strong>oil goop</strong> on collision with the surface within a radius of{" "}
-                <strong>{formatNumber(projectileData.goopCollisionRadius!, 1)}</strong>.
+                Projectile leaves behind <strong>oil goop</strong> on collision with the surface, spreading within a
+                radius of <strong>{formatNumber(projectileData.goopCollisionRadius!, 1)}</strong>.
               </>
             )}
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(projectileData.chanceToTransmogrify || 0) > 0 && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              <NumericValue className={clsx("text-purple-500")}>
+                {toPercent(projectileData.chanceToTransmogrify!)}
+              </NumericValue>
+              <WandSparkles size={16} className={"[&_path]:stroke-purple-500!"} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Transmogrifying Projectile</strong>
+            <br />
+            Has <strong>{toPercent(projectileData.chanceToTransmogrify!)}</strong> chance to transmogrify enemies into{" "}
+            <strong>{projectileData.transmogrifyTarget}</strong>
           </TooltipContent>
         </Tooltip>
       )}

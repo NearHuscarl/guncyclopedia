@@ -1,6 +1,6 @@
 import z from "zod/v4";
 import clamp from "lodash/clamp";
-import type { ArrayKeys, BooleanKeys, NumericKeys } from "@/lib/types";
+import type { ArrayKeys, BooleanKeys, NumericKeys, StringKeys } from "@/lib/types";
 import type { TProjectilePerShot } from "../generated/models/gun.model";
 import type { TProjectile, TStatusEffectProp } from "../generated/models/projectile.model";
 
@@ -11,6 +11,9 @@ type NumericAggregateConfig = {
 };
 type BooleanAggregateConfig = {
   [K in BooleanKeys<TProjectile>]: true;
+};
+type StringAggregateConfig = {
+  [K in StringKeys<TProjectile>]: boolean;
 };
 type ArrayAggregateConfig = {
   [K in ArrayKeys<TProjectile>]: true;
@@ -178,6 +181,7 @@ export class ProjectileService {
       explosionRadius: ["avg", "max"],
       explosionFreezeRadius: ["avg", "max"],
       goopCollisionRadius: ["avg", "max"],
+      chanceToTransmogrify: ["avg", (p) => this.calculateStatusEffectChance(p, "chanceToTransmogrify")],
     };
 
     // All boolean keys that are aggregated with logical-OR.
@@ -189,6 +193,11 @@ export class ProjectileService {
       hasOilGoop: true,
       spawnGoopOnCollision: true,
     };
+    // All string keys that are aggregated into arrays of string
+    const sAggregateConfig: StringAggregateConfig = {
+      id: false,
+      transmogrifyTarget: true,
+    };
     // @ts-expect-error alert linter to update new properties
     const _aAggregateConfig: ArrayAggregateConfig = {
       additionalDamage: true,
@@ -197,6 +206,9 @@ export class ProjectileService {
     // ---------- aggregate ----------
     const sums: Record<string, number> = {};
     Object.keys(nAggregateConfig).forEach((k) => (sums[k] = 0));
+
+    const strSums: Record<string, string[]> = {};
+    Object.keys(sAggregateConfig).forEach((k) => (strSums[k] = []));
 
     const hasTrue: Record<string, boolean> = {};
     Object.keys(bAggregateConfig).forEach((k) => (hasTrue[k] = false));
@@ -217,6 +229,13 @@ export class ProjectileService {
         const key = k as BooleanKeys<TProjectile>;
         const v = p[key] ?? false;
         hasTrue[key] = hasTrue[key] || v;
+      });
+
+      Object.keys(sAggregateConfig).forEach((k) => {
+        if (!sAggregateConfig[k as StringKeys<TProjectile>]) return;
+        const key = k as StringKeys<TProjectile>;
+        const v = p[key];
+        if (v) strSums[key].push(v);
       });
     }
     for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
@@ -239,6 +258,7 @@ export class ProjectileService {
 
     Object.keys(nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));
     Object.keys(bAggregateConfig).forEach((k) => (final[k as BooleanKeys<TProjectile>] = hasTrue[k]));
+    Object.keys(sAggregateConfig).forEach((k) => (final[k as StringKeys<TProjectile>] = strSums[k].join(", ")));
 
     return final as TProjectile;
   }

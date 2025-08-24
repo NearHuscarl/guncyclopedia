@@ -31,6 +31,13 @@ export type BooleanKeys<T> = Exclude<
   undefined
 >;
 
+export type StringKeys<T> = Exclude<
+  {
+    [K in keyof T]: T[K] extends string | undefined ? K : never;
+  }[keyof T],
+  undefined
+>;
+
 export type ArrayKeys<T, E = object> = Exclude<
   {
     [K in keyof T]: T[K] extends Array<E> | undefined ? K : never;

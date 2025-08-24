@@ -21,6 +21,7 @@ import { WrapMode } from "../sprite/sprite-animator.dto.ts";
 import { basicColors } from "./client/models/color.model.ts";
 import { ColorService } from "../color/color.service.ts";
 import { PlayerService } from "../player/player.service.ts";
+import { EnemyRepository } from "../enemy/enemy.repository.ts";
 import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
 import type { TGun, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
@@ -47,6 +48,7 @@ type GunModelGeneratorCtor = {
   spriteService: SpriteService;
   spriteAnimatorRepo: SpriteAnimatorRepository;
   playerService: PlayerService;
+  enemyRepo: EnemyRepository;
 };
 
 export class GunModelGenerator {
@@ -58,6 +60,7 @@ export class GunModelGenerator {
   private readonly _spriteService: SpriteService;
   private readonly _spriteAnimatorRepo: SpriteAnimatorRepository;
   private readonly _playerService: PlayerService;
+  private readonly _enemyRepo: EnemyRepository;
   private readonly _colorService = new ColorService();
   private readonly _featureFlags: Set<TGun["featureFlags"][number]> = new Set();
 
@@ -70,6 +73,7 @@ export class GunModelGenerator {
     this._spriteService = input.spriteService;
     this._spriteAnimatorRepo = input.spriteAnimatorRepo;
     this._playerService = input.playerService;
+    this._enemyRepo = input.enemyRepo;
   }
   static async create(input: GunModelGeneratorCtor) {
     return new GunModelGenerator(input);
@@ -329,6 +333,15 @@ export class GunModelGenerator {
       proj.isHoming = true;
       proj.homingRadius = gunDto.predatorGunController.HomingRadius;
       proj.homingAngularVelocity = gunDto.predatorGunController.HomingAngularVelocity;
+    }
+
+    // TODO: add estimated additional damage that cover the rest of the stack bar
+    if (projDto.projectile.CanTransmogrify && projDto.projectile.TransmogrifyTargetGuids.length > 0) {
+      this._featureFlags.add("hasSpecialAbilities");
+      proj.chanceToTransmogrify = projDto.projectile.ChanceToTransmogrify;
+      proj.transmogrifyTarget = this._enemyRepo.getEnemy(
+        projDto.projectile.TransmogrifyTargetGuids[0],
+      )!.rootGameObject.m_Name;
     }
 
     if (proj.isHoming) {

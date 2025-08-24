@@ -147,6 +147,10 @@ const ProjectileData = MonoBehaviour.extend({
   CheeseApplyChance: Percentage,
   cheeseEffect: GameActorCheeseEffect,
 
+  CanTransmogrify: BinaryOption,
+  ChanceToTransmogrify: z.number(),
+  TransmogrifyTargetGuids: z.array(z.string()).min(0).max(1),
+
   /**
    * `BoomerangProjectile` subclass
    */

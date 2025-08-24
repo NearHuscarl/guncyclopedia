@@ -9,6 +9,7 @@ import { SpriteRepository } from "./sprite/sprite.repository.ts";
 import { SpriteService } from "./sprite/sprite.service.ts";
 import { SpriteAnimatorRepository } from "./sprite/sprite-animator.repository.ts";
 import { PlayerService } from "./player/player.service.ts";
+import { EnemyRepository } from "./enemy/enemy.repository.ts";
 import { copyClientCode } from "./pickup-object/copy-client-code.ts";
 
 async function extractAssets() {
@@ -18,6 +19,7 @@ async function extractAssets() {
   const volleyRepo = await VolleyRepository.create(assetService);
   const gunRepo = await GunRepository.create(assetService);
   const playerService = await PlayerService.create(assetService);
+  const enemyRepo = await EnemyRepository.create(assetService);
   const spriteRepo = await SpriteRepository.create(assetService);
   const spriteService = await SpriteService.create(spriteRepo);
   const spriteAnimatorRepo = await SpriteAnimatorRepository.create(assetService, spriteRepo);
@@ -33,6 +35,7 @@ async function extractAssets() {
     spriteService,
     spriteAnimatorRepo,
     playerService,
+    enemyRepo,
   });
 }
 
