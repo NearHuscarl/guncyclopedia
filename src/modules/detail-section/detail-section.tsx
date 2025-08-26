@@ -150,7 +150,7 @@ export function DetailSection() {
               <H2>{selectedGun.name || "N/A"}</H2>
               <Quality tier={selectedGun.quality} className="relative top-[-6px]" />
             </div>
-            <div>{debug && selectedGun.colors.map((c) => <ColorItem color={c} key={c} />)}</div>
+            <div>{debug && selectedGun.colors.map((c) => <ColorItem key={c} color={c} />)}</div>
             <div className="flex gap-2 items-center">
               <Tooltip>
                 <TooltipTrigger>

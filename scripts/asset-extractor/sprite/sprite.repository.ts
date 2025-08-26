@@ -1,4 +1,3 @@
-import fs from "node:fs/promises";
 import path from "node:path";
 import chalk from "chalk";
 import z from "zod/v4";
@@ -10,6 +9,7 @@ import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import type { TSpriteCollectionDto } from "./sprite.dto.ts";
 import type { TMaterial } from "../asset/asset.dto.ts";
 import { normalizePath } from "../utils/path.ts";
+import { fileExists } from "../utils/fs.ts";
 
 type TCollectionPath = string;
 
@@ -66,15 +66,6 @@ export class SpriteRepository {
     );
   }
 
-  private async _fileExists(filePath: string) {
-    try {
-      await fs.access(filePath);
-      return true;
-    } catch {
-      return false;
-    }
-  }
-
   private async _parseSprite(filePath: string) {
     const refab = await this._assetService.parseSerializedAsset(filePath);
 
@@ -93,7 +84,7 @@ export class SpriteRepository {
               const textureNames = ["atlas0.png", "atlas0.png.bytes"];
 
               for (const textureName of textureNames) {
-                if (await this._fileExists(path.join(dir, textureName))) {
+                if (await fileExists(path.join(dir, textureName))) {
                   texturePath = path.join(dir, textureName);
                   break;
                 }

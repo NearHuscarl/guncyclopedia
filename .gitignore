@@ -40,6 +40,7 @@ dist-ssr
 
 # game assets
 /scripts/asset-extractor/assets/
+/scripts/asset-extractor/build/
 /scripts/asset-extractor/cache/
 
 /src/client/generated/data/debug/
