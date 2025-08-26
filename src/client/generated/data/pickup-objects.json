@@ -5260,7 +5260,14 @@
                 "speed": 23,
                 "range": 60,
                 "force": 30,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "transmogrification",
+                    "damage": 1000000
+                  }
+                ],
                 "penetration": 1,
                 "canPenetrateObjects": false,
                 "chanceToTransmogrify": 0.1,
@@ -5298,7 +5305,14 @@
                 "speed": 23,
                 "range": 60,
                 "force": 30,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "transmogrification",
+                    "damage": 1000000
+                  }
+                ],
                 "penetration": 1,
                 "canPenetrateObjects": false,
                 "chanceToTransmogrify": 0.1,
@@ -5336,7 +5350,14 @@
                 "speed": 23,
                 "range": 60,
                 "force": 30,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "transmogrification",
+                    "damage": 1000000
+                  }
+                ],
                 "penetration": 1,
                 "canPenetrateObjects": false,
                 "chanceToTransmogrify": 0.1,
@@ -17152,7 +17173,14 @@
                 "speed": 27,
                 "range": 1000,
                 "force": 20,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "transmogrification",
+                    "damage": 1000000
+                  }
+                ],
                 "penetration": 1,
                 "canPenetrateObjects": false,
                 "chanceToTransmogrify": 0.1,
@@ -17265,7 +17293,14 @@
                 "speed": 200,
                 "range": 1000,
                 "force": 25,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "transmogrification",
+                    "damage": 1000000
+                  }
+                ],
                 "penetration": 1,
                 "canPenetrateObjects": true,
                 "chanceToTransmogrify": 0.2,
@@ -28349,7 +28384,14 @@
                 "speed": 50,
                 "range": 1000,
                 "force": 10,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "transmogrification",
+                    "damage": 1000000
+                  }
+                ],
                 "chanceToTransmogrify": 0.25,
                 "transmogrifyTarget": "Snake",
                 "animation": {

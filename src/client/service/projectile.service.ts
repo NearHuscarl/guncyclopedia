@@ -23,14 +23,21 @@ export const RangeLabel = z.enum(["short-range", "mid-range", "long-range"]);
 export type TRangeLabel = z.infer<typeof RangeLabel>;
 
 export class ProjectileService {
+  static readonly MAX_FIRE_RATE = 10_000;
+  static readonly MAX_MAX_AMMO = 10_000;
+  static readonly MAX_RANGE = 1000;
+
+  static getFireRate(value: number) {
+    return value >= ProjectileService.MAX_FIRE_RATE ? Infinity : value;
+  }
   static getRange(value: number) {
-    return value >= 1000 ? Infinity : value;
+    return value >= ProjectileService.MAX_RANGE ? Infinity : value;
   }
   static getSpeed(value: number) {
     return value === -1 ? Infinity : value;
   }
   static getMaxAmmo(value: number) {
-    return value >= 10_000 ? Infinity : value;
+    return value >= ProjectileService.MAX_MAX_AMMO ? Infinity : value;
   }
   static getRangeLabel(projectile: TProjectile): TRangeLabel {
     if (projectile.range <= 15) {

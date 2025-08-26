@@ -347,6 +347,12 @@ export class GunModelGenerator {
       proj.transmogrifyTarget = this._enemyRepo.getEnemy(
         projDto.projectile.TransmogrifyTargetGuids[0],
       )!.rootGameObject.m_Name;
+
+      proj.additionalDamage.push({
+        source: "transmogrification",
+        isEstimated: true,
+        damage: 1e6,
+      });
     }
 
     if (proj.isHoming) {
@@ -476,9 +482,8 @@ export class GunModelGenerator {
     // TODO: SpawnProjModifier (The Scrambler, Particulator)
     // TODO: homing bullet
     // TODO: ShovelGunModifier
-    // TODO: trick gun (Gungeon Ant) (oil & mag size)
+    // TODO: trick gun (mag size)
     // TODO: search for *modifier.cs to collect more attributes for the projectile
-    // TODO: Hexagun: chicken morpher ability
     // TODO: round that has explosion on impact count as another source of damage
     // TODO: Synergies: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
     //    ExportedProject/Assets/data/AAA_AdvSynergyManager.asset

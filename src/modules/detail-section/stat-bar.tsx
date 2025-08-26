@@ -46,7 +46,7 @@ export function StatBar({
     <StatStackBar
       label={label}
       labelTooltip={labelTooltip}
-      segments={[{ value, source: "" }]}
+      segments={[{ value }]}
       valueResolver={valueResolver}
       precision={precision}
       max={max}

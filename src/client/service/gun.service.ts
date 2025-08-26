@@ -9,7 +9,7 @@ interface IStat {
   total: number;
   base: number;
   details: {
-    source: string;
+    tooltip: string;
     value: number;
     isEstimated?: boolean;
   }[];
@@ -71,27 +71,31 @@ export class GunService {
     return 1 / timeBetweenShots;
   }
 
-  private static _getTooltip(additionalDamage: IStat["details"][number], projectileData: TProjectile) {
-    const { source, value } = additionalDamage;
-
-    if (source === "ricochet") {
-      const { numberOfBounces, chanceToDieOnBounce, damageMultiplierOnBounce } = projectileData;
-      return [
-        `Potential damage from ricochets: <strong>${formatNumber(value, 2)}</strong><br />`,
-        `- numberOfBounces: <strong>${formatNumber(numberOfBounces ?? 0, 2)}</strong><br />`,
-        (chanceToDieOnBounce ?? 0) > 0 &&
-          `- chanceToDieOnBounce: <strong>${formatNumber(chanceToDieOnBounce ?? 0, 2)}</strong><br />`,
-        damageMultiplierOnBounce !== 1 &&
-          `- damageMultiplierOnBounce: <strong>${formatNumber(damageMultiplierOnBounce ?? 1, 2)}</strong>`,
-      ]
-        .filter(Boolean)
-        .join("\n");
-    } else if (source === "blackhole") {
-      return `Black hole center: <strong>${formatNumber(value, 2)}</strong>`;
-    } else if (source === "damageMultiplier") {
-      return `Damage modifier: <strong>${formatNumber(value, 2)}</strong>`;
+  private static _getDamageTooltip(
+    source: TProjectile["additionalDamage"][number]["source"],
+    projectileData: TProjectile,
+  ) {
+    switch (source) {
+      case "ricochet": {
+        const { numberOfBounces, chanceToDieOnBounce, damageMultiplierOnBounce } = projectileData;
+        return [
+          `Potential damage from ricochets: <strong>{{VALUE}}</strong><br />`,
+          `- numberOfBounces: <strong>${formatNumber(numberOfBounces ?? 0, 2)}</strong><br />`,
+          (chanceToDieOnBounce ?? 0) > 0 &&
+            `- chanceToDieOnBounce: <strong>${formatNumber(chanceToDieOnBounce ?? 0, 2)}</strong><br />`,
+          damageMultiplierOnBounce !== 1 &&
+            `- damageMultiplierOnBounce: <strong>${formatNumber(damageMultiplierOnBounce ?? 1, 2)}</strong>`,
+        ]
+          .filter(Boolean)
+          .join("\n");
+      }
+      case "blackhole":
+        return `Black hole center: <strong>{{VALUE}}</strong>`;
+      case "damageMultiplier":
+        return `Damage modifier: <strong>{{VALUE}}</strong>`;
+      default:
+        return `${startCase(source)} damage: <strong>{{VALUE}}</strong>`;
     }
-    return `${startCase(source)} damage: <strong>${formatNumber(value, 2)}</strong>`;
   }
 
   static getDamage(
@@ -104,34 +108,41 @@ export class GunService {
     const baseDamage = type === "dps" ? shotsPerSecond * projectileData.damage : projectileData.damage;
     const extraDamage: IStat["details"] = [];
 
-    if (type === "dps") {
-      for (const d of projectileData.additionalDamage) {
-        if (d.type === "instant") {
-          extraDamage.push({ ...d, value: d.damage * shotsPerSecond });
-        } else if (d.type === "dps") {
-          extraDamage.push({ ...d, value: d.damage });
-        }
+    for (const d of projectileData.additionalDamage) {
+      let value = 0;
+      if (type === "dps") {
+        value = d.type === "instant" ? d.damage * shotsPerSecond : d.damage;
+      } else if (type === "instant" && d.type === "instant") {
+        value = d.damage;
       }
-    } else {
-      for (const d of projectileData.additionalDamage) {
-        if (d.type === "instant") {
-          extraDamage.push({ ...d, value: d.damage });
-        }
-      }
+
+      if (!value) continue;
+
+      extraDamage.push({
+        value,
+        isEstimated: d.isEstimated,
+        tooltip: this._getDamageTooltip(d.source, projectileData),
+      });
     }
 
     for (const statModifier of gun.playerStatModifiers) {
       if (statModifier.statToBoost === "Damage") {
-        extraDamage.push({ value: baseDamage * (statModifier.amount - 1), source: "damageMultiplier" });
+        extraDamage.push({
+          value: baseDamage * (statModifier.amount - 1),
+          tooltip: this._getDamageTooltip("damageMultiplier", projectileData),
+        });
       }
     }
 
     if (gun.attribute.auraOnReload) {
-      extraDamage.push({ value: gun.attribute.auraOnReloadDps! * reloadToFireRatio, source: "Aura on reload" });
+      extraDamage.push({
+        value: gun.attribute.auraOnReloadDps! * reloadToFireRatio,
+        tooltip: "Aura on reload: {{VALUE}}",
+      });
       if (gun.attribute.auraOnReloadIgniteDps) {
         extraDamage.push({
           value: gun.attribute.auraOnReloadIgniteDps * reloadToFireRatio,
-          source: "Ignite aura on reload",
+          tooltip: "Aura on reload (ignite): {{VALUE}}",
         });
       }
     }
@@ -141,11 +152,29 @@ export class GunService {
       total: baseDamage + sumBy(extraDamage, "damage"),
       details: [
         {
-          source: `Base damage: <strong>${formatNumber(baseDamage, 2)}</strong>`,
+          tooltip: `Base damage: <strong>{{VALUE}}</strong>`,
           value: baseDamage,
         },
-        ...extraDamage.map((d) => ({ ...d, source: this._getTooltip(d, projectileData) })),
+        ...extraDamage,
       ].sort((a, b) => Number(a.isEstimated ?? 0) - Number(b.isEstimated ?? 0)),
+    };
+  }
+
+  static getForce(projectileData: TProjectile): IStat {
+    return {
+      details: [
+        { tooltip: `Base force: <strong>${projectileData.force}</strong>`, value: projectileData.force },
+        ...(projectileData.explosionForce
+          ? [
+              {
+                tooltip: `Explosion force: <strong>${projectileData.explosionForce}</strong>`,
+                value: projectileData.explosionForce,
+              },
+            ]
+          : []),
+      ],
+      total: projectileData.force + (projectileData.explosionForce ?? 0),
+      base: projectileData.force,
     };
   }
 
@@ -163,7 +192,7 @@ export class GunService {
       mode.projectiles[projectileIndex]?.projectiles[projectileDataIndex] ??
       ProjectileService.createAggregatedProjectileData(projectilePool, "avg");
     const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
-    const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? 10_000 : gun.maxAmmo;
+    const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? ProjectileService.MAX_MAX_AMMO : gun.maxAmmo;
     const reloadTime = gun.reloadTime;
     const timingInput = {
       reloadTime: gun.reloadTime, // Prize Pistol's edge case (only 1 max ammo)
@@ -177,32 +206,19 @@ export class GunService {
 
     const dps = this.getDamage(projData, "dps", shotsPerSecond, gun, reloadToFireRatio);
     const damage = this.getDamage(projData, "instant", shotsPerSecond, gun, reloadToFireRatio);
+    const fireRate = projectile.shootStyle === "Beam" ? ProjectileService.MAX_FIRE_RATE : shotsPerSecond * 60;
 
     return {
       maxAmmo,
       magazineSize,
       reloadTime,
-      shootStyle: projectile.shootStyle, // only raiden coil has 2 shoot styles.
+      shootStyle: projectile.shootStyle, // only raiden coil has 2 shoot styles, no need to aggregate.
       precision: ProjectileService.toPrecision(projectile.spread),
-      fireRate: shotsPerSecond * 60,
+      fireRate,
       range: ProjectileService.getRangeLabel(projData),
       dps,
       damage,
-      force: {
-        details: [
-          { source: `Base force: <strong>${projData.force}</strong>`, value: projData.force },
-          ...(projData.explosionForce
-            ? [
-                {
-                  source: `Explosion force: <strong>${projData.explosionForce}</strong>`,
-                  value: projData.explosionForce,
-                },
-              ]
-            : []),
-        ],
-        total: projData.force + (projData.explosionForce ?? 0),
-        base: projData.force,
-      },
+      force: GunService.getForce(projData),
       mode,
       projectilePerShot: projectile,
       projectile: projData,

@@ -39,7 +39,16 @@ export const Projectile = z.object({
        * If `canNotStack` is true, all damages with the same source can only be applied once.
        */
       canNotStack: z.boolean().optional(),
-      source: z.enum(["ricochet", "blackhole", "fire", "poison", "explosion", "oilGoop", "damageMultiplier"]),
+      source: z.enum([
+        "ricochet",
+        "blackhole",
+        "fire",
+        "poison",
+        "explosion",
+        "oilGoop",
+        "damageMultiplier",
+        "transmogrification",
+      ]),
       damage: z.number(),
     }),
   ),
@@ -108,8 +117,6 @@ export const Projectile = z.object({
    * For [Science Cannon](https://enterthegungeon.fandom.com/wiki/Science_Cannon), multiple effects can be applied at the same time.
    */
   beamStatusEffectChancePerSecond: Percentage.optional(),
-  // TODO: research ProjectileModule.cs#GetEstimatedShotsPerSecond
-  // dps: z.undefined(),
 
   hasOilGoop: z.boolean().optional(),
   spawnGoopOnCollision: z.boolean().optional(),

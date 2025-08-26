@@ -242,6 +242,7 @@ export function DetailSection() {
           labelTooltip="Number of shots fired per minute. Calculation includes the <strong>cooldown time</strong>, <strong>charge time</strong> and <strong>reload time</strong>"
           max={1000}
           precision={0}
+          valueResolver={ProjectileService.getFireRate}
           value={gunStats.fireRate}
           modifier={hoverGunStats.fireRate - gunStats.fireRate}
         />

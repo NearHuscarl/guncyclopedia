@@ -8,6 +8,10 @@ import { NumericValue } from "./numeric-value";
 import { useAppState } from "../shared/hooks/useAppState";
 import type { HTMLAttributes, ReactNode } from "react";
 
+function isInfinite(value: number): boolean {
+  return value >= 10_000;
+}
+
 function createModifierComponent({
   modifier,
   value,
@@ -82,39 +86,44 @@ function createModifierComponent({
   };
 }
 
-type TSegment = {
+interface ISegment {
   value: number; // part of the total
-  source?: string;
+  tooltip?: string;
   /**
    * if true, the value is an estimate based on the best outcome
    */
   isEstimated?: boolean;
   color?: string;
-};
+}
 
 type TStatStackProps = {
   label: ReactNode;
   labelTooltip?: string;
   max: number;
   precision?: number;
-  segments: TSegment[];
+  segments: ISegment[];
   modifier?: number;
   valueResolver?: (value: number) => number;
   isNegativeStat?: boolean;
 };
 
-function prepareSegment(segments: TSegment[], max: number) {
+interface IPreparedSegment extends ISegment {
+  cappedValue: number;
+}
+
+function prepareSegment(segments: ISegment[], max: number) {
   let baseValue = 0;
   let totalValue = 0;
-  const paddedSegments: TSegment[] = [];
+  const paddedSegments: IPreparedSegment[] = [];
 
   for (const segment of segments) {
     if (!segment.isEstimated) {
       baseValue += segment.value;
     }
 
+    const segmentCap = Math.max(max - totalValue, 0);
     // Ensure each segment value does not exceed the max value
-    paddedSegments.push({ ...segment, value: Math.min(segment.value, Math.max(max - totalValue, 0)) });
+    paddedSegments.push({ ...segment, value: segment.value, cappedValue: Math.min(segment.value, segmentCap) });
     totalValue += segment.value;
   }
 
@@ -122,7 +131,7 @@ function prepareSegment(segments: TSegment[], max: number) {
   // jumps when the number of segments changes)
   const maxNumberOfSegments = 5;
   while (paddedSegments.length < maxNumberOfSegments) {
-    paddedSegments.push({ value: 0 });
+    paddedSegments.push({ value: 0, cappedValue: 0 });
   }
 
   return {
@@ -154,7 +163,6 @@ export function StatStackBar({
     isNegativeStat,
   });
 
-  const prevIsNegativeStat = usePrevious(isNegativeStat);
   const gapInPx = 4; // gap between segments in pixels
   const labelElement = <p className="text-muted-foreground font-semibold uppercase">{label}</p>;
 
@@ -177,28 +185,32 @@ export function StatStackBar({
           labelElement
         )}
         <NumericValue>
-          {totalValue - baseValue > 0 && !modifier
+          {totalValue - baseValue > 0 && !isInfinite(totalValue - baseValue) && !modifier
             ? `${formatNumber(displayBaseValue, precision)} - ${formatNumber(displayTotalValue, precision)}`
             : formatNumber(displayBaseValue, precision)}
         </NumericValue>
       </div>
 
       <div className="relative flex h-2 bg-stone-800">
-        {paddedSegments.map(({ value, source = "", isEstimated, color }, i) => {
+        {paddedSegments.map(({ value, cappedValue, tooltip = "", isEstimated, color }, i) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const prevIsEstimated = usePrevious(isEstimated);
-          const width = percentage(value);
+          const width = percentage(cappedValue);
 
           const needsSeparator = width > 0 && i > 0;
           const flexBasis = needsSeparator ? `calc(${width}% - ${gapInPx}px)` : `${width}%`;
+
+          // ensure the transition color does not jump when going from having modifier to none
+          const isUsedToBeEstimated = value === 0 && prevIsEstimated;
+          const isEstimatedValue = (!isNegativeStat && isEstimated) || isUsedToBeEstimated;
+          const isInfiniteValue = isInfinite(value);
+
           const barProps: HTMLAttributes<HTMLElement> = {
             style: { flexBasis, marginLeft: needsSeparator ? gapInPx : 0, backgroundColor: color },
             className: clsx({
               "bg-white transition-all duration-160 ease-out hover:bg-primary!": true,
-              "bg-stone-600!":
-                (!isNegativeStat && isEstimated) ||
-                // ensure the transition color does not jump when going from having modifier to none
-                (value === 0 && !prevIsNegativeStat && prevIsEstimated),
+              "bg-stone-600!": isEstimatedValue && !isInfiniteValue,
+              "bg-purple-500/30!": isEstimatedValue && isInfiniteValue,
               "bg-red-600!": isNegativeStat,
             }),
           };
@@ -211,11 +223,15 @@ export function StatStackBar({
             <Tooltip
               key={key}
               // NOTE: don't render a div element conditionally to reuse the same component instance for the transition effect.
-              delayDuration={source ? 100 : 100_000}
+              delayDuration={tooltip ? 100 : 100_000}
             >
               <TooltipTrigger {...barProps} />
               <TooltipContent>
-                <div dangerouslySetInnerHTML={{ __html: source }} />
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: tooltip.replace("{{VALUE}}", formatNumber(isInfiniteValue ? Infinity : value, precision)),
+                  }}
+                />
               </TooltipContent>
             </Tooltip>
           );
