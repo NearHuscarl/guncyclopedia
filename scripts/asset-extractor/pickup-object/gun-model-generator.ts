@@ -257,6 +257,11 @@ export class GunModelGenerator {
       this._featureFlags.add("hasExplosiveProjectile");
     }
 
+    if (projDto.modifyProjectileSynergyProcessor?.Dejams) {
+      proj.dejam = true;
+      this._featureFlags.add("hasSpecialAbilities");
+    }
+
     // TODO: handle synergy
     if (projDto.goopModifier?.goopDefinitionData && !projDto.goopModifier.IsSynergyContingent) {
       if (projDto.goopModifier.goopDefinitionData.CanBeIgnited) {
@@ -475,7 +480,9 @@ export class GunModelGenerator {
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: Hexagun: chicken morpher ability
     // TODO: round that has explosion on impact count as another source of damage
-    // TODO: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
+    // TODO: Synergies: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
+    //    ExportedProject/Assets/data/AAA_AdvSynergyManager.asset
+    //    ExportedProject/Assets/Scripts/Assembly-CSharp/CustomSynergyType.cs
     // TODO: fear effect
     // Edge cases:
     // Gungeon Ant: calculate reload time again based on the active reload multiplier

@@ -9785,7 +9785,8 @@
                 "speed": 40,
                 "range": 14,
                 "force": 3,
-                "additionalDamage": []
+                "additionalDamage": [],
+                "dejam": true
               }
             ]
           }
@@ -9794,7 +9795,9 @@
     ],
     "maxAmmo": 999,
     "reloadTime": 0.3,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
     "attribute": {},
     "colors": [
       "red",

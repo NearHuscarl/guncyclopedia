@@ -192,6 +192,7 @@ export class ProjectileService {
       damageAllEnemies: true,
       hasOilGoop: true,
       spawnGoopOnCollision: true,
+      dejam: true,
     };
     // All string keys that are aggregated into arrays of string
     const sAggregateConfig: StringAggregateConfig = {

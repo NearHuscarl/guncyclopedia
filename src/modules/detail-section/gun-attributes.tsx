@@ -53,6 +53,7 @@ import { PlayerRogue } from "@/components/icons/player-rogue";
 import { PlayerSlinger } from "@/components/icons/player-slinger";
 import { TrickGun } from "@/components/icons/trick-gun";
 import { OilGoop } from "@/components/icons/oil-goop";
+import { Dejam } from "@/components/icons/dejam";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -410,6 +411,20 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <br />
             While reloading, a circular field surrounds the player that damages nearby enemies within{" "}
             <strong>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</strong> radius.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectileData.dejam && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <Dejam />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Dejammed Projectile</strong>
+            <br />
+            Turns <strong>Jammed</strong> enemies and bosses back to normal.
           </TooltipContent>
         </Tooltip>
       )}

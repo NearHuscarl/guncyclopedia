@@ -19,6 +19,7 @@ import type {
   TProjectileData,
   TProjectileDto,
   TRaidenBeamControllerData,
+  TModifyProjectileSynergyProcessorData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -71,6 +72,9 @@ export class ProjectileRepository {
   }
   private _isGoopDefinitionData(obj: unknown): obj is TGoodDefinitionData {
     return this._containsScript(obj, "GoopDefinition.cs.meta");
+  }
+  private _isModifyProjectileSynergyProcessorData(obj: unknown): obj is TModifyProjectileSynergyProcessorData {
+    return this._containsScript(obj, "ModifyProjectileSynergyProcessor.cs.meta");
   }
   private _isBasicBeamControllerData(obj: unknown): obj is TBasicBeamControllerData {
     return this._containsScript(obj, "BasicBeamController.cs.meta");
@@ -134,6 +138,8 @@ export class ProjectileRepository {
               break;
             }
           }
+        } else if (this._isModifyProjectileSynergyProcessorData(component)) {
+          res.modifyProjectileSynergyProcessor = component;
         } else if (this._isBasicBeamControllerData(component)) {
           res.basicBeamController = component;
         } else if (this._isRaidenBeamControllerData(component)) {

@@ -119,6 +119,11 @@ export const Projectile = z.object({
   transmogrifyTarget: z.string().optional(),
 
   /**
+   * whether Jammed enemies and bosses hit by the projectile will revert to normal.
+   */
+  dejam: z.boolean().optional(),
+
+  /**
    * Some projectiles are invisible hence no animation.
    */
   animation: Animation.optional(),
