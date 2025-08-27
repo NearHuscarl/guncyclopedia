@@ -118,6 +118,11 @@ const BlackHoleDoerData = z.object({
 
 const MindControlProjectileModifierData = MonoBehaviour.extend({});
 
+const MatterAntimatterProjectileModifierData = MonoBehaviour.extend({
+  isAntimatter: BinaryOption,
+  antimatterExplosion: ExplosiveModifierData.shape.explosionData,
+});
+
 const ProjectileData = MonoBehaviour.extend({
   ignoreDamageCaps: BinaryOption,
   baseData: z.object({
@@ -172,9 +177,14 @@ const CerebralBoreProjectileData = ProjectileData.extend({
   explosionData: ExplosiveModifierData.shape.explosionData,
 });
 
+const HelixProjectileData = ProjectileData.extend({
+  helixWavelength: z.number(),
+  helixAmplitude: z.number(),
+});
+
 export const ProjectileDto = z.object({
   id: z.string(),
-  projectile: z.union([CerebralBoreProjectileData, ProjectileData]),
+  projectile: z.union([CerebralBoreProjectileData, HelixProjectileData, ProjectileData]),
   sprite: SpriteData.optional(),
   spriteAnimator: SpriteAnimatorData.optional(),
   bounceProjModifier: BounceProjModifierData.optional(),
@@ -187,11 +197,13 @@ export const ProjectileDto = z.object({
   raidenBeamController: RaidenBeamControllerData.optional(),
   blackHoleDoer: BlackHoleDoerData.optional(),
   mindControlProjModifier: MindControlProjectileModifierData.optional(),
+  matterAntimatterProjModifier: MatterAntimatterProjectileModifierData.optional(),
 });
 
 export type TProjectileDto = z.input<typeof ProjectileDto>;
 export type TProjectileData = z.infer<typeof ProjectileData>;
 export type TCerebralBoreProjectileData = z.infer<typeof CerebralBoreProjectileData>;
+export type THelixProjectileData = z.infer<typeof HelixProjectileData>;
 export type TBounceProjModifierData = z.infer<typeof BounceProjModifierData>;
 export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
 export type TExplosiveModifierData = z.infer<typeof ExplosiveModifierData>;
@@ -203,3 +215,4 @@ export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;
 export type TBlackHoleDoerData = z.input<typeof BlackHoleDoerData>;
 export type TMindControlProjectileModifierData = z.input<typeof MindControlProjectileModifierData>;
+export type TMatterAntimatterProjectileModifierData = z.input<typeof MatterAntimatterProjectileModifierData>;

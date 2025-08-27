@@ -189,6 +189,8 @@ export class ProjectileService {
       explosionFreezeRadius: ["avg", "max"],
       goopCollisionRadius: ["avg", "max"],
       chanceToTransmogrify: ["avg", (p) => this.calculateStatusEffectChance(p, "chanceToTransmogrify")],
+      helixAmplitude: ["avg", "max"],
+      helixWavelength: ["avg", "max"],
     };
 
     // All boolean keys that are aggregated with logical-OR.
@@ -201,6 +203,7 @@ export class ProjectileService {
       spawnGoopOnCollision: true,
       dejam: true,
       mindControl: true,
+      antimatter: true,
     };
     // All string keys that are aggregated into arrays of string
     const sAggregateConfig: StringAggregateConfig = {

@@ -136,6 +136,13 @@ export const Projectile = z.object({
   mindControl: z.boolean().optional(),
 
   /**
+   * Moves in a wave pattern: https://enterthegungeon.fandom.com/wiki/Helix
+   */
+  helixAmplitude: z.number().optional(),
+  helixWavelength: z.number().optional(),
+  antimatter: z.boolean().optional(),
+
+  /**
    * Some projectiles are invisible hence no animation.
    */
   animation: Animation.optional(),

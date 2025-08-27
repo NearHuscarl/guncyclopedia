@@ -233,9 +233,16 @@ export class GunModelGenerator {
       proj.penetration = projDto.pierceProjModifier.penetration;
       proj.canPenetrateObjects = Boolean(projDto.pierceProjModifier.penetratesBreakables);
     }
-    const explosionData = this._projectileRepo.isCerebralBoreProjectile(projDto.projectile)
-      ? projDto.projectile.explosionData
-      : projDto.explosiveModifier?.doExplosion && projDto.explosiveModifier?.explosionData;
+
+    let explosionData = projDto.explosiveModifier?.doExplosion && projDto.explosiveModifier?.explosionData;
+    if (this._projectileRepo.isCerebralBoreProjectile(projDto.projectile)) {
+      explosionData = projDto.projectile.explosionData;
+    } else if (
+      /* Game code only triggers antimatter explosion and ignore the matter projectile */
+      projDto.matterAntimatterProjModifier?.isAntimatter
+    ) {
+      explosionData = projDto.matterAntimatterProjModifier.antimatterExplosion;
+    }
     if (explosionData) {
       if (explosionData.doDamage) {
         proj.explosionRadius = explosionData.damageRadius;
@@ -356,6 +363,14 @@ export class GunModelGenerator {
         isEstimated: true,
         damage: 1e6,
       });
+    }
+
+    if (this._projectileRepo.isHelixProjectileData(projDto.projectile)) {
+      proj.helixAmplitude = projDto.projectile.helixAmplitude;
+      proj.helixWavelength = projDto.projectile.helixWavelength;
+    }
+    if (projDto.matterAntimatterProjModifier?.isAntimatter) {
+      proj.antimatter = true;
     }
 
     if (proj.isHoming) {
@@ -482,6 +497,7 @@ export class GunModelGenerator {
       }
     }
     const res: TProjectileMode[] = [];
+    // TODO: rework estimated bounce damage, it only increases potential damage if paired with penetration.
     // TODO: SpawnProjModifier (The Scrambler, Particulator)
     // TODO: homing bullet
     // TODO: ShovelGunModifier

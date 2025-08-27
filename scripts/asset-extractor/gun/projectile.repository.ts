@@ -21,6 +21,8 @@ import type {
   TRaidenBeamControllerData,
   TModifyProjectileSynergyProcessorData,
   TMindControlProjectileModifierData,
+  THelixProjectileData,
+  TMatterAntimatterProjectileModifierData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -56,6 +58,9 @@ export class ProjectileRepository {
   isCerebralBoreProjectile(obj: unknown): obj is TCerebralBoreProjectileData {
     return this._containsScript(obj, "CerebralBoreProjectile.cs.meta");
   }
+  isHelixProjectileData(obj: unknown): obj is THelixProjectileData {
+    return this._containsScript(obj, "HelixProjectile.cs.meta");
+  }
   private _isBounceModifierData(obj: unknown): obj is TBounceProjModifierData {
     return this._containsScript(obj, AssetService.BOUNCE_PROJ_MODIFIER_SCRIPT);
   }
@@ -90,6 +95,12 @@ export class ProjectileRepository {
     return (
       this._assetService.isMonoBehaviour(obj) &&
       obj.m_Script.$$scriptPath.endsWith("MindControlProjectileModifier.cs.meta")
+    );
+  }
+  private _isMatterAntimatterProjectileModifierData(obj: unknown): obj is TMatterAntimatterProjectileModifierData {
+    return (
+      this._assetService.isMonoBehaviour(obj) &&
+      obj.m_Script.$$scriptPath.endsWith("MatterAntimatterProjectileModifier.cs.meta")
     );
   }
 
@@ -155,6 +166,8 @@ export class ProjectileRepository {
           res.blackHoleDoer = component;
         } else if (this._isMindControlProjectileModifierData(component)) {
           res.mindControlProjModifier = component;
+        } else if (this._isMatterAntimatterProjectileModifierData(component)) {
+          res.matterAntimatterProjModifier = component;
         }
       }
 

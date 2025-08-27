@@ -55,6 +55,8 @@ import { PlayerSlinger } from "@/components/icons/player-slinger";
 import { TrickGun } from "@/components/icons/trick-gun";
 import { OilGoop } from "@/components/icons/oil-goop";
 import { Dejam } from "@/components/icons/dejam";
+import { WaveProjectiles } from "@/components/icons/wave-projectiles";
+import { AntimatterProjectile } from "@/components/icons/antimatter-projectile";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -412,6 +414,41 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <br />
             While reloading, a circular field surrounds the player that damages nearby enemies within{" "}
             <strong>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</strong> radius.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(projectileData.helixAmplitude || undefined) && !projectileData.antimatter && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <WaveProjectiles />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-72">
+            <strong>Helix Projectile</strong>
+            <br />
+            Fires two projectiles in opposite wave patterns, meeting and diverging as they travel.
+            <br />
+            Wave length: <strong>{projectileData.helixWavelength}</strong>, Wave amplitude:{" "}
+            <strong>{projectileData.helixAmplitude}</strong>
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(projectileData.helixAmplitude || undefined) && projectileData.antimatter && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <AntimatterProjectile />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Antimatter Projectile</strong>
+            <br />
+            Fires two projectiles in opposite wave patterns. When they collide, they cause a large explosion and trigger
+            a blank effect.
+            <br />
+            Wave length: <strong>{projectileData.helixWavelength}</strong>, Wave amplitude:{" "}
+            <strong>{projectileData.helixAmplitude}</strong>
           </TooltipContent>
         </Tooltip>
       )}

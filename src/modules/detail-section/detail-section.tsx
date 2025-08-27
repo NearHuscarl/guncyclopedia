@@ -109,19 +109,25 @@ export function DetailSection() {
   useEffect(() => {
     // Note: Don't remove this useEffect and use key={gun?.id} for parent component
     // The state is needed to apply transitions for stats when switching guns
+
     setModeIndex(0);
+    if (gun.projectileModes.length > 1 && gun.projectileModes.at(-1)?.mode.startsWith("Charge")) {
+      // prioritize to show the max charge of the weapon where it might contain the unique features
+      _setModeIndex(gun.projectileModes.length - 1);
+    }
 
     // force showing projectile pool if it exists (there will be no volley)
     if (showProjectilePool) {
       _setSelectedProjectileIndex(0);
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gun.id]);
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
       <div>
-        <div className="flex justify-center gap-1">
+        <div key={gun.id} className="flex justify-center gap-1">
           {selectedGun.projectileModes.map(({ mode }, i, modes) => (
             <Button
               key={mode}
