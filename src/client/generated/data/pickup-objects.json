@@ -6984,6 +6984,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
+            "ammoCost": 3,
             "projectiles": [
               {
                 "id": "Star_Projectile",
@@ -17043,6 +17044,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
+            "ammoCost": 10,
             "projectiles": [
               {
                 "id": "Rockethand_Missile",
@@ -17935,6 +17937,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
+            "ammoCost": 12,
             "projectiles": [
               {
                 "id": "Antimatter_Projectile",
@@ -17942,9 +17945,20 @@
                 "speed": 10,
                 "range": 1000,
                 "force": 11,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "source": "explosion",
+                    "damage": 50
+                  }
+                ],
                 "penetration": 5,
                 "canPenetrateObjects": true,
+                "explosionRadius": 15,
+                "explosionForce": 100,
+                "helixAmplitude": 3,
+                "helixWavelength": 7,
+                "antimatter": true,
                 "animation": {
                   "name": "matter_antimatter_antimatter_projectile",
                   "fps": 10,
@@ -17990,6 +18004,8 @@
                 "additionalDamage": [],
                 "penetration": 5,
                 "canPenetrateObjects": true,
+                "helixAmplitude": 3,
+                "helixWavelength": 7,
                 "animation": {
                   "name": "matter_antimatter_matter_projectile",
                   "fps": 10,
@@ -18024,7 +18040,9 @@
     ],
     "maxAmmo": 250,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -19265,6 +19283,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 0,
+            "ammoCost": 3,
             "projectiles": [
               {
                 "id": "Mjolnir_Charged_Projectile",
@@ -32332,6 +32351,8 @@
                 "range": 100,
                 "force": 6,
                 "additionalDamage": [],
+                "helixAmplitude": 2,
+                "helixWavelength": 6,
                 "animation": {
                   "name": "twin_energy_001",
                   "fps": 0,
@@ -32361,6 +32382,8 @@
                 "range": 100,
                 "force": 6,
                 "additionalDamage": [],
+                "helixAmplitude": 2,
+                "helixWavelength": 6,
                 "animation": {
                   "name": "twin_energy_002",
                   "fps": 0,
@@ -32445,6 +32468,8 @@
                 "range": 100,
                 "force": 6,
                 "additionalDamage": [],
+                "helixAmplitude": 2,
+                "helixWavelength": 6,
                 "animation": {
                   "name": "twin_energy_001",
                   "fps": 0,
@@ -32474,6 +32499,8 @@
                 "range": 100,
                 "force": 6,
                 "additionalDamage": [],
+                "helixAmplitude": 2,
+                "helixWavelength": 6,
                 "animation": {
                   "name": "twin_energy_002",
                   "fps": 0,
@@ -34505,6 +34532,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
+            "ammoCost": 4,
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
@@ -34785,6 +34813,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 50,
+            "ammoCost": 4,
             "projectiles": [
               {
                 "id": "Zilla_Combat_Shotgun_Projectile_charge",
@@ -36983,6 +37012,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.4,
             "spread": 8,
+            "ammoCost": 6,
             "projectiles": [
               {
                 "id": "Kthuliber_Gun_Projectile",
@@ -40889,6 +40919,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 0,
+            "ammoCost": 10,
             "projectiles": [
               {
                 "id": "Combine_Bounce_Projectile",
@@ -46765,6 +46796,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
+            "ammoCost": 5,
             "projectiles": [
               {
                 "id": "Mega_Flash_Projectile",
@@ -48650,6 +48682,8 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
+                "helixAmplitude": 1,
+                "helixWavelength": 4,
                 "animation": {
                   "name": "samusW_projectile_001",
                   "fps": 0,
@@ -48679,6 +48713,8 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
+                "helixAmplitude": 1,
+                "helixWavelength": 3,
                 "animation": {
                   "name": "samusW_projectile_001",
                   "fps": 0,
@@ -48708,6 +48744,8 @@
                 "range": 1000,
                 "force": 8,
                 "additionalDamage": [],
+                "helixAmplitude": 1,
+                "helixWavelength": 3,
                 "animation": {
                   "name": "samusW_projectile_001",
                   "fps": 0,

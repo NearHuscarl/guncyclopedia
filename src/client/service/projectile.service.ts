@@ -87,12 +87,14 @@ export class ProjectileService {
       burstShotCount: projectiles[0].burstShotCount,
       burstCooldownTime: projectiles[0].burstCooldownTime,
       shootStyle: projectiles[0].shootStyle,
+      ammoCost: 0,
       projectiles: [this.createAggregatedProjectileData(pp, "sum")],
     };
     for (let i = 0; i < projectiles.length; i++) {
       const proj = projectiles[i];
       finalProjectile.cooldownTime = Math.max(finalProjectile.cooldownTime, proj.cooldownTime);
       finalProjectile.spread = Math.max(finalProjectile.spread, proj.spread);
+      finalProjectile.ammoCost = Math.max(finalProjectile.ammoCost ?? 1, proj.ammoCost ?? 1);
     }
 
     return finalProjectile;

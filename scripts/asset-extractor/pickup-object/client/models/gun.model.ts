@@ -17,6 +17,7 @@ export type TProjectilePerShot = {
   burstCooldownTime: number;
   cooldownTime: number;
   spread: number;
+  ammoCost?: number;
   projectiles: TProjectileSequence;
 };
 export const ProjectilePerShot = z.object({
@@ -25,6 +26,12 @@ export const ProjectilePerShot = z.object({
   burstCooldownTime: z.number().nonnegative(),
   cooldownTime: z.number(),
   spread: z.number(),
+  /**
+   * Cost of ammo, set to `undefined` if it is `1`, Some projectiles use the whole magazine, in which case it equals to the magazine size.
+   *
+   * If there is less ammo in the magazine than required, the cost is simply the remaining ammo, it does not take into account of the reserve ammo.
+   */
+  ammoCost: z.number().min(2).optional(),
   projectiles: z.array(Projectile),
 }) satisfies z.ZodType<TProjectilePerShot>;
 

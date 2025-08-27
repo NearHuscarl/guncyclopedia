@@ -191,7 +191,8 @@ export class GunService {
     const projData =
       mode.projectiles[projectileIndex]?.projectiles[projectileDataIndex] ??
       ProjectileService.createAggregatedProjectileData(projectilePool, "avg");
-    const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : mode.magazineSize;
+    const magazineSize =
+      mode.magazineSize === -1 ? gun.maxAmmo : Math.ceil(mode.magazineSize / (projectile.ammoCost ?? 1));
     const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? ProjectileService.MAX_MAX_AMMO : gun.maxAmmo;
     const reloadTime = gun.reloadTime;
     const timingInput = {

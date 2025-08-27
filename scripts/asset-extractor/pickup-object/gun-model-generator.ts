@@ -418,6 +418,7 @@ export class GunModelGenerator {
         burstShotCount: module.burstShotCount,
         burstCooldownTime: module.burstCooldownTime,
         spread: module.angleVariance,
+        ammoCost: module.ammoCost > 1 && defaultModule.shootStyle !== ShootStyle.Beam ? module.ammoCost : undefined,
         projectiles,
       });
 
@@ -485,13 +486,14 @@ export class GunModelGenerator {
         );
       }
 
-      for (const { ChargeTime, Projectile } of module.chargeProjectiles) {
+      for (const { ChargeTime, Projectile, AmmoCost } of module.chargeProjectiles) {
         if (!Projectile.guid) continue;
         if (!chargeModulesLookup.get(ChargeTime)) chargeModulesLookup.set(ChargeTime, []);
 
         const chargeModules = chargeModulesLookup.get(ChargeTime)!;
         const clonedModule = cloneDeep(module);
         clonedModule.projectiles = [cloneDeep(Projectile)];
+        clonedModule.ammoCost = AmmoCost;
         clonedModule.chargeProjectiles = [];
         chargeModules.push(clonedModule);
       }

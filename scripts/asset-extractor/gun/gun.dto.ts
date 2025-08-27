@@ -61,12 +61,17 @@ export const ProjectileModule = z.object({
     z.object({
       ChargeTime: z.number(),
       Projectile: AssetExternalReference,
+      /**
+       * Override `ProjectileModule.ammoCost` if exists.
+       */
+      AmmoCost: z.number(),
     }),
   ),
   /**
    * Spawn 1 additional projectile per shot. See [https://enterthegungeon.fandom.com/wiki/Gilded_Hydra](https://enterthegungeon.fandom.com/wiki/Gilded_Hydra) for example.
    */
   mirror: BinaryOption,
+  ammoCost: z.number(),
   burstShotCount: z.number().nonnegative(),
   burstCooldownTime: z.number().nonnegative(),
   cooldownTime: z.number(),

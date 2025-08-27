@@ -105,6 +105,7 @@ export function DetailSection() {
   const selectedGun = hoverGun || gun;
   const selectedStats = hoverGunStats || gunStats;
   const showProjectilePool = selectedGun.projectileModes[0].projectiles[0].projectiles.length > 1;
+  const isCustomMagazineSize = (selectedStats.projectilePerShot.ammoCost ?? 1) > 1;
 
   useEffect(() => {
     // Note: Don't remove this useEffect and use key={gun?.id} for parent component
@@ -183,7 +184,13 @@ export function DetailSection() {
           modifier={hoverGunStats.dps.base - gunStats.dps.base}
         />
         <StatBar
-          label="Magazine Size"
+          label={"Magazine Size" + (isCustomMagazineSize ? "*" : "")}
+          labelTooltip={
+            isCustomMagazineSize
+              ? `The base magazine size is <strong>${selectedGun.projectileModes[0].magazineSize}</strong>, but since each shot consumes <strong>${selectedStats.projectilePerShot.ammoCost}</strong> ammo, its effective capacity is <strong>${selectedStats.magazineSize}</strong>`
+              : undefined
+          }
+          labelTooltipClassName="text-wrap w-72"
           value={gunStats.magazineSize}
           max={Math.min(stats.maxMagazineSize, selectedGun.maxAmmo)}
           modifier={hoverGunStats.magazineSize - gunStats.magazineSize}
@@ -246,6 +253,7 @@ export function DetailSection() {
         <StatBar
           label="Fire Rate"
           labelTooltip="Number of shots fired per minute. Calculation includes the <strong>cooldown time</strong>, <strong>charge time</strong> and <strong>reload time</strong>"
+          labelTooltipClassName="w-80 text-wrap"
           max={1000}
           precision={0}
           valueResolver={ProjectileService.getFireRate}
@@ -255,6 +263,7 @@ export function DetailSection() {
         <StatBar
           label="Precision"
           labelTooltip={`Spread: <strong>${gunStats.projectilePerShot.spread}°</strong><br/>Higher precision results in less bullet spread. Scales the spread range [30deg (worst) .. 0 (best)] into a precision percentage [0 (worst) .. 100 (best)]`}
+          labelTooltipClassName="w-80 text-wrap"
           value={gunStats.precision}
           precision={0}
           max={100}

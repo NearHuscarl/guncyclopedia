@@ -3,6 +3,7 @@ import { StatStackBar } from "./stat-stack-bar";
 type TStatBarProps = {
   label: string;
   labelTooltip?: string;
+  labelTooltipClassName?: string;
   value: number;
   valueResolver?: (value: number) => number;
   max: number;
@@ -35,6 +36,7 @@ type TStatBarProps = {
 export function StatBar({
   label,
   labelTooltip,
+  labelTooltipClassName,
   value,
   valueResolver,
   precision = 1,
@@ -46,6 +48,7 @@ export function StatBar({
     <StatStackBar
       label={label}
       labelTooltip={labelTooltip}
+      labelTooltipClassName={labelTooltipClassName}
       segments={[{ value }]}
       valueResolver={valueResolver}
       precision={precision}

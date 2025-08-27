@@ -99,6 +99,7 @@ interface ISegment {
 type TStatStackProps = {
   label: ReactNode;
   labelTooltip?: string;
+  labelTooltipClassName?: string;
   max: number;
   precision?: number;
   segments: ISegment[];
@@ -144,6 +145,7 @@ function prepareSegment(segments: ISegment[], max: number) {
 export function StatStackBar({
   label,
   labelTooltip,
+  labelTooltipClassName,
   max,
   precision = 1,
   segments,
@@ -177,7 +179,7 @@ export function StatStackBar({
             <TooltipTrigger asChild>
               <div className="cursor-help">{labelElement}</div>
             </TooltipTrigger>
-            <TooltipContent className="w-80 text-wrap">
+            <TooltipContent className={labelTooltipClassName}>
               <div dangerouslySetInnerHTML={{ __html: labelTooltip }} />
             </TooltipContent>
           </Tooltip>
