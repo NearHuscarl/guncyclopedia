@@ -116,6 +116,8 @@ const BlackHoleDoerData = z.object({
   damageToEnemiesPerSecond: z.number(),
 });
 
+const MindControlProjectileModifierData = MonoBehaviour.extend({});
+
 const ProjectileData = MonoBehaviour.extend({
   ignoreDamageCaps: BinaryOption,
   baseData: z.object({
@@ -184,6 +186,7 @@ export const ProjectileDto = z.object({
   basicBeamController: BasicBeamControllerData.optional(),
   raidenBeamController: RaidenBeamControllerData.optional(),
   blackHoleDoer: BlackHoleDoerData.optional(),
+  mindControlProjModifier: MindControlProjectileModifierData.optional(),
 });
 
 export type TProjectileDto = z.input<typeof ProjectileDto>;
@@ -199,3 +202,4 @@ export type TModifyProjectileSynergyProcessorData = z.infer<typeof ModifyProject
 export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;
 export type TBlackHoleDoerData = z.input<typeof BlackHoleDoerData>;
+export type TMindControlProjectileModifierData = z.input<typeof MindControlProjectileModifierData>;

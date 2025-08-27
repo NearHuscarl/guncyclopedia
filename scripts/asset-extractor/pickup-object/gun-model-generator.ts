@@ -312,6 +312,10 @@ export class GunModelGenerator {
         damage: projDto.blackHoleDoer.damageToEnemiesPerSecond,
       });
     }
+    if (projDto.mindControlProjModifier) {
+      proj.mindControl = true;
+      this._featureFlags.add("hasSpecialAbilities");
+    }
     if (projDto.homingModifier) {
       proj.isHoming = true;
       proj.homingRadius = projDto.homingModifier.HomingRadius;
@@ -340,7 +344,6 @@ export class GunModelGenerator {
       proj.homingAngularVelocity = gunDto.predatorGunController.HomingAngularVelocity;
     }
 
-    // TODO: add estimated additional damage that cover the rest of the stack bar
     if (projDto.projectile.CanTransmogrify && projDto.projectile.TransmogrifyTargetGuids.length > 0) {
       this._featureFlags.add("hasSpecialAbilities");
       proj.chanceToTransmogrify = projDto.projectile.ChanceToTransmogrify;
@@ -492,6 +495,7 @@ export class GunModelGenerator {
     // Edge cases:
     // Gungeon Ant: calculate reload time again based on the active reload multiplier
     // Rad Gun: create 2 modes for different type of projectiles when alternate reloading
+    // TODO: Rad gun: update modified reload time & animation speed on each level
     // TODO: add muzzleFlashEffects in idle animation for The Fat Line
     // TODO: add unused reload animation for The Fat Line (?)
 

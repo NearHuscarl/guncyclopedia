@@ -41012,7 +41012,8 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 13,
-                "additionalDamage": []
+                "additionalDamage": [],
+                "mindControl": true
               }
             ]
           }
@@ -41021,7 +41022,9 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 1.75,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
     "attribute": {},
     "colors": [
       "teal",

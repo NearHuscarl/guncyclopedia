@@ -20,6 +20,7 @@ import type {
   TProjectileDto,
   TRaidenBeamControllerData,
   TModifyProjectileSynergyProcessorData,
+  TMindControlProjectileModifierData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -82,8 +83,14 @@ export class ProjectileRepository {
   private _isRaidenBeamControllerData(obj: unknown): obj is TRaidenBeamControllerData {
     return this._containsScript(obj, AssetService.RAIDEN_BEAM_CONTROLLER_SCRIPT);
   }
-  private _isBlackHoleDoer(obj: unknown): obj is TBlackHoleDoerData {
+  private _isBlackHoleDoerData(obj: unknown): obj is TBlackHoleDoerData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("BlackHoleDoer.cs.meta");
+  }
+  private _isMindControlProjectileModifierData(obj: unknown): obj is TMindControlProjectileModifierData {
+    return (
+      this._assetService.isMonoBehaviour(obj) &&
+      obj.m_Script.$$scriptPath.endsWith("MindControlProjectileModifier.cs.meta")
+    );
   }
 
   private async _getAllProjectileRefabFiles() {
@@ -144,8 +151,10 @@ export class ProjectileRepository {
           res.basicBeamController = component;
         } else if (this._isRaidenBeamControllerData(component)) {
           res.raidenBeamController = component;
-        } else if (this._isBlackHoleDoer(component)) {
+        } else if (this._isBlackHoleDoerData(component)) {
           res.blackHoleDoer = component;
+        } else if (this._isMindControlProjectileModifierData(component)) {
+          res.mindControlProjModifier = component;
         }
       }
 

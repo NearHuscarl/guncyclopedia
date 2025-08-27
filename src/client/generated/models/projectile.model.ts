@@ -131,6 +131,11 @@ export const Projectile = z.object({
   dejam: z.boolean().optional(),
 
   /**
+   * https://enterthegungeon.fandom.com/wiki/3rd_Party_Controller
+   */
+  mindControl: z.boolean().optional(),
+
+  /**
    * Some projectiles are invisible hence no animation.
    */
   animation: Animation.optional(),

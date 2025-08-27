@@ -3,6 +3,7 @@ import {
   Biohazard,
   Crosshair,
   Flame,
+  Gamepad2,
   Heart,
   Receipt,
   Skull,
@@ -425,6 +426,22 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <strong>Dejammed Projectile</strong>
             <br />
             Turns <strong>Jammed</strong> enemies and bosses back to normal.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectileData.mindControl && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <Gamepad2 size={20} className="stroke-red-500" />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Mind Control Projectile</strong>
+            <br />
+            Upon hitting an enemy, they will move in the same direction the player moves, and shoot towards the
+            crosshair if the player shoots. Their bullets will damage other enemies as well as the player. Bosses cannot
+            be controlled.
           </TooltipContent>
         </Tooltip>
       )}
