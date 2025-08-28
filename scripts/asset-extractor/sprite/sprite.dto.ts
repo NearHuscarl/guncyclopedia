@@ -10,7 +10,7 @@ export const SpriteCollectionDto = z.object({
       uvs: z.tuple([Position, Position, Position, Position]),
       material: AssetExternalReference.required(),
       flipped: BinaryOption,
-    })
+    }),
   ),
 });
 

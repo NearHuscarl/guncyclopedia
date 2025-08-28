@@ -503,16 +503,14 @@ export class GunModelGenerator {
     // TODO: SpawnProjModifier (The Scrambler, Particulator)
     // TODO: homing bullet
     // TODO: ShovelGunModifier
-    // TODO: trick gun (mag size)
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: round that has explosion on impact count as another source of damage
     // TODO: Synergies: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
     //    ExportedProject/Assets/data/AAA_AdvSynergyManager.asset
     //    ExportedProject/Assets/Scripts/Assembly-CSharp/CustomSynergyType.cs
     // TODO: fear effect
+    // TODO: Add blank-when-proj-collide attribute for composite gun & update antimarker gun (see MatterAntimatterProjectileModifier.cs)
     // Edge cases:
-    // Gungeon Ant: calculate reload time again based on the active reload multiplier
-    // Rad Gun: create 2 modes for different type of projectiles when alternate reloading
     // TODO: Rad gun: update modified reload time & animation speed on each level
     // TODO: add muzzleFlashEffects in idle animation for The Fat Line
     // TODO: add unused reload animation for The Fat Line (?)

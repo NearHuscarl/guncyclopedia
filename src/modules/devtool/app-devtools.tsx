@@ -15,7 +15,7 @@ export function AppDevtools() {
     >
       <label className="flex items-center gap-2 cursor-pointer text-sm">
         <input type="checkbox" checked={isDebug} onChange={toggleDebug} className="accent-secondary" />
-        Debug mode
+        Debug
       </label>
     </div>
   );

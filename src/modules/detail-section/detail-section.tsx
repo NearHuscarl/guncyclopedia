@@ -34,6 +34,9 @@ import type { TGun } from "@/client/generated/models/gun.model";
 // Accurate: At least Steady ROF, High Precision
 // Unpredictable: Large damage range
 
+// Sometimes the reload animation is cooler than the intro one.
+const forceUseReloadAsIntroAnimation = new Set([387]);
+
 function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mode: string }) {
   const useChargeAnimation = useGunStore((state) => state.useChargeAnimation);
   let animationName: keyof TGun["animation"] = "idle";
@@ -56,7 +59,12 @@ function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mo
           key={`${gun.id}-${animationName}`}
           scale={6}
           // TODO: moonscraper charge animation doesn't exist
-          animations={[gun.animation.intro ?? gun.animation.reload, gun.animation.idle].filter((a) => !isUndefined(a))}
+          animations={[
+            gun.animation.intro && !forceUseReloadAsIntroAnimation.has(gun.id)
+              ? gun.animation.intro
+              : gun.animation.reload,
+            gun.animation.idle,
+          ].filter((a) => !isUndefined(a))}
         />
       ) : (
         <AnimatedSprite key={`${gun.id}-${animationName}`} scale={6} animation={gun.animation.charge!} />
@@ -165,7 +173,7 @@ export function DetailSection() {
                     {selectedStats.magazineSize}/{formatNumber(ProjectileService.getMaxAmmo(selectedStats.maxAmmo))}
                   </NumericValue>
                 </TooltipTrigger>
-                <TooltipContent>Magazine Size / Max Ammunition</TooltipContent>
+                <TooltipContent>Magazine Size / Max Ammo</TooltipContent>
               </Tooltip>
               <AmmoSet shootStyle={selectedStats.shootStyle} magazineSize={selectedStats.magazineSize} />
             </div>

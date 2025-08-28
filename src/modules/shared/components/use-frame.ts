@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { randomBetween } from "@/lib/lang";
+import { useIsDebug } from "../hooks/useDebug";
 import type { TAnimation } from "@/client/generated/models/animation.model";
 
 export function useFrame(animation: TAnimation, onFinished?: () => void) {
   const startIndex = animation.wrapMode === "LoopSection" ? animation.loopStart : 0;
   const [index, setIndex] = useState(0);
   const onFinishedRef = useRef(onFinished);
+  const debug = useIsDebug();
 
   useEffect(() => {
     onFinishedRef.current = onFinished;
@@ -22,7 +24,7 @@ export function useFrame(animation: TAnimation, onFinished?: () => void) {
           ? // finished a full cycle → pause for random fidget duration
             randomBetween(animation.minFidgetDuration, animation.maxFidgetDuration) * 1000
           : // normal per-frame delay
-            1000 / animation.fps;
+            1000 / (debug ? animation.fps / 3 : animation.fps);
 
       timerId = window.setTimeout(() => {
         if ((animation.wrapMode === "Once" && lastFrame) || animation.frames.length === 1) {
@@ -45,6 +47,7 @@ export function useFrame(animation: TAnimation, onFinished?: () => void) {
     animation.wrapMode,
     index,
     startIndex,
+    debug,
   ]);
 
   return animation.frames[index];

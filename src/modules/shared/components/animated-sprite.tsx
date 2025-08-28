@@ -4,6 +4,9 @@ import { useImageSize } from "./use-image-size";
 import { useFrame } from "./use-frame";
 import { useIsDebug } from "../hooks/useDebug";
 import type { TAnimation } from "@/client/generated/models/animation.model";
+import type { TPosition } from "@/client/generated/models/schema";
+
+type TSize = { w: number; h: number };
 
 function normQuarterTurn(deg: number, flipped: boolean): 0 | 90 | 180 | 270 {
   const r = (deg + 360 + (flipped ? 90 : 0)) % 360;
@@ -14,31 +17,26 @@ function normQuarterTurn(deg: number, flipped: boolean): 0 | 90 | 180 | 270 {
   return 0;
 }
 
-function buildTransform(
-  rotate: 0 | 90 | 180 | 270,
-  flipped: boolean,
-  cssW: number,
-  cssH: number,
-  offX: number,
-  offY: number,
-) {
+function buildTransform(rotate: 0 | 90 | 180 | 270, flipped: boolean, spriteSize: TSize, offset: TPosition) {
   const transformParts: string[] = [];
+  const sw = spriteSize.w,
+    sh = spriteSize.h;
 
   if (flipped) {
-    transformParts.push("scaleX(-1)", `translate(${cssW}px, 0px)`);
+    transformParts.push("scaleX(-1)", `translate(${sw}px, 0px)`);
   }
   // https://www.figma.com/design/loAXQ0w6kwPLrqCcMuwZig/Guncyclopedia-Icons?node-id=110-48&t=S4tL5fDB9wrvCncb-4
   if (rotate === 90) {
-    transformParts.push("rotate(90deg)", `translate(${cssH}px, 0px)`);
+    transformParts.push("rotate(90deg)", `translate(${sh}px, 0px)`);
   }
   if (rotate === 180) {
-    transformParts.push("rotate(180deg)", `translate(${cssW}px, ${cssH}px)`);
+    transformParts.push("rotate(180deg)", `translate(${sw}px, ${sh}px)`);
   }
   if (rotate === 270) {
-    transformParts.push("rotate(270deg)", `translate(0px, ${cssH}px)`);
+    transformParts.push("rotate(270deg)", `translate(0px, ${sh}px)`);
   }
 
-  transformParts.push(`translate(${offX}px, ${offY}px)`);
+  transformParts.push(`translate(${offset.x}px, ${offset.y}px)`);
 
   // transform is applied from right to left
   return transformParts.reverse().join(" ");
@@ -86,11 +84,8 @@ function AnimatedSpriteImpl({ animation, scale = 1, className, onFinished }: TAn
   const y1 = Math.max(...uvs.map((p) => p.y));
 
   // current frame box (pre-rotation)
-  const spriteW = (x1 - x0) * w;
-  const spriteH = (y1 - y0) * h;
-
-  const cssW = spriteW * scale;
-  const cssH = spriteH * scale;
+  const spriteW = (x1 - x0) * w * scale;
+  const spriteH = (y1 - y0) * h * scale;
 
   const bgPosX = -x0 * w * scale;
   const bgPosY = -y0 * h * scale;
@@ -101,18 +96,18 @@ function AnimatedSpriteImpl({ animation, scale = 1, className, onFinished }: TAn
   const rotate = normQuarterTurn(animation.rotate ?? 0, frame.flipped);
 
   // axis-aligned box after rotation (flip doesn't alter size)
-  const effW = rotate === 90 || rotate === 270 ? cssH : cssW;
-  const effH = rotate === 90 || rotate === 270 ? cssW : cssH;
+  const effW = rotate === 90 || rotate === 270 ? spriteH : spriteW;
+  const effH = rotate === 90 || rotate === 270 ? spriteW : spriteH;
 
   // center the final AABB
   const offX = (maxW - effW) / 2;
   const offY = (maxH - effH) / 2;
 
-  const transform = buildTransform(rotate, frame.flipped, cssW, cssH, offX, offY);
+  const transform = buildTransform(rotate, frame.flipped, { w: spriteW, h: spriteH }, { x: offX, y: offY });
 
   return (
     <div
-      className={className}
+      className={clsx(className, { "border border-secondary": debug })}
       style={{
         width: maxW,
         height: maxH,
@@ -126,13 +121,15 @@ function AnimatedSpriteImpl({ animation, scale = 1, className, onFinished }: TAn
       <div
         className={clsx({ "border border-primary": debug })}
         style={{
-          width: cssW,
-          height: cssH,
+          width: spriteW,
+          height: spriteH,
           background: `url(${animation.texturePath})`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: `left ${bgPosX}px bottom ${bgPosY}px`,
           backgroundSize: `${bgSizeW}px ${bgSizeH}px`,
           imageRendering: "pixelated",
+          // skip painting when offscreen
+          contentVisibility: "auto",
 
           position: "absolute",
           top: 0,

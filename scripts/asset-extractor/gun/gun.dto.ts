@@ -4,6 +4,27 @@ import { StatModifierSchema } from "../player/player.dto.ts";
 import { SpriteAnimatorData, SpriteData } from "../asset/component.dto.ts";
 import { GameActorHealthEffect } from "./projectile.dto.ts";
 
+export const VFXPoolType = {
+  None: 0,
+  All: 1,
+  SequentialGroups: 2,
+  RandomGroups: 3,
+  Single: 4,
+} as const;
+
+export const VfxPool = z.object({
+  type: z.enum(VFXPoolType),
+  effects: z.array(
+    z.object({
+      effects: z.array(
+        z.object({
+          effect: AssetExternalReference,
+        }),
+      ),
+    }),
+  ),
+});
+
 export const ItemQuality = {
   EXCLUDED: -100,
   SPECIAL: -50,
