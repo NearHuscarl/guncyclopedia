@@ -5388,7 +5388,7 @@
     "maxAmmo": 150,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasSpecialAbilities"
+      "hasSpecialProjectiles"
     ],
     "attribute": {},
     "colors": [
@@ -6843,6 +6843,7 @@
                 "additionalDamage": [],
                 "penetration": 6,
                 "canPenetrateObjects": true,
+                "blankOnCollision": true,
                 "animation": {
                   "name": "charge_shot_point_projectile_001",
                   "fps": 0,
@@ -6863,8 +6864,11 @@
     ],
     "maxAmmo": 50,
     "reloadTime": 0.6,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialProjectiles"
+    ],
     "attribute": {},
+    "video": "https://youtu.be/oeC1eYxW_h8?t=16",
     "colors": [
       "lightGray",
       "gray"
@@ -9818,7 +9822,7 @@
     "maxAmmo": 999,
     "reloadTime": 0.3,
     "featureFlags": [
-      "hasSpecialAbilities"
+      "hasSpecialProjectiles"
     ],
     "attribute": {},
     "colors": [
@@ -17208,7 +17212,7 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasSpecialAbilities"
+      "hasSpecialProjectiles"
     ],
     "attribute": {},
     "colors": [
@@ -17329,7 +17333,7 @@
     "maxAmmo": 75,
     "reloadTime": 1.02,
     "featureFlags": [
-      "hasSpecialAbilities"
+      "hasSpecialProjectiles"
     ],
     "attribute": {},
     "colors": [
@@ -17956,6 +17960,7 @@
                 "canPenetrateObjects": true,
                 "explosionRadius": 15,
                 "explosionForce": 100,
+                "blankOnCollision": true,
                 "helixAmplitude": 3,
                 "helixWavelength": 7,
                 "antimatter": true,
@@ -28434,7 +28439,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasSpecialAbilities"
+      "hasSpecialProjectiles"
     ],
     "attribute": {},
     "colors": [
@@ -41054,7 +41059,7 @@
     "maxAmmo": 200,
     "reloadTime": 1.75,
     "featureFlags": [
-      "hasSpecialAbilities"
+      "hasSpecialProjectiles"
     ],
     "attribute": {},
     "colors": [

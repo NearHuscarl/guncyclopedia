@@ -129,6 +129,10 @@ export const Projectile = z.object({
    * whether Jammed enemies and bosses hit by the projectile will revert to normal.
    */
   dejam: z.boolean().optional(),
+  /**
+   * Creates a blank on collision, with the exact condition depending on the projectile.
+   */
+  blankOnCollision: z.boolean().optional(),
 
   /**
    * https://enterthegungeon.fandom.com/wiki/3rd_Party_Controller

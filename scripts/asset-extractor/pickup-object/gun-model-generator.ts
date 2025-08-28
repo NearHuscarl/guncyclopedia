@@ -242,6 +242,7 @@ export class GunModelGenerator {
       projDto.matterAntimatterProjModifier?.isAntimatter
     ) {
       explosionData = projDto.matterAntimatterProjModifier.antimatterExplosion;
+      proj.blankOnCollision = true;
     }
     if (explosionData) {
       if (explosionData.doDamage) {
@@ -266,7 +267,11 @@ export class GunModelGenerator {
 
     if (projDto.modifyProjectileSynergyProcessor?.Dejams) {
       proj.dejam = true;
-      this._featureFlags.add("hasSpecialAbilities");
+      this._featureFlags.add("hasSpecialProjectiles");
+    }
+    if (projDto.modifyProjectileSynergyProcessor?.Blanks) {
+      proj.blankOnCollision = true;
+      this._featureFlags.add("hasSpecialProjectiles");
     }
 
     // TODO: handle synergy
@@ -321,7 +326,7 @@ export class GunModelGenerator {
     }
     if (projDto.mindControlProjModifier) {
       proj.mindControl = true;
-      this._featureFlags.add("hasSpecialAbilities");
+      this._featureFlags.add("hasSpecialProjectiles");
     }
     if (projDto.homingModifier) {
       proj.isHoming = true;
@@ -352,7 +357,7 @@ export class GunModelGenerator {
     }
 
     if (projDto.projectile.CanTransmogrify && projDto.projectile.TransmogrifyTargetGuids.length > 0) {
-      this._featureFlags.add("hasSpecialAbilities");
+      this._featureFlags.add("hasSpecialProjectiles");
       proj.chanceToTransmogrify = projDto.projectile.ChanceToTransmogrify;
       proj.transmogrifyTarget = this._enemyRepo.getEnemy(
         projDto.projectile.TransmogrifyTargetGuids[0],

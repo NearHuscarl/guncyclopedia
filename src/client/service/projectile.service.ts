@@ -206,6 +206,7 @@ export class ProjectileService {
       dejam: true,
       mindControl: true,
       antimatter: true,
+      blankOnCollision: true,
     };
     // All string keys that are aggregated into arrays of string
     const sAggregateConfig: StringAggregateConfig = {

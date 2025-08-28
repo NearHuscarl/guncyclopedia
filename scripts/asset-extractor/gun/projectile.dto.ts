@@ -98,6 +98,7 @@ const ModifyProjectileSynergyProcessorData = z.object({
    * But the synergy gives an exception to `Dejams` property as long as it's set to true
    */
   Dejams: BinaryOption,
+  Blanks: BinaryOption,
 });
 
 const BasicBeamControllerData = z.object({

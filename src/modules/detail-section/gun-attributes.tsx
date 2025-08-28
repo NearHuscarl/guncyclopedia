@@ -57,6 +57,7 @@ import { OilGoop } from "@/components/icons/oil-goop";
 import { Dejam } from "@/components/icons/dejam";
 import { WaveProjectiles } from "@/components/icons/wave-projectiles";
 import { AntimatterProjectile } from "@/components/icons/antimatter-projectile";
+import { BlankOnCollision } from "@/components/icons/blank-on-collision";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -449,6 +450,20 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <br />
             Wave length: <strong>{projectileData.helixWavelength}</strong>, Wave amplitude:{" "}
             <strong>{projectileData.helixAmplitude}</strong>
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectileData.blankOnCollision && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <BlankOnCollision />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Blank On Collision</strong>
+            <br />
+            This projectile triggers a blank effect on collision
           </TooltipContent>
         </Tooltip>
       )}
