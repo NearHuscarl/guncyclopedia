@@ -29831,7 +29831,16 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 8,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "source": "explosion",
+                    "damage": 15
+                  }
+                ],
+                "explosionRadius": 2.5,
+                "explosionForce": 50,
+                "sticky": true,
                 "animation": {
                   "name": "arrow_big_001",
                   "fps": 0,
@@ -29852,7 +29861,9 @@
     ],
     "maxAmmo": 100,
     "reloadTime": 0.7,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasExplosiveProjectile"
+    ],
     "attribute": {},
     "colors": [
       "brown",

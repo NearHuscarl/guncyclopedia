@@ -124,6 +124,12 @@ const MatterAntimatterProjectileModifierData = MonoBehaviour.extend({
   antimatterExplosion: ExplosiveModifierData.shape.explosionData,
 });
 
+const StickyGrenadeBuffData = MonoBehaviour.extend({
+  IsSynergyContingent: BinaryOption,
+  RequiredSynergy: z.number(),
+  explosionData: ExplosiveModifierData.shape.explosionData,
+});
+
 const ProjectileData = MonoBehaviour.extend({
   ignoreDamageCaps: BinaryOption,
   baseData: z.object({
@@ -199,6 +205,7 @@ export const ProjectileDto = z.object({
   blackHoleDoer: BlackHoleDoerData.optional(),
   mindControlProjModifier: MindControlProjectileModifierData.optional(),
   matterAntimatterProjModifier: MatterAntimatterProjectileModifierData.optional(),
+  stickyGrenadeBuff: StickyGrenadeBuffData.optional(),
 });
 
 export type TProjectileDto = z.input<typeof ProjectileDto>;
@@ -217,3 +224,4 @@ export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>
 export type TBlackHoleDoerData = z.input<typeof BlackHoleDoerData>;
 export type TMindControlProjectileModifierData = z.input<typeof MindControlProjectileModifierData>;
 export type TMatterAntimatterProjectileModifierData = z.input<typeof MatterAntimatterProjectileModifierData>;
+export type TStickyGrenadeBuffData = z.input<typeof StickyGrenadeBuffData>;

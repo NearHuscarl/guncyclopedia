@@ -243,6 +243,9 @@ export class GunModelGenerator {
     ) {
       explosionData = projDto.matterAntimatterProjModifier.antimatterExplosion;
       proj.blankOnCollision = true;
+    } else if (projDto.stickyGrenadeBuff?.IsSynergyContingent === 0) {
+      explosionData = projDto.stickyGrenadeBuff.explosionData;
+      proj.sticky = true;
     }
     if (explosionData) {
       if (explosionData.doDamage) {
@@ -514,9 +517,11 @@ export class GunModelGenerator {
     //    ExportedProject/Assets/data/AAA_AdvSynergyManager.asset
     //    ExportedProject/Assets/Scripts/Assembly-CSharp/CustomSynergyType.cs
     // TODO: fear effect
-    // TODO: Add blank-when-proj-collide attribute for composite gun & update antimarker gun (see MatterAntimatterProjectileModifier.cs)
+    // TODO: add a badge next to best stat: https://fontawesome.com/icons/medal?f=classic&s=solid
     // Edge cases:
     // TODO: Rad gun: update modified reload time & animation speed on each level
+    // TODO: black hole gun reload sprites are not anchored correctly. Investigate reloadOffset
+    //  Comparison: crossbow
     // TODO: add muzzleFlashEffects in idle animation for The Fat Line
     // TODO: add unused reload animation for The Fat Line (?)
 

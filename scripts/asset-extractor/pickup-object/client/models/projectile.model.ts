@@ -140,6 +140,11 @@ export const Projectile = z.object({
   mindControl: z.boolean().optional(),
 
   /**
+   * https://enterthegungeon.fandom.com/wiki/Sticky_Crossbow
+   */
+  sticky: z.boolean().optional(),
+
+  /**
    * Moves in a wave pattern: https://enterthegungeon.fandom.com/wiki/Helix
    */
   helixAmplitude: z.number().optional(),

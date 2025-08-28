@@ -23,6 +23,7 @@ import type {
   TMindControlProjectileModifierData,
   THelixProjectileData,
   TMatterAntimatterProjectileModifierData,
+  TStickyGrenadeBuffData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -103,6 +104,9 @@ export class ProjectileRepository {
       obj.m_Script.$$scriptPath.endsWith("MatterAntimatterProjectileModifier.cs.meta")
     );
   }
+  private _isStickyGrenadeBuffData(obj: unknown): obj is TStickyGrenadeBuffData {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("StickyGrenadeBuff.cs.meta");
+  }
 
   private async _getAllProjectileRefabFiles() {
     const res: string[] = [];
@@ -168,6 +172,8 @@ export class ProjectileRepository {
           res.mindControlProjModifier = component;
         } else if (this._isMatterAntimatterProjectileModifierData(component)) {
           res.matterAntimatterProjModifier = component;
+        } else if (this._isStickyGrenadeBuffData(component)) {
+          res.stickyGrenadeBuff = component;
         }
       }
 

@@ -5,6 +5,7 @@ import {
   Flame,
   Gamepad2,
   Heart,
+  OctagonAlert,
   Receipt,
   Skull,
   Snail,
@@ -58,6 +59,7 @@ import { Dejam } from "@/components/icons/dejam";
 import { WaveProjectiles } from "@/components/icons/wave-projectiles";
 import { AntimatterProjectile } from "@/components/icons/antimatter-projectile";
 import { BlankOnCollision } from "@/components/icons/blank-on-collision";
+import { Sticky } from "@/components/icons/sticky";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -445,8 +447,8 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <TooltipContent className="text-wrap w-96">
             <strong>Antimatter Projectile</strong>
             <br />
-            Fires two projectiles in opposite wave patterns. When they collide, they cause a large explosion and trigger
-            a blank effect.
+            Fires two projectiles in opposite wave patterns. When colliding, they cause a large explosion and trigger a
+            blank effect.
             <br />
             Wave length: <strong>{projectileData.helixWavelength}</strong>, Wave amplitude:{" "}
             <strong>{projectileData.helixAmplitude}</strong>
@@ -461,9 +463,9 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <strong>Blank On Collision</strong>
+            <strong>Blank Projectile</strong>
             <br />
-            This projectile triggers a blank effect on collision
+            Triggers a blank effect on collision
           </TooltipContent>
         </Tooltip>
       )}
@@ -475,9 +477,23 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <strong>Dejammed Projectile</strong>
+            <strong>Dejam Projectile</strong>
             <br />
             Turns <strong>Jammed</strong> enemies and bosses back to normal.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectileData.sticky && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <Sticky size={20} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-72">
+            <strong>Sticky Grenade</strong>
+            <br />
+            Projectile sticks to the enemy. It creates an explosion upon reloading or switching weapons.
           </TooltipContent>
         </Tooltip>
       )}
@@ -494,6 +510,20 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             Upon hitting an enemy, they will move in the same direction the player moves, and shoot towards the
             crosshair if the player shoots. Their bullets will damage other enemies as well as the player. Bosses cannot
             be controlled.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectileData.ignoreDamageCaps && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <OctagonAlert size={18} className="stroke-yellow-500" />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Ignore Damage Caps</strong>
+            <br />
+            Projectiles ignore boss damage caps.
           </TooltipContent>
         </Tooltip>
       )}

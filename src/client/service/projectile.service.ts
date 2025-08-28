@@ -207,6 +207,7 @@ export class ProjectileService {
       mindControl: true,
       antimatter: true,
       blankOnCollision: true,
+      sticky: true,
     };
     // All string keys that are aggregated into arrays of string
     const sAggregateConfig: StringAggregateConfig = {
