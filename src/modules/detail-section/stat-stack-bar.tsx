@@ -93,6 +93,7 @@ interface ISegment {
    * if true, the value is an estimate based on the best outcome
    */
   isEstimated?: boolean;
+  chance?: number;
   color?: string;
 }
 
@@ -118,13 +119,20 @@ function prepareSegment(segments: ISegment[], max: number) {
   const paddedSegments: IPreparedSegment[] = [];
 
   for (const segment of segments) {
-    if (!segment.isEstimated) {
+    const isEstimated = segment.isEstimated || (segment.chance || 1) < 1;
+    if (!isEstimated) {
       baseValue += segment.value;
     }
 
     const segmentCap = Math.max(max - totalValue, 0);
     // Ensure each segment value does not exceed the max value
-    paddedSegments.push({ ...segment, value: segment.value, cappedValue: Math.min(segment.value, segmentCap) });
+    paddedSegments.push({
+      ...segment,
+      value: segment.value,
+      cappedValue: Math.min(segment.value, segmentCap),
+      isEstimated,
+    });
+
     totalValue += segment.value;
   }
 
@@ -193,11 +201,12 @@ export function StatStackBar({
         </NumericValue>
       </div>
 
-      <div className="relative flex h-2 bg-stone-800">
-        {paddedSegments.map(({ value, cappedValue, tooltip = "", isEstimated, color }, i) => {
+      <div className="relative flex h-2 bg-stone-900">
+        {paddedSegments.map(({ value, cappedValue, tooltip = "", isEstimated, color, chance }, i) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const prevIsEstimated = usePrevious(isEstimated);
           const width = percentage(cappedValue);
+          const isUnknownChance = isEstimated && !chance;
 
           const needsSeparator = width > 0 && i > 0;
           const flexBasis = needsSeparator ? `calc(${width}% - ${gapInPx}px)` : `${width}%`;
@@ -208,11 +217,16 @@ export function StatStackBar({
           const isInfiniteValue = isInfinite(value);
 
           const barProps: HTMLAttributes<HTMLElement> = {
-            style: { flexBasis, marginLeft: needsSeparator ? gapInPx : 0, backgroundColor: color },
+            style: {
+              flexBasis,
+              marginLeft: needsSeparator ? gapInPx : 0,
+              backgroundColor: color,
+              opacity: isUnknownChance ? 1 : Math.max(chance ?? 1, 0.15),
+            },
             className: clsx({
               "bg-white transition-all duration-160 ease-out hover:bg-primary!": true,
               "bg-stone-600!": isEstimatedValue && !isInfiniteValue,
-              "bg-purple-500/30!": isEstimatedValue && isInfiniteValue,
+              "bg-purple-500!": isEstimatedValue && isInfiniteValue,
               "bg-red-600!": isNegativeStat,
             }),
           };
@@ -231,7 +245,10 @@ export function StatStackBar({
               <TooltipContent>
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: tooltip.replace("{{VALUE}}", formatNumber(isInfiniteValue ? Infinity : value, precision)),
+                    __html: tooltip.replace(
+                      "{{VALUE}}",
+                      `<strong>${formatNumber(isInfiniteValue ? Infinity : value, precision)}</strong>`,
+                    ),
                   }}
                 />
               </TooltipContent>

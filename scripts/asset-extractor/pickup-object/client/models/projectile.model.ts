@@ -13,6 +13,44 @@ export type TStatusEffectProp =
   | "chanceToTransmogrify"
   | "devolveChance";
 
+const DamageDetail = z.object({
+  type: z.enum(["dps", "instant"]),
+  /**
+   * Probability that this damage will actually occur. Default to `0` (never happen).
+   *
+   * Used for chance-based effects such as status effect, piercing, or other random outcomes.
+   *
+   * The value may be derived from known mechanics or be an informed estimate when the exact data
+   * is unavailable.
+   *
+   * - If `damageChance = 0` and `isEstimated = true`, the chance is considered unknown rather than 'never happen'.
+   * - If `damageChance >= 0`, the damage is estimated regardless of `isEstimated`.
+   */
+  damageChance: Percentage.optional(),
+  /**
+   * Whether the damage is an estimate or not. Use this over `damageChance`
+   * If the damage chance is unclear
+   */
+  isEstimated: z.boolean().optional(),
+  /**
+   * If `canNotStack` is true, all damages with the same source can only be applied once.
+   */
+  canNotStack: z.boolean().optional(),
+  source: z.enum([
+    "ricochet",
+    "pierce",
+    "blackhole",
+    "fire",
+    "poison",
+    "explosion",
+    "oilGoop",
+    "damageMultiplier",
+    "transmogrification",
+    "devolver",
+  ]),
+  damage: z.number(),
+});
+
 export const Projectile = z.object({
   /**
    * basename of the meta file that associates with the prefab file
@@ -27,32 +65,7 @@ export const Projectile = z.object({
   /**
    * Extra damage from explosion, ricochet, or custom projectile like blackhole
    */
-  additionalDamage: z.array(
-    z.object({
-      type: z.enum(["dps", "instant"]).optional().default("instant"),
-      /**
-       * If `isEstimated` is true, the damage is an estimate based on the best outcome.
-       *
-       * E.g. for ricochets, the damage is computed as if all bounces hit an enemy.
-       */
-      isEstimated: z.boolean().optional(),
-      /**
-       * If `canNotStack` is true, all damages with the same source can only be applied once.
-       */
-      canNotStack: z.boolean().optional(),
-      source: z.enum([
-        "ricochet",
-        "blackhole",
-        "fire",
-        "poison",
-        "explosion",
-        "oilGoop",
-        "damageMultiplier",
-        "transmogrification",
-      ]),
-      damage: z.number(),
-    }),
-  ),
+  additionalDamage: z.array(DamageDetail),
 
   /**
    * Chance to spawn this projectile = `spawnWeight / projectileModes.length`.
@@ -84,6 +97,7 @@ export const Projectile = z.object({
   cheeseAmount: z.number().optional(),
 
   numberOfBounces: z.number().optional(),
+  averageSurvivingBounces: z.number().optional(),
   /**
    * Chance to die on bounce. Default is `0`.
    */
@@ -92,6 +106,9 @@ export const Projectile = z.object({
 
   /**
    * The number of times the projectile can pierce through enemies or objects.
+   *
+   * Note: when a projectile is both piercing & explosive, it can hit multiple objects
+   * but explode on impact with the first enemy.
    */
   penetration: z.number().optional(),
   canPenetrateObjects: z.boolean().optional(),
@@ -146,6 +163,11 @@ export const Projectile = z.object({
   sticky: z.boolean().optional(),
 
   /**
+   * https://enterthegungeon.fandom.com/wiki/Black_Hole_Gun
+   */
+  isBlackhole: z.boolean().optional(),
+
+  /**
    * https://enterthegungeon.fandom.com/wiki/Devolver
    */
   devolveChance: z.number().optional(),
@@ -164,4 +186,5 @@ export const Projectile = z.object({
   animation: Animation.optional(),
 });
 
+export type TDamageDetail = z.infer<typeof DamageDetail>;
 export type TProjectile = z.input<typeof Projectile>;

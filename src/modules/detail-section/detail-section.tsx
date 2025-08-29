@@ -13,7 +13,6 @@ import { useLoaderData } from "../shared/hooks/useLoaderData";
 import { ProjectilePool, Volley } from "./volley";
 import { GunService } from "@/client/service/gun.service";
 import { ProjectileService } from "@/client/service/projectile.service";
-import { useIsDebug } from "../shared/hooks/useDebug";
 import { Features } from "./features";
 import { StatStackBar } from "./stat-stack-bar";
 import { ArrowLeftRight } from "lucide-react";
@@ -21,9 +20,9 @@ import { NumericValue } from "./numeric-value";
 import { formatNumber } from "@/lib/lang";
 import { AmmoSet } from "./ammo-set";
 import { GunAttributes } from "./gun-attributes";
-import { ColorItem } from "../top-bar/shared/components/color-item";
 import { ShootStyle } from "./shoot-style";
 import { useGunStore } from "../shared/store/gun.store";
+import { DebugData } from "./debug-data";
 import type { TGun } from "@/client/generated/models/gun.model";
 
 // Attributes
@@ -82,7 +81,6 @@ function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mo
 export function DetailSection() {
   const gun = useSelectedGun();
   const hoverGun = useHoverGun();
-  const debug = useIsDebug();
   const stats = useLoaderData((state) => state.stats);
   const [modeIndex, _setModeIndex] = useState(0);
   const [hoverProjectileIndex, setHoverProjectileIndex] = useState(-1);
@@ -165,7 +163,6 @@ export function DetailSection() {
               <H2>{selectedGun.name || "N/A"}</H2>
               <Quality tier={selectedGun.quality} className="relative top-[-6px]" />
             </div>
-            <div>{debug && selectedGun.colors.map((c) => <ColorItem key={c} color={c} />)}</div>
             <div className="flex gap-2 items-center">
               <Tooltip>
                 <TooltipTrigger>
@@ -300,9 +297,7 @@ export function DetailSection() {
           modifier={hoverGunStats.force.base - gunStats.force.base}
         />
         <Features gun={selectedGun} className="mt-4" />
-        {debug && (
-          <pre className="text-left break-words whitespace-pre-wrap">{JSON.stringify(selectedGun, null, 2)}</pre>
-        )}
+        <DebugData gun={selectedGun} stats={selectedStats} />
         <div className="h-14" />
       </div>
     </div>

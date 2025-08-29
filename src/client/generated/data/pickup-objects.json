@@ -488,12 +488,6 @@
                 "force": 8,
                 "additionalDamage": [
                   {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 1.75
-                  },
-                  {
                     "type": "dps",
                     "isEstimated": true,
                     "canNotStack": true,
@@ -502,6 +496,7 @@
                   }
                 ],
                 "numberOfBounces": 3,
+                "averageSurvivingBounces": 0.875,
                 "chanceToDieOnBounce": 0.5,
                 "damageMultiplierOnBounce": 1,
                 "hasOilGoop": true,
@@ -540,12 +535,6 @@
                 "force": 8,
                 "additionalDamage": [
                   {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 1.75
-                  },
-                  {
                     "type": "dps",
                     "isEstimated": true,
                     "canNotStack": true,
@@ -554,6 +543,7 @@
                   }
                 ],
                 "numberOfBounces": 3,
+                "averageSurvivingBounces": 0.875,
                 "chanceToDieOnBounce": 0.5,
                 "damageMultiplierOnBounce": 1,
                 "hasOilGoop": true,
@@ -592,12 +582,6 @@
                 "force": 8,
                 "additionalDamage": [
                   {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 1.75
-                  },
-                  {
                     "type": "dps",
                     "isEstimated": true,
                     "canNotStack": true,
@@ -606,6 +590,7 @@
                   }
                 ],
                 "numberOfBounces": 3,
+                "averageSurvivingBounces": 0.875,
                 "chanceToDieOnBounce": 0.5,
                 "damageMultiplierOnBounce": 1,
                 "hasOilGoop": true,
@@ -778,7 +763,8 @@
     "featureFlags": [
       "hasGoop",
       "hasStatusEffects",
-      "hasSpecialAbilities"
+      "hasSpecialAbilities",
+      "hasMultipleDamageSources"
     ],
     "attribute": {
       "trickGun": true
@@ -898,7 +884,8 @@
     "maxAmmo": 100,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -1105,15 +1092,9 @@
                 "speed": 18,
                 "range": 60,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 140
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 10,
+                "averageSurvivingBounces": 10,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "crystal_trail",
@@ -1406,17 +1387,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 30
                   }
                 ],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 3,
                 "explosionForce": 100,
@@ -1441,7 +1417,8 @@
     "maxAmmo": 50,
     "reloadTime": 0.01,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -1541,17 +1518,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 30
                   }
                 ],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 3,
                 "explosionForce": 100,
@@ -1576,7 +1548,8 @@
     "maxAmmo": 50,
     "reloadTime": 0.01,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -2243,6 +2216,7 @@
                 ],
                 "penetration": 1000,
                 "canPenetrateObjects": true,
+                "isBlackhole": true,
                 "animation": {
                   "name": "black_hole_vfx",
                   "fps": 16,
@@ -2277,7 +2251,9 @@
     ],
     "maxAmmo": 30,
     "reloadTime": 1.56,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasMultipleDamageSources"
+    ],
     "attribute": {},
     "colors": [
       "black",
@@ -2398,7 +2374,8 @@
     "maxAmmo": 60,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -2684,15 +2661,9 @@
                 "speed": 20,
                 "range": 1000,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 60
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 6,
+                "averageSurvivingBounces": 6,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 4,
                 "canPenetrateObjects": true,
@@ -2789,15 +2760,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -2834,15 +2799,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -2872,15 +2831,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -2910,15 +2863,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -2948,15 +2895,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -2986,15 +2927,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3024,15 +2959,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3062,15 +2991,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3100,15 +3023,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3138,15 +3055,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3241,15 +3152,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3286,15 +3191,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3324,15 +3223,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3362,15 +3255,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3400,15 +3287,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3438,15 +3319,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3476,15 +3351,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3514,15 +3383,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3552,15 +3415,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3590,15 +3447,9 @@
                 "speed": 26,
                 "range": 12,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -3886,17 +3737,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 15
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 25
                   }
                 ],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 4,
                 "explosionForce": 100,
@@ -3925,7 +3771,8 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasStatModifiers",
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -4017,17 +3864,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 15
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 25
                   }
                 ],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 4,
                 "explosionForce": 100,
@@ -4056,7 +3898,8 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasStatModifiers",
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -4347,15 +4190,9 @@
                 "speed": 200,
                 "range": 60,
                 "force": 16,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "magic_sniper_trail_middle",
@@ -4712,7 +4549,8 @@
     "reloadTime": 1.5,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -4812,7 +4650,8 @@
     "reloadTime": 1.5,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -4879,15 +4718,9 @@
                 "speed": 10,
                 "range": 10,
                 "force": 30,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 50
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 35,
                 "canPenetrateObjects": true,
@@ -5024,15 +4857,9 @@
                 "speed": 500,
                 "range": 1000,
                 "force": 0,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 210
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 6,
+                "averageSurvivingBounces": 6,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 50,
                 "canPenetrateObjects": true,
@@ -5141,17 +4968,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 210
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 35
                   }
                 ],
                 "numberOfBounces": 6,
+                "averageSurvivingBounces": 6,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 50,
                 "canPenetrateObjects": true,
@@ -5182,7 +5004,8 @@
     "maxAmmo": 60,
     "reloadTime": 1,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -5263,7 +5086,7 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
+                    "damageChance": 0.1,
                     "source": "transmogrification",
                     "damage": 1000000
                   }
@@ -5308,7 +5131,7 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
+                    "damageChance": 0.1,
                     "source": "transmogrification",
                     "damage": 1000000
                   }
@@ -5353,7 +5176,7 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
+                    "damageChance": 0.1,
                     "source": "transmogrification",
                     "damage": 1000000
                   }
@@ -5388,7 +5211,8 @@
     "maxAmmo": 150,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasSpecialProjectiles"
+      "hasSpecialProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -5477,7 +5301,8 @@
     "maxAmmo": 200,
     "reloadTime": 0,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -5570,7 +5395,8 @@
     "maxAmmo": 200,
     "reloadTime": 0,
     "featureFlags": [
-      "hasGoop"
+      "hasGoop",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -5975,16 +5801,10 @@
                 "speed": 18,
                 "range": 1000,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 40
-                  }
-                ],
+                "additionalDamage": [],
                 "spawnWeight": 2,
                 "numberOfBounces": 2,
+                "averageSurvivingBounces": 2,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 3,
                 "canPenetrateObjects": true,
@@ -6056,6 +5876,7 @@
       "hasHomingProjectiles",
       "hasStatusEffects",
       "hasGoop",
+      "hasMultipleDamageSources",
       "hasProjectilePool"
     ],
     "attribute": {},
@@ -6168,7 +5989,8 @@
     "featureFlags": [
       "hasExplosiveProjectile",
       "hasStatusEffects",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -6319,7 +6141,8 @@
     "featureFlags": [
       "hasExplosiveProjectile",
       "hasStatusEffects",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -6388,15 +6211,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 120
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 2,
+                "averageSurvivingBounces": 2,
                 "damageMultiplierOnBounce": 2,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -8306,7 +8123,8 @@
     "reloadTime": 0,
     "featureFlags": [
       "hasStatusEffects",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -8877,7 +8695,8 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -9203,7 +9022,8 @@
     "maxAmmo": 600,
     "reloadTime": 1.6,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -9337,7 +9157,8 @@
     "maxAmmo": 600,
     "reloadTime": 1.6,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -9431,15 +9252,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 20
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 2,
+                "averageSurvivingBounces": 2,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": false,
@@ -9534,15 +9349,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 15,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 20
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 2,
+                "averageSurvivingBounces": 2,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": false,
@@ -11460,15 +11269,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 14,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 42
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 2,
+                "averageSurvivingBounces": 2,
                 "damageMultiplierOnBounce": 1.5,
                 "animation": {
                   "name": "black_revolver_projectile_001",
@@ -11813,7 +11616,8 @@
     "maxAmmo": 150,
     "reloadTime": 0.8,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -11924,7 +11728,8 @@
     "maxAmmo": 150,
     "reloadTime": 0.8,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -12584,17 +12389,12 @@
                     "canNotStack": true,
                     "source": "fire",
                     "damage": 4
-                  },
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 3.5
                   }
                 ],
                 "fireChance": 1,
                 "fireDuration": 4,
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "prismatic_spray_projectile_002",
@@ -12617,7 +12417,8 @@
     "maxAmmo": 600,
     "reloadTime": 1.4,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -12699,15 +12500,9 @@
                 "speed": 20,
                 "range": 15,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7.5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -12739,15 +12534,9 @@
                 "speed": 20,
                 "range": 15,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7.5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -12779,15 +12568,9 @@
                 "speed": 20,
                 "range": 15,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7.5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -12819,15 +12602,9 @@
                 "speed": 20,
                 "range": 15,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7.5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -12859,15 +12636,9 @@
                 "speed": 20,
                 "range": 15,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7.5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -12899,15 +12670,9 @@
                 "speed": 20,
                 "range": 15,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7.5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -12939,15 +12704,9 @@
                 "speed": 20,
                 "range": 15,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7.5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -12979,15 +12738,9 @@
                 "speed": 20,
                 "range": 15,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7.5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -14044,7 +13797,8 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasStatusEffects",
-      "hasSpecialAbilities"
+      "hasSpecialAbilities",
+      "hasMultipleDamageSources"
     ],
     "attribute": {
       "trickGun": true
@@ -14595,12 +14349,6 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 32
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 6
                   }
@@ -14609,6 +14357,7 @@
                 "freezeDuration": 10,
                 "freezeAmount": 55,
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 2,
                 "explosionForce": 8,
@@ -14640,7 +14389,8 @@
     "reloadTime": 1.5,
     "featureFlags": [
       "hasStatusEffects",
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -14728,7 +14478,8 @@
     "maxAmmo": 1000,
     "reloadTime": 0.9,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -14805,7 +14556,8 @@
     "maxAmmo": 1000,
     "reloadTime": 0.9,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -16475,17 +16227,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 25
                   }
                 ],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 4,
                 "explosionForce": 100,
@@ -16526,7 +16273,8 @@
     "reloadTime": 1.2,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasSpecialAbilities"
+      "hasSpecialAbilities",
+      "hasMultipleDamageSources"
     ],
     "attribute": {
       "trickGun": true
@@ -16812,17 +16560,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 25
                   }
                 ],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 4,
                 "explosionForce": 100,
@@ -16862,7 +16605,8 @@
     "maxAmmo": 60,
     "reloadTime": 0.78,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -17087,7 +16831,8 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasSpecialAbilities"
+      "hasSpecialAbilities",
+      "hasMultipleDamageSources"
     ],
     "attribute": {
       "trickGun": true
@@ -17182,7 +16927,7 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
+                    "damageChance": 0.1,
                     "source": "transmogrification",
                     "damage": 1000000
                   }
@@ -17212,7 +16957,8 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasSpecialProjectiles"
+      "hasSpecialProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -17302,7 +17048,7 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
+                    "damageChance": 0.2,
                     "source": "transmogrification",
                     "damage": 1000000
                   }
@@ -17333,7 +17079,8 @@
     "maxAmmo": 75,
     "reloadTime": 1.02,
     "featureFlags": [
-      "hasSpecialProjectiles"
+      "hasSpecialProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -17777,15 +17524,9 @@
                 "speed": 16,
                 "range": 50,
                 "force": 20,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 0
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 0,
+                "averageSurvivingBounces": 0,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 1,
                 "canPenetrateObjects": false,
@@ -18046,7 +17787,8 @@
     "maxAmmo": 250,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -19174,7 +18916,8 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -19456,7 +19199,8 @@
     "maxAmmo": 80,
     "reloadTime": 2.5,
     "featureFlags": [
-      "hasGoop"
+      "hasGoop",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -19565,7 +19309,8 @@
     "maxAmmo": 80,
     "reloadTime": 2.5,
     "featureFlags": [
-      "hasGoop"
+      "hasGoop",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -20073,7 +19818,8 @@
     "maxAmmo": 50,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -20191,7 +19937,8 @@
     "maxAmmo": 30,
     "reloadTime": 2,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -20674,7 +20421,8 @@
     "maxAmmo": 1000,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -20802,7 +20550,8 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -20942,7 +20691,8 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -21180,7 +20930,8 @@
     "maxAmmo": 200,
     "reloadTime": 0,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -21269,7 +21020,8 @@
     "maxAmmo": 200,
     "reloadTime": 0,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -22189,7 +21941,8 @@
     "maxAmmo": 250,
     "reloadTime": 1.7,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -22999,15 +22752,9 @@
                 "speed": 40,
                 "range": 35,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 20
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 2,
+                "averageSurvivingBounces": 2,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "Purple_Raygun_Bolt",
@@ -23208,7 +22955,8 @@
     "reloadTime": 0,
     "featureFlags": [
       "hasStatusEffects",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -23647,15 +23395,9 @@
                 "speed": 250,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 500
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 10,
+                "averageSurvivingBounces": 10,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 50,
                 "canPenetrateObjects": true,
@@ -24012,7 +23754,8 @@
     "reloadTime": 1.2,
     "featureFlags": [
       "hasStatModifiers",
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -24178,15 +23921,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -24217,15 +23954,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -24256,15 +23987,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -24295,15 +24020,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -24334,15 +24053,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -24373,15 +24086,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -24694,7 +24401,8 @@
     "reloadTime": 3,
     "featureFlags": [
       "hasStatModifiers",
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -24798,7 +24506,8 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -24875,17 +24584,12 @@
                     "canNotStack": true,
                     "source": "poison",
                     "damage": 3
-                  },
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 0
                   }
                 ],
                 "poisonChance": 0.5,
                 "poisonDuration": 5,
                 "numberOfBounces": 2,
+                "averageSurvivingBounces": 2,
                 "damageMultiplierOnBounce": 0,
                 "animation": {
                   "name": "Poison_Projectile_Anim",
@@ -24911,7 +24615,8 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -25178,15 +24883,9 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 14,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 24
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 2,
+                "averageSurvivingBounces": 2,
                 "damageMultiplierOnBounce": 1.5,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -25299,17 +24998,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 58.946643765000005
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 40
                   }
                 ],
                 "numberOfBounces": 8,
+                "averageSurvivingBounces": 5.12579511,
                 "chanceToDieOnBounce": 0.1,
                 "damageMultiplierOnBounce": 1.15,
                 "penetration": 30,
@@ -25349,7 +25043,8 @@
     "reloadTime": 0.5,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -25444,17 +25139,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 58.946643765000005
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 40
                   }
                 ],
                 "numberOfBounces": 8,
+                "averageSurvivingBounces": 5.12579511,
                 "chanceToDieOnBounce": 0.1,
                 "damageMultiplierOnBounce": 1.15,
                 "penetration": 30,
@@ -25494,7 +25184,8 @@
     "reloadTime": 0.5,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -25952,15 +25643,9 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 21
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 3,
+                "averageSurvivingBounces": 3,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -26061,15 +25746,9 @@
                 "speed": 10,
                 "range": 1000,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 21
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 3,
+                "averageSurvivingBounces": 3,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -26273,15 +25952,9 @@
                 "speed": 35,
                 "range": 1000,
                 "force": 60,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 300
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 6,
+                "averageSurvivingBounces": 6,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 4,
                 "canPenetrateObjects": true,
@@ -26405,15 +26078,9 @@
                 "speed": 10,
                 "range": 1000,
                 "force": 0,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 7500
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 50,
+                "averageSurvivingBounces": 50,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 1000,
                 "canPenetrateObjects": true,
@@ -26631,7 +26298,8 @@
     "featureFlags": [
       "hasStatModifiers",
       "hasStatusEffects",
-      "hasSpecialAbilities"
+      "hasSpecialAbilities",
+      "hasMultipleDamageSources"
     ],
     "attribute": {
       "trickGun": true
@@ -27071,7 +26739,8 @@
     "maxAmmo": 250,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -27751,15 +27420,9 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 8,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 5
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
@@ -27999,17 +27662,11 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 8,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 5
-                  }
-                ],
+                "additionalDamage": [],
                 "charmChance": 0.25,
                 "charmDuration": 10,
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "teddy_bear_projectile_001",
@@ -28070,17 +27727,11 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 8,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 5
-                  }
-                ],
+                "additionalDamage": [],
                 "charmChance": 0.25,
                 "charmDuration": 10,
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "teddy_bear_projectile_001",
@@ -28302,15 +27953,9 @@
                 "speed": 40,
                 "range": 1000,
                 "force": 12,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 50
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 2,
                 "animation": {
                   "name": "rock_projectile_001",
@@ -28411,7 +28056,7 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
+                    "damageChance": 0.25,
                     "source": "transmogrification",
                     "damage": 1000000
                   }
@@ -28439,7 +28084,8 @@
     "maxAmmo": 200,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasSpecialProjectiles"
+      "hasSpecialProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -29862,7 +29508,8 @@
     "maxAmmo": 100,
     "reloadTime": 0.7,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -30069,15 +29716,9 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 36
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 6,
+                "averageSurvivingBounces": 6,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 20,
                 "canPenetrateObjects": true,
@@ -31366,6 +31007,7 @@
     "reloadTime": 1.2,
     "featureFlags": [
       "hasExplosiveProjectile",
+      "hasMultipleDamageSources",
       "hasProjectilePool"
     ],
     "attribute": {},
@@ -31442,15 +31084,9 @@
                 "speed": 30,
                 "range": 60,
                 "force": 11,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "bullet_variant_011",
@@ -33706,17 +33342,12 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 5
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 10
                   }
                 ],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 1.5,
                 "explosionForce": 10,
@@ -33842,7 +33473,8 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -33951,7 +33583,8 @@
     "reloadTime": 1.5,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -34043,15 +33676,9 @@
                 "speed": 40,
                 "range": 60,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 42
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 6,
+                "averageSurvivingBounces": 6,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "yellow_blaster_bolt_001",
@@ -34556,15 +34183,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -34596,15 +34217,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -34636,15 +34251,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -34676,15 +34285,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -34716,15 +34319,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -34756,15 +34353,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -34796,15 +34387,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -34837,15 +34422,9 @@
                 "speed": 30,
                 "range": 1000,
                 "force": 50,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 28
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 12,
                 "canPenetrateObjects": true,
@@ -35727,7 +35306,14 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 10,
-                "additionalDamage": [],
+                "additionalDamage": [
+                  {
+                    "type": "instant",
+                    "isEstimated": true,
+                    "source": "devolver",
+                    "damage": 79
+                  }
+                ],
                 "devolveChance": 0.2,
                 "devolveTarget": "Arrowkin",
                 "animation": {
@@ -35751,7 +35337,8 @@
     "maxAmmo": 100,
     "reloadTime": 0.78,
     "featureFlags": [
-      "hasSpecialProjectiles"
+      "hasSpecialProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -39008,7 +38595,8 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -40947,15 +40535,9 @@
                 "speed": 19,
                 "range": 150,
                 "force": 2.5,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 400
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -41206,7 +40788,8 @@
     "maxAmmo": 50,
     "reloadTime": 2,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -42630,6 +42213,7 @@
     "featureFlags": [
       "hasStatusEffects",
       "hasExplosiveProjectile",
+      "hasMultipleDamageSources",
       "hasProjectilePool"
     ],
     "attribute": {},
@@ -44001,7 +43585,8 @@
     "maxAmmo": 70,
     "reloadTime": 2.2,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -44278,12 +43863,6 @@
                 "additionalDamage": [
                   {
                     "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 20
-                  },
-                  {
-                    "type": "instant",
                     "source": "explosion",
                     "damage": 6
                   }
@@ -44292,6 +43871,7 @@
                 "freezeDuration": 10,
                 "freezeAmount": 70,
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 4,
                 "damageMultiplierOnBounce": 1,
                 "explosionRadius": 2,
                 "explosionForce": 8,
@@ -44333,7 +43913,8 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasStatusEffects",
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -45070,7 +44651,8 @@
     "maxAmmo": 350,
     "reloadTime": 1.5,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -45140,18 +44722,12 @@
                 "speed": 10,
                 "range": 1000,
                 "force": 9,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 147.42360000000002
-                  }
-                ],
+                "additionalDamage": [],
                 "cheeseChance": 1,
                 "cheeseDuration": 10,
                 "cheeseAmount": 50,
                 "numberOfBounces": 5,
+                "averageSurvivingBounces": 3.6855900000000004,
                 "chanceToDieOnBounce": 0.1,
                 "damageMultiplierOnBounce": 1,
                 "isHoming": true,
@@ -45410,15 +44986,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -45449,15 +45019,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -45488,15 +45052,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -45527,15 +45085,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -45566,15 +45118,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -45605,15 +45151,9 @@
                 "speed": 25,
                 "range": 15,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 10.638599999999999
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 4,
+                "averageSurvivingBounces": 1.7730999999999997,
                 "chanceToDieOnBounce": 0.3,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
@@ -45709,17 +45249,11 @@
                 "speed": 20,
                 "range": 100,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 2500
-                  }
-                ],
+                "additionalDamage": [],
                 "stunChance": 1,
                 "stunDuration": 5,
                 "numberOfBounces": 100,
+                "averageSurvivingBounces": 100,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 1,
                 "canPenetrateObjects": true,
@@ -46078,7 +45612,8 @@
     "maxAmmo": 600,
     "reloadTime": 1.6,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -46705,7 +46240,8 @@
     "featureFlags": [
       "hasExplosiveProjectile",
       "hasStatusEffects",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -47008,7 +46544,8 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -47236,15 +46773,9 @@
                 "speed": 25,
                 "range": 1000,
                 "force": 10,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 21
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 3,
+                "averageSurvivingBounces": 3,
                 "damageMultiplierOnBounce": 1,
                 "penetration": 2,
                 "canPenetrateObjects": true,
@@ -47784,7 +47315,8 @@
       "hasInfiniteAmmo",
       "doesntDamageSecretWalls",
       "hasStatModifiers",
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -47923,7 +47455,8 @@
     "reloadTime": 0,
     "featureFlags": [
       "hasStatusEffects",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -48160,15 +47693,9 @@
                 "speed": 26,
                 "range": 1000,
                 "force": 9,
-                "additionalDamage": [
-                  {
-                    "type": "instant",
-                    "isEstimated": true,
-                    "source": "ricochet",
-                    "damage": 8
-                  }
-                ],
+                "additionalDamage": [],
                 "numberOfBounces": 1,
+                "averageSurvivingBounces": 1,
                 "damageMultiplierOnBounce": 1,
                 "animation": {
                   "name": "rubeadyne_projectile_001",
@@ -48629,7 +48156,8 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -49102,7 +48630,8 @@
     "maxAmmo": 150,
     "reloadTime": 0,
     "featureFlags": [
-      "hasStatusEffects"
+      "hasStatusEffects",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "video": "https://youtu.be/NnYbPvpN9hk?t=739",
@@ -49211,7 +48740,8 @@
     "maxAmmo": 100,
     "reloadTime": 2.5,
     "featureFlags": [
-      "hasExplosiveProjectile"
+      "hasExplosiveProjectile",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [

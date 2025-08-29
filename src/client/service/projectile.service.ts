@@ -2,12 +2,12 @@ import z from "zod/v4";
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys, StringKeys } from "@/lib/types";
 import type { TProjectilePerShot } from "../generated/models/gun.model";
-import type { TProjectile, TStatusEffectProp } from "../generated/models/projectile.model";
+import type { TProjectile } from "../generated/models/projectile.model";
 
-type AggregateModeOption = "sum" | "avg";
+type AggregateModeOption = "volley" | "random";
 type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TProjectile[]) => number);
 type NumericAggregateConfig = {
-  [K in NumericKeys<TProjectile>]: [avg?: AggregateMode, sum?: AggregateMode];
+  [K in NumericKeys<TProjectile>]: [random?: AggregateMode, volley?: AggregateMode];
 };
 type BooleanAggregateConfig = {
   [K in BooleanKeys<TProjectile>]: true;
@@ -48,12 +48,15 @@ export class ProjectileService {
     return "long-range";
   }
 
-  static calculateStatusEffectChance(volley: TProjectile[], statusEffectProp: TStatusEffectProp): number {
+  /**
+   * Calculates the chance of a status effect being applied by a volley of projectiles.
+   */
+  static calculateVolleyChance(volley: TProjectile[], chanceGetter: (p: TProjectile) => number | undefined): number {
     let probabilityNone = 1;
 
     // Calculate the probability that none of the projectiles apply the effect
     for (const projectile of volley) {
-      const statusEffectChance = projectile[statusEffectProp] ?? 0;
+      const statusEffectChance = chanceGetter(projectile) ?? 0;
       probabilityNone *= 1 - statusEffectChance;
     }
 
@@ -77,7 +80,7 @@ export class ProjectileService {
   }
 
   static createAggregatedProjectile(projectiles: TProjectilePerShot[]) {
-    const pp = projectiles.map((p) => this.createAggregatedProjectileData(p.projectiles, "avg"));
+    const pp = projectiles.map((p) => this.createAggregatedProjectileData(p.projectiles, "random"));
     if (pp.length === 0) {
       throw new Error("Cannot compute average projectile from an empty list.");
     }
@@ -88,7 +91,7 @@ export class ProjectileService {
       burstCooldownTime: projectiles[0].burstCooldownTime,
       shootStyle: projectiles[0].shootStyle,
       ammoCost: 0,
-      projectiles: [this.createAggregatedProjectileData(pp, "sum")],
+      projectiles: [this.createAggregatedProjectileData(pp, "volley")],
     };
     for (let i = 0; i < projectiles.length; i++) {
       const proj = projectiles[i];
@@ -105,38 +108,55 @@ export class ProjectileService {
     mode: AggregateModeOption,
     sums: Record<string, number>,
   ) {
-    const additionaDmgLookup: Record<string, TProjectile["additionalDamage"][number]> = {};
+    const res: Record<string, TProjectile["additionalDamage"][number]> = {};
 
+    // aggregate additionalDamage.damage
     for (const p of projectiles) {
       for (const d of p.additionalDamage) {
-        if (!additionaDmgLookup[d.source]) {
-          additionaDmgLookup[d.source] = { ...d, damage: 0 };
+        if (!res[d.source]) {
+          res[d.source] = { ...d, damage: 0, damageChance: 0 };
         }
         if (d.canNotStack) {
-          additionaDmgLookup[d.source].damage = Math.max(additionaDmgLookup[d.source].damage, d.damage);
+          res[d.source].damage = Math.max(res[d.source].damage, d.damage);
         } else {
           // other fields should be the same, so we can just sum the damage
-          additionaDmgLookup[d.source].damage += d.damage;
+          res[d.source].damage += d.damage;
         }
+
+        res[d.source].damageChance = d.damageChance ?? 0;
       }
     }
 
-    if (mode === "avg") {
-      for (const key in additionaDmgLookup) {
-        if (additionaDmgLookup[key].canNotStack) continue;
-        additionaDmgLookup[key].damage /= projectiles.length;
+    if (mode === "random") {
+      for (const key in res) {
+        res[key].damageChance = (res[key].damageChance ?? 0) / projectiles.length;
+
+        if (res[key].canNotStack) continue;
+        res[key].damage /= projectiles.length;
+      }
+    } else if (mode === "volley") {
+      for (const key in res) {
+        res[key].damageChance = this.calculateVolleyChance(
+          projectiles,
+          (proj) => proj.additionalDamage.find((ad) => ad.source === key)?.damageChance,
+        );
       }
     }
 
     // post-processing
-    for (const key in additionaDmgLookup) {
+    for (const key in res) {
+      // after aggregation, damageChance is always set to 0 if unset, delete if not an estimation.
+      if (!res[key].damageChance && !res[key].isEstimated) {
+        delete res[key].damageChance;
+        delete res[key].isEstimated;
+      }
       const chance = sums[`${key}Chance`];
       if (chance !== undefined && chance < 1) {
-        additionaDmgLookup[key].isEstimated = true;
+        res[key].isEstimated = true;
       }
     }
 
-    return Object.values(additionaDmgLookup);
+    return Object.values(res);
   }
 
   /**
@@ -161,26 +181,27 @@ export class ProjectileService {
       range: ["avg", "max"],
       force: ["avg", "sum"],
       spawnWeight: [],
-      poisonChance: ["avg", (p) => this.calculateStatusEffectChance(p, "poisonChance")],
+      poisonChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.poisonChance)],
       poisonDuration: ["avg", "avg"],
-      speedChance: ["avg", (p) => this.calculateStatusEffectChance(p, "speedChance")],
+      speedChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.speedChance)],
       speedDuration: ["avg", "avg"],
       speedMultiplier: ["avg", "max"],
-      charmChance: ["avg", (p) => this.calculateStatusEffectChance(p, "charmChance")],
+      charmChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.charmChance)],
       charmDuration: ["avg", "avg"],
-      freezeChance: ["avg", (p) => this.calculateStatusEffectChance(p, "freezeChance")],
+      freezeChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.freezeChance)],
       freezeDuration: ["avg", "avg"],
       freezeAmount: ["avg", "max"],
-      fireChance: ["avg", (p) => this.calculateStatusEffectChance(p, "fireChance")],
+      fireChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.fireChance)],
       fireDuration: ["avg", "avg"],
-      stunChance: ["avg", (p) => this.calculateStatusEffectChance(p, "stunChance")],
+      stunChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.stunChance)],
       stunDuration: ["avg", "avg"],
-      cheeseChance: ["avg", (p) => this.calculateStatusEffectChance(p, "cheeseChance")],
+      cheeseChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.cheeseChance)],
       cheeseDuration: ["avg", "avg"],
       cheeseAmount: ["avg", "max"],
       numberOfBounces: ["avg", "avg"],
       chanceToDieOnBounce: ["avg", "avg"],
       damageMultiplierOnBounce: ["avg", "avg"],
+      averageSurvivingBounces: ["avg", "avg"],
       penetration: ["avg", "max"],
       homingRadius: ["avg", "max"],
       homingAngularVelocity: ["avg", "avg"],
@@ -190,10 +211,10 @@ export class ProjectileService {
       explosionRadius: ["avg", "max"],
       explosionFreezeRadius: ["avg", "max"],
       goopCollisionRadius: ["avg", "max"],
-      chanceToTransmogrify: ["avg", (p) => this.calculateStatusEffectChance(p, "chanceToTransmogrify")],
+      chanceToTransmogrify: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.chanceToTransmogrify)],
       helixAmplitude: ["avg", "max"],
       helixWavelength: ["avg", "max"],
-      devolveChance: ["avg", (p) => this.calculateStatusEffectChance(p, "devolveChance")],
+      devolveChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.devolveChance)],
     };
 
     // All boolean keys that are aggregated with logical-OR.
@@ -209,6 +230,7 @@ export class ProjectileService {
       antimatter: true,
       blankOnCollision: true,
       sticky: true,
+      isBlackhole: true,
     };
     // All string keys that are aggregated into arrays of string
     const sAggregateConfig: StringAggregateConfig = {
@@ -225,16 +247,16 @@ export class ProjectileService {
     const sums: Record<string, number> = {};
     Object.keys(nAggregateConfig).forEach((k) => (sums[k] = 0));
 
-    const strSums: Record<string, string[]> = {};
-    Object.keys(sAggregateConfig).forEach((k) => (strSums[k] = []));
+    const strSums: Record<string, Set<string>> = {};
+    Object.keys(sAggregateConfig).forEach((k) => (strSums[k] = new Set()));
 
     const hasTrue: Record<string, boolean> = {};
     Object.keys(bAggregateConfig).forEach((k) => (hasTrue[k] = false));
 
     for (const p of projectiles) {
-      for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
+      for (const [k, [random, volley]] of Object.entries(nAggregateConfig)) {
         const key = k as NumericKeys<TProjectile>;
-        const m = mode === "avg" ? avg : sum;
+        const m = mode === "random" ? random : volley;
 
         if (m === "max") {
           sums[key] = Math.max(sums[key], p[key] ?? 0);
@@ -253,12 +275,12 @@ export class ProjectileService {
         if (!sAggregateConfig[k as StringKeys<TProjectile>]) return;
         const key = k as StringKeys<TProjectile>;
         const v = p[key];
-        if (v) strSums[key].push(v);
+        if (v) strSums[key].add(v);
       });
     }
     for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
       const key = k as NumericKeys<TProjectile>;
-      const m = mode === "avg" ? avg : sum;
+      const m = mode === "random" ? avg : sum;
 
       if (m === "avg") {
         sums[key] /= projectiles.length;
@@ -276,7 +298,9 @@ export class ProjectileService {
 
     Object.keys(nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));
     Object.keys(bAggregateConfig).forEach((k) => (final[k as BooleanKeys<TProjectile>] = hasTrue[k]));
-    Object.keys(sAggregateConfig).forEach((k) => (final[k as StringKeys<TProjectile>] = strSums[k].join(", ")));
+    Object.keys(sAggregateConfig).forEach(
+      (k) => (final[k as StringKeys<TProjectile>] = Array.from(strSums[k]).join(", ")),
+    );
 
     return final as TProjectile;
   }

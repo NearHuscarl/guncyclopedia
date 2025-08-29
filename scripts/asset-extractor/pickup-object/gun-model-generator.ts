@@ -78,30 +78,19 @@ export class GunModelGenerator {
   /**
    * https://chatgpt.com/share/688f83f3-92e0-8010-ae87-780c262d6050
    */
-  private _computeMaxRicochetDamage(
-    baseDamage: number,
-    numberOfBounces: number,
-    chanceToDieOnBounce: number,
-    damageMultiplierOnBounce: number,
-  ): number {
+  private _computeAverageBounces(numberOfBounces: number, chanceToDieOnBounce: number): number {
     const survivalChance = 1 - chanceToDieOnBounce;
-    const finalDamage = baseDamage * damageMultiplierOnBounce;
-
-    // Special case: if it always survives, just return N * bounce damage
     if (survivalChance === 1) {
-      return numberOfBounces * finalDamage;
+      return numberOfBounces;
     }
 
     const s = survivalChance;
     const n = numberOfBounces;
 
-    // Step 1: compute expected number of successful bounces using geometric sum
+    // compute expected number of successful bounces using geometric sum
     const expectedBounces = (s * (1 - Math.pow(s, n))) / (1 - s);
 
-    // Step 2: each bounce deals partial damage, so apply multiplier
-    const expectedBounceDamage = expectedBounces * finalDamage;
-
-    return expectedBounceDamage;
+    return expectedBounces;
   }
 
   private _getProjectileModules(
@@ -214,16 +203,10 @@ export class GunModelGenerator {
       if ((projDto.bounceProjModifier.chanceToDieOnBounce ?? 0) > 0)
         proj.chanceToDieOnBounce = projDto.bounceProjModifier.chanceToDieOnBounce;
 
-      proj.additionalDamage.push({
-        source: "ricochet",
-        isEstimated: true,
-        damage: this._computeMaxRicochetDamage(
-          proj.damage,
+      proj.averageSurvivingBounces = this._computeAverageBounces(
           projDto.bounceProjModifier.numberOfBounces,
           projDto.bounceProjModifier.chanceToDieOnBounce ?? 0,
-          projDto.bounceProjModifier.damageMultiplierOnBounce,
-        ),
-      });
+      );
     }
     if (projDto.pierceProjModifier) {
       proj.penetration = projDto.pierceProjModifier.penetration;
@@ -247,6 +230,7 @@ export class GunModelGenerator {
       if (explosionData.doDamage) {
         proj.explosionRadius = explosionData.damageRadius;
         proj.additionalDamage.push({
+          type: "instant",
           source: "explosion",
           damage: explosionData.damage,
         });
@@ -317,6 +301,7 @@ export class GunModelGenerator {
       proj.damageAllEnemies = true;
     }
     if (projDto.blackHoleDoer) {
+      proj.isBlackhole = true;
       proj.additionalDamage.push({
         type: "dps",
         source: "blackhole",
@@ -360,8 +345,9 @@ export class GunModelGenerator {
       proj.transmogrifyTarget = this._enemyRepo.getEnemyName(projDto.projectile.TransmogrifyTargetGuids[0]);
 
       proj.additionalDamage.push({
+        type: "instant",
         source: "transmogrification",
-        isEstimated: true,
+        damageChance: projDto.projectile.ChanceToTransmogrify,
         damage: 1e6,
       });
       this._featureFlags.add("hasSpecialProjectiles");
@@ -377,6 +363,16 @@ export class GunModelGenerator {
     if (projDto.devolverModifier) {
       proj.devolveChance = projDto.devolverModifier.chanceToDevolve;
       proj.devolveTarget = this._enemyRepo.getEnemyName(projDto.devolverModifier.DevolverHierarchy[0].tierGuids[0]);
+      const arrowKinHealth = 15;
+      const gunNutHealth = 100;
+      proj.additionalDamage.push({
+        type: "instant",
+        source: "devolver",
+        isEstimated: true,
+        // ArrowKin health is 15, a lot of enemies have at least the same base health and only a few enemies is below that.
+        // The strongest common enemy is Gun Nut (100)
+        damage: gunNutHealth - arrowKinHealth - projDto.projectile.baseData.damage,
+      });
       this._featureFlags.add("hasSpecialProjectiles");
     }
 
@@ -823,6 +819,9 @@ export class GunModelGenerator {
       for (const projectilePerShot of modes.projectiles) {
         const projectileIds = new Set<string>();
         for (const projectile of projectilePerShot.projectiles) {
+          if (projectile.additionalDamage.length > 0) {
+            this._featureFlags.add("hasMultipleDamageSources");
+          }
           projectileIds.add(projectile.id);
         }
         if (projectileIds.size > 1) {

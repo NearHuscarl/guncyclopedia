@@ -5,7 +5,6 @@ import {
   Flame,
   Gamepad2,
   Heart,
-  OctagonAlert,
   Receipt,
   Skull,
   Snail,
@@ -62,6 +61,7 @@ import { AntimatterProjectile } from "@/components/icons/antimatter-projectile";
 import { BlankOnCollision } from "@/components/icons/blank-on-collision";
 import { Sticky } from "@/components/icons/sticky";
 import { Devolver } from "@/components/icons/devolver";
+import { IgnoreDamageCap } from "@/components/icons/ignore-damage-cap";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -295,7 +295,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
       {createStatusEffectAttribute(
         projectileData.fireChance,
         "text-red-600",
-        <Flame size={20} color={red600} />,
+        <Flame size={18} color={red600} />,
         <>
           <strong>Fire</strong>
           <br />
@@ -519,7 +519,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
-              <OctagonAlert size={18} className="stroke-yellow-500" />
+              <IgnoreDamageCap size={20} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
