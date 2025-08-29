@@ -307,6 +307,7 @@ export class GunModelGenerator {
         source: "blackhole",
         damage: projDto.blackHoleDoer.damageToEnemiesPerSecond,
       });
+      this._featureFlags.add("hasSpecialProjectiles");
     }
     if (projDto.mindControlProjModifier) {
       proj.mindControl = true;

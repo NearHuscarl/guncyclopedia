@@ -62,6 +62,7 @@ import { BlankOnCollision } from "@/components/icons/blank-on-collision";
 import { Sticky } from "@/components/icons/sticky";
 import { Devolver } from "@/components/icons/devolver";
 import { IgnoreDamageCap } from "@/components/icons/ignore-damage-cap";
+import { Blackhole } from "@/components/icons/blackhole";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -583,6 +584,20 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <br />
             Projectile has <strong>{toPercent(projectileData.devolveChance || 0)}</strong> chance to devolve an enemy to{" "}
             <strong>{startCase(projectileData.devolveTarget)}</strong>.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectileData.isBlackhole && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              <Blackhole size={18} className={"[&_path]:fill-purple-500!"} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Blackhole Projectile</strong>
+            <br />
+            Attracts enemies and bullets towards it while dealing continuous damage to the enemies at the center.
           </TooltipContent>
         </Tooltip>
       )}
