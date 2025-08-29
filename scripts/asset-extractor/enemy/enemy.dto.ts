@@ -1,7 +1,7 @@
 import z from "zod/v4";
 import { BinaryOption } from "../utils/schema.ts";
 import { MonoBehaviour } from "../asset/asset.dto.ts";
-import { RootGameObject } from "../asset/component.dto.ts";
+import { EncounterTrackable, RootGameObject } from "../asset/component.dto.ts";
 
 export const AiActorData = MonoBehaviour.extend({
   ActorName: z.string(),
@@ -13,6 +13,7 @@ export const AiActorData = MonoBehaviour.extend({
 export const EnemyDto = z.object({
   rootGameObject: RootGameObject,
   aiActor: AiActorData,
+  encounterTrackable: EncounterTrackable.optional(),
 });
 
 export type TEnemyDto = z.input<typeof EnemyDto>;

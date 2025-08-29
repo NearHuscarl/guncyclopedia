@@ -48,11 +48,11 @@ export class ProjectileService {
     return "long-range";
   }
 
-  static calculateStatusEffectChance(projectiles: TProjectile[], statusEffectProp: TStatusEffectProp): number {
+  static calculateStatusEffectChance(volley: TProjectile[], statusEffectProp: TStatusEffectProp): number {
     let probabilityNone = 1;
 
     // Calculate the probability that none of the projectiles apply the effect
-    for (const projectile of projectiles) {
+    for (const projectile of volley) {
       const statusEffectChance = projectile[statusEffectProp] ?? 0;
       probabilityNone *= 1 - statusEffectChance;
     }
@@ -193,6 +193,7 @@ export class ProjectileService {
       chanceToTransmogrify: ["avg", (p) => this.calculateStatusEffectChance(p, "chanceToTransmogrify")],
       helixAmplitude: ["avg", "max"],
       helixWavelength: ["avg", "max"],
+      devolveChance: ["avg", (p) => this.calculateStatusEffectChance(p, "devolveChance")],
     };
 
     // All boolean keys that are aggregated with logical-OR.
@@ -213,6 +214,7 @@ export class ProjectileService {
     const sAggregateConfig: StringAggregateConfig = {
       id: false,
       transmogrifyTarget: true,
+      devolveTarget: true,
     };
     // @ts-expect-error alert linter to update new properties
     const _aAggregateConfig: ArrayAggregateConfig = {

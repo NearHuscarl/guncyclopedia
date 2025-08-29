@@ -2,7 +2,6 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import chalk from "chalk";
 import { EncounterTrackableRepository } from "../encouter-trackable/encounter-trackable.repository.ts";
-import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { DATA_PATH } from "../constants.ts";
 import { GunModelGenerator } from "./gun-model-generator.ts";
@@ -18,7 +17,6 @@ import { EnemyRepository } from "../enemy/enemy.repository.ts";
 import type { TPickupObject } from "./client/models/pickup-object.model.ts";
 
 type TCreatePickupObjectsInput = {
-  translationRepo: TranslationRepository;
   gunRepo: GunRepository;
   encounterTrackableRepo: EncounterTrackableRepository;
   projectileRepo: ProjectileRepository;
@@ -32,7 +30,6 @@ type TCreatePickupObjectsInput = {
 
 export async function createPickupObjects(options: TCreatePickupObjectsInput) {
   const {
-    translationRepo,
     gunRepo,
     encounterTrackableRepo,
     projectileRepo,
@@ -48,14 +45,13 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
     gunRepo,
     projectileRepo,
     volleyRepo,
-    translationRepo,
     assetService,
     spriteService,
     spriteAnimatorRepo,
     playerService,
     enemyRepo,
   });
-  const itemModelGenerator = new ItemModelGenerator({ translationRepo });
+  const itemModelGenerator = new ItemModelGenerator({});
 
   console.log(chalk.green("Saving spritesheets from exported asset..."));
   const start = performance.now();
@@ -76,7 +72,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
       const gun = await gunModelGenerator.generate(entry);
       if (gun) pickupObjects.push(gun);
     } else {
-      const name = translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? "");
+      const name = entry.journalData.PrimaryDisplayName ?? "";
       console.warn(chalk.yellow(`Unknown pickup object type for ID ${entry.pickupObjectId}, name: ${name}`));
     }
   }

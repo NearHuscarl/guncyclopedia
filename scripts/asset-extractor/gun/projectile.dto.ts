@@ -130,6 +130,25 @@ const StickyGrenadeBuffData = MonoBehaviour.extend({
   explosionData: ExplosiveModifierData.shape.explosionData,
 });
 
+const DevolverModifierData = MonoBehaviour.extend({
+  chanceToDevolve: z.number(),
+  /**
+   * `DevolverHierarchy` is an underused feature that allows for more complex projectile behaviors.
+   * When a projectile hits the enemy, it has a chance to devolve into a weaker tier.
+   *
+   * Variants in the same tier is defined in `DevolverHierarchy[number].tierGuids`.
+   *
+   * Right now, there is only a single enemy in 1 tier to devolve to so this feature is not exactly useful.
+   */
+  DevolverHierarchy: z
+    .array(
+      z.object({
+        tierGuids: z.array(z.string()).max(1),
+      }),
+    )
+    .max(1),
+});
+
 const ProjectileData = MonoBehaviour.extend({
   ignoreDamageCaps: BinaryOption,
   baseData: z.object({
@@ -206,6 +225,7 @@ export const ProjectileDto = z.object({
   mindControlProjModifier: MindControlProjectileModifierData.optional(),
   matterAntimatterProjModifier: MatterAntimatterProjectileModifierData.optional(),
   stickyGrenadeBuff: StickyGrenadeBuffData.optional(),
+  devolverModifier: DevolverModifierData.optional(),
 });
 
 export type TProjectileDto = z.input<typeof ProjectileDto>;
@@ -225,3 +245,4 @@ export type TBlackHoleDoerData = z.input<typeof BlackHoleDoerData>;
 export type TMindControlProjectileModifierData = z.input<typeof MindControlProjectileModifierData>;
 export type TMatterAntimatterProjectileModifierData = z.input<typeof MatterAntimatterProjectileModifierData>;
 export type TStickyGrenadeBuffData = z.input<typeof StickyGrenadeBuffData>;
+export type TDevolverModifierData = z.input<typeof DevolverModifierData>;

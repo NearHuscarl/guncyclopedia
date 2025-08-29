@@ -1,7 +1,7 @@
 import z from "zod/v4";
 import { AssetExternalReference, AssetExternalReferences, BinaryOption } from "../utils/schema.ts";
 import { StatModifierSchema } from "../player/player.dto.ts";
-import { SpriteAnimatorData, SpriteData } from "../asset/component.dto.ts";
+import { EncounterTrackable, SpriteAnimatorData, SpriteData } from "../asset/component.dto.ts";
 import { GameActorHealthEffect } from "./projectile.dto.ts";
 
 export const VFXPoolType = {
@@ -172,12 +172,6 @@ const AuraOnReloadModifierData = z.object({
   IgniteEffect: GameActorHealthEffect,
 });
 
-const EncounterTrackable = z.object({
-  m_journalData: z.object({
-    AmmonomiconSprite: z.string().nullable(),
-  }),
-});
-
 export const GunDto = z.object({
   gun: GunData,
   sprite: SpriteData,
@@ -194,6 +188,4 @@ export type TGunData = z.input<typeof GunData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
 export type TGunExtraSettingSynergyProcessorData = z.input<typeof GunExtraSettingSynergyProcessorData>;
 export type TAuraOnReloadModifierData = z.input<typeof AuraOnReloadModifierData>;
-export type TEncounterTrackableData = z.input<typeof EncounterTrackable>;
-
 export type TProjectileModule = z.input<typeof ProjectileModule>;

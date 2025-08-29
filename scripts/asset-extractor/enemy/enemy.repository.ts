@@ -6,6 +6,7 @@ import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
 import { EnemyDto, type TAiActorData, type TEnemyDto } from "./enemy.dto.ts";
+import { TranslationService } from "../translation/translation.service.ts";
 
 export class EnemyRepository {
   private static readonly _SEARCH_DIRECTORIES = ["assets/ExportedProject/Assets/data/enemies"].map((dir) =>
@@ -14,15 +15,25 @@ export class EnemyRepository {
 
   private _enemies = new Map<string, TEnemyDto>();
   private readonly _assetService: AssetService;
+  private readonly _translationService: TranslationService;
   private readonly _searchDirectories: string[];
 
-  private constructor(assetService: AssetService, searchDirectories?: string[]) {
+  private constructor(
+    assetService: AssetService,
+    _translationService: TranslationService,
+    searchDirectories?: string[],
+  ) {
     this._assetService = assetService;
+    this._translationService = _translationService;
     this._searchDirectories = searchDirectories || EnemyRepository._SEARCH_DIRECTORIES;
   }
 
-  static async create(_assetService: AssetService, searchDirectories?: string[]) {
-    const instance = new EnemyRepository(_assetService, searchDirectories);
+  static async create(
+    _assetService: AssetService,
+    _translationService: TranslationService,
+    searchDirectories?: string[],
+  ) {
+    const instance = new EnemyRepository(_assetService, _translationService, searchDirectories);
     return await instance.load();
   }
 
@@ -58,6 +69,11 @@ export class EnemyRepository {
           res.rootGameObject = component;
         } else if (this._isAiActor(component)) {
           res.aiActor = component;
+        } else if (this._assetService.isEncounterTrackable(component)) {
+          res.encounterTrackable = component;
+          res.encounterTrackable.m_journalData = this._translationService.getTranslatedJournalData(
+            component.m_journalData,
+          );
         }
       }
 
@@ -103,5 +119,10 @@ export class EnemyRepository {
 
   getEnemy(enemyGuid: string) {
     return this._enemies.get(enemyGuid);
+  }
+
+  getEnemyName(enemyGuid: string) {
+    const enemy = this.getEnemy(enemyGuid);
+    return enemy?.encounterTrackable?.m_journalData.PrimaryDisplayName ?? enemy?.rootGameObject.m_Name ?? "Unknown";
   }
 }

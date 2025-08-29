@@ -9,7 +9,6 @@ import cloneDeep from "lodash/cloneDeep.js";
 import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
 import { videos } from "../gun/gun.meta.ts";
 import { GunForStorage } from "./client/models/gun.model.ts";
-import { TranslationRepository } from "../translation/translation.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { ProjectileRepository } from "../gun/projectile.repository.ts";
 import { StatModifier } from "../player/player.dto.ts";
@@ -22,7 +21,7 @@ import { basicColors } from "./client/models/color.model.ts";
 import { ColorService } from "../color/color.service.ts";
 import { PlayerService } from "../player/player.service.ts";
 import { EnemyRepository } from "../enemy/enemy.repository.ts";
-import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
+import type { TEncounterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
 import type { TGun, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
 import type { TProjectile } from "./client/models/projectile.model.ts";
@@ -43,7 +42,6 @@ type GunModelGeneratorCtor = {
   gunRepo: GunRepository;
   projectileRepo: ProjectileRepository;
   volleyRepo: VolleyRepository;
-  translationRepo: TranslationRepository;
   assetService: AssetService;
   spriteService: SpriteService;
   spriteAnimatorRepo: SpriteAnimatorRepository;
@@ -55,7 +53,6 @@ export class GunModelGenerator {
   private readonly _gunRepo: GunRepository;
   private readonly _projectileRepo: ProjectileRepository;
   private readonly _volleyRepo: VolleyRepository;
-  private readonly _translationRepo: TranslationRepository;
   private readonly _assetService: AssetService;
   private readonly _spriteService: SpriteService;
   private readonly _spriteAnimatorRepo: SpriteAnimatorRepository;
@@ -68,7 +65,6 @@ export class GunModelGenerator {
     this._gunRepo = input.gunRepo;
     this._projectileRepo = input.projectileRepo;
     this._volleyRepo = input.volleyRepo;
-    this._translationRepo = input.translationRepo;
     this._assetService = input.assetService;
     this._spriteService = input.spriteService;
     this._spriteAnimatorRepo = input.spriteAnimatorRepo;
@@ -360,17 +356,15 @@ export class GunModelGenerator {
     }
 
     if (projDto.projectile.CanTransmogrify && projDto.projectile.TransmogrifyTargetGuids.length > 0) {
-      this._featureFlags.add("hasSpecialProjectiles");
       proj.chanceToTransmogrify = projDto.projectile.ChanceToTransmogrify;
-      proj.transmogrifyTarget = this._enemyRepo.getEnemy(
-        projDto.projectile.TransmogrifyTargetGuids[0],
-      )!.rootGameObject.m_Name;
+      proj.transmogrifyTarget = this._enemyRepo.getEnemyName(projDto.projectile.TransmogrifyTargetGuids[0]);
 
       proj.additionalDamage.push({
         source: "transmogrification",
         isEstimated: true,
         damage: 1e6,
       });
+      this._featureFlags.add("hasSpecialProjectiles");
     }
 
     if (this._projectileRepo.isHelixProjectileData(projDto.projectile)) {
@@ -379,6 +373,11 @@ export class GunModelGenerator {
     }
     if (projDto.matterAntimatterProjModifier?.isAntimatter) {
       proj.antimatter = true;
+    }
+    if (projDto.devolverModifier) {
+      proj.devolveChance = projDto.devolverModifier.chanceToDevolve;
+      proj.devolveTarget = this._enemyRepo.getEnemyName(projDto.devolverModifier.DevolverHierarchy[0].tierGuids[0]);
+      this._featureFlags.add("hasSpecialProjectiles");
     }
 
     if (proj.isHoming) {
@@ -837,14 +836,14 @@ export class GunModelGenerator {
     return gun;
   }
 
-  async generate(entry: TEnconterDatabase["Entries"][number]) {
+  async generate(entry: TEncounterDatabase["Entries"][number]) {
     try {
       this._featureFlags.clear();
 
       const texts = {
-        name: this._translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? ""),
-        quote: this._translationRepo.getItemTranslation(entry.journalData.NotificationPanelDescription ?? ""),
-        description: this._translationRepo.getItemTranslation(entry.journalData.AmmonomiconFullEntry ?? ""),
+        name: entry.journalData.PrimaryDisplayName ?? "",
+        quote: entry.journalData.NotificationPanelDescription ?? "",
+        description: entry.journalData.AmmonomiconFullEntry ?? "",
       };
 
       // Remove that big-ass hammer

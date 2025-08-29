@@ -1,4 +1,5 @@
 import { TranslationRepository } from "./translation/translation.repository.ts";
+import { TranslationService } from "./translation/translation.service.ts";
 import { createPickupObjects } from "./pickup-object/pickup-objects.ts";
 import { EncounterTrackableRepository } from "./encouter-trackable/encounter-trackable.repository.ts";
 import { AssetService } from "./asset/asset-service.ts";
@@ -15,18 +16,18 @@ import { copyClientCode } from "./pickup-object/copy-client-code.ts";
 async function extractAssets() {
   const assetService = await AssetService.create();
   const translationRepo = await TranslationRepository.create();
+  const translationService = new TranslationService(translationRepo);
   const projectileRepo = await ProjectileRepository.create(assetService);
   const volleyRepo = await VolleyRepository.create(assetService);
-  const gunRepo = await GunRepository.create(assetService);
+  const gunRepo = await GunRepository.create(assetService, translationService);
   const playerService = await PlayerService.create(assetService);
-  const enemyRepo = await EnemyRepository.create(assetService);
+  const enemyRepo = await EnemyRepository.create(assetService, translationService);
   const spriteRepo = await SpriteRepository.create(assetService);
   const spriteService = await SpriteService.create(spriteRepo);
   const spriteAnimatorRepo = await SpriteAnimatorRepository.create(assetService, spriteRepo);
-  const encounterTrackableRepo = await EncounterTrackableRepository.create(assetService);
+  const encounterTrackableRepo = await EncounterTrackableRepository.create(assetService, translationService);
 
   await createPickupObjects({
-    translationRepo,
     gunRepo,
     encounterTrackableRepo,
     projectileRepo,

@@ -14,6 +14,7 @@ import {
   Wind,
 } from "lucide-react";
 import clsx from "clsx";
+import startCase from "lodash/startCase";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NumericValue } from "./numeric-value";
 import { formatNumber, toPercent } from "@/lib/lang";
@@ -60,6 +61,7 @@ import { WaveProjectiles } from "@/components/icons/wave-projectiles";
 import { AntimatterProjectile } from "@/components/icons/antimatter-projectile";
 import { BlankOnCollision } from "@/components/icons/blank-on-collision";
 import { Sticky } from "@/components/icons/sticky";
+import { Devolver } from "@/components/icons/devolver";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -493,7 +495,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <TooltipContent className="text-wrap w-72">
             <strong>Sticky Grenade</strong>
             <br />
-            Projectile sticks to the enemy. It creates an explosion upon reloading or switching weapons.
+            Projectile sticks to the enemy. It explodes upon reloading or switching weapons.
           </TooltipContent>
         </Tooltip>
       )}
@@ -566,6 +568,21 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <br />
             Has <strong>{toPercent(projectileData.chanceToTransmogrify!)}</strong> chance to transmogrify enemies into{" "}
             <strong>{projectileData.transmogrifyTarget}</strong>
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(projectileData.devolveChance || undefined) && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <Devolver />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-72">
+            <strong>Devolve Projectile</strong>
+            <br />
+            Projectile has <strong>{toPercent(projectileData.devolveChance || 0)}</strong> chance to devolve an enemy to{" "}
+            <strong>{startCase(projectileData.devolveTarget)}</strong>.
           </TooltipContent>
         </Tooltip>
       )}

@@ -11,7 +11,7 @@ import { AssetMeta, MonoBehaviour } from "./asset.dto.ts";
 import { RootGameObject } from "./component.dto.ts";
 import type { TAssetMeta, TUnityAsset, Guid, TMonoBehaviour } from "./asset.dto.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
-import type { TRootGameObject, TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
+import type { TEncounterTrackableData, TRootGameObject, TSpriteAnimatorData, TSpriteData } from "./component.dto.ts";
 import type { TYamlOptions } from "../utils/yaml.ts";
 
 export class AssetService {
@@ -79,6 +79,9 @@ export class AssetService {
   }
   isSpriteAnimatorData(obj: unknown): obj is TSpriteAnimatorData {
     return this.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteAnimator.cs.meta");
+  }
+  isEncounterTrackable(obj: unknown): obj is TEncounterTrackableData {
+    return this.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("EncounterTrackable.cs.meta");
   }
 
   getPathByGuid(guid: string): string | undefined {

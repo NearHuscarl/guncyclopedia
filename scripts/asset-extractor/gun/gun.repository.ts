@@ -9,12 +9,12 @@ import { restoreCache, saveCache } from "../utils/cache.ts";
 import { performance } from "node:perf_hooks";
 import type {
   TAuraOnReloadModifierData,
-  TEncounterTrackableData,
   TGunData,
   TGunDto,
   TGunExtraSettingSynergyProcessorData,
   TPredatorGunControllerData,
 } from "./gun.dto.ts";
+import { TranslationService } from "../translation/translation.service.ts";
 
 export class GunRepository {
   private static readonly _GUN_DIRECTORIES = [
@@ -24,15 +24,17 @@ export class GunRepository {
 
   private _guns = new Map<number, TGunDto>();
   private readonly _assetService: AssetService;
+  private readonly _translationService: TranslationService;
   private readonly _gunDirectories: string[];
 
-  private constructor(assetService: AssetService, gunDirectories?: string[]) {
+  private constructor(assetService: AssetService, translationService: TranslationService, gunDirectories?: string[]) {
     this._assetService = assetService;
+    this._translationService = translationService;
     this._gunDirectories = gunDirectories || GunRepository._GUN_DIRECTORIES;
   }
 
-  static async create(_assetService: AssetService, gunDirectories?: string[]) {
-    const instance = new GunRepository(_assetService, gunDirectories);
+  static async create(_assetService: AssetService, _translationService: TranslationService, gunDirectories?: string[]) {
+    const instance = new GunRepository(_assetService, _translationService, gunDirectories);
     return await instance.load();
   }
 
@@ -58,9 +60,6 @@ export class GunRepository {
     return (
       this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("AuraOnReloadModifier.cs.meta")
     );
-  }
-  private _isEncounterTrackable(obj: unknown): obj is TEncounterTrackableData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("EncounterTrackable.cs.meta");
   }
 
   private async _getAllRefabFilesInGunFolders() {
@@ -103,8 +102,11 @@ export class GunRepository {
           res.gunExtraSettingSynergyProcessor = component;
         } else if (this._isAuraOnReloadModifierData(component)) {
           res.auraOnReloadModifier = component;
-        } else if (this._isEncounterTrackable(component)) {
+        } else if (this._assetService.isEncounterTrackable(component)) {
           res.encounterTrackable = component;
+          res.encounterTrackable.m_journalData = this._translationService.getTranslatedJournalData(
+            component.m_journalData,
+          );
         }
       }
 

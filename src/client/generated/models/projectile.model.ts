@@ -10,7 +10,8 @@ export type TStatusEffectProp =
   | "fireChance"
   | "stunChance"
   | "cheeseChance"
-  | "chanceToTransmogrify";
+  | "chanceToTransmogrify"
+  | "devolveChance";
 
 export const Projectile = z.object({
   /**
@@ -143,6 +144,12 @@ export const Projectile = z.object({
    * https://enterthegungeon.fandom.com/wiki/Sticky_Crossbow
    */
   sticky: z.boolean().optional(),
+
+  /**
+   * https://enterthegungeon.fandom.com/wiki/Devolver
+   */
+  devolveChance: z.number().optional(),
+  devolveTarget: z.string().optional(),
 
   /**
    * Moves in a wave pattern: https://enterthegungeon.fandom.com/wiki/Helix

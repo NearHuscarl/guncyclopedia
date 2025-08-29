@@ -24,6 +24,7 @@ import type {
   THelixProjectileData,
   TMatterAntimatterProjectileModifierData,
   TStickyGrenadeBuffData,
+  TDevolverModifierData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -107,6 +108,9 @@ export class ProjectileRepository {
   private _isStickyGrenadeBuffData(obj: unknown): obj is TStickyGrenadeBuffData {
     return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("StickyGrenadeBuff.cs.meta");
   }
+  private _isDevolverModifierData(obj: unknown): obj is TDevolverModifierData {
+    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("DevolverModifier.cs.meta");
+  }
 
   private async _getAllProjectileRefabFiles() {
     const res: string[] = [];
@@ -174,6 +178,8 @@ export class ProjectileRepository {
           res.matterAntimatterProjModifier = component;
         } else if (this._isStickyGrenadeBuffData(component)) {
           res.stickyGrenadeBuff = component;
+        } else if (this._isDevolverModifierData(component)) {
+          res.devolverModifier = component;
         }
       }
 

@@ -1,5 +1,6 @@
 import z from "zod/v4";
 import { BinaryOption } from "../utils/schema.ts";
+import { JournalData } from "../asset/component.dto.ts";
 
 export const EncounterDatabase = z.object({
   Entries: z.array(
@@ -11,14 +12,9 @@ export const EncounterDatabase = z.object({
       shootStyleInt: z.number(),
       doesntDamageSecretWalls: z.number(),
       isInfiniteAmmoGun: z.number(),
-      journalData: z.object({
-        PrimaryDisplayName: z.string().nullable(),
-        NotificationPanelDescription: z.string().nullable(),
-        AmmonomiconFullEntry: z.string().nullable(),
-        IsEnemy: BinaryOption,
-      }),
-    })
+      journalData: JournalData,
+    }),
   ),
 });
 
-export type TEnconterDatabase = z.input<typeof EncounterDatabase>;
+export type TEncounterDatabase = z.input<typeof EncounterDatabase>;

@@ -6,10 +6,10 @@ import { Translation } from "./translation.model.ts";
 
 export class TranslationRepository {
   private _translationLookup = new Map<string, string>();
-  private readonly _BASE_ENGLISH_PATH = path.join(
-    ASSET_EXTRACTOR_ROOT,
-    "assets/ExportedProject/Assets/resourcesbundle/strings/english_items"
-  );
+  private readonly _SEARCH_FILES = [
+    "assets/ExportedProject/Assets/resourcesbundle/strings/english_items/items.txt",
+    "assets/ExportedProject/Assets/resourcesbundle/strings/english_items/enemies.txt",
+  ].map((file) => path.join(ASSET_EXTRACTOR_ROOT, file));
 
   private constructor() {}
 
@@ -43,12 +43,21 @@ export class TranslationRepository {
 
   async load() {
     console.log(chalk.green("Loading item translations..."));
-    const translationText = await readFile(path.join(this._BASE_ENGLISH_PATH, "items.txt"), "utf-8");
-    const res = this._extractTranslations(translationText);
-    this._translationLookup = new Map(Object.entries(Translation.parse(res)));
+
+    for (const file of this._SEARCH_FILES) {
+      const translationText = await readFile(file, "utf-8");
+      const res = this._extractTranslations(translationText);
+
+      for (const [key, value] of Object.entries(Translation.parse(res))) {
+        if (this._translationLookup.has(key)) {
+          throw new Error(`Duplicate translation key ${chalk.green(`"${key}"`)} found in ${file}`);
+        }
+        this._translationLookup.set(key, value);
+      }
+    }
 
     console.log(
-      `Translation loaded. There are ${chalk.yellow(this._translationLookup.size)} entries for the item translations.`
+      `Translation loaded. There are ${chalk.yellow(this._translationLookup.size)} entries for the item translations.`,
     );
 
     return this;

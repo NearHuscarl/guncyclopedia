@@ -2,30 +2,24 @@ import chalk from "chalk";
 import z from "zod/v4";
 import { Item } from "./client/models/item.model.ts";
 import type { TItem } from "./client/models/item.model.ts";
-import type { TEnconterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
-import type { TranslationRepository } from "../translation/translation.repository.ts";
+import type { TEncounterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
 
-type ItemModelGeneratorCtor = {
-  translationRepo: TranslationRepository;
-};
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+type ItemModelGeneratorCtor = {};
 
 export class ItemModelGenerator {
-  private readonly _translationRepo: TranslationRepository;
+  constructor(_props: ItemModelGeneratorCtor) {}
 
-  constructor({ translationRepo }: ItemModelGeneratorCtor) {
-    this._translationRepo = translationRepo;
-  }
-
-  generate(entry: TEnconterDatabase["Entries"][number]): TItem | undefined {
+  generate(entry: TEncounterDatabase["Entries"][number]): TItem | undefined {
     try {
       const texts = {
-        name: this._translationRepo.getItemTranslation(entry.journalData.PrimaryDisplayName ?? ""),
-        quote: this._translationRepo.getItemTranslation(entry.journalData.NotificationPanelDescription ?? ""),
-        description: this._translationRepo.getItemTranslation(entry.journalData.AmmonomiconFullEntry ?? ""),
+        name: entry.journalData.PrimaryDisplayName ?? "",
+        quote: entry.journalData.NotificationPanelDescription ?? "",
+        description: entry.journalData.AmmonomiconFullEntry ?? "",
       };
       if (!texts.name || !texts.quote || !texts.description) {
         console.warn(
-          chalk.yellow(`Missing translation for pickup object ID ${entry.pickupObjectId}. path: ${entry.path}`)
+          chalk.yellow(`Missing translation for pickup object ID ${entry.pickupObjectId}. path: ${entry.path}`),
         );
         return;
       }
