@@ -2,8 +2,6 @@ import assert from "node:assert";
 import chalk from "chalk";
 import z from "zod/v4";
 import invert from "lodash/invert.js";
-import countBy from "lodash/countBy.js";
-import keyBy from "lodash/keyBy.js";
 import isEqual from "lodash/isEqual.js";
 import cloneDeep from "lodash/cloneDeep.js";
 import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
@@ -21,10 +19,11 @@ import { basicColors } from "./client/models/color.model.ts";
 import { ColorService } from "../color/color.service.ts";
 import { PlayerService } from "../player/player.service.ts";
 import { EnemyRepository } from "../enemy/enemy.repository.ts";
+import { ProjectileForStorage } from "./client/models/projectile.model.ts";
 import type { TEncounterDatabase } from "../encouter-trackable/encounter-trackable.dto.ts";
-import type { TGunDto, TProjectileModule } from "../gun/gun.dto.ts";
-import type { TGun, TProjectileMode, TProjectilePerShot } from "./client/models/gun.model.ts";
-import type { TProjectile } from "./client/models/projectile.model.ts";
+import type { TGunDto, TProjectileModuleDto } from "../gun/gun.dto.ts";
+import type { TGun, TProjectileMode, TProjectileModule } from "./client/models/gun.model.ts";
+import type { TProjectile, TProjectileId } from "./client/models/projectile.model.ts";
 import type { TAssetExternalReference } from "../utils/schema.ts";
 import type { TProjectileDto } from "../gun/projectile.dto.ts";
 import type { TAnimation } from "./client/models/animation.model.ts";
@@ -60,6 +59,7 @@ export class GunModelGenerator {
   private readonly _enemyRepo: EnemyRepository;
   private readonly _colorService = new ColorService();
   private readonly _featureFlags: Set<TGun["featureFlags"][number]> = new Set();
+  private _gunProjectiles: Record<TProjectileId, TProjectile> = {};
 
   private constructor(input: GunModelGeneratorCtor) {
     this._gunRepo = input.gunRepo;
@@ -96,7 +96,7 @@ export class GunModelGenerator {
   private _getProjectileModules(
     gunDto: TGunDto,
     alternateVolley = false,
-  ): { projectileModules: TProjectileModule[]; modulesAreTiers: boolean } {
+  ): { projectileModules: TProjectileModuleDto[]; modulesAreTiers: boolean } {
     const volley = alternateVolley ? gunDto.gun.alternateVolley : gunDto.gun.rawVolley;
     if (!this._assetService.referenceExists(volley)) {
       return { projectileModules: [gunDto.gun.singleModule], modulesAreTiers: false };
@@ -115,7 +115,7 @@ export class GunModelGenerator {
     };
   }
 
-  private _getProjectile(gunDto: TGunDto, assetReference: Required<TAssetExternalReference>) {
+  private _getProjectileDto(gunDto: TGunDto, assetReference: Required<TAssetExternalReference>) {
     const projDto = this._projectileRepo.getProjectile(assetReference);
     if (!projDto) {
       throw new Error(
@@ -125,10 +125,11 @@ export class GunModelGenerator {
     return projDto;
   }
 
-  private _buildProjectile(gunDto: TGunDto, projectileRef: Required<TAssetExternalReference>): TProjectile {
-    const projDto = this._getProjectile(gunDto, projectileRef);
+  private _buildProjectile(gunDto: TGunDto, projectileRef: Required<TAssetExternalReference>): TProjectileId {
+    const projDto = this._getProjectileDto(gunDto, projectileRef);
     const proj: TProjectile = {
       id: projDto.id,
+      gunId: gunDto.gun.PickupObjectId,
       damage: projDto.projectile.baseData.damage,
       speed: projDto.projectile.baseData.speed,
       range: projDto.projectile.baseData.range,
@@ -246,6 +247,33 @@ export class GunModelGenerator {
         this._featureFlags.add("hasStatusEffects");
       }
       this._featureFlags.add("hasExplosiveProjectile");
+    }
+
+    if (projDto.spawnProjModifier) {
+      const { spawnProjModifier } = projDto;
+      if (spawnProjModifier.spawnProjectilesInFlight && spawnProjModifier.spawnProjectilesOnCollision) {
+        throw new Error("Unhandled: Cannot spawn projectiles in flight and on collision at the same time");
+      }
+      if (spawnProjModifier.spawnCollisionProjectilesOnBounce && !spawnProjModifier.spawnProjectilesOnCollision) {
+        throw new Error("Unhandled: Cannot spawn projectiles on bounce if not spawning on collision");
+      }
+
+      proj.spawnProjectilesInflight = Boolean(spawnProjModifier.spawnProjectilesInFlight);
+      proj.spawnProjectilesOnCollision = Boolean(spawnProjModifier.spawnProjectilesOnCollision);
+      proj.spawnCollisionProjectilesOnBounce = Boolean(spawnProjModifier.spawnCollisionProjectilesOnBounce);
+      proj.spawnProjectileNumber = spawnProjModifier.spawnProjectilesInFlight
+        ? spawnProjModifier.numToSpawnInFlight
+        : spawnProjModifier.numberToSpawnOnCollison;
+      const spawnProjReference = (
+        spawnProjModifier.spawnProjectilesInFlight
+          ? spawnProjModifier.projectileToSpawnInFlight
+          : spawnProjModifier.UsesMultipleCollisionSpawnProjectiles
+            ? spawnProjModifier.collisionSpawnProjectiles[0]
+            : spawnProjModifier.projectileToSpawnOnCollision
+      ) as Required<TAssetExternalReference>;
+      proj.spawnProjectile = this._getProjectileDto(gunDto, spawnProjReference)?.id;
+
+      this._featureFlags.add("hasSpawningProjectiles");
     }
 
     if (projDto.modifyProjectileSynergyProcessor?.Dejams) {
@@ -384,68 +412,65 @@ export class GunModelGenerator {
       this._featureFlags.add("damageAllEnemies");
     }
 
-    return proj;
-  }
-
-  private _computeProjectileSpawnWeight(projectiles: TProjectile[]): TProjectile[] {
-    const projectileCount = countBy(projectiles, (p) => p.id);
-    const projectileLookup = keyBy(projectiles, (p) => p.id);
-    const uniqProjectiles = Object.values(projectileLookup);
-
-    if (uniqProjectiles.length === 1) {
-      return uniqProjectiles;
+    if (!this._gunProjectiles[proj.id]) {
+      this._gunProjectiles[proj.id] = proj;
+    } else if (JSON.stringify(this._gunProjectiles[proj.id]) !== JSON.stringify(proj)) {
+      throw new Error(`Projectile ${chalk.green(proj.id)} is not structurally identical!`);
     }
 
-    return uniqProjectiles.map((p) => ({ ...p, spawnWeight: projectileCount[p.id] }));
+    return proj.id;
+  }
+
+  private _p(projectileId: TProjectileId): TProjectile {
+    return this._gunProjectiles[projectileId];
   }
 
   private _buildModeFromProjectileModules(
     mode: string | number,
     gunDto: TGunDto,
-    defaultModule: TProjectileModule,
-    modules: TProjectileModule[],
+    defaultModule: TProjectileModuleDto,
+    moduleDtos: TProjectileModuleDto[],
   ): TProjectileMode {
-    const projectilesPerShot: TProjectilePerShot[] = [];
-    for (const module of modules) {
-      let projectiles = module.projectiles
+    const volley: TProjectileModule[] = [];
+    for (const moduleDto of moduleDtos) {
+      const projectiles = moduleDto.projectiles
         .filter(this._assetService.referenceExists)
         .map((p) => this._buildProjectile(gunDto, p));
 
-      if (module.sequenceStyle === ProjectileSequenceStyle.Random) {
-        projectiles = this._computeProjectileSpawnWeight(projectiles);
+      if (moduleDto.sequenceStyle === ProjectileSequenceStyle.Random) {
+        // TODO: handle random sequence
       } else {
         // TODO: handle other sequence styles
       }
-      projectilesPerShot.push({
-        shootStyle: shootStyleTextLookup[module.shootStyle] as keyof typeof ShootStyle,
-        cooldownTime: module.cooldownTime,
-        burstShotCount: module.burstShotCount,
-        burstCooldownTime: module.burstCooldownTime,
-        spread: module.angleVariance,
-        ammoCost: module.ammoCost > 1 && defaultModule.shootStyle !== ShootStyle.Beam ? module.ammoCost : undefined,
+      volley.push({
+        shootStyle: shootStyleTextLookup[moduleDto.shootStyle] as keyof typeof ShootStyle,
+        cooldownTime: moduleDto.cooldownTime,
+        burstShotCount: moduleDto.burstShotCount,
+        burstCooldownTime: moduleDto.burstCooldownTime,
+        spread: moduleDto.angleVariance,
+        ammoCost:
+          moduleDto.ammoCost > 1 && defaultModule.shootStyle !== ShootStyle.Beam ? moduleDto.ammoCost : undefined,
         projectiles,
       });
 
-      if (module.mirror) {
-        projectilesPerShot.push(cloneDeep(projectilesPerShot.at(-1)!));
+      if (moduleDto.mirror) {
+        volley.push(cloneDeep(volley.at(-1)!));
       }
     }
     let chargeTime = typeof mode === "number" ? mode : undefined;
     if (defaultModule.shootStyle === ShootStyle.Beam) {
-      if (projectilesPerShot[0].projectiles.length > 1) {
+      if (volley[0].projectiles.length > 1) {
         throw new Error(
           `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Beam gun must have only one type of projectile.`,
         );
       }
-      chargeTime = Math.max(
-        ...projectilesPerShot.map((pps) => pps.projectiles.map((p) => p.beamChargeTime ?? 0)).flat(),
-      );
+      chargeTime = Math.max(...volley.map((m) => m.projectiles.map((i) => this._p(i).beamChargeTime ?? 0)).flat());
     }
     return {
       mode: typeof mode === "number" ? `Charge ${mode}` : mode,
       magazineSize: defaultModule.numberOfShotsInClip,
       chargeTime,
-      projectiles: projectilesPerShot,
+      volley,
     };
   }
 
@@ -475,11 +500,11 @@ export class GunModelGenerator {
     }
 
     // TODO: handle fucking Starpew volley
-    const chargeModulesLookup = new Map<number, TProjectileModule[]>();
-    const normalModules: TProjectileModule[] = [];
+    const chargeModuleDtosLookup = new Map<number, TProjectileModuleDto[]>();
+    const normalModuleDtos: TProjectileModuleDto[] = [];
     for (const module of projectileModules) {
       if (module.shootStyle !== ShootStyle.Charged) {
-        normalModules.push(module);
+        normalModuleDtos.push(module);
         continue;
       }
 
@@ -492,9 +517,9 @@ export class GunModelGenerator {
 
       for (const { ChargeTime, Projectile, AmmoCost } of module.chargeProjectiles) {
         if (!Projectile.guid) continue;
-        if (!chargeModulesLookup.get(ChargeTime)) chargeModulesLookup.set(ChargeTime, []);
+        if (!chargeModuleDtosLookup.get(ChargeTime)) chargeModuleDtosLookup.set(ChargeTime, []);
 
-        const chargeModules = chargeModulesLookup.get(ChargeTime)!;
+        const chargeModules = chargeModuleDtosLookup.get(ChargeTime)!;
         const clonedModule = cloneDeep(module);
         clonedModule.projectiles = [cloneDeep(Projectile)];
         clonedModule.ammoCost = AmmoCost;
@@ -512,7 +537,8 @@ export class GunModelGenerator {
     // TODO: Synergies: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
     //    ExportedProject/Assets/data/AAA_AdvSynergyManager.asset
     //    ExportedProject/Assets/Scripts/Assembly-CSharp/CustomSynergyType.cs
-    // TODO: fear effect
+    // TODO: JK-47: fear effect
+    // TODO: Banana Projectile: Handle bounce + spawn modifier
     // TODO: add a badge next to best stat: https://fontawesome.com/icons/medal?f=classic&s=solid
     // Edge cases:
     // TODO: Rad gun: update modified reload time & animation speed on each level
@@ -534,10 +560,10 @@ export class GunModelGenerator {
     //   }
     // }
 
-    if (normalModules.length > 0) {
-      res.push(this._buildModeFromProjectileModules("Default", gunDto, defaultModule, normalModules));
+    if (normalModuleDtos.length > 0) {
+      res.push(this._buildModeFromProjectileModules("Default", gunDto, defaultModule, normalModuleDtos));
     }
-    for (const [chargeTime, modules] of chargeModulesLookup.entries()) {
+    for (const [chargeTime, modules] of chargeModuleDtosLookup.entries()) {
       res.push(this._buildModeFromProjectileModules(chargeTime, gunDto, defaultModule, modules));
     }
 
@@ -662,7 +688,7 @@ export class GunModelGenerator {
         (m.shootStyle === ShootStyle.Charged && m.chargeProjectiles.some((m) => m.ChargeTime > 0)) ||
         (m.shootStyle === ShootStyle.Beam &&
           m.projectiles.filter(this._assetService.referenceExists).some((m) => {
-            const projDto = this._getProjectile(gunDto, m);
+            const projDto = this._getProjectileDto(gunDto, m);
             return projDto?.basicBeamController?.usesChargeDelay && projDto?.basicBeamController?.chargeDelay;
           })),
     );
@@ -817,13 +843,13 @@ export class GunModelGenerator {
     }
 
     for (const modes of gun.projectileModes) {
-      for (const projectilePerShot of modes.projectiles) {
-        const projectileIds = new Set<string>();
-        for (const projectile of projectilePerShot.projectiles) {
-          if (projectile.additionalDamage.length > 0) {
+      for (const module of modes.volley) {
+        const projectileIds = new Set<TProjectileId>();
+        for (const pId of module.projectiles) {
+          if (this._p(pId).additionalDamage.length > 0) {
             this._featureFlags.add("hasMultipleDamageSources");
           }
-          projectileIds.add(projectile.id);
+          projectileIds.add(pId);
         }
         if (projectileIds.size > 1) {
           this._featureFlags.add("hasProjectilePool");
@@ -839,6 +865,7 @@ export class GunModelGenerator {
   async generate(entry: TEncounterDatabase["Entries"][number]) {
     try {
       this._featureFlags.clear();
+      this._gunProjectiles = {};
 
       const texts = {
         name: entry.journalData.PrimaryDisplayName ?? "",
@@ -895,7 +922,10 @@ export class GunModelGenerator {
         video: videos.has(entry.pickupObjectId) ? videos.get(entry.pickupObjectId) : undefined,
       };
 
-      return GunForStorage.parse(this._postProcessGunModel(gun));
+      return {
+        gun: GunForStorage.parse(this._postProcessGunModel(gun)),
+        projectiles: Object.values(this._gunProjectiles).map((p) => ProjectileForStorage.parse(p)),
+      };
     } catch (error) {
       if (error instanceof z.ZodError) {
         console.error(chalk.red(`Error parsing GUN pickup-object with ID ${entry.pickupObjectId}:`));

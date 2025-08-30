@@ -20,19 +20,13 @@ export function DebugData({ gun, stats }: TDebugDataProps) {
     delete clonedGun.animation;
     delete clonedGun.colors;
 
-    clonedGun.projectileModes?.forEach((m) => {
-      m.projectiles.forEach((p) => {
-        p.projectiles.forEach((pp) => {
-          delete pp.animation;
-        });
-      });
-    });
-
     const clonedStats = cloneDeep(stats) as Partial<TGunStats>;
 
-    clonedStats.mode?.projectiles.forEach((p) => {
-      p.projectiles.forEach((pp) => {
-        delete pp.animation;
+    delete clonedStats.projectile?.animation;
+
+    clonedStats.mode?.volley.forEach((module) => {
+      module.projectiles.forEach((p) => {
+        delete p.animation;
       });
     });
 

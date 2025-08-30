@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import chalk from "chalk";
+import isEqualWith from "lodash/isEqualWith.js";
 import { EncounterTrackableRepository } from "../encouter-trackable/encounter-trackable.repository.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
 import { DATA_PATH } from "../constants.ts";
@@ -15,6 +16,7 @@ import { isGun, isItem } from "./client/helpers/types.ts";
 import { PlayerService } from "../player/player.service.ts";
 import { EnemyRepository } from "../enemy/enemy.repository.ts";
 import type { TPickupObject } from "./client/models/pickup-object.model.ts";
+import type { TProjectileForStorage, TProjectileId } from "./client/models/projectile.model.ts";
 
 type TCreatePickupObjectsInput = {
   gunRepo: GunRepository;
@@ -41,6 +43,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
     enemyRepo,
   } = options;
   const pickupObjects: TPickupObject[] = [];
+  const projectileLookup: Record<TProjectileId, TProjectileForStorage> = {};
   const gunModelGenerator = await GunModelGenerator.create({
     gunRepo,
     projectileRepo,
@@ -69,8 +72,18 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
       const item = itemModelGenerator.generate(entry);
       if (item) pickupObjects.push(item);
     } else if (isGun) {
-      const gun = await gunModelGenerator.generate(entry);
-      if (gun) pickupObjects.push(gun);
+      const res = await gunModelGenerator.generate(entry);
+      if (res) {
+        pickupObjects.push(res.gun);
+
+        for (const p of res.projectiles) {
+          if (!projectileLookup[p.id]) {
+            projectileLookup[p.id] = p;
+          } else if (!isEqualWith(projectileLookup[p.id], p, (_a, _b, key) => (key === "gunId" ? true : undefined))) {
+            throw new Error(`Projectile ${chalk.green(p.id)} is not structurally identical!`);
+          }
+        }
+      }
     } else {
       const name = entry.journalData.PrimaryDisplayName ?? "";
       console.warn(chalk.yellow(`Unknown pickup object type for ID ${entry.pickupObjectId}, name: ${name}`));
@@ -84,6 +97,7 @@ export async function createPickupObjects(options: TCreatePickupObjectsInput) {
 
   await mkdir(DATA_PATH, { recursive: true });
   await writeFile(path.join(DATA_PATH, "pickup-objects.json"), JSON.stringify(pickupObjects, null, 2), "utf-8");
+  await writeFile(path.join(DATA_PATH, "projectiles.json"), JSON.stringify(projectileLookup, null, 2), "utf-8");
 
   console.log();
   console.log(chalk.magenta(`createPickupObjects took ${(performance.now() - start) / 1000}s`));

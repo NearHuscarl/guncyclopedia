@@ -63,6 +63,7 @@ import { Sticky } from "@/components/icons/sticky";
 import { Devolver } from "@/components/icons/devolver";
 import { IgnoreDamageCap } from "@/components/icons/ignore-damage-cap";
 import { Blackhole } from "@/components/icons/blackhole";
+import { SpawnModifier } from "@/components/icons/spawn-modifier";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -645,6 +646,23 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
                 Freeze radius: <strong>{formatNumber(projectileData.explosionFreezeRadius!, 1)}</strong>
               </>
             )}
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectileData.spawnProjectile && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              {(projectileData.spawnProjectileNumber || undefined) && (
+                <NumericValue>{formatNumber(projectileData.spawnProjectileNumber!, 0)}</NumericValue>
+              )}
+              <SpawnModifier size={22} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Spawn Projectile</strong>
+            <br />
+            TODO
           </TooltipContent>
         </Tooltip>
       )}

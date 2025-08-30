@@ -2,16 +2,16 @@ import z from "zod/v4";
 import { PickupObject } from "./pickup-object.model.ts";
 import { Animation, CompactedFrame, RichFrame } from "./animation.model.ts";
 import { Projectile } from "./projectile.model.ts";
-import type { TProjectile } from "./projectile.model.ts";
+import type { TProjectileId } from "./projectile.model.ts";
 
 /**
  * randomize/cycle through the projectile array for each shot
  */
-export type TProjectileSequence = TProjectile[]; // TProjectile[]
+export type TProjectileSequence = TProjectileId[]; // TProjectileId[]
 /**
  * projectiles fired in one shot
  */
-export type TProjectilePerShot = {
+export type TProjectileModule = {
   shootStyle: "SemiAutomatic" | "Automatic" | "Beam" | "Charged" | "Burst";
   burstShotCount: number;
   burstCooldownTime: number;
@@ -20,7 +20,7 @@ export type TProjectilePerShot = {
   ammoCost?: number;
   projectiles: TProjectileSequence;
 };
-export const ProjectilePerShot = z.object({
+export const ProjectileModule = z.object({
   shootStyle: z.enum(["SemiAutomatic", "Automatic", "Beam", "Charged", "Burst"]),
   burstShotCount: z.number().nonnegative(),
   burstCooldownTime: z.number().nonnegative(),
@@ -32,21 +32,21 @@ export const ProjectilePerShot = z.object({
    * If there is less ammo in the magazine than required, the cost is simply the remaining ammo, it does not take into account of the reserve ammo.
    */
   ammoCost: z.number().min(2).optional(),
-  projectiles: z.array(Projectile),
-}) satisfies z.ZodType<TProjectilePerShot>;
+  projectiles: z.array(Projectile.shape.id),
+}) satisfies z.ZodType<TProjectileModule>;
 
 export interface TProjectileMode {
   mode: string;
   chargeTime?: number;
   magazineSize: number;
-  projectiles: TProjectilePerShot[];
+  volley: TProjectileModule[];
 }
 
 export const ProjectileMode = z.object({
   mode: z.string(),
   chargeTime: z.number().optional(),
   magazineSize: z.number(),
-  projectiles: z.array(ProjectilePerShot),
+  volley: z.array(ProjectileModule),
 }) satisfies z.ZodType<TProjectileMode>;
 
 export const Gun = PickupObject.extend({
@@ -118,6 +118,7 @@ export const Gun = PickupObject.extend({
       "hasStatusEffects",
       "hasTieredProjectiles",
       "hasHomingProjectiles",
+      "hasSpawningProjectiles",
       "hasExplosiveProjectile",
       "hasProjectilePool",
       "hasSpecialAbilities",
@@ -169,18 +170,8 @@ export const Gun = PickupObject.extend({
 
 const createDerivedGunSchema = <T extends z.ZodTypeAny>(frameSchema: T) => {
   const AnimationSchema = Animation.extend({ frames: z.array(frameSchema) });
-  const ProjectileSchema = Projectile.extend({
-    animation: AnimationSchema.optional(),
-  });
-  const ProjectilePerShotSchema = ProjectilePerShot.extend({
-    projectiles: z.array(ProjectileSchema),
-  });
-  const ProjectileModeSchema = ProjectileMode.extend({
-    projectiles: z.array(ProjectilePerShotSchema),
-  });
 
   return Gun.extend({
-    projectileModes: z.array(ProjectileModeSchema).nonempty(),
     animation: z.object({
       idle: AnimationSchema,
       reload: AnimationSchema.optional(),

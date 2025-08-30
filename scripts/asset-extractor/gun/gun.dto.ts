@@ -64,7 +64,7 @@ export const ProjectileSequenceStyle = {
   OrderedGroups: 2,
 } as const;
 
-export const ProjectileModule = z.object({
+export const ProjectileModuleDto = z.object({
   shootStyle: z.enum(ShootStyle),
   /**
    * Basic array of projectiles fired per shot
@@ -126,7 +126,7 @@ const GunData = z
      * inside volley are defined, singleModule is ignored completely.
      */
     rawVolley: AssetExternalReference,
-    singleModule: ProjectileModule,
+    singleModule: ProjectileModuleDto,
     activeReloadData: z.object({
       reloadSpeedMultiplier: z.number(),
     }),
@@ -188,4 +188,4 @@ export type TGunData = z.input<typeof GunData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
 export type TGunExtraSettingSynergyProcessorData = z.input<typeof GunExtraSettingSynergyProcessorData>;
 export type TAuraOnReloadModifierData = z.input<typeof AuraOnReloadModifierData>;
-export type TProjectileModule = z.input<typeof ProjectileModule>;
+export type TProjectileModuleDto = z.input<typeof ProjectileModuleDto>;

@@ -1,17 +1,17 @@
 import { MenubarCheckboxItem, MenubarSub, MenubarSubContent, MenubarSubTrigger } from "@/components/ui/menubar";
 import { useFilterStateMutation } from "../../shared/hooks/useFilterStateMutation";
 import { useFilter } from "@/modules/shared/hooks/useFilter";
-import { ProjectilePerShot, type TProjectilePerShot } from "@/client/generated/models/gun.model";
+import { ProjectileModule, type TProjectileModule } from "@/client/generated/models/gun.model";
 import { UppercasedItem } from "../shared/components/uppercased-item";
 
-const sortWeight: Record<TProjectilePerShot["shootStyle"], number> = {
+const sortWeight: Record<TProjectileModule["shootStyle"], number> = {
   Automatic: 0,
   SemiAutomatic: 1,
   Charged: 2,
   Beam: 3,
   Burst: 4,
 };
-const options = [...ProjectilePerShot.shape.shootStyle.options].sort((a, b) => sortWeight[a] - sortWeight[b]);
+const options = [...ProjectileModule.shape.shootStyle.options].sort((a, b) => sortWeight[a] - sortWeight[b]);
 
 export function ShootStyleMenu() {
   const setFilter = useFilterStateMutation();

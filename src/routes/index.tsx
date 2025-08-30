@@ -1,10 +1,11 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
-import { getGuns, getGunStats } from "@/client";
+import { getGunStats } from "@/client";
 import { Page } from "@/modules/page";
 import { pickRandom } from "@/lib/lang";
 import { useGunStore } from "@/modules/shared/store/gun.store";
 import { SearchParams } from "@/modules/shared/route/schema";
 import type { TAppState } from "@/modules/shared/hooks/useAppState";
+import { GameObjectService } from "@/client/service/game-object.service";
 
 export const Route = createFileRoute("/")({
   validateSearch: (raw) => SearchParams.parse(raw),
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/")({
     }
 
     if (search.selectedId === undefined) {
-      newSearch.selectedId = pickRandom(getGuns()).id;
+      newSearch.selectedId = pickRandom(GameObjectService.getGuns()).id;
     }
 
     if (Object.keys(newSearch).length > 0) {

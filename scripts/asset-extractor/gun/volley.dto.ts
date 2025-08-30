@@ -1,11 +1,11 @@
 import z from "zod/v4";
 import { BinaryOption } from "../utils/schema.ts";
-import { ProjectileModule } from "./gun.dto.ts";
+import { ProjectileModuleDto } from "./gun.dto.ts";
 
 export const VolleyDto = z.object({
   $$id: z.string(),
   m_Name: z.string(),
-  projectiles: z.array(ProjectileModule),
+  projectiles: z.array(ProjectileModuleDto),
   /**
    * Should projectile module have different levels based on certain condition.
    *

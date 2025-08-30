@@ -1,8 +1,11 @@
 import startCase from "lodash/startCase";
+import uniq from "lodash/uniq";
 import { ProjectileService, type TRangeLabel } from "./projectile.service";
 import { formatNumber } from "@/lib/lang";
-import type { TGun, TProjectileMode, TProjectilePerShot } from "../generated/models/gun.model";
+import { GameObjectService } from "./game-object.service";
+import type { TGun, TProjectileMode, TProjectileModule } from "../generated/models/gun.model";
 import type { TProjectile } from "../generated/models/projectile.model";
+import type { TResolvedProjectileMode, TResolvedProjectileModule } from "./game-object.service";
 
 interface IStat {
   base: number;
@@ -21,12 +24,12 @@ export type TGunStats = {
   precision: number;
   range: TRangeLabel;
   maxAmmo: number;
-  shootStyle: TProjectilePerShot["shootStyle"];
+  shootStyle: TProjectileModule["shootStyle"];
   magazineSize: number;
   reloadTime: number;
   fireRate: number;
-  mode: TProjectileMode;
-  projectilePerShot: TProjectilePerShot;
+  mode: TResolvedProjectileMode;
+  projectileModule: TResolvedProjectileModule;
   projectile: TProjectile;
 };
 
@@ -34,11 +37,11 @@ export class GunService {
   static getTimeBetweenShot(input: {
     reloadTime: number;
     magazineSize: number;
-    projectile: TProjectilePerShot;
+    module: TResolvedProjectileModule;
     chargeTime?: number;
   }) {
-    const { magazineSize, projectile, chargeTime } = input;
-    const { shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = projectile;
+    const { magazineSize, module, chargeTime } = input;
+    const { shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = module;
     if (cooldownTime <= 0 && shootStyle !== "Charged") {
       return 0;
     }
@@ -58,7 +61,7 @@ export class GunService {
   static getEstimatedShotsPerSecond(input: {
     reloadTime: number;
     magazineSize: number;
-    projectile: TProjectilePerShot;
+    module: TResolvedProjectileModule;
     chargeTime?: number;
   }) {
     const { reloadTime, magazineSize } = input;
@@ -198,51 +201,54 @@ export class GunService {
     };
   }
 
-  static computeGunStats(
-    gun: TGun,
-    modeIndex: number,
-    projectileIndex: number,
-    projectileDataIndex: number,
-  ): TGunStats {
-    const mode = gun.projectileModes[modeIndex] ?? gun.projectileModes[0];
+  static resolveMode(mode: TProjectileMode): TResolvedProjectileMode {
+    return {
+      ...mode,
+      volley: mode.volley.map((module) => ({
+        ...module,
+        projectiles: uniq(module.projectiles).map(GameObjectService.getProjectile),
+      })),
+    };
+  }
+
+  static computeGunStats(gun: TGun, modeIndex: number, moduleIndex: number, projectileIndex: number): TGunStats {
+    const mode = GunService.resolveMode(gun.projectileModes[modeIndex] ?? gun.projectileModes[0]);
+    const module = mode.volley[moduleIndex] ?? ProjectileService.createAggregatedVolley(mode.volley);
+    const projectilePool = module.projectiles;
     const projectile =
-      mode.projectiles[projectileIndex] ?? ProjectileService.createAggregatedProjectile(mode.projectiles);
-    const projectilePool = projectile.projectiles;
-    const projData =
-      mode.projectiles[projectileIndex]?.projectiles[projectileDataIndex] ??
-      ProjectileService.createAggregatedProjectileData(projectilePool, "random");
-    const magazineSize =
-      mode.magazineSize === -1 ? gun.maxAmmo : Math.ceil(mode.magazineSize / (projectile.ammoCost ?? 1));
+      mode.volley[moduleIndex]?.projectiles[projectileIndex] ??
+      ProjectileService.createAggregatedProjectile(projectilePool, "random");
+    const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : Math.ceil(mode.magazineSize / (module.ammoCost ?? 1));
     const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? ProjectileService.MAX_MAX_AMMO : gun.maxAmmo;
     const reloadTime = gun.reloadTime;
     const timingInput = {
       reloadTime: gun.reloadTime, // Prize Pistol's edge case (only 1 max ammo)
       magazineSize,
-      projectile,
+      module,
       chargeTime: mode.chargeTime,
     };
     const shotsPerSecond = GunService.getEstimatedShotsPerSecond(timingInput);
     const timeBetweenShots = GunService.getTimeBetweenShot(timingInput);
     const reloadToFireRatio = reloadTime / (reloadTime + timeBetweenShots * magazineSize);
 
-    const dps = this.getDamage(projData, "dps", shotsPerSecond, gun, reloadToFireRatio);
-    const damage = this.getDamage(projData, "instant", shotsPerSecond, gun, reloadToFireRatio);
-    const fireRate = projectile.shootStyle === "Beam" ? ProjectileService.MAX_FIRE_RATE : shotsPerSecond * 60;
+    const dps = this.getDamage(projectile, "dps", shotsPerSecond, gun, reloadToFireRatio);
+    const damage = this.getDamage(projectile, "instant", shotsPerSecond, gun, reloadToFireRatio);
+    const fireRate = module.shootStyle === "Beam" ? ProjectileService.MAX_FIRE_RATE : shotsPerSecond * 60;
 
     return {
       maxAmmo,
       magazineSize,
       reloadTime,
-      shootStyle: projectile.shootStyle, // only raiden coil has 2 shoot styles, no need to aggregate.
-      precision: ProjectileService.toPrecision(projectile.spread),
+      shootStyle: module.shootStyle, // only raiden coil has 2 shoot styles, no need to aggregate.
+      precision: ProjectileService.toPrecision(module.spread),
       fireRate,
-      range: ProjectileService.getRangeLabel(projData),
+      range: ProjectileService.getRangeLabel(projectile),
       dps,
       damage,
-      force: GunService.getForce(projData),
+      force: GunService.getForce(projectile),
       mode,
-      projectilePerShot: projectile,
-      projectile: projData,
+      projectileModule: module,
+      projectile: projectile,
     };
   }
 }

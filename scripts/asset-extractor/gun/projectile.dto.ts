@@ -75,6 +75,25 @@ const HomingModifierData = z.object({
   AngularVelocity: z.number(),
 });
 
+const SpawnProjModifierData = z.object({
+  spawnProjectilesInFlight: BinaryOption,
+  projectileToSpawnInFlight: AssetExternalReference,
+  inFlightSpawnCooldown: z.number(), // in seconds
+  numToSpawnInFlight: z.number(),
+
+  spawnProjectilesOnCollision: BinaryOption,
+  numberToSpawnOnCollison: z.number(), // typo from the game source code, not mine ChatGPT!
+  spawnCollisionProjectilesOnBounce: BinaryOption,
+  projectileToSpawnOnCollision: AssetExternalReference,
+
+  /**
+   * Very useless property since the one projectile that uses this feature only spawns
+   * a single type of projectile on collision. Data will be normalized.
+   */
+  UsesMultipleCollisionSpawnProjectiles: BinaryOption,
+  collisionSpawnProjectiles: z.array(AssetExternalReference),
+});
+
 const GoopDefinitionData = z.object({
   CanBeIgnited: BinaryOption,
   fireDamagePerSecondToEnemies: z.number(),
@@ -217,6 +236,7 @@ export const ProjectileDto = z.object({
   pierceProjModifier: PierceProjModifierData.optional(),
   explosiveModifier: ExplosiveModifierData.optional(),
   homingModifier: HomingModifierData.optional(),
+  spawnProjModifier: SpawnProjModifierData.optional(),
   goopModifier: GoopModifierData.optional(),
   modifyProjectileSynergyProcessor: ModifyProjectileSynergyProcessorData.optional(),
   basicBeamController: BasicBeamControllerData.optional(),
@@ -236,6 +256,7 @@ export type TBounceProjModifierData = z.infer<typeof BounceProjModifierData>;
 export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
 export type TExplosiveModifierData = z.infer<typeof ExplosiveModifierData>;
 export type THomingModifierData = z.infer<typeof HomingModifierData>;
+export type TSpawnProjModifierData = z.infer<typeof SpawnProjModifierData>;
 export type TGoodDefinitionData = z.infer<typeof GoopDefinitionData>;
 export type TGoopModifierData = z.infer<typeof GoopModifierData>;
 export type TModifyProjectileSynergyProcessorData = z.infer<typeof ModifyProjectileSynergyProcessorData>;

@@ -83,35 +83,35 @@ export function DetailSection() {
   const hoverGun = useHoverGun();
   const stats = useLoaderData((state) => state.stats);
   const [modeIndex, _setModeIndex] = useState(0);
+  const [hoverModuleIndex, setHoverModuleIndex] = useState(-1);
+  const [selectedModuleIndex, _setSelectedModuleIndex] = useState(-1);
   const [hoverProjectileIndex, setHoverProjectileIndex] = useState(-1);
   const [selectedProjectileIndex, _setSelectedProjectileIndex] = useState(-1);
-  const [hoverProjectileDataIndex, setHoverProjectileDataIndex] = useState(-1);
-  const [selectedProjectileDataIndex, _setSelectedProjectileDataIndex] = useState(-1);
   const setModeIndex = (index: number) => {
     _setModeIndex(index);
     // Reset projectile index when mode changes
+    setHoverModuleIndex(-1);
+    _setSelectedModuleIndex(-1);
     setHoverProjectileIndex(-1);
     _setSelectedProjectileIndex(-1);
-    setHoverProjectileDataIndex(-1);
-    _setSelectedProjectileDataIndex(-1);
+  };
+  const setSelectedModuleIndex = (index: number) => {
+    _setSelectedModuleIndex(index === selectedModuleIndex ? -1 : index);
   };
   const setSelectedProjectileIndex = (index: number) => {
     _setSelectedProjectileIndex(index === selectedProjectileIndex ? -1 : index);
   };
-  const setSelectedProjectileDataIndex = (index: number) => {
-    _setSelectedProjectileDataIndex(index === selectedProjectileDataIndex ? -1 : index);
-  };
+  const moduleIndex = hoverModuleIndex !== -1 ? hoverModuleIndex : selectedModuleIndex;
   const projectileIndex = hoverProjectileIndex !== -1 ? hoverProjectileIndex : selectedProjectileIndex;
-  const projectileDataIndex = hoverProjectileDataIndex !== -1 ? hoverProjectileDataIndex : selectedProjectileDataIndex;
 
-  const gunStats = GunService.computeGunStats(gun, modeIndex, projectileIndex, projectileDataIndex);
+  const gunStats = GunService.computeGunStats(gun, modeIndex, moduleIndex, projectileIndex);
   const hoverGunStats = hoverGun
-    ? GunService.computeGunStats(hoverGun, modeIndex, projectileIndex, projectileDataIndex)
+    ? GunService.computeGunStats(hoverGun, modeIndex, moduleIndex, projectileIndex)
     : gunStats;
   const selectedGun = hoverGun || gun;
   const selectedStats = hoverGunStats || gunStats;
-  const showProjectilePool = selectedGun.projectileModes[0].projectiles[0].projectiles.length > 1;
-  const isCustomMagazineSize = (selectedStats.projectilePerShot.ammoCost ?? 1) > 1;
+  const showProjectilePool = selectedGun.projectileModes[0].volley[0].projectiles.length > 1;
+  const isCustomMagazineSize = (selectedStats.projectileModule.ammoCost ?? 1) > 1;
 
   useEffect(() => {
     // Note: Don't remove this useEffect and use key={gun?.id} for parent component
@@ -125,7 +125,7 @@ export function DetailSection() {
 
     // force showing projectile pool if it exists (there will be no volley)
     if (showProjectilePool) {
-      _setSelectedProjectileIndex(0);
+      _setSelectedModuleIndex(0);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -192,7 +192,7 @@ export function DetailSection() {
           label={"Magazine Size" + (isCustomMagazineSize ? "*" : "")}
           labelTooltip={
             isCustomMagazineSize
-              ? `The base magazine size is <strong>${selectedGun.projectileModes[0].magazineSize}</strong>, but since each shot consumes <strong>${selectedStats.projectilePerShot.ammoCost}</strong> ammo, its effective capacity is <strong>${selectedStats.magazineSize}</strong>`
+              ? `The base magazine size is <strong>${selectedGun.projectileModes[0].magazineSize}</strong>, but since each shot consumes <strong>${selectedStats.projectileModule.ammoCost}</strong> ammo, its effective capacity is <strong>${selectedStats.magazineSize}</strong>`
               : undefined
           }
           labelTooltipClassName="text-wrap w-72"
@@ -231,21 +231,21 @@ export function DetailSection() {
           {!showProjectilePool && (
             <Volley
               id={`${selectedGun.id}-${modeIndex}`}
-              projectiles={selectedStats.mode.projectiles}
-              onSelect={setSelectedProjectileIndex}
-              onHover={setHoverProjectileIndex}
-              onBlur={() => setHoverProjectileIndex(-1)}
-              isSelected={(i) => projectileIndex === i}
+              volley={selectedStats.mode.volley}
+              onSelect={setSelectedModuleIndex}
+              onHover={setHoverModuleIndex}
+              onBlur={() => setHoverModuleIndex(-1)}
+              isSelected={(i) => moduleIndex === i}
             />
           )}
           {showProjectilePool && (
             <ProjectilePool
               id={`${selectedGun.id}-${modeIndex}`}
-              projectiles={selectedStats.projectilePerShot.projectiles}
-              onBlur={() => setHoverProjectileDataIndex(-1)}
-              onSelect={setSelectedProjectileDataIndex}
-              onHover={setHoverProjectileDataIndex}
-              isSelected={(i) => projectileDataIndex === i}
+              projectiles={selectedStats.projectileModule.projectiles}
+              onBlur={() => setHoverProjectileIndex(-1)}
+              onSelect={setSelectedProjectileIndex}
+              onHover={setHoverProjectileIndex}
+              isSelected={(i) => projectileIndex === i}
             />
           )}
         </div>
@@ -267,7 +267,7 @@ export function DetailSection() {
         />
         <StatBar
           label="Precision"
-          labelTooltip={`Spread: <strong>${gunStats.projectilePerShot.spread}°</strong><br/>Higher precision results in less bullet spread. Scales the spread range [30deg (worst) .. 0 (best)] into a precision percentage [0 (worst) .. 100 (best)]`}
+          labelTooltip={`Spread: <strong>${gunStats.projectileModule.spread}°</strong><br/>Higher precision results in less bullet spread. Scales the spread range [30deg (worst) .. 0 (best)] into a precision percentage [0 (worst) .. 100 (best)]`}
           labelTooltipClassName="w-80 text-wrap"
           value={gunStats.precision}
           precision={0}

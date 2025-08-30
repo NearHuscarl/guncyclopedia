@@ -7,12 +7,12 @@ import { AnimatedSprite } from "../shared/components/animated-sprite";
 import { Marker } from "@/components/icons/marker";
 import { Chamber } from "@/components/icons/chamber";
 import { primaryColor } from "../shared/settings/tailwind";
-import type { TProjectilePerShot } from "@/client/generated/models/gun.model";
 import type { TProjectile } from "@/client/generated/models/projectile.model";
+import type { TResolvedProjectileModule } from "@/client/service/game-object.service";
 
 type TVolleyProps = {
   id: string;
-  projectiles: TProjectilePerShot[];
+  volley: TResolvedProjectileModule[];
   isSelected: (index: number) => boolean;
   onSelect: (index: number) => void;
   onHover: (index: number) => void;
@@ -20,12 +20,12 @@ type TVolleyProps = {
 };
 
 export function Volley(props: TVolleyProps) {
-  const { id, projectiles, isSelected, onSelect, onHover, onBlur } = props;
+  const { id, volley, isSelected, onSelect, onHover, onBlur } = props;
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
   return (
     <div className="flex flex-1 items-center justify-between w-full">
-      {projectiles.length > 1 ? (
+      {volley.length > 1 ? (
         <Tooltip open={tooltipOpen} onOpenChange={setTooltipOpen}>
           <TooltipTrigger>
             <Chamber size={22} color={primaryColor} className="relative top-[2px] cursor-help" />
@@ -46,26 +46,26 @@ export function Volley(props: TVolleyProps) {
           "border-primary!": tooltipOpen,
         })}
       >
-        {projectiles.map((p, i) => {
+        {volley.map((m, i) => {
           return (
             <Tooltip key={`${id}-${i}`} delayDuration={1000}>
               <TooltipTrigger>
                 <div className="relative top-[2px] cursor-help">
-                  {p.projectiles.length === 1 && p.projectiles[0].animation ? (
+                  {m.projectiles.length === 1 && m.projectiles[0].animation ? (
                     <div onClick={() => onSelect(i)} onMouseEnter={() => onHover(i)}>
-                      <AnimatedSprite key={`${id}-${i}`} animation={p.projectiles[0].animation} />
+                      <AnimatedSprite key={`${id}-${i}`} animation={m.projectiles[0].animation} />
                     </div>
                   ) : (
                     <Circle isSelected={isSelected(i)} onClick={() => onSelect(i)} onMouseEnter={() => onHover(i)} />
                   )}
-                  {projectiles.length > 1 && isSelected(i) && (
+                  {volley.length > 1 && isSelected(i) && (
                     <Marker className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2" />
                   )}
                 </div>
               </TooltipTrigger>
               <TooltipContent>
-                {p.projectiles.length === 1 && <div>{p.projectiles[0].id}</div>}
-                {p.projectiles.length > 1 && (
+                {m.projectiles.length === 1 && <div>{m.projectiles[0].id}</div>}
+                {m.projectiles.length > 1 && (
                   <div>
                     Hover on one of the projectiles from the <strong>Projectile pool</strong> to inspect their stats
                   </div>

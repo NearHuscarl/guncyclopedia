@@ -1,8 +1,8 @@
 import z from "zod/v4";
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys, StringKeys } from "@/lib/types";
-import type { TProjectilePerShot } from "../generated/models/gun.model";
 import type { TProjectile } from "../generated/models/projectile.model";
+import type { TResolvedProjectileModule } from "./game-object.service";
 
 type AggregateModeOption = "volley" | "random";
 type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TProjectile[]) => number);
@@ -79,28 +79,28 @@ export class ProjectileService {
     return ((maxSpread - clamped) / maxSpread) * 100;
   }
 
-  static createAggregatedProjectile(projectiles: TProjectilePerShot[]) {
-    const pp = projectiles.map((p) => this.createAggregatedProjectileData(p.projectiles, "random"));
+  static createAggregatedVolley(volley: TResolvedProjectileModule[]): TResolvedProjectileModule {
+    const pp = volley.map((p) => this.createAggregatedProjectile(p.projectiles, "random"));
     if (pp.length === 0) {
       throw new Error("Cannot compute average projectile from an empty list.");
     }
-    const finalProjectile: TProjectilePerShot = {
+    const finalVolley: TResolvedProjectileModule = {
       cooldownTime: 0,
       spread: 0,
-      burstShotCount: projectiles[0].burstShotCount,
-      burstCooldownTime: projectiles[0].burstCooldownTime,
-      shootStyle: projectiles[0].shootStyle,
+      burstShotCount: volley[0].burstShotCount,
+      burstCooldownTime: volley[0].burstCooldownTime,
+      shootStyle: volley[0].shootStyle,
       ammoCost: 0,
-      projectiles: [this.createAggregatedProjectileData(pp, "volley")],
+      projectiles: [this.createAggregatedProjectile(pp, "volley")],
     };
-    for (let i = 0; i < projectiles.length; i++) {
-      const proj = projectiles[i];
-      finalProjectile.cooldownTime = Math.max(finalProjectile.cooldownTime, proj.cooldownTime);
-      finalProjectile.spread = Math.max(finalProjectile.spread, proj.spread);
-      finalProjectile.ammoCost = Math.max(finalProjectile.ammoCost ?? 1, proj.ammoCost ?? 1);
+    for (let i = 0; i < volley.length; i++) {
+      const proj = volley[i];
+      finalVolley.cooldownTime = Math.max(finalVolley.cooldownTime, proj.cooldownTime);
+      finalVolley.spread = Math.max(finalVolley.spread, proj.spread);
+      finalVolley.ammoCost = Math.max(finalVolley.ammoCost ?? 1, proj.ammoCost ?? 1);
     }
 
-    return finalProjectile;
+    return finalVolley;
   }
 
   private static _aggregateAdditionalDamage(
@@ -163,24 +163,23 @@ export class ProjectileService {
    * Compute an 'aggregated' projectile from a list.
    *
    * - Numeric & percentage fields are averaged; missing values are `0`
-   *   (`spawnWeight` is always `1` as there is only one projectile).
    * - Boolean fields default to `false`; the result is `true` if any
    *   projectile has `true`. E.g. if this gun has homing projectiles,
    *
    * @throws {Error} if the input array is empty.
    */
-  static createAggregatedProjectileData(projectiles: TProjectile[], mode: AggregateModeOption): TProjectile {
+  static createAggregatedProjectile(projectiles: TProjectile[], mode: AggregateModeOption): TProjectile {
     if (projectiles.length === 0) {
       throw new Error("Cannot average an empty projectile list.");
     }
 
     // All numeric (and percentage) keys that should be averaged.
     const nAggregateConfig: NumericAggregateConfig = {
+      gunId: [],
       damage: ["avg", "sum"],
       speed: ["avg", "avg"],
       range: ["avg", "max"],
       force: ["avg", "sum"],
-      spawnWeight: [],
       poisonChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.poisonChance)],
       poisonDuration: ["avg", "avg"],
       speedChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.speedChance)],
@@ -215,6 +214,7 @@ export class ProjectileService {
       helixAmplitude: ["avg", "max"],
       helixWavelength: ["avg", "max"],
       devolveChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.devolveChance)],
+      spawnProjectileNumber: ["avg", "sum"],
     };
 
     // All boolean keys that are aggregated with logical-OR.
@@ -231,12 +231,16 @@ export class ProjectileService {
       blankOnCollision: true,
       sticky: true,
       isBlackhole: true,
+      spawnCollisionProjectilesOnBounce: true,
+      spawnProjectilesInflight: true,
+      spawnProjectilesOnCollision: true,
     };
     // All string keys that are aggregated into arrays of string
     const sAggregateConfig: StringAggregateConfig = {
       id: false,
       transmogrifyTarget: true,
       devolveTarget: true,
+      spawnProjectile: true,
     };
     // @ts-expect-error alert linter to update new properties
     const _aAggregateConfig: ArrayAggregateConfig = {
@@ -292,7 +296,6 @@ export class ProjectileService {
     // ---------- build result ----------
     const final: Partial<TProjectile> = {
       id: "average",
-      spawnWeight: 1,
       additionalDamage: this._aggregateAdditionalDamage(projectiles, mode, sums),
     };
 

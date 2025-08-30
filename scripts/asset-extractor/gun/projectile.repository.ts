@@ -25,6 +25,7 @@ import type {
   TMatterAntimatterProjectileModifierData,
   TStickyGrenadeBuffData,
   TDevolverModifierData,
+  TSpawnProjModifierData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -74,6 +75,9 @@ export class ProjectileRepository {
   }
   private _isHomingModifierData(obj: unknown): obj is THomingModifierData {
     return this._containsScript(obj, AssetService.HOMING_MODIFIER_SCRIPT);
+  }
+  private _isSpawnModifierData(obj: unknown): obj is TSpawnProjModifierData {
+    return this._containsScript(obj, "SpawnProjModifier.cs.meta");
   }
   private _isGoopModifierData(obj: unknown): obj is TGoopModifierData {
     return this._containsScript(obj, "GoopModifier.cs.meta");
@@ -153,6 +157,8 @@ export class ProjectileRepository {
           res.explosiveModifier = component;
         } else if (this._isHomingModifierData(component)) {
           res.homingModifier = component;
+        } else if (this._isSpawnModifierData(component)) {
+          res.spawnProjModifier = component;
         } else if (this._isGoopModifierData(component)) {
           res.goopModifier = component;
 

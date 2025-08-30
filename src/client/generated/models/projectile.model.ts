@@ -1,5 +1,5 @@
 import z from "zod/v4";
-import { Animation } from "./animation.model.ts";
+import { Animation, CompactedFrame, RichFrame } from "./animation.model.ts";
 import { Percentage } from "./schema.ts";
 
 export type TStatusEffectProp =
@@ -56,6 +56,7 @@ export const Projectile = z.object({
    * basename of the meta file that associates with the prefab file
    */
   id: z.string(),
+  gunId: z.number(),
   ignoreDamageCaps: z.boolean().optional(),
   damage: z.number(),
   speed: z.number(),
@@ -66,11 +67,6 @@ export const Projectile = z.object({
    * Extra damage from explosion, ricochet, or custom projectile like blackhole
    */
   additionalDamage: z.array(DamageDetail),
-
-  /**
-   * Chance to spawn this projectile = `spawnWeight / projectileModes.length`.
-   */
-  spawnWeight: z.number().optional(),
 
   poisonChance: Percentage.optional(),
   poisonDuration: z.number().optional(),
@@ -125,6 +121,12 @@ export const Projectile = z.object({
   isHoming: z.boolean().optional(),
   homingRadius: z.number().optional(),
   homingAngularVelocity: z.number().optional(),
+
+  spawnProjectilesInflight: z.boolean().optional(),
+  spawnProjectilesOnCollision: z.boolean().optional(),
+  spawnCollisionProjectilesOnBounce: z.boolean().optional(),
+  spawnProjectileNumber: z.number().optional(),
+  spawnProjectile: z.string().optional(),
 
   beamChargeTime: z.number().optional(),
   /**
@@ -186,5 +188,17 @@ export const Projectile = z.object({
   animation: Animation.optional(),
 });
 
+const createDerivedProjSchema = <T extends z.ZodTypeAny>(frameSchema: T) => {
+  const AnimationSchema = Animation.extend({ frames: z.array(frameSchema) });
+  return Projectile.extend({
+    animation: AnimationSchema.optional(),
+  });
+};
+
+export const ProjectileForStorage = createDerivedProjSchema(CompactedFrame);
+export const ProjectileFromStorage = createDerivedProjSchema(RichFrame);
+
 export type TDamageDetail = z.infer<typeof DamageDetail>;
-export type TProjectile = z.input<typeof Projectile>;
+export type TProjectile = z.infer<typeof Projectile>;
+export type TProjectileForStorage = z.infer<typeof ProjectileForStorage>;
+export type TProjectileId = TProjectile["id"];

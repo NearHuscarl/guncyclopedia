@@ -1,21 +1,8 @@
-import memoize from "lodash/memoize";
-import pickupObjects from "./generated/data/pickup-objects.json";
-import { isGun } from "./generated/helpers/types";
-import { GunFromStorage, type TGun } from "./generated/models/gun.model";
-import type { TPickupObject } from "./generated/models/pickup-object.model";
-
-export const getPickupObjects = (): TPickupObject[] => {
-  return pickupObjects as TPickupObject[];
-};
-
-export const getGuns = memoize((): TGun[] => {
-  return getPickupObjects()
-    .filter(isGun)
-    .map((p) => GunFromStorage.parse(p));
-});
+import { GameObjectService } from "./service/game-object.service";
+import type { TGun } from "./generated/models/gun.model";
 
 export function getGunStats() {
-  const guns = getGuns();
+  const guns = GameObjectService.getGuns();
   const featureSet = new Set<TGun["featureFlags"][number]>();
   let maxReloadTime = 0;
   let maxMagazineSize = 0;
@@ -33,7 +20,7 @@ export function getGunStats() {
       if (mode.chargeTime !== undefined) {
         maxChargeTime = Math.max(maxChargeTime, mode.chargeTime);
       }
-      for (const projectile of mode.projectiles) {
+      for (const projectile of mode.volley) {
         maxCooldownTime = Math.max(maxCooldownTime, projectile.cooldownTime);
       }
     }
