@@ -2,21 +2,21 @@ import z from "zod/v4";
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys, StringKeys } from "@/lib/types";
 import type { TProjectile } from "../generated/models/projectile.model";
-import type { TResolvedProjectileModule } from "./game-object.service";
+import type { TResolvedProjectile, TResolvedProjectileModule } from "./game-object.service";
 
 type AggregateModeOption = "volley" | "random";
-type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TProjectile[]) => number);
+type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TResolvedProjectile[]) => number);
 type NumericAggregateConfig = {
-  [K in NumericKeys<TProjectile>]: [random?: AggregateMode, volley?: AggregateMode];
+  [K in NumericKeys<TResolvedProjectile>]: [random?: AggregateMode, volley?: AggregateMode];
 };
 type BooleanAggregateConfig = {
-  [K in BooleanKeys<TProjectile>]: true;
+  [K in BooleanKeys<TResolvedProjectile>]: true;
 };
 type StringAggregateConfig = {
-  [K in StringKeys<TProjectile>]: boolean;
+  [K in StringKeys<TResolvedProjectile>]: boolean;
 };
 type ArrayAggregateConfig = {
-  [K in ArrayKeys<TProjectile>]: true;
+  [K in ArrayKeys<TResolvedProjectile>]: true;
 };
 
 export const RangeLabel = z.enum(["short-range", "mid-range", "long-range"]);
@@ -79,8 +79,13 @@ export class ProjectileService {
     return ((maxSpread - clamped) / maxSpread) * 100;
   }
 
-  static createAggregatedVolley(volley: TResolvedProjectileModule[]): TResolvedProjectileModule {
-    const pp = volley.map((p) => this.createAggregatedProjectile(p.projectiles, "random"));
+  static createAggregatedVolley(
+    volley: TResolvedProjectileModule[],
+    allowSpawnedModules: boolean,
+  ): TResolvedProjectileModule {
+    const pp = volley
+      .filter((m) => allowSpawnedModules || !m.projectiles[0].spawnedBy)
+      .map((m) => this.createAggregatedProjectile(m.projectiles, "random"));
     if (pp.length === 0) {
       throw new Error("Cannot compute average projectile from an empty list.");
     }
@@ -104,11 +109,11 @@ export class ProjectileService {
   }
 
   private static _aggregateAdditionalDamage(
-    projectiles: TProjectile[],
+    projectiles: TResolvedProjectile[],
     mode: AggregateModeOption,
     sums: Record<string, number>,
   ) {
-    const res: Record<string, TProjectile["additionalDamage"][number]> = {};
+    const res: Record<string, TResolvedProjectile["additionalDamage"][number]> = {};
 
     // aggregate additionalDamage.damage
     for (const p of projectiles) {
@@ -159,6 +164,84 @@ export class ProjectileService {
     return Object.values(res);
   }
 
+  // All numeric (and percentage) keys that should be averaged.
+  private static readonly _nAggregateConfig: NumericAggregateConfig = {
+    gunId: [],
+    damage: ["avg", "sum"],
+    speed: ["avg", "avg"],
+    range: ["avg", "max"],
+    force: ["avg", "sum"],
+    poisonChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.poisonChance)],
+    poisonDuration: ["avg", "avg"],
+    speedChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.speedChance)],
+    speedDuration: ["avg", "avg"],
+    speedMultiplier: ["avg", "max"],
+    charmChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.charmChance)],
+    charmDuration: ["avg", "avg"],
+    freezeChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.freezeChance)],
+    freezeDuration: ["avg", "avg"],
+    freezeAmount: ["avg", "max"],
+    fireChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.fireChance)],
+    fireDuration: ["avg", "avg"],
+    stunChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.stunChance)],
+    stunDuration: ["avg", "avg"],
+    cheeseChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.cheeseChance)],
+    cheeseDuration: ["avg", "avg"],
+    cheeseAmount: ["avg", "max"],
+    numberOfBounces: ["avg", "avg"],
+    chanceToDieOnBounce: ["avg", "avg"],
+    damageMultiplierOnBounce: ["avg", "avg"],
+    averageSurvivingBounces: ["avg", "avg"],
+    penetration: ["avg", "max"],
+    homingRadius: ["avg", "max"],
+    homingAngularVelocity: ["avg", "avg"],
+    beamChargeTime: ["max", "max"],
+    beamStatusEffectChancePerSecond: ["max", "max"],
+    explosionForce: ["avg", "sum"],
+    explosionRadius: ["avg", "max"],
+    explosionFreezeRadius: ["avg", "max"],
+    goopCollisionRadius: ["avg", "max"],
+    chanceToTransmogrify: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.chanceToTransmogrify)],
+    helixAmplitude: ["avg", "max"],
+    helixWavelength: ["avg", "max"],
+    devolveChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.devolveChance)],
+    spawnProjectileNumber: ["avg", "sum"],
+    spawnProjectileMaxNumber: ["avg", "sum"],
+    spawnLevel: ["max", "max"],
+    spawnProjectilesInflightPerSecond: ["max", "max"],
+  };
+
+  // All boolean keys that are aggregated with logical-OR.
+  private static readonly _bAggregateConfig: BooleanAggregateConfig = {
+    ignoreDamageCaps: true,
+    canPenetrateObjects: true,
+    isHoming: true,
+    damageAllEnemies: true,
+    hasOilGoop: true,
+    spawnGoopOnCollision: true,
+    dejam: true,
+    mindControl: true,
+    antimatter: true,
+    blankOnCollision: true,
+    sticky: true,
+    isBlackhole: true,
+    spawnCollisionProjectilesOnBounce: true,
+    spawnProjectilesInflight: true,
+    spawnProjectilesOnCollision: true,
+  };
+  // All string keys that are aggregated into arrays of string
+  private static readonly _sAggregateConfig: StringAggregateConfig = {
+    id: true,
+    transmogrifyTarget: true,
+    devolveTarget: true,
+    spawnProjectile: true,
+    spawnedBy: true,
+  };
+  // @ts-expect-error alert linter to update new properties
+  private static readonly _aAggregateConfig: ArrayAggregateConfig = {
+    additionalDamage: true,
+  };
+
   /**
    * Compute an 'aggregated' projectile from a list.
    *
@@ -168,97 +251,26 @@ export class ProjectileService {
    *
    * @throws {Error} if the input array is empty.
    */
-  static createAggregatedProjectile(projectiles: TProjectile[], mode: AggregateModeOption): TProjectile {
+  static createAggregatedProjectile(
+    projectiles: TResolvedProjectile[],
+    mode: AggregateModeOption,
+  ): TResolvedProjectile {
     if (projectiles.length === 0) {
       throw new Error("Cannot average an empty projectile list.");
     }
 
-    // All numeric (and percentage) keys that should be averaged.
-    const nAggregateConfig: NumericAggregateConfig = {
-      gunId: [],
-      damage: ["avg", "sum"],
-      speed: ["avg", "avg"],
-      range: ["avg", "max"],
-      force: ["avg", "sum"],
-      poisonChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.poisonChance)],
-      poisonDuration: ["avg", "avg"],
-      speedChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.speedChance)],
-      speedDuration: ["avg", "avg"],
-      speedMultiplier: ["avg", "max"],
-      charmChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.charmChance)],
-      charmDuration: ["avg", "avg"],
-      freezeChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.freezeChance)],
-      freezeDuration: ["avg", "avg"],
-      freezeAmount: ["avg", "max"],
-      fireChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.fireChance)],
-      fireDuration: ["avg", "avg"],
-      stunChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.stunChance)],
-      stunDuration: ["avg", "avg"],
-      cheeseChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.cheeseChance)],
-      cheeseDuration: ["avg", "avg"],
-      cheeseAmount: ["avg", "max"],
-      numberOfBounces: ["avg", "avg"],
-      chanceToDieOnBounce: ["avg", "avg"],
-      damageMultiplierOnBounce: ["avg", "avg"],
-      averageSurvivingBounces: ["avg", "avg"],
-      penetration: ["avg", "max"],
-      homingRadius: ["avg", "max"],
-      homingAngularVelocity: ["avg", "avg"],
-      beamChargeTime: ["max", "max"],
-      beamStatusEffectChancePerSecond: ["max", "max"],
-      explosionForce: ["avg", "sum"],
-      explosionRadius: ["avg", "max"],
-      explosionFreezeRadius: ["avg", "max"],
-      goopCollisionRadius: ["avg", "max"],
-      chanceToTransmogrify: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.chanceToTransmogrify)],
-      helixAmplitude: ["avg", "max"],
-      helixWavelength: ["avg", "max"],
-      devolveChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.devolveChance)],
-      spawnProjectileNumber: ["avg", "sum"],
-    };
-
-    // All boolean keys that are aggregated with logical-OR.
-    const bAggregateConfig: BooleanAggregateConfig = {
-      ignoreDamageCaps: true,
-      canPenetrateObjects: true,
-      isHoming: true,
-      damageAllEnemies: true,
-      hasOilGoop: true,
-      spawnGoopOnCollision: true,
-      dejam: true,
-      mindControl: true,
-      antimatter: true,
-      blankOnCollision: true,
-      sticky: true,
-      isBlackhole: true,
-      spawnCollisionProjectilesOnBounce: true,
-      spawnProjectilesInflight: true,
-      spawnProjectilesOnCollision: true,
-    };
-    // All string keys that are aggregated into arrays of string
-    const sAggregateConfig: StringAggregateConfig = {
-      id: false,
-      transmogrifyTarget: true,
-      devolveTarget: true,
-      spawnProjectile: true,
-    };
-    // @ts-expect-error alert linter to update new properties
-    const _aAggregateConfig: ArrayAggregateConfig = {
-      additionalDamage: true,
-    };
-
     // ---------- aggregate ----------
     const sums: Record<string, number> = {};
-    Object.keys(nAggregateConfig).forEach((k) => (sums[k] = 0));
+    Object.keys(ProjectileService._nAggregateConfig).forEach((k) => (sums[k] = 0));
 
     const strSums: Record<string, Set<string>> = {};
-    Object.keys(sAggregateConfig).forEach((k) => (strSums[k] = new Set()));
+    Object.keys(ProjectileService._sAggregateConfig).forEach((k) => (strSums[k] = new Set()));
 
     const hasTrue: Record<string, boolean> = {};
-    Object.keys(bAggregateConfig).forEach((k) => (hasTrue[k] = false));
+    Object.keys(ProjectileService._bAggregateConfig).forEach((k) => (hasTrue[k] = false));
 
     for (const p of projectiles) {
-      for (const [k, [random, volley]] of Object.entries(nAggregateConfig)) {
+      for (const [k, [random, volley]] of Object.entries(ProjectileService._nAggregateConfig)) {
         const key = k as NumericKeys<TProjectile>;
         const m = mode === "random" ? random : volley;
 
@@ -269,20 +281,20 @@ export class ProjectileService {
         }
       }
 
-      Object.keys(bAggregateConfig).forEach((k) => {
+      Object.keys(ProjectileService._bAggregateConfig).forEach((k) => {
         const key = k as BooleanKeys<TProjectile>;
         const v = p[key] ?? false;
         hasTrue[key] = hasTrue[key] || v;
       });
 
-      Object.keys(sAggregateConfig).forEach((k) => {
-        if (!sAggregateConfig[k as StringKeys<TProjectile>]) return;
+      Object.keys(ProjectileService._sAggregateConfig).forEach((k) => {
+        if (!ProjectileService._sAggregateConfig[k as StringKeys<TProjectile>]) return;
         const key = k as StringKeys<TProjectile>;
         const v = p[key];
         if (v) strSums[key].add(v);
       });
     }
-    for (const [k, [avg, sum]] of Object.entries(nAggregateConfig)) {
+    for (const [k, [avg, sum]] of Object.entries(ProjectileService._nAggregateConfig)) {
       const key = k as NumericKeys<TProjectile>;
       const m = mode === "random" ? avg : sum;
 
@@ -295,14 +307,15 @@ export class ProjectileService {
 
     // ---------- build result ----------
     const final: Partial<TProjectile> = {
-      id: "average",
       additionalDamage: this._aggregateAdditionalDamage(projectiles, mode, sums),
     };
 
-    Object.keys(nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));
-    Object.keys(bAggregateConfig).forEach((k) => (final[k as BooleanKeys<TProjectile>] = hasTrue[k]));
-    Object.keys(sAggregateConfig).forEach(
-      (k) => (final[k as StringKeys<TProjectile>] = Array.from(strSums[k]).join(", ")),
+    Object.keys(ProjectileService._sAggregateConfig).forEach(
+      (k) => (final[k as StringKeys<TProjectile>] = Array.from(strSums[k]).join(",")),
+    );
+    Object.keys(ProjectileService._nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));
+    Object.keys(ProjectileService._bAggregateConfig).forEach(
+      (k) => (final[k as BooleanKeys<TProjectile>] = hasTrue[k]),
     );
 
     return final as TProjectile;

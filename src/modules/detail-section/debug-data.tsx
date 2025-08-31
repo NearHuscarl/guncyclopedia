@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import cloneDeep from "lodash/cloneDeep";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useIsDebug } from "../shared/hooks/useDebug";
 import { ColorItem } from "../top-bar/shared/components/color-item";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
@@ -12,8 +11,6 @@ type TDebugDataProps = {
 };
 
 export function DebugData({ gun, stats }: TDebugDataProps) {
-  const debug = useIsDebug();
-
   const debugData = useMemo(() => {
     const clonedGun = cloneDeep(gun) as Partial<TGun>;
 
@@ -33,10 +30,7 @@ export function DebugData({ gun, stats }: TDebugDataProps) {
     const { projectile, ...clonedStats2 } = clonedStats;
 
     return { gun: clonedGun, stats: clonedStats2, projectile };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gun.id]);
-
-  if (!debug) return null;
+  }, [gun, stats]);
 
   return (
     <Tabs defaultValue="gun">

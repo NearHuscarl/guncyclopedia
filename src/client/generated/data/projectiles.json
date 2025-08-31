@@ -354,6 +354,38 @@
       ]
     }
   },
+  "Banana_Spawn_Projectile": {
+    "id": "Banana_Spawn_Projectile",
+    "gunId": 478,
+    "damage": 1,
+    "speed": 20,
+    "range": 25,
+    "force": 30,
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "source": "explosion",
+        "damage": 10
+      }
+    ],
+    "numberOfBounces": 1,
+    "averageSurvivingBounces": 1,
+    "damageMultiplierOnBounce": 1,
+    "explosionRadius": 1.5,
+    "explosionForce": 25,
+    "animation": {
+      "name": "banana_projectile_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.78711134,0.37011817,0.8007793,0.37011817,0.78711134,0.38378808,0.8007793,0.38378808,0"
+      ]
+    }
+  },
   "Banana_Projectile": {
     "id": "Banana_Projectile",
     "gunId": 478,
@@ -377,6 +409,7 @@
     "spawnProjectilesOnCollision": true,
     "spawnCollisionProjectilesOnBounce": true,
     "spawnProjectileNumber": 2,
+    "spawnProjectileMaxNumber": 4,
     "spawnProjectile": "Banana_Spawn_Projectile",
     "animation": {
       "name": "banana_projectile_001",
@@ -388,6 +421,38 @@
       "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
       "frames": [
         "0.78711134,0.37011817,0.8007793,0.37011817,0.78711134,0.38378808,0.8007793,0.38378808,0"
+      ]
+    }
+  },
+  "Banana_Spawn_Projectile_Synergy": {
+    "id": "Banana_Spawn_Projectile_Synergy",
+    "gunId": 688,
+    "damage": 1,
+    "speed": 20,
+    "range": 25,
+    "force": 30,
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "source": "explosion",
+        "damage": 10
+      }
+    ],
+    "numberOfBounces": 1,
+    "averageSurvivingBounces": 1,
+    "damageMultiplierOnBounce": 1,
+    "explosionRadius": 1.5,
+    "explosionForce": 25,
+    "animation": {
+      "name": "banana2_gun_charge_002",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.78711134,0.38574317,0.8007793,0.38574317,0.78711134,0.39941308,0.8007793,0.39941308,0"
       ]
     }
   },
@@ -414,6 +479,7 @@
     "spawnProjectilesOnCollision": true,
     "spawnCollisionProjectilesOnBounce": true,
     "spawnProjectileNumber": 2,
+    "spawnProjectileMaxNumber": 4,
     "spawnProjectile": "Banana_Spawn_Projectile_Synergy",
     "animation": {
       "name": "banana2_gun_charge_002",
@@ -1003,6 +1069,28 @@
       "frames": [
         "0.71875197,0.5332041,0.72656053,0.5332041,0.71875197,0.5371084,0.72656053,0.5371084,0",
         "0.39062697,0.57129,0.40820116,0.57129,0.39062697,0.5791006,0.40820116,0.5791006,0"
+      ]
+    }
+  },
+  "BSG_Invisible_Projectile": {
+    "id": "BSG_Invisible_Projectile",
+    "gunId": 21,
+    "damage": 70,
+    "speed": 1,
+    "range": 1,
+    "force": 0,
+    "additionalDamage": [],
+    "damageAllEnemies": true,
+    "animation": {
+      "name": "bullet_variant_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.9882832,0.5175791,0.9980449,0.5175791,0.9882832,0.52246,0.9980449,0.52246,0"
       ]
     }
   },
@@ -1616,6 +1704,32 @@
       ]
     }
   },
+  "Star_Projectile_Small": {
+    "id": "Star_Projectile_Small",
+    "gunId": 52,
+    "damage": 5,
+    "speed": 12,
+    "range": 15,
+    "force": 10,
+    "additionalDamage": [],
+    "numberOfBounces": 3,
+    "averageSurvivingBounces": 3,
+    "damageMultiplierOnBounce": 1,
+    "animation": {
+      "name": "Star_Projectile_Small_Anim",
+      "fps": 14,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.48828322,0.4550791,0.48828322,0.46972558,0.4980449,0.4550791,0.4980449,0.46972558,1",
+        "0.26172072,0.41992286,0.26172072,0.43359277,0.2714824,0.41992286,0.2714824,0.43359277,1",
+        "0.48828322,0.47168067,0.48828322,0.48339745,0.4980449,0.47168067,0.4980449,0.48339745,1"
+      ]
+    }
+  },
   "Star_Uncharged_Projectile": {
     "id": "Star_Uncharged_Projectile",
     "gunId": 52,
@@ -1992,6 +2106,29 @@
         "0.1191416,0.56738377,0.13476464,0.56738377,0.1191416,0.58300686,0.13476464,0.58300686,0",
         "0.097657226,0.57519627,0.113280274,0.57519627,0.097657226,0.59081936,0.113280274,0.59081936,0",
         "0.0800791,0.58300877,0.09570215,0.58300877,0.0800791,0.59863186,0.09570215,0.59863186,0"
+      ]
+    }
+  },
+  "Distortion_Launcher_Projectile_Small": {
+    "id": "Distortion_Launcher_Projectile_Small",
+    "gunId": 228,
+    "damage": 7,
+    "speed": 10,
+    "range": 90,
+    "force": 5,
+    "additionalDamage": [],
+    "isHoming": true,
+    "animation": {
+      "name": "distortion_ball_small",
+      "fps": 8,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.95898634,0.5634775,0.97070116,0.5634775,0.95898634,0.569335,0.97070116,0.569335,0",
+        "0.94336134,0.5634775,0.95507616,0.5634775,0.94336134,0.569335,0.95507616,0.569335,0"
       ]
     }
   },
@@ -3975,6 +4112,30 @@
       ]
     }
   },
+  "ME_Shotgun_Projectile_Small": {
+    "id": "ME_Shotgun_Projectile_Small",
+    "gunId": 365,
+    "damage": 6,
+    "speed": 25,
+    "range": 6,
+    "force": 10,
+    "additionalDamage": [],
+    "numberOfBounces": 1,
+    "averageSurvivingBounces": 1,
+    "damageMultiplierOnBounce": 1,
+    "animation": {
+      "name": "raw_iron_projectile_003",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.84179884,0.53613377,0.8554668,0.53613377,0.84179884,0.5429678,0.8554668,0.5429678,0"
+      ]
+    }
+  },
   "ME_Shotgun_Projectile": {
     "id": "ME_Shotgun_Projectile",
     "gunId": 365,
@@ -5720,6 +5881,28 @@
       ]
     }
   },
+  "EggBulletProjectile": {
+    "id": "EggBulletProjectile",
+    "gunId": 445,
+    "damage": 9,
+    "speed": 10,
+    "range": 1000,
+    "force": 15,
+    "additionalDamage": [],
+    "isHoming": true,
+    "animation": {
+      "name": "bullet_variant_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.9882832,0.5175791,0.9980449,0.5175791,0.9882832,0.52246,0.9980449,0.52246,0"
+      ]
+    }
+  },
   "Egg_Projectile": {
     "id": "Egg_Projectile",
     "gunId": 445,
@@ -7284,6 +7467,28 @@
       ]
     }
   },
+  "Boo_Small_Projectile": {
+    "id": "Boo_Small_Projectile",
+    "gunId": 198,
+    "damage": 5,
+    "speed": 23,
+    "range": 1000,
+    "force": 9,
+    "additionalDamage": [],
+    "animation": {
+      "name": "Boo_Projectile_Small_Anim",
+      "fps": 12,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.7753926,0.5380869,0.79101366,0.5380869,0.7753926,0.5458975,0.79101366,0.5458975,0",
+        "0.8007832,0.5292978,0.8164043,0.5292978,0.8007832,0.5371084,0.8164043,0.5371084,0"
+      ]
+    }
+  },
   "Boo_Projectile": {
     "id": "Boo_Projectile",
     "gunId": 198,
@@ -7298,6 +7503,7 @@
     "homingRadius": 10,
     "homingAngularVelocity": 180,
     "spawnProjectilesInflight": true,
+    "spawnProjectilesInflightPerSecond": 0.5,
     "spawnProjectilesOnCollision": false,
     "spawnCollisionProjectilesOnBounce": false,
     "spawnProjectileNumber": 1,
@@ -7708,6 +7914,30 @@
     "penetration": 10,
     "canPenetrateObjects": false
   },
+  "Bullet_Gun_Spawn_Projectile": {
+    "id": "Bullet_Gun_Spawn_Projectile",
+    "gunId": 503,
+    "damage": 4,
+    "speed": 23,
+    "range": 4,
+    "force": 12,
+    "additionalDamage": [],
+    "isHoming": true,
+    "homingRadius": 2,
+    "homingAngularVelocity": 100,
+    "animation": {
+      "name": "bullet_variant_011",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.93554884,0.5507822,0.94726366,0.5507822,0.93554884,0.5566397,0.94726366,0.5566397,0"
+      ]
+    }
+  },
   "Gun_Projectile": {
     "id": "Gun_Projectile",
     "gunId": 503,
@@ -7717,6 +7947,7 @@
     "force": 13,
     "additionalDamage": [],
     "spawnProjectilesInflight": true,
+    "spawnProjectilesInflightPerSecond": 10,
     "spawnProjectilesOnCollision": false,
     "spawnCollisionProjectilesOnBounce": false,
     "spawnProjectileNumber": 2,
@@ -8280,6 +8511,27 @@
       ]
     }
   },
+  "Shotgun_Gun_Spawn_Projectile": {
+    "id": "Shotgun_Gun_Spawn_Projectile",
+    "gunId": 512,
+    "damage": 4,
+    "speed": 23,
+    "range": 8,
+    "force": 12,
+    "additionalDamage": [],
+    "animation": {
+      "name": "bullet_variant_011",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.93554884,0.5507822,0.94726366,0.5507822,0.93554884,0.5566397,0.94726366,0.5566397,0"
+      ]
+    }
+  },
   "Shotgun_Gun_Projectile": {
     "id": "Shotgun_Gun_Projectile",
     "gunId": 512,
@@ -8485,6 +8737,30 @@
       ]
     }
   },
+  "Squad_Green_Small_Projectile": {
+    "id": "Squad_Green_Small_Projectile",
+    "gunId": 151,
+    "damage": 3,
+    "speed": 19,
+    "range": 10,
+    "force": 6,
+    "additionalDamage": [],
+    "numberOfBounces": 1,
+    "averageSurvivingBounces": 1,
+    "damageMultiplierOnBounce": 1,
+    "animation": {
+      "name": "pea_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.9003926,0.54004,0.91406053,0.54004,0.9003926,0.54687405,0.91406053,0.54687405,0"
+      ]
+    }
+  },
   "Squad_Green_Projectile": {
     "id": "Squad_Green_Projectile",
     "gunId": 151,
@@ -8511,6 +8787,33 @@
         "0.55468947,0.47754005,0.55468947,0.48828027,0.5664043,0.47754005,0.5664043,0.48828027,1",
         "0.88086134,0.5019541,0.89843553,0.5019541,0.88086134,0.5097647,0.89843553,0.5097647,0",
         "0.66992384,0.5253916,0.6835918,0.5253916,0.66992384,0.5351553,0.6835918,0.5351553,0"
+      ]
+    }
+  },
+  "Pot_Projectile_Shard": {
+    "id": "Pot_Projectile_Shard",
+    "gunId": 152,
+    "damage": 4,
+    "speed": 25,
+    "range": 45,
+    "force": 6,
+    "additionalDamage": [],
+    "numberOfBounces": 1,
+    "averageSurvivingBounces": 1,
+    "damageMultiplierOnBounce": 1,
+    "animation": {
+      "name": "crystal_shard_projectile_anim",
+      "fps": 16,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.5332051,0.47754005,0.5507793,0.47754005,0.5332051,0.4951162,0.5507793,0.4951162,0",
+        "0.39453322,0.50488377,0.39453322,0.52246,0.4121074,0.50488377,0.4121074,0.52246,1",
+        "0.2519551,0.48339942,0.26952928,0.48339942,0.2519551,0.5009756,0.26952928,0.5009756,0",
+        "0.45703322,0.4970713,0.49218553,0.4970713,0.45703322,0.5058584,0.49218553,0.5058584,0"
       ]
     }
   },
@@ -8777,6 +9080,42 @@
     "force": 13,
     "additionalDamage": [],
     "mindControl": true
+  },
+  "Exotic_Submissile": {
+    "id": "Exotic_Submissile",
+    "gunId": 563,
+    "damage": 2,
+    "speed": 10,
+    "range": 10,
+    "force": 30,
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "source": "explosion",
+        "damage": 5
+      }
+    ],
+    "explosionRadius": 2,
+    "explosionForce": 15,
+    "isHoming": true,
+    "animation": {
+      "name": "exotic_submissile_exhaust",
+      "fps": 6,
+      "loopStart": 0,
+      "wrapMode": "Once",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/dolphin_vfx_collection_001_data/atlas0.png",
+      "frames": [
+        "0.25586036,0.11816504,0.2714834,0.11816504,0.25586036,0.11913965,0.2714834,0.11913965,0",
+        "0.25586036,0.11816504,0.2714834,0.11816504,0.25586036,0.11913965,0.2714834,0.11913965,0",
+        "0.25586036,0.11816504,0.2714834,0.11816504,0.25586036,0.11913965,0.2714834,0.11913965,0",
+        "0.25586036,0.11816504,0.2714834,0.11816504,0.25586036,0.11913965,0.2714834,0.11913965,0",
+        "0.24121192,0.21093848,0.25683495,0.21093848,0.24121192,0.21191308,0.25683495,0.21191308,0",
+        "0.20214942,0.21093848,0.21777245,0.21093848,0.20214942,0.21191308,0.21777245,0.21191308,0",
+        "0.22168067,0.21093848,0.2373037,0.21093848,0.22168067,0.21191308,0.2373037,0.21191308,0"
+      ]
+    }
   },
   "Exotic_Projectile": {
     "id": "Exotic_Projectile",
@@ -9533,6 +9872,27 @@
       ]
     }
   },
+  "BigShotgun_Projectile_Small": {
+    "id": "BigShotgun_Projectile_Small",
+    "gunId": 601,
+    "damage": 5.5,
+    "speed": 20,
+    "range": 1000,
+    "force": 9,
+    "additionalDamage": [],
+    "animation": {
+      "name": "BigShotgun_projectile_small_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/dolphin_projectiles_data/atlas0.png",
+      "frames": [
+        "0.6738301,0.22851758,0.6738301,0.24804492,0.6914043,0.22851758,0.6914043,0.24804492,1"
+      ]
+    }
+  },
   "BigShotgun_Projectile": {
     "id": "BigShotgun_Projectile",
     "gunId": 601,
@@ -9615,6 +9975,42 @@
         "0.6523457,0.16211133,0.6777324,0.16211133,0.6523457,0.18749805,0.6777324,0.18749805,0",
         "0.5488301,0.5800801,0.5488301,0.6074199,0.5742168,0.5800801,0.5742168,0.6074199,1",
         "0.64062697,0.2304707,0.66601366,0.2304707,0.64062697,0.2558574,0.66601366,0.2558574,0"
+      ]
+    }
+  },
+  "Chamber_Gun_Catacomb_Rocket": {
+    "id": "Chamber_Gun_Catacomb_Rocket",
+    "gunId": 659,
+    "damage": 10,
+    "speed": 10,
+    "range": 25,
+    "force": 30,
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "source": "explosion",
+        "damage": 15
+      }
+    ],
+    "explosionRadius": 2,
+    "explosionForce": 15,
+    "isHoming": true,
+    "animation": {
+      "name": "exotic_submissile_exhaust",
+      "fps": 6,
+      "loopStart": 0,
+      "wrapMode": "Once",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/dolphin_vfx_collection_001_data/atlas0.png",
+      "frames": [
+        "0.25586036,0.11816504,0.2714834,0.11816504,0.25586036,0.11913965,0.2714834,0.11913965,0",
+        "0.25586036,0.11816504,0.2714834,0.11816504,0.25586036,0.11913965,0.2714834,0.11913965,0",
+        "0.25586036,0.11816504,0.2714834,0.11816504,0.25586036,0.11913965,0.2714834,0.11913965,0",
+        "0.25586036,0.11816504,0.2714834,0.11816504,0.25586036,0.11913965,0.2714834,0.11913965,0",
+        "0.24121192,0.21093848,0.25683495,0.21093848,0.24121192,0.21191308,0.25683495,0.21191308,0",
+        "0.20214942,0.21093848,0.21777245,0.21093848,0.20214942,0.21191308,0.21777245,0.21191308,0",
+        "0.22168067,0.21093848,0.2373037,0.21093848,0.22168067,0.21191308,0.2373037,0.21191308,0"
       ]
     }
   },

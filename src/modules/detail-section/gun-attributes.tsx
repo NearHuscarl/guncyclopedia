@@ -217,12 +217,12 @@ const playerLookup: { [key in TPlayerName]?: [string, ReactNode, ReactNode?] } =
 };
 
 type TGunAttributesProps = {
-  projectileData: TProjectile;
+  projectile: TProjectile;
   gun?: TGun;
   gunStats?: TGunStats;
 };
 
-export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesProps) {
+export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps) {
   const setUseChargeAnimation = useGunStore((state) => state.setUseChargeAnimation);
   return (
     <div className="flex gap-3">
@@ -284,85 +284,85 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
       )}
       {gun?.playerStatModifiers.map((m) => playerStatsComponentLookup[m.statToBoost]?.(m) || null).filter(Boolean)}
       {createStatusEffectAttribute(
-        projectileData.charmChance,
+        projectile.charmChance,
         "text-fuchsia-500",
         <Heart size={20} color={fuchsia500} />,
         <>
           <strong>Charm</strong>
           <br />
-          Projectile has <strong>{toPercent(projectileData.charmChance || 0)}</strong> chance to charm an enemy for{" "}
-          <strong>{formatNumber(projectileData.charmDuration || 0, 1)}s</strong>.
+          Projectile has <strong>{toPercent(projectile.charmChance || 0)}</strong> chance to charm an enemy for{" "}
+          <strong>{formatNumber(projectile.charmDuration || 0, 1)}s</strong>.
         </>,
       )}
       {createStatusEffectAttribute(
-        projectileData.fireChance,
+        projectile.fireChance,
         "text-red-600",
         <Flame size={18} color={red600} />,
         <>
           <strong>Fire</strong>
           <br />
-          Projectile has <strong>{toPercent(projectileData.fireChance || 0)}</strong> chance to burn an enemy for{" "}
-          <strong>{formatNumber(projectileData.fireDuration || 0, 1)}s</strong>.
+          Projectile has <strong>{toPercent(projectile.fireChance || 0)}</strong> chance to burn an enemy for{" "}
+          <strong>{formatNumber(projectile.fireDuration || 0, 1)}s</strong>.
         </>,
       )}
       {createStatusEffectAttribute(
-        projectileData.speedChance,
+        projectile.speedChance,
         "text-orange-500",
         <Snail size={20} color={orange500} />,
         <>
           <strong>Slow</strong>
           <br />
-          Projectile has <strong>{toPercent(projectileData.speedChance || 0)}</strong> chance to slow down an enemy by{" "}
-          <strong>{toPercent(1 - projectileData.speedMultiplier!)}</strong> for{" "}
-          <strong>{formatNumber(projectileData.speedDuration || 0, 1)}s</strong>.
+          Projectile has <strong>{toPercent(projectile.speedChance || 0)}</strong> chance to slow down an enemy by{" "}
+          <strong>{toPercent(1 - projectile.speedMultiplier!)}</strong> for{" "}
+          <strong>{formatNumber(projectile.speedDuration || 0, 1)}s</strong>.
         </>,
       )}
       {createStatusEffectAttribute(
-        projectileData.poisonChance,
+        projectile.poisonChance,
         "text-green-500",
         <Biohazard size={20} color={green500} />,
         <>
           <strong>Poison</strong>
           <br />
-          Projectile has <strong>{toPercent(projectileData.poisonChance || 0)}</strong> chance to poison an enemy for{" "}
-          <strong>{formatNumber(projectileData.poisonDuration || 0, 1)}s</strong>.
+          Projectile has <strong>{toPercent(projectile.poisonChance || 0)}</strong> chance to poison an enemy for{" "}
+          <strong>{formatNumber(projectile.poisonDuration || 0, 1)}s</strong>.
         </>,
       )}
       {createStatusEffectAttribute(
-        projectileData.freezeChance,
+        projectile.freezeChance,
         "text-sky-500",
         <Snowflake size={20} color={sky500} />,
         <>
           <strong>Freeze</strong>
           <br />
-          Projectile has <strong>{toPercent(projectileData.freezeChance || 0)}</strong> chance to freeze an enemy for{" "}
-          <strong>{formatNumber(projectileData.freezeDuration || 0, 1)}s</strong>.
+          Projectile has <strong>{toPercent(projectile.freezeChance || 0)}</strong> chance to freeze an enemy for{" "}
+          <strong>{formatNumber(projectile.freezeDuration || 0, 1)}s</strong>.
           <br />
-          Freeze amount: <strong>{projectileData.freezeAmount}</strong>
+          Freeze amount: <strong>{projectile.freezeAmount}</strong>
         </>,
       )}
       {createStatusEffectAttribute(
-        projectileData.stunChance,
+        projectile.stunChance,
         "text-slate-400",
         <Stun size={20} color={slate400} />,
         <>
           <strong>Stun</strong>
           <br />
-          Projectile has <strong>{toPercent(projectileData.stunChance || 0)}</strong> chance to stun an enemy for{" "}
-          <strong>{formatNumber(projectileData.stunDuration || 0, 1)}s</strong>.
+          Projectile has <strong>{toPercent(projectile.stunChance || 0)}</strong> chance to stun an enemy for{" "}
+          <strong>{formatNumber(projectile.stunDuration || 0, 1)}s</strong>.
         </>,
       )}
       {createStatusEffectAttribute(
-        projectileData.cheeseChance,
+        projectile.cheeseChance,
         "text-yellow-500",
         <Cheese size={20} color={yellow500} />,
         <>
           <strong>Cheese</strong>
           <br />
-          Projectile has <strong>{toPercent(projectileData.cheeseChance || 0)}</strong> chance to encheese an enemy for{" "}
-          <strong>{formatNumber(projectileData.cheeseDuration || 0, 1)}s</strong>
+          Projectile has <strong>{toPercent(projectile.cheeseChance || 0)}</strong> chance to encheese an enemy for{" "}
+          <strong>{formatNumber(projectile.cheeseDuration || 0, 1)}s</strong>
           .<br />
-          Cheese amount: <strong>{projectileData.cheeseAmount}</strong>
+          Cheese amount: <strong>{projectile.cheeseAmount}</strong>
         </>,
       )}
       {gun?.attribute.activeReload && (
@@ -424,7 +424,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           </TooltipContent>
         </Tooltip>
       )}
-      {(projectileData.helixAmplitude || undefined) && !projectileData.antimatter && (
+      {(projectile.helixAmplitude || undefined) && !projectile.antimatter && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
@@ -436,12 +436,12 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             <br />
             Fires two projectiles in opposite wave patterns, meeting and diverging as they travel.
             <br />
-            Wave length: <strong>{projectileData.helixWavelength}</strong>, Wave amplitude:{" "}
-            <strong>{projectileData.helixAmplitude}</strong>
+            Wave length: <strong>{projectile.helixWavelength}</strong>, Wave amplitude:{" "}
+            <strong>{projectile.helixAmplitude}</strong>
           </TooltipContent>
         </Tooltip>
       )}
-      {(projectileData.helixAmplitude || undefined) && projectileData.antimatter && (
+      {(projectile.helixAmplitude || undefined) && projectile.antimatter && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
@@ -454,12 +454,12 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
             Fires two projectiles in opposite wave patterns. When colliding, they cause a large explosion and trigger a
             blank effect.
             <br />
-            Wave length: <strong>{projectileData.helixWavelength}</strong>, Wave amplitude:{" "}
-            <strong>{projectileData.helixAmplitude}</strong>
+            Wave length: <strong>{projectile.helixWavelength}</strong>, Wave amplitude:{" "}
+            <strong>{projectile.helixAmplitude}</strong>
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.blankOnCollision && (
+      {projectile.blankOnCollision && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
@@ -473,7 +473,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.dejam && (
+      {projectile.dejam && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
@@ -487,7 +487,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.sticky && (
+      {projectile.sticky && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
@@ -501,7 +501,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.mindControl && (
+      {projectile.mindControl && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
@@ -517,7 +517,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.ignoreDamageCaps && (
+      {projectile.ignoreDamageCaps && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
@@ -531,13 +531,13 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.hasOilGoop && projectileData.spawnGoopOnCollision && (
+      {projectile.hasOilGoop && projectile.spawnGoopOnCollision && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              {(Math.floor(projectileData.goopCollisionRadius || 0) || undefined) && (
+              {(Math.floor(projectile.goopCollisionRadius || 0) || undefined) && (
                 <NumericValue className="text-slate-500">
-                  {formatNumber(projectileData.goopCollisionRadius!, 1)}
+                  {formatNumber(projectile.goopCollisionRadius!, 1)}
                 </NumericValue>
               )}
               <OilGoop size={16} className="[&>path]:fill-slate-500" />
@@ -546,21 +546,21 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <TooltipContent className="text-wrap w-72">
             <strong>Oil Goop</strong>
             <br />
-            {(projectileData.goopCollisionRadius || undefined) && (
+            {(projectile.goopCollisionRadius || undefined) && (
               <>
                 Projectile leaves behind <strong>oil goop</strong> on collision with the surface, spreading within a
-                radius of <strong>{formatNumber(projectileData.goopCollisionRadius!, 1)}</strong>.
+                radius of <strong>{formatNumber(projectile.goopCollisionRadius!, 1)}</strong>.
               </>
             )}
           </TooltipContent>
         </Tooltip>
       )}
-      {(projectileData.chanceToTransmogrify || 0) > 0 && (
+      {(projectile.chanceToTransmogrify || 0) > 0 && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               <NumericValue className={clsx("text-purple-500")}>
-                {toPercent(projectileData.chanceToTransmogrify!)}
+                {toPercent(projectile.chanceToTransmogrify!)}
               </NumericValue>
               <WandSparkles size={16} className={"[&_path]:stroke-purple-500!"} />
             </div>
@@ -568,12 +568,12 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <TooltipContent>
             <strong>Transmogrifying Projectile</strong>
             <br />
-            Has <strong>{toPercent(projectileData.chanceToTransmogrify!)}</strong> chance to transmogrify enemies into{" "}
-            <strong>{projectileData.transmogrifyTarget}</strong>
+            Has <strong>{toPercent(projectile.chanceToTransmogrify!)}</strong> chance to transmogrify enemies into{" "}
+            <strong>{projectile.transmogrifyTarget}</strong>
           </TooltipContent>
         </Tooltip>
       )}
-      {(projectileData.devolveChance || undefined) && (
+      {(projectile.devolveChance || undefined) && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
@@ -583,12 +583,12 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <TooltipContent className="text-wrap w-72">
             <strong>Devolve Projectile</strong>
             <br />
-            Projectile has <strong>{toPercent(projectileData.devolveChance || 0)}</strong> chance to devolve an enemy to{" "}
-            <strong>{startCase(projectileData.devolveTarget)}</strong>.
+            Projectile has <strong>{toPercent(projectile.devolveChance || 0)}</strong> chance to devolve an enemy to{" "}
+            <strong>{startCase(projectile.devolveTarget)}</strong>.
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.isBlackhole && (
+      {projectile.isBlackhole && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
@@ -602,12 +602,35 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.isHoming && (
+      {(projectile.explosionRadius || undefined) && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              {(projectileData.homingRadius || undefined) && (
-                <NumericValue>{formatNumber(projectileData.homingRadius!, 0)}</NumericValue>
+              <NumericValue className={clsx({ "text-sky-500": projectile.explosionFreezeRadius })}>
+                {formatNumber(projectile.explosionRadius!, 1)}
+              </NumericValue>
+              <Explosion size={20} className={clsx({ "[&_path]:fill-sky-500!": projectile.explosionFreezeRadius })} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Explosive Projectile</strong>
+            <br />
+            Explosion radius: <strong>{formatNumber(projectile.explosionRadius!, 1)}</strong>
+            {(projectile.explosionFreezeRadius || undefined) && (
+              <>
+                <br />
+                Freeze radius: <strong>{formatNumber(projectile.explosionFreezeRadius!, 1)}</strong>
+              </>
+            )}
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectile.isHoming && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              {(projectile.homingRadius || undefined) && (
+                <NumericValue>{formatNumber(projectile.homingRadius!, 0)}</NumericValue>
               )}
               <Crosshair size={18} />
             </div>
@@ -615,63 +638,63 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <TooltipContent>
             <strong>Homing Projectile</strong>
             <br />
-            {(projectileData.homingRadius || undefined) && (
+            {(projectile.homingRadius || undefined) && (
               <>
-                Homing radius: <strong>{formatNumber(projectileData.homingRadius!, 0)}</strong>
-              </>
-            )}
-          </TooltipContent>
-        </Tooltip>
-      )}
-      {(projectileData.explosionRadius || undefined) && (
-        <Tooltip delayDuration={TOOLTIP_DELAY}>
-          <TooltipTrigger>
-            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              <NumericValue className={clsx({ "text-sky-500": projectileData.explosionFreezeRadius })}>
-                {formatNumber(projectileData.explosionRadius!, 1)}
-              </NumericValue>
-              <Explosion
-                size={20}
-                className={clsx({ "[&_path]:fill-sky-500!": projectileData.explosionFreezeRadius })}
-              />
-            </div>
-          </TooltipTrigger>
-          <TooltipContent>
-            <strong>Explosive Projectile</strong>
-            <br />
-            Explosion radius: <strong>{formatNumber(projectileData.explosionRadius!, 1)}</strong>
-            {(projectileData.explosionFreezeRadius || undefined) && (
-              <>
+                Target radius: <strong>{formatNumber(projectile.homingRadius!, 0)}</strong>
                 <br />
-                Freeze radius: <strong>{formatNumber(projectileData.explosionFreezeRadius!, 1)}</strong>
+                {projectile.homingAngularVelocity && (
+                  <>
+                    Angular velocity: <strong>{formatNumber(projectile.homingAngularVelocity!, 0)}°/s</strong>
+                  </>
+                )}
               </>
             )}
           </TooltipContent>
         </Tooltip>
       )}
-      {projectileData.spawnProjectile && (
+      {projectile.spawnProjectile && projectile.spawnProjectilesOnCollision && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              {(projectileData.spawnProjectileNumber || undefined) && (
-                <NumericValue>{formatNumber(projectileData.spawnProjectileNumber!, 0)}</NumericValue>
-              )}
+              <NumericValue>
+                {formatNumber(projectile.spawnProjectileMaxNumber || projectile.spawnProjectileNumber!, 0)}
+              </NumericValue>
               <SpawnModifier size={22} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
             <strong>Spawn Projectile</strong>
             <br />
-            TODO
+            Spawns{" "}
+            <strong>
+              {formatNumber(projectile.spawnProjectileMaxNumber || projectile.spawnProjectileNumber!, 0)}
+            </strong>{" "}
+            other projectiles in total upon contact.
           </TooltipContent>
         </Tooltip>
       )}
-      {(projectileData.penetration || undefined) && (
+      {projectile.spawnProjectile && projectile.spawnProjectilesInflight && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              {(Math.floor(projectileData.penetration || 0) || undefined) && (
-                <NumericValue>{formatNumber(projectileData.penetration!, 1)}</NumericValue>
+              <NumericValue>{formatNumber(projectile.spawnProjectilesInflightPerSecond!, 1)}/s</NumericValue>
+              <SpawnModifier size={22} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Spawn Projectile</strong>
+            <br />
+            Spawns a new projectile every{" "}
+            <strong>{formatNumber(projectile.spawnProjectilesInflightPerSecond!, 1)}</strong> seconds while in flight.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(projectile.penetration || undefined) && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              {(Math.floor(projectile.penetration || 0) || undefined) && (
+                <NumericValue>{formatNumber(projectile.penetration!, 1)}</NumericValue>
               )}
               <Penetration size={20} />
             </div>
@@ -679,16 +702,16 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <TooltipContent>
             <strong>Piercing Projectile</strong>
             <br />
-            Number of penetration: <strong>{formatNumber(projectileData.penetration!, 1)}</strong>
+            Number of penetration: <strong>{formatNumber(projectile.penetration!, 1)}</strong>
           </TooltipContent>
         </Tooltip>
       )}
-      {(projectileData.numberOfBounces || undefined) && (
+      {(projectile.numberOfBounces || undefined) && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              {(Math.floor(projectileData.numberOfBounces || 0) || undefined) && (
-                <NumericValue>{formatNumber(projectileData.numberOfBounces!, 1)}</NumericValue>
+              {(Math.floor(projectile.numberOfBounces || 0) || undefined) && (
+                <NumericValue>{formatNumber(projectile.numberOfBounces!, 1)}</NumericValue>
               )}
               <Bounce color="white" size={20} />
             </div>
@@ -696,7 +719,7 @@ export function GunAttributes({ projectileData, gun, gunStats }: TGunAttributesP
           <TooltipContent>
             <strong>Bouncing Projectile</strong>
             <br />
-            Number of bounces: <strong>{formatNumber(projectileData.numberOfBounces!, 1)}</strong>
+            Number of bounces: <strong>{formatNumber(projectile.numberOfBounces!, 1)}</strong>
           </TooltipContent>
         </Tooltip>
       )}

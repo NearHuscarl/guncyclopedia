@@ -6,6 +6,8 @@ import { usePrevious } from "@/lib/hooks";
 import { useSelectedGun } from "../shared/hooks/useGuns";
 import { NumericValue } from "./numeric-value";
 import { useAppState } from "../shared/hooks/useAppState";
+import { GameObjectService } from "@/client/service/game-object.service";
+import { AnimatedSprite } from "../shared/components/animated-sprite";
 import type { HTMLAttributes, ReactNode } from "react";
 
 function isInfinite(value: number): boolean {
@@ -196,7 +198,7 @@ export function StatStackBar({
         )}
         <NumericValue>
           {totalValue - baseValue > 0 && !isInfinite(totalValue - baseValue) && !modifier
-            ? `${formatNumber(displayBaseValue, precision)} - ${formatNumber(displayTotalValue, precision)}`
+            ? `${formatNumber(displayBaseValue, precision)} → ${formatNumber(displayTotalValue, precision)}`
             : formatNumber(displayBaseValue, precision)}
         </NumericValue>
       </div>
@@ -242,15 +244,25 @@ export function StatStackBar({
               delayDuration={tooltip ? 100 : 100_000}
             >
               <TooltipTrigger {...barProps} />
-              <TooltipContent>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: tooltip.replace(
-                      "{{VALUE}}",
-                      `<strong>${formatNumber(isInfiniteValue ? Infinity : value, precision)}</strong>`,
-                    ),
-                  }}
-                />
+              <TooltipContent className="flex items-center gap-2">
+                {tooltip
+                  .replace(
+                    "{{VALUE}}",
+                    `<strong>${formatNumber(isInfiniteValue ? Infinity : value, precision)}</strong>`,
+                  )
+                  .split(/({{P:[\w_]+}})/)
+                  .map((part, i) => {
+                    const match = /{{P:([\w_]+)}}/.exec(part);
+                    if (match) {
+                      const projectileId = match[1];
+                      const projectile = GameObjectService.getProjectile(projectileId);
+                      if (projectile.animation) {
+                        return <AnimatedSprite key={projectileId} animation={projectile.animation} />;
+                      }
+                      return null;
+                    }
+                    return <div key={i} dangerouslySetInnerHTML={{ __html: part }} />;
+                  })}
               </TooltipContent>
             </Tooltip>
           );

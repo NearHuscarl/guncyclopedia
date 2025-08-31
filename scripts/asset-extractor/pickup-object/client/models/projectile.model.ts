@@ -123,9 +123,18 @@ export const Projectile = z.object({
   homingAngularVelocity: z.number().optional(),
 
   spawnProjectilesInflight: z.boolean().optional(),
+  /**
+   * The number of projectiles to spawn per second while the projectile is in flight.
+   */
+  spawnProjectilesInflightPerSecond: z.number().optional(),
   spawnProjectilesOnCollision: z.boolean().optional(),
   spawnCollisionProjectilesOnBounce: z.boolean().optional(),
   spawnProjectileNumber: z.number().optional(),
+  /**
+   * The maximum number of projectiles that can be spawned if the projectile
+   * can bounce successfully and `spawnCollisionProjectilesOnBounce` is true.
+   */
+  spawnProjectileMaxNumber: z.number().optional(),
   spawnProjectile: z.string().optional(),
 
   beamChargeTime: z.number().optional(),

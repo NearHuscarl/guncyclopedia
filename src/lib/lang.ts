@@ -15,3 +15,9 @@ export function formatNumber(value: number, precision = 2): string {
 export function toPercent(value: number): string {
   return (value * 100).toFixed(0) + "%";
 }
+
+export function joinWords(words: string[], separator = ", "): string {
+  if (words.length === 0) return "";
+  if (words.length === 1) return words[0];
+  return words.slice(0, -1).join(separator) + " and " + words.at(-1);
+}

@@ -3109,6 +3109,7 @@
     "maxAmmo": 25,
     "reloadTime": 2.4,
     "featureFlags": [
+      "damageAllEnemies",
       "hasSpawningProjectiles"
     ],
     "attribute": {},
@@ -5783,6 +5784,7 @@
     "maxAmmo": 60,
     "reloadTime": 2.4,
     "featureFlags": [
+      "hasHomingProjectiles",
       "hasSpawningProjectiles"
     ],
     "attribute": {},
@@ -12633,8 +12635,8 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasExplosiveProjectile",
-      "hasSpawningProjectiles",
       "hasHomingProjectiles",
+      "hasSpawningProjectiles",
       "hasMultipleDamageSources"
     ],
     "attribute": {},
@@ -17313,6 +17315,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.2,
     "featureFlags": [
+      "hasHomingProjectiles",
       "hasSpawningProjectiles"
     ],
     "attribute": {},
@@ -21590,6 +21593,7 @@
       "hasHomingProjectiles"
     ],
     "attribute": {},
+    "video": "https://youtu.be/8KWojKYrOUs?t=40",
     "colors": [
       "gray",
       "lightGray"
@@ -23241,6 +23245,7 @@
     "maxAmmo": 250,
     "reloadTime": 1,
     "featureFlags": [
+      "hasHomingProjectiles",
       "hasSpawningProjectiles"
     ],
     "attribute": {},
@@ -27047,6 +27052,7 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasExplosiveProjectile",
+      "hasHomingProjectiles",
       "hasSpawningProjectiles",
       "hasMultipleDamageSources"
     ],
@@ -29071,6 +29077,7 @@
     "featureFlags": [
       "hasStatusEffects",
       "hasExplosiveProjectile",
+      "hasHomingProjectiles",
       "hasSpawningProjectiles",
       "hasMultipleDamageSources"
     ],

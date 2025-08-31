@@ -23,6 +23,7 @@ import { GunAttributes } from "./gun-attributes";
 import { ShootStyle } from "./shoot-style";
 import { useGunStore } from "../shared/store/gun.store";
 import { DebugData } from "./debug-data";
+import { useIsDebug } from "../shared/hooks/useDebug";
 import type { TGun } from "@/client/generated/models/gun.model";
 
 // Attributes
@@ -39,6 +40,7 @@ const forceUseReloadAsIntroAnimation = new Set([387]);
 function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mode: string }) {
   const useChargeAnimation = useGunStore((state) => state.useChargeAnimation);
   let animationName: keyof TGun["animation"] = "idle";
+  const chargeAnimation = gun.animation.charge ?? gun.animation.idle; // gamma ray doesn't have charge & shooting anim
 
   if (useChargeAnimation) animationName = "charge";
 
@@ -66,7 +68,7 @@ function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mo
           ].filter((a) => !isUndefined(a))}
         />
       ) : (
-        <AnimatedSprite key={`${gun.id}-${animationName}`} scale={6} animation={gun.animation.charge!} />
+        <AnimatedSprite key={`${gun.id}-${animationName}`} scale={6} animation={chargeAnimation} />
       )}
       {hoverGun && hoverGun.id !== gun.id && (
         <>
@@ -79,6 +81,7 @@ function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mo
 }
 
 export function DetailSection() {
+  const isDebug = useIsDebug();
   const gun = useSelectedGun();
   const hoverGun = useHoverGun();
   const stats = useLoaderData((state) => state.stats);
@@ -177,7 +180,7 @@ export function DetailSection() {
           </div>
           <div className="flex justify-between items-baseline">
             <ShootStyle value={selectedStats.shootStyle} />
-            <GunAttributes projectileData={selectedStats.projectile} gun={selectedGun} gunStats={selectedStats} />
+            <GunAttributes projectile={selectedStats.projectile} gun={selectedGun} gunStats={selectedStats} />
           </div>
         </div>
       </div>
@@ -216,16 +219,6 @@ export function DetailSection() {
           modifier={hoverGunStats.reloadTime - gunStats.reloadTime}
           unit="s"
         />
-        {/* {gunStats.mode.chargeTime !== undefined && (
-          <StatBar
-            label="Charge Time"
-            isNegativeStat
-            value={gunStats.mode.chargeTime}
-            max={stats.maxChargeTime}
-            modifier={(hoverGunStats.mode.chargeTime ?? gunStats.mode.chargeTime) - gunStats.mode.chargeTime}
-            unit="s"
-          />
-        )} */}
         <div className="flex gap-2 items-center">
           <H3>Projectile Stats</H3>
           {!showProjectilePool && (
@@ -297,7 +290,7 @@ export function DetailSection() {
           modifier={hoverGunStats.force.base - gunStats.force.base}
         />
         <Features gun={selectedGun} className="mt-4" />
-        <DebugData gun={selectedGun} stats={selectedStats} />
+        {isDebug && <DebugData gun={selectedGun} stats={selectedStats} />}
         <div className="h-14" />
       </div>
     </div>

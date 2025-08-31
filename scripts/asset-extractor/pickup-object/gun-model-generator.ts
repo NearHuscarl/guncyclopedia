@@ -259,11 +259,18 @@ export class GunModelGenerator {
       }
 
       proj.spawnProjectilesInflight = Boolean(spawnProjModifier.spawnProjectilesInFlight);
+      if (spawnProjModifier.spawnProjectilesInFlight) {
+        proj.spawnProjectilesInflightPerSecond = 1 / spawnProjModifier.inFlightSpawnCooldown;
+      }
+
       proj.spawnProjectilesOnCollision = Boolean(spawnProjModifier.spawnProjectilesOnCollision);
       proj.spawnCollisionProjectilesOnBounce = Boolean(spawnProjModifier.spawnCollisionProjectilesOnBounce);
       proj.spawnProjectileNumber = spawnProjModifier.spawnProjectilesInFlight
         ? spawnProjModifier.numToSpawnInFlight
         : spawnProjModifier.numberToSpawnOnCollison;
+      if (proj.spawnCollisionProjectilesOnBounce && projDto.bounceProjModifier) {
+        proj.spawnProjectileMaxNumber = proj.spawnProjectileNumber * (projDto.bounceProjModifier.numberOfBounces + 1);
+      }
       const spawnProjReference = (
         spawnProjModifier.spawnProjectilesInFlight
           ? spawnProjModifier.projectileToSpawnInFlight
@@ -271,7 +278,7 @@ export class GunModelGenerator {
             ? spawnProjModifier.collisionSpawnProjectiles[0]
             : spawnProjModifier.projectileToSpawnOnCollision
       ) as Required<TAssetExternalReference>;
-      proj.spawnProjectile = this._getProjectileDto(gunDto, spawnProjReference)?.id;
+      proj.spawnProjectile = this._buildProjectile(gunDto, spawnProjReference);
 
       this._featureFlags.add("hasSpawningProjectiles");
     }
@@ -415,6 +422,8 @@ export class GunModelGenerator {
     if (!this._gunProjectiles[proj.id]) {
       this._gunProjectiles[proj.id] = proj;
     } else if (JSON.stringify(this._gunProjectiles[proj.id]) !== JSON.stringify(proj)) {
+      console.log(chalk.green(JSON.stringify(this._gunProjectiles[proj.id], null, 2)));
+      console.log(chalk.red(JSON.stringify(proj, null, 2)));
       throw new Error(`Projectile ${chalk.green(proj.id)} is not structurally identical!`);
     }
 
@@ -529,7 +538,6 @@ export class GunModelGenerator {
     }
     const res: TProjectileMode[] = [];
     // TODO: rework estimated bounce damage, it only increases potential damage if paired with penetration.
-    // TODO: SpawnProjModifier (The Scrambler, Particulator)
     // TODO: homing bullet
     // TODO: ShovelGunModifier
     // TODO: search for *modifier.cs to collect more attributes for the projectile

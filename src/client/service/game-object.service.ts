@@ -9,11 +9,18 @@ import type { TGun } from "../generated/models/gun.model";
 import type { TPickupObject } from "../generated/models/pickup-object.model";
 import type { TProjectile, TProjectileId } from "../generated/models/projectile.model";
 
+export const ResolvedProjectile = Projectile.extend({
+  spawnedBy: z.string().optional(),
+  spawnLevel: z.number().optional(),
+});
+
+export type TResolvedProjectile = z.infer<typeof ResolvedProjectile>;
+
 /**
  * Aggregated data for front-end usage.
  */
 export const ResolvedProjectileModule = ProjectileModule.extend({
-  projectiles: z.array(Projectile),
+  projectiles: z.array(ResolvedProjectile),
 });
 
 export type TResolvedProjectileModule = z.infer<typeof ResolvedProjectileModule>;
