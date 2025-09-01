@@ -55,6 +55,7 @@ export const useGunStore = create<TGunState>()(
     })),
     {
       name: "gunStore",
+      enabled: true,
     },
   ),
 );
