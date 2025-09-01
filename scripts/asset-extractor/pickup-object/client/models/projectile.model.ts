@@ -52,6 +52,7 @@ const DamageDetail = z.object({
     "damageMultiplier",
     "transmogrification",
     "devolver",
+    "bee",
   ]),
   damage: z.number(),
 });
@@ -178,6 +179,17 @@ export const Projectile = z.object({
    * https://enterthegungeon.fandom.com/wiki/Sticky_Crossbow
    */
   sticky: z.boolean().optional(),
+
+  /**
+   * Target like homing but slow down when facing the opposite of the enemy
+   * and speed up after aligning with the target.
+   */
+  isBeeLikeTargetBehavior: z.boolean().optional(),
+  /**
+   * Is it a fake bee or the actual bee. The real bee projectile deals extra sting damage.
+   */
+  isBee: z.boolean().optional(),
+  beeStingDuration: z.number().optional(),
 
   /**
    * https://enterthegungeon.fandom.com/wiki/Black_Hole_Gun

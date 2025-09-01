@@ -63,11 +63,12 @@ import { Devolver } from "@/components/icons/devolver";
 import { IgnoreDamageCap } from "@/components/icons/ignore-damage-cap";
 import { Blackhole } from "@/components/icons/blackhole";
 import { SpawnModifier } from "@/components/icons/spawn-modifier";
-import type { ReactNode } from "react";
-import type { TGun } from "@/client/generated/models/gun.model";
 import { Homing } from "@/components/icons/homing";
 import { Homing2 } from "@/components/icons/homing2";
 import { GunService, HomingLevel, type TGunStats } from "@/client/service/gun.service";
+import { Bee } from "@/components/icons/bee";
+import type { ReactNode } from "react";
+import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
 import type { TProjectile } from "@/client/generated/models/projectile.model";
 
@@ -424,6 +425,23 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <br />
             While reloading, a circular field surrounds the player that damages nearby enemies within{" "}
             <strong>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</strong> radius.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(projectile.isBee || undefined) && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <Bee size={18} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-80">
+            <strong>Bee Projectile</strong>
+            <br />
+            Has homing behavior but slows down when in the opposite of the enemy, and speeds up after aligning with the
+            target.
+            <br />
+            Deals extra sting damage for <strong>{projectile.beeStingDuration}s</strong>.
           </TooltipContent>
         </Tooltip>
       )}

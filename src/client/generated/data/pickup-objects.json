@@ -1234,7 +1234,8 @@
     "reloadTime": 0.06,
     "featureFlags": [
       "hasSpecialProjectiles",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -1289,7 +1290,8 @@
     "reloadTime": 0.06,
     "featureFlags": [
       "hasSpecialProjectiles",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -15469,6 +15471,7 @@
       "damageAllEnemies"
     ],
     "attribute": {},
+    "video": "https://youtu.be/bLQdRTNGOUU?t=16",
     "colors": [
       "gray",
       "lightGray",

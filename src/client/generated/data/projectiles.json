@@ -548,10 +548,19 @@
     "speed": 9,
     "range": 1000,
     "force": 2,
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "source": "bee",
+        "damage": 3
+      }
+    ],
     "isHoming": true,
     "homingRadius": 100,
     "homingAngularVelocity": 150,
+    "isBeeLikeTargetBehavior": true,
+    "isBee": true,
+    "beeStingDuration": 3,
     "animation": {
       "name": "Bee_projectile",
       "fps": 10,
@@ -5903,6 +5912,7 @@
     "isHoming": true,
     "homingRadius": 100,
     "homingAngularVelocity": 270,
+    "isBeeLikeTargetBehavior": true,
     "animation": {
       "name": "bullet_variant_001",
       "fps": 0,

@@ -65,7 +65,13 @@ export class GunService {
   }
 
   static getHomingLevel(projectile: TProjectile) {
-    if (!projectile.isHoming) return 0;
+    if (!projectile.isHoming) return HomingLevel.None;
+
+    // the angular velocity doesn't make it `HomingLevel.Strong`, but it slows down when not facing
+    // the enemy, give it enough time to always adjust to the correct angle.
+    if (projectile.isBeeLikeTargetBehavior) {
+      return HomingLevel.Strong;
+    }
 
     const { homingRadius = 0, homingAngularVelocity = 0 } = projectile;
     if (homingRadius <= 2 || homingAngularVelocity <= 80) {
@@ -84,7 +90,7 @@ export class GunService {
   }
 
   /**
-   * `ExportedProject\Assets\Scripts\Assembly-CSharp\ProjectileModule.cs#GetEstimatedShotsPerSecond`
+   * `ExportedProject/Assets/Scripts/Assembly-CSharp/ProjectileModule.cs#GetEstimatedShotsPerSecond`
    */
   static getEstimatedShotsPerSecond(input: {
     reloadTime: number;
@@ -125,6 +131,8 @@ export class GunService {
         return `Damage modifier: {{VALUE}}`;
       case "devolver":
         return `Devolver's max potential damage: {{VALUE}}`;
+      case "bee":
+        return `Bee sting damage: {{VALUE}}`;
       default:
         return `${startCase(source)} damage: {{VALUE}}`;
     }
@@ -180,7 +188,7 @@ export class GunService {
       if (projectile.numberOfBounces && projectile.numberOfBounces > 1) {
         penetration += Math.min(projectile.numberOfBounces, 3); // more chance if it's bouncy idk
       }
-      if (projectile.isHoming && (projectile.homingRadius === undefined || projectile.homingRadius > 8)) {
+      if (GunService.getHomingLevel(projectile) >= HomingLevel.Weak) {
         penetration++; // even more chance if it's homing hah
       }
       if (isExplosiveProj) {
@@ -216,7 +224,7 @@ export class GunService {
       for (const [_level, modules] of Object.entries(spawnHierarchy)) {
         const spawnedProjectile = ProjectileService.createAggregatedVolley(modules, true).projectiles[0];
         const { damage } = spawnedProjectile;
-        const isEstimated = this.getHomingLevel(spawnedProjectile) <= 1;
+        const isEstimated = this.getHomingLevel(spawnedProjectile) <= HomingLevel.Weak;
         const spawner = GameObjectService.getProjectile(spawnedProjectile.spawnedBy!);
         const shotPerSecond2 = spawner.spawnProjectilesInflight
           ? spawner.spawnProjectilesInflightPerSecond!

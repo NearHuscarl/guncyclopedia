@@ -211,6 +211,7 @@ export class ProjectileService {
     spawnLevel: ["max", "max"],
     spawnProjectilesInflightPerSecond: ["max", "max"],
     damageAllEnemiesRadius: ["max", "max"],
+    beeStingDuration: ["avg", "max"],
   };
 
   // All boolean keys that are aggregated with logical-OR.
@@ -230,6 +231,8 @@ export class ProjectileService {
     spawnCollisionProjectilesOnBounce: true,
     spawnProjectilesInflight: true,
     spawnProjectilesOnCollision: true,
+    isBeeLikeTargetBehavior: true,
+    isBee: true,
   };
   // All string keys that are aggregated into arrays of string
   private static readonly _sAggregateConfig: StringAggregateConfig = {

@@ -138,6 +138,7 @@ export class GunModelGenerator {
       animation: this._buildProjectileAnimation(projDto),
     };
 
+    if (proj.speed === -1) proj.speed = 10_000;
     if (projDto.projectile.ignoreDamageCaps) proj.ignoreDamageCaps = true;
 
     if (projDto.projectile.AppliesPoison) {
@@ -319,8 +320,24 @@ export class GunModelGenerator {
     const projScript = projDto.projectile.m_Script.$$scriptPath;
     if (this._projectileRepo.isBeeProjectileData(projDto.projectile)) {
       proj.isHoming = true;
+      proj.isBeeLikeTargetBehavior = true;
       proj.homingRadius = 100;
       proj.homingAngularVelocity = projDto.projectile.angularAcceleration;
+
+      if (projDto.healthModificationBuff) {
+        proj.isBee = true;
+        proj.beeStingDuration = projDto.healthModificationBuff.lifetime;
+        if (projDto.healthModificationBuff.healthChangeAtStart !== projDto.healthModificationBuff.healthChangeAtEnd) {
+          throw new Error("Not handled: healthChangeAtStart !== healthChangeAtEnd for healthModificationBuff");
+        }
+        proj.additionalDamage.push({
+          type: "instant",
+          source: "bee",
+          // Note: maxLifetime & healthChange range is unused
+          damage: Math.abs(projDto.healthModificationBuff.healthChangeAtEnd) * projDto.healthModificationBuff.lifetime,
+        });
+      }
+
       this._featureFlags.add("hasSpecialProjectiles");
     }
     if (this._projectileRepo.isRobotechProjectileData(projDto.projectile)) {

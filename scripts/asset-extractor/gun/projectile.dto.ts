@@ -150,13 +150,28 @@ const StickyGrenadeBuffData = MonoBehaviour.extend({
   explosionData: ExplosiveModifierData.shape.explosionData,
 });
 
+const HealthModificationBuffData = MonoBehaviour.extend({
+  lifetime: z.number(),
+  tickPeriod: z.number(),
+  /**
+   * `n` is the number of ticks in a lifetime: `lifetime / tickPeriod`
+   *
+   * health delta changes after every tick from `healthChangeAtStart + 1/n * (healthChangeAtEnd - healthChangeAtStart)` to `healthChangeAtEnd` during the lifetime
+   * of this component.
+   *
+   * But since all instances of this component have the same start & end. The damage dealt is simply a constant.
+   */
+  healthChangeAtStart: z.number(),
+  healthChangeAtEnd: z.number(),
+});
+
 const DevolverModifierData = MonoBehaviour.extend({
   chanceToDevolve: z.number(),
   /**
    * `DevolverHierarchy` is an underused feature that allows for more complex projectile behaviors.
    * When a projectile hits the enemy, it has a chance to devolve into a weaker tier.
    *
-   * Variants in the same tier is defined in `DevolverHierarchy[number].tierGuids`.
+   * Variants in the same tier are defined in `DevolverHierarchy[number].tierGuids`.
    *
    * Right now, there is only a single enemy in 1 tier to devolve to so this feature is not exactly useful.
    */
@@ -265,6 +280,7 @@ export const ProjectileDto = z.object({
   mindControlProjModifier: MindControlProjectileModifierData.optional(),
   matterAntimatterProjModifier: MatterAntimatterProjectileModifierData.optional(),
   stickyGrenadeBuff: StickyGrenadeBuffData.optional(),
+  healthModificationBuff: HealthModificationBuffData.optional(),
   devolverModifier: DevolverModifierData.optional(),
 });
 
@@ -289,4 +305,5 @@ export type TBlackHoleDoerData = z.input<typeof BlackHoleDoerData>;
 export type TMindControlProjectileModifierData = z.input<typeof MindControlProjectileModifierData>;
 export type TMatterAntimatterProjectileModifierData = z.input<typeof MatterAntimatterProjectileModifierData>;
 export type TStickyGrenadeBuffData = z.input<typeof StickyGrenadeBuffData>;
+export type THealthModificationBuffData = z.input<typeof HealthModificationBuffData>;
 export type TDevolverModifierData = z.input<typeof DevolverModifierData>;
