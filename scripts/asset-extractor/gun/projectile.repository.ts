@@ -26,6 +26,9 @@ import type {
   TStickyGrenadeBuffData,
   TDevolverModifierData,
   TSpawnProjModifierData,
+  TRobotechProjectileData,
+  TBeeProjectileData,
+  TBoomerangProjectileData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -63,6 +66,15 @@ export class ProjectileRepository {
   }
   isHelixProjectileData(obj: unknown): obj is THelixProjectileData {
     return this._containsScript(obj, "HelixProjectile.cs.meta");
+  }
+  isBoomerangProjectileData(obj: unknown): obj is TBoomerangProjectileData {
+    return this._containsScript(obj, "BoomerangProjectile.cs.meta");
+  }
+  isBeeProjectileData(obj: unknown): obj is TBeeProjectileData {
+    return this._containsScript(obj, "BeeProjectile.cs.meta");
+  }
+  isRobotechProjectileData(obj: unknown): obj is TRobotechProjectileData {
+    return this._containsScript(obj, "RobotechProjectile.cs.meta");
   }
   private _isBounceModifierData(obj: unknown): obj is TBounceProjModifierData {
     return this._containsScript(obj, AssetService.BOUNCE_PROJ_MODIFIER_SCRIPT);

@@ -1233,6 +1233,7 @@
     "maxAmmo": 300,
     "reloadTime": 0.06,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -1287,6 +1288,7 @@
     "maxAmmo": 300,
     "reloadTime": 0.06,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -12635,6 +12637,7 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasExplosiveProjectile",
+      "hasSpecialProjectiles",
       "hasHomingProjectiles",
       "hasSpawningProjectiles",
       "hasMultipleDamageSources"
@@ -15461,6 +15464,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles",
       "damageAllEnemies"
     ],
@@ -15554,6 +15558,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles",
       "damageAllEnemies"
     ],
@@ -17315,6 +17320,7 @@
     "maxAmmo": 120,
     "reloadTime": 1.2,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles",
       "hasSpawningProjectiles"
     ],
@@ -20143,6 +20149,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -20203,6 +20210,7 @@
     "maxAmmo": 500,
     "reloadTime": 0,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -24114,6 +24122,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -29382,6 +29391,7 @@
     "maxAmmo": 500,
     "reloadTime": 0.1,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -29915,6 +29925,7 @@
     "reloadTime": 1,
     "featureFlags": [
       "hasStatusEffects",
+      "hasSpecialProjectiles",
       "hasHomingProjectiles"
     ],
     "attribute": {},

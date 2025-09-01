@@ -2,6 +2,11 @@ import z from "zod/v4";
 import { Animation, CompactedFrame, RichFrame } from "./animation.model.ts";
 import { Percentage } from "./schema.ts";
 
+export const DamageAllEnemiesRadius = {
+  Screen: 10,
+  Room: 20,
+} as const;
+
 export type TStatusEffectProp =
   | "poisonChance"
   | "speedChance"
@@ -117,6 +122,7 @@ export const Projectile = z.object({
    * Instantly damage all enemies in the room/viewport
    */
   damageAllEnemies: z.boolean().optional(),
+  damageAllEnemiesRadius: z.number().optional(),
 
   isHoming: z.boolean().optional(),
   homingRadius: z.number().optional(),

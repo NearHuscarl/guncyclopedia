@@ -317,17 +317,34 @@ export class GunModelGenerator {
 
     // homing
     const projScript = projDto.projectile.m_Script.$$scriptPath;
-    if (projScript.endsWith("RobotechProjectile.cs.meta") || projScript.endsWith("BeeProjectile.cs.meta")) {
+    if (this._projectileRepo.isBeeProjectileData(projDto.projectile)) {
       proj.isHoming = true;
+      proj.homingRadius = 100;
+      proj.homingAngularVelocity = projDto.projectile.angularAcceleration;
+      this._featureFlags.add("hasSpecialProjectiles");
     }
-    if (projScript.endsWith("BoomerangProjectile.cs.meta")) {
+    if (this._projectileRepo.isRobotechProjectileData(projDto.projectile)) {
       proj.isHoming = true;
+      proj.homingRadius = 100;
+      proj.homingAngularVelocity = projDto.projectile.angularAcceleration;
+    }
+    if (this._projectileRepo.isBoomerangProjectileData(projDto.projectile)) {
+      proj.isHoming = true;
+      proj.homingRadius = 100; // no limitation
+      proj.homingAngularVelocity = projDto.projectile.trackingSpeed;
       proj.stunChance = 1; // Boomerang always stuns. See BoomerangProjectile.cs#StunDuration
       proj.stunDuration = projDto.projectile.StunDuration;
       this._featureFlags.add("hasStatusEffects");
+      this._featureFlags.add("hasSpecialProjectiles");
     }
-    if (projScript.endsWith("CerebralBoreProjectile.cs.meta")) {
+    if (this._projectileRepo.isCerebralBoreProjectile(projDto.projectile)) {
       proj.isHoming = true;
+      proj.homingRadius = 100;
+      // No angular acceleration limit; rotation snaps to Bezier direction in 3° steps for each frame.
+      // Max instantaneous angular velocity: 180° per frame (~10,800°/s at 60fps), if shooting
+      // in the opposite direction of the enemy (Vector2.Inverted).
+      // https://chatgpt.com/share/68b55577-ac54-8010-ab03-36392b596178
+      proj.homingAngularVelocity = 1000;
       proj.stunChance = 1; // CerebralBoreProjectile always stuns.
       proj.stunDuration = 1; // CerebralBoreProjectile#HandleBoring()
       this._featureFlags.add("hasStatusEffects");
@@ -366,9 +383,13 @@ export class GunModelGenerator {
     }
     if (projDto.raidenBeamController) {
       proj.isHoming = true;
+      proj.homingRadius = 50; // estimated, the real value is your viewport size. See `damageAllEnemiesRadius`
+      proj.homingAngularVelocity = 1000; // instant auto aim and grab the enemies
       if (projDto.raidenBeamController.maxTargets === -1) {
         proj.damageAllEnemies = true;
+        proj.damageAllEnemiesRadius = projDto.raidenBeamController.targetType;
       }
+      this._featureFlags.add("hasSpecialProjectiles");
     }
     if (gunDto.predatorGunController) {
       proj.isHoming = true;
@@ -538,7 +559,6 @@ export class GunModelGenerator {
     }
     const res: TProjectileMode[] = [];
     // TODO: rework estimated bounce damage, it only increases potential damage if paired with penetration.
-    // TODO: homing bullet
     // TODO: ShovelGunModifier
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: round that has explosion on impact count as another source of damage

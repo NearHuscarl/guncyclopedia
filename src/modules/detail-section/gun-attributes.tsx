@@ -1,7 +1,6 @@
 import {
   BatteryCharging,
   Biohazard,
-  Crosshair,
   Flame,
   Gamepad2,
   Heart,
@@ -66,7 +65,9 @@ import { Blackhole } from "@/components/icons/blackhole";
 import { SpawnModifier } from "@/components/icons/spawn-modifier";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
-import type { TGunStats } from "@/client/service/gun.service";
+import { Homing } from "@/components/icons/homing";
+import { Homing2 } from "@/components/icons/homing2";
+import { GunService, HomingLevel, type TGunStats } from "@/client/service/gun.service";
 import type { TPlayerName } from "@/client/generated/models/player.model";
 import type { TProjectile } from "@/client/generated/models/projectile.model";
 
@@ -224,6 +225,8 @@ type TGunAttributesProps = {
 
 export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps) {
   const setUseChargeAnimation = useGunStore((state) => state.setUseChargeAnimation);
+  const homingLevel = GunService.getHomingLevel(projectile);
+
   return (
     <div className="flex gap-3">
       {/* Keep the line height consistent */}
@@ -628,11 +631,18 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {projectile.isHoming && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
-            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+            <div
+              className={clsx("flex items-center", ATTRIBUTE_CLASSES, {
+                "text-muted-foreground [&_path]:stroke-muted-foreground": homingLevel === HomingLevel.Pathetic,
+                "text-white [&_path]:stroke-white": homingLevel === HomingLevel.Weak,
+                "text-primary [&_path]:stroke-primary": homingLevel === HomingLevel.Strong,
+                "text-red-500 [&_path]:stroke-red-500": homingLevel === HomingLevel.AutoAim,
+              })}
+            >
               {(projectile.homingRadius || undefined) && (
                 <NumericValue>{formatNumber(projectile.homingRadius!, 0)}</NumericValue>
               )}
-              <Crosshair size={18} />
+              {homingLevel === HomingLevel.AutoAim ? <Homing2 size={18} /> : <Homing size={18} />}
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -640,13 +650,15 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <br />
             {(projectile.homingRadius || undefined) && (
               <>
+                {homingLevel === HomingLevel.Pathetic && "Slightly curves towards enemies at close range."}
+                {homingLevel === HomingLevel.Weak && "Steers toward enemies within range."}
+                {homingLevel === HomingLevel.Strong && "Homings towards enemies at considerable range."}
+                {homingLevel === HomingLevel.AutoAim &&
+                  "Aggressively locks onto enemies from long range, sharply track the target."}
+                <br />
                 Target radius: <strong>{formatNumber(projectile.homingRadius!, 0)}</strong>
                 <br />
-                {projectile.homingAngularVelocity && (
-                  <>
-                    Angular velocity: <strong>{formatNumber(projectile.homingAngularVelocity!, 0)}°/s</strong>
-                  </>
-                )}
+                Angular velocity: <strong>{formatNumber(projectile.homingAngularVelocity!, 0)}°/s</strong>
               </>
             )}
           </TooltipContent>

@@ -8,6 +8,14 @@ import type { TGun, TProjectileMode, TProjectileModule } from "../generated/mode
 import type { TProjectile } from "../generated/models/projectile.model";
 import type { TResolvedProjectile, TResolvedProjectileMode, TResolvedProjectileModule } from "./game-object.service";
 
+export const HomingLevel = {
+  None: -1,
+  Pathetic: 0,
+  Weak: 1,
+  Strong: 2,
+  AutoAim: 3,
+} as const;
+
 interface IStat {
   base: number;
   details: {
@@ -59,12 +67,20 @@ export class GunService {
   static getHomingLevel(projectile: TProjectile) {
     if (!projectile.isHoming) return 0;
 
-    const { homingRadius = 10000, homingAngularVelocity = 10000 } = projectile;
+    const { homingRadius = 0, homingAngularVelocity = 0 } = projectile;
     if (homingRadius <= 2 || homingAngularVelocity <= 80) {
-      return 1; // almost non-existent
+      return HomingLevel.Pathetic;
     }
-    // TODO: add weak, strong and autoaim levels.
-    return 2;
+
+    if (homingRadius >= 50 && homingAngularVelocity >= 1000) {
+      return HomingLevel.AutoAim;
+    }
+
+    if (homingRadius >= 25 && homingAngularVelocity >= 200) {
+      return HomingLevel.Strong;
+    }
+
+    return HomingLevel.Weak;
   }
 
   /**
@@ -200,7 +216,7 @@ export class GunService {
       for (const [_level, modules] of Object.entries(spawnHierarchy)) {
         const spawnedProjectile = ProjectileService.createAggregatedVolley(modules, true).projectiles[0];
         const { damage } = spawnedProjectile;
-        const isEstimated = GunService.getHomingLevel(spawnedProjectile) <= 1;
+        const isEstimated = this.getHomingLevel(spawnedProjectile) <= 1;
         const spawner = GameObjectService.getProjectile(spawnedProjectile.spawnedBy!);
         const shotPerSecond2 = spawner.spawnProjectilesInflight
           ? spawner.spawnProjectilesInflightPerSecond!
@@ -281,7 +297,7 @@ export class GunService {
           const spawnedModules: TResolvedProjectileModule[] = [];
 
           for (const p of projectiles) {
-            const pp = GunService.resolveProjectile(p);
+            const pp = this.resolveProjectile(p);
 
             for (const p2 of pp) {
               if (!p2.spawnedBy) continue;
@@ -302,13 +318,13 @@ export class GunService {
           return [{ ...module, projectiles }, ...spawnedModules];
         })
         .flat()
-        .sort((a, b) => GunService.getSortWeight(a.projectiles[0]) - GunService.getSortWeight(b.projectiles[0])),
+        .sort((a, b) => this.getSortWeight(a.projectiles[0]) - this.getSortWeight(b.projectiles[0])),
     };
   }
 
   static computeGunStats(gun: TGun, modeIndex: number, moduleIndex: number, projectileIndex: number): TGunStats {
     const selectSpecificProjectile = moduleIndex !== -1 || projectileIndex !== -1;
-    const mode = GunService.resolveMode(gun.projectileModes[modeIndex] ?? gun.projectileModes[0]);
+    const mode = this.resolveMode(gun.projectileModes[modeIndex] ?? gun.projectileModes[0]);
     const module =
       mode.volley[moduleIndex] ?? ProjectileService.createAggregatedVolley(mode.volley, selectSpecificProjectile);
     const projectilePool = module.projectiles;
@@ -324,8 +340,8 @@ export class GunService {
       module,
       chargeTime: mode.chargeTime,
     };
-    const shotsPerSecond = GunService.getEstimatedShotsPerSecond(timingInput);
-    const timeBetweenShots = GunService.getTimeBetweenShot(timingInput);
+    const shotsPerSecond = this.getEstimatedShotsPerSecond(timingInput);
+    const timeBetweenShots = this.getTimeBetweenShot(timingInput);
     const reloadToFireRatio = reloadTime / (reloadTime + timeBetweenShots * magazineSize);
 
     const dmgCalculationInput = {
@@ -359,7 +375,7 @@ export class GunService {
       range: ProjectileService.getRangeLabel(projectile),
       dps,
       damage,
-      force: GunService.getForce(projectile),
+      force: this.getForce(projectile),
       mode,
       projectileModule: module,
       projectile: aggregatedProjectileIncludingChildren ?? projectile,

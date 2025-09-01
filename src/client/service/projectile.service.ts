@@ -209,6 +209,7 @@ export class ProjectileService {
     spawnProjectileMaxNumber: ["avg", "sum"],
     spawnLevel: ["max", "max"],
     spawnProjectilesInflightPerSecond: ["max", "max"],
+    damageAllEnemiesRadius: ["max", "max"],
   };
 
   // All boolean keys that are aggregated with logical-OR.
@@ -242,6 +243,24 @@ export class ProjectileService {
     additionalDamage: true,
   };
 
+  private static _booleanConfigEntries(
+    cb: (key: BooleanKeys<TResolvedProjectile>, value: BooleanAggregateConfig[keyof BooleanAggregateConfig]) => void,
+  ): void {
+    Object.entries(this._bAggregateConfig).forEach(([k, v]) => cb(k as BooleanKeys<TResolvedProjectile>, v));
+  }
+
+  private static _stringConfigEntries(
+    cb: (key: StringKeys<TResolvedProjectile>, value: StringAggregateConfig[keyof StringAggregateConfig]) => void,
+  ): void {
+    Object.entries(this._sAggregateConfig).forEach(([k, v]) => cb(k as StringKeys<TResolvedProjectile>, v));
+  }
+
+  private static _numericConfigEntries(
+    cb: (key: NumericKeys<TResolvedProjectile>, value: NumericAggregateConfig[keyof NumericAggregateConfig]) => void,
+  ): void {
+    Object.entries(this._nAggregateConfig).forEach(([k, v]) => cb(k as NumericKeys<TResolvedProjectile>, v));
+  }
+
   /**
    * Compute an 'aggregated' projectile from a list.
    *
@@ -261,63 +280,55 @@ export class ProjectileService {
 
     // ---------- aggregate ----------
     const sums: Record<string, number> = {};
-    Object.keys(ProjectileService._nAggregateConfig).forEach((k) => (sums[k] = 0));
+    this._numericConfigEntries((k) => (sums[k] = 0));
 
     const strSums: Record<string, Set<string>> = {};
-    Object.keys(ProjectileService._sAggregateConfig).forEach((k) => (strSums[k] = new Set()));
+    this._stringConfigEntries((k) => (strSums[k] = new Set()));
 
     const hasTrue: Record<string, boolean> = {};
-    Object.keys(ProjectileService._bAggregateConfig).forEach((k) => (hasTrue[k] = false));
+    this._booleanConfigEntries((k) => (hasTrue[k] = false));
 
     for (const p of projectiles) {
-      for (const [k, [random, volley]] of Object.entries(ProjectileService._nAggregateConfig)) {
-        const key = k as NumericKeys<TProjectile>;
+      this._numericConfigEntries((k, [random, volley]) => {
         const m = mode === "random" ? random : volley;
 
         if (m === "max") {
-          sums[key] = Math.max(sums[key], p[key] ?? 0);
+          sums[k] = Math.max(sums[k], p[k] ?? 0);
         } else if (m === "avg" || m === "sum") {
-          sums[key] += p[key] ?? 0;
+          sums[k] += p[k] ?? 0;
         }
-      }
-
-      Object.keys(ProjectileService._bAggregateConfig).forEach((k) => {
-        const key = k as BooleanKeys<TProjectile>;
-        const v = p[key] ?? false;
-        hasTrue[key] = hasTrue[key] || v;
       });
 
-      Object.keys(ProjectileService._sAggregateConfig).forEach((k) => {
-        if (!ProjectileService._sAggregateConfig[k as StringKeys<TProjectile>]) return;
-        const key = k as StringKeys<TProjectile>;
-        const v = p[key];
-        if (v) strSums[key].add(v);
+      this._booleanConfigEntries((k) => {
+        const v = p[k] ?? false;
+        hasTrue[k] = hasTrue[k] || v;
+      });
+
+      this._stringConfigEntries((k) => {
+        if (!this._sAggregateConfig[k]) return;
+        const v = p[k];
+        if (v) strSums[k].add(v);
       });
     }
-    for (const [k, [avg, sum]] of Object.entries(ProjectileService._nAggregateConfig)) {
-      const key = k as NumericKeys<TProjectile>;
+    for (const [k, [avg, sum]] of Object.entries(this._nAggregateConfig)) {
       const m = mode === "random" ? avg : sum;
 
       if (m === "avg") {
-        sums[key] /= projectiles.length;
+        sums[k] /= projectiles.length;
       } else if (typeof m === "function") {
-        sums[key] = m(projectiles);
+        sums[k] = m(projectiles);
       }
     }
 
     // ---------- build result ----------
-    const final: Partial<TProjectile> = {
+    const final: Partial<TResolvedProjectile> = {
       additionalDamage: this._aggregateAdditionalDamage(projectiles, mode, sums),
     };
 
-    Object.keys(ProjectileService._sAggregateConfig).forEach(
-      (k) => (final[k as StringKeys<TProjectile>] = Array.from(strSums[k]).join(",")),
-    );
-    Object.keys(ProjectileService._nAggregateConfig).forEach((k) => (final[k as NumericKeys<TProjectile>] = sums[k]));
-    Object.keys(ProjectileService._bAggregateConfig).forEach(
-      (k) => (final[k as BooleanKeys<TProjectile>] = hasTrue[k]),
-    );
+    this._stringConfigEntries((k) => (final[k] = Array.from(strSums[k]).join(",")));
+    this._numericConfigEntries((k) => (final[k] = sums[k]));
+    this._booleanConfigEntries((k) => (final[k] = hasTrue[k]));
 
-    return final as TProjectile;
+    return final as TResolvedProjectile;
   }
 }

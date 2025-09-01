@@ -550,6 +550,8 @@
     "force": 2,
     "additionalDamage": [],
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 150,
     "animation": {
       "name": "Bee_projectile",
       "fps": 10,
@@ -1058,6 +1060,8 @@
     "explosionRadius": 3,
     "explosionForce": 100,
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 220,
     "animation": {
       "name": "Robotech_Exhaust",
       "fps": 15,
@@ -1549,6 +1553,8 @@
     "explosionRadius": 2,
     "explosionForce": 25,
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 1000,
     "animation": {
       "name": "cerebral_bore_projectile",
       "fps": 12,
@@ -2118,6 +2124,8 @@
     "force": 5,
     "additionalDamage": [],
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 540,
     "animation": {
       "name": "distortion_ball_small",
       "fps": 8,
@@ -5258,7 +5266,10 @@
     "force": 10,
     "additionalDamage": [],
     "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 10,
     "isHoming": true,
+    "homingRadius": 50,
+    "homingAngularVelocity": 1000,
     "animation": {
       "name": "raiden_beam_impact",
       "fps": 20,
@@ -5890,6 +5901,8 @@
     "force": 15,
     "additionalDamage": [],
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 270,
     "animation": {
       "name": "bullet_variant_001",
       "fps": 0,
@@ -6839,6 +6852,8 @@
     "force": 10,
     "additionalDamage": [],
     "isHoming": true,
+    "homingRadius": 50,
+    "homingAngularVelocity": 1000,
     "animation": {
       "name": "tentacle_end",
       "fps": 6,
@@ -6864,6 +6879,8 @@
     "force": 10,
     "additionalDamage": [],
     "isHoming": true,
+    "homingRadius": 50,
+    "homingAngularVelocity": 1000,
     "animation": {
       "name": "tentacle_kaliber_end",
       "fps": 6,
@@ -7741,6 +7758,8 @@
     "explosionRadius": 2,
     "explosionForce": 15,
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 220,
     "animation": {
       "name": "Robotech_Exhaust",
       "fps": 15,
@@ -8203,6 +8222,8 @@
     "force": 10,
     "additionalDamage": [],
     "isHoming": true,
+    "homingRadius": 50,
+    "homingAngularVelocity": 1000,
     "animation": {
       "name": "evo_gun_005_tongue_end_vfx",
       "fps": 2,
@@ -9098,6 +9119,8 @@
     "explosionRadius": 2,
     "explosionForce": 15,
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 440,
     "animation": {
       "name": "exotic_submissile_exhaust",
       "fps": 6,
@@ -9995,6 +10018,8 @@
     "explosionRadius": 2,
     "explosionForce": 15,
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 440,
     "animation": {
       "name": "exotic_submissile_exhaust",
       "fps": 6,
@@ -10159,6 +10184,8 @@
     "force": 10,
     "additionalDamage": [],
     "isHoming": true,
+    "homingRadius": 50,
+    "homingAngularVelocity": 1000,
     "animation": {
       "name": "hell_gun_chain_end",
       "fps": 2,
@@ -10344,6 +10371,8 @@
     "penetration": 1,
     "canPenetrateObjects": true,
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 720,
     "animation": {
       "name": "glaive_projectile",
       "fps": 16,
@@ -10566,6 +10595,8 @@
     "explosionRadius": 2,
     "explosionForce": 25,
     "isHoming": true,
+    "homingRadius": 100,
+    "homingAngularVelocity": 1000,
     "animation": {
       "name": "cerebral_bore_projectile",
       "fps": 12,

@@ -129,6 +129,7 @@ const BasicBeamControllerData = z.object({
 });
 const RaidenBeamControllerData = z.object({
   maxTargets: z.number(),
+  targetType: z.union([z.literal(10), z.literal(20)]),
 });
 
 const BlackHoleDoerData = z.object({
@@ -227,9 +228,28 @@ const HelixProjectileData = ProjectileData.extend({
   helixAmplitude: z.number(),
 });
 
+const BoomerangProjectileData = ProjectileData.extend({
+  trackingSpeed: z.number(),
+});
+
+const BeeProjectileData = ProjectileData.extend({
+  angularAcceleration: z.number(),
+});
+
+const RobotechProjectileData = ProjectileData.extend({
+  angularAcceleration: z.number(),
+});
+
 export const ProjectileDto = z.object({
   id: z.string(),
-  projectile: z.union([CerebralBoreProjectileData, HelixProjectileData, ProjectileData]),
+  projectile: z.union([
+    BoomerangProjectileData,
+    BeeProjectileData,
+    RobotechProjectileData,
+    CerebralBoreProjectileData,
+    HelixProjectileData,
+    ProjectileData,
+  ]),
   sprite: SpriteData.optional(),
   spriteAnimator: SpriteAnimatorData.optional(),
   bounceProjModifier: BounceProjModifierData.optional(),
@@ -251,6 +271,9 @@ export const ProjectileDto = z.object({
 export type TProjectileDto = z.input<typeof ProjectileDto>;
 export type TProjectileData = z.infer<typeof ProjectileData>;
 export type TCerebralBoreProjectileData = z.infer<typeof CerebralBoreProjectileData>;
+export type TBoomerangProjectileData = z.infer<typeof BoomerangProjectileData>;
+export type TBeeProjectileData = z.infer<typeof BeeProjectileData>;
+export type TRobotechProjectileData = z.infer<typeof RobotechProjectileData>;
 export type THelixProjectileData = z.infer<typeof HelixProjectileData>;
 export type TBounceProjModifierData = z.infer<typeof BounceProjModifierData>;
 export type TPierceProjModifierData = z.infer<typeof PierceProjModifierData>;
