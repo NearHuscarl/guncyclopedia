@@ -105,7 +105,7 @@ export class GunModelGenerator {
     const volleyDto = this._volleyRepo.getVolley(volley);
     if (!volleyDto) {
       throw new Error(
-        `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${volley.guid} not found in VolleyRepository.`,
+        `Parsing ${gunDto.name} (${gunDto.gun.PickupObjectId}) gun failed: Volley with guid ${volley.guid} not found in VolleyRepository.`,
       );
     }
 
@@ -119,7 +119,7 @@ export class GunModelGenerator {
     const projDto = this._projectileRepo.getProjectile(assetReference);
     if (!projDto) {
       throw new Error(
-        `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`,
+        `Parsing ${gunDto.name} (${gunDto.gun.PickupObjectId}) gun failed: Projectile with guid ${assetReference.guid} not found in ProjectileRepository.`,
       );
     }
     return projDto;
@@ -510,7 +510,7 @@ export class GunModelGenerator {
     if (defaultModule.shootStyle === ShootStyle.Beam) {
       if (volley[0].projectiles.length > 1) {
         throw new Error(
-          `Parsing ${gunDto.gun.gunName} (${gunDto.gun.PickupObjectId}) gun failed: Beam gun must have only one type of projectile.`,
+          `Parsing ${gunDto.name} (${gunDto.gun.PickupObjectId}) gun failed: Beam gun must have only one type of projectile.`,
         );
       }
       chargeTime = Math.max(...volley.map((m) => m.projectiles.map((i) => this._p(i).beamChargeTime ?? 0)).flat());
@@ -560,7 +560,7 @@ export class GunModelGenerator {
       const uniqChargeTimes = new Set(module.chargeProjectiles.map((p) => p.ChargeTime));
       if (uniqChargeTimes.size < module.chargeProjectiles.length) {
         throw new Error(
-          `${gunDto.gun.gunName}, A projectile module must not have multiple projectiles with the same charge time. This is undefined behavior`,
+          `${gunDto.name}, A projectile module must not have multiple projectiles with the same charge time. This is undefined behavior`,
         );
       }
 
@@ -798,7 +798,7 @@ export class GunModelGenerator {
       return animationFromSprite;
     }
 
-    throw new Error(chalk.red(`No valid sprite found for gun ${gunDto.gun.gunName}`));
+    throw new Error(chalk.red(`No valid sprite found for gun ${gunDto.name}`));
   }
 
   private async _buildDominantColors(gunDto: TGunDto): Promise<string[]> {
@@ -943,7 +943,7 @@ export class GunModelGenerator {
         id: entry.pickupObjectId,
         startingItemOf,
         startingAlternateItemOf: isEqual(startingItemOf, startingAlternateItemOf) ? undefined : startingAlternateItemOf,
-        gunNameInternal: gunDto.gun.gunName,
+        gunNameInternal: gunDto.name,
         quality: gunQualityTextLookup[gunDto.gun.quality] as keyof typeof ItemQuality,
         gunClass: gunClassTextLookup[gunDto.gun.gunClass] as keyof typeof GunClass,
         playerStatModifiers: this._buildStatModifiers(gunDto),

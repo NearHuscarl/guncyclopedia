@@ -103,7 +103,6 @@ export const ProjectileModuleDto = z.object({
 const GunData = z
   .object({
     PickupObjectId: z.number(),
-    gunName: z.string(),
     quality: z.enum(ItemQuality),
     gunClass: z.enum(GunClass),
     currentGunStatModifiers: z.array(StatModifierSchema),
@@ -173,6 +172,7 @@ const AuraOnReloadModifierData = z.object({
 });
 
 export const GunDto = z.object({
+  name: z.string(),
   gun: GunData,
   sprite: SpriteData,
   spriteVfx: SpriteData.optional(),

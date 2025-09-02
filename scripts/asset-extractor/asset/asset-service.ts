@@ -62,6 +62,10 @@ export class AssetService {
     return RootGameObject.safeParse(obj).success;
   }
 
+  getPrefabName(prefab: TUnityAsset) {
+    return RootGameObject.parse(prefab[0]).m_Name;
+  }
+
   isMonoBehaviour(obj: unknown): obj is TMonoBehaviour {
     return MonoBehaviour.safeParse(obj).success;
   }

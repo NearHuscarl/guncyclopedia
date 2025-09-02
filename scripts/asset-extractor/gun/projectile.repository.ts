@@ -147,9 +147,7 @@ export class ProjectileRepository {
     try {
       for (const component of refab) {
         if (this._isProjectileData(component) && !res.projectile) {
-          const metaFilePath = filePath + ".meta";
-
-          res.id = this._getProjectileKey({ $$scriptPath: metaFilePath });
+          res.id = this._getProjectileKey({ $$scriptPath: filePath + ".meta" });
           res.projectile = component;
         } else if (this._assetService.isSpriteData(component)) {
           res.sprite = component;

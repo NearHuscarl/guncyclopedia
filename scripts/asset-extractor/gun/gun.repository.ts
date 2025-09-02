@@ -78,6 +78,8 @@ export class GunRepository {
     const res: Partial<TGunDto> = {};
 
     try {
+      res.name = this._assetService.getPrefabName(refab);
+
       for (const component of refab) {
         if (this._isGunData(component)) {
           res.gun = component;
@@ -106,7 +108,7 @@ export class GunRepository {
       return GunDto.parse(res);
     } catch (error) {
       if (error instanceof z.ZodError) {
-        console.error(chalk.red(`Error parsing gun dto, ID: ${res.gun?.PickupObjectId}, name: ${res.gun?.gunName}`));
+        console.error(chalk.red(`Error parsing gun dto, ID: ${res.gun?.PickupObjectId}, name: ${res.name}`));
         console.error(z.prettifyError(error));
         process.exit(1);
       } else {
