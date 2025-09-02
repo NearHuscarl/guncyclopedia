@@ -4,6 +4,8 @@ import {
   Flame,
   Gamepad2,
   Heart,
+  Keyboard,
+  Move,
   Receipt,
   Skull,
   Snail,
@@ -67,6 +69,7 @@ import { Homing } from "@/components/icons/homing";
 import { Homing2 } from "@/components/icons/homing2";
 import { GunService, HomingLevel, type TGunStats } from "@/client/service/gun.service";
 import { Bee } from "@/components/icons/bee";
+import { Chest } from "@/components/icons/chest";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -425,6 +428,57 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <br />
             While reloading, a circular field surrounds the player that damages nearby enemies within{" "}
             <strong>{formatNumber(gun?.attribute.auraOnReloadRadius ?? 0, 1)}</strong> radius.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.name === "Directional Pad" && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              <Move size={18} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>4 Directions</strong>
+            <br />
+            Fires projectiles in four directions.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.attribute.spawnChestOnDepletion && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              <Chest size={18} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-72">
+            <strong>Spawn Chest On Depletion</strong>
+            <br />
+            When running out of ammo, the gun is destroyed and spawns a chest of any quality.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.attribute.inputCombo && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              <Keyboard
+                size={20}
+                className={clsx({
+                  "[&_path,&_rect]:stroke-muted-foreground [&_path,&_rect]:transition-colors": true,
+                  "[&_path,&_rect]:stroke-yellow-500!": gunStats?.mode.mode === "← ←",
+                  "[&_path,&_rect]:stroke-blue-500!": gunStats?.mode.mode === "↓ →",
+                })}
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Input Combos</strong>
+            <br />- Pressing <strong>down</strong>, then <strong>right</strong>, then fire will cause the gun to fire 4
+            additional fireballs.
+            <br />- Pressing <strong>left</strong>, then <strong>left</strong> again, then fire will cause the gun to
+            fire a grappling hook.
           </TooltipContent>
         </Tooltip>
       )}

@@ -2,7 +2,7 @@ import z from "zod/v4";
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys, StringKeys } from "@/lib/types";
 import type { TProjectile } from "../generated/models/projectile.model";
-import type { TResolvedProjectile, TResolvedProjectileModule } from "./game-object.service";
+import type { TResolvedProjectile } from "./game-object.service";
 
 type AggregateModeOption = "volley" | "random";
 type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TResolvedProjectile[]) => number);
@@ -80,35 +80,6 @@ export class ProjectileService {
     return ((maxSpread - clamped) / maxSpread) * 100;
   }
 
-  static createAggregatedVolley(
-    volley: TResolvedProjectileModule[],
-    allowSpawnedModules: boolean,
-  ): TResolvedProjectileModule {
-    const pp = volley
-      .filter((m) => allowSpawnedModules || !m.projectiles[0].spawnedBy)
-      .map((m) => this.createAggregatedProjectile(m.projectiles, "random"));
-    if (pp.length === 0) {
-      throw new Error("Cannot compute average projectile from an empty list.");
-    }
-    const finalVolley: TResolvedProjectileModule = {
-      cooldownTime: 0,
-      spread: 0,
-      burstShotCount: volley[0].burstShotCount,
-      burstCooldownTime: volley[0].burstCooldownTime,
-      shootStyle: volley[0].shootStyle,
-      ammoCost: 0,
-      projectiles: [this.createAggregatedProjectile(pp, "volley")],
-    };
-    for (let i = 0; i < volley.length; i++) {
-      const proj = volley[i];
-      finalVolley.cooldownTime = Math.max(finalVolley.cooldownTime, proj.cooldownTime);
-      finalVolley.spread = Math.max(finalVolley.spread, proj.spread);
-      finalVolley.ammoCost = Math.max(finalVolley.ammoCost ?? 1, proj.ammoCost ?? 1);
-    }
-
-    return finalVolley;
-  }
-
   private static _aggregateAdditionalDamage(
     projectiles: TResolvedProjectile[],
     mode: AggregateModeOption,
@@ -169,6 +140,7 @@ export class ProjectileService {
   private static readonly _nAggregateConfig: NumericAggregateConfig = {
     gunId: [],
     damage: ["avg", "sum"],
+    dps: ["avg", "sum"],
     speed: ["avg", "avg"],
     range: ["avg", "max"],
     force: ["avg", "sum"],

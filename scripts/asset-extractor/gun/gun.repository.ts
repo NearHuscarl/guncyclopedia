@@ -13,6 +13,8 @@ import type {
   TGunDto,
   TGunExtraSettingSynergyProcessorData,
   TPredatorGunControllerData,
+  TSpawnItemOnGunDepletionData,
+  TTrackInputDirectionalPadData,
 } from "./gun.dto.ts";
 import { TranslationService } from "../translation/translation.service.ts";
 
@@ -44,6 +46,12 @@ export class GunRepository {
 
   private _isGunData(obj: unknown): obj is TGunData {
     return this._assetService.isMonoScript(obj, "Gun.cs.meta");
+  }
+  private _isTrackInputDirectionalPadData(obj: unknown): obj is TTrackInputDirectionalPadData {
+    return this._assetService.isMonoScript(obj, "TrackInputDirectionalPad.cs.meta");
+  }
+  private _isSpawnItemOnGunDepletionData(obj: unknown): obj is TSpawnItemOnGunDepletionData {
+    return this._assetService.isMonoScript(obj, "SpawnItemOnGunDepletion.cs.meta");
   }
   private _isPredatorGunControllerData(obj: unknown): obj is TPredatorGunControllerData {
     return this._assetService.isMonoScript(obj, "PredatorGunController.cs.meta");
@@ -91,6 +99,10 @@ export class GunRepository {
           }
         } else if (this._assetService.isSpriteAnimatorData(component)) {
           res.spriteAnimator = component;
+        } else if (this._isTrackInputDirectionalPadData(component)) {
+          res.trackInputDirectionalPad = component;
+        } else if (this._isSpawnItemOnGunDepletionData(component)) {
+          res.spawnItemOnGunDepletion = component;
         } else if (this._isPredatorGunControllerData(component)) {
           res.predatorGunController = component;
         } else if (this._isGunExtraSettingSynergyProcessorData(component)) {

@@ -10,6 +10,7 @@ import type { TPickupObject } from "../generated/models/pickup-object.model";
 import type { TProjectile, TProjectileId } from "../generated/models/projectile.model";
 
 export const ResolvedProjectile = Projectile.extend({
+  dps: z.number(),
   spawnedBy: z.string().optional(),
   spawnLevel: z.number().optional(),
 });
@@ -21,6 +22,8 @@ export type TResolvedProjectile = z.infer<typeof ResolvedProjectile>;
  */
 export const ResolvedProjectileModule = ProjectileModule.extend({
   projectiles: z.array(ResolvedProjectile),
+  timeBetweenShots: z.number(),
+  shotsPerSecond: z.number(),
 });
 
 export type TResolvedProjectileModule = z.infer<typeof ResolvedProjectileModule>;

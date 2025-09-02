@@ -5,7 +5,7 @@ import z from "zod/v4";
 import { ASSET_EXTRACTOR_ROOT } from "../constants.ts";
 import { AssetService } from "../asset/asset-service.ts";
 import { restoreCache, saveCache } from "../utils/cache.ts";
-import { ProjectileDto } from "./projectile.dto.ts";
+import { GrapplingHookProjectileData, ProjectileDto } from "./projectile.dto.ts";
 import type {
   TBasicBeamControllerData,
   TBlackHoleDoerData,
@@ -131,7 +131,7 @@ export class ProjectileRepository {
       for (const file of files) {
         if (!file.endsWith(".prefab")) continue;
         const content = await readFile(path.join(dir, file), "utf-8");
-        if (!content.includes("AppliesPoison")) continue; // quick check to filter out non-projectile prefabs
+        if (!content.includes("AppliesPoison") && !file.endsWith("GrapplingHook.prefab")) continue; // quick check to filter out non-projectile prefabs
 
         res.push(path.join(dir, file));
       }
@@ -145,6 +145,11 @@ export class ProjectileRepository {
     const res: Partial<TProjectileDto> = {};
 
     try {
+      if (filePath.endsWith("GrapplingHook.prefab")) {
+        res.id = this._getProjectileKey({ $$scriptPath: filePath + ".meta" });
+        res.projectile = GrapplingHookProjectileData.parse({});
+      }
+
       for (const component of refab) {
         if (this._isProjectileData(component) && !res.projectile) {
           res.id = this._getProjectileKey({ $$scriptPath: filePath + ".meta" });

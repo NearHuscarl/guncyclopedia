@@ -8097,6 +8097,27 @@
       ]
     }
   },
+  "GrapplingHook": {
+    "id": "GrapplingHook",
+    "gunId": 514,
+    "damage": 10,
+    "speed": 50,
+    "range": 0,
+    "force": 10,
+    "additionalDamage": [],
+    "animation": {
+      "name": "scorpion_hook_chain_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/itemcollection_data/atlas0.png",
+      "frames": [
+        "0.37304884,0.4736338,0.37304884,0.48925683,0.38281053,0.4736338,0.38281053,0.48925683,1"
+      ]
+    }
+  },
   "Dueling_Laser_Projectile": {
     "id": "Dueling_Laser_Projectile",
     "gunId": 508,

@@ -368,6 +368,12 @@ export class GunModelGenerator {
       proj.stunDuration = 1; // CerebralBoreProjectile#HandleBoring()
       this._featureFlags.add("hasStatusEffects");
     }
+    if (gunDto.predatorGunController) {
+      proj.isHoming = true;
+      proj.homingRadius = gunDto.predatorGunController.HomingRadius;
+      proj.homingAngularVelocity = gunDto.predatorGunController.HomingAngularVelocity;
+    }
+
     if (projScript.endsWith("InstantlyDamageAllProjectile.cs.meta")) {
       proj.damageAllEnemies = true;
     }
@@ -410,11 +416,6 @@ export class GunModelGenerator {
       }
       this._featureFlags.add("hasSpecialProjectiles");
     }
-    if (gunDto.predatorGunController) {
-      proj.isHoming = true;
-      proj.homingRadius = gunDto.predatorGunController.HomingRadius;
-      proj.homingAngularVelocity = gunDto.predatorGunController.HomingAngularVelocity;
-    }
 
     if (projDto.projectile.CanTransmogrify && projDto.projectile.TransmogrifyTargetGuids.length > 0) {
       proj.chanceToTransmogrify = projDto.projectile.ChanceToTransmogrify;
@@ -429,6 +430,11 @@ export class GunModelGenerator {
       this._featureFlags.add("hasSpecialProjectiles");
     }
 
+    if (projDto.id === "GrapplingHook" && gunDto.trackInputDirectionalPad) {
+      proj.damage = gunDto.trackInputDirectionalPad.grappleModule.DamageToEnemies;
+      proj.force = gunDto.trackInputDirectionalPad.grappleModule.EnemyKnockbackForce;
+      proj.speed = gunDto.trackInputDirectionalPad.grappleModule.GrappleSpeed;
+    }
     if (this._projectileRepo.isHelixProjectileData(projDto.projectile)) {
       proj.helixAmplitude = projDto.projectile.helixAmplitude;
       proj.helixWavelength = projDto.projectile.helixWavelength;
@@ -517,7 +523,7 @@ export class GunModelGenerator {
     }
     return {
       mode: typeof mode === "number" ? `Charge ${mode}` : mode,
-      magazineSize: defaultModule.numberOfShotsInClip,
+      magazineSize: defaultModule.numberOfShotsInClip === -1 ? gunDto.gun.maxAmmo : defaultModule.numberOfShotsInClip,
       chargeTime,
       volley,
     };
@@ -545,6 +551,25 @@ export class GunModelGenerator {
       return [
         this._buildModeFromProjectileModules(`Normal`, gunDto, defaultModule, projectileModules),
         this._buildModeFromProjectileModules(`Alternate`, gunDto, alternateModules[0], alternateModules),
+      ];
+    }
+
+    if (gunDto.trackInputDirectionalPad) {
+      const hadoukenModules: TProjectileModuleDto[] = [];
+      const inputModule = {
+        ...defaultModule,
+        shootStyle: ShootStyle.SemiAutomatic,
+        ammoCost: defaultModule.burstShotCount,
+      };
+      for (let i = 0; i < projectileModules.length; i++) {
+        hadoukenModules.push({ ...inputModule, projectiles: [gunDto.trackInputDirectionalPad.HadoukenProjectile] });
+      }
+      const grappleData = gunDto.trackInputDirectionalPad.grappleModule;
+      const grappleModule: TProjectileModuleDto = { ...inputModule, projectiles: [grappleData.GrapplePrefab] };
+      return [
+        this._buildModeFromProjectileModules(`Normal`, gunDto, defaultModule, projectileModules),
+        this._buildModeFromProjectileModules(`← ←`, gunDto, defaultModule, [...projectileModules, grappleModule]),
+        this._buildModeFromProjectileModules(`↓ →`, gunDto, defaultModule, [...projectileModules, ...hadoukenModules]),
       ];
     }
 
@@ -593,6 +618,7 @@ export class GunModelGenerator {
     //  Comparison: crossbow
     // TODO: add muzzleFlashEffects in idle animation for The Fat Line
     // TODO: add unused reload animation for The Fat Line (?)
+    // TODO: add unused guns (requireDemoMode: 1). it doesn't have the Gun script, only sprites/animations. Create a separate model for demo gun.
 
     // // TODO: test casey's case again
     // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.
@@ -633,8 +659,13 @@ export class GunModelGenerator {
         ? gunDto.auraOnReloadModifier?.IgniteEffect.DamagePerSecondToEnemies
         : undefined,
 
+      inputCombo: Boolean(gunDto.trackInputDirectionalPad) || undefined,
       trickGun: Boolean(gunDto.gun.IsTrickGun) || undefined,
     };
+
+    if (gunDto.spawnItemOnGunDepletion && !gunDto.spawnItemOnGunDepletion.IsSynergyContingent) {
+      attributes.spawnChestOnDepletion = true; // TODO: handle synergy
+    }
 
     for (const value of Object.values(attributes)) {
       if (value === true) {
@@ -694,10 +725,10 @@ export class GunModelGenerator {
     return { ...animation, ...override };
   }
 
-  private _buildAnimationFromSprite(spriteData: TSpriteData): TAnimation | undefined {
+  private _buildAnimationFromSprite(spriteData: TSpriteData, name?: string): TAnimation | undefined {
     if (!spriteData) return;
 
-    const res = this._spriteService.getSprite(spriteData.collection.$$scriptPath, spriteData._spriteId);
+    const res = this._spriteService.getSprite(spriteData.collection.$$scriptPath, name ?? spriteData._spriteId);
 
     return {
       name: res.spriteData.name,
@@ -723,7 +754,10 @@ export class GunModelGenerator {
       return this._buildAnimation(clip, `projectile id: ${projectileDto.id}`);
     }
     if (projectileDto.sprite) {
-      return this._buildAnimationFromSprite(projectileDto.sprite);
+      return this._buildAnimationFromSprite(
+        projectileDto.sprite,
+        projectileDto.id === "GrapplingHook" ? "scorpion_hook_chain_001" : undefined,
+      );
     }
     console.log(chalk.yellow(`No sprite animator or sprite found for projectile ${chalk.green(projectileDto.id)}`));
   }
