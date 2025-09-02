@@ -43,23 +43,16 @@ export class GunRepository {
   }
 
   private _isGunData(obj: unknown): obj is TGunData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(AssetService.GUN_SCRIPT);
+    return this._assetService.isMonoScript(obj, "Gun.cs.meta");
   }
   private _isPredatorGunControllerData(obj: unknown): obj is TPredatorGunControllerData {
-    return (
-      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("PredatorGunController.cs.meta")
-    );
+    return this._assetService.isMonoScript(obj, "PredatorGunController.cs.meta");
   }
   private _isGunExtraSettingSynergyProcessorData(obj: unknown): obj is TGunExtraSettingSynergyProcessorData {
-    return (
-      this._assetService.isMonoBehaviour(obj) &&
-      obj.m_Script.$$scriptPath.endsWith("GunExtraSettingSynergyProcessor.cs.meta")
-    );
+    return this._assetService.isMonoScript(obj, "GunExtraSettingSynergyProcessor.cs.meta");
   }
   private _isAuraOnReloadModifierData(obj: unknown): obj is TAuraOnReloadModifierData {
-    return (
-      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("AuraOnReloadModifier.cs.meta")
-    );
+    return this._assetService.isMonoScript(obj, "AuraOnReloadModifier.cs.meta");
   }
 
   private async _getAllRefabFilesInGunFolders() {

@@ -29,6 +29,7 @@ import type {
   TRobotechProjectileData,
   TBeeProjectileData,
   TBoomerangProjectileData,
+  THealthModificationBuffData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -54,78 +55,71 @@ export class ProjectileRepository {
     return await instance.load();
   }
 
-  private _containsScript(obj: unknown, scriptName: string): boolean {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(scriptName);
-  }
-
   private _isProjectileData(obj: unknown): obj is TProjectileData {
-    return this._containsScript(obj, AssetService.PROJECTILE_SCRIPT);
+    return this._assetService.isMonoScript(obj, "Projectile.cs.meta");
   }
   isCerebralBoreProjectile(obj: unknown): obj is TCerebralBoreProjectileData {
-    return this._containsScript(obj, "CerebralBoreProjectile.cs.meta");
+    return this._assetService.isMonoScript(obj, "CerebralBoreProjectile.cs.meta");
   }
   isHelixProjectileData(obj: unknown): obj is THelixProjectileData {
-    return this._containsScript(obj, "HelixProjectile.cs.meta");
+    return this._assetService.isMonoScript(obj, "HelixProjectile.cs.meta");
   }
   isBoomerangProjectileData(obj: unknown): obj is TBoomerangProjectileData {
-    return this._containsScript(obj, "BoomerangProjectile.cs.meta");
+    return this._assetService.isMonoScript(obj, "BoomerangProjectile.cs.meta");
   }
   isBeeProjectileData(obj: unknown): obj is TBeeProjectileData {
-    return this._containsScript(obj, "BeeProjectile.cs.meta");
+    return this._assetService.isMonoScript(obj, "BeeProjectile.cs.meta");
   }
   isRobotechProjectileData(obj: unknown): obj is TRobotechProjectileData {
-    return this._containsScript(obj, "RobotechProjectile.cs.meta");
+    return this._assetService.isMonoScript(obj, "RobotechProjectile.cs.meta");
   }
   private _isBounceModifierData(obj: unknown): obj is TBounceProjModifierData {
-    return this._containsScript(obj, AssetService.BOUNCE_PROJ_MODIFIER_SCRIPT);
+    return this._assetService.isMonoScript(obj, "BounceProjModifier.cs.meta");
   }
   private _isPierceModifierData(obj: unknown): obj is TPierceProjModifierData {
-    return this._containsScript(obj, AssetService.PIERCE_PROJ_MODIFIER_SCRIPT);
+    return this._assetService.isMonoScript(obj, "PierceProjModifier.cs.meta");
   }
   private _isExplosiveModifierData(obj: unknown): obj is TExplosiveModifierData {
-    return this._containsScript(obj, "ExplosiveModifier.cs.meta");
+    return this._assetService.isMonoScript(obj, "ExplosiveModifier.cs.meta");
   }
   private _isHomingModifierData(obj: unknown): obj is THomingModifierData {
-    return this._containsScript(obj, AssetService.HOMING_MODIFIER_SCRIPT);
+    return this._assetService.isMonoScript(obj, "HomingModifier.cs.meta");
   }
   private _isSpawnModifierData(obj: unknown): obj is TSpawnProjModifierData {
-    return this._containsScript(obj, "SpawnProjModifier.cs.meta");
+    return this._assetService.isMonoScript(obj, "SpawnProjModifier.cs.meta");
   }
   private _isGoopModifierData(obj: unknown): obj is TGoopModifierData {
-    return this._containsScript(obj, "GoopModifier.cs.meta");
+    return this._assetService.isMonoScript(obj, "GoopModifier.cs.meta");
   }
   private _isGoopDefinitionData(obj: unknown): obj is TGoodDefinitionData {
-    return this._containsScript(obj, "GoopDefinition.cs.meta");
+    return this._assetService.isMonoScript(obj, "GoopDefinition.cs.meta");
   }
   private _isModifyProjectileSynergyProcessorData(obj: unknown): obj is TModifyProjectileSynergyProcessorData {
-    return this._containsScript(obj, "ModifyProjectileSynergyProcessor.cs.meta");
+    return this._assetService.isMonoScript(obj, "ModifyProjectileSynergyProcessor.cs.meta");
   }
   private _isBasicBeamControllerData(obj: unknown): obj is TBasicBeamControllerData {
-    return this._containsScript(obj, "BasicBeamController.cs.meta");
+    return this._assetService.isMonoScript(obj, "BasicBeamController.cs.meta");
   }
   private _isRaidenBeamControllerData(obj: unknown): obj is TRaidenBeamControllerData {
-    return this._containsScript(obj, AssetService.RAIDEN_BEAM_CONTROLLER_SCRIPT);
+    return this._assetService.isMonoScript(obj, "RaidenBeamController.cs.meta");
   }
   private _isBlackHoleDoerData(obj: unknown): obj is TBlackHoleDoerData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("BlackHoleDoer.cs.meta");
+    return this._assetService.isMonoScript(obj, "BlackHoleDoer.cs.meta");
   }
   private _isMindControlProjectileModifierData(obj: unknown): obj is TMindControlProjectileModifierData {
-    return (
-      this._assetService.isMonoBehaviour(obj) &&
-      obj.m_Script.$$scriptPath.endsWith("MindControlProjectileModifier.cs.meta")
-    );
+    return this._assetService.isMonoScript(obj, "MindControlProjectileModifier.cs.meta");
   }
   private _isMatterAntimatterProjectileModifierData(obj: unknown): obj is TMatterAntimatterProjectileModifierData {
-    return (
-      this._assetService.isMonoBehaviour(obj) &&
-      obj.m_Script.$$scriptPath.endsWith("MatterAntimatterProjectileModifier.cs.meta")
-    );
+    return this._assetService.isMonoScript(obj, "MatterAntimatterProjectileModifier.cs.meta");
   }
   private _isStickyGrenadeBuffData(obj: unknown): obj is TStickyGrenadeBuffData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("StickyGrenadeBuff.cs.meta");
+    return this._assetService.isMonoScript(obj, "StickyGrenadeBuff.cs.meta");
+  }
+  private _isHealthModificationBuffData(obj: unknown): obj is THealthModificationBuffData {
+    return this._assetService.isMonoScript(obj, "HealthModificationBuff.cs.meta");
   }
   private _isDevolverModifierData(obj: unknown): obj is TDevolverModifierData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("DevolverModifier.cs.meta");
+    return this._assetService.isMonoScript(obj, "DevolverModifier.cs.meta");
   }
 
   private async _getAllProjectileRefabFiles() {
@@ -196,6 +190,8 @@ export class ProjectileRepository {
           res.matterAntimatterProjModifier = component;
         } else if (this._isStickyGrenadeBuffData(component)) {
           res.stickyGrenadeBuff = component;
+        } else if (this._isHealthModificationBuffData(component)) {
+          res.healthModificationBuff = component;
         } else if (this._isDevolverModifierData(component)) {
           res.devolverModifier = component;
         }

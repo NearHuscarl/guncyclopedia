@@ -138,9 +138,9 @@ function prepareSegment(segments: ISegment[], max: number) {
     totalValue += segment.value;
   }
 
-  // pad the segments array to at least 5 items for smoother transitions (e.g. prevent hard
+  // pad the segments array to at least 6 items for smoother transitions (e.g. prevent hard
   // jumps when the number of segments changes)
-  const maxNumberOfSegments = 5;
+  const maxNumberOfSegments = 6;
   while (paddedSegments.length < maxNumberOfSegments) {
     paddedSegments.push({ value: 0, cappedValue: 0 });
   }

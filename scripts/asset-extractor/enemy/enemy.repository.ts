@@ -38,7 +38,7 @@ export class EnemyRepository {
   }
 
   private _isAiActor(obj: unknown): obj is TAiActorData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("AIActor.cs.meta");
+    return this._assetService.isMonoScript(obj, "AIActor.cs.meta");
   }
 
   private async _getAllEnemyRefabFiles() {

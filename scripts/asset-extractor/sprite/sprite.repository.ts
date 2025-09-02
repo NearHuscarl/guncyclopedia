@@ -61,9 +61,7 @@ export class SpriteRepository {
     return await instance.load();
   }
   private _isSpriteCollectionData(obj: unknown): obj is TSpriteCollectionDto {
-    return (
-      this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteCollectionData.cs.meta")
-    );
+    return this._assetService.isMonoScript(obj, "tk2dSpriteCollectionData.cs.meta");
   }
 
   private async _parseSprite(filePath: string) {

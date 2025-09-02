@@ -438,8 +438,8 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           <TooltipContent className="text-wrap w-80">
             <strong>Bee Projectile</strong>
             <br />
-            Has homing behavior but slows down when in the opposite of the enemy, and speeds up after aligning with the
-            target.
+            Has homing behavior but slows down when facing the opposite of the enemy, and speeds up after aligning with
+            the target.
             <br />
             Deals extra sting damage for <strong>{projectile.beeStingDuration}s</strong>.
           </TooltipContent>

@@ -56,7 +56,7 @@ export class SpriteAnimatorRepository {
     return await instance.load();
   }
   private _isSpriteAnimatorData(obj: unknown): obj is TSpriteAnimatorDto {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteAnimation.cs.meta");
+    return this._assetService.isMonoScript(obj, "tk2dSpriteAnimation.cs.meta");
   }
 
   private async _parseAnimator(filePath: string) {

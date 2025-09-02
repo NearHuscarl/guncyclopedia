@@ -32,10 +32,7 @@ export class VolleyRepository {
   }
 
   private _isVolleyDto(obj: unknown): obj is TVolleyDto {
-    return (
-      this._assetService.isMonoBehaviour(obj) &&
-      obj.m_Script.$$scriptPath.endsWith(AssetService.PROJECTILE_VOLLEY_SCRIPT)
-    );
+    return this._assetService.isMonoScript(obj, "ProjectileVolleyData.cs.meta");
   }
 
   private async _getAllVolleyRefabFiles() {

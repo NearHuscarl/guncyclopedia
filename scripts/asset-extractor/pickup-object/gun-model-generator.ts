@@ -334,7 +334,9 @@ export class GunModelGenerator {
           type: "instant",
           source: "bee",
           // Note: maxLifetime & healthChange range is unused
-          damage: Math.abs(projDto.healthModificationBuff.healthChangeAtEnd) * projDto.healthModificationBuff.lifetime,
+          damage:
+            Math.abs(projDto.healthModificationBuff.healthChangeAtEnd) *
+            (projDto.healthModificationBuff.lifetime / projDto.healthModificationBuff.tickPeriod),
         });
       }
 

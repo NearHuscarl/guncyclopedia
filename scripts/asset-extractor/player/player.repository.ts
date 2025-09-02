@@ -28,7 +28,7 @@ export class PlayerRepository {
   }
 
   private _isPlayerController(obj: unknown): obj is TPlayerControllerData {
-    return this._assetService.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("PlayerController.cs.meta");
+    return this._assetService.isMonoScript(obj, "PlayerController.cs.meta");
   }
 
   /**

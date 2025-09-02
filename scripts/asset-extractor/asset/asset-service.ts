@@ -15,14 +15,6 @@ import type { TEncounterTrackableData, TRootGameObject, TSpriteAnimatorData, TSp
 import type { TYamlOptions } from "../utils/yaml.ts";
 
 export class AssetService {
-  static readonly GUN_SCRIPT = "Gun.cs.meta";
-  static readonly PROJECTILE_SCRIPT = "Projectile.cs.meta";
-  static readonly BOUNCE_PROJ_MODIFIER_SCRIPT = "BounceProjModifier.cs.meta";
-  static readonly PIERCE_PROJ_MODIFIER_SCRIPT = "PierceProjModifier.cs.meta";
-  static readonly HOMING_MODIFIER_SCRIPT = "HomingModifier.cs.meta";
-  static readonly RAIDEN_BEAM_CONTROLLER_SCRIPT = "RaidenBeamController.cs.meta";
-
-  static readonly PROJECTILE_VOLLEY_SCRIPT = "ProjectileVolleyData.cs.meta";
   private readonly _DEFAULT_META_ROOT_DIR = path.join(ASSET_EXTRACTOR_ROOT, "assets/ExportedProject");
 
   private _assetPaths = new Map<Guid, string>();
@@ -74,14 +66,18 @@ export class AssetService {
     return MonoBehaviour.safeParse(obj).success;
   }
 
+  isMonoScript(obj: unknown, scriptNamePattern: string): obj is TMonoBehaviour {
+    return this.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith(scriptNamePattern);
+  }
+
   isSpriteData(obj: unknown): obj is TSpriteData {
-    return this.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSprite.cs.meta");
+    return this.isMonoScript(obj, "tk2dSprite.cs.meta");
   }
   isSpriteAnimatorData(obj: unknown): obj is TSpriteAnimatorData {
-    return this.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("tk2dSpriteAnimator.cs.meta");
+    return this.isMonoScript(obj, "tk2dSpriteAnimator.cs.meta");
   }
   isEncounterTrackable(obj: unknown): obj is TEncounterTrackableData {
-    return this.isMonoBehaviour(obj) && obj.m_Script.$$scriptPath.endsWith("EncounterTrackable.cs.meta");
+    return this.isMonoScript(obj, "EncounterTrackable.cs.meta");
   }
 
   getPathByGuid(guid: string): string | undefined {
