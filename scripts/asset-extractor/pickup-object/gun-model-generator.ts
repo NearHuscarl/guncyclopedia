@@ -206,8 +206,8 @@ export class GunModelGenerator {
         proj.chanceToDieOnBounce = projDto.bounceProjModifier.chanceToDieOnBounce;
 
       proj.averageSurvivingBounces = this._computeAverageBounces(
-          projDto.bounceProjModifier.numberOfBounces,
-          projDto.bounceProjModifier.chanceToDieOnBounce ?? 0,
+        projDto.bounceProjModifier.numberOfBounces,
+        projDto.bounceProjModifier.chanceToDieOnBounce ?? 0,
       );
     }
     if (projDto.pierceProjModifier) {
