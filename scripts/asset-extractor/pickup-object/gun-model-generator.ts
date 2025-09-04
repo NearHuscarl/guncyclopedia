@@ -579,6 +579,7 @@ export class GunModelGenerator {
     const res: TProjectileMode[] = [];
     // TODO: rework estimated bounce damage, it only increases potential damage if paired with penetration.
     // TODO: ShovelGunModifier
+    // TODO: some projectile like from GunBow have force: 0, which could be wrong. Investigating...
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: round that has explosion on impact count as another source of damage
     // TODO: Synergies: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))

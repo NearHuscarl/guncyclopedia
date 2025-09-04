@@ -1,10 +1,10 @@
 import { MenubarCheckboxItem, MenubarSub, MenubarSubContent, MenubarSubTrigger } from "@/components/ui/menubar";
 import { useFilterStateMutation } from "../../shared/hooks/useFilterStateMutation";
 import { useFilter } from "@/modules/shared/hooks/useFilter";
-import { ProjectileModule, type TProjectileModule } from "@/client/generated/models/gun.model";
+import { ProjectileModule, type TShootStyle } from "@/client/generated/models/gun.model";
 import { UppercasedItem } from "../shared/components/uppercased-item";
 
-const sortWeight: Record<TProjectileModule["shootStyle"], number> = {
+const sortWeight: Record<TShootStyle, number> = {
   Automatic: 0,
   SemiAutomatic: 1,
   Charged: 2,

@@ -1,7 +1,6 @@
 import z from "zod/v4";
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys, StringKeys } from "@/lib/types";
-import type { TProjectile } from "../generated/models/projectile.model";
 import type { TResolvedProjectile, TResolvedProjectileModule } from "./game-object.service";
 
 type AggregateModeOption = "volley" | "random";
@@ -40,7 +39,7 @@ export class ProjectileService {
   static getMaxAmmo(value: number) {
     return value >= ProjectileService.MAX_MAX_AMMO ? Infinity : value;
   }
-  static getRangeLabel(projectile: TProjectile): TRangeLabel {
+  static getRangeLabel(projectile: TResolvedProjectile): TRangeLabel {
     if (projectile.range <= 15) {
       return "short-range";
     } else if (projectile.range <= 60) {
@@ -52,7 +51,10 @@ export class ProjectileService {
   /**
    * Calculates the chance of a status effect being applied by a volley of projectiles.
    */
-  static calculateVolleyChance(volley: TProjectile[], chanceGetter: (p: TProjectile) => number | undefined): number {
+  static calculateVolleyChance(
+    volley: TResolvedProjectile[],
+    chanceGetter: (p: TResolvedProjectile) => number | undefined,
+  ): number {
     let probabilityNone = 1;
 
     // Calculate the probability that none of the projectiles apply the effect
@@ -96,14 +98,14 @@ export class ProjectileService {
       burstShotCount: volley[0].burstShotCount,
       burstCooldownTime: volley[0].burstCooldownTime,
       shootStyle: volley[0].shootStyle,
-      ammoCost: 0,
+      ammoCost: volley[0].ammoCost,
       projectiles: [this.createAggregatedProjectile(pp, "volley")],
     };
     for (let i = 0; i < volley.length; i++) {
       const proj = volley[i];
       finalVolley.cooldownTime = Math.max(finalVolley.cooldownTime, proj.cooldownTime);
       finalVolley.spread = Math.max(finalVolley.spread, proj.spread);
-      finalVolley.ammoCost = Math.max(finalVolley.ammoCost ?? 1, proj.ammoCost ?? 1);
+      finalVolley.ammoCost = Math.max(finalVolley.ammoCost, proj.ammoCost);
     }
 
     return finalVolley;
@@ -329,9 +331,16 @@ export class ProjectileService {
       additionalDamage: this._aggregateAdditionalDamage(projectiles, mode, sums),
     };
 
-    this._stringConfigEntries((k) => (final[k] = Array.from(strSums[k]).join(",")));
-    this._numericConfigEntries((k) => (final[k] = sums[k]));
-    this._booleanConfigEntries((k) => (final[k] = hasTrue[k]));
+    this._stringConfigEntries((k) => {
+      const v = Array.from(strSums[k]).join(",");
+      if (v) final[k] = v;
+    });
+    this._numericConfigEntries((k) => {
+      if (sums[k]) final[k] = sums[k];
+    });
+    this._booleanConfigEntries((k) => {
+      if (hasTrue[k]) final[k] = hasTrue[k];
+    });
 
     return final as TResolvedProjectile;
   }

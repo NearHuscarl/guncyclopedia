@@ -114,7 +114,7 @@ export function DetailSection() {
   const selectedGun = hoverGun || gun;
   const selectedStats = hoverGunStats || gunStats;
   const showProjectilePool = selectedGun.projectileModes[0].volley[0].projectiles.length > 1;
-  const isCustomMagazineSize = (selectedStats.projectileModule.ammoCost ?? 1) > 1;
+  const isCustomMagazineSize = selectedStats.projectileModule.ammoCost > 1;
 
   useEffect(() => {
     // Note: Don't remove this useEffect and use key={gun?.id} for parent component

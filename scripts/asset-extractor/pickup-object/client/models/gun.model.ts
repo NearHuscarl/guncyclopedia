@@ -4,6 +4,8 @@ import { Animation, CompactedFrame, RichFrame } from "./animation.model.ts";
 import { Projectile } from "./projectile.model.ts";
 import type { TProjectileId } from "./projectile.model.ts";
 
+export type TShootStyle = "SemiAutomatic" | "Automatic" | "Beam" | "Charged" | "Burst";
+
 /**
  * randomize/cycle through the projectile array for each shot
  */
@@ -12,7 +14,7 @@ export type TProjectileSequence = TProjectileId[]; // TProjectileId[]
  * projectiles fired in one shot
  */
 export type TProjectileModule = {
-  shootStyle: "SemiAutomatic" | "Automatic" | "Beam" | "Charged" | "Burst";
+  shootStyle: TShootStyle;
   burstShotCount: number;
   burstCooldownTime: number;
   cooldownTime: number;

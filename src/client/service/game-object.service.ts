@@ -10,6 +10,8 @@ import type { TPickupObject } from "../generated/models/pickup-object.model";
 import type { TProjectile, TProjectileId } from "../generated/models/projectile.model";
 
 export const ResolvedProjectile = Projectile.extend({
+  gunId: z.number().optional(), // no use right now.
+  force: z.number().optional(), // TODO: could this be 0?
   spawnedBy: z.string().optional(),
   spawnLevel: z.number().optional(),
 });
@@ -20,6 +22,11 @@ export type TResolvedProjectile = z.infer<typeof ResolvedProjectile>;
  * Aggregated data for front-end usage.
  */
 export const ResolvedProjectileModule = ProjectileModule.extend({
+  /**
+   * Any falsy property will be removed in the aggregator. Explicitly
+   * initialize it before that to avoid missing the property.
+   */
+  ammoCost: z.number().min(1),
   projectiles: z.array(ResolvedProjectile),
 });
 

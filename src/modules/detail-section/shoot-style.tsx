@@ -4,13 +4,13 @@ import { Muted } from "@/components/ui/typography";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { usePrefetchImages } from "../shared/hooks/usePrefetchImages";
 import { useUnmountRef } from "@/lib/hooks";
-import type { TProjectileModule } from "@/client/generated/models/gun.model";
+import type { TShootStyle } from "@/client/generated/models/gun.model";
 
 type TShootStyleProps = {
-  value: TProjectileModule["shootStyle"];
+  value: TShootStyle;
 };
 
-const shootStyleHelp: Record<TProjectileModule["shootStyle"], string> = {
+const shootStyleHelp: Record<TShootStyle, string> = {
   Automatic: "Automatically fires bullets at a constant rate while the fire key is held.",
   SemiAutomatic:
     "Fires bullets at a constant rate while the fire key is held. Tapping the fire key however allows the gun to fire faster.",
