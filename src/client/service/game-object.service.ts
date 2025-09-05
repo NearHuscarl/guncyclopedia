@@ -12,6 +12,7 @@ import type { TProjectile, TProjectileId } from "../generated/models/projectile.
 export const ResolvedProjectile = Projectile.extend({
   gunId: z.number().optional(), // no use right now.
   force: z.number().optional(), // TODO: could this be 0?
+  dps: z.number(),
   spawnedBy: z.string().optional(),
   spawnLevel: z.number().optional(),
 });
@@ -28,6 +29,8 @@ export const ResolvedProjectileModule = ProjectileModule.extend({
    */
   ammoCost: z.number().min(1),
   projectiles: z.array(ResolvedProjectile),
+  timeBetweenShots: z.number(),
+  shotsPerSecond: z.number(),
 });
 
 export type TResolvedProjectileModule = z.infer<typeof ResolvedProjectileModule>;

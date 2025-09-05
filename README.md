@@ -24,3 +24,5 @@ Some materials are sourced from the following sites:
 How fire rate is calculated:
 
 ![firerate](./images/firerate.excalidraw.png)
+
+- [Icon design](https://www.figma.com/design/loAXQ0w6kwPLrqCcMuwZig/Guncyclopedia-Icons?node-id=0-1&p=f&t=8NCpvmcZGhyI1G3l-0)

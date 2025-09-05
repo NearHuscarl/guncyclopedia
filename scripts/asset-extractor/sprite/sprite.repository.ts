@@ -39,6 +39,8 @@ export class SpriteRepository {
     "assets/ExportedProject/Assets/sprites/vfx/dolphin vfx/dolphin_vfx_collection_001 data/Dolphin_VFX_Collection_001.prefab",
     // minimap
     "assets/ExportedProject/Assets/sprites/ui/minimapcollection data/MinimapCollection.prefab",
+    // items
+    "assets/ExportedProject/Assets/sprites/items/itemcollection data/ItemCollection.prefab",
   ]
     .map((p) => path.join(ASSET_EXTRACTOR_ROOT, p))
     .concat(SpriteRepository.AMMONONICON_SPRITE_PATH);

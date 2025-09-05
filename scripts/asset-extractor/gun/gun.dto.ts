@@ -155,6 +155,24 @@ const GunData = z
     },
   );
 
+const TrackInputDirectionalPadData = z.object({
+  HadoukenProjectile: AssetExternalReference.required(),
+  grappleModule: z.object({
+    GrapplePrefab: AssetExternalReference.required(),
+    GrappleSpeed: z.number(),
+    DamageToEnemies: z.number(),
+    EnemyKnockbackForce: z.number(),
+  }),
+});
+
+const SpawnItemOnGunDepletionData = z.object({
+  IsSynergyContingent: BinaryOption,
+  SynergyToCheck: z.number(),
+  // TODO: handle trash gun
+  UsesSpecificItem: BinaryOption,
+  SpecificItemId: z.number(),
+});
+
 const PredatorGunControllerData = z.object({
   HomingRadius: z.number(),
   HomingAngularVelocity: z.number(),
@@ -177,6 +195,8 @@ export const GunDto = z.object({
   sprite: SpriteData,
   spriteVfx: SpriteData.optional(),
   spriteAnimator: SpriteAnimatorData,
+  trackInputDirectionalPad: TrackInputDirectionalPadData.optional(),
+  spawnItemOnGunDepletion: SpawnItemOnGunDepletionData.optional(),
   predatorGunController: PredatorGunControllerData.optional(),
   gunExtraSettingSynergyProcessor: GunExtraSettingSynergyProcessorData.optional(),
   auraOnReloadModifier: AuraOnReloadModifierData.optional(),
@@ -185,6 +205,8 @@ export const GunDto = z.object({
 
 export type TGunDto = z.input<typeof GunDto>;
 export type TGunData = z.input<typeof GunData>;
+export type TTrackInputDirectionalPadData = z.input<typeof TrackInputDirectionalPadData>;
+export type TSpawnItemOnGunDepletionData = z.input<typeof SpawnItemOnGunDepletionData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
 export type TGunExtraSettingSynergyProcessorData = z.input<typeof GunExtraSettingSynergyProcessorData>;
 export type TAuraOnReloadModifierData = z.input<typeof AuraOnReloadModifierData>;

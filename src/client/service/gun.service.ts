@@ -77,27 +77,6 @@ export const GunStats = z.object({
 }) satisfies z.ZodType<TGunStats>;
 
 export class GunService {
-  static getTimeBetweenShot(input: {
-    reloadTime: number;
-    magazineSize: number;
-    module: TResolvedProjectileModule;
-    chargeTime?: number;
-  }) {
-    const { magazineSize, module, chargeTime } = input;
-    const { shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = module;
-    if (cooldownTime <= 0 && shootStyle !== "Charged") {
-      return 0;
-    }
-    let timeBetweenShots = magazineSize === 1 ? 0 : cooldownTime;
-    if (shootStyle === "Burst" && burstShotCount > 1 && burstCooldownTime > 0) {
-      const totalTimePerBurst = (burstShotCount - 1) * burstCooldownTime + cooldownTime;
-      timeBetweenShots = totalTimePerBurst / burstShotCount;
-    } else if (shootStyle === "Charged" && chargeTime) {
-      timeBetweenShots += chargeTime;
-    }
-    return timeBetweenShots;
-  }
-
   static getHomingLevel(projectile: TResolvedProjectile) {
     if (!projectile.isHoming) return HomingLevel.None;
 
@@ -123,14 +102,44 @@ export class GunService {
     return HomingLevel.Weak;
   }
 
+  static getMagSize(magazineSize: number, ammoCost?: number) {
+    return Math.ceil(magazineSize / (ammoCost ?? 1));
+  }
+
+  static getTimeBetweenShot(input: {
+    shootStyle: TResolvedProjectileModule["shootStyle"];
+    magazineSize: number;
+    reloadTime: number;
+    chargeTime?: number;
+    cooldownTime: number;
+    burstCooldownTime: number;
+    burstShotCount: number;
+  }) {
+    const { magazineSize, chargeTime, shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = input;
+    if (cooldownTime <= 0 && shootStyle !== "Charged") {
+      return 0;
+    }
+    let timeBetweenShots = magazineSize === 1 ? 0 : cooldownTime;
+    if (shootStyle === "Burst" && burstShotCount > 1 && burstCooldownTime > 0) {
+      const totalTimePerBurst = (burstShotCount - 1) * burstCooldownTime + cooldownTime;
+      timeBetweenShots = totalTimePerBurst / burstShotCount;
+    } else if (shootStyle === "Charged" && chargeTime) {
+      timeBetweenShots += chargeTime;
+    }
+    return timeBetweenShots;
+  }
+
   /**
    * `ExportedProject/Assets/Scripts/Assembly-CSharp/ProjectileModule.cs#GetEstimatedShotsPerSecond`
    */
   static getEstimatedShotsPerSecond(input: {
-    reloadTime: number;
+    shootStyle: TResolvedProjectileModule["shootStyle"];
     magazineSize: number;
-    module: TResolvedProjectileModule;
+    reloadTime: number;
     chargeTime?: number;
+    cooldownTime: number;
+    burstCooldownTime: number;
+    burstShotCount: number;
   }) {
     const { reloadTime, magazineSize } = input;
     let timeBetweenShots = this.getTimeBetweenShot(input);
@@ -139,6 +148,44 @@ export class GunService {
       timeBetweenShots += reloadTime / magazineSize;
     }
     return 1 / timeBetweenShots;
+  }
+
+  static createAggregatedVolley(
+    volley: TResolvedProjectileModule[],
+    allowSpawnedModules: boolean,
+  ): TResolvedProjectileModule {
+    const filterModule = (m: TResolvedProjectileModule) => allowSpawnedModules || !m.projectiles[0].spawnedBy;
+
+    if (volley.filter(filterModule).length === 0) {
+      throw new Error("Cannot compute average projectile from an empty list.");
+    }
+
+    const finalVolley: TResolvedProjectileModule = {
+      cooldownTime: 0,
+      spread: 0,
+      burstShotCount: volley[0].burstShotCount,
+      burstCooldownTime: volley[0].burstCooldownTime,
+      shootStyle: volley[0].shootStyle,
+      ammoCost: Infinity,
+      timeBetweenShots: Infinity,
+      shotsPerSecond: 0,
+      projectiles: [],
+    };
+    for (const module of volley) {
+      finalVolley.cooldownTime = Math.max(finalVolley.cooldownTime, module.cooldownTime);
+      finalVolley.spread = Math.max(finalVolley.spread, module.spread);
+      finalVolley.ammoCost = Math.min(finalVolley.ammoCost ?? 1, module.ammoCost ?? 1);
+
+      if (!filterModule(module)) continue;
+
+      finalVolley.timeBetweenShots = Math.min(finalVolley.timeBetweenShots, module.timeBetweenShots);
+      finalVolley.shotsPerSecond = Math.max(finalVolley.shotsPerSecond, module.shotsPerSecond);
+      finalVolley.projectiles.push(ProjectileService.createAggregatedProjectile(module.projectiles, "random"));
+    }
+
+    finalVolley.projectiles = [ProjectileService.createAggregatedProjectile(finalVolley.projectiles, "volley")];
+
+    return finalVolley;
   }
 
   private static _getDamageTooltip(
@@ -173,25 +220,35 @@ export class GunService {
   }
 
   static computeDamage(input: {
+    module: TResolvedProjectileModule;
     projectile: TResolvedProjectile;
+    magazineSize: number;
     type: "dps" | "instant";
-    shotsPerSecond: number;
     gun: TGun;
-    reloadToFireRatio: number;
     resolvedVolley: TResolvedProjectileModule[];
     selectSpecificProjectile: boolean;
   }): IStat {
-    const { projectile, type, shotsPerSecond, gun, reloadToFireRatio, resolvedVolley, selectSpecificProjectile } =
-      input;
-    const baseDamage = type === "dps" ? shotsPerSecond * projectile.damage : projectile.damage;
+    const { module, projectile, magazineSize, type, gun, resolvedVolley, selectSpecificProjectile } = input;
+    let baseDamage = type === "dps" ? projectile.dps : projectile.damage;
     const extraDamage: IStat["details"] = [];
+
+    // douchepad gun, shooting in 4 directions and makes my code harder to maintain.
+    if (gun.id === 514) {
+      extraDamage.push({
+        value: (baseDamage * 3) / 4,
+        tooltip: "Damage from 3 other directions: {{VALUE}}",
+        isEstimated: true,
+      });
+      baseDamage /= 4;
+    }
+
     let effectiveDamage = baseDamage;
     let isExplosiveProj = false;
 
     for (const d of projectile.additionalDamage) {
       let value = 0;
       if (type === "dps") {
-        value = d.type === "instant" ? d.damage * shotsPerSecond : d.damage;
+        value = d.type === "instant" ? d.damage * module.shotsPerSecond : d.damage;
       } else if (type === "instant" && d.type === "instant") {
         value = d.damage;
       }
@@ -239,6 +296,8 @@ export class GunService {
     }
 
     if (gun.attribute.auraOnReload) {
+      const reloadToFireRatio = gun.reloadTime / (gun.reloadTime + module.timeBetweenShots * magazineSize);
+
       extraDamage.push({
         value: gun.attribute.auraOnReloadDps! * reloadToFireRatio,
         tooltip: "Aura on reload: {{VALUE}}",
@@ -256,13 +315,13 @@ export class GunService {
       const spawnHierarchy = groupBy(spawnedModules, (m) => m.projectiles[0].spawnLevel);
 
       for (const [_level, modules] of Object.entries(spawnHierarchy)) {
-        const spawnedProjectile = ProjectileService.createAggregatedVolley(modules, true).projectiles[0];
+        const spawnedProjectile = GunService.createAggregatedVolley(modules, true).projectiles[0];
         const { damage } = spawnedProjectile;
         const isEstimated = this.getHomingLevel(spawnedProjectile) <= HomingLevel.Weak;
         const spawner = GameObjectService.getProjectile(spawnedProjectile.spawnedBy!);
         const shotPerSecond2 = spawner.spawnProjectilesInflight
           ? spawner.spawnProjectilesInflightPerSecond!
-          : shotsPerSecond;
+          : module.shotsPerSecond;
 
         extraDamage.push({
           value: type === "dps" ? damage * shotPerSecond2 : damage,
@@ -318,7 +377,7 @@ export class GunService {
    * Return an array of projectile and all of the spawned projectiles recursively. Otherwise
    * return an array with  just the original projectile.
    */
-  static resolveProjectile(p: TResolvedProjectile, depth = 0): TResolvedProjectile[] {
+  static resolveProjectile(p: TResolvedProjectile, shotPerSecond: number, depth = 0): TResolvedProjectile[] {
     if (!p.spawnProjectile) {
       return [p];
     }
@@ -326,90 +385,105 @@ export class GunService {
       ...GameObjectService.getProjectile(p.spawnProjectile),
       spawnedBy: p.id,
       spawnLevel: depth + 1,
+      dps: 0,
     };
-    return [p, p2, ...this.resolveProjectile(p2, depth + 1).slice(1)];
+    p2.dps = p2.damage * shotPerSecond;
+
+    return [p, p2, ...this.resolveProjectile(p2, shotPerSecond, depth + 1).slice(1)];
   }
 
-  static resolveMode(mode: TProjectileMode): TResolvedProjectileMode {
-    return {
-      ...mode,
-      volley: mode.volley
-        .map((module) => {
-          const projectiles: TResolvedProjectile[] = uniq(module.projectiles).map(GameObjectService.getProjectile);
-          const spawnedModules: TResolvedProjectileModule[] = [];
+  static resolveMode(
+    mode: TProjectileMode,
+    gunInput: { reloadTime: number; chargeTime?: number; magazineSize: number },
+  ): TResolvedProjectileMode {
+    const volley = mode.volley
+      .map((module) => {
+        const timingInput = {
+          shootStyle: module.shootStyle,
+          magazineSize: this.getMagSize(gunInput.magazineSize, module.ammoCost),
+          reloadTime: gunInput.reloadTime,
+          chargeTime: gunInput.chargeTime,
+          cooldownTime: module.cooldownTime,
+          burstCooldownTime: module.burstCooldownTime,
+          burstShotCount: module.burstShotCount,
+        };
+        const shotsPerSecond = this.getEstimatedShotsPerSecond(timingInput);
+        const timeBetweenShots = this.getTimeBetweenShot(timingInput);
+        const projectiles: TResolvedProjectile[] = uniq(module.projectiles).map((i) => {
+          const p = GameObjectService.getProjectile(i);
+          return { ...p, dps: p.damage * shotsPerSecond };
+        });
+        const spawnedModules: TResolvedProjectileModule[] = [];
+        const resolvedModule: TResolvedProjectileModule = {
+          ...module,
+          ammoCost: module.ammoCost ?? 1,
+          timeBetweenShots,
+          shotsPerSecond,
+          projectiles,
+        };
 
-          for (const p of projectiles) {
-            const pp = this.resolveProjectile(p);
+        for (const p of projectiles) {
+          const pp = this.resolveProjectile(p, shotsPerSecond);
 
-            for (const p2 of pp) {
-              if (!p2.spawnedBy) continue;
-              const spawner = GameObjectService.getProjectile(p2.spawnedBy);
-              const spawnerCount = spawnedModules
-                .flatMap((m) => m.projectiles)
-                .concat(projectiles[0]) // the original spawner
-                .filter((p) => p.id === p2.spawnedBy).length;
+          for (const p2 of pp) {
+            if (!p2.spawnedBy) continue;
+            const spawner = GameObjectService.getProjectile(p2.spawnedBy);
+            const spawnerCount = spawnedModules
+              .flatMap((m) => m.projectiles)
+              .concat(projectiles[0]) // the original spawner
+              .filter((p) => p.id === p2.spawnedBy).length;
 
-              const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
-              for (let i = 0; i < spawnCount; i++) {
-                // spawned projectile is considered part of a volley, just a bit more delay than the spawner
-                spawnedModules.push({ ...module, ammoCost: module.ammoCost ?? 1, projectiles: [p2] });
-              }
+            const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
+            for (let i = 0; i < spawnCount; i++) {
+              // spawned projectile is considered part of a volley, just a bit more delay than the spawner
+              spawnedModules.push({ ...resolvedModule, projectiles: [p2] });
             }
           }
+        }
 
-          return [{ ...module, ammoCost: module.ammoCost ?? 1, projectiles }, ...spawnedModules];
-        })
-        .flat()
-        .sort((a, b) => this.getSortWeight(a.projectiles[0]) - this.getSortWeight(b.projectiles[0])),
-    };
+        return [resolvedModule, ...spawnedModules];
+      })
+      .flat()
+      .sort((a, b) => this.getSortWeight(a.projectiles[0]) - this.getSortWeight(b.projectiles[0]));
+
+    return { ...mode, volley };
   }
 
   static computeGunStats(gun: TGun, modeIndex: number, moduleIndex: number, projectileIndex: number): TGunStats {
     const selectSpecificProjectile = moduleIndex !== -1 || projectileIndex !== -1;
-    const mode = this.resolveMode(gun.projectileModes[modeIndex] ?? gun.projectileModes[0]);
-    const module =
-      mode.volley[moduleIndex] ?? ProjectileService.createAggregatedVolley(mode.volley, selectSpecificProjectile);
-    const projectilePool = module.projectiles;
-    const projectile =
-      mode.volley[moduleIndex]?.projectiles[projectileIndex] ??
-      ProjectileService.createAggregatedProjectile(projectilePool, "random");
-    const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : Math.ceil(mode.magazineSize / module.ammoCost);
     const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? ProjectileService.MAX_MAX_AMMO : gun.maxAmmo;
     const reloadTime = gun.reloadTime;
-    const timingInput = {
-      reloadTime: gun.reloadTime, // Prize Pistol's edge case (only 1 max ammo)
-      magazineSize,
-      module,
-      chargeTime: mode.chargeTime,
-    };
-    const shotsPerSecond = this.getEstimatedShotsPerSecond(timingInput);
-    const timeBetweenShots = this.getTimeBetweenShot(timingInput);
-    const reloadToFireRatio = reloadTime / (reloadTime + timeBetweenShots * magazineSize);
+    const modeInput = gun.projectileModes[modeIndex] ?? gun.projectileModes[0];
+    const timingInput = { reloadTime, chargeTime: modeInput.chargeTime, magazineSize: modeInput.magazineSize };
+    const mode = this.resolveMode(modeInput, timingInput);
+    const module = mode.volley[moduleIndex] ?? this.createAggregatedVolley(mode.volley, selectSpecificProjectile);
+    const projectile =
+      mode.volley[moduleIndex]?.projectiles[projectileIndex] ??
+      ProjectileService.createAggregatedProjectile(module.projectiles, "random");
 
     const dmgCalculationInput = {
+      module,
       projectile,
-      shotsPerSecond,
+      magazineSize: mode.magazineSize,
       gun,
-      reloadToFireRatio,
       resolvedVolley: mode.volley,
       selectSpecificProjectile,
     };
     const dps = this.computeDamage({ ...dmgCalculationInput, type: "dps" });
     const damage = this.computeDamage({ ...dmgCalculationInput, type: "instant" });
-    const fireRate = module.shootStyle === "Beam" ? ProjectileService.MAX_FIRE_RATE : shotsPerSecond * 60;
+    const fireRate = module.shootStyle === "Beam" ? ProjectileService.MAX_FIRE_RATE : module.shotsPerSecond * 60;
 
     let aggregatedProjectileIncludingChildren: TResolvedProjectile | undefined;
     if (!selectSpecificProjectile) {
       // the original projectile doesn't aggregate any spawned projectiles' data so the damage can be calculated
       // later as a separate segment, but it would miss other aggregate attributes like bouncing/homing which
       // is re-evaluated here.
-      aggregatedProjectileIncludingChildren = ProjectileService.createAggregatedVolley(mode.volley, true)
-        .projectiles[0];
+      aggregatedProjectileIncludingChildren = this.createAggregatedVolley(mode.volley, true).projectiles[0];
     }
 
     return {
       maxAmmo,
-      magazineSize,
+      magazineSize: this.getMagSize(mode.magazineSize, module.ammoCost),
       reloadTime,
       shootStyle: module.shootStyle, // only raiden coil has 2 shoot styles, no need to aggregate.
       precision: ProjectileService.toPrecision(module.spread),

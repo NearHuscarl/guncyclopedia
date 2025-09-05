@@ -234,6 +234,53 @@ const ProjectileData = MonoBehaviour.extend({
   // TODO: what the heck is bleed effect?
 });
 
+/**
+ * Used to normalize the special grappling hook projectile
+ */
+export const GrapplingHookProjectileData = ProjectileData.extend({
+  $$component: z.string().default(""),
+  $$fileID: z.string().default(""),
+  m_Script: ProjectileData.shape.m_Script.nonoptional().default({ $$scriptPath: "", fileID: 0, guid: "", type: 0 }),
+  ignoreDamageCaps: ProjectileData.shape.ignoreDamageCaps.default(0),
+  baseData: ProjectileData.shape.baseData.nonoptional().default({ damage: 0, speed: 0, range: 0, force: 0 }),
+  damageTypes: ProjectileData.shape.damageTypes.default(CoreDamageType.None),
+  damagesWalls: ProjectileData.shape.damagesWalls.default(0),
+
+  AppliesPoison: ProjectileData.shape.AppliesPoison.default(0),
+  PoisonApplyChance: ProjectileData.shape.PoisonApplyChance.default(0),
+  healthEffect: ProjectileData.shape.healthEffect.default({ DamagePerSecondToEnemies: 0, duration: 0 }),
+
+  AppliesSpeedModifier: ProjectileData.shape.AppliesSpeedModifier.default(0),
+  SpeedApplyChance: ProjectileData.shape.SpeedApplyChance.default(0),
+  speedEffect: ProjectileData.shape.speedEffect.default({ SpeedMultiplier: 0, duration: 0 }),
+
+  AppliesCharm: ProjectileData.shape.AppliesCharm.default(0),
+  CharmApplyChance: ProjectileData.shape.CharmApplyChance.default(0),
+  charmEffect: ProjectileData.shape.charmEffect.default({ duration: 0 }),
+
+  AppliesFreeze: ProjectileData.shape.AppliesFreeze.default(0),
+  FreezeApplyChance: ProjectileData.shape.FreezeApplyChance.default(0),
+  freezeEffect: ProjectileData.shape.freezeEffect.default({ duration: 0, FreezeAmount: 0 }),
+
+  AppliesFire: ProjectileData.shape.AppliesFire.default(0),
+  FireApplyChance: ProjectileData.shape.FireApplyChance.default(0),
+  fireEffect: ProjectileData.shape.fireEffect.default({ DamagePerSecondToEnemies: 0, duration: 0 }),
+
+  AppliesStun: ProjectileData.shape.AppliesStun.default(0),
+  StunApplyChance: ProjectileData.shape.StunApplyChance.default(0),
+  AppliedStunDuration: ProjectileData.shape.AppliedStunDuration.default(0),
+
+  AppliesCheese: ProjectileData.shape.AppliesCheese.default(0),
+  CheeseApplyChance: ProjectileData.shape.CheeseApplyChance.default(0),
+  cheeseEffect: ProjectileData.shape.cheeseEffect.default({ duration: 0, CheeseAmount: 0 }),
+
+  CanTransmogrify: ProjectileData.shape.CanTransmogrify.default(0),
+  ChanceToTransmogrify: ProjectileData.shape.ChanceToTransmogrify.default(0),
+  TransmogrifyTargetGuids: ProjectileData.shape.TransmogrifyTargetGuids.default([]),
+
+  StunDuration: ProjectileData.shape.StunDuration.default(0),
+});
+
 const CerebralBoreProjectileData = ProjectileData.extend({
   explosionData: ExplosiveModifierData.shape.explosionData,
 });
@@ -264,6 +311,7 @@ export const ProjectileDto = z.object({
     CerebralBoreProjectileData,
     HelixProjectileData,
     ProjectileData,
+    GrapplingHookProjectileData,
   ]),
   sprite: SpriteData.optional(),
   spriteAnimator: SpriteAnimatorData.optional(),
@@ -284,7 +332,7 @@ export const ProjectileDto = z.object({
   devolverModifier: DevolverModifierData.optional(),
 });
 
-export type TProjectileDto = z.input<typeof ProjectileDto>;
+export type TProjectileDto = z.infer<typeof ProjectileDto>;
 export type TProjectileData = z.infer<typeof ProjectileData>;
 export type TCerebralBoreProjectileData = z.infer<typeof CerebralBoreProjectileData>;
 export type TBoomerangProjectileData = z.infer<typeof BoomerangProjectileData>;
@@ -301,9 +349,9 @@ export type TGoopModifierData = z.infer<typeof GoopModifierData>;
 export type TModifyProjectileSynergyProcessorData = z.infer<typeof ModifyProjectileSynergyProcessorData>;
 export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;
-export type TBlackHoleDoerData = z.input<typeof BlackHoleDoerData>;
-export type TMindControlProjectileModifierData = z.input<typeof MindControlProjectileModifierData>;
-export type TMatterAntimatterProjectileModifierData = z.input<typeof MatterAntimatterProjectileModifierData>;
-export type TStickyGrenadeBuffData = z.input<typeof StickyGrenadeBuffData>;
-export type THealthModificationBuffData = z.input<typeof HealthModificationBuffData>;
-export type TDevolverModifierData = z.input<typeof DevolverModifierData>;
+export type TBlackHoleDoerData = z.infer<typeof BlackHoleDoerData>;
+export type TMindControlProjectileModifierData = z.infer<typeof MindControlProjectileModifierData>;
+export type TMatterAntimatterProjectileModifierData = z.infer<typeof MatterAntimatterProjectileModifierData>;
+export type TStickyGrenadeBuffData = z.infer<typeof StickyGrenadeBuffData>;
+export type THealthModificationBuffData = z.infer<typeof HealthModificationBuffData>;
+export type TDevolverModifierData = z.infer<typeof DevolverModifierData>;

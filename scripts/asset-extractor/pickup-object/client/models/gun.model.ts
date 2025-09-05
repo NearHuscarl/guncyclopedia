@@ -150,6 +150,9 @@ export const Gun = PickupObject.extend({
     auraOnReloadDps: z.number().optional(),
     auraOnReloadIgniteDps: z.number().optional(),
 
+    spawnChestOnDepletion: z.boolean().optional(),
+    inputCombo: z.boolean().optional(),
+
     /**
      * Gun that switch between 2 firing modes after a reload
      */
