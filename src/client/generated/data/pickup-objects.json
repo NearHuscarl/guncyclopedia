@@ -4347,6 +4347,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 2,
+            "ammoCost": 2,
             "projectiles": [
               "Composite_Gun_Projectile_Big"
             ]
@@ -4459,7 +4460,6 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.2,
             "spread": 0,
-            "ammoCost": 3,
             "projectiles": [
               "Star_Projectile"
             ]
@@ -11855,6 +11855,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
+            "ammoCost": 12,
             "projectiles": [
               "Matter_Projectile"
             ]
@@ -12733,7 +12734,6 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.3,
             "spread": 0,
-            "ammoCost": 3,
             "projectiles": [
               "Mjolnir_Charged_Projectile"
             ]
@@ -22775,6 +22775,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
+            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22785,6 +22786,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
+            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22795,6 +22797,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 30,
+            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22805,6 +22808,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 40,
+            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22815,6 +22819,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 15,
+            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22825,6 +22830,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
+            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -30759,7 +30765,6 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.07,
             "spread": 0,
-            "ammoCost": 5,
             "projectiles": [
               "Mega_Flash_Projectile"
             ]

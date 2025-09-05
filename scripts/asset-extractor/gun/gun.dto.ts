@@ -64,6 +64,13 @@ export const ProjectileSequenceStyle = {
   OrderedGroups: 2,
 } as const;
 
+// ExportedProject/Assets/Scripts/Assembly-CSharp/ProjectileModule.cs
+export const ChargeProjectileProperties = {
+  ammo: 0x1,
+  depleteAmmo: 0x40,
+  reflectBullets: 0x200,
+} as const;
+
 export const ProjectileModuleDto = z.object({
   shootStyle: z.enum(ShootStyle),
   /**
@@ -82,6 +89,7 @@ export const ProjectileModuleDto = z.object({
     z.object({
       ChargeTime: z.number(),
       Projectile: AssetExternalReference,
+      UsedProperties: z.number(),
       /**
        * Override `ProjectileModule.ammoCost` if exists.
        */

@@ -589,18 +589,34 @@ export class GunModelGenerator {
         );
       }
 
-      for (const { ChargeTime, Projectile, AmmoCost } of module.chargeProjectiles) {
+      // normalize charge projectiles into separate modules.
+      for (const { ChargeTime, Projectile, UsedProperties, AmmoCost } of module.chargeProjectiles) {
         if (!Projectile.guid) continue;
         if (!chargeModuleDtosLookup.get(ChargeTime)) chargeModuleDtosLookup.set(ChargeTime, []);
 
         const chargeModules = chargeModuleDtosLookup.get(ChargeTime)!;
         const clonedModule = cloneDeep(module);
         clonedModule.projectiles = [cloneDeep(Projectile)];
+        if (UsedProperties & ChargeProjectileProperties.ammo) {
         clonedModule.ammoCost = AmmoCost;
+        }
+        if (UsedProperties & ChargeProjectileProperties.depleteAmmo) {
+          clonedModule.ammoCost = defaultModule.numberOfShotsInClip;
+        }
         clonedModule.chargeProjectiles = [];
         chargeModules.push(clonedModule);
       }
     }
+
+    // If one charge projectile can deplete the whole clip, other charge projectiles with the same charge time
+    // should have the same ammoCost
+    for (const modules of chargeModuleDtosLookup.values()) {
+      const maxAmmoCost = Math.max(...modules.map((m) => m.ammoCost ?? 1));
+      for (const mod of modules) {
+        mod.ammoCost = maxAmmoCost;
+      }
+    }
+
     const res: TProjectileMode[] = [];
     // TODO: rework estimated bounce damage, it only increases potential damage if paired with penetration.
     // TODO: ShovelGunModifier
@@ -620,6 +636,8 @@ export class GunModelGenerator {
     // TODO: add muzzleFlashEffects in idle animation for The Fat Line
     // TODO: add unused reload animation for The Fat Line (?)
     // TODO: add unused guns (requireDemoMode: 1). it doesn't have the Gun script, only sprites/animations. Create a separate model for demo gun.
+    // TODO: raiden coil: Fix beam damage per second. Does it equal to damage?
+    // TODO: Silencer: Incorrect estimated dps in A-A test
 
     // // TODO: test casey's case again
     // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.

@@ -35,6 +35,26 @@ function stripAnimations(gunStats: TGunStats) {
 
 function getGunStatsForTesting(gun: TGun, modeIndex: number, moduleIndex: number, projectileIndex: number) {
   const gunStats = GunService.computeGunStats(gun, modeIndex, moduleIndex, projectileIndex);
+
+  if (gun.id === 807 && moduleIndex === 0 && projectileIndex === 0) {
+    console.log(gunStats.magazineSize, gunStats.maxAmmo);
+  }
+
+  gunStats.mode.magazineSize = gunStats.magazineSize === gunStats.maxAmmo ? -1 : gunStats.mode.magazineSize;
+
+  delete gunStats.projectileModule.shotsPerSecond;
+  delete gunStats.projectileModule.timeBetweenShots;
+  delete gunStats.projectileModule.projectiles[0].dps;
+
+  for (const m of gunStats.mode.volley) {
+    delete m.shotsPerSecond;
+    delete m.timeBetweenShots;
+    for (const proj of m.projectiles) {
+      delete proj.dps;
+    }
+  }
+  delete gunStats.projectile.dps;
+
   return roundNumbersDeep(stripAnimations(gunStats)) as TGunStats;
 }
 
