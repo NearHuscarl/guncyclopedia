@@ -70,7 +70,7 @@ import { Bee } from "@/components/icons/bee";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
-import type { TProjectile } from "@/client/generated/models/projectile.model";
+import type { TResolvedProjectile } from "@/client/service/game-object.service";
 
 const TOOLTIP_DELAY = 100;
 const ATTRIBUTE_CLASSES = "gap-0.5 cursor-help!";
@@ -219,7 +219,7 @@ const playerLookup: { [key in TPlayerName]?: [string, ReactNode, ReactNode?] } =
 };
 
 type TGunAttributesProps = {
-  projectile: TProjectile;
+  projectile: TResolvedProjectile;
   gun?: TGun;
   gunStats?: TGunStats;
 };

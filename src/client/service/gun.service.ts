@@ -1,12 +1,18 @@
+import z from "zod/v4";
 import startCase from "lodash/startCase";
 import uniq from "lodash/uniq";
 import groupBy from "lodash/groupBy";
-import { ProjectileService, type TRangeLabel } from "./projectile.service";
+import { ProjectileService, RangeLabel, type TRangeLabel } from "./projectile.service";
 import { formatNumber } from "@/lib/lang";
-import { GameObjectService } from "./game-object.service";
-import type { TGun, TProjectileMode, TProjectileModule } from "../generated/models/gun.model";
-import type { TProjectile } from "../generated/models/projectile.model";
+import {
+  GameObjectService,
+  ResolvedProjectile,
+  ResolvedProjectileMode,
+  ResolvedProjectileModule,
+} from "./game-object.service";
+import { ProjectileModule } from "../generated/models/gun.model";
 import type { TResolvedProjectile, TResolvedProjectileMode, TResolvedProjectileModule } from "./game-object.service";
+import type { TGun, TProjectileMode, TShootStyle } from "../generated/models/gun.model";
 
 export const HomingLevel = {
   None: -1,
@@ -26,6 +32,18 @@ interface IStat {
   }[];
 }
 
+export const Stat = z.object({
+  base: z.number(),
+  details: z.array(
+    z.object({
+      tooltip: z.string(),
+      value: z.number(),
+      chance: z.number().optional(),
+      isEstimated: z.boolean().optional(),
+    }),
+  ),
+}) satisfies z.ZodType<IStat>;
+
 export type TGunStats = {
   dps: IStat;
   damage: IStat;
@@ -33,14 +51,30 @@ export type TGunStats = {
   precision: number;
   range: TRangeLabel;
   maxAmmo: number;
-  shootStyle: TProjectileModule["shootStyle"];
+  shootStyle: TShootStyle;
   magazineSize: number;
   reloadTime: number;
   fireRate: number;
   mode: TResolvedProjectileMode;
   projectileModule: TResolvedProjectileModule;
-  projectile: TProjectile;
+  projectile: TResolvedProjectile;
 };
+
+export const GunStats = z.object({
+  dps: Stat,
+  damage: Stat,
+  force: Stat,
+  precision: z.number(),
+  range: RangeLabel,
+  maxAmmo: z.number(),
+  shootStyle: ProjectileModule.shape.shootStyle,
+  magazineSize: z.number(),
+  reloadTime: z.number(),
+  fireRate: z.number(),
+  mode: ResolvedProjectileMode,
+  projectileModule: ResolvedProjectileModule,
+  projectile: ResolvedProjectile,
+}) satisfies z.ZodType<TGunStats>;
 
 export class GunService {
   static getTimeBetweenShot(input: {
@@ -64,7 +98,7 @@ export class GunService {
     return timeBetweenShots;
   }
 
-  static getHomingLevel(projectile: TProjectile) {
+  static getHomingLevel(projectile: TResolvedProjectile) {
     if (!projectile.isHoming) return HomingLevel.None;
 
     // the angular velocity doesn't make it `HomingLevel.Strong`, but it slows down when not facing
@@ -108,8 +142,8 @@ export class GunService {
   }
 
   private static _getDamageTooltip(
-    source: TProjectile["additionalDamage"][number]["source"],
-    projectileData: TProjectile,
+    source: TResolvedProjectile["additionalDamage"][number]["source"],
+    projectileData: TResolvedProjectile,
   ) {
     switch (source) {
       case "ricochet": {
@@ -139,7 +173,7 @@ export class GunService {
   }
 
   static computeDamage(input: {
-    projectile: TProjectile;
+    projectile: TResolvedProjectile;
     type: "dps" | "instant";
     shotsPerSecond: number;
     gun: TGun;
@@ -260,11 +294,11 @@ export class GunService {
     };
   }
 
-  static getForce(projectileData: TProjectile): IStat {
+  static getForce(projectileData: TResolvedProjectile): IStat {
     return {
-      base: projectileData.force,
+      base: projectileData.force ?? 0,
       details: [
-        { tooltip: `Base force: {{VALUE}}`, value: projectileData.force },
+        { tooltip: `Base force: {{VALUE}}`, value: projectileData.force ?? 0 },
         ...(projectileData.explosionForce
           ? [{ tooltip: `Explosion force: {{VALUE}}`, value: projectileData.explosionForce }]
           : []),
@@ -284,7 +318,7 @@ export class GunService {
    * Return an array of projectile and all of the spawned projectiles recursively. Otherwise
    * return an array with  just the original projectile.
    */
-  static resolveProjectile(p: TProjectile, depth = 0): TResolvedProjectile[] {
+  static resolveProjectile(p: TResolvedProjectile, depth = 0): TResolvedProjectile[] {
     if (!p.spawnProjectile) {
       return [p];
     }
@@ -318,12 +352,12 @@ export class GunService {
               const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
               for (let i = 0; i < spawnCount; i++) {
                 // spawned projectile is considered part of a volley, just a bit more delay than the spawner
-                spawnedModules.push({ ...module, projectiles: [p2] });
+                spawnedModules.push({ ...module, ammoCost: module.ammoCost ?? 1, projectiles: [p2] });
               }
             }
           }
 
-          return [{ ...module, projectiles }, ...spawnedModules];
+          return [{ ...module, ammoCost: module.ammoCost ?? 1, projectiles }, ...spawnedModules];
         })
         .flat()
         .sort((a, b) => this.getSortWeight(a.projectiles[0]) - this.getSortWeight(b.projectiles[0])),
@@ -339,7 +373,7 @@ export class GunService {
     const projectile =
       mode.volley[moduleIndex]?.projectiles[projectileIndex] ??
       ProjectileService.createAggregatedProjectile(projectilePool, "random");
-    const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : Math.ceil(mode.magazineSize / (module.ammoCost ?? 1));
+    const magazineSize = mode.magazineSize === -1 ? gun.maxAmmo : Math.ceil(mode.magazineSize / module.ammoCost);
     const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? ProjectileService.MAX_MAX_AMMO : gun.maxAmmo;
     const reloadTime = gun.reloadTime;
     const timingInput = {

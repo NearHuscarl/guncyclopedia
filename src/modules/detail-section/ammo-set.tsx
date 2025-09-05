@@ -1,13 +1,13 @@
 import { AmmoIcon } from "@/components/icons/ammo";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import type { TProjectileModule } from "@/client/generated/models/gun.model";
+import type { TShootStyle } from "@/client/generated/models/gun.model";
 
 type TAmmoSetProps = {
-  shootStyle: TProjectileModule["shootStyle"];
+  shootStyle: TShootStyle;
   magazineSize: number;
 };
 
-const weight: Record<TProjectileModule["shootStyle"], number> = {
+const weight: Record<TShootStyle, number> = {
   Charged: 1,
   Burst: 2,
   SemiAutomatic: 2,

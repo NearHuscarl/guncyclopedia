@@ -9,8 +9,7 @@ import { Marker } from "@/components/icons/marker";
 import { Chamber } from "@/components/icons/chamber";
 import { primaryColor } from "../shared/settings/tailwind";
 import { NumericValue } from "./numeric-value";
-import type { TProjectile } from "@/client/generated/models/projectile.model";
-import type { TResolvedProjectileModule } from "@/client/service/game-object.service";
+import type { TResolvedProjectile, TResolvedProjectileModule } from "@/client/service/game-object.service";
 
 type TVolleyProps = {
   id: string;
@@ -104,7 +103,7 @@ export function Volley(props: TVolleyProps) {
 
 type TProjectilePoolProps = {
   id: string;
-  projectiles: TProjectile[];
+  projectiles: TResolvedProjectile[];
   isSelected: (index: number) => boolean;
   onSelect: (index: number) => void;
   onHover: (index: number) => void;

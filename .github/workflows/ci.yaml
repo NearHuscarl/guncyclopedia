@@ -16,5 +16,5 @@ jobs:
       - name: Lint check
         run: yarn lint
 
-      - name: Run tests
-        run: yarn test
+      - name: Run regression tests
+        run: yarn test:regression

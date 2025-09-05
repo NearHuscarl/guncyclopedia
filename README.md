@@ -11,6 +11,14 @@ yarn extract-assets
 yarn dev
 ```
 
+## Questions
+
+### Source
+
+Some materials are sourced from the following sites:
+
+- https://enterthegungeon.wiki.gg
+
 ## Stuff
 
 How fire rate is calculated:

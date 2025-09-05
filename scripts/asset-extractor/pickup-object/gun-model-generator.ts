@@ -206,8 +206,8 @@ export class GunModelGenerator {
         proj.chanceToDieOnBounce = projDto.bounceProjModifier.chanceToDieOnBounce;
 
       proj.averageSurvivingBounces = this._computeAverageBounces(
-          projDto.bounceProjModifier.numberOfBounces,
-          projDto.bounceProjModifier.chanceToDieOnBounce ?? 0,
+        projDto.bounceProjModifier.numberOfBounces,
+        projDto.bounceProjModifier.chanceToDieOnBounce ?? 0,
       );
     }
     if (projDto.pierceProjModifier) {
@@ -579,6 +579,7 @@ export class GunModelGenerator {
     const res: TProjectileMode[] = [];
     // TODO: rework estimated bounce damage, it only increases potential damage if paired with penetration.
     // TODO: ShovelGunModifier
+    // TODO: some projectile like from GunBow have force: 0, which could be wrong. Investigating...
     // TODO: search for *modifier.cs to collect more attributes for the projectile
     // TODO: round that has explosion on impact count as another source of damage
     // TODO: Synergies: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
