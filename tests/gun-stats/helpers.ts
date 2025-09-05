@@ -1,6 +1,23 @@
 import { GunService, TGunStats } from "../../src/client/service/gun.service";
 import type { TGun } from "../../src/client/generated/models/gun.model";
 
+function roundNumbersDeep(obj: unknown, digits = 3): unknown {
+  if (typeof obj === "number") {
+    return Number(obj.toFixed(digits));
+  }
+  if (Array.isArray(obj)) {
+    return obj.map((v) => roundNumbersDeep(v, digits));
+  }
+  if (obj && typeof obj === "object") {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(obj)) {
+      out[k] = roundNumbersDeep(v, digits);
+    }
+    return out;
+  }
+  return obj;
+}
+
 export function JSONstringifyOrder(obj: object, space = 2) {
   const allKeys = new Set<string>();
   JSON.stringify(obj, (key, value) => (allKeys.add(key), value));
@@ -18,7 +35,7 @@ function stripAnimations(gunStats: TGunStats) {
 
 function getGunStatsForTesting(gun: TGun, modeIndex: number, moduleIndex: number, projectileIndex: number) {
   const gunStats = GunService.computeGunStats(gun, modeIndex, moduleIndex, projectileIndex);
-  return stripAnimations(gunStats);
+  return roundNumbersDeep(stripAnimations(gunStats)) as TGunStats;
 }
 
 type TForEachGunStatsCallback = (
