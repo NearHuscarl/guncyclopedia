@@ -131,7 +131,11 @@ export class GunModelGenerator {
     return projDto;
   }
 
-  private _buildProjectile(gunDto: TGunDto, projectileRef: Required<TAssetExternalReference>): TProjectileId {
+  private _buildProjectile(
+    gunDto: TGunDto,
+    moduleDto: TProjectileModuleDto,
+    projectileRef: Required<TAssetExternalReference>,
+  ): TProjectileId {
     const projDto = this._getProjectileDto(gunDto, projectileRef);
     const proj: TProjectile = {
       id: projDto.id,
@@ -143,6 +147,15 @@ export class GunModelGenerator {
       additionalDamage: [],
       animation: this._buildProjectileAnimation(projDto),
     };
+
+    if (
+      moduleDto.shootStyle === ShootStyle.Beam &&
+      !projDto.basicBeamController &&
+      !projDto.raidenBeamController &&
+      !projDto.reverseBeamController
+    ) {
+      throw new Error(`Gun ${gunDto.name} is a beam weapon but doesn't implement any known beam controller`);
+    }
 
     if (proj.speed === -1) proj.speed = 10_000;
     if (projDto.projectile.ignoreDamageCaps) proj.ignoreDamageCaps = true;
@@ -285,7 +298,7 @@ export class GunModelGenerator {
             ? spawnProjModifier.collisionSpawnProjectiles[0]
             : spawnProjModifier.projectileToSpawnOnCollision
       ) as Required<TAssetExternalReference>;
-      proj.spawnProjectile = this._buildProjectile(gunDto, spawnProjReference);
+      proj.spawnProjectile = this._buildProjectile(gunDto, moduleDto, spawnProjReference);
 
       this._featureFlags.add("hasSpawningProjectiles");
     }
@@ -497,7 +510,7 @@ export class GunModelGenerator {
     for (const moduleDto of moduleDtos) {
       const projectiles = moduleDto.projectiles
         .filter(this._assetService.referenceExists)
-        .map((p) => this._buildProjectile(gunDto, p));
+        .map((p) => this._buildProjectile(gunDto, moduleDto, p));
 
       if (moduleDto.sequenceStyle === ProjectileSequenceStyle.Random) {
         // TODO: handle random sequence
@@ -506,7 +519,7 @@ export class GunModelGenerator {
       }
       volley.push({
         shootStyle: shootStyleTextLookup[moduleDto.shootStyle] as keyof typeof ShootStyle,
-        cooldownTime: moduleDto.cooldownTime,
+        cooldownTime: moduleDto.shootStyle === ShootStyle.Beam ? 1 : moduleDto.cooldownTime, // for beam, cooldownTime is set so damage = dps
         burstShotCount: moduleDto.burstShotCount,
         burstCooldownTime: moduleDto.burstCooldownTime,
         spread: moduleDto.angleVariance,
@@ -530,7 +543,7 @@ export class GunModelGenerator {
     }
     return {
       mode: typeof mode === "number" ? `Charge ${mode}` : mode,
-      magazineSize: defaultModule.numberOfShotsInClip === -1 ? gunDto.gun.maxAmmo : defaultModule.numberOfShotsInClip,
+      magazineSize: defaultModule.numberOfShotsInClip < 0 ? gunDto.gun.maxAmmo : defaultModule.numberOfShotsInClip,
       chargeTime,
       volley,
     };
@@ -625,7 +638,7 @@ export class GunModelGenerator {
     }
 
     const res: TProjectileMode[] = [];
-    // TODO: rework estimated bounce damage, it only increases potential damage if paired with penetration.
+    // TODO: add wood beam swing damage
     // TODO: ShovelGunModifier
     // TODO: some projectile like from GunBow have force: 0, which could be wrong. Investigating...
     // TODO: search for *modifier.cs to collect more attributes for the projectile
@@ -644,6 +657,7 @@ export class GunModelGenerator {
     // TODO: add unused reload animation for The Fat Line (?)
     // TODO: add unused guns (requireDemoMode: 1). it doesn't have the Gun script, only sprites/animations. Create a separate model for demo gun.
     // TODO: raiden coil: Fix beam damage per second. Does it equal to damage?
+    // TODO: gun id=515 throws because no dps
 
     // // TODO: test casey's case again
     // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.

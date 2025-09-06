@@ -35368,7 +35368,7 @@ exports[`Gun > Demon Head (60) > modes 1`] = `
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.5,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [
@@ -35383,7 +35383,7 @@ exports[`Gun > Demon Head (60) > modes 1`] = `
             "beamChargeTime": 0.25,
             "beamStatusEffectChancePerSecond": 1,
             "damage": 31,
-            "dps": 62,
+            "dps": 31,
             "fireChance": 1,
             "fireDuration": 4,
             "force": 30,
@@ -35397,9 +35397,9 @@ exports[`Gun > Demon Head (60) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 2,
+        "shotsPerSecond": 1,
         "spread": 0,
-        "timeBetweenShots": 0.5
+        "timeBetweenShots": 1
       }
     ]
   }
@@ -35418,11 +35418,11 @@ exports[`Gun > Demon Head (60) > stats variant: Default-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 62,
+    "base": 31,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 62
+        "value": 31
       },
       {
         "isEstimated": false,
@@ -35457,7 +35457,7 @@ exports[`Gun > Demon Head (60) > stats variant: Default-0-0 1`] = `
     "beamChargeTime": 0.25,
     "beamStatusEffectChancePerSecond": 1,
     "damage": 31,
-    "dps": 62,
+    "dps": 31,
     "fireChance": 1,
     "fireDuration": 4,
     "force": 30,
@@ -35473,7 +35473,7 @@ exports[`Gun > Demon Head (60) > stats variant: Default-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.5,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [
@@ -35488,7 +35488,7 @@ exports[`Gun > Demon Head (60) > stats variant: Default-0-0 1`] = `
         "beamChargeTime": 0.25,
         "beamStatusEffectChancePerSecond": 1,
         "damage": 31,
-        "dps": 62,
+        "dps": 31,
         "fireChance": 1,
         "fireDuration": 4,
         "force": 30,
@@ -35502,9 +35502,9 @@ exports[`Gun > Demon Head (60) > stats variant: Default-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 2,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.5
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 0,
@@ -35524,11 +35524,11 @@ exports[`Gun > Demon Head (60) > stats variant: Default-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 62,
+    "base": 31,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 62
+        "value": 31
       },
       {
         "tooltip": "Fire damage: {{VALUE}}",
@@ -35561,7 +35561,7 @@ exports[`Gun > Demon Head (60) > stats variant: Default-A-A 1`] = `
     "beamChargeTime": 0.25,
     "beamStatusEffectChancePerSecond": 1,
     "damage": 31,
-    "dps": 62,
+    "dps": 31,
     "fireChance": 1,
     "fireDuration": 4,
     "force": 30,
@@ -35576,7 +35576,7 @@ exports[`Gun > Demon Head (60) > stats variant: Default-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.5,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [
@@ -35590,7 +35590,7 @@ exports[`Gun > Demon Head (60) > stats variant: Default-A-A 1`] = `
         "beamChargeTime": 0.25,
         "beamStatusEffectChancePerSecond": 1,
         "damage": 31,
-        "dps": 62,
+        "dps": 31,
         "fireChance": 1,
         "fireDuration": 4,
         "force": 30,
@@ -35603,9 +35603,9 @@ exports[`Gun > Demon Head (60) > stats variant: Default-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 2,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.5
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 0,
@@ -63403,7 +63403,7 @@ exports[`Gun > Life Orb (595) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 20,
-            "dps": 19.947,
+            "dps": 20,
             "force": 10,
             "gunId": 595,
             "id": "Life_Orb_Beam",
@@ -63412,7 +63412,7 @@ exports[`Gun > Life Orb (595) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 0.997,
+        "shotsPerSecond": 1,
         "spread": 0,
         "timeBetweenShots": 1
       },
@@ -63425,7 +63425,7 @@ exports[`Gun > Life Orb (595) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 1.5,
-            "dps": 1.496,
+            "dps": 1.5,
             "force": 0,
             "gunId": 595,
             "id": "Life_Orb_Beam_White",
@@ -63434,7 +63434,7 @@ exports[`Gun > Life Orb (595) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 0.997,
+        "shotsPerSecond": 1,
         "spread": 0,
         "timeBetweenShots": 1
       }
@@ -63455,11 +63455,11 @@ exports[`Gun > Life Orb (595) > stats variant: Default-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 19.947,
+    "base": 20,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 19.947
+        "value": 20
       }
     ]
   },
@@ -63479,7 +63479,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-0-0 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 20,
-    "dps": 19.947,
+    "dps": 20,
     "force": 10,
     "gunId": 595,
     "id": "Life_Orb_Beam",
@@ -63495,7 +63495,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-0-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 20,
-        "dps": 19.947,
+        "dps": 20,
         "force": 10,
         "gunId": 595,
         "id": "Life_Orb_Beam",
@@ -63504,7 +63504,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 0.997,
+    "shotsPerSecond": 1,
     "spread": 0,
     "timeBetweenShots": 1
   },
@@ -63526,11 +63526,11 @@ exports[`Gun > Life Orb (595) > stats variant: Default-1-0 1`] = `
     ]
   },
   "dps": {
-    "base": 1.496,
+    "base": 1.5,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 1.496
+        "value": 1.5
       }
     ]
   },
@@ -63550,7 +63550,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-1-0 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 1.5,
-    "dps": 1.496,
+    "dps": 1.5,
     "force": 0,
     "gunId": 595,
     "id": "Life_Orb_Beam_White",
@@ -63566,7 +63566,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-1-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 1.5,
-        "dps": 1.496,
+        "dps": 1.5,
         "force": 0,
         "gunId": 595,
         "id": "Life_Orb_Beam_White",
@@ -63575,7 +63575,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-1-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 0.997,
+    "shotsPerSecond": 1,
     "spread": 0,
     "timeBetweenShots": 1
   },
@@ -63597,11 +63597,11 @@ exports[`Gun > Life Orb (595) > stats variant: Default-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 21.443,
+    "base": 21.5,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 21.443
+        "value": 21.5
       }
     ]
   },
@@ -63621,7 +63621,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-A-A 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 21.5,
-    "dps": 21.443,
+    "dps": 21.5,
     "force": 10,
     "id": "Life_Orb_Beam,Life_Orb_Beam_White",
     "range": 40,
@@ -63636,7 +63636,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-A-A 1`] = `
       {
         "additionalDamage": [],
         "damage": 21.5,
-        "dps": 21.443,
+        "dps": 21.5,
         "force": 10,
         "id": "Life_Orb_Beam,Life_Orb_Beam_White",
         "range": 40,
@@ -63644,7 +63644,7 @@ exports[`Gun > Life Orb (595) > stats variant: Default-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 0.997,
+    "shotsPerSecond": 1,
     "spread": 0,
     "timeBetweenShots": 1
   },
@@ -92242,14 +92242,14 @@ exports[`Gun > Raiden Coil (712) > modes 1`] = `
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.25,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [],
             "damage": 17.5,
             "damageAllEnemies": true,
             "damageAllEnemiesRadius": 10,
-            "dps": 70,
+            "dps": 17.5,
             "force": 10,
             "gunId": 107,
             "homingAngularVelocity": 1000,
@@ -92261,9 +92261,9 @@ exports[`Gun > Raiden Coil (712) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 4,
+        "shotsPerSecond": 1,
         "spread": 0,
-        "timeBetweenShots": 0.25
+        "timeBetweenShots": 1
       },
       {
         "ammoCost": 1,
@@ -92332,11 +92332,11 @@ exports[`Gun > Raiden Coil (712) > stats variant: Default-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 70,
+    "base": 17.5,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 70
+        "value": 17.5
       }
     ]
   },
@@ -92358,7 +92358,7 @@ exports[`Gun > Raiden Coil (712) > stats variant: Default-0-0 1`] = `
     "damage": 17.5,
     "damageAllEnemies": true,
     "damageAllEnemiesRadius": 10,
-    "dps": 70,
+    "dps": 17.5,
     "force": 10,
     "gunId": 107,
     "homingAngularVelocity": 1000,
@@ -92372,14 +92372,14 @@ exports[`Gun > Raiden Coil (712) > stats variant: Default-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.25,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 17.5,
         "damageAllEnemies": true,
         "damageAllEnemiesRadius": 10,
-        "dps": 70,
+        "dps": 17.5,
         "force": 10,
         "gunId": 107,
         "homingAngularVelocity": 1000,
@@ -92391,9 +92391,9 @@ exports[`Gun > Raiden Coil (712) > stats variant: Default-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 4,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.25
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 0,
@@ -92567,11 +92567,11 @@ exports[`Gun > Raiden Coil (712) > stats variant: Default-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 86.923,
+    "base": 34.423,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 86.923
+        "value": 34.423
       }
     ]
   },
@@ -92593,7 +92593,7 @@ exports[`Gun > Raiden Coil (712) > stats variant: Default-A-A 1`] = `
     "damage": 28.5,
     "damageAllEnemies": true,
     "damageAllEnemiesRadius": 10,
-    "dps": 86.923,
+    "dps": 34.423,
     "force": 28,
     "homingAngularVelocity": 733.333,
     "homingRadius": 50,
@@ -92606,14 +92606,14 @@ exports[`Gun > Raiden Coil (712) > stats variant: Default-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.65,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 28.5,
         "damageAllEnemies": true,
         "damageAllEnemiesRadius": 10,
-        "dps": 86.923,
+        "dps": 34.423,
         "force": 28,
         "homingAngularVelocity": 733.333,
         "homingRadius": 50,
@@ -92624,9 +92624,9 @@ exports[`Gun > Raiden Coil (712) > stats variant: Default-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 4,
+    "shotsPerSecond": 1.538,
     "spread": 0,
-    "timeBetweenShots": 0.25
+    "timeBetweenShots": 0.65
   },
   "range": "long-range",
   "reloadTime": 0,
@@ -95842,12 +95842,12 @@ exports[`Gun > Regular Shotgun (763) > modes 1`] = `
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.1,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [],
             "damage": 30,
-            "dps": 299.401,
+            "dps": 30,
             "force": 10,
             "gunId": 763,
             "homingAngularVelocity": 1000,
@@ -95859,9 +95859,9 @@ exports[`Gun > Regular Shotgun (763) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 9.98,
+        "shotsPerSecond": 1,
         "spread": 10,
-        "timeBetweenShots": 0.1
+        "timeBetweenShots": 1
       }
     ]
   }
@@ -95880,11 +95880,11 @@ exports[`Gun > Regular Shotgun (763) > stats variant: Default-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 299.401,
+    "base": 30,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 299.401
+        "value": 30
       }
     ]
   },
@@ -95904,7 +95904,7 @@ exports[`Gun > Regular Shotgun (763) > stats variant: Default-0-0 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 30,
-    "dps": 299.401,
+    "dps": 30,
     "force": 10,
     "gunId": 763,
     "homingAngularVelocity": 1000,
@@ -95918,12 +95918,12 @@ exports[`Gun > Regular Shotgun (763) > stats variant: Default-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.1,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 30,
-        "dps": 299.401,
+        "dps": 30,
         "force": 10,
         "gunId": 763,
         "homingAngularVelocity": 1000,
@@ -95935,9 +95935,9 @@ exports[`Gun > Regular Shotgun (763) > stats variant: Default-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 9.98,
+    "shotsPerSecond": 1,
     "spread": 10,
-    "timeBetweenShots": 0.1
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 0.1,
@@ -95957,11 +95957,11 @@ exports[`Gun > Regular Shotgun (763) > stats variant: Default-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 299.401,
+    "base": 30,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 299.401
+        "value": 30
       }
     ]
   },
@@ -95981,7 +95981,7 @@ exports[`Gun > Regular Shotgun (763) > stats variant: Default-A-A 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 30,
-    "dps": 299.401,
+    "dps": 30,
     "force": 10,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
@@ -95994,12 +95994,12 @@ exports[`Gun > Regular Shotgun (763) > stats variant: Default-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.1,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 30,
-        "dps": 299.401,
+        "dps": 30,
         "force": 10,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
@@ -96010,9 +96010,9 @@ exports[`Gun > Regular Shotgun (763) > stats variant: Default-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 9.98,
+    "shotsPerSecond": 1,
     "spread": 10,
-    "timeBetweenShots": 0.1
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 0.1,
@@ -101448,19 +101448,19 @@ exports[`Gun > Shell (759) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -500,
+    "magazineSize": -1,
     "mode": "Default",
     "volley": [
       {
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.01,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [],
             "damage": 23,
-            "dps": 2300,
+            "dps": 23,
             "force": 10,
             "gunId": 759,
             "homingAngularVelocity": 1000,
@@ -101472,9 +101472,9 @@ exports[`Gun > Shell (759) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 100,
+        "shotsPerSecond": 1,
         "spread": 0,
-        "timeBetweenShots": 0.01
+        "timeBetweenShots": 1
       }
     ]
   }
@@ -101493,11 +101493,11 @@ exports[`Gun > Shell (759) > stats variant: Default-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 2300,
+    "base": 23,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2300
+        "value": 23
       }
     ]
   },
@@ -101511,13 +101511,13 @@ exports[`Gun > Shell (759) > stats variant: Default-0-0 1`] = `
       }
     ]
   },
-  "magazineSize": -500,
+  "magazineSize": 300,
   "maxAmmo": 300,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 23,
-    "dps": 2300,
+    "dps": 23,
     "force": 10,
     "gunId": 759,
     "homingAngularVelocity": 1000,
@@ -101531,12 +101531,12 @@ exports[`Gun > Shell (759) > stats variant: Default-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.01,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 23,
-        "dps": 2300,
+        "dps": 23,
         "force": 10,
         "gunId": 759,
         "homingAngularVelocity": 1000,
@@ -101548,9 +101548,9 @@ exports[`Gun > Shell (759) > stats variant: Default-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 100,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.01
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 1.5,
@@ -101570,11 +101570,11 @@ exports[`Gun > Shell (759) > stats variant: Default-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 2300,
+    "base": 23,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2300
+        "value": 23
       }
     ]
   },
@@ -101588,13 +101588,13 @@ exports[`Gun > Shell (759) > stats variant: Default-A-A 1`] = `
       }
     ]
   },
-  "magazineSize": -500,
+  "magazineSize": 300,
   "maxAmmo": 300,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 23,
-    "dps": 2300,
+    "dps": 23,
     "force": 10,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
@@ -101607,12 +101607,12 @@ exports[`Gun > Shell (759) > stats variant: Default-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.01,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 23,
-        "dps": 2300,
+        "dps": 23,
         "force": 10,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
@@ -101623,9 +101623,9 @@ exports[`Gun > Shell (759) > stats variant: Default-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 100,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.01
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 1.5,
@@ -101860,7 +101860,7 @@ exports[`Gun > Shellegun (464) > modes 1`] = `
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.2,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [
@@ -101875,7 +101875,7 @@ exports[`Gun > Shellegun (464) > modes 1`] = `
             "beamChargeTime": 0.4,
             "beamStatusEffectChancePerSecond": 1,
             "damage": 20,
-            "dps": 78.74,
+            "dps": 20,
             "fireChance": 1,
             "fireDuration": 4,
             "force": 30,
@@ -101886,22 +101886,22 @@ exports[`Gun > Shellegun (464) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 3.937,
+        "shotsPerSecond": 1,
         "spread": 0,
-        "timeBetweenShots": 0.2
+        "timeBetweenShots": 1
       },
       {
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.2,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [],
             "beamChargeTime": 0.4,
             "beamStatusEffectChancePerSecond": 1,
             "damage": 1.5,
-            "dps": 5.906,
+            "dps": 1.5,
             "force": 0,
             "gunId": 464,
             "id": "Shellegun_Fake_Beam",
@@ -101910,9 +101910,9 @@ exports[`Gun > Shellegun (464) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 3.937,
+        "shotsPerSecond": 1,
         "spread": 0,
-        "timeBetweenShots": 0.2
+        "timeBetweenShots": 1
       }
     ]
   }
@@ -101931,11 +101931,11 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 78.74,
+    "base": 20,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 78.74
+        "value": 20
       },
       {
         "isEstimated": false,
@@ -101970,7 +101970,7 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-0-0 1`] = `
     "beamChargeTime": 0.4,
     "beamStatusEffectChancePerSecond": 1,
     "damage": 20,
-    "dps": 78.74,
+    "dps": 20,
     "fireChance": 1,
     "fireDuration": 4,
     "force": 30,
@@ -101983,7 +101983,7 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.2,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [
@@ -101998,7 +101998,7 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-0-0 1`] = `
         "beamChargeTime": 0.4,
         "beamStatusEffectChancePerSecond": 1,
         "damage": 20,
-        "dps": 78.74,
+        "dps": 20,
         "fireChance": 1,
         "fireDuration": 4,
         "force": 30,
@@ -102009,9 +102009,9 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 3.937,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.2
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 1.08,
@@ -102031,11 +102031,11 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-1-0 1`] = `
     ]
   },
   "dps": {
-    "base": 5.906,
+    "base": 1.5,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.906
+        "value": 1.5
       }
     ]
   },
@@ -102057,7 +102057,7 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-1-0 1`] = `
     "beamChargeTime": 0.4,
     "beamStatusEffectChancePerSecond": 1,
     "damage": 1.5,
-    "dps": 5.906,
+    "dps": 1.5,
     "force": 0,
     "gunId": 464,
     "id": "Shellegun_Fake_Beam",
@@ -102068,14 +102068,14 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-1-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.2,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "beamChargeTime": 0.4,
         "beamStatusEffectChancePerSecond": 1,
         "damage": 1.5,
-        "dps": 5.906,
+        "dps": 1.5,
         "force": 0,
         "gunId": 464,
         "id": "Shellegun_Fake_Beam",
@@ -102084,9 +102084,9 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-1-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 3.937,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.2
+    "timeBetweenShots": 1
   },
   "range": "long-range",
   "reloadTime": 1.08,
@@ -102106,11 +102106,11 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 84.646,
+    "base": 21.5,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 84.646
+        "value": 21.5
       },
       {
         "tooltip": "Fire damage: {{VALUE}}",
@@ -102143,7 +102143,7 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-A-A 1`] = `
     "beamChargeTime": 0.4,
     "beamStatusEffectChancePerSecond": 1,
     "damage": 21.5,
-    "dps": 84.646,
+    "dps": 21.5,
     "fireChance": 1,
     "fireDuration": 2,
     "force": 30,
@@ -102155,7 +102155,7 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.2,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [
@@ -102169,7 +102169,7 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-A-A 1`] = `
         "beamChargeTime": 0.4,
         "beamStatusEffectChancePerSecond": 1,
         "damage": 21.5,
-        "dps": 84.646,
+        "dps": 21.5,
         "fireChance": 1,
         "fireDuration": 2,
         "force": 30,
@@ -102179,9 +102179,9 @@ exports[`Gun > Shellegun (464) > stats variant: Alternate-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 3.937,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.2
+    "timeBetweenShots": 1
   },
   "range": "long-range",
   "reloadTime": 1.08,
@@ -122065,13 +122065,13 @@ exports[`Gun > The Judge (518) > modes 1`] = `
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.1,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [],
             "beamChargeTime": 1.25,
             "damage": 160,
-            "dps": 1556.42,
+            "dps": 160,
             "force": 20,
             "gunId": 518,
             "id": "Trigun_Angel_Beam",
@@ -122080,9 +122080,9 @@ exports[`Gun > The Judge (518) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 9.728,
+        "shotsPerSecond": 1,
         "spread": 1,
-        "timeBetweenShots": 0.1
+        "timeBetweenShots": 1
       }
     ]
   }
@@ -122101,11 +122101,11 @@ exports[`Gun > The Judge (518) > stats variant: Default-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 1556.42,
+    "base": 160,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 1556.42
+        "value": 160
       }
     ]
   },
@@ -122126,7 +122126,7 @@ exports[`Gun > The Judge (518) > stats variant: Default-0-0 1`] = `
     "additionalDamage": [],
     "beamChargeTime": 1.25,
     "damage": 160,
-    "dps": 1556.42,
+    "dps": 160,
     "force": 20,
     "gunId": 518,
     "id": "Trigun_Angel_Beam",
@@ -122137,13 +122137,13 @@ exports[`Gun > The Judge (518) > stats variant: Default-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.1,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "beamChargeTime": 1.25,
         "damage": 160,
-        "dps": 1556.42,
+        "dps": 160,
         "force": 20,
         "gunId": 518,
         "id": "Trigun_Angel_Beam",
@@ -122152,9 +122152,9 @@ exports[`Gun > The Judge (518) > stats variant: Default-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 9.728,
+    "shotsPerSecond": 1,
     "spread": 1,
-    "timeBetweenShots": 0.1
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 1.4,
@@ -122174,11 +122174,11 @@ exports[`Gun > The Judge (518) > stats variant: Default-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 1556.42,
+    "base": 160,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 1556.42
+        "value": 160
       }
     ]
   },
@@ -122199,7 +122199,7 @@ exports[`Gun > The Judge (518) > stats variant: Default-A-A 1`] = `
     "additionalDamage": [],
     "beamChargeTime": 1.25,
     "damage": 160,
-    "dps": 1556.42,
+    "dps": 160,
     "force": 20,
     "id": "Trigun_Angel_Beam",
     "range": 50,
@@ -122209,13 +122209,13 @@ exports[`Gun > The Judge (518) > stats variant: Default-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.1,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "beamChargeTime": 1.25,
         "damage": 160,
-        "dps": 1556.42,
+        "dps": 160,
         "force": 20,
         "id": "Trigun_Angel_Beam",
         "range": 50,
@@ -122223,9 +122223,9 @@ exports[`Gun > The Judge (518) > stats variant: Default-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 9.728,
+    "shotsPerSecond": 1,
     "spread": 1,
-    "timeBetweenShots": 0.1
+    "timeBetweenShots": 1
   },
   "range": "mid-range",
   "reloadTime": 1.4,
@@ -137081,12 +137081,12 @@ exports[`Gun > Wood Beam (610) > modes 1`] = `
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.05,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [],
             "damage": 1,
-            "dps": 16.949,
+            "dps": 1,
             "force": 1,
             "gunId": 610,
             "id": "Wood_Beam_0",
@@ -137095,9 +137095,9 @@ exports[`Gun > Wood Beam (610) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 16.949,
+        "shotsPerSecond": 1,
         "spread": 0,
-        "timeBetweenShots": 0.05
+        "timeBetweenShots": 1
       }
     ]
   }
@@ -137116,11 +137116,11 @@ exports[`Gun > Wood Beam (610) > stats variant: Default-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 16.949,
+    "base": 1,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 16.949
+        "value": 1
       }
     ]
   },
@@ -137140,7 +137140,7 @@ exports[`Gun > Wood Beam (610) > stats variant: Default-0-0 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 1,
-    "dps": 16.949,
+    "dps": 1,
     "force": 1,
     "gunId": 610,
     "id": "Wood_Beam_0",
@@ -137151,12 +137151,12 @@ exports[`Gun > Wood Beam (610) > stats variant: Default-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.05,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 1,
-        "dps": 16.949,
+        "dps": 1,
         "force": 1,
         "gunId": 610,
         "id": "Wood_Beam_0",
@@ -137165,9 +137165,9 @@ exports[`Gun > Wood Beam (610) > stats variant: Default-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 16.949,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.05
+    "timeBetweenShots": 1
   },
   "range": "short-range",
   "reloadTime": 0.9,
@@ -137187,11 +137187,11 @@ exports[`Gun > Wood Beam (610) > stats variant: Default-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 16.949,
+    "base": 1,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 16.949
+        "value": 1
       }
     ]
   },
@@ -137211,7 +137211,7 @@ exports[`Gun > Wood Beam (610) > stats variant: Default-A-A 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 1,
-    "dps": 16.949,
+    "dps": 1,
     "force": 1,
     "id": "Wood_Beam_0",
     "range": 10,
@@ -137221,12 +137221,12 @@ exports[`Gun > Wood Beam (610) > stats variant: Default-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.05,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 1,
-        "dps": 16.949,
+        "dps": 1,
         "force": 1,
         "id": "Wood_Beam_0",
         "range": 10,
@@ -137234,9 +137234,9 @@ exports[`Gun > Wood Beam (610) > stats variant: Default-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 16.949,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.05
+    "timeBetweenShots": 1
   },
   "range": "short-range",
   "reloadTime": 0.9,
@@ -137255,12 +137255,12 @@ exports[`Gun > Wood Beam (823) > modes 1`] = `
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.05,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [],
             "damage": 1,
-            "dps": 16.949,
+            "dps": 1,
             "force": 1,
             "gunId": 823,
             "id": "Chamber_Office_Beam_Pencil",
@@ -137269,9 +137269,9 @@ exports[`Gun > Wood Beam (823) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 16.949,
+        "shotsPerSecond": 1,
         "spread": 0,
-        "timeBetweenShots": 0.05
+        "timeBetweenShots": 1
       }
     ]
   },
@@ -137284,12 +137284,12 @@ exports[`Gun > Wood Beam (823) > modes 1`] = `
         "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
-        "cooldownTime": 0.05,
+        "cooldownTime": 1,
         "projectiles": [
           {
             "additionalDamage": [],
             "damage": 1,
-            "dps": 16.949,
+            "dps": 1,
             "force": 1,
             "gunId": 823,
             "id": "Chamber_Office_Beam_Eraser",
@@ -137298,9 +137298,9 @@ exports[`Gun > Wood Beam (823) > modes 1`] = `
           }
         ],
         "shootStyle": "Beam",
-        "shotsPerSecond": 16.949,
+        "shotsPerSecond": 1,
         "spread": 0,
-        "timeBetweenShots": 0.05
+        "timeBetweenShots": 1
       }
     ]
   }
@@ -137319,11 +137319,11 @@ exports[`Gun > Wood Beam (823) > stats variant: Alternate-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 16.949,
+    "base": 1,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 16.949
+        "value": 1
       }
     ]
   },
@@ -137343,7 +137343,7 @@ exports[`Gun > Wood Beam (823) > stats variant: Alternate-0-0 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 1,
-    "dps": 16.949,
+    "dps": 1,
     "force": 1,
     "gunId": 823,
     "id": "Chamber_Office_Beam_Eraser",
@@ -137354,12 +137354,12 @@ exports[`Gun > Wood Beam (823) > stats variant: Alternate-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.05,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 1,
-        "dps": 16.949,
+        "dps": 1,
         "force": 1,
         "gunId": 823,
         "id": "Chamber_Office_Beam_Eraser",
@@ -137368,9 +137368,9 @@ exports[`Gun > Wood Beam (823) > stats variant: Alternate-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 16.949,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.05
+    "timeBetweenShots": 1
   },
   "range": "short-range",
   "reloadTime": 0.9,
@@ -137390,11 +137390,11 @@ exports[`Gun > Wood Beam (823) > stats variant: Alternate-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 16.949,
+    "base": 1,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 16.949
+        "value": 1
       }
     ]
   },
@@ -137414,7 +137414,7 @@ exports[`Gun > Wood Beam (823) > stats variant: Alternate-A-A 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 1,
-    "dps": 16.949,
+    "dps": 1,
     "force": 1,
     "id": "Chamber_Office_Beam_Eraser",
     "range": 10,
@@ -137424,12 +137424,12 @@ exports[`Gun > Wood Beam (823) > stats variant: Alternate-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.05,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 1,
-        "dps": 16.949,
+        "dps": 1,
         "force": 1,
         "id": "Chamber_Office_Beam_Eraser",
         "range": 10,
@@ -137437,9 +137437,9 @@ exports[`Gun > Wood Beam (823) > stats variant: Alternate-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 16.949,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.05
+    "timeBetweenShots": 1
   },
   "range": "short-range",
   "reloadTime": 0.9,
@@ -137459,11 +137459,11 @@ exports[`Gun > Wood Beam (823) > stats variant: Normal-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 16.949,
+    "base": 1,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 16.949
+        "value": 1
       }
     ]
   },
@@ -137483,7 +137483,7 @@ exports[`Gun > Wood Beam (823) > stats variant: Normal-0-0 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 1,
-    "dps": 16.949,
+    "dps": 1,
     "force": 1,
     "gunId": 823,
     "id": "Chamber_Office_Beam_Pencil",
@@ -137494,12 +137494,12 @@ exports[`Gun > Wood Beam (823) > stats variant: Normal-0-0 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.05,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 1,
-        "dps": 16.949,
+        "dps": 1,
         "force": 1,
         "gunId": 823,
         "id": "Chamber_Office_Beam_Pencil",
@@ -137508,9 +137508,9 @@ exports[`Gun > Wood Beam (823) > stats variant: Normal-0-0 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 16.949,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.05
+    "timeBetweenShots": 1
   },
   "range": "short-range",
   "reloadTime": 0.9,
@@ -137530,11 +137530,11 @@ exports[`Gun > Wood Beam (823) > stats variant: Normal-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 16.949,
+    "base": 1,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 16.949
+        "value": 1
       }
     ]
   },
@@ -137554,7 +137554,7 @@ exports[`Gun > Wood Beam (823) > stats variant: Normal-A-A 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 1,
-    "dps": 16.949,
+    "dps": 1,
     "force": 1,
     "id": "Chamber_Office_Beam_Pencil",
     "range": 10,
@@ -137564,12 +137564,12 @@ exports[`Gun > Wood Beam (823) > stats variant: Normal-A-A 1`] = `
     "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
-    "cooldownTime": 0.05,
+    "cooldownTime": 1,
     "projectiles": [
       {
         "additionalDamage": [],
         "damage": 1,
-        "dps": 16.949,
+        "dps": 1,
         "force": 1,
         "id": "Chamber_Office_Beam_Pencil",
         "range": 10,
@@ -137577,9 +137577,9 @@ exports[`Gun > Wood Beam (823) > stats variant: Normal-A-A 1`] = `
       }
     ],
     "shootStyle": "Beam",
-    "shotsPerSecond": 16.949,
+    "shotsPerSecond": 1,
     "spread": 0,
-    "timeBetweenShots": 0.05
+    "timeBetweenShots": 1
   },
   "range": "short-range",
   "reloadTime": 0.9,

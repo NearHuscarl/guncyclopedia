@@ -105,6 +105,9 @@ export const ProjectileModuleDto = z.object({
   burstCooldownTime: z.number().nonnegative(),
   cooldownTime: z.number(),
   angleVariance: z.number(),
+  /**
+   * Could be negative, if so, the gun magazine = maxAmmo
+   */
   numberOfShotsInClip: z.number(),
 });
 

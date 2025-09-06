@@ -131,6 +131,9 @@ const RaidenBeamControllerData = z.object({
   maxTargets: z.number(),
   targetType: z.union([z.literal(10), z.literal(20)]),
 });
+const ReverseBeamControllerData = z.object({
+  targetType: z.union([z.literal(10), z.literal(20)]),
+});
 
 const BlackHoleDoerData = z.object({
   damageRadius: z.number(),
@@ -324,6 +327,7 @@ export const ProjectileDto = z.object({
   modifyProjectileSynergyProcessor: ModifyProjectileSynergyProcessorData.optional(),
   basicBeamController: BasicBeamControllerData.optional(),
   raidenBeamController: RaidenBeamControllerData.optional(),
+  reverseBeamController: ReverseBeamControllerData.optional(),
   blackHoleDoer: BlackHoleDoerData.optional(),
   mindControlProjModifier: MindControlProjectileModifierData.optional(),
   matterAntimatterProjModifier: MatterAntimatterProjectileModifierData.optional(),
@@ -349,6 +353,7 @@ export type TGoopModifierData = z.infer<typeof GoopModifierData>;
 export type TModifyProjectileSynergyProcessorData = z.infer<typeof ModifyProjectileSynergyProcessorData>;
 export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;
+export type TReverseBeamControllerData = z.infer<typeof ReverseBeamControllerData>;
 export type TBlackHoleDoerData = z.infer<typeof BlackHoleDoerData>;
 export type TMindControlProjectileModifierData = z.infer<typeof MindControlProjectileModifierData>;
 export type TMatterAntimatterProjectileModifierData = z.infer<typeof MatterAntimatterProjectileModifierData>;

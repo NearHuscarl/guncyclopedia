@@ -30,6 +30,7 @@ import type {
   TBeeProjectileData,
   TBoomerangProjectileData,
   THealthModificationBuffData,
+  TReverseBeamControllerData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -102,6 +103,9 @@ export class ProjectileRepository {
   }
   private _isRaidenBeamControllerData(obj: unknown): obj is TRaidenBeamControllerData {
     return this._assetService.isMonoScript(obj, "RaidenBeamController.cs.meta");
+  }
+  private _isReverseBeamControllerData(obj: unknown): obj is TReverseBeamControllerData {
+    return this._assetService.isMonoScript(obj, "ReverseBeamController.cs.meta");
   }
   private _isBlackHoleDoerData(obj: unknown): obj is TBlackHoleDoerData {
     return this._assetService.isMonoScript(obj, "BlackHoleDoer.cs.meta");
@@ -185,6 +189,8 @@ export class ProjectileRepository {
           res.basicBeamController = component;
         } else if (this._isRaidenBeamControllerData(component)) {
           res.raidenBeamController = component;
+        } else if (this._isReverseBeamControllerData(component)) {
+          res.reverseBeamController = component;
         } else if (this._isBlackHoleDoerData(component)) {
           res.blackHoleDoer = component;
         } else if (this._isMindControlProjectileModifierData(component)) {

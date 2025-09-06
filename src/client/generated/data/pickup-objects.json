@@ -5266,7 +5266,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.5,
+            "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
               "Demon_Head_beam"
@@ -15529,7 +15529,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.25,
+            "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
               "RaidenLaserBeam"
@@ -17586,7 +17586,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.2,
+            "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
               "Shellegun_Red_Beam"
@@ -17596,7 +17596,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.2,
+            "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
               "Shellegun_Fake_Beam"
@@ -24265,13 +24265,13 @@
       {
         "mode": "Default",
         "chargeTime": 0,
-        "magazineSize": -500,
+        "magazineSize": 300,
         "volley": [
           {
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.01,
+            "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
               "Evo_Gun_005_Beam"
@@ -28679,7 +28679,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.1,
+            "cooldownTime": 1,
             "spread": 1,
             "projectiles": [
               "Trigun_Angel_Beam"
@@ -29540,7 +29540,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.1,
+            "cooldownTime": 1,
             "spread": 10,
             "projectiles": [
               "Chamber_Gun_Hell_Beam"
@@ -29825,7 +29825,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.05,
+            "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
               "Chamber_Office_Beam_Pencil"
@@ -29842,7 +29842,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.05,
+            "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
               "Chamber_Office_Beam_Eraser"
@@ -32354,7 +32354,7 @@
             "shootStyle": "Beam",
             "burstShotCount": 3,
             "burstCooldownTime": 0.2,
-            "cooldownTime": 0.05,
+            "cooldownTime": 1,
             "spread": 0,
             "projectiles": [
               "Wood_Beam_0"

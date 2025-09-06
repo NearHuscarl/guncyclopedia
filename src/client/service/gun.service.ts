@@ -115,6 +115,10 @@ export class GunService {
     burstCooldownTime: number;
     burstShotCount: number;
   }) {
+    if (input.shootStyle === "Beam") {
+      return 1; // all beam projectiles' damage = dps
+    }
+
     const { reloadTime, magazineSize } = input;
     let timeBetweenShots = this.getTimeBetweenShot(input);
 
@@ -294,7 +298,12 @@ export class GunService {
           value: baseDamage,
         },
         ...extraDamage,
-      ].sort((a, b) => Number(a.isEstimated ?? 0) - Number(b.isEstimated ?? 0)),
+      ].sort((a, b) => {
+        const r = Number(a.isEstimated ?? 0) - Number(b.isEstimated ?? 0);
+        if (r !== 0) return r;
+        return r;
+        return a.value - b.value;
+      }),
     };
   }
 
