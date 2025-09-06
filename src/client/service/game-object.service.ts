@@ -10,7 +10,6 @@ import type { TPickupObject } from "../generated/models/pickup-object.model";
 import type { TProjectile, TProjectileId } from "../generated/models/projectile.model";
 
 const ResolvedDamageDetail = DamageDetail.extend({
-  type: z.NEVER,
   dps: z.number(),
   /**
    * Could be missing if dps is the only known value.
@@ -18,7 +17,7 @@ const ResolvedDamageDetail = DamageDetail.extend({
    * Otherwise, use damage to calculate dps
    */
   damage: z.number().optional(),
-});
+}).omit({ type: true });
 export type TResolvedDamageDetail = z.infer<typeof ResolvedDamageDetail>;
 
 export const ResolvedProjectile = Projectile.extend({

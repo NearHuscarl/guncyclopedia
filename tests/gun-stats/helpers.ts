@@ -1,4 +1,9 @@
+import keyBy from "lodash/keyBy";
+import { describe, expect, it } from "vitest";
+import { TResolvedProjectileMode } from "../../src/client/service/game-object.service";
+import { GunStats } from "../../src/client/service/gun.service";
 import { GunService, TGunStats } from "../../src/client/service/gun.service";
+import { GameObjectService } from "../../src/client/service/game-object.service";
 import type { TGun } from "../../src/client/generated/models/gun.model";
 
 function roundNumbersDeep(obj: unknown, digits = 3): unknown {
@@ -33,27 +38,16 @@ function stripAnimations(gunStats: TGunStats) {
   return gunStats;
 }
 
+const gunLookup = keyBy(GameObjectService.getGuns(), (g) => g.id);
+
+export function getGun(id: number): TGun {
+  return gunLookup[id];
+}
+
 function getGunStatsForTesting(gun: TGun, modeIndex: number, moduleIndex: number, projectileIndex: number) {
   const gunStats = GunService.computeGunStats(gun, modeIndex, moduleIndex, projectileIndex);
 
-  if (gun.id === 807 && moduleIndex === 0 && projectileIndex === 0) {
-    console.log(gunStats.magazineSize, gunStats.maxAmmo);
-  }
-
   gunStats.mode.magazineSize = gunStats.magazineSize === gunStats.maxAmmo ? -1 : gunStats.mode.magazineSize;
-
-  delete gunStats.projectileModule.shotsPerSecond;
-  delete gunStats.projectileModule.timeBetweenShots;
-  delete gunStats.projectileModule.projectiles[0].dps;
-
-  for (const m of gunStats.mode.volley) {
-    delete m.shotsPerSecond;
-    delete m.timeBetweenShots;
-    for (const proj of m.projectiles) {
-      delete proj.dps;
-    }
-  }
-  delete gunStats.projectile.dps;
 
   return roundNumbersDeep(stripAnimations(gunStats)) as TGunStats;
 }
@@ -77,4 +71,30 @@ export function forEachGunStats(gun: TGun, callback: TForEachGunStatsCallback) {
       }
     }
   }
+}
+
+export function runTest(gunId: number, gunName: string) {
+  describe(`${gunName} (${gunId})`, () => {
+    const gun = getGun(gunId);
+    const modes: (TResolvedProjectileMode | undefined)[] = [];
+
+    forEachGunStats(gun, (gunStats, i, j, k) => {
+      const variantId = `${gunStats.mode.mode}-${j === -1 ? "A" : j}-${k === -1 ? "A" : k}`;
+
+      it(`stats variant: ${variantId}`, () => {
+        const { mode, ...stats } = gunStats;
+        if (!modes[i]) {
+          modes[i] = mode;
+        } else {
+          expect(mode).toEqual(modes[i]);
+        }
+        GunStats.parse(gunStats);
+        expect(JSONstringifyOrder(stats)).toMatchSnapshot();
+      });
+    });
+
+    it(`modes`, () => {
+      expect(JSONstringifyOrder(modes)).toMatchSnapshot();
+    });
+  });
 }
