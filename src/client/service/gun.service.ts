@@ -206,7 +206,7 @@ export class GunService {
     const extraDamage: IStat["details"] = [];
 
     // douchepad gun, shooting in 4 directions and makes my code harder to maintain.
-    if (gun.id === 514) {
+    if (gun.id === 514 && !selectSpecificProjectile) {
       extraDamage.push({
         value: (baseDamage * 3) / 4,
         tooltip: "Damage from 3 other directions: {{VALUE}}",

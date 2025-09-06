@@ -436,7 +436,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              <Move size={18} />
+              <Move size={17} />
             </div>
           </TooltipTrigger>
           <TooltipContent>

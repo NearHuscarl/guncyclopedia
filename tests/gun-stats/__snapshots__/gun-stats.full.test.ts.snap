@@ -36428,30 +36428,20 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: Normal-0-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -36509,30 +36499,20 @@ exports[`Gun > Directional Pad (514) > stats variant: Normal-0-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: Normal-1-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -36590,30 +36570,20 @@ exports[`Gun > Directional Pad (514) > stats variant: Normal-1-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: Normal-2-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -36671,30 +36641,20 @@ exports[`Gun > Directional Pad (514) > stats variant: Normal-2-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: Normal-3-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -36831,30 +36791,20 @@ exports[`Gun > Directional Pad (514) > stats variant: Normal-A-A 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ← ←-0-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -36912,30 +36862,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-0-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ← ←-1-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -36993,30 +36933,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-1-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ← ←-2-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -37074,30 +37004,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-2-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ← ←-3-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -37155,30 +37075,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-3-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ← ←-4-0 1`] = `
 "{
   "damage": {
-    "base": 2.5,
+    "base": 10,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2.5
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 7.5
+        "value": 10
       }
     ]
   },
   "dps": {
-    "base": 2.874,
+    "base": 11.494,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2.874
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 8.621
+        "value": 11.494
       }
     ]
   },
@@ -37315,30 +37225,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-A-A 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ↓ →-0-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -37396,30 +37296,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-0-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ↓ →-1-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -37477,30 +37367,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-1-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ↓ →-2-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -37558,30 +37438,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-2-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ↓ →-3-0 1`] = `
 "{
   "damage": {
-    "base": 2,
+    "base": 8,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 2
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 6
+        "value": 8
       }
     ]
   },
   "dps": {
-    "base": 5.607,
+    "base": 22.43,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.607
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 16.822
+        "value": 22.43
       }
     ]
   },
@@ -37639,30 +37509,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-3-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ↓ →-4-0 1`] = `
 "{
   "damage": {
-    "base": 11.25,
+    "base": 45,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 11.25
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 33.75
+        "value": 45
       }
     ]
   },
   "dps": {
-    "base": 12.931,
+    "base": 51.724,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 12.931
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 38.793
+        "value": 51.724
       }
     ]
   },
@@ -37720,30 +37580,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-4-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ↓ →-5-0 1`] = `
 "{
   "damage": {
-    "base": 11.25,
+    "base": 45,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 11.25
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 33.75
+        "value": 45
       }
     ]
   },
   "dps": {
-    "base": 12.931,
+    "base": 51.724,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 12.931
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 38.793
+        "value": 51.724
       }
     ]
   },
@@ -37801,30 +37651,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-5-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ↓ →-6-0 1`] = `
 "{
   "damage": {
-    "base": 11.25,
+    "base": 45,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 11.25
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 33.75
+        "value": 45
       }
     ]
   },
   "dps": {
-    "base": 12.931,
+    "base": 51.724,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 12.931
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 38.793
+        "value": 51.724
       }
     ]
   },
@@ -37882,30 +37722,20 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-6-0 1`] = `
 exports[`Gun > Directional Pad (514) > stats variant: ↓ →-7-0 1`] = `
 "{
   "damage": {
-    "base": 11.25,
+    "base": 45,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 11.25
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 33.75
+        "value": 45
       }
     ]
   },
   "dps": {
-    "base": 12.931,
+    "base": 51.724,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 12.931
-      },
-      {
-        "isEstimated": true,
-        "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 38.793
+        "value": 51.724
       }
     ]
   },
