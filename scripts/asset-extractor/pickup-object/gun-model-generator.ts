@@ -605,7 +605,7 @@ export class GunModelGenerator {
         const clonedModule = cloneDeep(module);
         clonedModule.projectiles = [cloneDeep(Projectile)];
         if (UsedProperties & ChargeProjectileProperties.ammo) {
-        clonedModule.ammoCost = AmmoCost;
+          clonedModule.ammoCost = AmmoCost;
         }
         if (UsedProperties & ChargeProjectileProperties.depleteAmmo) {
           clonedModule.ammoCost = defaultModule.numberOfShotsInClip;
@@ -644,7 +644,6 @@ export class GunModelGenerator {
     // TODO: add unused reload animation for The Fat Line (?)
     // TODO: add unused guns (requireDemoMode: 1). it doesn't have the Gun script, only sprites/animations. Create a separate model for demo gun.
     // TODO: raiden coil: Fix beam damage per second. Does it equal to damage?
-    // TODO: Silencer: Incorrect estimated dps in A-A test
 
     // // TODO: test casey's case again
     // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.
@@ -722,6 +721,7 @@ export class GunModelGenerator {
       }
       frames.push({
         uvs: spriteData.uvs,
+        // bound: spriteData.bound,
         flipped: Boolean(spriteData.flipped),
       });
     }
@@ -767,6 +767,7 @@ export class GunModelGenerator {
       frames: [
         {
           uvs: res.spriteData.uvs,
+          // bound: res.spriteData.bound,
           flipped: Boolean(res.spriteData.flipped),
         },
       ],
@@ -824,6 +825,7 @@ export class GunModelGenerator {
             );
           }
           frames.push({
+            // bound: spriteData.bound,
             uvs: spriteData.uvs,
             flipped: Boolean(spriteData.flipped),
           });
