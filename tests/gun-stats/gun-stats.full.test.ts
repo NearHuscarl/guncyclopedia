@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { GameObjectService } from "../../src/client/service/game-object.service";
 import { forEachGunStats, JSONstringifyOrder } from "./helpers";
-import { GunStats } from "../../src/client/service/gun.service";
 
 describe("Gun stats: regression", () => {
   const guns = GameObjectService.getGuns();

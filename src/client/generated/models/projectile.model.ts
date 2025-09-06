@@ -18,7 +18,7 @@ export type TStatusEffectProp =
   | "chanceToTransmogrify"
   | "devolveChance";
 
-const DamageDetail = z.object({
+export const DamageDetail = z.object({
   type: z.enum(["dps", "instant"]),
   /**
    * Probability that this damage will actually occur. Default to `0` (never happen).

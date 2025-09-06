@@ -2,7 +2,8 @@ import z from "zod/v4";
 import startCase from "lodash/startCase";
 import uniq from "lodash/uniq";
 import groupBy from "lodash/groupBy";
-import { ProjectileService, RangeLabel, type TRangeLabel } from "./projectile.service";
+import keyBy from "lodash/keyBy";
+import { HomingLevel, ProjectileService, RangeLabel, type TRangeLabel } from "./projectile.service";
 import { formatNumber } from "@/lib/lang";
 import {
   GameObjectService,
@@ -11,16 +12,14 @@ import {
   ResolvedProjectileModule,
 } from "./game-object.service";
 import { ProjectileModule } from "../generated/models/gun.model";
-import type { TResolvedProjectile, TResolvedProjectileMode, TResolvedProjectileModule } from "./game-object.service";
+import type {
+  TResolvedDamageDetail,
+  TResolvedProjectile,
+  TResolvedProjectileMode,
+  TResolvedProjectileModule,
+} from "./game-object.service";
 import type { TGun, TProjectileMode, TShootStyle } from "../generated/models/gun.model";
-
-export const HomingLevel = {
-  None: -1,
-  Pathetic: 0,
-  Weak: 1,
-  Strong: 2,
-  AutoAim: 3,
-} as const;
+import type { TDamageDetail, TProjectile } from "../generated/models/projectile.model";
 
 interface IStat {
   base: number;
@@ -77,31 +76,6 @@ export const GunStats = z.object({
 }) satisfies z.ZodType<TGunStats>;
 
 export class GunService {
-  static getHomingLevel(projectile: TResolvedProjectile) {
-    if (!projectile.isHoming) return HomingLevel.None;
-
-    // the angular velocity doesn't make it `HomingLevel.Strong`, but it slows down when not facing
-    // the enemy, give it enough time to always adjust to the correct angle.
-    if (projectile.isBeeLikeTargetBehavior) {
-      return HomingLevel.Strong;
-    }
-
-    const { homingRadius = 0, homingAngularVelocity = 0 } = projectile;
-    if (homingRadius <= 2 || homingAngularVelocity <= 80) {
-      return HomingLevel.Pathetic;
-    }
-
-    if (homingRadius >= 50 && homingAngularVelocity >= 1000) {
-      return HomingLevel.AutoAim;
-    }
-
-    if (homingRadius >= 25 && homingAngularVelocity >= 200) {
-      return HomingLevel.Strong;
-    }
-
-    return HomingLevel.Weak;
-  }
-
   static getMagSize(magazineSize: number, ammoCost?: number) {
     return Math.ceil(magazineSize / (ammoCost ?? 1));
   }
@@ -188,13 +162,10 @@ export class GunService {
     return finalVolley;
   }
 
-  private static _getDamageTooltip(
-    source: TResolvedProjectile["additionalDamage"][number]["source"],
-    projectileData: TResolvedProjectile,
-  ) {
+  private static _getDamageTooltip(source: TDamageDetail["source"], projectile: TResolvedProjectile) {
     switch (source) {
       case "ricochet": {
-        const { numberOfBounces, chanceToDieOnBounce, damageMultiplierOnBounce } = projectileData;
+        const { numberOfBounces, chanceToDieOnBounce, damageMultiplierOnBounce } = projectile;
         return [
           `Potential damage from ricochets: {{VALUE}}<br />`,
           `- numberOfBounces: <strong>${formatNumber(numberOfBounces ?? 0, 2)}</strong><br />`,
@@ -214,6 +185,8 @@ export class GunService {
         return `Devolver's max potential damage: {{VALUE}}`;
       case "bee":
         return `Bee sting damage: {{VALUE}}`;
+      case "pierce":
+        return "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.";
       default:
         return `${startCase(source)} damage: {{VALUE}}`;
     }
@@ -243,19 +216,11 @@ export class GunService {
     }
 
     let effectiveDamage = baseDamage;
-    let isExplosiveProj = false;
 
     for (const d of projectile.additionalDamage) {
-      let value = 0;
-      if (type === "dps") {
-        value = d.type === "instant" ? d.damage * module.shotsPerSecond : d.damage;
-      } else if (type === "instant" && d.type === "instant") {
-        value = d.damage;
-      }
-
+      const value = type === "dps" ? d.dps : d.damage;
       if (!value) continue;
 
-      if (d.source === "explosion") isExplosiveProj = true;
       extraDamage.push({
         value,
         isEstimated: d.isEstimated,
@@ -264,6 +229,7 @@ export class GunService {
       });
     }
 
+    // TODO: put into ProjectileService?
     for (const statModifier of gun.playerStatModifiers) {
       if (statModifier.statToBoost === "Damage") {
         effectiveDamage = baseDamage * (statModifier.amount - 1);
@@ -272,27 +238,6 @@ export class GunService {
           tooltip: this._getDamageTooltip("damageMultiplier", projectile),
         });
       }
-    }
-
-    if (projectile.penetration) {
-      let penetration = Math.min(projectile.penetration, 3); // unlikely to hit more than 3 enemies at once.
-      if (projectile.numberOfBounces && projectile.numberOfBounces > 1) {
-        penetration += Math.min(projectile.numberOfBounces, 3); // more chance if it's bouncy idk
-      }
-      if (GunService.getHomingLevel(projectile) >= HomingLevel.Weak) {
-        penetration++; // even more chance if it's homing hah
-      }
-      if (isExplosiveProj) {
-        penetration = 0; // piercing only affects objects
-      }
-      penetration = Math.min(penetration, projectile.penetration);
-      extraDamage.push({
-        value: effectiveDamage * penetration,
-        isEstimated: true,
-        chance: 0,
-        tooltip:
-          "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
-      });
     }
 
     if (gun.attribute.auraOnReload) {
@@ -317,7 +262,7 @@ export class GunService {
       for (const [_level, modules] of Object.entries(spawnHierarchy)) {
         const spawnedProjectile = GunService.createAggregatedVolley(modules, true).projectiles[0];
         const { damage } = spawnedProjectile;
-        const isEstimated = this.getHomingLevel(spawnedProjectile) <= HomingLevel.Weak;
+        const isEstimated = ProjectileService.getHomingLevel(spawnedProjectile) <= HomingLevel.Weak;
         const spawner = GameObjectService.getProjectile(spawnedProjectile.spawnedBy!);
         const shotPerSecond2 = spawner.spawnProjectilesInflight
           ? spawner.spawnProjectilesInflightPerSecond!
@@ -330,7 +275,7 @@ export class GunService {
         });
 
         const explosionDmg = spawnedProjectile.additionalDamage.find((d) => d.source === "explosion");
-        if (explosionDmg) {
+        if (explosionDmg?.damage) {
           extraDamage.push({
             value: explosionDmg.damage,
             isEstimated: isEstimated,
@@ -353,13 +298,13 @@ export class GunService {
     };
   }
 
-  static getForce(projectileData: TResolvedProjectile): IStat {
+  static getForce(projectile: TResolvedProjectile): IStat {
     return {
-      base: projectileData.force ?? 0,
+      base: projectile.force ?? 0,
       details: [
-        { tooltip: `Base force: {{VALUE}}`, value: projectileData.force ?? 0 },
-        ...(projectileData.explosionForce
-          ? [{ tooltip: `Explosion force: {{VALUE}}`, value: projectileData.explosionForce }]
+        { tooltip: `Base force: {{VALUE}}`, value: projectile.force ?? 0 },
+        ...(projectile.explosionForce
+          ? [{ tooltip: `Explosion force: {{VALUE}}`, value: projectile.explosionForce }]
           : []),
       ],
     };
@@ -373,6 +318,55 @@ export class GunService {
     return (p.spawnLevel ?? 0) + 1;
   }
 
+  static resolveAdditionalDamage(
+    additionalDamage: TDamageDetail[],
+    projectile: TProjectile,
+    shotsPerSecond: number,
+  ): TResolvedDamageDetail[] {
+    const resolved: TResolvedDamageDetail[] = [];
+    const additionalDamageLookup: { [key in TDamageDetail["source"]]?: TDamageDetail } = keyBy(
+      additionalDamage,
+      "source",
+    );
+
+    for (const d of additionalDamage) {
+      const { type, ...rest } = d;
+      if (type === "dps") {
+        resolved.push({ ...rest, dps: d.damage, damage: 0 });
+      } else {
+        resolved.push({ ...rest, dps: d.damage * shotsPerSecond });
+      }
+    }
+
+    // apply additional damage from existing projectile fields
+    if (projectile.penetration) {
+      let penetration = Math.min(projectile.penetration, 3); // unlikely to hit more than 3 enemies at once.
+      if (projectile.numberOfBounces && projectile.numberOfBounces > 1) {
+        penetration += Math.min(projectile.numberOfBounces, 3); // more chance if it's bouncy idk
+      }
+      if (ProjectileService.getHomingLevel(projectile) >= HomingLevel.Weak) {
+        penetration++; // even more chance if it's homing hah
+      }
+      if (additionalDamageLookup.explosion) {
+        penetration = 0; // piercing only affects objects
+      }
+      penetration = Math.min(penetration, projectile.penetration);
+
+      const damage = projectile.damage * penetration;
+      if (damage > 0) {
+        resolved.push({
+          source: "pierce",
+          damage,
+          dps: damage * shotsPerSecond,
+          isEstimated: true,
+          damageChance: 0,
+        });
+      }
+    }
+
+    return resolved;
+  }
+
   /**
    * Return an array of projectile and all of the spawned projectiles recursively. Otherwise
    * return an array with  just the original projectile.
@@ -381,8 +375,14 @@ export class GunService {
     if (!p.spawnProjectile) {
       return [p];
     }
+    const spawnedProjectile = GameObjectService.getProjectile(p.spawnProjectile);
     const p2: TResolvedProjectile = {
-      ...GameObjectService.getProjectile(p.spawnProjectile),
+      ...spawnedProjectile,
+      additionalDamage: this.resolveAdditionalDamage(
+        spawnedProjectile.additionalDamage,
+        spawnedProjectile,
+        shotPerSecond,
+      ),
       spawnedBy: p.id,
       spawnLevel: depth + 1,
       dps: 0,
@@ -396,57 +396,62 @@ export class GunService {
     mode: TProjectileMode,
     gunInput: { reloadTime: number; chargeTime?: number; magazineSize: number },
   ): TResolvedProjectileMode {
-    const volley = mode.volley
-      .map((module) => {
-        const timingInput = {
-          shootStyle: module.shootStyle,
-          magazineSize: this.getMagSize(gunInput.magazineSize, module.ammoCost),
-          reloadTime: gunInput.reloadTime,
-          chargeTime: gunInput.chargeTime,
-          cooldownTime: module.cooldownTime,
-          burstCooldownTime: module.burstCooldownTime,
-          burstShotCount: module.burstShotCount,
+    const resolvedVolley: TResolvedProjectileModule[] = [];
+
+    for (const module of mode.volley) {
+      const timingInput = {
+        shootStyle: module.shootStyle,
+        magazineSize: this.getMagSize(gunInput.magazineSize, module.ammoCost),
+        reloadTime: gunInput.reloadTime,
+        chargeTime: gunInput.chargeTime,
+        cooldownTime: module.cooldownTime,
+        burstCooldownTime: module.burstCooldownTime,
+        burstShotCount: module.burstShotCount,
+      };
+      const shotsPerSecond = this.getEstimatedShotsPerSecond(timingInput);
+      const timeBetweenShots = this.getTimeBetweenShot(timingInput);
+      const projectiles: TResolvedProjectile[] = uniq(module.projectiles).map((i) => {
+        const p = GameObjectService.getProjectile(i);
+        return {
+          ...p,
+          dps: p.damage * shotsPerSecond,
+          additionalDamage: this.resolveAdditionalDamage(p.additionalDamage, p, shotsPerSecond),
         };
-        const shotsPerSecond = this.getEstimatedShotsPerSecond(timingInput);
-        const timeBetweenShots = this.getTimeBetweenShot(timingInput);
-        const projectiles: TResolvedProjectile[] = uniq(module.projectiles).map((i) => {
-          const p = GameObjectService.getProjectile(i);
-          return { ...p, dps: p.damage * shotsPerSecond };
-        });
-        const spawnedModules: TResolvedProjectileModule[] = [];
-        const resolvedModule: TResolvedProjectileModule = {
-          ...module,
-          ammoCost: module.ammoCost ?? 1,
-          timeBetweenShots,
-          shotsPerSecond,
-          projectiles,
-        };
+      });
+      const spawnedModules: TResolvedProjectileModule[] = [];
+      const resolvedModule: TResolvedProjectileModule = {
+        ...module,
+        ammoCost: module.ammoCost ?? 1,
+        timeBetweenShots,
+        shotsPerSecond,
+        projectiles,
+      };
 
-        for (const p of projectiles) {
-          const pp = this.resolveProjectile(p, shotsPerSecond);
+      for (const p of projectiles) {
+        const pp = this.resolveProjectile(p, shotsPerSecond);
 
-          for (const p2 of pp) {
-            if (!p2.spawnedBy) continue;
-            const spawner = GameObjectService.getProjectile(p2.spawnedBy);
-            const spawnerCount = spawnedModules
-              .flatMap((m) => m.projectiles)
-              .concat(projectiles[0]) // the original spawner
-              .filter((p) => p.id === p2.spawnedBy).length;
+        for (const p2 of pp) {
+          if (!p2.spawnedBy) continue;
+          const spawner = GameObjectService.getProjectile(p2.spawnedBy);
+          const spawnerCount = spawnedModules
+            .flatMap((m) => m.projectiles)
+            .concat(projectiles[0]) // the original spawner
+            .filter((p) => p.id === p2.spawnedBy).length;
 
-            const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
-            for (let i = 0; i < spawnCount; i++) {
-              // spawned projectile is considered part of a volley, just a bit more delay than the spawner
-              spawnedModules.push({ ...resolvedModule, projectiles: [p2] });
-            }
+          const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
+          for (let i = 0; i < spawnCount; i++) {
+            // spawned projectile is considered part of a volley, just a bit more delay than the spawner
+            spawnedModules.push({ ...resolvedModule, projectiles: [p2] });
           }
         }
+      }
 
-        return [resolvedModule, ...spawnedModules];
-      })
-      .flat()
-      .sort((a, b) => this.getSortWeight(a.projectiles[0]) - this.getSortWeight(b.projectiles[0]));
+      resolvedVolley.push(resolvedModule, ...spawnedModules);
+    }
 
-    return { ...mode, volley };
+    resolvedVolley.sort((a, b) => this.getSortWeight(a.projectiles[0]) - this.getSortWeight(b.projectiles[0]));
+
+    return { ...mode, volley: resolvedVolley };
   }
 
   static computeGunStats(gun: TGun, modeIndex: number, moduleIndex: number, projectileIndex: number): TGunStats {

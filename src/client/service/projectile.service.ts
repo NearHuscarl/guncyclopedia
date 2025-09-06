@@ -1,7 +1,8 @@
 import z from "zod/v4";
 import clamp from "lodash/clamp";
 import type { ArrayKeys, BooleanKeys, NumericKeys, StringKeys } from "@/lib/types";
-import type { TResolvedProjectile } from "./game-object.service";
+import type { TResolvedDamageDetail, TResolvedProjectile } from "./game-object.service";
+import type { TProjectile } from "../generated/models/projectile.model";
 
 type AggregateModeOption = "volley" | "random";
 type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TResolvedProjectile[]) => number);
@@ -20,6 +21,14 @@ type ArrayAggregateConfig = {
 
 export const RangeLabel = z.enum(["short-range", "mid-range", "long-range"]);
 export type TRangeLabel = z.infer<typeof RangeLabel>;
+
+export const HomingLevel = {
+  None: -1,
+  Pathetic: 0,
+  Weak: 1,
+  Strong: 2,
+  AutoAim: 3,
+} as const;
 
 export class ProjectileService {
   static readonly MAX_SPEED = 10_000;
@@ -46,6 +55,31 @@ export class ProjectileService {
       return "mid-range";
     }
     return "long-range";
+  }
+
+  static getHomingLevel(projectile: TProjectile | TResolvedProjectile) {
+    if (!projectile.isHoming) return HomingLevel.None;
+
+    // the angular velocity doesn't make it `HomingLevel.Strong`, but it slows down when not facing
+    // the enemy, give it enough time to always adjust to the correct angle.
+    if (projectile.isBeeLikeTargetBehavior) {
+      return HomingLevel.Strong;
+    }
+
+    const { homingRadius = 0, homingAngularVelocity = 0 } = projectile;
+    if (homingRadius <= 2 || homingAngularVelocity <= 80) {
+      return HomingLevel.Pathetic;
+    }
+
+    if (homingRadius >= 50 && homingAngularVelocity >= 1000) {
+      return HomingLevel.AutoAim;
+    }
+
+    if (homingRadius >= 25 && homingAngularVelocity >= 200) {
+      return HomingLevel.Strong;
+    }
+
+    return HomingLevel.Weak;
   }
 
   /**
@@ -85,21 +119,23 @@ export class ProjectileService {
   private static _aggregateAdditionalDamage(
     projectiles: TResolvedProjectile[],
     mode: AggregateModeOption,
-    sums: Record<string, number>,
+    finalProjectile: Omit<TResolvedProjectile, "additionalDamage">,
   ) {
-    const res: Record<string, TResolvedProjectile["additionalDamage"][number]> = {};
+    const res: Record<string, TResolvedDamageDetail> = {};
 
     // aggregate additionalDamage.damage
     for (const p of projectiles) {
       for (const d of p.additionalDamage) {
         if (!res[d.source]) {
-          res[d.source] = { ...d, damage: 0, damageChance: 0 };
+          res[d.source] = { ...d, damage: 0, dps: 0, damageChance: 0 };
         }
         if (d.canNotStack) {
-          res[d.source].damage = Math.max(res[d.source].damage, d.damage);
+          res[d.source].damage = Math.max(res[d.source].damage ?? 0, d.damage ?? 0);
+          res[d.source].dps = Math.max(res[d.source].dps, d.dps);
         } else {
           // other fields should be the same, so we can just sum the damage
-          res[d.source].damage += d.damage;
+          res[d.source].damage = (res[d.source].damage ?? 0) + (d.damage ?? 0);
+          res[d.source].dps += d.dps;
         }
 
         res[d.source].damageChance = d.damageChance ?? 0;
@@ -107,17 +143,18 @@ export class ProjectileService {
     }
 
     if (mode === "random") {
-      for (const key in res) {
-        res[key].damageChance = (res[key].damageChance ?? 0) / projectiles.length;
+      for (const source in res) {
+        res[source].damageChance = (res[source].damageChance ?? 0) / projectiles.length;
 
-        if (res[key].canNotStack) continue;
-        res[key].damage /= projectiles.length;
+        if (res[source].canNotStack) continue;
+        res[source].damage = (res[source].damage ?? 0) / projectiles.length;
+        res[source].dps /= projectiles.length;
       }
     } else if (mode === "volley") {
-      for (const key in res) {
-        res[key].damageChance = this.calculateVolleyChance(
+      for (const source in res) {
+        res[source].damageChance = this.calculateVolleyChance(
           projectiles,
-          (proj) => proj.additionalDamage.find((ad) => ad.source === key)?.damageChance,
+          (proj) => proj.additionalDamage.find((ad) => ad.source === source)?.damageChance,
         );
       }
     }
@@ -129,7 +166,7 @@ export class ProjectileService {
         delete res[key].damageChance;
         delete res[key].isEstimated;
       }
-      const chance = sums[`${key}Chance`];
+      const chance = finalProjectile[`${key}Chance` as keyof NumericAggregateConfig];
       if (chance !== undefined && chance < 1) {
         res[key].isEstimated = true;
       }
@@ -299,9 +336,7 @@ export class ProjectileService {
     }
 
     // ---------- build result ----------
-    const final: Partial<TResolvedProjectile> = {
-      additionalDamage: this._aggregateAdditionalDamage(projectiles, mode, sums),
-    };
+    const final: Partial<TResolvedProjectile> = {};
 
     this._stringConfigEntries((k) => {
       const v = Array.from(strSums[k]).join(",");
@@ -313,6 +348,12 @@ export class ProjectileService {
     this._booleanConfigEntries((k) => {
       if (hasTrue[k]) final[k] = hasTrue[k];
     });
+
+    final.additionalDamage = this._aggregateAdditionalDamage(
+      projectiles,
+      mode,
+      final as Omit<TResolvedProjectile, "additionalDamage">,
+    );
 
     return final as TResolvedProjectile;
   }

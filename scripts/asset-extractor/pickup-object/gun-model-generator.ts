@@ -4,7 +4,13 @@ import z from "zod/v4";
 import invert from "lodash/invert.js";
 import isEqual from "lodash/isEqual.js";
 import cloneDeep from "lodash/cloneDeep.js";
-import { GunClass, ItemQuality, ProjectileSequenceStyle, ShootStyle } from "../gun/gun.dto.ts";
+import {
+  ChargeProjectileProperties,
+  GunClass,
+  ItemQuality,
+  ProjectileSequenceStyle,
+  ShootStyle,
+} from "../gun/gun.dto.ts";
 import { videos } from "../gun/gun.meta.ts";
 import { GunForStorage } from "./client/models/gun.model.ts";
 import { GunRepository } from "../gun/gun.repository.ts";
@@ -432,6 +438,7 @@ export class GunModelGenerator {
 
     if (projDto.id === "GrapplingHook" && gunDto.trackInputDirectionalPad) {
       proj.damage = gunDto.trackInputDirectionalPad.grappleModule.DamageToEnemies;
+      proj.range = 10_000; // until it reaches the wall
       proj.force = gunDto.trackInputDirectionalPad.grappleModule.EnemyKnockbackForce;
       proj.speed = gunDto.trackInputDirectionalPad.grappleModule.GrappleSpeed;
     }

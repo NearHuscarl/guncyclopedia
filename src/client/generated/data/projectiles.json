@@ -8102,7 +8102,7 @@
     "gunId": 514,
     "damage": 10,
     "speed": 50,
-    "range": 0,
+    "range": 10000,
     "force": 10,
     "additionalDamage": [],
     "animation": {

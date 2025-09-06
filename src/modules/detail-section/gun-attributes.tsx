@@ -67,13 +67,14 @@ import { Blackhole } from "@/components/icons/blackhole";
 import { SpawnModifier } from "@/components/icons/spawn-modifier";
 import { Homing } from "@/components/icons/homing";
 import { Homing2 } from "@/components/icons/homing2";
-import { GunService, HomingLevel, type TGunStats } from "@/client/service/gun.service";
 import { Bee } from "@/components/icons/bee";
 import { Chest } from "@/components/icons/chest";
+import { HomingLevel, ProjectileService } from "@/client/service/projectile.service";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
 import type { TResolvedProjectile } from "@/client/service/game-object.service";
+import type { TGunStats } from "@/client/service/gun.service";
 
 const TOOLTIP_DELAY = 100;
 const ATTRIBUTE_CLASSES = "gap-0.5 cursor-help!";
@@ -229,7 +230,7 @@ type TGunAttributesProps = {
 
 export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps) {
   const setUseChargeAnimation = useGunStore((state) => state.setUseChargeAnimation);
-  const homingLevel = GunService.getHomingLevel(projectile);
+  const homingLevel = ProjectileService.getHomingLevel(projectile);
 
   return (
     <div className="flex gap-3">

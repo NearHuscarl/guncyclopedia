@@ -4,10 +4,22 @@ import pickupObjects from "../generated/data/pickup-objects.json";
 import projectileLookup from "../generated/data/projectiles.json";
 import { isGun } from "../generated/helpers/types";
 import { GunFromStorage, ProjectileMode, ProjectileModule } from "../generated/models/gun.model";
-import { Projectile, ProjectileFromStorage } from "../generated/models/projectile.model";
+import { DamageDetail, Projectile, ProjectileFromStorage } from "../generated/models/projectile.model";
 import type { TGun } from "../generated/models/gun.model";
 import type { TPickupObject } from "../generated/models/pickup-object.model";
 import type { TProjectile, TProjectileId } from "../generated/models/projectile.model";
+
+const ResolvedDamageDetail = DamageDetail.extend({
+  type: z.NEVER,
+  dps: z.number(),
+  /**
+   * Could be missing if dps is the only known value.
+   *
+   * Otherwise, use damage to calculate dps
+   */
+  damage: z.number().optional(),
+});
+export type TResolvedDamageDetail = z.infer<typeof ResolvedDamageDetail>;
 
 export const ResolvedProjectile = Projectile.extend({
   gunId: z.number().optional(), // no use right now.
@@ -15,6 +27,7 @@ export const ResolvedProjectile = Projectile.extend({
   dps: z.number(),
   spawnedBy: z.string().optional(),
   spawnLevel: z.number().optional(),
+  additionalDamage: z.array(ResolvedDamageDetail),
 });
 
 export type TResolvedProjectile = z.infer<typeof ResolvedProjectile>;
