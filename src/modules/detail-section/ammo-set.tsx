@@ -1,4 +1,5 @@
 import { AmmoIcon } from "@/components/icons/ammo";
+import { stone600 } from "@/modules/shared/settings/tailwind";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import type { TShootStyle } from "@/client/generated/models/gun.model";
 
@@ -22,9 +23,9 @@ export function AmmoSet({ shootStyle, magazineSize }: TAmmoSetProps) {
     <Tooltip>
       <TooltipTrigger>
         <div className="flex relative top-[-1px] cursor-help">
-          <AmmoIcon color={score >= 1 ? "white" : undefined} />
-          <AmmoIcon color={score >= 2 ? "white" : undefined} />
-          <AmmoIcon color={score === 3 ? "white" : undefined} />
+          <AmmoIcon color={score >= 1 ? "white" : stone600} />
+          <AmmoIcon color={score >= 2 ? "white" : stone600} />
+          <AmmoIcon color={score === 3 ? "white" : stone600} />
         </div>
       </TooltipTrigger>
       <TooltipContent className="text-wrap">

@@ -1,7 +1,6 @@
-import { stone600 } from "@/modules/shared/settings/tailwind";
 import type { IIconProps } from "./types";
 
-export function AmmoIcon({ size = 25, color = stone600 }: IIconProps) {
+export function AmmoIcon({ size = 25, color = "white" }: IIconProps) {
   const originalW = 6;
   const originalH = 11;
   const ratio = originalW / originalH;

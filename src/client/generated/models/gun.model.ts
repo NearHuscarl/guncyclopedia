@@ -20,6 +20,7 @@ export type TProjectileModule = {
   cooldownTime: number;
   spread: number;
   ammoCost?: number;
+  depleteAmmo?: boolean;
   projectiles: TProjectileSequence;
 };
 export const ProjectileModule = z.object({
@@ -29,11 +30,15 @@ export const ProjectileModule = z.object({
   cooldownTime: z.number(),
   spread: z.number(),
   /**
-   * Cost of ammo, set to `undefined` if it is `1`, Some projectiles use the whole magazine, in which case it equals to the magazine size.
+   * Cost of ammo, set to `undefined` if it is `1`
    *
-   * If there is less ammo in the magazine than required, the cost is simply the remaining ammo, it does not take into account of the reserve ammo.
+   * Note: This does not affect the magazine size but rather the number of ammo left from the total ammo pool.
    */
   ammoCost: z.number().min(2).optional(),
+  /**
+   * If any module in a volley has `depleteAmmo` set to true, a single shot will consume the entire magazine.
+   */
+  depleteAmmo: z.boolean().optional(),
   projectiles: z.array(Projectile.shape.id),
 }) satisfies z.ZodType<TProjectileModule>;
 

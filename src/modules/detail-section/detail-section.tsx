@@ -114,7 +114,7 @@ export function DetailSection() {
   const selectedGun = hoverGun || gun;
   const selectedStats = hoverGunStats || gunStats;
   const showProjectilePool = selectedGun.projectileModes[0].volley[0].projectiles.length > 1;
-  const isCustomMagazineSize = selectedStats.projectileModule.ammoCost > 1;
+  const isCustomMagazineSize = selectedStats.projectileModule.depleteAmmo;
 
   useEffect(() => {
     // Note: Don't remove this useEffect and use key={gun?.id} for parent component
@@ -195,7 +195,7 @@ export function DetailSection() {
           label={"Magazine Size" + (isCustomMagazineSize ? "*" : "")}
           labelTooltip={
             isCustomMagazineSize
-              ? `The base magazine size is <strong>${selectedGun.projectileModes[0].magazineSize}</strong>, but since each shot consumes <strong>${selectedStats.projectileModule.ammoCost}</strong> ammo, its effective capacity is <strong>${selectedStats.magazineSize}</strong>`
+              ? `The base magazine size is <strong>${selectedGun.projectileModes[0].magazineSize}</strong>, but since each shot depletes the entire magazine, the effective magazine size is <strong>1</strong>.`
               : undefined
           }
           labelTooltipClassName="text-wrap w-72"

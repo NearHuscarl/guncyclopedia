@@ -4360,7 +4360,7 @@
       {
         "mode": "Charge 0.5",
         "chargeTime": 0.5,
-        "magazineSize": 2,
+        "magazineSize": 1,
         "volley": [
           {
             "shootStyle": "Charged",
@@ -4369,6 +4369,7 @@
             "cooldownTime": 0.3,
             "spread": 2,
             "ammoCost": 2,
+            "depleteAmmo": true,
             "projectiles": [
               "Composite_Gun_Projectile_Big"
             ]
@@ -11877,7 +11878,7 @@
       {
         "mode": "Charge 1.5",
         "chargeTime": 1.5,
-        "magazineSize": 12,
+        "magazineSize": 1,
         "volley": [
           {
             "shootStyle": "Charged",
@@ -11885,7 +11886,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
-            "ammoCost": 12,
+            "ammoCost": 10,
             "projectiles": [
               "Antimatter_Projectile"
             ]
@@ -11896,7 +11897,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.1,
             "spread": 5,
-            "ammoCost": 12,
+            "depleteAmmo": true,
             "projectiles": [
               "Matter_Projectile"
             ]
@@ -22843,7 +22844,7 @@
       {
         "mode": "Charge 0.7",
         "chargeTime": 0.7,
-        "magazineSize": 4,
+        "magazineSize": 1,
         "volley": [
           {
             "shootStyle": "Charged",
@@ -22862,7 +22863,6 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
-            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22873,7 +22873,6 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 5,
-            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22884,7 +22883,6 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 30,
-            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22895,7 +22893,6 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 40,
-            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22906,7 +22903,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 15,
-            "ammoCost": 4,
+            "depleteAmmo": true,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22917,7 +22914,6 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 20,
-            "ammoCost": 4,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]
@@ -22928,7 +22924,7 @@
             "burstCooldownTime": 0.2,
             "cooldownTime": 0.5,
             "spread": 50,
-            "ammoCost": 4,
+            "depleteAmmo": true,
             "projectiles": [
               "Zilla_Combat_Shotgun_Projectile_charge"
             ]

@@ -101,6 +101,7 @@ export const ProjectileModuleDto = z.object({
    */
   mirror: BinaryOption,
   ammoCost: z.number(),
+  depleteAmmo: BinaryOption,
   burstShotCount: z.number().nonnegative(),
   burstCooldownTime: z.number().nonnegative(),
   cooldownTime: z.number(),

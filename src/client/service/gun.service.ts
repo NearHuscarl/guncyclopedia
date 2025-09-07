@@ -18,7 +18,7 @@ import type {
   TResolvedProjectileMode,
   TResolvedProjectileModule,
 } from "./game-object.service";
-import type { TGun, TProjectileMode, TShootStyle } from "../generated/models/gun.model";
+import type { TGun, TProjectileMode, TProjectileModule, TShootStyle } from "../generated/models/gun.model";
 import type { TDamageDetail, TProjectile } from "../generated/models/projectile.model";
 
 interface IStat {
@@ -76,8 +76,8 @@ export const GunStats = z.object({
 }) satisfies z.ZodType<TGunStats>;
 
 export class GunService {
-  static getMagSize(magazineSize: number, ammoCost?: number) {
-    return Math.ceil(magazineSize / (ammoCost ?? 1));
+  static getMagSize(magazineSize: number, module: TProjectileModule | TResolvedProjectileModule) {
+    return module.depleteAmmo ? 1 : magazineSize;
   }
 
   static getTimeBetweenShot(input: {
@@ -144,6 +144,7 @@ export class GunService {
       burstShotCount: volley[0].burstShotCount,
       burstCooldownTime: volley[0].burstCooldownTime,
       shootStyle: volley[0].shootStyle,
+      depleteAmmo: false,
       ammoCost: Infinity,
       timeBetweenShots: Infinity,
       shotsPerSecond: 0,
@@ -153,6 +154,7 @@ export class GunService {
       finalVolley.cooldownTime = Math.max(finalVolley.cooldownTime, module.cooldownTime);
       finalVolley.spread = Math.max(finalVolley.spread, module.spread);
       finalVolley.ammoCost = Math.min(finalVolley.ammoCost ?? 1, module.ammoCost ?? 1);
+      finalVolley.depleteAmmo = finalVolley.depleteAmmo || module.depleteAmmo;
 
       if (!filterModule(module)) continue;
 
@@ -410,7 +412,7 @@ export class GunService {
     for (const module of mode.volley) {
       const timingInput = {
         shootStyle: module.shootStyle,
-        magazineSize: this.getMagSize(gunInput.magazineSize, module.ammoCost),
+        magazineSize: this.getMagSize(gunInput.magazineSize, module),
         reloadTime: gunInput.reloadTime,
         chargeTime: gunInput.chargeTime,
         cooldownTime: module.cooldownTime,
@@ -497,7 +499,7 @@ export class GunService {
 
     return {
       maxAmmo,
-      magazineSize: this.getMagSize(mode.magazineSize, module.ammoCost),
+      magazineSize: this.getMagSize(mode.magazineSize, module),
       reloadTime,
       shootStyle: module.shootStyle, // only raiden coil has 2 shoot styles, no need to aggregate.
       precision: ProjectileService.toPrecision(module.spread),

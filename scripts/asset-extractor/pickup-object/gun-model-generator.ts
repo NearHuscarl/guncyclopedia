@@ -507,6 +507,7 @@ export class GunModelGenerator {
     moduleDtos: TProjectileModuleDto[],
   ): TProjectileMode {
     const volley: TProjectileModule[] = [];
+    let depleteAmmo = false;
     for (const moduleDto of moduleDtos) {
       const projectiles = moduleDto.projectiles
         .filter(this._assetService.referenceExists)
@@ -525,8 +526,11 @@ export class GunModelGenerator {
         spread: moduleDto.angleVariance,
         ammoCost:
           moduleDto.ammoCost > 1 && defaultModule.shootStyle !== ShootStyle.Beam ? moduleDto.ammoCost : undefined,
+        depleteAmmo: Boolean(moduleDto.depleteAmmo) || undefined,
         projectiles,
       });
+
+      depleteAmmo = depleteAmmo || moduleDto.depleteAmmo === 1;
 
       if (moduleDto.mirror) {
         volley.push(cloneDeep(volley.at(-1)!));
@@ -543,7 +547,12 @@ export class GunModelGenerator {
     }
     return {
       mode: typeof mode === "number" ? `Charge ${mode}` : mode,
-      magazineSize: defaultModule.numberOfShotsInClip < 0 ? gunDto.gun.maxAmmo : defaultModule.numberOfShotsInClip,
+      magazineSize:
+        defaultModule.numberOfShotsInClip < 0
+          ? gunDto.gun.maxAmmo
+          : depleteAmmo
+            ? 1
+            : defaultModule.numberOfShotsInClip,
       chargeTime,
       volley,
     };
@@ -617,23 +626,14 @@ export class GunModelGenerator {
         const chargeModules = chargeModuleDtosLookup.get(ChargeTime)!;
         const clonedModule = cloneDeep(module);
         clonedModule.projectiles = [cloneDeep(Projectile)];
-        if (UsedProperties & ChargeProjectileProperties.ammo) {
+        if ((UsedProperties & ChargeProjectileProperties.ammo) === ChargeProjectileProperties.ammo) {
           clonedModule.ammoCost = AmmoCost;
         }
-        if (UsedProperties & ChargeProjectileProperties.depleteAmmo) {
-          clonedModule.ammoCost = defaultModule.numberOfShotsInClip;
+        if ((UsedProperties & ChargeProjectileProperties.depleteAmmo) === ChargeProjectileProperties.depleteAmmo) {
+          clonedModule.depleteAmmo = 1;
         }
         clonedModule.chargeProjectiles = [];
         chargeModules.push(clonedModule);
-      }
-    }
-
-    // If one charge projectile can deplete the whole clip, other charge projectiles with the same charge time
-    // should have the same ammoCost
-    for (const modules of chargeModuleDtosLookup.values()) {
-      const maxAmmoCost = Math.max(...modules.map((m) => m.ammoCost ?? 1));
-      for (const mod of modules) {
-        mod.ammoCost = maxAmmoCost;
       }
     }
 

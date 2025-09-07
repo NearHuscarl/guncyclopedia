@@ -70,6 +70,7 @@ import { Homing2 } from "@/components/icons/homing2";
 import { Bee } from "@/components/icons/bee";
 import { Chest } from "@/components/icons/chest";
 import { HomingLevel, ProjectileService } from "@/client/service/projectile.service";
+import { AmmoIcon } from "@/components/icons/ammo";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -675,6 +676,21 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <strong>Blackhole Projectile</strong>
             <br />
             Attracts enemies and bullets towards it while dealing continuous damage to the enemies at the center.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gunStats?.projectileModule.ammoCost && gunStats?.projectileModule.ammoCost !== 1 && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              <NumericValue>{gunStats?.projectileModule.ammoCost}</NumericValue>
+              <AmmoIcon size={18} className="white" />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Ammo Cost</strong>
+            <br />
+            Consumes <strong>{gunStats?.projectileModule.ammoCost}</strong> ammo per shot.
           </TooltipContent>
         </Tooltip>
       )}

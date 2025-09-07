@@ -24691,14 +24691,14 @@ exports[`Gun > Cobalt Hammer (390) > modes 1`] = `
               {
                 "damage": 36,
                 "damageChance": 0,
-                "dps": 15,
+                "dps": 18,
                 "isEstimated": true,
                 "source": "pierce"
               }
             ],
             "canPenetrateObjects": true,
             "damage": 36,
-            "dps": 15,
+            "dps": 18,
             "force": 80,
             "gunId": 390,
             "id": "Mjolnir_Charged_Projectile",
@@ -24708,7 +24708,7 @@ exports[`Gun > Cobalt Hammer (390) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.417,
+        "shotsPerSecond": 0.5,
         "spread": 0,
         "timeBetweenShots": 1.8
       }
@@ -24939,21 +24939,21 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 15,
+    "base": 18,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 15
+        "value": 18
       },
       {
         "chance": 0,
         "isEstimated": true,
         "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
-        "value": 15
+        "value": 18
       }
     ]
   },
-  "fireRate": 25,
+  "fireRate": 30,
   "force": {
     "base": 80,
     "details": [
@@ -24963,7 +24963,7 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-0-0 1`] = `
       }
     ]
   },
-  "magazineSize": 2,
+  "magazineSize": 6,
   "maxAmmo": 60,
   "precision": 100,
   "projectile": {
@@ -24971,14 +24971,14 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-0-0 1`] = `
       {
         "damage": 36,
         "damageChance": 0,
-        "dps": 15,
+        "dps": 18,
         "isEstimated": true,
         "source": "pierce"
       }
     ],
     "canPenetrateObjects": true,
     "damage": 36,
-    "dps": 15,
+    "dps": 18,
     "force": 80,
     "gunId": 390,
     "id": "Mjolnir_Charged_Projectile",
@@ -24997,14 +24997,14 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-0-0 1`] = `
           {
             "damage": 36,
             "damageChance": 0,
-            "dps": 15,
+            "dps": 18,
             "isEstimated": true,
             "source": "pierce"
           }
         ],
         "canPenetrateObjects": true,
         "damage": 36,
-        "dps": 15,
+        "dps": 18,
         "force": 80,
         "gunId": 390,
         "id": "Mjolnir_Charged_Projectile",
@@ -25014,7 +25014,7 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-0-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.417,
+    "shotsPerSecond": 0.5,
     "spread": 0,
     "timeBetweenShots": 1.8
   },
@@ -25042,21 +25042,21 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 15,
+    "base": 18,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 15
+        "value": 18
       },
       {
         "chance": 0,
         "isEstimated": true,
         "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
-        "value": 15
+        "value": 18
       }
     ]
   },
-  "fireRate": 25,
+  "fireRate": 30,
   "force": {
     "base": 80,
     "details": [
@@ -25066,7 +25066,7 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-A-A 1`] = `
       }
     ]
   },
-  "magazineSize": 2,
+  "magazineSize": 6,
   "maxAmmo": 60,
   "precision": 100,
   "projectile": {
@@ -25074,14 +25074,14 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-A-A 1`] = `
       {
         "damage": 36,
         "damageChance": 0,
-        "dps": 15,
+        "dps": 18,
         "isEstimated": true,
         "source": "pierce"
       }
     ],
     "canPenetrateObjects": true,
     "damage": 36,
-    "dps": 15,
+    "dps": 18,
     "force": 80,
     "id": "Mjolnir_Charged_Projectile",
     "penetration": 1,
@@ -25099,14 +25099,14 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-A-A 1`] = `
           {
             "damage": 36,
             "damageChance": 0,
-            "dps": 15,
+            "dps": 18,
             "isEstimated": true,
             "source": "pierce"
           }
         ],
         "canPenetrateObjects": true,
         "damage": 36,
-        "dps": 15,
+        "dps": 18,
         "force": 80,
         "id": "Mjolnir_Charged_Projectile",
         "penetration": 1,
@@ -25115,7 +25115,7 @@ exports[`Gun > Cobalt Hammer (390) > stats variant: Charge 1.5-A-A 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.417,
+    "shotsPerSecond": 0.5,
     "spread": 0,
     "timeBetweenShots": 1.8
   },
@@ -26453,7 +26453,7 @@ exports[`Gun > Composite Gun (337) > modes 1`] = `
   },
   {
     "chargeTime": 0.5,
-    "magazineSize": 2,
+    "magazineSize": 1,
     "mode": "Charge 0.5",
     "volley": [
       {
@@ -26461,6 +26461,7 @@ exports[`Gun > Composite Gun (337) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.3,
+        "depleteAmmo": true,
         "projectiles": [
           {
             "additionalDamage": [
@@ -26565,6 +26566,7 @@ exports[`Gun > Composite Gun (337) > stats variant: Charge 0.5-0-0 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.3,
+    "depleteAmmo": true,
     "projectiles": [
       {
         "additionalDamage": [
@@ -26669,6 +26671,7 @@ exports[`Gun > Composite Gun (337) > stats variant: Charge 0.5-A-A 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.3,
+    "depleteAmmo": true,
     "projectiles": [
       {
         "additionalDamage": [
@@ -28216,7 +28219,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 22,
-            "dps": 18.723,
+            "dps": 23.784,
             "force": 20,
             "gunId": 52,
             "id": "Star_Projectile",
@@ -28230,7 +28233,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28243,7 +28246,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28259,7 +28262,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28272,7 +28275,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28288,7 +28291,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28301,7 +28304,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28317,7 +28320,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28330,7 +28333,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28346,7 +28349,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28359,7 +28362,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28375,7 +28378,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28388,7 +28391,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28404,7 +28407,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28417,7 +28420,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28433,7 +28436,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28446,7 +28449,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28462,7 +28465,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28475,7 +28478,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28491,7 +28494,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28504,7 +28507,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 8,
-            "dps": 6.809,
+            "dps": 8.649,
             "force": 7,
             "gunId": 52,
             "id": "Star_Uncharged_Projectile",
@@ -28520,7 +28523,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28535,7 +28538,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28547,7 +28550,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28562,7 +28565,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28574,7 +28577,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28589,7 +28592,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28601,7 +28604,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28616,7 +28619,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28628,7 +28631,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28643,7 +28646,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28655,7 +28658,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28670,7 +28673,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28682,7 +28685,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28697,7 +28700,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28709,7 +28712,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28724,7 +28727,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28736,7 +28739,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28751,7 +28754,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28763,7 +28766,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28778,7 +28781,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28790,7 +28793,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28805,7 +28808,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28817,7 +28820,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28832,7 +28835,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28844,7 +28847,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28859,7 +28862,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28871,7 +28874,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28886,7 +28889,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28898,7 +28901,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28913,7 +28916,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28925,7 +28928,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28940,7 +28943,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28952,7 +28955,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28967,7 +28970,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -28979,7 +28982,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -28994,7 +28997,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29006,7 +29009,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29021,7 +29024,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29033,7 +29036,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29048,7 +29051,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29060,7 +29063,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29075,7 +29078,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29087,7 +29090,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29102,7 +29105,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29114,7 +29117,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29129,7 +29132,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29141,7 +29144,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29156,7 +29159,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29168,7 +29171,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29183,7 +29186,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29195,7 +29198,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29210,7 +29213,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29222,7 +29225,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29237,7 +29240,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29249,7 +29252,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29264,7 +29267,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29276,7 +29279,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29291,7 +29294,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29303,7 +29306,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       },
@@ -29318,7 +29321,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
             "averageSurvivingBounces": 3,
             "damage": 5,
             "damageMultiplierOnBounce": 1,
-            "dps": 4.255,
+            "dps": 5.405,
             "force": 10,
             "gunId": 52,
             "id": "Star_Projectile_Small",
@@ -29330,7 +29333,7 @@ exports[`Gun > Crescent Crossbow (52) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.851,
+        "shotsPerSecond": 1.081,
         "spread": 0,
         "timeBetweenShots": 0.8
       }
@@ -29351,15 +29354,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 18.723,
+    "base": 23.784,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 18.723
+        "value": 23.784
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 20,
     "details": [
@@ -29369,13 +29372,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-0-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 22,
-    "dps": 18.723,
+    "dps": 23.784,
     "force": 20,
     "gunId": 52,
     "id": "Star_Projectile",
@@ -29396,7 +29399,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-0-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 22,
-        "dps": 18.723,
+        "dps": 23.784,
         "force": 20,
         "gunId": 52,
         "id": "Star_Projectile",
@@ -29410,7 +29413,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-0-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -29432,15 +29435,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-1-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -29450,13 +29453,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-1-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -29479,7 +29482,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-1-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -29495,7 +29498,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-1-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -29517,15 +29520,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-2-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -29535,13 +29538,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-2-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -29564,7 +29567,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-2-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -29580,7 +29583,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-2-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -29602,15 +29605,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-3-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -29620,13 +29623,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-3-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -29649,7 +29652,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-3-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -29665,7 +29668,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-3-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -29687,15 +29690,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-4-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -29705,13 +29708,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-4-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -29734,7 +29737,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-4-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -29750,7 +29753,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-4-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -29772,15 +29775,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-5-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -29790,13 +29793,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-5-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -29819,7 +29822,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-5-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -29835,7 +29838,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-5-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -29857,15 +29860,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-6-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -29875,13 +29878,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-6-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -29904,7 +29907,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-6-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -29920,7 +29923,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-6-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -29942,15 +29945,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-7-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -29960,13 +29963,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-7-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -29989,7 +29992,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-7-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -30005,7 +30008,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-7-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30027,15 +30030,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-8-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -30045,13 +30048,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-8-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -30074,7 +30077,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-8-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -30090,7 +30093,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-8-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30112,15 +30115,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-9-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -30130,13 +30133,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-9-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -30159,7 +30162,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-9-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -30175,7 +30178,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-9-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30197,15 +30200,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-10-0 1`] = `
     ]
   },
   "dps": {
-    "base": 6.809,
+    "base": 8.649,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 6.809
+        "value": 8.649
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 7,
     "details": [
@@ -30215,13 +30218,13 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-10-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 8,
-    "dps": 6.809,
+    "dps": 8.649,
     "force": 7,
     "gunId": 52,
     "id": "Star_Uncharged_Projectile",
@@ -30244,7 +30247,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-10-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 8,
-        "dps": 6.809,
+        "dps": 8.649,
         "force": 7,
         "gunId": 52,
         "id": "Star_Uncharged_Projectile",
@@ -30260,7 +30263,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-10-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30282,15 +30285,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-11-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30300,7 +30303,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-11-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30308,7 +30311,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-11-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30329,7 +30332,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-11-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30341,7 +30344,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-11-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30363,15 +30366,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-12-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30381,7 +30384,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-12-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30389,7 +30392,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-12-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30410,7 +30413,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-12-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30422,7 +30425,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-12-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30444,15 +30447,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-13-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30462,7 +30465,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-13-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30470,7 +30473,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-13-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30491,7 +30494,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-13-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30503,7 +30506,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-13-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30525,15 +30528,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-14-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30543,7 +30546,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-14-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30551,7 +30554,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-14-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30572,7 +30575,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-14-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30584,7 +30587,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-14-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30606,15 +30609,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-15-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30624,7 +30627,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-15-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30632,7 +30635,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-15-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30653,7 +30656,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-15-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30665,7 +30668,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-15-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30687,15 +30690,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-16-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30705,7 +30708,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-16-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30713,7 +30716,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-16-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30734,7 +30737,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-16-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30746,7 +30749,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-16-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30768,15 +30771,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-17-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30786,7 +30789,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-17-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30794,7 +30797,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-17-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30815,7 +30818,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-17-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30827,7 +30830,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-17-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30849,15 +30852,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-18-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30867,7 +30870,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-18-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30875,7 +30878,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-18-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30896,7 +30899,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-18-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30908,7 +30911,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-18-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -30930,15 +30933,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-19-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -30948,7 +30951,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-19-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -30956,7 +30959,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-19-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -30977,7 +30980,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-19-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -30989,7 +30992,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-19-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31011,15 +31014,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-20-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31029,7 +31032,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-20-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31037,7 +31040,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-20-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31058,7 +31061,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-20-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31070,7 +31073,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-20-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31092,15 +31095,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-21-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31110,7 +31113,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-21-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31118,7 +31121,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-21-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31139,7 +31142,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-21-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31151,7 +31154,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-21-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31173,15 +31176,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-22-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31191,7 +31194,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-22-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31199,7 +31202,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-22-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31220,7 +31223,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-22-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31232,7 +31235,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-22-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31254,15 +31257,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-23-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31272,7 +31275,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-23-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31280,7 +31283,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-23-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31301,7 +31304,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-23-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31313,7 +31316,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-23-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31335,15 +31338,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-24-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31353,7 +31356,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-24-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31361,7 +31364,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-24-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31382,7 +31385,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-24-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31394,7 +31397,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-24-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31416,15 +31419,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-25-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31434,7 +31437,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-25-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31442,7 +31445,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-25-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31463,7 +31466,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-25-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31475,7 +31478,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-25-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31497,15 +31500,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-26-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31515,7 +31518,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-26-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31523,7 +31526,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-26-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31544,7 +31547,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-26-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31556,7 +31559,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-26-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31578,15 +31581,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-27-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31596,7 +31599,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-27-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31604,7 +31607,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-27-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31625,7 +31628,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-27-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31637,7 +31640,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-27-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31659,15 +31662,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-28-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31677,7 +31680,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-28-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31685,7 +31688,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-28-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31706,7 +31709,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-28-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31718,7 +31721,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-28-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31740,15 +31743,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-29-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31758,7 +31761,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-29-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31766,7 +31769,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-29-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31787,7 +31790,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-29-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31799,7 +31802,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-29-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31821,15 +31824,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-30-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31839,7 +31842,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-30-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31847,7 +31850,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-30-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31868,7 +31871,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-30-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31880,7 +31883,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-30-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31902,15 +31905,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-31-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -31920,7 +31923,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-31-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -31928,7 +31931,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-31-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -31949,7 +31952,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-31-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -31961,7 +31964,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-31-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -31983,15 +31986,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-32-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32001,7 +32004,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-32-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32009,7 +32012,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-32-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32030,7 +32033,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-32-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32042,7 +32045,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-32-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32064,15 +32067,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-33-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32082,7 +32085,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-33-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32090,7 +32093,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-33-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32111,7 +32114,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-33-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32123,7 +32126,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-33-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32145,15 +32148,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-34-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32163,7 +32166,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-34-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32171,7 +32174,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-34-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32192,7 +32195,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-34-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32204,7 +32207,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-34-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32226,15 +32229,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-35-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32244,7 +32247,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-35-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32252,7 +32255,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-35-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32273,7 +32276,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-35-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32285,7 +32288,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-35-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32307,15 +32310,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-36-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32325,7 +32328,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-36-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32333,7 +32336,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-36-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32354,7 +32357,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-36-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32366,7 +32369,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-36-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32388,15 +32391,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-37-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32406,7 +32409,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-37-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32414,7 +32417,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-37-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32435,7 +32438,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-37-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32447,7 +32450,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-37-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32469,15 +32472,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-38-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32487,7 +32490,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-38-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32495,7 +32498,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-38-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32516,7 +32519,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-38-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32528,7 +32531,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-38-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32550,15 +32553,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-39-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32568,7 +32571,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-39-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32576,7 +32579,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-39-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32597,7 +32600,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-39-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32609,7 +32612,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-39-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32631,15 +32634,15 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-40-0 1`] = `
     ]
   },
   "dps": {
-    "base": 4.255,
+    "base": 5.405,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 4.255
+        "value": 5.405
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 10,
     "details": [
@@ -32649,7 +32652,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-40-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32657,7 +32660,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-40-0 1`] = `
     "averageSurvivingBounces": 3,
     "damage": 5,
     "damageMultiplierOnBounce": 1,
-    "dps": 4.255,
+    "dps": 5.405,
     "force": 10,
     "gunId": 52,
     "id": "Star_Projectile_Small",
@@ -32678,7 +32681,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-40-0 1`] = `
         "averageSurvivingBounces": 3,
         "damage": 5,
         "damageMultiplierOnBounce": 1,
-        "dps": 4.255,
+        "dps": 5.405,
         "force": 10,
         "gunId": 52,
         "id": "Star_Projectile_Small",
@@ -32690,7 +32693,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-40-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -32722,25 +32725,25 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 18.723,
+    "base": 23.784,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 18.723
+        "value": 23.784
       },
       {
         "isEstimated": true,
         "tooltip": "Damage from spawned projectile {{P:Star_Uncharged_Projectile}}: {{VALUE}}",
-        "value": 68.085
+        "value": 86.486
       },
       {
         "isEstimated": true,
         "tooltip": "Damage from spawned projectile {{P:Star_Projectile_Small}}: {{VALUE}}",
-        "value": 127.66
+        "value": 162.162
       }
     ]
   },
-  "fireRate": 51.064,
+  "fireRate": 64.865,
   "force": {
     "base": 20,
     "details": [
@@ -32750,7 +32753,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-A-A 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 12,
   "maxAmmo": 150,
   "precision": 100,
   "projectile": {
@@ -32758,7 +32761,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-A-A 1`] = `
     "averageSurvivingBounces": 2.195,
     "damage": 252,
     "damageMultiplierOnBounce": 0.732,
-    "dps": 214.468,
+    "dps": 272.432,
     "force": 390,
     "id": "Star_Projectile,Star_Uncharged_Projectile,Star_Projectile_Small",
     "numberOfBounces": 2.195,
@@ -32779,7 +32782,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-A-A 1`] = `
       {
         "additionalDamage": [],
         "damage": 22,
-        "dps": 18.723,
+        "dps": 23.784,
         "force": 20,
         "id": "Star_Projectile",
         "range": 1000,
@@ -32790,7 +32793,7 @@ exports[`Gun > Crescent Crossbow (52) > stats variant: Charge 0.6-A-A 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.851,
+    "shotsPerSecond": 1.081,
     "spread": 0,
     "timeBetweenShots": 0.8
   },
@@ -34203,11 +34206,11 @@ exports[`Gun > Dark Marker (274) > modes 1`] = `
   },
   {
     "chargeTime": 1.5,
-    "magazineSize": 12,
+    "magazineSize": 1,
     "mode": "Charge 1.5",
     "volley": [
       {
-        "ammoCost": 12,
+        "ammoCost": 10,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.1,
@@ -34243,10 +34246,11 @@ exports[`Gun > Dark Marker (274) > modes 1`] = `
         "timeBetweenShots": 1.5
       },
       {
-        "ammoCost": 12,
+        "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.1,
+        "depleteAmmo": true,
         "projectiles": [
           {
             "additionalDamage": [
@@ -34351,7 +34355,7 @@ exports[`Gun > Dark Marker (274) > stats variant: Charge 1.5-0-0 1`] = `
     "speed": 10
   },
   "projectileModule": {
-    "ammoCost": 12,
+    "ammoCost": 10,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.1,
@@ -34460,10 +34464,11 @@ exports[`Gun > Dark Marker (274) > stats variant: Charge 1.5-1-0 1`] = `
     "speed": 10
   },
   "projectileModule": {
-    "ammoCost": 12,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.1,
+    "depleteAmmo": true,
     "projectiles": [
       {
         "additionalDamage": [
@@ -34587,10 +34592,11 @@ exports[`Gun > Dark Marker (274) > stats variant: Charge 1.5-A-A 1`] = `
     "speed": 10
   },
   "projectileModule": {
-    "ammoCost": 12,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.1,
+    "depleteAmmo": true,
     "projectiles": [
       {
         "additionalDamage": [
@@ -36225,7 +36231,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 10,
-            "dps": 11.494,
+            "dps": 13.216,
             "force": 10,
             "gunId": 514,
             "id": "GrapplingHook",
@@ -36234,7 +36240,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           }
         ],
         "shootStyle": "SemiAutomatic",
-        "shotsPerSecond": 1.149,
+        "shotsPerSecond": 1.322,
         "spread": 0,
         "timeBetweenShots": 0.7
       }
@@ -36341,7 +36347,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 45,
-            "dps": 51.724,
+            "dps": 59.471,
             "force": 50,
             "gunId": 36,
             "id": "Mega_Buster_Projectile_Super",
@@ -36350,7 +36356,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           }
         ],
         "shootStyle": "SemiAutomatic",
-        "shotsPerSecond": 1.149,
+        "shotsPerSecond": 1.322,
         "spread": 0,
         "timeBetweenShots": 0.7
       },
@@ -36363,7 +36369,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 45,
-            "dps": 51.724,
+            "dps": 59.471,
             "force": 50,
             "gunId": 36,
             "id": "Mega_Buster_Projectile_Super",
@@ -36372,7 +36378,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           }
         ],
         "shootStyle": "SemiAutomatic",
-        "shotsPerSecond": 1.149,
+        "shotsPerSecond": 1.322,
         "spread": 0,
         "timeBetweenShots": 0.7
       },
@@ -36385,7 +36391,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 45,
-            "dps": 51.724,
+            "dps": 59.471,
             "force": 50,
             "gunId": 36,
             "id": "Mega_Buster_Projectile_Super",
@@ -36394,7 +36400,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           }
         ],
         "shootStyle": "SemiAutomatic",
-        "shotsPerSecond": 1.149,
+        "shotsPerSecond": 1.322,
         "spread": 0,
         "timeBetweenShots": 0.7
       },
@@ -36407,7 +36413,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 45,
-            "dps": 51.724,
+            "dps": 59.471,
             "force": 50,
             "gunId": 36,
             "id": "Mega_Buster_Projectile_Super",
@@ -36416,7 +36422,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
           }
         ],
         "shootStyle": "SemiAutomatic",
-        "shotsPerSecond": 1.149,
+        "shotsPerSecond": 1.322,
         "spread": 0,
         "timeBetweenShots": 0.7
       }
@@ -37084,15 +37090,15 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-4-0 1`] = `
     ]
   },
   "dps": {
-    "base": 11.494,
+    "base": 13.216,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 11.494
+        "value": 13.216
       }
     ]
   },
-  "fireRate": 68.966,
+  "fireRate": 79.295,
   "force": {
     "base": 10,
     "details": [
@@ -37102,13 +37108,13 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-4-0 1`] = `
       }
     ]
   },
-  "magazineSize": 10,
+  "magazineSize": 30,
   "maxAmmo": 120,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 10,
-    "dps": 11.494,
+    "dps": 13.216,
     "force": 10,
     "gunId": 514,
     "id": "GrapplingHook",
@@ -37124,7 +37130,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-4-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 10,
-        "dps": 11.494,
+        "dps": 13.216,
         "force": 10,
         "gunId": 514,
         "id": "GrapplingHook",
@@ -37133,7 +37139,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-4-0 1`] = `
       }
     ],
     "shootStyle": "SemiAutomatic",
-    "shotsPerSecond": 1.149,
+    "shotsPerSecond": 1.322,
     "spread": 0,
     "timeBetweenShots": 0.7
   },
@@ -37160,16 +37166,16 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 25.303,
+    "base": 25.734,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 25.303
+        "value": 25.734
       },
       {
         "isEstimated": true,
         "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 75.91
+        "value": 77.202
       }
     ]
   },
@@ -37189,7 +37195,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-A-A 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 42,
-    "dps": 101.214,
+    "dps": 102.935,
     "force": 58,
     "id": "dpad_Gun_Projectile,GrapplingHook",
     "range": 10000,
@@ -37204,7 +37210,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ← ←-A-A 1`] = `
       {
         "additionalDamage": [],
         "damage": 42,
-        "dps": 101.214,
+        "dps": 102.935,
         "force": 58,
         "id": "dpad_Gun_Projectile,GrapplingHook",
         "range": 10000,
@@ -37518,15 +37524,15 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-4-0 1`] = `
     ]
   },
   "dps": {
-    "base": 51.724,
+    "base": 59.471,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 51.724
+        "value": 59.471
       }
     ]
   },
-  "fireRate": 68.966,
+  "fireRate": 79.295,
   "force": {
     "base": 50,
     "details": [
@@ -37536,13 +37542,13 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-4-0 1`] = `
       }
     ]
   },
-  "magazineSize": 10,
+  "magazineSize": 30,
   "maxAmmo": 120,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 45,
-    "dps": 51.724,
+    "dps": 59.471,
     "force": 50,
     "gunId": 36,
     "id": "Mega_Buster_Projectile_Super",
@@ -37558,7 +37564,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-4-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 45,
-        "dps": 51.724,
+        "dps": 59.471,
         "force": 50,
         "gunId": 36,
         "id": "Mega_Buster_Projectile_Super",
@@ -37567,7 +37573,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-4-0 1`] = `
       }
     ],
     "shootStyle": "SemiAutomatic",
-    "shotsPerSecond": 1.149,
+    "shotsPerSecond": 1.322,
     "spread": 0,
     "timeBetweenShots": 0.7
   },
@@ -37589,15 +37595,15 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-5-0 1`] = `
     ]
   },
   "dps": {
-    "base": 51.724,
+    "base": 59.471,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 51.724
+        "value": 59.471
       }
     ]
   },
-  "fireRate": 68.966,
+  "fireRate": 79.295,
   "force": {
     "base": 50,
     "details": [
@@ -37607,13 +37613,13 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-5-0 1`] = `
       }
     ]
   },
-  "magazineSize": 10,
+  "magazineSize": 30,
   "maxAmmo": 120,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 45,
-    "dps": 51.724,
+    "dps": 59.471,
     "force": 50,
     "gunId": 36,
     "id": "Mega_Buster_Projectile_Super",
@@ -37629,7 +37635,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-5-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 45,
-        "dps": 51.724,
+        "dps": 59.471,
         "force": 50,
         "gunId": 36,
         "id": "Mega_Buster_Projectile_Super",
@@ -37638,7 +37644,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-5-0 1`] = `
       }
     ],
     "shootStyle": "SemiAutomatic",
-    "shotsPerSecond": 1.149,
+    "shotsPerSecond": 1.322,
     "spread": 0,
     "timeBetweenShots": 0.7
   },
@@ -37660,15 +37666,15 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-6-0 1`] = `
     ]
   },
   "dps": {
-    "base": 51.724,
+    "base": 59.471,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 51.724
+        "value": 59.471
       }
     ]
   },
-  "fireRate": 68.966,
+  "fireRate": 79.295,
   "force": {
     "base": 50,
     "details": [
@@ -37678,13 +37684,13 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-6-0 1`] = `
       }
     ]
   },
-  "magazineSize": 10,
+  "magazineSize": 30,
   "maxAmmo": 120,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 45,
-    "dps": 51.724,
+    "dps": 59.471,
     "force": 50,
     "gunId": 36,
     "id": "Mega_Buster_Projectile_Super",
@@ -37700,7 +37706,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-6-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 45,
-        "dps": 51.724,
+        "dps": 59.471,
         "force": 50,
         "gunId": 36,
         "id": "Mega_Buster_Projectile_Super",
@@ -37709,7 +37715,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-6-0 1`] = `
       }
     ],
     "shootStyle": "SemiAutomatic",
-    "shotsPerSecond": 1.149,
+    "shotsPerSecond": 1.322,
     "spread": 0,
     "timeBetweenShots": 0.7
   },
@@ -37731,15 +37737,15 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-7-0 1`] = `
     ]
   },
   "dps": {
-    "base": 51.724,
+    "base": 59.471,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 51.724
+        "value": 59.471
       }
     ]
   },
-  "fireRate": 68.966,
+  "fireRate": 79.295,
   "force": {
     "base": 50,
     "details": [
@@ -37749,13 +37755,13 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-7-0 1`] = `
       }
     ]
   },
-  "magazineSize": 10,
+  "magazineSize": 30,
   "maxAmmo": 120,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 45,
-    "dps": 51.724,
+    "dps": 59.471,
     "force": 50,
     "gunId": 36,
     "id": "Mega_Buster_Projectile_Super",
@@ -37771,7 +37777,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-7-0 1`] = `
       {
         "additionalDamage": [],
         "damage": 45,
-        "dps": 51.724,
+        "dps": 59.471,
         "force": 50,
         "gunId": 36,
         "id": "Mega_Buster_Projectile_Super",
@@ -37780,7 +37786,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-7-0 1`] = `
       }
     ],
     "shootStyle": "SemiAutomatic",
-    "shotsPerSecond": 1.149,
+    "shotsPerSecond": 1.322,
     "spread": 0,
     "timeBetweenShots": 0.7
   },
@@ -37807,16 +37813,16 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 74.154,
+    "base": 81.901,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 74.154
+        "value": 81.901
       },
       {
         "isEstimated": true,
         "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 222.462
+        "value": 245.704
       }
     ]
   },
@@ -37836,7 +37842,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-A-A 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 212,
-    "dps": 296.616,
+    "dps": 327.605,
     "force": 248,
     "id": "dpad_Gun_Projectile,Mega_Buster_Projectile_Super",
     "range": 1000,
@@ -37851,7 +37857,7 @@ exports[`Gun > Directional Pad (514) > stats variant: ↓ →-A-A 1`] = `
       {
         "additionalDamage": [],
         "damage": 212,
-        "dps": 296.616,
+        "dps": 327.605,
         "force": 248,
         "id": "dpad_Gun_Projectile,Mega_Buster_Projectile_Super",
         "range": 1000,
@@ -58064,14 +58070,14 @@ exports[`Gun > High Kaliber (761) > modes 1`] = `
               {
                 "damage": 15,
                 "damageChance": 0,
-                "dps": 30.556,
+                "dps": 36.131,
                 "isEstimated": true,
                 "source": "pierce"
               }
             ],
             "canPenetrateObjects": true,
             "damage": 15,
-            "dps": 30.556,
+            "dps": 36.131,
             "force": 13,
             "gunId": 761,
             "homingAngularVelocity": 90,
@@ -58084,7 +58090,7 @@ exports[`Gun > High Kaliber (761) > modes 1`] = `
           }
         ],
         "shootStyle": "SemiAutomatic",
-        "shotsPerSecond": 2.037,
+        "shotsPerSecond": 2.409,
         "spread": 8,
         "timeBetweenShots": 0.4
       }
@@ -58111,21 +58117,21 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 30.556,
+    "base": 36.131,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 30.556
+        "value": 36.131
       },
       {
         "chance": 0,
         "isEstimated": true,
         "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
-        "value": 30.556
+        "value": 36.131
       }
     ]
   },
-  "fireRate": 122.222,
+  "fireRate": 144.526,
   "force": {
     "base": 13,
     "details": [
@@ -58135,7 +58141,7 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-0-0 1`] = `
       }
     ]
   },
-  "magazineSize": 11,
+  "magazineSize": 66,
   "maxAmmo": 666,
   "precision": 73.333,
   "projectile": {
@@ -58143,14 +58149,14 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-0-0 1`] = `
       {
         "damage": 15,
         "damageChance": 0,
-        "dps": 30.556,
+        "dps": 36.131,
         "isEstimated": true,
         "source": "pierce"
       }
     ],
     "canPenetrateObjects": true,
     "damage": 15,
-    "dps": 30.556,
+    "dps": 36.131,
     "force": 13,
     "gunId": 761,
     "homingAngularVelocity": 90,
@@ -58172,14 +58178,14 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-0-0 1`] = `
           {
             "damage": 15,
             "damageChance": 0,
-            "dps": 30.556,
+            "dps": 36.131,
             "isEstimated": true,
             "source": "pierce"
           }
         ],
         "canPenetrateObjects": true,
         "damage": 15,
-        "dps": 30.556,
+        "dps": 36.131,
         "force": 13,
         "gunId": 761,
         "homingAngularVelocity": 90,
@@ -58192,7 +58198,7 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-0-0 1`] = `
       }
     ],
     "shootStyle": "SemiAutomatic",
-    "shotsPerSecond": 2.037,
+    "shotsPerSecond": 2.409,
     "spread": 8,
     "timeBetweenShots": 0.4
   },
@@ -58220,21 +58226,21 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 30.556,
+    "base": 36.131,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 30.556
+        "value": 36.131
       },
       {
         "chance": 0,
         "isEstimated": true,
         "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
-        "value": 30.556
+        "value": 36.131
       }
     ]
   },
-  "fireRate": 122.222,
+  "fireRate": 144.526,
   "force": {
     "base": 13,
     "details": [
@@ -58244,7 +58250,7 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-A-A 1`] = `
       }
     ]
   },
-  "magazineSize": 11,
+  "magazineSize": 66,
   "maxAmmo": 666,
   "precision": 73.333,
   "projectile": {
@@ -58252,14 +58258,14 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-A-A 1`] = `
       {
         "damage": 15,
         "damageChance": 0,
-        "dps": 30.556,
+        "dps": 36.131,
         "isEstimated": true,
         "source": "pierce"
       }
     ],
     "canPenetrateObjects": true,
     "damage": 15,
-    "dps": 30.556,
+    "dps": 36.131,
     "force": 13,
     "homingAngularVelocity": 90,
     "homingRadius": 2,
@@ -58280,14 +58286,14 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-A-A 1`] = `
           {
             "damage": 15,
             "damageChance": 0,
-            "dps": 30.556,
+            "dps": 36.131,
             "isEstimated": true,
             "source": "pierce"
           }
         ],
         "canPenetrateObjects": true,
         "damage": 15,
-        "dps": 30.556,
+        "dps": 36.131,
         "force": 13,
         "homingAngularVelocity": 90,
         "homingRadius": 2,
@@ -58299,7 +58305,7 @@ exports[`Gun > High Kaliber (761) > stats variant: Default-A-A 1`] = `
       }
     ],
     "shootStyle": "SemiAutomatic",
-    "shotsPerSecond": 2.037,
+    "shotsPerSecond": 2.409,
     "spread": 8,
     "timeBetweenShots": 0.4
   },
@@ -127332,7 +127338,7 @@ exports[`Gun > Time Stopper (618) > modes 1`] = `
             "additionalDamage": [],
             "damage": 10,
             "damageAllEnemies": true,
-            "dps": 5.865,
+            "dps": 6.25,
             "force": 0,
             "gunId": 618,
             "id": "Mega_Flash_Projectile",
@@ -127341,7 +127347,7 @@ exports[`Gun > Time Stopper (618) > modes 1`] = `
           }
         ],
         "shootStyle": "Charged",
-        "shotsPerSecond": 0.587,
+        "shotsPerSecond": 0.625,
         "spread": 0,
         "timeBetweenShots": 1.57
       }
@@ -127502,15 +127508,15 @@ exports[`Gun > Time Stopper (618) > stats variant: Charge 1.5-0-0 1`] = `
     ]
   },
   "dps": {
-    "base": 5.865,
+    "base": 6.25,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.865
+        "value": 6.25
       }
     ]
   },
-  "fireRate": 35.191,
+  "fireRate": 37.5,
   "force": {
     "base": 0,
     "details": [
@@ -127520,14 +127526,14 @@ exports[`Gun > Time Stopper (618) > stats variant: Charge 1.5-0-0 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 18,
   "maxAmmo": 200,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 10,
     "damageAllEnemies": true,
-    "dps": 5.865,
+    "dps": 6.25,
     "force": 0,
     "gunId": 618,
     "id": "Mega_Flash_Projectile",
@@ -127544,7 +127550,7 @@ exports[`Gun > Time Stopper (618) > stats variant: Charge 1.5-0-0 1`] = `
         "additionalDamage": [],
         "damage": 10,
         "damageAllEnemies": true,
-        "dps": 5.865,
+        "dps": 6.25,
         "force": 0,
         "gunId": 618,
         "id": "Mega_Flash_Projectile",
@@ -127553,7 +127559,7 @@ exports[`Gun > Time Stopper (618) > stats variant: Charge 1.5-0-0 1`] = `
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.587,
+    "shotsPerSecond": 0.625,
     "spread": 0,
     "timeBetweenShots": 1.57
   },
@@ -127575,15 +127581,15 @@ exports[`Gun > Time Stopper (618) > stats variant: Charge 1.5-A-A 1`] = `
     ]
   },
   "dps": {
-    "base": 5.865,
+    "base": 6.25,
     "details": [
       {
         "tooltip": "Base damage: {{VALUE}}",
-        "value": 5.865
+        "value": 6.25
       }
     ]
   },
-  "fireRate": 35.191,
+  "fireRate": 37.5,
   "force": {
     "base": 0,
     "details": [
@@ -127593,14 +127599,14 @@ exports[`Gun > Time Stopper (618) > stats variant: Charge 1.5-A-A 1`] = `
       }
     ]
   },
-  "magazineSize": 4,
+  "magazineSize": 18,
   "maxAmmo": 200,
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
     "damage": 10,
     "damageAllEnemies": true,
-    "dps": 5.865,
+    "dps": 6.25,
     "id": "Mega_Flash_Projectile",
     "range": 1,
     "speed": 1
@@ -127615,14 +127621,14 @@ exports[`Gun > Time Stopper (618) > stats variant: Charge 1.5-A-A 1`] = `
         "additionalDamage": [],
         "damage": 10,
         "damageAllEnemies": true,
-        "dps": 5.865,
+        "dps": 6.25,
         "id": "Mega_Flash_Projectile",
         "range": 1,
         "speed": 1
       }
     ],
     "shootStyle": "Charged",
-    "shotsPerSecond": 0.587,
+    "shotsPerSecond": 0.625,
     "spread": 0,
     "timeBetweenShots": 1.57
   },
@@ -138204,7 +138210,7 @@ exports[`Gun > Zilla Shotgun (329) > modes 1`] = `
   },
   {
     "chargeTime": 0.7,
-    "magazineSize": 4,
+    "magazineSize": 1,
     "mode": "Charge 0.7",
     "volley": [
       {
@@ -138243,7 +138249,7 @@ exports[`Gun > Zilla Shotgun (329) > modes 1`] = `
         "timeBetweenShots": 0.7
       },
       {
-        "ammoCost": 4,
+        "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.5,
@@ -138278,7 +138284,7 @@ exports[`Gun > Zilla Shotgun (329) > modes 1`] = `
         "timeBetweenShots": 0.7
       },
       {
-        "ammoCost": 4,
+        "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.5,
@@ -138313,7 +138319,7 @@ exports[`Gun > Zilla Shotgun (329) > modes 1`] = `
         "timeBetweenShots": 0.7
       },
       {
-        "ammoCost": 4,
+        "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.5,
@@ -138348,7 +138354,7 @@ exports[`Gun > Zilla Shotgun (329) > modes 1`] = `
         "timeBetweenShots": 0.7
       },
       {
-        "ammoCost": 4,
+        "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.5,
@@ -138383,10 +138389,11 @@ exports[`Gun > Zilla Shotgun (329) > modes 1`] = `
         "timeBetweenShots": 0.7
       },
       {
-        "ammoCost": 4,
+        "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.5,
+        "depleteAmmo": true,
         "projectiles": [
           {
             "additionalDamage": [
@@ -138418,7 +138425,7 @@ exports[`Gun > Zilla Shotgun (329) > modes 1`] = `
         "timeBetweenShots": 0.7
       },
       {
-        "ammoCost": 4,
+        "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.5,
@@ -138453,10 +138460,11 @@ exports[`Gun > Zilla Shotgun (329) > modes 1`] = `
         "timeBetweenShots": 0.7
       },
       {
-        "ammoCost": 4,
+        "ammoCost": 1,
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.5,
+        "depleteAmmo": true,
         "projectiles": [
           {
             "additionalDamage": [
@@ -138670,7 +138678,7 @@ exports[`Gun > Zilla Shotgun (329) > stats variant: Charge 0.7-1-0 1`] = `
     "speed": 30
   },
   "projectileModule": {
-    "ammoCost": 4,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.5,
@@ -138779,7 +138787,7 @@ exports[`Gun > Zilla Shotgun (329) > stats variant: Charge 0.7-2-0 1`] = `
     "speed": 30
   },
   "projectileModule": {
-    "ammoCost": 4,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.5,
@@ -138888,7 +138896,7 @@ exports[`Gun > Zilla Shotgun (329) > stats variant: Charge 0.7-3-0 1`] = `
     "speed": 30
   },
   "projectileModule": {
-    "ammoCost": 4,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.5,
@@ -138997,7 +139005,7 @@ exports[`Gun > Zilla Shotgun (329) > stats variant: Charge 0.7-4-0 1`] = `
     "speed": 30
   },
   "projectileModule": {
-    "ammoCost": 4,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.5,
@@ -139106,10 +139114,11 @@ exports[`Gun > Zilla Shotgun (329) > stats variant: Charge 0.7-5-0 1`] = `
     "speed": 30
   },
   "projectileModule": {
-    "ammoCost": 4,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.5,
+    "depleteAmmo": true,
     "projectiles": [
       {
         "additionalDamage": [
@@ -139215,7 +139224,7 @@ exports[`Gun > Zilla Shotgun (329) > stats variant: Charge 0.7-6-0 1`] = `
     "speed": 30
   },
   "projectileModule": {
-    "ammoCost": 4,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.5,
@@ -139324,10 +139333,11 @@ exports[`Gun > Zilla Shotgun (329) > stats variant: Charge 0.7-7-0 1`] = `
     "speed": 30
   },
   "projectileModule": {
-    "ammoCost": 4,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.5,
+    "depleteAmmo": true,
     "projectiles": [
       {
         "additionalDamage": [
@@ -139432,10 +139442,11 @@ exports[`Gun > Zilla Shotgun (329) > stats variant: Charge 0.7-A-A 1`] = `
     "speed": 30
   },
   "projectileModule": {
-    "ammoCost": 4,
+    "ammoCost": 1,
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.5,
+    "depleteAmmo": true,
     "projectiles": [
       {
         "additionalDamage": [
