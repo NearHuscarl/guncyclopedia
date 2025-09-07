@@ -52,8 +52,6 @@ export function getGun(id: number): TGun {
 function getGunStatsForTesting(gun: TGun, modeIndex: number, moduleIndex: number, projectileIndex: number) {
   const gunStats = GunService.computeGunStats(gun, modeIndex, moduleIndex, projectileIndex);
 
-  gunStats.mode.magazineSize = gunStats.magazineSize === gunStats.maxAmmo ? -1 : gunStats.mode.magazineSize;
-
   return sanitizeTestData(stripUnusedFields(gunStats)) as TGunStats;
 }
 

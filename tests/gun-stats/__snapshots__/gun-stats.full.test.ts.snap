@@ -1275,7 +1275,7 @@ exports[`Gun > Abyssal Tentacle (474) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -1386,7 +1386,7 @@ exports[`Gun > Abyssal Tentacle (689) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -12357,7 +12357,7 @@ exports[`Gun > Boxing Glove (539) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 350,
     "mode": "Charge 0",
     "volley": [
       {
@@ -12395,7 +12395,7 @@ exports[`Gun > Boxing Glove (539) > modes 1`] = `
   },
   {
     "chargeTime": 0.5,
-    "magazineSize": -1,
+    "magazineSize": 350,
     "mode": "Charge 0.5",
     "volley": [
       {
@@ -16082,7 +16082,7 @@ exports[`Gun > Buzzkill (740) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Cactus (124) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 1000,
     "mode": "Default",
     "volley": [
       {
@@ -16183,7 +16183,7 @@ exports[`Gun > Cactus (124) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Cactus (700) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 1000,
     "mode": "Default",
     "volley": [
       {
@@ -25487,7 +25487,7 @@ exports[`Gun > Crossbow (12) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Crown of Guns (551) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 3000,
     "mode": "Default",
     "volley": [
       {
@@ -26729,7 +26729,7 @@ exports[`Gun > Demon Head (60) > modes 1`] = `
 "[
   {
     "chargeTime": 0.25,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -28906,7 +28906,7 @@ exports[`Gun > Disintegrator (121) > modes 1`] = `
 "[
   {
     "chargeTime": 1.5,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -31795,7 +31795,7 @@ exports[`Gun > Eye of the Beholster (90) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Face Melter (149) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 600,
     "mode": "Default",
     "volley": [
       {
@@ -32235,7 +32235,7 @@ exports[`Gun > Face Melter (149) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Face Melter (702) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 600,
     "mode": "Default",
     "volley": [
       {
@@ -33681,7 +33681,7 @@ exports[`Gun > Fossilized Gun (196) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -33783,7 +33783,7 @@ exports[`Gun > Freeze Ray (40) > modes 1`] = `
 "[
   {
     "chargeTime": 0.4,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -33900,7 +33900,7 @@ exports[`Gun > Freeze Ray (710) > modes 1`] = `
 "[
   {
     "chargeTime": 0.4,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -34292,7 +34292,7 @@ exports[`Gun > Gamma Ray (87) > modes 1`] = `
 "[
   {
     "chargeTime": 0.2,
-    "magazineSize": -1,
+    "magazineSize": 800,
     "mode": "Default",
     "volley": [
       {
@@ -34440,7 +34440,7 @@ exports[`Gun > Gamma Ray (671) > modes 1`] = `
 "[
   {
     "chargeTime": 0.2,
-    "magazineSize": -1,
+    "magazineSize": 800,
     "mode": "Default",
     "volley": [
       {
@@ -39812,7 +39812,7 @@ exports[`Gun > H4mmer (715) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Heck Blaster (17) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 999,
     "mode": "Default",
     "volley": [
       {
@@ -43780,7 +43780,7 @@ exports[`Gun > Huntsman (505) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 12,
     "mode": "Default",
     "volley": [
       {
@@ -43918,7 +43918,7 @@ exports[`Gun > Hyper Light Blaster (504) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 18,
     "mode": "Default",
     "volley": [
       {
@@ -46785,7 +46785,7 @@ exports[`Gun > Life Orb (595) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 600,
     "mode": "Default",
     "volley": [
       {
@@ -50899,7 +50899,7 @@ exports[`Gun > Makeshift Cannon (480) > modes 1`] = `
 "[
   {
     "chargeTime": 0.3,
-    "magazineSize": -1,
+    "magazineSize": 1,
     "mode": "Charge 0.3",
     "volley": [
       {
@@ -53421,7 +53421,7 @@ exports[`Gun > Mega Douser (10) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 900,
     "mode": "Default",
     "volley": [
       {
@@ -55915,7 +55915,7 @@ exports[`Gun > Molotov Launcher (691) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Moonlight Tiara (594) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 3000,
     "mode": "Default",
     "volley": [
       {
@@ -56299,7 +56299,7 @@ exports[`Gun > Moonscraper (20) > modes 1`] = `
 "[
   {
     "chargeTime": 0.2,
-    "magazineSize": -1,
+    "magazineSize": 700,
     "mode": "Default",
     "volley": [
       {
@@ -56404,7 +56404,7 @@ exports[`Gun > Moonscraper (713) > modes 1`] = `
 "[
   {
     "chargeTime": 0.2,
-    "magazineSize": -1,
+    "magazineSize": 700,
     "mode": "Default",
     "volley": [
       {
@@ -58149,7 +58149,7 @@ exports[`Gun > Mutation (333) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -58260,7 +58260,7 @@ exports[`Gun > Mutation (608) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 800,
     "mode": "Default",
     "volley": [
       {
@@ -58370,7 +58370,7 @@ exports[`Gun > Mutation (608) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Nail Gun (26) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -58471,7 +58471,7 @@ exports[`Gun > Nail Gun (26) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Nail Gun (692) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -63661,7 +63661,7 @@ exports[`Gun > Plunger (208) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -64798,7 +64798,7 @@ exports[`Gun > Poxcannon (513) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Prize Pistol (251) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 1,
     "mode": "Default",
     "volley": [
       {
@@ -64906,7 +64906,7 @@ exports[`Gun > Proton Backpack (179) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -65191,7 +65191,7 @@ exports[`Gun > Proton Backpack (658) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 1000,
     "mode": "Default",
     "volley": [
       {
@@ -65674,7 +65674,7 @@ exports[`Gun > Proton Backpack (720) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -68488,7 +68488,7 @@ exports[`Gun > Raiden Coil (107) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -68605,7 +68605,7 @@ exports[`Gun > Raiden Coil (712) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -71993,7 +71993,7 @@ exports[`Gun > Regular Shotgun (763) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -73569,7 +73569,7 @@ exports[`Gun > Science Cannon (331) > modes 1`] = `
 "[
   {
     "chargeTime": 0.6,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -73756,7 +73756,7 @@ exports[`Gun > Science Cannon (331) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Screecher (3) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 1000,
     "mode": "Default",
     "volley": [
       {
@@ -76079,7 +76079,7 @@ exports[`Gun > Shell (759) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 300,
     "mode": "Default",
     "volley": [
       {
@@ -83179,7 +83179,7 @@ exports[`Gun > Starpew (507) > modes 1`] = `
 "[
   {
     "chargeTime": 0,
-    "magazineSize": -1,
+    "magazineSize": 100,
     "mode": "Charge 0",
     "volley": [
       {
@@ -83215,7 +83215,7 @@ exports[`Gun > Starpew (507) > modes 1`] = `
   },
   {
     "chargeTime": 0.25,
-    "magazineSize": -1,
+    "magazineSize": 100,
     "mode": "Charge 0.25",
     "volley": [
       {
@@ -83280,7 +83280,7 @@ exports[`Gun > Starpew (507) > modes 1`] = `
   },
   {
     "chargeTime": 0.5,
-    "magazineSize": -1,
+    "magazineSize": 100,
     "mode": "Charge 0.5",
     "volley": [
       {
@@ -83345,7 +83345,7 @@ exports[`Gun > Starpew (507) > modes 1`] = `
   },
   {
     "chargeTime": 1,
-    "magazineSize": -1,
+    "magazineSize": 100,
     "mode": "Charge 1",
     "volley": [
       {
@@ -83613,7 +83613,7 @@ exports[`Gun > Starpew (507) > modes 1`] = `
   },
   {
     "chargeTime": 0.75,
-    "magazineSize": -1,
+    "magazineSize": 100,
     "mode": "Charge 0.75",
     "volley": [
       {
@@ -87629,7 +87629,7 @@ exports[`Gun > Stinger (92) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Stone Dome (598) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 750,
     "mode": "Default",
     "volley": [
       {
@@ -88151,7 +88151,7 @@ exports[`Gun > Super Meat Gun (479) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Super Space Turtle (299) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 350,
     "mode": "Default",
     "volley": [
       {
@@ -93177,7 +93177,7 @@ exports[`Gun > The Judge (518) > modes 1`] = `
 "[
   {
     "chargeTime": 1.25,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -101601,7 +101601,7 @@ exports[`Gun > Unfinished Gun (806) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Unfinished Gun (807) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -101703,7 +101703,7 @@ exports[`Gun > Unicorn Horn (100) > modes 1`] = `
 "[
   {
     "chargeTime": 0.2,
-    "magazineSize": -1,
+    "magazineSize": 500,
     "mode": "Default",
     "volley": [
       {
@@ -103348,7 +103348,7 @@ exports[`Gun > Vorpal Gun (537) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Vulcan Cannon (84) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 900,
     "mode": "Default",
     "volley": [
       {
@@ -103449,7 +103449,7 @@ exports[`Gun > Vulcan Cannon (84) > stats variant: Default-A-A 1`] = `
 exports[`Gun > Vulcan Cannon (707) > modes 1`] = `
 "[
   {
-    "magazineSize": -1,
+    "magazineSize": 1000,
     "mode": "Default",
     "volley": [
       {
