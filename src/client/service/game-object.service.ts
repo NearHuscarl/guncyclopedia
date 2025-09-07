@@ -22,7 +22,6 @@ export type TResolvedDamageDetail = z.infer<typeof ResolvedDamageDetail>;
 
 export const ResolvedProjectile = Projectile.extend({
   gunId: z.number().optional(), // no use right now.
-  force: z.number().optional(), // TODO: could this be 0?
   dps: z.number(),
   spawnedBy: z.string().optional(),
   spawnLevel: z.number().optional(),

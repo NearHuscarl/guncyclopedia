@@ -168,7 +168,7 @@ export class GunModelGenerator {
         type: "dps",
         damage: projDto.projectile.healthEffect.DamagePerSecondToEnemies,
         canNotStack: true,
-        isEstimated: projDto.projectile.PoisonApplyChance < 1,
+        isEstimated: projDto.projectile.PoisonApplyChance < 1 || undefined,
       });
       this._featureFlags.add("hasStatusEffects");
     }
@@ -202,7 +202,7 @@ export class GunModelGenerator {
         type: "dps",
         damage: projDto.projectile.fireEffect.DamagePerSecondToEnemies,
         canNotStack: true,
-        isEstimated: projDto.projectile.FireApplyChance < 1,
+        isEstimated: projDto.projectile.FireApplyChance < 1 || undefined,
       });
       this._featureFlags.add("hasStatusEffects");
     }
@@ -218,9 +218,12 @@ export class GunModelGenerator {
       this._featureFlags.add("hasStatusEffects");
     }
 
-    if (projDto.bounceProjModifier) {
+    if (projDto.bounceProjModifier?.numberOfBounces) {
       proj.numberOfBounces = projDto.bounceProjModifier.numberOfBounces;
-      proj.damageMultiplierOnBounce = projDto.bounceProjModifier.damageMultiplierOnBounce;
+      proj.damageMultiplierOnBounce =
+        projDto.bounceProjModifier.damageMultiplierOnBounce !== 1
+          ? projDto.bounceProjModifier.damageMultiplierOnBounce
+          : undefined;
       if ((projDto.bounceProjModifier.chanceToDieOnBounce ?? 0) > 0)
         proj.chanceToDieOnBounce = projDto.bounceProjModifier.chanceToDieOnBounce;
 
@@ -229,9 +232,9 @@ export class GunModelGenerator {
         projDto.bounceProjModifier.chanceToDieOnBounce ?? 0,
       );
     }
-    if (projDto.pierceProjModifier) {
+    if (projDto.pierceProjModifier?.penetration) {
       proj.penetration = projDto.pierceProjModifier.penetration;
-      proj.canPenetrateObjects = Boolean(projDto.pierceProjModifier.penetratesBreakables);
+      proj.canPenetrateObjects = Boolean(projDto.pierceProjModifier.penetratesBreakables) || undefined;
     }
 
     let explosionData = projDto.explosiveModifier?.doExplosion && projDto.explosiveModifier?.explosionData;

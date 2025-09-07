@@ -29,7 +29,7 @@ export const DamageDetail = z.object({
    * is unavailable.
    *
    * - If `damageChance = 0` and `isEstimated = true`, the chance is considered unknown rather than 'never happen'.
-   * - If `damageChance >= 0`, the damage is estimated regardless of `isEstimated`.
+   * - If `damageChance > 0`, the damage is estimated regardless of `isEstimated`.
    */
   damageChance: Percentage.optional(),
   /**
@@ -104,6 +104,9 @@ export const Projectile = z.object({
    * Chance to die on bounce. Default is `0`.
    */
   chanceToDieOnBounce: Percentage.optional(),
+  /**
+   * Damage multiplier applied for bounced projectiles. Default is `1`.
+   */
   damageMultiplierOnBounce: z.number().nonnegative().optional(),
 
   /**

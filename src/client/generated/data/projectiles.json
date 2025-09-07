@@ -109,7 +109,6 @@
     "numberOfBounces": 3,
     "averageSurvivingBounces": 0.875,
     "chanceToDieOnBounce": 0.5,
-    "damageMultiplierOnBounce": 1,
     "hasOilGoop": true,
     "spawnGoopOnCollision": true,
     "goopCollisionRadius": 3,
@@ -139,7 +138,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -148,7 +146,6 @@
     "fireChance": 1,
     "fireDuration": 2.5,
     "penetration": 4,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Fireball_Projectile",
       "fps": 15,
@@ -242,7 +239,6 @@
     "additionalDamage": [],
     "numberOfBounces": 10,
     "averageSurvivingBounces": 10,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "crystal_trail",
       "fps": 6,
@@ -370,7 +366,6 @@
     ],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 1.5,
     "explosionForce": 25,
     "animation": {
@@ -402,7 +397,6 @@
     ],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 3,
     "explosionForce": 100,
     "spawnProjectilesInflight": false,
@@ -440,7 +434,6 @@
     ],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 1.5,
     "explosionForce": 25,
     "animation": {
@@ -472,7 +465,6 @@
     ],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 3,
     "explosionForce": 100,
     "spawnProjectilesInflight": false,
@@ -701,7 +693,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 3,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "blasphemy_projectile",
       "fps": 12,
@@ -726,7 +717,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 3,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "blasphemy_projectile_alt",
       "fps": 18,
@@ -755,7 +745,6 @@
     "additionalDamage": [],
     "numberOfBounces": 6,
     "averageSurvivingBounces": 6,
-    "damageMultiplierOnBounce": 1,
     "penetration": 4,
     "canPenetrateObjects": true,
     "animation": {
@@ -787,7 +776,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "bullet_variant_011",
       "fps": 0,
@@ -859,7 +847,6 @@
     ],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 4,
     "explosionForce": 100,
     "animation": {
@@ -894,7 +881,6 @@
     ],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 4,
     "explosionForce": 100,
     "animation": {
@@ -989,7 +975,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "magic_sniper_trail_middle",
       "fps": 10,
@@ -1014,8 +999,6 @@
     "additionalDamage": [],
     "charmChance": 0.75,
     "charmDuration": 6,
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "arrow_charmed_001",
       "fps": 0,
@@ -1117,7 +1100,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "penetration": 35,
     "canPenetrateObjects": true,
     "spawnProjectilesInflight": false,
@@ -1152,7 +1134,6 @@
     "additionalDamage": [],
     "numberOfBounces": 6,
     "averageSurvivingBounces": 6,
-    "damageMultiplierOnBounce": 1,
     "penetration": 50,
     "canPenetrateObjects": true,
     "animation": {
@@ -1188,7 +1169,6 @@
     ],
     "numberOfBounces": 6,
     "averageSurvivingBounces": 6,
-    "damageMultiplierOnBounce": 1,
     "penetration": 50,
     "canPenetrateObjects": true,
     "explosionRadius": 3,
@@ -1226,7 +1206,6 @@
       }
     ],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "chanceToTransmogrify": 0.1,
     "transmogrifyTarget": "Chicken",
     "animation": {
@@ -1257,7 +1236,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -1266,7 +1244,6 @@
     "fireChance": 1,
     "fireDuration": 4,
     "penetration": 4,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Fireball_Projectile",
       "fps": 15,
@@ -1440,7 +1417,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -1481,7 +1457,6 @@
     "additionalDamage": [],
     "numberOfBounces": 2,
     "averageSurvivingBounces": 2,
-    "damageMultiplierOnBounce": 1,
     "penetration": 3,
     "canPenetrateObjects": true,
     "animation": {
@@ -1729,7 +1704,6 @@
     "additionalDamage": [],
     "numberOfBounces": 3,
     "averageSurvivingBounces": 3,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "Star_Projectile_Small_Anim",
       "fps": 14,
@@ -1812,8 +1786,6 @@
     "freezeChance": 1,
     "freezeDuration": 10,
     "freezeAmount": 55,
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "crestfallen_projectile",
       "fps": 12,
@@ -1950,7 +1922,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 6
@@ -2078,14 +2049,12 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 3
       },
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -2284,9 +2253,7 @@
     "additionalDamage": [],
     "numberOfBounces": 2,
     "averageSurvivingBounces": 2,
-    "damageMultiplierOnBounce": 1,
     "penetration": 2,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "musketball_001",
       "fps": 0,
@@ -2525,7 +2492,6 @@
     "force": 15,
     "additionalDamage": [],
     "penetration": 3,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "bullet_variant_011",
       "fps": 0,
@@ -2569,7 +2535,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Tear_Bullet_Projectile_Anim",
       "fps": 10,
@@ -2621,7 +2586,6 @@
     "stunChance": 0.2,
     "stunDuration": 2.5,
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Fish_Projectile_001",
       "fps": 8,
@@ -2667,7 +2631,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -2675,8 +2638,6 @@
     ],
     "fireChance": 1,
     "fireDuration": 4,
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "Robotech_Exhaust",
       "fps": 15,
@@ -2701,7 +2662,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -2709,8 +2669,6 @@
     ],
     "fireChance": 1,
     "fireDuration": 120,
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "Robotech_Exhaust",
       "fps": 15,
@@ -2868,7 +2826,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -2878,7 +2835,6 @@
     "fireDuration": 4,
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "prismatic_spray_projectile_002",
       "fps": 0,
@@ -2902,7 +2858,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "penetration": 2,
     "canPenetrateObjects": true,
     "animation": {
@@ -3205,7 +3160,6 @@
     "freezeAmount": 55,
     "numberOfBounces": 4,
     "averageSurvivingBounces": 4,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 2,
     "explosionForce": 8,
     "explosionFreezeRadius": 3,
@@ -3237,7 +3191,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -3245,8 +3198,7 @@
     ],
     "fireChance": 1,
     "fireDuration": 4,
-    "penetration": 10,
-    "canPenetrateObjects": false
+    "penetration": 10
   },
   "Jet_Engine_Projectile_Synergy": {
     "id": "Jet_Engine_Projectile_Synergy",
@@ -3258,7 +3210,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -3266,8 +3217,7 @@
     ],
     "fireChance": 1,
     "fireDuration": 120,
-    "penetration": 10,
-    "canPenetrateObjects": false
+    "penetration": 10
   },
   "Kirkcannon_Projectile_Gem001": {
     "id": "Kirkcannon_Projectile_Gem001",
@@ -3506,8 +3456,6 @@
     "range": 10,
     "force": 45,
     "additionalDamage": [],
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "looper_projectile_001",
       "fps": 0,
@@ -3620,7 +3568,6 @@
     ],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 4,
     "explosionForce": 100,
     "animation": {
@@ -3759,7 +3706,6 @@
       }
     ],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "chanceToTransmogrify": 0.1,
     "transmogrifyTarget": "Chicken",
     "animation": {
@@ -3838,7 +3784,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "letter_projectile_001",
       "fps": 0,
@@ -3881,11 +3826,7 @@
     "range": 50,
     "force": 20,
     "additionalDamage": [],
-    "numberOfBounces": 0,
-    "averageSurvivingBounces": 0,
-    "damageMultiplierOnBounce": 1,
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "magic_bullet_chunk_001",
       "fps": 0,
@@ -4112,7 +4053,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Tear_Bullet_Projectile_Anim",
       "fps": 10,
@@ -4139,7 +4079,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "raw_iron_projectile_003",
       "fps": 0,
@@ -4711,7 +4650,6 @@
     "force": 13,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Raw_Iron_Projectile",
       "fps": 6,
@@ -4742,7 +4680,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -4750,8 +4687,7 @@
     ],
     "fireChance": 1,
     "fireDuration": 4,
-    "penetration": 10,
-    "canPenetrateObjects": false
+    "penetration": 10
   },
   "Pillow_Projectile": {
     "id": "Pillow_Projectile",
@@ -4787,8 +4723,7 @@
     "additionalDamage": [],
     "stunChance": 1,
     "stunDuration": 5,
-    "penetration": 4,
-    "canPenetrateObjects": false
+    "penetration": 4
   },
   "Pitchfork_Projectile": {
     "id": "Pitchfork_Projectile",
@@ -4800,7 +4735,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -4809,7 +4743,6 @@
     "fireChance": 1,
     "fireDuration": 4,
     "penetration": 4,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Fireball_Projectile",
       "fps": 15,
@@ -4837,7 +4770,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -4846,7 +4778,6 @@
     "fireChance": 1,
     "fireDuration": 120,
     "penetration": 4,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Fireball2_Projectile",
       "fps": 15,
@@ -5009,7 +4940,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 3
@@ -5193,7 +5123,6 @@
     "additionalDamage": [],
     "numberOfBounces": 2,
     "averageSurvivingBounces": 2,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "Purple_Raygun_Bolt",
       "fps": 12,
@@ -5239,7 +5168,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 4
@@ -5364,7 +5292,6 @@
     "additionalDamage": [],
     "numberOfBounces": 10,
     "averageSurvivingBounces": 10,
-    "damageMultiplierOnBounce": 1,
     "penetration": 50,
     "canPenetrateObjects": true,
     "animation": {
@@ -5418,7 +5345,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 5
@@ -5449,7 +5375,6 @@
     "force": 6,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Raw_Iron_Projectile",
       "fps": 6,
@@ -5481,7 +5406,6 @@
     "numberOfBounces": 4,
     "averageSurvivingBounces": 1.7730999999999997,
     "chanceToDieOnBounce": 0.3,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "rectangle_gun_projectile_001",
       "fps": 0,
@@ -5853,7 +5777,6 @@
     "additionalDamage": [],
     "numberOfBounces": 3,
     "averageSurvivingBounces": 3,
-    "damageMultiplierOnBounce": 1,
     "penetration": 2,
     "canPenetrateObjects": true,
     "animation": {
@@ -5882,7 +5805,6 @@
     "additionalDamage": [],
     "numberOfBounces": 3,
     "averageSurvivingBounces": 3,
-    "damageMultiplierOnBounce": 1,
     "penetration": 2,
     "canPenetrateObjects": true,
     "animation": {
@@ -5969,7 +5891,6 @@
     "additionalDamage": [],
     "numberOfBounces": 6,
     "averageSurvivingBounces": 6,
-    "damageMultiplierOnBounce": 1,
     "penetration": 4,
     "canPenetrateObjects": true,
     "animation": {
@@ -5995,7 +5916,6 @@
     "additionalDamage": [],
     "numberOfBounces": 50,
     "averageSurvivingBounces": 50,
-    "damageMultiplierOnBounce": 1,
     "penetration": 1000,
     "canPenetrateObjects": true,
     "animation": {
@@ -6045,7 +5965,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -6138,7 +6057,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 5
@@ -6258,7 +6176,6 @@
     "force": 8,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "nail_001",
       "fps": 0,
@@ -6282,7 +6199,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "penetration": 1,
     "canPenetrateObjects": true,
     "animation": {
@@ -6332,7 +6248,6 @@
     "charmChance": 0.25,
     "charmDuration": 10,
     "penetration": 8,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "star_love_projectile_001",
       "fps": 0,
@@ -6358,7 +6273,6 @@
     "charmDuration": 10,
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "teddy_bear_projectile_001",
       "fps": 0,
@@ -6404,7 +6318,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 3,
-    "canPenetrateObjects": false,
     "isHoming": true,
     "homingRadius": 6,
     "homingAngularVelocity": 500,
@@ -6641,7 +6554,6 @@
     "force": 6,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "isHoming": true,
     "homingRadius": 6,
     "homingAngularVelocity": 700,
@@ -6789,7 +6701,6 @@
     "additionalDamage": [],
     "numberOfBounces": 6,
     "averageSurvivingBounces": 6,
-    "damageMultiplierOnBounce": 1,
     "penetration": 20,
     "canPenetrateObjects": true,
     "animation": {
@@ -6814,7 +6725,6 @@
     "force": 15,
     "additionalDamage": [],
     "penetration": 3,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "sword_projectile_001",
       "fps": 0,
@@ -7231,7 +7141,6 @@
     "additionalDamage": [],
     "numberOfBounces": 4,
     "averageSurvivingBounces": 4,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "bullet_variant_011",
       "fps": 0,
@@ -7675,7 +7584,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "purple_bolt_001",
       "fps": 0,
@@ -7705,7 +7613,6 @@
     ],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 1.5,
     "explosionForce": 10,
     "animation": {
@@ -7794,7 +7701,6 @@
     "additionalDamage": [],
     "numberOfBounces": 6,
     "averageSurvivingBounces": 6,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "yellow_blaster_bolt_001",
       "fps": 0,
@@ -7887,7 +7793,6 @@
     "additionalDamage": [],
     "numberOfBounces": 4,
     "averageSurvivingBounces": 4,
-    "damageMultiplierOnBounce": 1,
     "penetration": 12,
     "canPenetrateObjects": true,
     "animation": {
@@ -7940,8 +7845,7 @@
     "range": 2.5,
     "force": 120,
     "additionalDamage": [],
-    "penetration": 10,
-    "canPenetrateObjects": false
+    "penetration": 10
   },
   "Bullet_Gun_Spawn_Projectile": {
     "id": "Bullet_Gun_Spawn_Projectile",
@@ -8626,7 +8530,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Tear_Bullet_Projectile_Anim",
       "fps": 10,
@@ -8799,7 +8702,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "pea_001",
       "fps": 0,
@@ -8852,7 +8754,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "crystal_shard_projectile_anim",
       "fps": 16,
@@ -8981,8 +8882,7 @@
     "additionalDamage": [],
     "stunChance": 0.3,
     "stunDuration": 3,
-    "penetration": 10,
-    "canPenetrateObjects": false
+    "penetration": 10
   },
   "Boxing_Glove_Star_Projectile": {
     "id": "Boxing_Glove_Star_Projectile",
@@ -8995,8 +8895,7 @@
     "additionalDamage": [],
     "stunChance": 0.3,
     "stunDuration": 3,
-    "penetration": 10,
-    "canPenetrateObjects": false
+    "penetration": 10
   },
   "Bubble_Big_Projectile": {
     "id": "Bubble_Big_Projectile",
@@ -9007,7 +8906,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "bubble_big",
       "fps": 2,
@@ -9033,7 +8931,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "bubble_mid",
       "fps": 2,
@@ -9059,7 +8956,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "bubble_sm",
       "fps": 3,
@@ -9107,7 +9003,6 @@
     "additionalDamage": [],
     "numberOfBounces": 4,
     "averageSurvivingBounces": 4,
-    "damageMultiplierOnBounce": 1,
     "penetration": 2,
     "canPenetrateObjects": true,
     "animation": {
@@ -9396,7 +9291,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -9404,8 +9298,6 @@
     ],
     "fireChance": 1,
     "fireDuration": 4,
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "planet_mercury",
       "fps": 7,
@@ -9434,7 +9326,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 5
@@ -9442,8 +9333,6 @@
     ],
     "poisonChance": 1,
     "poisonDuration": 10,
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "planet_venus",
       "fps": 8,
@@ -9470,8 +9359,6 @@
     "range": 1000,
     "force": 60,
     "additionalDamage": [],
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "planet_earth",
       "fps": 8,
@@ -9498,8 +9385,6 @@
     "range": 1000,
     "force": 75,
     "additionalDamage": [],
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "planet_mars",
       "fps": 6,
@@ -9532,8 +9417,6 @@
         "damage": 25
       }
     ],
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "explosionRadius": 4.5,
     "explosionForce": 100,
     "animation": {
@@ -9562,8 +9445,6 @@
     "range": 1000,
     "force": 30,
     "additionalDamage": [],
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "planet_saturn",
       "fps": 8,
@@ -9593,8 +9474,6 @@
     "freezeChance": 1,
     "freezeDuration": 10,
     "freezeAmount": 120,
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "planet_uranus",
       "fps": 6,
@@ -9622,8 +9501,6 @@
     "freezeChance": 1,
     "freezeDuration": 10,
     "freezeAmount": 200,
-    "penetration": 0,
-    "canPenetrateObjects": true,
     "animation": {
       "name": "planet_neptune",
       "fps": 6,
@@ -10089,7 +9966,6 @@
     "freezeAmount": 70,
     "numberOfBounces": 4,
     "averageSurvivingBounces": 4,
-    "damageMultiplierOnBounce": 1,
     "explosionRadius": 2,
     "explosionForce": 8,
     "explosionFreezeRadius": 3,
@@ -10249,7 +10125,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 3
@@ -10291,7 +10166,6 @@
     "numberOfBounces": 5,
     "averageSurvivingBounces": 3.6855900000000004,
     "chanceToDieOnBounce": 0.1,
-    "damageMultiplierOnBounce": 1,
     "isHoming": true,
     "homingRadius": 6,
     "homingAngularVelocity": 80,
@@ -10372,7 +10246,6 @@
     "numberOfBounces": 4,
     "averageSurvivingBounces": 1.7730999999999997,
     "chanceToDieOnBounce": 0.3,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "10x10_player_Projectile_001",
       "fps": 0,
@@ -10398,7 +10271,6 @@
     "stunDuration": 5,
     "numberOfBounces": 100,
     "averageSurvivingBounces": 100,
-    "damageMultiplierOnBounce": 1,
     "penetration": 1,
     "canPenetrateObjects": true,
     "isHoming": true,
@@ -10536,7 +10408,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "bubble_big",
       "fps": 2,
@@ -10562,7 +10433,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "bubble_mid",
       "fps": 2,
@@ -10588,7 +10458,6 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "bubble_sm",
       "fps": 3,
@@ -10675,7 +10544,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -10684,7 +10552,6 @@
     "fireChance": 1,
     "fireDuration": 4,
     "penetration": 4,
-    "canPenetrateObjects": false,
     "animation": {
       "name": "Fireball_Projectile",
       "fps": 15,
@@ -10736,7 +10603,6 @@
     "additionalDamage": [],
     "numberOfBounces": 3,
     "averageSurvivingBounces": 3,
-    "damageMultiplierOnBounce": 1,
     "penetration": 2,
     "canPenetrateObjects": true,
     "animation": {
@@ -10791,7 +10657,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 7.5
@@ -10799,8 +10664,7 @@
     ],
     "poisonChance": 1,
     "poisonDuration": 10,
-    "penetration": 10,
-    "canPenetrateObjects": false
+    "penetration": 10
   },
   "Nailbat_Nail_Projectile": {
     "id": "Nailbat_Nail_Projectile",
@@ -10833,7 +10697,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "poison",
         "damage": 5
@@ -10960,7 +10823,6 @@
     "additionalDamage": [],
     "numberOfBounces": 1,
     "averageSurvivingBounces": 1,
-    "damageMultiplierOnBounce": 1,
     "animation": {
       "name": "rubeadyne_projectile_001",
       "fps": 0,
@@ -11088,7 +10950,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -11124,7 +10985,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4
@@ -11279,7 +11139,6 @@
     "additionalDamage": [
       {
         "type": "dps",
-        "isEstimated": false,
         "canNotStack": true,
         "source": "fire",
         "damage": 4

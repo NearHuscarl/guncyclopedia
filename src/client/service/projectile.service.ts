@@ -7,7 +7,12 @@ import type { TProjectile } from "../generated/models/projectile.model";
 type AggregateModeOption = "volley" | "random";
 type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TResolvedProjectile[]) => number);
 type NumericAggregateConfig = {
-  [K in NumericKeys<TResolvedProjectile>]: [random?: AggregateMode, volley?: AggregateMode];
+  [K in NumericKeys<TResolvedProjectile>]: [
+    random?: AggregateMode,
+    volley?: AggregateMode,
+    defaultValue?: number,
+    required?: boolean,
+  ];
 };
 type BooleanAggregateConfig = {
   [K in BooleanKeys<TResolvedProjectile>]: true;
@@ -162,9 +167,9 @@ export class ProjectileService {
     // post-processing
     for (const key in res) {
       // after aggregation, damageChance is always set to 0 if unset, delete if not an estimation.
-      if (!res[key].damageChance && !res[key].isEstimated) {
+      if (!res[key].damageChance) {
+        if (!res[key].isEstimated) delete res[key].isEstimated;
         delete res[key].damageChance;
-        delete res[key].isEstimated;
       }
       const chance = finalProjectile[`${key}Chance` as keyof NumericAggregateConfig];
       if (chance !== undefined && chance < 1) {
@@ -178,11 +183,11 @@ export class ProjectileService {
   // All numeric (and percentage) keys that should be averaged.
   private static readonly _nAggregateConfig: NumericAggregateConfig = {
     gunId: [],
-    damage: ["avg", "sum"],
-    dps: ["avg", "sum"],
-    speed: ["avg", "avg"],
-    range: ["avg", "max"],
-    force: ["avg", "sum"],
+    damage: ["avg", "sum", 0, true],
+    dps: ["avg", "sum", 0, true],
+    speed: ["avg", "avg", 0, true],
+    range: ["avg", "max", 0, true],
+    force: ["avg", "sum", 0, true],
     poisonChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.poisonChance)],
     poisonDuration: ["avg", "avg"],
     speedChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.speedChance)],
@@ -202,7 +207,7 @@ export class ProjectileService {
     cheeseAmount: ["avg", "max"],
     numberOfBounces: ["avg", "avg"],
     chanceToDieOnBounce: ["avg", "avg"],
-    damageMultiplierOnBounce: ["avg", "avg"],
+    damageMultiplierOnBounce: ["avg", "avg", 1],
     averageSurvivingBounces: ["avg", "avg"],
     penetration: ["avg", "max"],
     homingRadius: ["avg", "max"],
@@ -304,13 +309,13 @@ export class ProjectileService {
     this._booleanConfigEntries((k) => (hasTrue[k] = false));
 
     for (const p of projectiles) {
-      this._numericConfigEntries((k, [random, volley]) => {
+      this._numericConfigEntries((k, [random, volley, defaultValue]) => {
         const m = mode === "random" ? random : volley;
 
         if (m === "max") {
           sums[k] = Math.max(sums[k], p[k] ?? 0);
         } else if (m === "avg" || m === "sum") {
-          sums[k] += p[k] ?? 0;
+          sums[k] += p[k] ?? defaultValue ?? 0;
         }
       });
 
@@ -343,7 +348,11 @@ export class ProjectileService {
       if (v) final[k] = v;
     });
     this._numericConfigEntries((k) => {
-      if (sums[k]) final[k] = sums[k];
+      const defaultvalue = this._nAggregateConfig[k][2] ?? 0;
+      const required = this._nAggregateConfig[k][3] ?? false;
+      if (sums[k] !== defaultvalue || required) {
+        final[k] = sums[k];
+      }
     });
     this._booleanConfigEntries((k) => {
       if (hasTrue[k]) final[k] = hasTrue[k];

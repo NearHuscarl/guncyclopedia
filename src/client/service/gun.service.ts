@@ -370,7 +370,6 @@ export class GunService {
           damage,
           dps: damage * shotsPerSecond,
           isEstimated: true,
-          damageChance: 0,
         });
       }
     }
