@@ -639,15 +639,14 @@ export class GunModelGenerator {
 
     const res: TProjectileMode[] = [];
     // TODO: add wood beam swing damage
+    // TODO: shellegun: beam dps should take charge time into account as magazine size !== max ammo
     // TODO: ShovelGunModifier
     // TODO: some projectile like from GunBow have force: 0, which could be wrong. Investigating...
     // TODO: search for *modifier.cs to collect more attributes for the projectile
-    // TODO: round that has explosion on impact count as another source of damage
     // TODO: Synergies: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
     //    ExportedProject/Assets/data/AAA_AdvSynergyManager.asset
     //    ExportedProject/Assets/Scripts/Assembly-CSharp/CustomSynergyType.cs
     // TODO: JK-47: fear effect
-    // TODO: Banana Projectile: Handle bounce + spawn modifier
     // TODO: add a badge next to best stat: https://fontawesome.com/icons/medal?f=classic&s=solid
     // Edge cases:
     // TODO: Rad gun: update modified reload time & animation speed on each level
@@ -819,7 +818,85 @@ export class GunModelGenerator {
     return this._buildAnimationFromName(gunDto, gunDto.gun.chargeAnimation ?? gunDto.gun.shootAnimation);
   }
 
+  private _repeatAnimationFrames(animation: TAnimation | undefined, repeat: number): TAnimation | undefined {
+    if (!animation) return;
+    const frames: TAnimation["frames"] = [];
+    for (let i = 0; i < repeat; i++) {
+      frames.push(...animation.frames);
+    }
+    animation.frames = frames;
+    return animation;
+  }
+
+  private async _buildSpecialIdleAnimation(gunDto: TGunDto): Promise<TAnimation | undefined> {
+    switch (gunDto.name) {
+      case "Life_Orb_Gun": {
+        let anim = this._buildAnimationFromName(gunDto, gunDto.gun.shootAnimation, {
+          wrapMode: "LoopFidget",
+          minFidgetDuration: 3,
+          maxFidgetDuration: 10,
+        });
+        anim = this._repeatAnimationFrames(anim, 4);
+        const idleAnim = this._buildAnimationFromSprite(gunDto.sprite);
+        anim?.frames.push(idleAnim!.frames[0]);
+        return anim;
+      }
+      case "Yari_Rocket_Launcher": {
+        let anim = this._buildAnimationFromName(gunDto, gunDto.gun.shootAnimation, {
+          wrapMode: "LoopFidget",
+          minFidgetDuration: 4,
+          maxFidgetDuration: 8,
+        });
+        anim = this._repeatAnimationFrames(anim, 5);
+        anim?.frames.push(anim.frames[0]);
+        return anim;
+      }
+      case "Minigun":
+      case "Minigun_Synergy": {
+        let anim = this._buildAnimationFromName(gunDto, gunDto.gun.shootAnimation, {
+          wrapMode: "LoopFidget",
+          minFidgetDuration: 3,
+          maxFidgetDuration: 10,
+        });
+        anim = this._repeatAnimationFrames(anim, 5);
+        anim?.frames.push(anim.frames[0]);
+        return anim;
+      }
+      case "Electric_Rifle_Synergy": {
+        return this._buildAnimationFromName(gunDto, gunDto.gun.shootAnimation, {
+          wrapMode: "LoopFidget",
+          minFidgetDuration: 2,
+          maxFidgetDuration: 6,
+        });
+      }
+      case "Beehive_Synergy": {
+        let anim = this._buildAnimationFromName(gunDto, gunDto.gun.shootAnimation, {
+          wrapMode: "LoopFidget",
+          minFidgetDuration: 3,
+          maxFidgetDuration: 10,
+        });
+        anim = this._repeatAnimationFrames(anim, 3);
+        anim?.frames.push(anim.frames[0]);
+        return anim;
+      }
+      case "Guzheng": {
+        let anim = this._buildAnimationFromName(gunDto, gunDto.gun.shootAnimation, {
+          wrapMode: "LoopFidget",
+          minFidgetDuration: 3,
+          maxFidgetDuration: 8,
+        });
+        const idleAnim = this._buildAnimationFromSprite(gunDto.sprite);
+        anim = this._repeatAnimationFrames(anim, 4);
+        anim?.frames.push(idleAnim!.frames[0]);
+        return anim;
+      }
+    }
+  }
+
   private async _buildGunIdleAnimation(gunDto: TGunDto): Promise<TAnimation> {
+    const idleAnimation = await this._buildSpecialIdleAnimation(gunDto);
+    if (idleAnimation) return idleAnimation;
+
     const animationName = gunDto.gun.idleAnimation;
     if (animationName) {
       let texturePath = "";
@@ -877,9 +954,10 @@ export class GunModelGenerator {
     throw new Error(chalk.red(`No valid sprite found for gun ${gunDto.name}`));
   }
 
-  private async _buildDominantColors(gunDto: TGunDto): Promise<string[]> {
-    if (gunDto.gun.idleAnimation) {
-      const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, gunDto.gun.idleAnimation);
+  private async _buildDominantColors(gunDto: TGunDto, name: string): Promise<string[]> {
+    const isAnimationName = !Number.isNaN(Number(name.split("_").at(-1))); // sprite name ends with _001
+    if (isAnimationName) {
+      const clip = this._spriteAnimatorRepo.getClip(gunDto.spriteAnimator.library, name);
       if (clip) {
         const image = await this._spriteService.getSpriteImage(
           clip?.frames[0].spriteCollection.$$scriptPath,
@@ -1012,6 +1090,7 @@ export class GunModelGenerator {
 
       const startingItemOf = this._playerService.getOwners(entry.pickupObjectId, "startingGunIds");
       const startingAlternateItemOf = this._playerService.getOwners(entry.pickupObjectId, "startingAlternateGunIds");
+      const idleAnimation = await this._buildGunIdleAnimation(gunDto);
 
       const gun: TGun = {
         ...texts,
@@ -1028,9 +1107,9 @@ export class GunModelGenerator {
         featureFlags: [],
         projectileModes: this._buildProjectileModes(gunDto),
         attribute: this._buildAttribute(gunDto),
-        colors: await this._buildDominantColors(gunDto),
+        colors: await this._buildDominantColors(gunDto, idleAnimation.name),
         animation: {
-          idle: await this._buildGunIdleAnimation(gunDto),
+          idle: idleAnimation,
           // Fix Turbo-Gun reload animation getting stuck in a loop
           reload: this._buildAnimationFromName(gunDto, gunDto.gun.reloadAnimation, { wrapMode: "Once" }),
           intro: this._buildAnimationFromName(gunDto, gunDto.gun.introAnimation, { wrapMode: "Once" }),

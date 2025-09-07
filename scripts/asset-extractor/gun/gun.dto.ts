@@ -144,6 +144,7 @@ const GunData = z
     idleAnimation: z.string().nullable(),
     shootAnimation: z.string().nullable(),
     chargeAnimation: z.string().nullable(),
+    emptyAnimation: z.string().nullable(),
     introAnimation: z.string().nullable(),
     IsTrickGun: BinaryOption,
     alternateVolley: AssetExternalReference,

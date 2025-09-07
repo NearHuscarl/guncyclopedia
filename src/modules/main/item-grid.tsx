@@ -57,11 +57,11 @@ const GridItemImpl = ({ id, isSelected, isComparisonMode }: TGridItemProps) => {
       onMouseEnter={() => isComparisonMode && setHoverGun(gun.id)}
       onClick={() => setAppState({ selectedId: gun.id })}
       className={clsx({
-        "h-14 p-3": true,
+        "h-12 p-2": true,
         "bg-primary!": isSelected,
       })}
     >
-      <AnimatedSprite animation={gun.animation.idle} scale={2.5} />
+      <AnimatedSprite animation={gun.animation.idle} scale={2} />
     </Button>
   );
 };
