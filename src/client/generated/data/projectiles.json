@@ -1075,8 +1075,16 @@
     "speed": 1,
     "range": 1,
     "force": 0,
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "isEstimated": true,
+        "source": "damageAllEnemies",
+        "damage": 210
+      }
+    ],
     "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 100,
     "animation": {
       "name": "bullet_variant_001",
       "fps": 0,
@@ -1326,8 +1334,16 @@
     "speed": 1,
     "range": 1,
     "force": 0,
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "isEstimated": true,
+        "source": "damageAllEnemies",
+        "damage": 30
+      }
+    ],
     "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 100,
     "animation": {
       "name": "bullet_variant_001",
       "fps": 0,
@@ -5201,9 +5217,16 @@
     "speed": 10000,
     "range": 30,
     "force": 10,
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "isEstimated": true,
+        "source": "damageAllEnemies",
+        "damage": 52.5
+      }
+    ],
     "damageAllEnemies": true,
-    "damageAllEnemiesRadius": 10,
+    "damageAllEnemiesRadius": 10000,
     "isHoming": true,
     "homingRadius": 50,
     "homingAngularVelocity": 1000,
@@ -10519,8 +10542,16 @@
     "speed": 1,
     "range": 1,
     "force": 0,
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "isEstimated": true,
+        "source": "damageAllEnemies",
+        "damage": 30
+      }
+    ],
     "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 100,
     "animation": {
       "name": "bullet_variant_001",
       "fps": 0,

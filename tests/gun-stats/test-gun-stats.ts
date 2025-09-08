@@ -53,8 +53,7 @@ export function forEachGunStats(gun: TGun, callback: TForEachGunStatsCallback) {
 }
 
 function toGunStatsSnapshot(gunStats: Omit<TGunStats, "mode">) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const cloned = cloneDeep(gunStats) as any;
+  const cloned = cloneDeep(gunStats);
 
   cloned.damage.details = gunStats.damage.details.filter((d) => !d.tooltip.startsWith("Base"));
   cloned.dps.details = gunStats.dps.details.filter((d) => !d.tooltip.startsWith("Base"));
@@ -120,7 +119,7 @@ export function testGunStats(gunId: number, gunName: string) {
       const [i] = variants[0].split("-");
       if (variantCountLookup[i] === 2 && variants.length !== 2) {
         throw new Error(
-          `If there are only 2 stats: 1 aggregated and 1 single module, they must be the same but [mode=${i}] got ${variants.length}: ${variants.join(",")}.`,
+          `If there are only 2 stats: 1 aggregated and 1 single module, they must be structurally the same but [mode=${i}] got ${variants.length}: ${variants.join(",")}.`,
         );
       }
     }

@@ -146,5 +146,5 @@ function AnimatedSpriteImpl({ animation, scale = 1, className, onFinished }: TAn
 }
 
 export const AnimatedSprite = memo(AnimatedSpriteImpl, (prev, next) => {
-  return prev.animation.name === next.animation.name && prev.scale === next.scale;
+  return prev.animation.name === next.animation.name && prev.scale === next.scale && prev.className === next.className;
 });

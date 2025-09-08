@@ -3718,7 +3718,8 @@
     "maxAmmo": 60,
     "reloadTime": 2,
     "featureFlags": [
-      "damageAllEnemies"
+      "damageAllEnemies",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -8968,6 +8969,7 @@
       "hasHomingProjectiles"
     ],
     "attribute": {},
+    "video": "https://youtu.be/YoWC1tvW8mA?t=1374",
     "colors": [
       "brown",
       "orange",
@@ -15541,7 +15543,8 @@
     "featureFlags": [
       "hasSpecialProjectiles",
       "hasHomingProjectiles",
-      "damageAllEnemies"
+      "damageAllEnemies",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "video": "https://youtu.be/bLQdRTNGOUU?t=16",
@@ -15636,7 +15639,8 @@
     "featureFlags": [
       "hasSpecialProjectiles",
       "hasHomingProjectiles",
-      "damageAllEnemies"
+      "damageAllEnemies",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [
@@ -30883,7 +30887,8 @@
     "maxAmmo": 200,
     "reloadTime": 0.54,
     "featureFlags": [
-      "damageAllEnemies"
+      "damageAllEnemies",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [

@@ -10,6 +10,7 @@ import {
   Skull,
   Snail,
   Snowflake,
+  SquareAsterisk,
   WandSparkles,
   Wind,
 } from "lucide-react";
@@ -71,6 +72,7 @@ import { Bee } from "@/components/icons/bee";
 import { Chest } from "@/components/icons/chest";
 import { HomingLevel, ProjectileService } from "@/client/service/projectile.service";
 import { AmmoIcon } from "@/components/icons/ammo";
+import { DamageAllEnemiesRadius } from "@/client/generated/models/projectile.model";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -676,6 +678,30 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <strong>Blackhole Projectile</strong>
             <br />
             Attracts enemies and bullets towards it while dealing continuous damage to the enemies at the center.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectile.damageAllEnemies && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              <SquareAsterisk size={20} className={"[&_rect_,&_path]:stroke-orange-500"} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Damage All Enemies</strong>
+            <br />
+            {projectile.damageAllEnemiesRadius === DamageAllEnemiesRadius.Room && (
+              <>Projectile damages all enemies in the room.</>
+            )}
+            {projectile.damageAllEnemiesRadius === DamageAllEnemiesRadius.Screen && (
+              <>Projectile damages all enemies on the screen.</>
+            )}
+            {(projectile.damageAllEnemiesRadius || 0) < 10_000 && (
+              <>
+                Projectile damages all enemies within a radius of <strong>{projectile.damageAllEnemiesRadius}</strong>.
+              </>
+            )}
           </TooltipContent>
         </Tooltip>
       )}

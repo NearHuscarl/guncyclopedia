@@ -211,7 +211,7 @@ export class ProjectileService {
     averageSurvivingBounces: ["avg", "avg"],
     penetration: ["avg", "max"],
     homingRadius: ["avg", "max"],
-    homingAngularVelocity: ["avg", "avg"],
+    homingAngularVelocity: ["avg", "max"],
     beamChargeTime: ["max", "max"],
     beamStatusEffectChancePerSecond: ["max", "max"],
     explosionForce: ["avg", "sum"],

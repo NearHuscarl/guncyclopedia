@@ -2545,11 +2545,23 @@ exports[`Gun > BSG (21) > [variants=0-1-0,0-2-0] 1`] = `
 "{
   "damage": {
     "base": 70,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 210
+      }
+    ]
   },
   "dps": {
     "base": 17.5,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 52.5
+      }
+    ]
   },
   "fireRate": 15,
   "force": {
@@ -2560,9 +2572,17 @@ exports[`Gun > BSG (21) > [variants=0-1-0,0-2-0] 1`] = `
   "maxAmmo": 25,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 210,
+        "dps": 52.5,
+        "isEstimated": true,
+        "source": "damageAllEnemies"
+      }
+    ],
     "damage": 70,
     "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 100,
     "dps": 17.5,
     "force": 0,
     "id": "BSG_Invisible_Projectile",
@@ -2578,9 +2598,17 @@ exports[`Gun > BSG (21) > [variants=0-1-0,0-2-0] 1`] = `
     "cooldownTime": 4,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 210,
+            "dps": 52.5,
+            "isEstimated": true,
+            "source": "damageAllEnemies"
+          }
+        ],
         "damage": 70,
         "damageAllEnemies": true,
+        "damageAllEnemiesRadius": 100,
         "dps": 17.5,
         "force": 0,
         "id": "BSG_Invisible_Projectile",
@@ -2607,14 +2635,19 @@ exports[`Gun > BSG (21) > [variants=0-A-A] 1`] = `
     "base": 50,
     "details": [
       {
+        "isEstimated": false,
+        "tooltip": "Damage from spawned projectile {{P:BSG_Invisible_Projectile}}: {{VALUE}}",
+        "value": 140
+      },
+      {
         "isEstimated": true,
         "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
         "value": 150
       },
       {
         "isEstimated": true,
-        "tooltip": "Damage from spawned projectile {{P:BSG_Invisible_Projectile}}: {{VALUE}}",
-        "value": 140
+        "tooltip": "Estimated damage to all enemies from spawned projectile: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 420
       }
     ]
   },
@@ -2622,14 +2655,19 @@ exports[`Gun > BSG (21) > [variants=0-A-A] 1`] = `
     "base": 12.5,
     "details": [
       {
+        "isEstimated": false,
+        "tooltip": "Damage from spawned projectile {{P:BSG_Invisible_Projectile}}: {{VALUE}}",
+        "value": 35
+      },
+      {
         "isEstimated": true,
         "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
         "value": 37.5
       },
       {
         "isEstimated": true,
-        "tooltip": "Damage from spawned projectile {{P:BSG_Invisible_Projectile}}: {{VALUE}}",
-        "value": 35
+        "tooltip": "Estimated damage to all enemies from spawned projectile: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 105
       }
     ]
   },
@@ -2648,12 +2686,19 @@ exports[`Gun > BSG (21) > [variants=0-A-A] 1`] = `
         "dps": 37.5,
         "isEstimated": true,
         "source": "pierce"
+      },
+      {
+        "damage": 420,
+        "dps": 105,
+        "isEstimated": true,
+        "source": "damageAllEnemies"
       }
     ],
     "averageSurvivingBounces": 0.333,
     "canPenetrateObjects": true,
     "damage": 190,
     "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 100,
     "dps": 47.5,
     "force": 30,
     "id": "BSG_Projectile,BSG_Invisible_Projectile",
@@ -2758,9 +2803,17 @@ exports[`Gun > BSG (21) > modes 1`] = `
         "moduleCount": 2,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 210,
+                "dps": 52.5,
+                "isEstimated": true,
+                "source": "damageAllEnemies"
+              }
+            ],
             "damage": 70,
             "damageAllEnemies": true,
+            "damageAllEnemiesRadius": 100,
             "dps": 17.5,
             "force": 0,
             "id": "BSG_Invisible_Projectile",
@@ -3231,7 +3284,7 @@ exports[`Gun > Banana (478) > [variants=0-A-A] 1`] = `
       {
         "isEstimated": true,
         "tooltip": "Explosion damage from spawned projectile {{P:Banana_Spawn_Projectile}}: {{VALUE}}",
-        "value": 40
+        "value": 23.51
       }
     ]
   },
@@ -3629,7 +3682,7 @@ exports[`Gun > Banana (688) > [variants=0-A-A] 1`] = `
       {
         "isEstimated": true,
         "tooltip": "Explosion damage from spawned projectile {{P:Banana_Spawn_Projectile_Synergy}}: {{VALUE}}",
-        "value": 40
+        "value": 23.51
       }
     ]
   },
@@ -9530,7 +9583,7 @@ exports[`Gun > Bullet (503) > [variants=0-A-A] 1`] = `
     "damage": 15,
     "dps": 40.909,
     "force": 37,
-    "homingAngularVelocity": 66.667,
+    "homingAngularVelocity": 100,
     "homingRadius": 2,
     "id": "Gun_Projectile,Bullet_Gun_Spawn_Projectile",
     "isHoming": true,
@@ -10734,11 +10787,23 @@ exports[`Gun > Camera (481) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 10,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 30
+      }
+    ]
   },
   "dps": {
     "base": 10.526,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 31.579
+      }
+    ]
   },
   "fireRate": 63.158,
   "force": {
@@ -10749,9 +10814,17 @@ exports[`Gun > Camera (481) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 60,
   "precision": 76.667,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 30,
+        "dps": 31.579,
+        "isEstimated": true,
+        "source": "damageAllEnemies"
+      }
+    ],
     "damage": 10,
     "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 100,
     "dps": 10.526,
     "force": 0,
     "id": "Camera_Gun_Projectile",
@@ -10765,9 +10838,17 @@ exports[`Gun > Camera (481) > [variants=0-A-A,0-0-0] 1`] = `
     "cooldownTime": 0.2,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 30,
+            "dps": 31.579,
+            "isEstimated": true,
+            "source": "damageAllEnemies"
+          }
+        ],
         "damage": 10,
         "damageAllEnemies": true,
+        "damageAllEnemiesRadius": 100,
         "dps": 10.526,
         "force": 0,
         "id": "Camera_Gun_Projectile",
@@ -10800,9 +10881,17 @@ exports[`Gun > Camera (481) > modes 1`] = `
         "cooldownTime": 0.2,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 30,
+                "dps": 31.579,
+                "isEstimated": true,
+                "source": "damageAllEnemies"
+              }
+            ],
             "damage": 10,
             "damageAllEnemies": true,
+            "damageAllEnemiesRadius": 100,
             "dps": 10.526,
             "force": 0,
             "id": "Camera_Gun_Projectile",
@@ -24161,7 +24250,7 @@ exports[`Gun > Gunslinger's Ashes (198) > [variants=0-A-A] 1`] = `
     "damage": 17,
     "dps": 21.25,
     "force": 34,
-    "homingAngularVelocity": 90,
+    "homingAngularVelocity": 180,
     "homingRadius": 10,
     "id": "Boo_Projectile,Boo_Small_Projectile",
     "isHoming": true,
@@ -40905,7 +40994,7 @@ exports[`Gun > Particulator (228) > [variants=0-A-A] 1`] = `
     "damage": 100,
     "dps": 41.667,
     "force": 58,
-    "homingAngularVelocity": 490.909,
+    "homingAngularVelocity": 540,
     "homingRadius": 100,
     "id": "Distortion_Launcher_Projectile_Large,Distortion_Launcher_Projectile_Small",
     "isHoming": true,
@@ -46144,11 +46233,23 @@ exports[`Gun > Raiden Coil (107) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 17.5,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 52.5
+      }
+    ]
   },
   "dps": {
     "base": 17.5,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 52.5
+      }
+    ]
   },
   "fireRate": 10000,
   "force": {
@@ -46159,10 +46260,17 @@ exports[`Gun > Raiden Coil (107) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 500,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 52.5,
+        "dps": 52.5,
+        "isEstimated": true,
+        "source": "damageAllEnemies"
+      }
+    ],
     "damage": 17.5,
     "damageAllEnemies": true,
-    "damageAllEnemiesRadius": 10,
+    "damageAllEnemiesRadius": 10000,
     "dps": 17.5,
     "force": 10,
     "homingAngularVelocity": 1000,
@@ -46179,10 +46287,17 @@ exports[`Gun > Raiden Coil (107) > [variants=0-A-A,0-0-0] 1`] = `
     "cooldownTime": 1,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 52.5,
+            "dps": 52.5,
+            "isEstimated": true,
+            "source": "damageAllEnemies"
+          }
+        ],
         "damage": 17.5,
         "damageAllEnemies": true,
-        "damageAllEnemiesRadius": 10,
+        "damageAllEnemiesRadius": 10000,
         "dps": 17.5,
         "force": 10,
         "homingAngularVelocity": 1000,
@@ -46218,10 +46333,17 @@ exports[`Gun > Raiden Coil (107) > modes 1`] = `
         "cooldownTime": 1,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 52.5,
+                "dps": 52.5,
+                "isEstimated": true,
+                "source": "damageAllEnemies"
+              }
+            ],
             "damage": 17.5,
             "damageAllEnemies": true,
-            "damageAllEnemiesRadius": 10,
+            "damageAllEnemiesRadius": 10000,
             "dps": 17.5,
             "force": 10,
             "homingAngularVelocity": 1000,
@@ -46246,11 +46368,23 @@ exports[`Gun > Raiden Coil (712) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 17.5,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 52.5
+      }
+    ]
   },
   "dps": {
     "base": 17.5,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 52.5
+      }
+    ]
   },
   "fireRate": 10000,
   "force": {
@@ -46261,10 +46395,17 @@ exports[`Gun > Raiden Coil (712) > [variants=0-0-0] 1`] = `
   "maxAmmo": 500,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 52.5,
+        "dps": 52.5,
+        "isEstimated": true,
+        "source": "damageAllEnemies"
+      }
+    ],
     "damage": 17.5,
     "damageAllEnemies": true,
-    "damageAllEnemiesRadius": 10,
+    "damageAllEnemiesRadius": 10000,
     "dps": 17.5,
     "force": 10,
     "homingAngularVelocity": 1000,
@@ -46281,10 +46422,17 @@ exports[`Gun > Raiden Coil (712) > [variants=0-0-0] 1`] = `
     "cooldownTime": 1,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 52.5,
+            "dps": 52.5,
+            "isEstimated": true,
+            "source": "damageAllEnemies"
+          }
+        ],
         "damage": 17.5,
         "damageAllEnemies": true,
-        "damageAllEnemiesRadius": 10,
+        "damageAllEnemiesRadius": 10000,
         "dps": 17.5,
         "force": 10,
         "homingAngularVelocity": 1000,
@@ -46370,11 +46518,23 @@ exports[`Gun > Raiden Coil (712) > [variants=0-A-A] 1`] = `
 "{
   "damage": {
     "base": 28.5,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 52.5
+      }
+    ]
   },
   "dps": {
     "base": 34.423,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 52.5
+      }
+    ]
   },
   "fireRate": 10000,
   "force": {
@@ -46385,13 +46545,20 @@ exports[`Gun > Raiden Coil (712) > [variants=0-A-A] 1`] = `
   "maxAmmo": 500,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 52.5,
+        "dps": 52.5,
+        "isEstimated": true,
+        "source": "damageAllEnemies"
+      }
+    ],
     "damage": 28.5,
     "damageAllEnemies": true,
-    "damageAllEnemiesRadius": 10,
+    "damageAllEnemiesRadius": 10000,
     "dps": 34.423,
     "force": 28,
-    "homingAngularVelocity": 733.333,
+    "homingAngularVelocity": 1000,
     "homingRadius": 50,
     "id": "RaidenLaserBeam,Raiden_Projectile",
     "isHoming": true,
@@ -46405,13 +46572,20 @@ exports[`Gun > Raiden Coil (712) > [variants=0-A-A] 1`] = `
     "cooldownTime": 1,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 52.5,
+            "dps": 52.5,
+            "isEstimated": true,
+            "source": "damageAllEnemies"
+          }
+        ],
         "damage": 28.5,
         "damageAllEnemies": true,
-        "damageAllEnemiesRadius": 10,
+        "damageAllEnemiesRadius": 10000,
         "dps": 34.423,
         "force": 28,
-        "homingAngularVelocity": 733.333,
+        "homingAngularVelocity": 1000,
         "homingRadius": 50,
         "id": "RaidenLaserBeam,Raiden_Projectile",
         "isHoming": true,
@@ -46444,10 +46618,17 @@ exports[`Gun > Raiden Coil (712) > modes 1`] = `
         "cooldownTime": 1,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 52.5,
+                "dps": 52.5,
+                "isEstimated": true,
+                "source": "damageAllEnemies"
+              }
+            ],
             "damage": 17.5,
             "damageAllEnemies": true,
-            "damageAllEnemiesRadius": 10,
+            "damageAllEnemiesRadius": 10000,
             "dps": 17.5,
             "force": 10,
             "homingAngularVelocity": 1000,
@@ -57008,7 +57189,7 @@ exports[`Gun > Stinger (92) > [variants=0-A-A] 1`] = `
     "explosionForce": 75,
     "explosionRadius": 3,
     "force": 26,
-    "homingAngularVelocity": 133.333,
+    "homingAngularVelocity": 150,
     "homingRadius": 100,
     "id": "BeeProjectile,Stinger_Projectile",
     "isBee": true,
@@ -57050,7 +57231,7 @@ exports[`Gun > Stinger (92) > [variants=0-A-A] 1`] = `
         "explosionForce": 75,
         "explosionRadius": 3,
         "force": 16,
-        "homingAngularVelocity": 112.5,
+        "homingAngularVelocity": 150,
         "homingRadius": 100,
         "id": "BeeProjectile,Stinger_Projectile",
         "isBee": true,
@@ -59976,7 +60157,7 @@ exports[`Gun > The Exotic (563) > [variants=0-A-A] 1`] = `
       {
         "isEstimated": false,
         "tooltip": "Explosion damage from spawned projectile {{P:Exotic_Submissile}}: {{VALUE}}",
-        "value": 35
+        "value": 17.5
       }
     ]
   },
@@ -60007,7 +60188,7 @@ exports[`Gun > The Exotic (563) > [variants=0-A-A] 1`] = `
     "explosionForce": 180,
     "explosionRadius": 3,
     "force": 220,
-    "homingAngularVelocity": 385,
+    "homingAngularVelocity": 440,
     "homingRadius": 100,
     "id": "Exotic_Projectile,Exotic_Submissile",
     "isHoming": true,
@@ -60382,7 +60563,7 @@ exports[`Gun > The Exotic (659) > [variants=0-A-A] 1`] = `
       {
         "isEstimated": false,
         "tooltip": "Explosion damage from spawned projectile {{P:Chamber_Gun_Catacomb_Rocket}}: {{VALUE}}",
-        "value": 60
+        "value": 30
       }
     ]
   },
@@ -60417,7 +60598,7 @@ exports[`Gun > The Exotic (659) > [variants=0-A-A] 1`] = `
     "freezeAmount": 70,
     "freezeChance": 1,
     "freezeDuration": 2,
-    "homingAngularVelocity": 352,
+    "homingAngularVelocity": 440,
     "homingRadius": 100,
     "id": "Chamber_Gun_Catacomb_Projectile,Chamber_Gun_Catacomb_Rocket",
     "isHoming": true,
@@ -62788,7 +62969,7 @@ exports[`Gun > The Scrambler (445) > [variants=0-A-A] 1`] = `
     "damage": 51,
     "dps": 42.5,
     "force": 75,
-    "homingAngularVelocity": 225,
+    "homingAngularVelocity": 270,
     "homingRadius": 100,
     "id": "Egg_Projectile,EggBulletProjectile",
     "isBeeLikeTargetBehavior": true,
@@ -63363,11 +63544,23 @@ exports[`Gun > Time Stopper (618) > [variants=1-A-A,1-0-0] 1`] = `
 "{
   "damage": {
     "base": 10,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 30
+      }
+    ]
   },
   "dps": {
     "base": 6.25,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "value": 18.75
+      }
+    ]
   },
   "fireRate": 37.5,
   "force": {
@@ -63378,9 +63571,17 @@ exports[`Gun > Time Stopper (618) > [variants=1-A-A,1-0-0] 1`] = `
   "maxAmmo": 200,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 30,
+        "dps": 18.75,
+        "isEstimated": true,
+        "source": "damageAllEnemies"
+      }
+    ],
     "damage": 10,
     "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 100,
     "dps": 6.25,
     "force": 0,
     "id": "Mega_Flash_Projectile",
@@ -63394,9 +63595,17 @@ exports[`Gun > Time Stopper (618) > [variants=1-A-A,1-0-0] 1`] = `
     "cooldownTime": 0.07,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 30,
+            "dps": 18.75,
+            "isEstimated": true,
+            "source": "damageAllEnemies"
+          }
+        ],
         "damage": 10,
         "damageAllEnemies": true,
+        "damageAllEnemiesRadius": 100,
         "dps": 6.25,
         "force": 0,
         "id": "Mega_Flash_Projectile",
@@ -63457,9 +63666,17 @@ exports[`Gun > Time Stopper (618) > modes 1`] = `
         "cooldownTime": 0.07,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 30,
+                "dps": 18.75,
+                "isEstimated": true,
+                "source": "damageAllEnemies"
+              }
+            ],
             "damage": 10,
             "damageAllEnemies": true,
+            "damageAllEnemiesRadius": 100,
             "dps": 6.25,
             "force": 0,
             "id": "Mega_Flash_Projectile",

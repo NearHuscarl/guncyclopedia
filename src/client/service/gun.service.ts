@@ -193,6 +193,8 @@ export class GunService {
         return `Bee sting damage: {{VALUE}}`;
       case "pierce":
         return "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.";
+      case "damageAllEnemies":
+        return "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.";
       default:
         return `${startCase(source)} damage: {{VALUE}}`;
     }
@@ -268,7 +270,9 @@ export class GunService {
       for (const [_level, modules] of Object.entries(spawnHierarchy)) {
         const spawnedProjectile = GunService.createAggregatedVolley(modules, true).projectiles[0];
         const { damage } = spawnedProjectile;
-        const isEstimated = ProjectileService.getHomingLevel(spawnedProjectile) <= HomingLevel.Weak;
+        const isEstimated =
+          ProjectileService.getHomingLevel(spawnedProjectile) <= HomingLevel.Weak &&
+          !spawnedProjectile.damageAllEnemies;
         const spawner = GameObjectService.getProjectile(spawnedProjectile.spawnedBy!);
         const shotPerSecond2 = spawner.spawnProjectilesInflight
           ? spawner.spawnProjectilesInflightPerSecond!
@@ -280,14 +284,27 @@ export class GunService {
           tooltip: `Damage from spawned projectile {{P:${modules[0].projectiles[0].id}}}: {{VALUE}}`,
         });
 
-        const explosionDmg = spawnedProjectile.additionalDamage.find((d) => d.source === "explosion");
-        if (explosionDmg?.damage) {
-          extraDamage.push({
-            value: explosionDmg.damage,
-            isEstimated: isEstimated,
-            chance: explosionDmg.damageChance,
-            tooltip: `Explosion damage from spawned projectile {{P:${modules[0].projectiles[0].id}}}: {{VALUE}}`,
-          });
+        if (spawnedProjectile.explosionRadius) {
+          const explosionDmg = spawnedProjectile.additionalDamage.find((d) => d.source === "explosion");
+          if (explosionDmg) {
+            extraDamage.push({
+              value: type === "dps" ? explosionDmg.dps : explosionDmg.damage!,
+              isEstimated: isEstimated,
+              chance: explosionDmg.damageChance,
+              tooltip: `Explosion damage from spawned projectile {{P:${modules[0].projectiles[0].id}}}: {{VALUE}}`,
+            });
+          }
+        }
+        if (spawnedProjectile.damageAllEnemies) {
+          const damageAllEnemiesDmg = spawnedProjectile.additionalDamage.find((d) => d.source === "damageAllEnemies");
+          if (damageAllEnemiesDmg) {
+            extraDamage.push({
+              value: type === "dps" ? damageAllEnemiesDmg.dps : damageAllEnemiesDmg.damage!,
+              isEstimated: true,
+              chance: damageAllEnemiesDmg.damageChance,
+              tooltip: `Estimated damage to all enemies from spawned projectile: {{VALUE}}.<br/>Assuming 4 enemies in range on average.`,
+            });
+          }
         }
       }
     }

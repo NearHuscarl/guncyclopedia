@@ -6,6 +6,7 @@ export const videos = new Map<number, string>([
   [345, "https://youtu.be/TtqLSkuOM5g?t=74"],
   [369, "https://youtu.be/-dDqU55gydI?t=41"],
   [474, "https://youtu.be/zJ1MiifNI5A?t=22"],
+  [482, "https://youtu.be/YoWC1tvW8mA?t=1374"],
   [551, "https://youtu.be/LI8hGCKaRE8?t=15"],
   [562, "https://youtu.be/gcrG3pn21oI?t=473"],
   [599, "https://youtu.be/icERwXyyCDU?t=1048"],

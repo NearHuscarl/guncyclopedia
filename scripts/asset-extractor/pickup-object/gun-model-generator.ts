@@ -398,6 +398,7 @@ export class GunModelGenerator {
 
     if (projScript.endsWith("InstantlyDamageAllProjectile.cs.meta")) {
       proj.damageAllEnemies = true;
+      proj.damageAllEnemiesRadius = 100; // hardcoded in the script
     }
     if (projDto.blackHoleDoer) {
       proj.isBlackhole = true;
@@ -434,7 +435,9 @@ export class GunModelGenerator {
       proj.homingAngularVelocity = 1000; // instant auto aim and grab the enemies
       if (projDto.raidenBeamController.maxTargets === -1) {
         proj.damageAllEnemies = true;
-        proj.damageAllEnemiesRadius = projDto.raidenBeamController.targetType;
+        proj.damageAllEnemiesRadius = projDto.raidenBeamController.targetType * 1000; // numbers >= 10000 are values for screen/room enum
+      } else {
+        // TODO: handle maxTargets limitation
       }
       this._featureFlags.add("hasSpecialProjectiles");
     }
@@ -485,6 +488,12 @@ export class GunModelGenerator {
       this._featureFlags.add("hasHomingProjectiles");
     }
     if (proj.damageAllEnemies) {
+      proj.additionalDamage.push({
+        type: "instant",
+        source: "damageAllEnemies",
+        isEstimated: true,
+        damage: proj.damage * 3, // assuming 4 enemies in range on average
+      });
       this._featureFlags.add("damageAllEnemies");
     }
 

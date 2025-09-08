@@ -3,8 +3,8 @@ import { Animation, CompactedFrame, RichFrame } from "./animation.model.ts";
 import { Percentage } from "./schema.ts";
 
 export const DamageAllEnemiesRadius = {
-  Screen: 10,
-  Room: 20,
+  Screen: 10000,
+  Room: 20000,
 } as const;
 
 export type TStatusEffectProp =
@@ -53,6 +53,7 @@ export const DamageDetail = z.object({
     "transmogrification",
     "devolver",
     "bee",
+    "damageAllEnemies",
   ]),
   damage: z.number(),
 });
