@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import isUndefined from "lodash/isUndefined";
 import clsx from "clsx";
+import { ArrowLeftRight } from "lucide-react";
 import { H2, H3 } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
-import { AnimatedSprite } from "../shared/components/animated-sprite";
-import { AnimatedSpriteSeries } from "../shared/components/animated-sprite-series";
 import { Quality } from "./quality";
 import { StatBar } from "./stat-bar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -15,16 +13,15 @@ import { GunService } from "@/client/service/gun.service";
 import { ProjectileService } from "@/client/service/projectile.service";
 import { Features } from "./features";
 import { StatStackBar } from "./stat-stack-bar";
-import { ArrowLeftRight } from "lucide-react";
 import { NumericValue } from "./numeric-value";
 import { formatNumber } from "@/lib/lang";
 import { AmmoSet } from "./ammo-set";
 import { GunAttributes } from "./gun-attributes";
 import { ShootStyle } from "./shoot-style";
-import { useGunStore } from "../shared/store/gun.store";
 import { DebugData } from "./debug-data";
 import { useIsDebug } from "../shared/hooks/useDebug";
-import type { TGun } from "@/client/generated/models/gun.model";
+import { GunPortrait } from "./gun-portrait";
+import { AnimatedSprite } from "../shared/components/animated-sprite";
 
 // Attributes
 // Long Range | Mid Range | Close Range: range
@@ -33,52 +30,6 @@ import type { TGun } from "@/client/generated/models/gun.model";
 // Aggressive: High ROF, Low Precision
 // Accurate: At least Steady ROF, High Precision
 // Unpredictable: Large damage range
-
-// Sometimes the reload animation is cooler than the intro one.
-const forceUseReloadAsIntroAnimation = new Set([387]);
-
-function MainGunSprite({ gun, hoverGun, mode }: { gun: TGun; hoverGun?: TGun; mode: string }) {
-  const useChargeAnimation = useGunStore((state) => state.useChargeAnimation);
-  let animationName: keyof TGun["animation"] = "idle";
-  const chargeAnimation = gun.animation.charge ?? gun.animation.idle; // gamma ray doesn't have charge & shooting anim
-
-  if (useChargeAnimation) animationName = "charge";
-
-  return (
-    <div className="flex items-center justify-center h-36 gap-10">
-      {gun.attribute.trickGun ? (
-        <AnimatedSpriteSeries
-          key={`${gun.id}-${mode}`}
-          scale={6}
-          animations={(mode === "Alternate"
-            ? [gun.animation.reload, gun.animation.alternateIdle]
-            : [gun.animation.alternateReload, gun.animation.idle]
-          ).filter((a) => !isUndefined(a))}
-        />
-      ) : !useChargeAnimation ? (
-        <AnimatedSpriteSeries
-          key={`${gun.id}-${animationName}`}
-          scale={6}
-          // TODO: moonscraper charge animation doesn't exist
-          animations={[
-            gun.animation.intro && !forceUseReloadAsIntroAnimation.has(gun.id)
-              ? gun.animation.intro
-              : gun.animation.reload,
-            gun.animation.idle,
-          ].filter((a) => !isUndefined(a))}
-        />
-      ) : (
-        <AnimatedSprite key={`${gun.id}-${animationName}`} scale={6} animation={chargeAnimation} />
-      )}
-      {hoverGun && hoverGun.id !== gun.id && (
-        <>
-          <ArrowLeftRight className="fill-primary" />
-          <AnimatedSprite key={hoverGun.id} animation={hoverGun.animation.idle} scale={6} />
-        </>
-      )}
-    </div>
-  );
-}
 
 export function DetailSection() {
   const isDebug = useIsDebug();
@@ -156,7 +107,15 @@ export function DetailSection() {
             </Button>
           ))}
         </div>
-        <MainGunSprite gun={gun} hoverGun={hoverGun} mode={gunStats.mode.mode} />
+        <div className="flex items-center justify-center h-36 gap-10">
+          <GunPortrait gun={gun} mode={gunStats.mode.mode} />
+          {hoverGun && hoverGun.id !== gun.id && (
+            <>
+              <ArrowLeftRight className="fill-primary" />
+              <AnimatedSprite key={hoverGun.id} animation={hoverGun.animation.idle} scale={6} />
+            </>
+          )}
+        </div>
         <blockquote className="flex justify-center w-full italic text-muted-foreground mb-4 font-sans font-semibold">
           {JSON.stringify(selectedGun.quote || "...")}
         </blockquote>

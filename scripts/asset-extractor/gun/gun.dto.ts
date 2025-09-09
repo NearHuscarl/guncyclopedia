@@ -101,7 +101,7 @@ export const ProjectileModuleDto = z.object({
    */
   mirror: BinaryOption,
   ammoCost: z.number(),
-  depleteAmmo: BinaryOption,
+  depleteAmmo: BinaryOption.optional(),
   burstShotCount: z.number().nonnegative(),
   burstCooldownTime: z.number().nonnegative(),
   cooldownTime: z.number(),
@@ -178,6 +178,8 @@ const TrackInputDirectionalPadData = z.object({
   }),
 });
 
+const LifeOrbGunModifierData = z.object({});
+
 const SpawnItemOnGunDepletionData = z.object({
   IsSynergyContingent: BinaryOption,
   SynergyToCheck: z.number(),
@@ -213,6 +215,7 @@ export const GunDto = z.object({
   predatorGunController: PredatorGunControllerData.optional(),
   gunExtraSettingSynergyProcessor: GunExtraSettingSynergyProcessorData.optional(),
   auraOnReloadModifier: AuraOnReloadModifierData.optional(),
+  lifeOrbGunModifier: LifeOrbGunModifierData.optional(),
   encounterTrackable: EncounterTrackable.optional(),
 });
 
@@ -223,4 +226,5 @@ export type TSpawnItemOnGunDepletionData = z.input<typeof SpawnItemOnGunDepletio
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
 export type TGunExtraSettingSynergyProcessorData = z.input<typeof GunExtraSettingSynergyProcessorData>;
 export type TAuraOnReloadModifierData = z.input<typeof AuraOnReloadModifierData>;
+export type TLifeOrbGunModifierData = z.input<typeof LifeOrbGunModifierData>;
 export type TProjectileModuleDto = z.input<typeof ProjectileModuleDto>;

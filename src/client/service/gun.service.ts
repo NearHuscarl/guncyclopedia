@@ -248,18 +248,32 @@ export class GunService {
       }
     }
 
-    if (gun.attribute.auraOnReload) {
-      const reloadToFireRatio = gun.reloadTime / (gun.reloadTime + module.timeBetweenShots * magazineSize);
-
-      extraDamage.push({
-        value: gun.attribute.auraOnReloadDps! * reloadToFireRatio,
-        tooltip: "Aura on reload: {{VALUE}}",
-      });
-      if (gun.attribute.auraOnReloadIgniteDps) {
+    if (type === "dps") {
+      if (gun.attribute.lifeOrb) {
+        const avgEnemyHealth = 20;
+        const timeToKillAvgEnemyPerSecond = avgEnemyHealth / projectile.dps;
+        const avgEnemyCountInRoom = 4;
         extraDamage.push({
-          value: gun.attribute.auraOnReloadIgniteDps * reloadToFireRatio,
-          tooltip: "Aura on reload (ignite): {{VALUE}}",
+          value: (avgEnemyHealth * avgEnemyCountInRoom) / timeToKillAvgEnemyPerSecond,
+          isEstimated: true,
+          tooltip:
+            "Estimated soul damage: {{VALUE}}<br/>Assuming <strong>4</strong> enemies in range on average, and the last enemy killed has <strong>20</strong> health.",
         });
+      }
+
+      if (gun.attribute.auraOnReload) {
+        const reloadToFireRatio = gun.reloadTime / (gun.reloadTime + module.timeBetweenShots * magazineSize);
+
+        extraDamage.push({
+          value: gun.attribute.auraOnReloadDps! * reloadToFireRatio,
+          tooltip: "Aura on reload: {{VALUE}}",
+        });
+        if (gun.attribute.auraOnReloadIgniteDps) {
+          extraDamage.push({
+            value: gun.attribute.auraOnReloadIgniteDps * reloadToFireRatio,
+            tooltip: "Aura on reload (ignite): {{VALUE}}",
+          });
+        }
       }
     }
 

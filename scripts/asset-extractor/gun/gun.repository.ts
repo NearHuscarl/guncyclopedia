@@ -12,6 +12,7 @@ import type {
   TGunData,
   TGunDto,
   TGunExtraSettingSynergyProcessorData,
+  TLifeOrbGunModifierData,
   TPredatorGunControllerData,
   TSpawnItemOnGunDepletionData,
   TTrackInputDirectionalPadData,
@@ -62,6 +63,9 @@ export class GunRepository {
   private _isAuraOnReloadModifierData(obj: unknown): obj is TAuraOnReloadModifierData {
     return this._assetService.isMonoScript(obj, "AuraOnReloadModifier.cs.meta");
   }
+  private _isLifeOrbGunModifierData(obj: unknown): obj is TLifeOrbGunModifierData {
+    return this._assetService.isMonoScript(obj, "LifeOrbGunModifier.cs.meta");
+  }
 
   private async _getAllRefabFilesInGunFolders() {
     const res: string[] = [];
@@ -109,6 +113,8 @@ export class GunRepository {
           res.gunExtraSettingSynergyProcessor = component;
         } else if (this._isAuraOnReloadModifierData(component)) {
           res.auraOnReloadModifier = component;
+        } else if (this._isLifeOrbGunModifierData(component)) {
+          res.lifeOrbGunModifier = component;
         } else if (this._assetService.isEncounterTrackable(component)) {
           res.encounterTrackable = component;
           res.encounterTrackable.m_journalData = this._translationService.getTranslatedJournalData(

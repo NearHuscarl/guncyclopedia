@@ -396,6 +396,10 @@ export class GunModelGenerator {
       proj.homingAngularVelocity = gunDto.predatorGunController.HomingAngularVelocity;
     }
 
+    if (gunDto.lifeOrbGunModifier) {
+      proj.damageAllEnemies = true;
+      proj.damageAllEnemiesRadius = 100; // hardcoded in the script
+    }
     if (projScript.endsWith("InstantlyDamageAllProjectile.cs.meta")) {
       proj.damageAllEnemies = true;
       proj.damageAllEnemiesRadius = 100; // hardcoded in the script
@@ -487,7 +491,7 @@ export class GunModelGenerator {
     if (proj.isHoming) {
       this._featureFlags.add("hasHomingProjectiles");
     }
-    if (proj.damageAllEnemies) {
+    if (proj.damageAllEnemies && !gunDto.lifeOrbGunModifier) {
       proj.additionalDamage.push({
         type: "instant",
         source: "damageAllEnemies",
@@ -710,6 +714,7 @@ export class GunModelGenerator {
         : undefined,
 
       inputCombo: Boolean(gunDto.trackInputDirectionalPad) || undefined,
+      lifeOrb: Boolean(gunDto.lifeOrbGunModifier) || undefined,
       trickGun: Boolean(gunDto.gun.IsTrickGun) || undefined,
     };
 
@@ -720,6 +725,7 @@ export class GunModelGenerator {
     for (const value of Object.values(attributes)) {
       if (value === true) {
         this._featureFlags.add("hasSpecialAbilities");
+        break;
       }
     }
 
@@ -1122,6 +1128,7 @@ export class GunModelGenerator {
         colors: await this._buildDominantColors(gunDto, idleAnimation.name),
         animation: {
           idle: idleAnimation,
+          lifeOrbFullIdle: gunDto.lifeOrbGunModifier && this._buildAnimationFromName(gunDto, "life_orb_full_idle"),
           // Fix Turbo-Gun reload animation getting stuck in a loop
           reload: this._buildAnimationFromName(gunDto, gunDto.gun.reloadAnimation, { wrapMode: "Once" }),
           intro: this._buildAnimationFromName(gunDto, gunDto.gun.introAnimation, { wrapMode: "Once" }),

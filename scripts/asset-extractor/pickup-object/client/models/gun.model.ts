@@ -157,6 +157,7 @@ export const Gun = PickupObject.extend({
 
     spawnChestOnDepletion: z.boolean().optional(),
     inputCombo: z.boolean().optional(),
+    lifeOrb: z.boolean().optional(),
 
     /**
      * Gun that switch between 2 firing modes after a reload
@@ -170,6 +171,7 @@ export const Gun = PickupObject.extend({
   colors: z.array(z.string()),
   animation: z.object({
     idle: Animation,
+    lifeOrbFullIdle: Animation.optional(),
     reload: Animation.optional(),
     intro: Animation.optional(),
     alternateIdle: Animation.optional(),
@@ -184,6 +186,7 @@ const createDerivedGunSchema = <T extends z.ZodTypeAny>(frameSchema: T) => {
   return Gun.extend({
     animation: z.object({
       idle: AnimationSchema,
+      lifeOrbFullIdle: AnimationSchema.optional(),
       reload: AnimationSchema.optional(),
       intro: AnimationSchema.optional(),
       alternateIdle: AnimationSchema.optional(),

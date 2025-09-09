@@ -73,6 +73,7 @@ import { Chest } from "@/components/icons/chest";
 import { HomingLevel, ProjectileService } from "@/client/service/projectile.service";
 import { AmmoIcon } from "@/components/icons/ammo";
 import { DamageAllEnemiesRadius } from "@/client/generated/models/projectile.model";
+import { LifeOrb } from "@/components/icons/life-orb";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -232,7 +233,7 @@ type TGunAttributesProps = {
 };
 
 export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps) {
-  const setUseChargeAnimation = useGunStore((state) => state.setUseChargeAnimation);
+  const setPortraitAnimation = useGunStore((state) => state.setPortraitAnimation);
   const homingLevel = ProjectileService.getHomingLevel(projectile);
 
   return (
@@ -281,8 +282,8 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           <TooltipTrigger>
             <div
               className={clsx("flex items-center gap-1!", ATTRIBUTE_CLASSES)}
-              onMouseEnter={() => setUseChargeAnimation(true)}
-              onMouseLeave={() => setUseChargeAnimation(false)}
+              onMouseEnter={() => setPortraitAnimation("charge")}
+              onMouseLeave={() => setPortraitAnimation("idle")}
             >
               <NumericValue className="text-pink-500">{formatNumber(gunStats?.mode.chargeTime ?? 0, 1)}s</NumericValue>
               <BatteryCharging className="text-pink-500" />
@@ -486,6 +487,25 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           </TooltipContent>
         </Tooltip>
       )}
+      {gun?.attribute.lifeOrb && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div
+              className={clsx("flex items-center", ATTRIBUTE_CLASSES)}
+              onMouseEnter={() => setPortraitAnimation("lifeOrbFullIdle")}
+              onMouseLeave={() => setPortraitAnimation("idle")}
+            >
+              <LifeOrb size={20} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Soul Damage</strong>
+            <br />
+            After killing an enemy, pressing the reload button deals <strong>soul damage</strong> to every enemy in the
+            room. The damage is equal to the amount of damage Life Orb dealt to the last enemy killed.
+          </TooltipContent>
+        </Tooltip>
+      )}
       {(projectile.isBee || undefined) && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
@@ -681,7 +701,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           </TooltipContent>
         </Tooltip>
       )}
-      {projectile.damageAllEnemies && (
+      {(projectile.damageAllEnemies || gun?.attribute.lifeOrb) && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
@@ -697,9 +717,14 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             {projectile.damageAllEnemiesRadius === DamageAllEnemiesRadius.Screen && (
               <>Projectile damages all enemies on the screen.</>
             )}
-            {(projectile.damageAllEnemiesRadius || 0) < 10_000 && (
+            {(projectile.damageAllEnemiesRadius || 10_001) < 10_000 && (
               <>
                 Projectile damages all enemies within a radius of <strong>{projectile.damageAllEnemiesRadius}</strong>.
+              </>
+            )}
+            {gun?.attribute.lifeOrb && (
+              <>
+                Projectile damages all enemies within a radius of <strong>100</strong>.
               </>
             )}
           </TooltipContent>

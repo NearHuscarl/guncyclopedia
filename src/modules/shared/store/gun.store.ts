@@ -8,14 +8,16 @@ declare global {
   var __gunStore__: ReturnType<typeof createGunStore> | undefined;
 }
 
+type TGunAnimationName = keyof TGun["animation"];
+
 type TGunState = {
   gunLookup: Record<number, TGun>;
   gunStatsLookup: Record<number, TGunStats>;
   createGunLookup: (guns: TGun[]) => void;
   hoverGunId: number;
   setHoverGun: (id: number) => void;
-  useChargeAnimation: boolean;
-  setUseChargeAnimation: (useChargeAnimation: boolean) => void;
+  portraitAnimation: TGunAnimationName;
+  setPortraitAnimation: (animationName: TGunAnimationName) => void;
 };
 
 function createGunStore() {
@@ -47,14 +49,14 @@ function createGunStore() {
             { type: "setHoverGun", id },
           );
         },
-        useChargeAnimation: false,
-        setUseChargeAnimation: (useChargeAnimation) => {
+        portraitAnimation: "idle",
+        setPortraitAnimation: (animationName) => {
           set(
             (state) => {
-              state.useChargeAnimation = useChargeAnimation;
+              state.portraitAnimation = animationName;
             },
             undefined,
-            { type: "setUseChargeAnimation", useChargeAnimation },
+            { type: "setPortraitAnimation", animationName },
           );
         },
       })),

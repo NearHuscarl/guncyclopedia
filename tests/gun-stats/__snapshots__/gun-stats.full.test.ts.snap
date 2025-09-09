@@ -29905,7 +29905,13 @@ exports[`Gun > Life Orb (595) > [variants=0-0-0] 1`] = `
   },
   "dps": {
     "base": 20,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated soul damage: {{VALUE}}<br/>Assuming <strong>4</strong> enemies in range on average, and the last enemy killed has <strong>20</strong> health.",
+        "value": 80
+      }
+    ]
   },
   "fireRate": 10000,
   "force": {
@@ -29959,7 +29965,13 @@ exports[`Gun > Life Orb (595) > [variants=0-1-0] 1`] = `
   },
   "dps": {
     "base": 1.5,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated soul damage: {{VALUE}}<br/>Assuming <strong>4</strong> enemies in range on average, and the last enemy killed has <strong>20</strong> health.",
+        "value": 6
+      }
+    ]
   },
   "fireRate": 10000,
   "force": {
@@ -30013,7 +30025,13 @@ exports[`Gun > Life Orb (595) > [variants=0-A-A] 1`] = `
   },
   "dps": {
     "base": 21.5,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Estimated soul damage: {{VALUE}}<br/>Assuming <strong>4</strong> enemies in range on average, and the last enemy killed has <strong>20</strong> health.",
+        "value": 86
+      }
+    ]
   },
   "fireRate": 10000,
   "force": {
@@ -58592,16 +58610,7 @@ exports[`Gun > Teapot (596) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 8.5,
-    "details": [
-      {
-        "tooltip": "Aura on reload: {{VALUE}}",
-        "value": 3.846
-      },
-      {
-        "tooltip": "Aura on reload (ignite): {{VALUE}}",
-        "value": 1.538
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 13.077,
@@ -63253,12 +63262,7 @@ exports[`Gun > Thunderclap (13) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 9,
-    "details": [
-      {
-        "tooltip": "Aura on reload: {{VALUE}}",
-        "value": 2.5
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 45,
