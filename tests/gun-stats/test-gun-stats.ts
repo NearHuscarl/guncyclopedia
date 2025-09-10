@@ -16,6 +16,12 @@ function stripUnusedFields(gunStats: TGunStats) {
     }
   }
 
+  for (const p of gunStats.projectileModule.projectiles) {
+    delete p.gunId;
+  }
+
+  delete gunStats.projectile.gunId;
+
   return gunStats;
 }
 
@@ -118,8 +124,11 @@ export function testGunStats(gunId: number, gunName: string) {
     for (const [, variants] of Object.values(statsLookup)) {
       const [i] = variants[0].split("-");
       if (variantCountLookup[i] === 2 && variants.length !== 2) {
+        // const keys = Object.keys(variantCountLookup);
+        // expect(statsLookup[keys[0]]).toEqual(statsLookup[keys[1]]);
+        console.log(JSON.stringify(Object.values(statsLookup), null, 2));
         throw new Error(
-          `If there are only 2 stats: 1 aggregated and 1 single module, they must be structurally the same but [mode=${i}] got ${variants.length}: ${variants.join(",")}.`,
+          `${gunName} (${gunId}) If there are only 2 stats: 1 aggregated and 1 single module, they must be structurally the same but [mode=${i}] got ${variants.length}: ${variants.join(",")}.`,
         );
       }
     }

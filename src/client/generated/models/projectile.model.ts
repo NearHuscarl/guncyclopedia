@@ -124,14 +124,22 @@ export const Projectile = z.object({
   explosionFreezeRadius: z.number().optional(),
 
   /**
-   * Instantly damage all enemies in the room/viewport
+   * Instantly damage all enemies in the room/viewport. This is set to `true` if `damageAllEnemiesMaxTargets` is at least `6`.
    */
   damageAllEnemies: z.boolean().optional(),
   damageAllEnemiesRadius: z.number().optional(),
+  /**
+   * The maximum number of targets that can be damaged when `damageAllEnemies` is true. `-1` means all targets in the radius.
+   */
+  damageAllEnemiesMaxTargets: z.number().optional(),
 
   isHoming: z.boolean().optional(),
   homingRadius: z.number().optional(),
   homingAngularVelocity: z.number().optional(),
+  /**
+   * The pinnacle of homing projectiles.
+   */
+  homingAndIgnoringObstacles: z.boolean().optional(),
 
   spawnProjectilesInflight: z.boolean().optional(),
   /**

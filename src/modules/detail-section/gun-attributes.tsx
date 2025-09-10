@@ -705,28 +705,42 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              {projectile.damageAllEnemiesMaxTargets !== -1 && (
+                <NumericValue className={clsx("text-orange-500")}>{projectile.damageAllEnemiesMaxTargets}</NumericValue>
+              )}
               <SquareAsterisk size={20} className={"[&_rect_,&_path]:stroke-orange-500"} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
             <strong>Damage All Enemies</strong>
             <br />
-            {projectile.damageAllEnemiesRadius === DamageAllEnemiesRadius.Room && (
-              <>Projectile damages all enemies in the room.</>
-            )}
-            {projectile.damageAllEnemiesRadius === DamageAllEnemiesRadius.Screen && (
-              <>Projectile damages all enemies on the screen.</>
-            )}
-            {(projectile.damageAllEnemiesRadius || 10_001) < 10_000 && (
-              <>
-                Projectile damages all enemies within a radius of <strong>{projectile.damageAllEnemiesRadius}</strong>.
-              </>
-            )}
-            {gun?.attribute.lifeOrb && (
-              <>
-                Projectile damages all enemies within a radius of <strong>100</strong>.
-              </>
-            )}
+            {(() => {
+              const maxTarget =
+                projectile.damageAllEnemiesMaxTargets === -1
+                  ? "all"
+                  : projectile.damageAllEnemiesMaxTargets?.toString();
+              return (
+                <>
+                  {projectile.damageAllEnemiesRadius === DamageAllEnemiesRadius.Room && (
+                    <>Projectile damages {maxTarget} enemies in the room.</>
+                  )}
+                  {projectile.damageAllEnemiesRadius === DamageAllEnemiesRadius.Screen && (
+                    <>Projectile damages {maxTarget} enemies on the screen.</>
+                  )}
+                  {(projectile.damageAllEnemiesRadius || 10_001) < 10_000 && (
+                    <>
+                      Projectile damages {maxTarget} enemies within a radius of{" "}
+                      <strong>{projectile.damageAllEnemiesRadius}</strong>.
+                    </>
+                  )}
+                  {gun?.attribute.lifeOrb && (
+                    <>
+                      Projectile damages {maxTarget} enemies within a radius of <strong>100</strong>.
+                    </>
+                  )}
+                </>
+              );
+            })()}
           </TooltipContent>
         </Tooltip>
       )}
@@ -776,13 +790,14 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
                 "text-muted-foreground [&_path]:stroke-muted-foreground": homingLevel === HomingLevel.Pathetic,
                 "text-white [&_path]:stroke-white": homingLevel === HomingLevel.Weak,
                 "text-primary [&_path]:stroke-primary": homingLevel === HomingLevel.Strong,
-                "text-red-500 [&_path]:stroke-red-500": homingLevel === HomingLevel.AutoAim,
+                "text-orange-500 [&_path]:stroke-orange-500": homingLevel === HomingLevel.AutoAim,
+                "text-red-500 [&_path]:stroke-red-500": homingLevel === HomingLevel.InstantHit,
               })}
             >
               {(projectile.homingRadius || undefined) && (
                 <NumericValue>{formatNumber(projectile.homingRadius!, 0)}</NumericValue>
               )}
-              {homingLevel === HomingLevel.AutoAim ? <Homing2 size={18} /> : <Homing size={18} />}
+              {homingLevel === HomingLevel.InstantHit ? <Homing2 size={18} /> : <Homing size={18} />}
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -795,6 +810,8 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
                 {homingLevel === HomingLevel.Strong && "Homings towards enemies at considerable range."}
                 {homingLevel === HomingLevel.AutoAim &&
                   "Aggressively locks onto enemies from long range, sharply track the target."}
+                {homingLevel === HomingLevel.InstantHit &&
+                  "Hits the enemies immediately, ignoring any obstacles in the way."}
                 <br />
                 Target radius: <strong>{formatNumber(projectile.homingRadius!, 0)}</strong>
                 <br />

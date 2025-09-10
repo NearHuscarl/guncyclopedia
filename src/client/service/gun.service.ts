@@ -76,6 +76,10 @@ export const GunStats = z.object({
 }) satisfies z.ZodType<TGunStats>;
 
 export class GunService {
+  static hasChargeMode(gun: TGun) {
+    return gun.projectileModes.at(-1)?.mode.startsWith("Charge");
+  }
+
   static getMagSize(magazineSize: number, module: TProjectileModule | TResolvedProjectileModule) {
     return module.depleteAmmo ? 1 : magazineSize;
   }

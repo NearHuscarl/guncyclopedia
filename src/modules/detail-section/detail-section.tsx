@@ -72,7 +72,7 @@ export function DetailSection() {
     // The state is needed to apply transitions for stats when switching guns
 
     setModeIndex(0);
-    if (gun.projectileModes.length > 1 && gun.projectileModes.at(-1)?.mode.startsWith("Charge")) {
+    if (gun.projectileModes.length > 1 && GunService.hasChargeMode(gun)) {
       // prioritize to show the max charge of the weapon where it might contain the unique features
       _setModeIndex(gun.projectileModes.length - 1);
     }

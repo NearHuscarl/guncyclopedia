@@ -33,6 +33,7 @@ export const HomingLevel = {
   Weak: 1,
   Strong: 2,
   AutoAim: 3,
+  InstantHit: 4,
 } as const;
 
 export class ProjectileService {
@@ -76,7 +77,11 @@ export class ProjectileService {
       return HomingLevel.Pathetic;
     }
 
-    if (homingRadius >= 50 && homingAngularVelocity >= 1000) {
+    if (homingRadius >= 50 && homingAngularVelocity >= 1000 && projectile.homingAndIgnoringObstacles) {
+      return HomingLevel.InstantHit;
+    }
+
+    if (homingRadius >= 50 && homingAngularVelocity >= 500) {
       return HomingLevel.AutoAim;
     }
 
@@ -228,6 +233,7 @@ export class ProjectileService {
     spawnProjectilesInflightPerSecond: ["max", "max"],
     damageAllEnemiesRadius: ["max", "max"],
     beeStingDuration: ["avg", "max"],
+    damageAllEnemiesMaxTargets: ["max", "max"],
   };
 
   // All boolean keys that are aggregated with logical-OR.
@@ -235,6 +241,7 @@ export class ProjectileService {
     ignoreDamageCaps: true,
     canPenetrateObjects: true,
     isHoming: true,
+    homingAndIgnoringObstacles: true,
     damageAllEnemies: true,
     hasOilGoop: true,
     spawnGoopOnCollision: true,
@@ -300,15 +307,16 @@ export class ProjectileService {
 
     // ---------- aggregate ----------
     const sums: Record<string, number> = {};
-    this._numericConfigEntries((k) => (sums[k] = 0));
+    this._numericConfigEntries((k, [, , defaultValue]) => (sums[k] = projectiles[0][k] ?? defaultValue ?? 0));
 
     const strSums: Record<string, Set<string>> = {};
-    this._stringConfigEntries((k) => (strSums[k] = new Set()));
+    this._stringConfigEntries((k) => (strSums[k] = new Set(projectiles[0][k] ? [projectiles[0][k]] : [])));
 
     const hasTrue: Record<string, boolean> = {};
-    this._booleanConfigEntries((k) => (hasTrue[k] = false));
+    this._booleanConfigEntries((k) => (hasTrue[k] = projectiles[0][k] ?? false));
 
-    for (const p of projectiles) {
+    for (let i = 1; i < projectiles.length; i++) {
+      const p = projectiles[i];
       this._numericConfigEntries((k, [random, volley, defaultValue]) => {
         const m = mode === "random" ? random : volley;
 

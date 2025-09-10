@@ -1135,8 +1135,11 @@ exports[`Gun > Abyssal Tentacle (474) > [variants=0-A-A,0-0-0] 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 22.5,
+    "damageAllEnemiesMaxTargets": 1,
+    "damageAllEnemiesRadius": 20000,
     "dps": 22.5,
     "force": 10,
+    "homingAndIgnoringObstacles": true,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
     "id": "Tentacle_Beam",
@@ -1153,8 +1156,11 @@ exports[`Gun > Abyssal Tentacle (474) > [variants=0-A-A,0-0-0] 1`] = `
       {
         "additionalDamage": [],
         "damage": 22.5,
+        "damageAllEnemiesMaxTargets": 1,
+        "damageAllEnemiesRadius": 20000,
         "dps": 22.5,
         "force": 10,
+        "homingAndIgnoringObstacles": true,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
         "id": "Tentacle_Beam",
@@ -1190,8 +1196,11 @@ exports[`Gun > Abyssal Tentacle (474) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 22.5,
+            "damageAllEnemiesMaxTargets": 1,
+            "damageAllEnemiesRadius": 20000,
             "dps": 22.5,
             "force": 10,
+            "homingAndIgnoringObstacles": true,
             "homingAngularVelocity": 1000,
             "homingRadius": 50,
             "id": "Tentacle_Beam",
@@ -1231,8 +1240,11 @@ exports[`Gun > Abyssal Tentacle (689) > [variants=0-A-A,0-0-0] 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 22.5,
+    "damageAllEnemiesMaxTargets": 2,
+    "damageAllEnemiesRadius": 20000,
     "dps": 22.5,
     "force": 10,
+    "homingAndIgnoringObstacles": true,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
     "id": "Tentacle_Beam_Kaliber",
@@ -1249,8 +1261,11 @@ exports[`Gun > Abyssal Tentacle (689) > [variants=0-A-A,0-0-0] 1`] = `
       {
         "additionalDamage": [],
         "damage": 22.5,
+        "damageAllEnemiesMaxTargets": 2,
+        "damageAllEnemiesRadius": 20000,
         "dps": 22.5,
         "force": 10,
+        "homingAndIgnoringObstacles": true,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
         "id": "Tentacle_Beam_Kaliber",
@@ -1286,8 +1301,11 @@ exports[`Gun > Abyssal Tentacle (689) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 22.5,
+            "damageAllEnemiesMaxTargets": 2,
+            "damageAllEnemiesRadius": 20000,
             "dps": 22.5,
             "force": 10,
+            "homingAndIgnoringObstacles": true,
             "homingAngularVelocity": 1000,
             "homingRadius": 50,
             "id": "Tentacle_Beam_Kaliber",
@@ -2582,6 +2600,7 @@ exports[`Gun > BSG (21) > [variants=0-1-0,0-2-0] 1`] = `
     ],
     "damage": 70,
     "damageAllEnemies": true,
+    "damageAllEnemiesMaxTargets": -1,
     "damageAllEnemiesRadius": 100,
     "dps": 17.5,
     "force": 0,
@@ -2608,6 +2627,7 @@ exports[`Gun > BSG (21) > [variants=0-1-0,0-2-0] 1`] = `
         ],
         "damage": 70,
         "damageAllEnemies": true,
+        "damageAllEnemiesMaxTargets": -1,
         "damageAllEnemiesRadius": 100,
         "dps": 17.5,
         "force": 0,
@@ -2813,6 +2833,7 @@ exports[`Gun > BSG (21) > modes 1`] = `
             ],
             "damage": 70,
             "damageAllEnemies": true,
+            "damageAllEnemiesMaxTargets": -1,
             "damageAllEnemiesRadius": 100,
             "dps": 17.5,
             "force": 0,
@@ -10824,6 +10845,7 @@ exports[`Gun > Camera (481) > [variants=0-A-A,0-0-0] 1`] = `
     ],
     "damage": 10,
     "damageAllEnemies": true,
+    "damageAllEnemiesMaxTargets": -1,
     "damageAllEnemiesRadius": 100,
     "dps": 10.526,
     "force": 0,
@@ -10848,6 +10870,7 @@ exports[`Gun > Camera (481) > [variants=0-A-A,0-0-0] 1`] = `
         ],
         "damage": 10,
         "damageAllEnemies": true,
+        "damageAllEnemiesMaxTargets": -1,
         "damageAllEnemiesRadius": 100,
         "dps": 10.526,
         "force": 0,
@@ -10891,6 +10914,7 @@ exports[`Gun > Camera (481) > modes 1`] = `
             ],
             "damage": 10,
             "damageAllEnemies": true,
+            "damageAllEnemiesMaxTargets": -1,
             "damageAllEnemiesRadius": 100,
             "dps": 10.526,
             "force": 0,
@@ -29927,7 +29951,11 @@ exports[`Gun > Life Orb (595) > [variants=0-0-0] 1`] = `
     "damage": 20,
     "dps": 20,
     "force": 10,
+    "homingAndIgnoringObstacles": true,
+    "homingAngularVelocity": 1000,
+    "homingRadius": 50,
     "id": "Life_Orb_Beam",
+    "isHoming": true,
     "range": 30,
     "speed": 30
   },
@@ -29942,7 +29970,11 @@ exports[`Gun > Life Orb (595) > [variants=0-0-0] 1`] = `
         "damage": 20,
         "dps": 20,
         "force": 10,
+        "homingAndIgnoringObstacles": true,
+        "homingAngularVelocity": 1000,
+        "homingRadius": 50,
         "id": "Life_Orb_Beam",
+        "isHoming": true,
         "range": 30,
         "speed": 30
       }
@@ -29988,7 +30020,11 @@ exports[`Gun > Life Orb (595) > [variants=0-1-0] 1`] = `
     "damage": 1.5,
     "dps": 1.5,
     "force": 0,
+    "homingAndIgnoringObstacles": true,
+    "homingAngularVelocity": 1000,
+    "homingRadius": 50,
     "id": "Life_Orb_Beam_White",
+    "isHoming": true,
     "range": 40,
     "speed": 20
   },
@@ -30003,7 +30039,11 @@ exports[`Gun > Life Orb (595) > [variants=0-1-0] 1`] = `
         "damage": 1.5,
         "dps": 1.5,
         "force": 0,
+        "homingAndIgnoringObstacles": true,
+        "homingAngularVelocity": 1000,
+        "homingRadius": 50,
         "id": "Life_Orb_Beam_White",
+        "isHoming": true,
         "range": 40,
         "speed": 20
       }
@@ -30049,7 +30089,11 @@ exports[`Gun > Life Orb (595) > [variants=0-A-A] 1`] = `
     "damage": 21.5,
     "dps": 21.5,
     "force": 10,
+    "homingAndIgnoringObstacles": true,
+    "homingAngularVelocity": 1000,
+    "homingRadius": 50,
     "id": "Life_Orb_Beam,Life_Orb_Beam_White",
+    "isHoming": true,
     "range": 40,
     "speed": 25
   },
@@ -30064,7 +30108,11 @@ exports[`Gun > Life Orb (595) > [variants=0-A-A] 1`] = `
         "damage": 21.5,
         "dps": 21.5,
         "force": 10,
+        "homingAndIgnoringObstacles": true,
+        "homingAngularVelocity": 1000,
+        "homingRadius": 50,
         "id": "Life_Orb_Beam,Life_Orb_Beam_White",
+        "isHoming": true,
         "range": 40,
         "speed": 25
       }
@@ -30098,7 +30146,11 @@ exports[`Gun > Life Orb (595) > modes 1`] = `
             "damage": 20,
             "dps": 20,
             "force": 10,
+            "homingAndIgnoringObstacles": true,
+            "homingAngularVelocity": 1000,
+            "homingRadius": 50,
             "id": "Life_Orb_Beam",
+            "isHoming": true,
             "range": 30,
             "speed": 30
           }
@@ -30119,7 +30171,11 @@ exports[`Gun > Life Orb (595) > modes 1`] = `
             "damage": 1.5,
             "dps": 1.5,
             "force": 0,
+            "homingAndIgnoringObstacles": true,
+            "homingAngularVelocity": 1000,
+            "homingRadius": 50,
             "id": "Life_Orb_Beam_White",
+            "isHoming": true,
             "range": 40,
             "speed": 20
           }
@@ -46291,9 +46347,11 @@ exports[`Gun > Raiden Coil (107) > [variants=0-A-A,0-0-0] 1`] = `
     ],
     "damage": 17.5,
     "damageAllEnemies": true,
+    "damageAllEnemiesMaxTargets": -1,
     "damageAllEnemiesRadius": 10000,
     "dps": 17.5,
     "force": 10,
+    "homingAndIgnoringObstacles": true,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
     "id": "RaidenLaserBeam",
@@ -46318,9 +46376,11 @@ exports[`Gun > Raiden Coil (107) > [variants=0-A-A,0-0-0] 1`] = `
         ],
         "damage": 17.5,
         "damageAllEnemies": true,
+        "damageAllEnemiesMaxTargets": -1,
         "damageAllEnemiesRadius": 10000,
         "dps": 17.5,
         "force": 10,
+        "homingAndIgnoringObstacles": true,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
         "id": "RaidenLaserBeam",
@@ -46364,9 +46424,11 @@ exports[`Gun > Raiden Coil (107) > modes 1`] = `
             ],
             "damage": 17.5,
             "damageAllEnemies": true,
+            "damageAllEnemiesMaxTargets": -1,
             "damageAllEnemiesRadius": 10000,
             "dps": 17.5,
             "force": 10,
+            "homingAndIgnoringObstacles": true,
             "homingAngularVelocity": 1000,
             "homingRadius": 50,
             "id": "RaidenLaserBeam",
@@ -46426,9 +46488,11 @@ exports[`Gun > Raiden Coil (712) > [variants=0-0-0] 1`] = `
     ],
     "damage": 17.5,
     "damageAllEnemies": true,
+    "damageAllEnemiesMaxTargets": -1,
     "damageAllEnemiesRadius": 10000,
     "dps": 17.5,
     "force": 10,
+    "homingAndIgnoringObstacles": true,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
     "id": "RaidenLaserBeam",
@@ -46453,9 +46517,11 @@ exports[`Gun > Raiden Coil (712) > [variants=0-0-0] 1`] = `
         ],
         "damage": 17.5,
         "damageAllEnemies": true,
+        "damageAllEnemiesMaxTargets": -1,
         "damageAllEnemiesRadius": 10000,
         "dps": 17.5,
         "force": 10,
+        "homingAndIgnoringObstacles": true,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
         "id": "RaidenLaserBeam",
@@ -46579,6 +46645,7 @@ exports[`Gun > Raiden Coil (712) > [variants=0-A-A] 1`] = `
     "damageAllEnemiesRadius": 10000,
     "dps": 34.423,
     "force": 28,
+    "homingAndIgnoringObstacles": true,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
     "id": "RaidenLaserBeam,Raiden_Projectile",
@@ -46606,6 +46673,7 @@ exports[`Gun > Raiden Coil (712) > [variants=0-A-A] 1`] = `
         "damageAllEnemiesRadius": 10000,
         "dps": 34.423,
         "force": 28,
+        "homingAndIgnoringObstacles": true,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
         "id": "RaidenLaserBeam,Raiden_Projectile",
@@ -46649,9 +46717,11 @@ exports[`Gun > Raiden Coil (712) > modes 1`] = `
             ],
             "damage": 17.5,
             "damageAllEnemies": true,
+            "damageAllEnemiesMaxTargets": -1,
             "damageAllEnemiesRadius": 10000,
             "dps": 17.5,
             "force": 10,
+            "homingAndIgnoringObstacles": true,
             "homingAngularVelocity": 1000,
             "homingRadius": 50,
             "id": "RaidenLaserBeam",
@@ -48136,11 +48206,23 @@ exports[`Gun > Regular Shotgun (763) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 30,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "damageAllEnemies",
+        "value": 90
+      }
+    ]
   },
   "dps": {
     "base": 30,
-    "details": []
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "damageAllEnemies",
+        "value": 90
+      }
+    ]
   },
   "fireRate": 10000,
   "force": {
@@ -48151,10 +48233,21 @@ exports[`Gun > Regular Shotgun (763) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 500,
   "precision": 66.667,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 90,
+        "dps": 90,
+        "isEstimated": true,
+        "source": "damageAllEnemies"
+      }
+    ],
     "damage": 30,
+    "damageAllEnemies": true,
+    "damageAllEnemiesMaxTargets": 6,
+    "damageAllEnemiesRadius": 20000,
     "dps": 30,
     "force": 10,
+    "homingAndIgnoringObstacles": true,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
     "id": "Chamber_Gun_Hell_Beam",
@@ -48169,10 +48262,21 @@ exports[`Gun > Regular Shotgun (763) > [variants=0-A-A,0-0-0] 1`] = `
     "cooldownTime": 1,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 90,
+            "dps": 90,
+            "isEstimated": true,
+            "source": "damageAllEnemies"
+          }
+        ],
         "damage": 30,
+        "damageAllEnemies": true,
+        "damageAllEnemiesMaxTargets": 6,
+        "damageAllEnemiesRadius": 20000,
         "dps": 30,
         "force": 10,
+        "homingAndIgnoringObstacles": true,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
         "id": "Chamber_Gun_Hell_Beam",
@@ -48206,10 +48310,21 @@ exports[`Gun > Regular Shotgun (763) > modes 1`] = `
         "cooldownTime": 1,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 90,
+                "dps": 90,
+                "isEstimated": true,
+                "source": "damageAllEnemies"
+              }
+            ],
             "damage": 30,
+            "damageAllEnemies": true,
+            "damageAllEnemiesMaxTargets": 6,
+            "damageAllEnemiesRadius": 20000,
             "dps": 30,
             "force": 10,
+            "homingAndIgnoringObstacles": true,
             "homingAngularVelocity": 1000,
             "homingRadius": 50,
             "id": "Chamber_Gun_Hell_Beam",
@@ -50918,8 +51033,11 @@ exports[`Gun > Shell (759) > [variants=0-A-A,0-0-0] 1`] = `
   "projectile": {
     "additionalDamage": [],
     "damage": 23,
+    "damageAllEnemiesMaxTargets": 1,
+    "damageAllEnemiesRadius": 20000,
     "dps": 23,
     "force": 10,
+    "homingAndIgnoringObstacles": true,
     "homingAngularVelocity": 1000,
     "homingRadius": 50,
     "id": "Evo_Gun_005_Beam",
@@ -50936,8 +51054,11 @@ exports[`Gun > Shell (759) > [variants=0-A-A,0-0-0] 1`] = `
       {
         "additionalDamage": [],
         "damage": 23,
+        "damageAllEnemiesMaxTargets": 1,
+        "damageAllEnemiesRadius": 20000,
         "dps": 23,
         "force": 10,
+        "homingAndIgnoringObstacles": true,
         "homingAngularVelocity": 1000,
         "homingRadius": 50,
         "id": "Evo_Gun_005_Beam",
@@ -50973,8 +51094,11 @@ exports[`Gun > Shell (759) > modes 1`] = `
           {
             "additionalDamage": [],
             "damage": 23,
+            "damageAllEnemiesMaxTargets": 1,
+            "damageAllEnemiesRadius": 20000,
             "dps": 23,
             "force": 10,
+            "homingAndIgnoringObstacles": true,
             "homingAngularVelocity": 1000,
             "homingRadius": 50,
             "id": "Evo_Gun_005_Beam",
@@ -63588,6 +63712,7 @@ exports[`Gun > Time Stopper (618) > [variants=1-A-A,1-0-0] 1`] = `
     ],
     "damage": 10,
     "damageAllEnemies": true,
+    "damageAllEnemiesMaxTargets": -1,
     "damageAllEnemiesRadius": 100,
     "dps": 6.25,
     "force": 0,
@@ -63612,6 +63737,7 @@ exports[`Gun > Time Stopper (618) > [variants=1-A-A,1-0-0] 1`] = `
         ],
         "damage": 10,
         "damageAllEnemies": true,
+        "damageAllEnemiesMaxTargets": -1,
         "damageAllEnemiesRadius": 100,
         "dps": 6.25,
         "force": 0,
@@ -63683,6 +63809,7 @@ exports[`Gun > Time Stopper (618) > modes 1`] = `
             ],
             "damage": 10,
             "damageAllEnemies": true,
+            "damageAllEnemiesMaxTargets": -1,
             "damageAllEnemiesRadius": 100,
             "dps": 6.25,
             "force": 0,

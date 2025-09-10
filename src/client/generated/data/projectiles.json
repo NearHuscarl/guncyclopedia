@@ -1085,6 +1085,7 @@
     ],
     "damageAllEnemies": true,
     "damageAllEnemiesRadius": 100,
+    "damageAllEnemiesMaxTargets": -1,
     "animation": {
       "name": "bullet_variant_001",
       "fps": 0,
@@ -1344,6 +1345,7 @@
     ],
     "damageAllEnemies": true,
     "damageAllEnemiesRadius": 100,
+    "damageAllEnemiesMaxTargets": -1,
     "animation": {
       "name": "bullet_variant_001",
       "fps": 0,
@@ -5227,9 +5229,11 @@
     ],
     "damageAllEnemies": true,
     "damageAllEnemiesRadius": 10000,
+    "damageAllEnemiesMaxTargets": -1,
     "isHoming": true,
     "homingRadius": 50,
     "homingAngularVelocity": 1000,
+    "homingAndIgnoringObstacles": true,
     "animation": {
       "name": "raiden_beam_impact",
       "fps": 20,
@@ -6794,9 +6798,12 @@
     "range": 30,
     "force": 10,
     "additionalDamage": [],
+    "damageAllEnemiesRadius": 20000,
+    "damageAllEnemiesMaxTargets": 1,
     "isHoming": true,
     "homingRadius": 50,
     "homingAngularVelocity": 1000,
+    "homingAndIgnoringObstacles": true,
     "animation": {
       "name": "tentacle_end",
       "fps": 6,
@@ -6821,9 +6828,12 @@
     "range": 30,
     "force": 10,
     "additionalDamage": [],
+    "damageAllEnemiesRadius": 20000,
+    "damageAllEnemiesMaxTargets": 2,
     "isHoming": true,
     "homingRadius": 50,
     "homingAngularVelocity": 1000,
+    "homingAndIgnoringObstacles": true,
     "animation": {
       "name": "tentacle_kaliber_end",
       "fps": 6,
@@ -8179,9 +8189,12 @@
     "range": 30,
     "force": 10,
     "additionalDamage": [],
+    "damageAllEnemiesRadius": 20000,
+    "damageAllEnemiesMaxTargets": 1,
     "isHoming": true,
     "homingRadius": 50,
     "homingAngularVelocity": 1000,
+    "homingAndIgnoringObstacles": true,
     "animation": {
       "name": "evo_gun_005_tongue_end_vfx",
       "fps": 2,
@@ -9204,6 +9217,10 @@
     "range": 30,
     "force": 10,
     "additionalDamage": [],
+    "isHoming": true,
+    "homingRadius": 50,
+    "homingAngularVelocity": 1000,
+    "homingAndIgnoringObstacles": true,
     "animation": {
       "name": "life_orb_beam_end",
       "fps": 10,
@@ -9233,6 +9250,10 @@
     "range": 40,
     "force": 0,
     "additionalDamage": [],
+    "isHoming": true,
+    "homingRadius": 50,
+    "homingAngularVelocity": 1000,
+    "homingAndIgnoringObstacles": true,
     "animation": {
       "name": "life_orb_beam_end",
       "fps": 10,
@@ -10112,10 +10133,21 @@
     "speed": 10000,
     "range": 30,
     "force": 10,
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "type": "instant",
+        "isEstimated": true,
+        "source": "damageAllEnemies",
+        "damage": 90
+      }
+    ],
+    "damageAllEnemies": true,
+    "damageAllEnemiesRadius": 20000,
+    "damageAllEnemiesMaxTargets": 6,
     "isHoming": true,
     "homingRadius": 50,
     "homingAngularVelocity": 1000,
+    "homingAndIgnoringObstacles": true,
     "animation": {
       "name": "hell_gun_chain_end",
       "fps": 2,
@@ -10552,6 +10584,7 @@
     ],
     "damageAllEnemies": true,
     "damageAllEnemiesRadius": 100,
+    "damageAllEnemiesMaxTargets": -1,
     "animation": {
       "name": "bullet_variant_001",
       "fps": 0,

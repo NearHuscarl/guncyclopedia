@@ -32,7 +32,8 @@ function createGunStore() {
               state.gunLookup = {};
               guns.forEach((gun) => {
                 state.gunLookup[gun.id] = gun;
-                state.gunStatsLookup[gun.id] = GunService.computeGunStats(gun, 0, -1, -1);
+                const modeIndex = GunService.hasChargeMode(gun) ? gun.projectileModes.length - 1 : 0;
+                state.gunStatsLookup[gun.id] = GunService.computeGunStats(gun, modeIndex, -1, -1);
               });
             },
             undefined,

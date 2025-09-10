@@ -8,14 +8,11 @@ export function sanitizeTestData(obj: unknown): unknown {
     return obj.map((v) => sanitizeTestData(v));
   }
   if (obj && typeof obj === "object") {
-    const out: Record<string, unknown> = {};
-    for (const [k, v] of Object.entries(obj)) {
-      out[k] = sanitizeTestData(v);
-      if (v === undefined) {
-        delete out[k];
-      }
-    }
-    return out;
+    const entries = Object.entries(obj)
+      .filter(([, v]) => v !== undefined)
+      .map(([k, v]) => [k, sanitizeTestData(v)] as const);
+    const sorted = entries.sort(([a], [b]) => a.localeCompare(b));
+    return Object.fromEntries(sorted);
   }
   return obj;
 }

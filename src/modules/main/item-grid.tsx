@@ -9,6 +9,7 @@ import { useFilteredGuns } from "../shared/hooks/useGuns";
 import { usePreloadSpritesheets } from "../shared/hooks/usePreloadSpritesheets";
 import { useGunStore } from "../shared/store/gun.store";
 import { useFilter } from "../shared/hooks/useFilter";
+import { ProjectileService } from "@/client/service/projectile.service";
 
 const qualityWeights = Gun.shape.quality.options.reduce<Record<string, number>>((acc, quality, index) => {
   acc[quality] = index;
@@ -16,7 +17,7 @@ const qualityWeights = Gun.shape.quality.options.reduce<Record<string, number>>(
 }, {});
 
 function useGunResults() {
-  const sortBy = useAppState((state) => state.sortBy);
+  const sortBy = useAppState((state) => state.sortBy) ?? "none";
   const filter = useFilter();
   const filteredGuns = useFilteredGuns(filter);
 
@@ -34,10 +35,18 @@ function useGunResults() {
             return b.id - a.id;
         }
       });
+    } else {
+      if (filter?.feature === "hasHomingProjectiles") {
+        const gunStatsLookup = useGunStore.getState().gunStatsLookup;
+        const gunsWithSortedWeight = filteredGuns.map((g) => {
+          return [g, ProjectileService.getHomingLevel(gunStatsLookup[g.id].projectile)] as const;
+        });
+        return gunsWithSortedWeight.sort((a, b) => b[1] - a[1]).map((v) => v[0]);
+      }
     }
 
     return filteredGuns;
-  }, [filteredGuns, sortBy]);
+  }, [filteredGuns, sortBy, filter?.feature]);
 }
 
 type TGridItemProps = {

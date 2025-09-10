@@ -27846,6 +27846,8 @@
     "maxAmmo": 600,
     "reloadTime": 1.6,
     "featureFlags": [
+      "hasSpecialProjectiles",
+      "hasHomingProjectiles",
       "hasSpecialAbilities"
     ],
     "attribute": {
@@ -29687,7 +29689,9 @@
     "reloadTime": 0.1,
     "featureFlags": [
       "hasSpecialProjectiles",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "damageAllEnemies",
+      "hasMultipleDamageSources"
     ],
     "attribute": {},
     "colors": [

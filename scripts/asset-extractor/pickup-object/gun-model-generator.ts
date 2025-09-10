@@ -396,13 +396,10 @@ export class GunModelGenerator {
       proj.homingAngularVelocity = gunDto.predatorGunController.HomingAngularVelocity;
     }
 
-    if (gunDto.lifeOrbGunModifier) {
-      proj.damageAllEnemies = true;
-      proj.damageAllEnemiesRadius = 100; // hardcoded in the script
-    }
     if (projScript.endsWith("InstantlyDamageAllProjectile.cs.meta")) {
       proj.damageAllEnemies = true;
       proj.damageAllEnemiesRadius = 100; // hardcoded in the script
+      proj.damageAllEnemiesMaxTargets = -1;
     }
     if (projDto.blackHoleDoer) {
       proj.isBlackhole = true;
@@ -437,12 +434,19 @@ export class GunModelGenerator {
       proj.isHoming = true;
       proj.homingRadius = 50; // estimated, the real value is your viewport size. See `damageAllEnemiesRadius`
       proj.homingAngularVelocity = 1000; // instant auto aim and grab the enemies
-      if (projDto.raidenBeamController.maxTargets === -1) {
-        proj.damageAllEnemies = true;
-        proj.damageAllEnemiesRadius = projDto.raidenBeamController.targetType * 1000; // numbers >= 10000 are values for screen/room enum
-      } else {
-        // TODO: handle maxTargets limitation
-      }
+      proj.homingAndIgnoringObstacles = true;
+      proj.damageAllEnemiesRadius = projDto.raidenBeamController.targetType * 1000; // numbers >= 10000 are values for screen/room enum
+      proj.damageAllEnemies =
+        Boolean(projDto.raidenBeamController.maxTargets === -1 || projDto.raidenBeamController.maxTargets >= 6) ||
+        undefined;
+      proj.damageAllEnemiesMaxTargets = projDto.raidenBeamController.maxTargets;
+      this._featureFlags.add("hasSpecialProjectiles");
+    }
+    if (projDto.reverseBeamController) {
+      proj.isHoming = true;
+      proj.homingRadius = 50; // estimated, the real value is your viewport size.
+      proj.homingAngularVelocity = 1000; // instantly drains health from the nearest enemy
+      proj.homingAndIgnoringObstacles = true;
       this._featureFlags.add("hasSpecialProjectiles");
     }
 
@@ -664,15 +668,14 @@ export class GunModelGenerator {
     //    ExportedProject/Assets/Scripts/Assembly-CSharp/CustomSynergyType.cs
     // TODO: JK-47: fear effect
     // TODO: add a badge next to best stat: https://fontawesome.com/icons/medal?f=classic&s=solid
-    // Edge cases:
     // TODO: Rad gun: update modified reload time & animation speed on each level
     // TODO: black hole gun reload sprites are not anchored correctly. Investigate reloadOffset
     //  Comparison: crossbow
     // TODO: add muzzleFlashEffects in idle animation for The Fat Line
     // TODO: add unused reload animation for The Fat Line (?)
     // TODO: add unused guns (requireDemoMode: 1). it doesn't have the Gun script, only sprites/animations. Create a separate model for demo gun.
-    // TODO: raiden coil: Fix beam damage per second. Does it equal to damage?
     // TODO: gun id=515 throws because no dps
+    // TODO: Lower Case r - has more than one type of projectile per module.
 
     // // TODO: test casey's case again
     // // skip duplicates. Multiple charge projectiles with the same stats can be defined for the visual effect purpose.
