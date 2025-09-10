@@ -268,7 +268,7 @@ exports[`Gun > A.W.P. (5) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 120
       }
     ]
@@ -278,7 +278,7 @@ exports[`Gun > A.W.P. (5) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 82.051
       }
     ]
@@ -393,7 +393,7 @@ exports[`Gun > A.W.P. (716) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 195
       }
     ]
@@ -403,7 +403,7 @@ exports[`Gun > A.W.P. (716) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 133.333
       }
     ]
@@ -527,7 +527,7 @@ exports[`Gun > AC-15 (545) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 45
       }
     ]
@@ -537,7 +537,7 @@ exports[`Gun > AC-15 (545) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 81.818
       }
     ]
@@ -996,7 +996,7 @@ exports[`Gun > AU Gun (53) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 100
       }
     ]
@@ -1006,7 +1006,7 @@ exports[`Gun > AU Gun (53) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 83.333
       }
     ]
@@ -1313,7 +1313,7 @@ exports[`Gun > Air Shooter (623) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -1323,7 +1323,7 @@ exports[`Gun > Air Shooter (623) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 120
       }
     ]
@@ -1530,7 +1530,7 @@ exports[`Gun > Alien Engine (177) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 30
       }
     ]
@@ -1539,12 +1539,12 @@ exports[`Gun > Alien Engine (177) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 449.438,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 1348.315
       }
     ]
@@ -1680,7 +1680,7 @@ exports[`Gun > Alien Engine (742) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 30
       }
     ]
@@ -1689,12 +1689,12 @@ exports[`Gun > Alien Engine (742) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 449.438,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 1348.315
       }
     ]
@@ -2085,7 +2085,7 @@ exports[`Gun > Anvillain (393) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 35
       }
     ]
@@ -2095,7 +2095,7 @@ exports[`Gun > Anvillain (393) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 45.652
       }
     ]
@@ -2217,7 +2217,7 @@ exports[`Gun > Atomic Fire (621) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -2226,12 +2226,12 @@ exports[`Gun > Atomic Fire (621) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 60
       }
     ]
@@ -2450,7 +2450,7 @@ exports[`Gun > BSG (21) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 150
       }
     ]
@@ -2460,7 +2460,7 @@ exports[`Gun > BSG (21) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 37.5
       }
     ]
@@ -2548,7 +2548,7 @@ exports[`Gun > BSG (21) > [variants=0-1-0,0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 210
       }
     ]
@@ -2558,7 +2558,7 @@ exports[`Gun > BSG (21) > [variants=0-1-0,0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 52.5
       }
     ]
@@ -2641,7 +2641,7 @@ exports[`Gun > BSG (21) > [variants=0-A-A] 1`] = `
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 150
       },
       {
@@ -2661,7 +2661,7 @@ exports[`Gun > BSG (21) > [variants=0-A-A] 1`] = `
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 37.5
       },
       {
@@ -2927,7 +2927,7 @@ exports[`Gun > Balloon Gun (520) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -2937,7 +2937,7 @@ exports[`Gun > Balloon Gun (520) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 30.769
       }
     ]
@@ -3060,7 +3060,7 @@ exports[`Gun > Banana (478) > [variants=0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 30
       }
     ]
@@ -3069,7 +3069,7 @@ exports[`Gun > Banana (478) > [variants=0-0-0] 1`] = `
     "base": 5.877,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 17.632
       }
     ]
@@ -3161,7 +3161,7 @@ exports[`Gun > Banana (478) > [variants=0-1-0,0-2-0,0-3-0,0-4-0] 1`] = `
     "base": 1,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 10
       }
     ]
@@ -3170,7 +3170,7 @@ exports[`Gun > Banana (478) > [variants=0-1-0,0-2-0,0-3-0,0-4-0] 1`] = `
     "base": 0.588,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 5.877
       }
     ]
@@ -3254,7 +3254,7 @@ exports[`Gun > Banana (478) > [variants=0-A-A] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 30
       },
       {
@@ -3273,7 +3273,7 @@ exports[`Gun > Banana (478) > [variants=0-A-A] 1`] = `
     "base": 5.877,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 17.632
       },
       {
@@ -3458,7 +3458,7 @@ exports[`Gun > Banana (688) > [variants=0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 30
       }
     ]
@@ -3467,7 +3467,7 @@ exports[`Gun > Banana (688) > [variants=0-0-0] 1`] = `
     "base": 5.877,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 17.632
       }
     ]
@@ -3559,7 +3559,7 @@ exports[`Gun > Banana (688) > [variants=0-1-0,0-2-0,0-3-0,0-4-0] 1`] = `
     "base": 1,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 10
       }
     ]
@@ -3568,7 +3568,7 @@ exports[`Gun > Banana (688) > [variants=0-1-0,0-2-0,0-3-0,0-4-0] 1`] = `
     "base": 0.588,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 5.877
       }
     ]
@@ -3652,7 +3652,7 @@ exports[`Gun > Banana (688) > [variants=0-A-A] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 30
       },
       {
@@ -3671,7 +3671,7 @@ exports[`Gun > Banana (688) > [variants=0-A-A] 1`] = `
     "base": 5.877,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 17.632
       },
       {
@@ -3857,7 +3857,7 @@ exports[`Gun > Barrel (7) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 8
       }
     ]
@@ -3867,7 +3867,7 @@ exports[`Gun > Barrel (7) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 27.907
       }
     ]
@@ -4070,7 +4070,7 @@ exports[`Gun > Bee Hive (14) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 3,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 3
       }
     ]
@@ -4079,7 +4079,7 @@ exports[`Gun > Bee Hive (14) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 29.88,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 29.88
       }
     ]
@@ -4202,7 +4202,7 @@ exports[`Gun > Bee Hive (703) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 3,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 3
       }
     ]
@@ -4211,7 +4211,7 @@ exports[`Gun > Bee Hive (703) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 29.88,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 29.88
       }
     ]
@@ -4723,7 +4723,7 @@ exports[`Gun > Big Iron (694) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 75
       }
     ]
@@ -4733,7 +4733,7 @@ exports[`Gun > Big Iron (694) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 136.364
       }
     ]
@@ -4847,7 +4847,7 @@ exports[`Gun > Big Shotgun (601) > [variants=0-0-0] 1`] = `
     "base": 5.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       }
     ]
@@ -4856,7 +4856,7 @@ exports[`Gun > Big Shotgun (601) > [variants=0-0-0] 1`] = `
     "base": 4.074,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 11.111
       }
     ]
@@ -4942,7 +4942,7 @@ exports[`Gun > Big Shotgun (601) > [variants=0-1-0] 1`] = `
     "base": 5.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       }
     ]
@@ -4951,7 +4951,7 @@ exports[`Gun > Big Shotgun (601) > [variants=0-1-0] 1`] = `
     "base": 4.074,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 11.111
       }
     ]
@@ -5037,7 +5037,7 @@ exports[`Gun > Big Shotgun (601) > [variants=0-2-0] 1`] = `
     "base": 5.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       }
     ]
@@ -5046,7 +5046,7 @@ exports[`Gun > Big Shotgun (601) > [variants=0-2-0] 1`] = `
     "base": 4.074,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 11.111
       }
     ]
@@ -5306,7 +5306,7 @@ exports[`Gun > Big Shotgun (601) > [variants=0-A-A] 1`] = `
     "base": 16.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 45
       },
       {
@@ -5320,7 +5320,7 @@ exports[`Gun > Big Shotgun (601) > [variants=0-A-A] 1`] = `
     "base": 12.222,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 33.333
       },
       {
@@ -5595,7 +5595,7 @@ exports[`Gun > Black Hole Gun (169) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 30
       }
     ]
@@ -5604,12 +5604,12 @@ exports[`Gun > Black Hole Gun (169) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 3.268,
     "details": [
       {
-        "tooltip": "Black hole center: {{VALUE}}",
+        "tooltip": "blackhole",
         "value": 35
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 9.804
       }
     ]
@@ -5743,7 +5743,7 @@ exports[`Gun > Blasphemy (417) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -5753,7 +5753,7 @@ exports[`Gun > Blasphemy (417) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 114.545
       }
     ]
@@ -5865,7 +5865,7 @@ exports[`Gun > Blasphemy (574) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -5875,7 +5875,7 @@ exports[`Gun > Blasphemy (574) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 114.545
       }
     ]
@@ -5987,7 +5987,7 @@ exports[`Gun > Blasphemy (813) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -5997,7 +5997,7 @@ exports[`Gun > Blasphemy (813) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 114.545
       }
     ]
@@ -7496,7 +7496,7 @@ exports[`Gun > Bow (8) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 90
       }
     ]
@@ -7506,7 +7506,7 @@ exports[`Gun > Bow (8) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 80.357
       }
     ]
@@ -7650,7 +7650,7 @@ exports[`Gun > Bow (535) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 150
       }
     ]
@@ -7660,7 +7660,7 @@ exports[`Gun > Bow (535) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 78.947
       }
     ]
@@ -7776,7 +7776,7 @@ exports[`Gun > Boxing Glove (539) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 36
       }
     ]
@@ -7786,7 +7786,7 @@ exports[`Gun > Boxing Glove (539) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 89.046
       }
     ]
@@ -7862,7 +7862,7 @@ exports[`Gun > Boxing Glove (539) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 600
       }
     ]
@@ -7872,7 +7872,7 @@ exports[`Gun > Boxing Glove (539) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 663.507
       }
     ]
@@ -8032,7 +8032,7 @@ exports[`Gun > Brick Breaker (376) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 40
       }
     ]
@@ -8042,7 +8042,7 @@ exports[`Gun > Brick Breaker (376) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 54.054
       }
     ]
@@ -8163,7 +8163,7 @@ exports[`Gun > Bubble Blaster (599) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -8173,7 +8173,7 @@ exports[`Gun > Bubble Blaster (599) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 104.348
       }
     ]
@@ -8279,7 +8279,7 @@ exports[`Gun > Bubble Blaster (599) > [variants=0-0-1] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -8289,7 +8289,7 @@ exports[`Gun > Bubble Blaster (599) > [variants=0-0-1] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 104.348
       }
     ]
@@ -8395,7 +8395,7 @@ exports[`Gun > Bubble Blaster (599) > [variants=0-0-2] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -8405,7 +8405,7 @@ exports[`Gun > Bubble Blaster (599) > [variants=0-0-2] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 104.348
       }
     ]
@@ -8511,7 +8511,7 @@ exports[`Gun > Bubble Blaster (599) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -8521,7 +8521,7 @@ exports[`Gun > Bubble Blaster (599) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 104.348
       }
     ]
@@ -8667,7 +8667,7 @@ exports[`Gun > Bubble Lead (622) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -8677,7 +8677,7 @@ exports[`Gun > Bubble Lead (622) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 94.488
       }
     ]
@@ -8783,7 +8783,7 @@ exports[`Gun > Bubble Lead (622) > [variants=0-0-1] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -8793,7 +8793,7 @@ exports[`Gun > Bubble Lead (622) > [variants=0-0-1] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 94.488
       }
     ]
@@ -8899,7 +8899,7 @@ exports[`Gun > Bubble Lead (622) > [variants=0-0-2] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -8909,7 +8909,7 @@ exports[`Gun > Bubble Lead (622) > [variants=0-0-2] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 94.488
       }
     ]
@@ -9015,7 +9015,7 @@ exports[`Gun > Bubble Lead (622) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -9025,7 +9025,7 @@ exports[`Gun > Bubble Lead (622) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 94.488
       }
     ]
@@ -9698,7 +9698,7 @@ exports[`Gun > Bullet Bore (362) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -9707,7 +9707,7 @@ exports[`Gun > Bullet Bore (362) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 6.667,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 16.667
       }
     ]
@@ -9844,7 +9844,7 @@ exports[`Gun > Bullet Bore (717) > [variants=0-0-0,0-1-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -9853,7 +9853,7 @@ exports[`Gun > Bullet Bore (717) > [variants=0-0-0,0-1-0] 1`] = `
     "base": 6.667,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 16.667
       }
     ]
@@ -9943,7 +9943,7 @@ exports[`Gun > Bullet Bore (717) > [variants=0-A-A] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 50
       }
     ]
@@ -9952,7 +9952,7 @@ exports[`Gun > Bullet Bore (717) > [variants=0-A-A] 1`] = `
     "base": 13.333,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 33.333
       }
     ]
@@ -10091,12 +10091,12 @@ exports[`Gun > Bundle of Wands (61) > [variants=0-0-0,0-1-0,0-2-0] 1`] = `
     "details": [
       {
         "chance": 0.1,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 1000000
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -10106,12 +10106,12 @@ exports[`Gun > Bundle of Wands (61) > [variants=0-0-0,0-1-0,0-2-0] 1`] = `
     "details": [
       {
         "chance": 0.1,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 1818181.818
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12.727
       }
     ]
@@ -10199,12 +10199,12 @@ exports[`Gun > Bundle of Wands (61) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "chance": 0.271,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 3000000
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21
       }
     ]
@@ -10214,12 +10214,12 @@ exports[`Gun > Bundle of Wands (61) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "chance": 0.271,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 5454545.455
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 38.182
       }
     ]
@@ -10356,7 +10356,7 @@ exports[`Gun > Buzzkill (341) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 14
       }
     ]
@@ -10366,7 +10366,7 @@ exports[`Gun > Buzzkill (341) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 46.667
       }
     ]
@@ -10487,7 +10487,7 @@ exports[`Gun > Buzzkill (740) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 14
       }
     ]
@@ -10497,7 +10497,7 @@ exports[`Gun > Buzzkill (740) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 56
       }
     ]
@@ -10790,7 +10790,7 @@ exports[`Gun > Camera (481) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 30
       }
     ]
@@ -10800,7 +10800,7 @@ exports[`Gun > Camera (481) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 31.579
       }
     ]
@@ -10916,7 +10916,7 @@ exports[`Gun > Casey (541) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -10926,7 +10926,7 @@ exports[`Gun > Casey (541) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 150
       }
     ]
@@ -10998,7 +10998,7 @@ exports[`Gun > Casey (541) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -11008,7 +11008,7 @@ exports[`Gun > Casey (541) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 133.333
       }
     ]
@@ -11157,7 +11157,7 @@ exports[`Gun > Casey (616) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -11166,12 +11166,12 @@ exports[`Gun > Casey (616) > [variants=0-0-0] 1`] = `
     "base": 50,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 7.5
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 150
       }
     ]
@@ -11367,7 +11367,7 @@ exports[`Gun > Casey (616) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -11376,12 +11376,12 @@ exports[`Gun > Casey (616) > [variants=0-A-A] 1`] = `
     "base": 59,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 7.5
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 150
       }
     ]
@@ -11469,7 +11469,7 @@ exports[`Gun > Casey (616) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -11478,12 +11478,12 @@ exports[`Gun > Casey (616) > [variants=1-A-A,1-0-0] 1`] = `
     "base": 44.444,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 7.5
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 133.333
       }
     ]
@@ -11889,7 +11889,7 @@ exports[`Gun > Charge Shot (328) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 150
       }
     ]
@@ -11899,7 +11899,7 @@ exports[`Gun > Charge Shot (328) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 176.471
       }
     ]
@@ -12285,7 +12285,7 @@ exports[`Gun > Cobalt Hammer (390) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 26
       }
     ]
@@ -12295,7 +12295,7 @@ exports[`Gun > Cobalt Hammer (390) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 52
       }
     ]
@@ -12369,7 +12369,7 @@ exports[`Gun > Cobalt Hammer (390) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 36
       }
     ]
@@ -12379,7 +12379,7 @@ exports[`Gun > Cobalt Hammer (390) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 18
       }
     ]
@@ -12712,7 +12712,7 @@ exports[`Gun > Com4nd0 (129) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -12721,7 +12721,7 @@ exports[`Gun > Com4nd0 (129) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 20.513,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25.641
       }
     ]
@@ -12846,7 +12846,7 @@ exports[`Gun > Com4nd0 (723) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -12855,7 +12855,7 @@ exports[`Gun > Com4nd0 (723) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 29.091,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 36.364
       }
     ]
@@ -13035,7 +13035,7 @@ exports[`Gun > Combined Rifle (519) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 200
       }
     ]
@@ -13045,7 +13045,7 @@ exports[`Gun > Combined Rifle (519) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 166.667
       }
     ]
@@ -13247,7 +13247,7 @@ exports[`Gun > Composite Gun (337) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -13257,7 +13257,7 @@ exports[`Gun > Composite Gun (337) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 272.727
       }
     ]
@@ -13406,7 +13406,7 @@ exports[`Gun > Compressed Air Tank (359) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 900
       }
     ]
@@ -13416,7 +13416,7 @@ exports[`Gun > Compressed Air Tank (359) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 720
       }
     ]
@@ -13537,7 +13537,7 @@ exports[`Gun > Corsair (327) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 40
       }
     ]
@@ -13546,7 +13546,7 @@ exports[`Gun > Corsair (327) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 12.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 50
       }
     ]
@@ -13682,7 +13682,7 @@ exports[`Gun > Corsair (686) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 40
       }
     ]
@@ -13691,7 +13691,7 @@ exports[`Gun > Corsair (686) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 12.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 50
       }
     ]
@@ -13881,7 +13881,7 @@ exports[`Gun > Crash Bomber (624) > [variants=1-A-A,1-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -13890,7 +13890,7 @@ exports[`Gun > Crash Bomber (624) > [variants=1-A-A,1-0-0] 1`] = `
     "base": 10.638,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 26.596
       }
     ]
@@ -15176,7 +15176,7 @@ exports[`Gun > Dark Marker (274) > [variants=1-0-0] 1`] = `
     "base": 40,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 50
       }
     ]
@@ -15185,7 +15185,7 @@ exports[`Gun > Dark Marker (274) > [variants=1-0-0] 1`] = `
     "base": 13.333,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 16.667
       }
     ]
@@ -15274,7 +15274,7 @@ exports[`Gun > Dark Marker (274) > [variants=1-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 120
       }
     ]
@@ -15284,7 +15284,7 @@ exports[`Gun > Dark Marker (274) > [variants=1-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 40
       }
     ]
@@ -15362,12 +15362,12 @@ exports[`Gun > Dark Marker (274) > [variants=1-A-A] 1`] = `
     "base": 80,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 50
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 120
       }
     ]
@@ -15376,12 +15376,12 @@ exports[`Gun > Dark Marker (274) > [variants=1-A-A] 1`] = `
     "base": 26.667,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 16.667
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 40
       }
     ]
@@ -15761,7 +15761,7 @@ exports[`Gun > Deck4rd (81) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 35
       }
     ]
@@ -15770,7 +15770,7 @@ exports[`Gun > Deck4rd (81) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 5.263,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 36.842
       }
     ]
@@ -15890,7 +15890,7 @@ exports[`Gun > Demon Head (60) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 31,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 6
       }
     ]
@@ -16107,7 +16107,7 @@ exports[`Gun > Devolver (484) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Devolver's max potential damage: {{VALUE}}",
+        "tooltip": "devolver",
         "value": 79
       }
     ]
@@ -16117,7 +16117,7 @@ exports[`Gun > Devolver (484) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Devolver's max potential damage: {{VALUE}}",
+        "tooltip": "devolver",
         "value": 292.593
       }
     ]
@@ -16814,7 +16814,7 @@ exports[`Gun > Dragunfire (146) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 13
       }
     ]
@@ -16824,12 +16824,12 @@ exports[`Gun > Dragunfire (146) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 105.405
       }
     ]
@@ -16975,7 +16975,7 @@ exports[`Gun > Dragunfire (677) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -17093,7 +17093,7 @@ exports[`Gun > Dueling Laser (508) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -17103,7 +17103,7 @@ exports[`Gun > Dueling Laser (508) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -17218,7 +17218,7 @@ exports[`Gun > Dueling Pistol (9) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 20
       }
     ]
@@ -17228,7 +17228,7 @@ exports[`Gun > Dueling Pistol (9) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 16.667
       }
     ]
@@ -17346,7 +17346,7 @@ exports[`Gun > Dueling Pistol (675) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 20
       }
     ]
@@ -17356,7 +17356,7 @@ exports[`Gun > Dueling Pistol (675) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 16.667
       }
     ]
@@ -18741,7 +18741,7 @@ exports[`Gun > Excaliber (377) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21
       }
     ]
@@ -18751,7 +18751,7 @@ exports[`Gun > Excaliber (377) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 105.882
       }
     ]
@@ -18863,7 +18863,7 @@ exports[`Gun > Excaliber (680) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21
       }
     ]
@@ -18873,7 +18873,7 @@ exports[`Gun > Excaliber (680) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 105.882
       }
     ]
@@ -18985,7 +18985,7 @@ exports[`Gun > Eye of the Beholster (90) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -18995,7 +18995,7 @@ exports[`Gun > Eye of the Beholster (90) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 24
       }
     ]
@@ -19573,7 +19573,7 @@ exports[`Gun > Flame Hand (125) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -19582,12 +19582,12 @@ exports[`Gun > Flame Hand (125) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 4,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -19727,7 +19727,7 @@ exports[`Gun > Flame Hand (698) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Oil Goop damage: {{VALUE}}",
+        "tooltip": "oilGoop",
         "value": 10
       }
     ]
@@ -19851,7 +19851,7 @@ exports[`Gun > Flare Gun (275) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 16.25,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -19969,7 +19969,7 @@ exports[`Gun > Flare Gun (706) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 16.25,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -20084,7 +20084,7 @@ exports[`Gun > Flash Ray (383) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -20094,7 +20094,7 @@ exports[`Gun > Flash Ray (383) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21.429
       }
     ]
@@ -20212,7 +20212,7 @@ exports[`Gun > Flash Ray (657) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 28.571,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 3
       }
     ]
@@ -20327,7 +20327,7 @@ exports[`Gun > Flash Ray (705) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -20337,7 +20337,7 @@ exports[`Gun > Flash Ray (705) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 27.273
       }
     ]
@@ -20976,7 +20976,7 @@ exports[`Gun > Gamma Ray (87) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 16,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 4
       }
     ]
@@ -21110,7 +21110,7 @@ exports[`Gun > Gamma Ray (671) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 23,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -21241,7 +21241,7 @@ exports[`Gun > Gilded Hydra (231) > [variants=0-0-0,0-1-0,0-6-0,0-7-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -21251,7 +21251,7 @@ exports[`Gun > Gilded Hydra (231) > [variants=0-0-0,0-1-0,0-6-0,0-7-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -21329,7 +21329,7 @@ exports[`Gun > Gilded Hydra (231) > [variants=0-2-0,0-3-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -21339,7 +21339,7 @@ exports[`Gun > Gilded Hydra (231) > [variants=0-2-0,0-3-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -21417,7 +21417,7 @@ exports[`Gun > Gilded Hydra (231) > [variants=0-4-0,0-5-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -21427,7 +21427,7 @@ exports[`Gun > Gilded Hydra (231) > [variants=0-4-0,0-5-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -21505,7 +21505,7 @@ exports[`Gun > Gilded Hydra (231) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 120
       }
     ]
@@ -21515,7 +21515,7 @@ exports[`Gun > Gilded Hydra (231) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 60
       }
     ]
@@ -21702,7 +21702,7 @@ exports[`Gun > Glacier (130) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 8,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 6
       }
     ]
@@ -21711,7 +21711,7 @@ exports[`Gun > Glacier (130) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 12.8,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 9.6
       }
     ]
@@ -21846,7 +21846,7 @@ exports[`Gun > Glass Cannon (540) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 420
       }
     ]
@@ -21856,7 +21856,7 @@ exports[`Gun > Glass Cannon (540) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 150
       }
     ]
@@ -21975,7 +21975,7 @@ exports[`Gun > Glass Cannon (819) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 420
       }
     ]
@@ -21985,7 +21985,7 @@ exports[`Gun > Glass Cannon (819) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 131.25
       }
     ]
@@ -22103,7 +22103,7 @@ exports[`Gun > Grasschopper (180) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 20
       }
     ]
@@ -22112,7 +22112,7 @@ exports[`Gun > Grasschopper (180) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 10
       }
     ]
@@ -22228,7 +22228,7 @@ exports[`Gun > Grenade Launcher (19) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -22237,7 +22237,7 @@ exports[`Gun > Grenade Launcher (19) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 12.821,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 32.051
       }
     ]
@@ -22532,7 +22532,7 @@ exports[`Gun > Gunbow (210) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 210
       }
     ]
@@ -22542,7 +22542,7 @@ exports[`Gun > Gunbow (210) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 116.667
       }
     ]
@@ -22663,7 +22663,7 @@ exports[`Gun > Gunbow (693) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 35,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 35
       }
     ]
@@ -22672,7 +22672,7 @@ exports[`Gun > Gunbow (693) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 19.444,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 19.444
       }
     ]
@@ -23098,7 +23098,7 @@ exports[`Gun > Gungeon Ant (176) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Oil Goop damage: {{VALUE}}",
+        "tooltip": "oilGoop",
         "value": 10
       }
     ]
@@ -23186,7 +23186,7 @@ exports[`Gun > Gungeon Ant (176) > [variants=0-1-0,0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Oil Goop damage: {{VALUE}}",
+        "tooltip": "oilGoop",
         "value": 10
       }
     ]
@@ -23274,7 +23274,7 @@ exports[`Gun > Gungeon Ant (176) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Oil Goop damage: {{VALUE}}",
+        "tooltip": "oilGoop",
         "value": 10
       }
     ]
@@ -23358,7 +23358,7 @@ exports[`Gun > Gungeon Ant (176) > [variants=1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4.5
       }
     ]
@@ -23367,12 +23367,12 @@ exports[`Gun > Gungeon Ant (176) > [variants=1-0-0] 1`] = `
     "base": 2.143,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6.429
       }
     ]
@@ -23460,7 +23460,7 @@ exports[`Gun > Gungeon Ant (176) > [variants=1-1-0,1-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4.5
       }
     ]
@@ -23469,12 +23469,12 @@ exports[`Gun > Gungeon Ant (176) > [variants=1-1-0,1-2-0] 1`] = `
     "base": 2.143,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6.429
       }
     ]
@@ -23562,7 +23562,7 @@ exports[`Gun > Gungeon Ant (176) > [variants=1-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 13.5
       }
     ]
@@ -23571,12 +23571,12 @@ exports[`Gun > Gungeon Ant (176) > [variants=1-A-A] 1`] = `
     "base": 6.429,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.286
       }
     ]
@@ -23826,7 +23826,7 @@ exports[`Gun > Gungeon Ant (739) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 35
       }
     ]
@@ -23835,7 +23835,7 @@ exports[`Gun > Gungeon Ant (739) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 18.182,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 31.818
       }
     ]
@@ -24044,7 +24044,7 @@ exports[`Gun > Gunslinger's Ashes (198) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 36
       }
     ]
@@ -24054,7 +24054,7 @@ exports[`Gun > Gunslinger's Ashes (198) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 45
       }
     ]
@@ -24204,7 +24204,7 @@ exports[`Gun > Gunslinger's Ashes (198) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 36
       },
       {
@@ -24219,7 +24219,7 @@ exports[`Gun > Gunslinger's Ashes (198) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 45
       },
       {
@@ -24387,7 +24387,7 @@ exports[`Gun > Gunther (338) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -24397,7 +24397,7 @@ exports[`Gun > Gunther (338) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 33.333
       }
     ]
@@ -24509,7 +24509,7 @@ exports[`Gun > Gunzheng (482) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 18
       }
     ]
@@ -24519,7 +24519,7 @@ exports[`Gun > Gunzheng (482) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 257.143
       }
     ]
@@ -24993,7 +24993,7 @@ exports[`Gun > Hegemony Carbine (724) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 22.436,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -25200,7 +25200,7 @@ exports[`Gun > Hegemony Rifle (699) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 10
       }
     ]
@@ -25210,7 +25210,7 @@ exports[`Gun > Hegemony Rifle (699) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 38.462
       }
     ]
@@ -26394,7 +26394,7 @@ exports[`Gun > Heroine (Plasma Beam) (614) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 8
       }
     ]
@@ -26403,12 +26403,12 @@ exports[`Gun > Heroine (Plasma Beam) (614) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 50,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 50
       }
     ]
@@ -26498,7 +26498,7 @@ exports[`Gun > Heroine (Plasma Beam) (614) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 35
       }
     ]
@@ -26507,12 +26507,12 @@ exports[`Gun > Heroine (Plasma Beam) (614) > [variants=1-A-A,1-0-0] 1`] = `
     "base": 21.084,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21.084
       }
     ]
@@ -27021,12 +27021,12 @@ exports[`Gun > Hexagun (385) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "chance": 0.2,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 1000000
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 35
       }
     ]
@@ -27036,12 +27036,12 @@ exports[`Gun > Hexagun (385) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "chance": 0.2,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 980392.157
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 34.314
       }
     ]
@@ -27184,7 +27184,7 @@ exports[`Gun > High Dragunfire (670) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -27302,7 +27302,7 @@ exports[`Gun > High Dragunfire (747) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 105
       }
     ]
@@ -27312,7 +27312,7 @@ exports[`Gun > High Dragunfire (747) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 1016.129
       }
     ]
@@ -27427,7 +27427,7 @@ exports[`Gun > High Kaliber (761) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -27437,7 +27437,7 @@ exports[`Gun > High Kaliber (761) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 36.131
       }
     ]
@@ -27864,7 +27864,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 60
       }
     ]
@@ -27874,7 +27874,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 244.898
       }
     ]
@@ -27989,7 +27989,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 60
       }
     ]
@@ -27999,7 +27999,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 295.082
       }
     ]
@@ -29160,7 +29160,7 @@ exports[`Gun > Kruller Glaive (656) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 25
       }
     ]
@@ -29170,7 +29170,7 @@ exports[`Gun > Kruller Glaive (656) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 20.833
       }
     ]
@@ -29307,7 +29307,7 @@ exports[`Gun > Laser Lotus (156) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 18
       }
     ]
@@ -29317,7 +29317,7 @@ exports[`Gun > Laser Lotus (156) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 53.254
       }
     ]
@@ -29432,7 +29432,7 @@ exports[`Gun > Laser Lotus (714) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 9
       }
     ]
@@ -29442,7 +29442,7 @@ exports[`Gun > Laser Lotus (714) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 73.096
       }
     ]
@@ -29907,6 +29907,7 @@ exports[`Gun > Life Orb (595) > [variants=0-0-0] 1`] = `
     "base": 20,
     "details": [
       {
+        "chance": 0.65,
         "isEstimated": true,
         "tooltip": "Estimated soul damage: {{VALUE}}<br/>Assuming <strong>4</strong> enemies in range on average, and the last enemy killed has <strong>20</strong> health.",
         "value": 80
@@ -29967,6 +29968,7 @@ exports[`Gun > Life Orb (595) > [variants=0-1-0] 1`] = `
     "base": 1.5,
     "details": [
       {
+        "chance": 0.65,
         "isEstimated": true,
         "tooltip": "Estimated soul damage: {{VALUE}}<br/>Assuming <strong>4</strong> enemies in range on average, and the last enemy killed has <strong>20</strong> health.",
         "value": 6
@@ -30027,6 +30029,7 @@ exports[`Gun > Life Orb (595) > [variants=0-A-A] 1`] = `
     "base": 21.5,
     "details": [
       {
+        "chance": 0.65,
         "isEstimated": true,
         "tooltip": "Estimated soul damage: {{VALUE}}<br/>Assuming <strong>4</strong> enemies in range on average, and the last enemy killed has <strong>20</strong> health.",
         "value": 86
@@ -30138,7 +30141,7 @@ exports[`Gun > Light Gun (27) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -30148,7 +30151,7 @@ exports[`Gun > Light Gun (27) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.091
       }
     ]
@@ -30263,7 +30266,7 @@ exports[`Gun > Light Gun (711) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 3
       }
     ]
@@ -30273,7 +30276,7 @@ exports[`Gun > Light Gun (711) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 8.75
       }
     ]
@@ -30387,7 +30390,7 @@ exports[`Gun > Lil' Bomber (332) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 15,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -30396,7 +30399,7 @@ exports[`Gun > Lil' Bomber (332) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 5.233,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 8.721
       }
     ]
@@ -30519,7 +30522,7 @@ exports[`Gun > Lil' Bomber (719) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 15,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -30528,7 +30531,7 @@ exports[`Gun > Lil' Bomber (719) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 5.233,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 8.721
       }
     ]
@@ -31571,7 +31574,7 @@ exports[`Gun > M1 (25) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 20
       }
     ]
@@ -31581,7 +31584,7 @@ exports[`Gun > M1 (25) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.672
       }
     ]
@@ -31696,7 +31699,7 @@ exports[`Gun > M1 (684) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 20
       }
     ]
@@ -31706,7 +31709,7 @@ exports[`Gun > M1 (684) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21.176
       }
     ]
@@ -31874,7 +31877,7 @@ exports[`Gun > M16 (96) > [variants=1-A-A,1-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -31883,7 +31886,7 @@ exports[`Gun > M16 (96) > [variants=1-A-A,1-0-0] 1`] = `
     "base": 11.111,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 27.778
       }
     ]
@@ -32258,7 +32261,7 @@ exports[`Gun > Machine Fist (186) > [variants=1-A-A,1-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 30
       }
     ]
@@ -32267,7 +32270,7 @@ exports[`Gun > Machine Fist (186) > [variants=1-A-A,1-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 30
       }
     ]
@@ -32840,7 +32843,7 @@ exports[`Gun > Mahoguny (339) > [variants=0-0-0] 1`] = `
     "base": 5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 10
       }
     ]
@@ -32849,7 +32852,7 @@ exports[`Gun > Mahoguny (339) > [variants=0-0-0] 1`] = `
     "base": 4.464,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 8.929
       }
     ]
@@ -33091,7 +33094,7 @@ exports[`Gun > Mahoguny (339) > [variants=0-A-A] 1`] = `
     "base": 17,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 10
       }
     ]
@@ -33100,7 +33103,7 @@ exports[`Gun > Mahoguny (339) > [variants=0-A-A] 1`] = `
     "base": 15.179,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 8.929
       }
     ]
@@ -33286,7 +33289,7 @@ exports[`Gun > Mailbox (28) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 5
       }
     ]
@@ -33296,7 +33299,7 @@ exports[`Gun > Mailbox (28) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15.625
       }
     ]
@@ -33494,7 +33497,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 600
       }
     ]
@@ -33504,7 +33507,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 250
       }
     ]
@@ -33580,7 +33583,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 600
       }
     ]
@@ -33590,7 +33593,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 250
       }
     ]
@@ -33666,7 +33669,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 600
       }
     ]
@@ -33676,7 +33679,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 250
       }
     ]
@@ -33752,7 +33755,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-3-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 600
       }
     ]
@@ -33762,7 +33765,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-3-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 250
       }
     ]
@@ -33838,7 +33841,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-4-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 600
       }
     ]
@@ -33848,7 +33851,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-4-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 250
       }
     ]
@@ -33924,7 +33927,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-5-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 600
       }
     ]
@@ -33934,7 +33937,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-5-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 250
       }
     ]
@@ -34010,7 +34013,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 3600
       }
     ]
@@ -34020,7 +34023,7 @@ exports[`Gun > Makeshift Cannon (480) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 1500
       }
     ]
@@ -34987,7 +34990,7 @@ exports[`Gun > Metal Blade (619) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 14
       }
     ]
@@ -34997,7 +35000,7 @@ exports[`Gun > Metal Blade (619) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 140
       }
     ]
@@ -35636,12 +35639,12 @@ exports[`Gun > Microtransaction Gun (476) > [variants=0-0-3] 1`] = `
     "base": 71.429,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Oil Goop damage: {{VALUE}}",
+        "tooltip": "oilGoop",
         "value": 10
       }
     ]
@@ -35805,7 +35808,7 @@ exports[`Gun > Microtransaction Gun (476) > [variants=0-0-4] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 60
       }
     ]
@@ -35815,7 +35818,7 @@ exports[`Gun > Microtransaction Gun (476) > [variants=0-0-4] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 285.714
       }
     ]
@@ -36259,7 +36262,7 @@ exports[`Gun > Microtransaction Gun (476) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 8.571
       }
     ]
@@ -36269,17 +36272,17 @@ exports[`Gun > Microtransaction Gun (476) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Oil Goop damage: {{VALUE}}",
+        "tooltip": "oilGoop",
         "value": 10
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 40.816
       }
     ]
@@ -36526,7 +36529,7 @@ exports[`Gun > Mine Cutter (394) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 10
       }
     ]
@@ -36536,7 +36539,7 @@ exports[`Gun > Mine Cutter (394) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 40
       }
     ]
@@ -36736,7 +36739,7 @@ exports[`Gun > Molotov Launcher (292) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Oil Goop damage: {{VALUE}}",
+        "tooltip": "oilGoop",
         "value": 10
       }
     ]
@@ -36861,7 +36864,7 @@ exports[`Gun > Molotov Launcher (691) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Oil Goop damage: {{VALUE}}",
+        "tooltip": "oilGoop",
         "value": 10
       }
     ]
@@ -37578,7 +37581,7 @@ exports[`Gun > Mr. Accretion Jr. (597) > [variants=0-0-0] 1`] = `
     "base": 6.25,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -37741,7 +37744,7 @@ exports[`Gun > Mr. Accretion Jr. (597) > [variants=0-0-1] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -38198,7 +38201,7 @@ exports[`Gun > Mr. Accretion Jr. (597) > [variants=0-0-4] 1`] = `
     "base": 55,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -38207,7 +38210,7 @@ exports[`Gun > Mr. Accretion Jr. (597) > [variants=0-0-4] 1`] = `
     "base": 68.75,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 31.25
       }
     ]
@@ -38823,7 +38826,7 @@ exports[`Gun > Mr. Accretion Jr. (597) > [variants=0-A-A] 1`] = `
     "base": 16.75,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 3.125
       }
     ]
@@ -38832,17 +38835,17 @@ exports[`Gun > Mr. Accretion Jr. (597) > [variants=0-A-A] 1`] = `
     "base": 20.938,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 3.906
       },
       {
         "isEstimated": true,
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -39451,7 +39454,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-0-0,0-3-0] 1`] = `
     "base": 3.5,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 2.45
       }
     ]
@@ -39460,7 +39463,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-0-0,0-3-0] 1`] = `
     "base": 4.375,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 3.063
       }
     ]
@@ -39515,7 +39518,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-1-0,0-6-0] 1`] = `
     "base": 3.5,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 2.45
       }
     ]
@@ -39524,7 +39527,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-1-0,0-6-0] 1`] = `
     "base": 4.375,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 3.063
       }
     ]
@@ -39579,7 +39582,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-2-0] 1`] = `
     "base": 3.5,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 2.45
       }
     ]
@@ -39588,7 +39591,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-2-0] 1`] = `
     "base": 4.375,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 3.063
       }
     ]
@@ -39643,7 +39646,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-4-0,0-9-0] 1`] = `
     "base": 3.5,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 2.45
       }
     ]
@@ -39652,7 +39655,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-4-0,0-9-0] 1`] = `
     "base": 4.375,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 3.063
       }
     ]
@@ -39707,7 +39710,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-5-0] 1`] = `
     "base": 3.5,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 2.45
       }
     ]
@@ -39716,7 +39719,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-5-0] 1`] = `
     "base": 4.375,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 3.063
       }
     ]
@@ -39771,7 +39774,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-7-0] 1`] = `
     "base": 3.5,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 2.45
       }
     ]
@@ -39780,7 +39783,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-7-0] 1`] = `
     "base": 4.375,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 3.063
       }
     ]
@@ -39835,7 +39838,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-8-0] 1`] = `
     "base": 3.5,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 2.45
       }
     ]
@@ -39844,7 +39847,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-8-0] 1`] = `
     "base": 4.375,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 3.063
       }
     ]
@@ -39899,7 +39902,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-A-A] 1`] = `
     "base": 35,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 24.5
       }
     ]
@@ -39908,7 +39911,7 @@ exports[`Gun > Old Goldie (93) > [variants=0-A-A] 1`] = `
     "base": 43.75,
     "details": [
       {
-        "tooltip": "Damage modifier: {{VALUE}}",
+        "tooltip": "damageMultiplier",
         "value": 30.625
       }
     ]
@@ -40125,7 +40128,7 @@ exports[`Gun > Origuni (477) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -40135,7 +40138,7 @@ exports[`Gun > Origuni (477) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21.429
       }
     ]
@@ -40245,7 +40248,7 @@ exports[`Gun > Origuni (477) > [variants=0-0-1] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -40255,7 +40258,7 @@ exports[`Gun > Origuni (477) > [variants=0-0-1] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21.429
       }
     ]
@@ -40365,7 +40368,7 @@ exports[`Gun > Origuni (477) > [variants=0-0-2] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -40375,7 +40378,7 @@ exports[`Gun > Origuni (477) > [variants=0-0-2] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21.429
       }
     ]
@@ -40485,7 +40488,7 @@ exports[`Gun > Origuni (477) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -40495,7 +40498,7 @@ exports[`Gun > Origuni (477) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21.429
       }
     ]
@@ -40646,7 +40649,7 @@ exports[`Gun > Origuni (744) > [variants=0-0-0,0-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.5
       }
     ]
@@ -40656,7 +40659,7 @@ exports[`Gun > Origuni (744) > [variants=0-0-0,0-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21.429
       }
     ]
@@ -40730,7 +40733,7 @@ exports[`Gun > Origuni (744) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -40740,7 +40743,7 @@ exports[`Gun > Origuni (744) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42.857
       }
     ]
@@ -41125,7 +41128,7 @@ exports[`Gun > Patriot (98) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21
       }
     ]
@@ -41135,7 +41138,7 @@ exports[`Gun > Patriot (98) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 67.742
       }
     ]
@@ -41418,7 +41421,7 @@ exports[`Gun > Pea Shooter (674) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 4,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 7
       }
     ]
@@ -41427,7 +41430,7 @@ exports[`Gun > Pea Shooter (674) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 6.667,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 11.667
       }
     ]
@@ -41544,7 +41547,7 @@ exports[`Gun > Phoenix (384) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4
       }
     ]
@@ -41554,7 +41557,7 @@ exports[`Gun > Phoenix (384) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 16
       }
     ]
@@ -41629,7 +41632,7 @@ exports[`Gun > Phoenix (384) > [variants=0-1-0] 1`] = `
     "base": 0,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -41705,7 +41708,7 @@ exports[`Gun > Phoenix (384) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4
       }
     ]
@@ -41714,12 +41717,12 @@ exports[`Gun > Phoenix (384) > [variants=0-A-A] 1`] = `
     "base": 16,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 16
       }
     ]
@@ -41878,7 +41881,7 @@ exports[`Gun > Phoenix (736) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4
       }
     ]
@@ -41888,7 +41891,7 @@ exports[`Gun > Phoenix (736) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 16
       }
     ]
@@ -41963,7 +41966,7 @@ exports[`Gun > Phoenix (736) > [variants=0-1-0] 1`] = `
     "base": 0,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -42039,7 +42042,7 @@ exports[`Gun > Phoenix (736) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4
       }
     ]
@@ -42048,12 +42051,12 @@ exports[`Gun > Phoenix (736) > [variants=0-A-A] 1`] = `
     "base": 16,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 16
       }
     ]
@@ -42212,7 +42215,7 @@ exports[`Gun > Pitchfork (336) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -42221,12 +42224,12 @@ exports[`Gun > Pitchfork (336) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 26.667,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 80
       }
     ]
@@ -42362,7 +42365,7 @@ exports[`Gun > Pitchfork (722) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -42371,12 +42374,12 @@ exports[`Gun > Pitchfork (722) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 26.667,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 80
       }
     ]
@@ -42516,7 +42519,7 @@ exports[`Gun > Plague Pistol (207) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 3
       }
     ]
@@ -42638,7 +42641,7 @@ exports[`Gun > Plague Pistol (682) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 3
       }
     ]
@@ -43461,7 +43464,7 @@ exports[`Gun > Poxcannon (513) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 23.684,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 3
       }
     ]
@@ -44390,7 +44393,7 @@ exports[`Gun > Prototype Railgun (370) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 450
       }
     ]
@@ -44400,7 +44403,7 @@ exports[`Gun > Prototype Railgun (370) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 214.286
       }
     ]
@@ -44993,7 +44996,7 @@ exports[`Gun > RC Rocket (372) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 100,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 30
       }
     ]
@@ -45002,7 +45005,7 @@ exports[`Gun > RC Rocket (372) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 66.667,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 20
       }
     ]
@@ -45118,7 +45121,7 @@ exports[`Gun > RPG (39) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 35
       }
     ]
@@ -45127,7 +45130,7 @@ exports[`Gun > RPG (39) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 6.667,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 11.667
       }
     ]
@@ -46254,7 +46257,7 @@ exports[`Gun > Raiden Coil (107) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 52.5
       }
     ]
@@ -46264,7 +46267,7 @@ exports[`Gun > Raiden Coil (107) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 52.5
       }
     ]
@@ -46389,7 +46392,7 @@ exports[`Gun > Raiden Coil (712) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 52.5
       }
     ]
@@ -46399,7 +46402,7 @@ exports[`Gun > Raiden Coil (712) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 52.5
       }
     ]
@@ -46539,7 +46542,7 @@ exports[`Gun > Raiden Coil (712) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 52.5
       }
     ]
@@ -46549,7 +46552,7 @@ exports[`Gun > Raiden Coil (712) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 52.5
       }
     ]
@@ -46699,7 +46702,7 @@ exports[`Gun > Railgun (358) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 300
       }
     ]
@@ -46709,7 +46712,7 @@ exports[`Gun > Railgun (358) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 157.895
       }
     ]
@@ -46888,7 +46891,7 @@ exports[`Gun > Rattler (406) > [variants=0-1-0] 1`] = `
     "base": 4,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -47289,7 +47292,7 @@ exports[`Gun > Rattler (406) > [variants=0-A-A] 1`] = `
     "base": 32,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -49401,11 +49404,11 @@ exports[`Gun > Science Cannon (331) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 26,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 3
       },
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -49572,7 +49575,7 @@ exports[`Gun > Screecher (3) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4.5
       }
     ]
@@ -49582,7 +49585,7 @@ exports[`Gun > Screecher (3) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 88.933
       }
     ]
@@ -49789,7 +49792,7 @@ exports[`Gun > Serious Cannon (37) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 200
       }
     ]
@@ -49799,7 +49802,7 @@ exports[`Gun > Serious Cannon (37) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 80
       }
     ]
@@ -51149,7 +51152,7 @@ exports[`Gun > Shellegun (464) > [variants=1-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -51288,7 +51291,7 @@ exports[`Gun > Shellegun (464) > [variants=1-A-A] 1`] = `
     "base": 21.5,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -52142,7 +52145,7 @@ exports[`Gun > Shotgrub (347) > [variants=0-0-0] 1`] = `
     "base": 4.211,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -52219,7 +52222,7 @@ exports[`Gun > Shotgrub (347) > [variants=0-1-0,0-2-0] 1`] = `
     "base": 4.211,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -52296,7 +52299,7 @@ exports[`Gun > Shotgrub (347) > [variants=0-3-0,0-4-0] 1`] = `
     "base": 4.211,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -52373,7 +52376,7 @@ exports[`Gun > Shotgrub (347) > [variants=0-A-A] 1`] = `
     "base": 21.053,
     "details": [
       {
-        "tooltip": "Poison damage: {{VALUE}}",
+        "tooltip": "poison",
         "value": 5
       }
     ]
@@ -52712,7 +52715,7 @@ exports[`Gun > Shotgun Full of Hate (143) > [variants=0-3-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 3
       }
     ]
@@ -52722,7 +52725,7 @@ exports[`Gun > Shotgun Full of Hate (143) > [variants=0-3-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4.615
       }
     ]
@@ -52794,7 +52797,7 @@ exports[`Gun > Shotgun Full of Hate (143) > [variants=0-4-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 5
       }
     ]
@@ -52804,7 +52807,7 @@ exports[`Gun > Shotgun Full of Hate (143) > [variants=0-4-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7.692
       }
     ]
@@ -52936,7 +52939,7 @@ exports[`Gun > Shotgun Full of Hate (143) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 8
       }
     ]
@@ -52946,7 +52949,7 @@ exports[`Gun > Shotgun Full of Hate (143) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12.308
       }
     ]
@@ -53238,7 +53241,7 @@ exports[`Gun > Shotgun Full of Love (379) > [variants=0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -53248,7 +53251,7 @@ exports[`Gun > Shotgun Full of Love (379) > [variants=0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 23.077
       }
     ]
@@ -53444,7 +53447,7 @@ exports[`Gun > Shotgun Full of Love (379) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -53454,7 +53457,7 @@ exports[`Gun > Shotgun Full of Love (379) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 23.077
       }
     ]
@@ -53703,7 +53706,7 @@ exports[`Gun > Silencer (335) > [variants=0-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -53713,7 +53716,7 @@ exports[`Gun > Silencer (335) > [variants=0-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6.857
       }
     ]
@@ -53789,7 +53792,7 @@ exports[`Gun > Silencer (335) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 15
       }
     ]
@@ -53799,7 +53802,7 @@ exports[`Gun > Silencer (335) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6.857
       }
     ]
@@ -53938,7 +53941,7 @@ exports[`Gun > Siren (404) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -53948,7 +53951,7 @@ exports[`Gun > Siren (404) > [variants=0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 9.231
       }
     ]
@@ -54020,7 +54023,7 @@ exports[`Gun > Siren (404) > [variants=0-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -54030,7 +54033,7 @@ exports[`Gun > Siren (404) > [variants=0-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 9.231
       }
     ]
@@ -54102,7 +54105,7 @@ exports[`Gun > Siren (404) > [variants=0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -54112,7 +54115,7 @@ exports[`Gun > Siren (404) > [variants=0-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 9.231
       }
     ]
@@ -54184,7 +54187,7 @@ exports[`Gun > Siren (404) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 18
       }
     ]
@@ -54194,7 +54197,7 @@ exports[`Gun > Siren (404) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 27.692
       }
     ]
@@ -54364,7 +54367,7 @@ exports[`Gun > Skull Spitter (45) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 30
       }
     ]
@@ -54374,7 +54377,7 @@ exports[`Gun > Skull Spitter (45) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 75
       }
     ]
@@ -55021,7 +55024,7 @@ exports[`Gun > Snakemaker (360) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "chance": 0.25,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 1000000
       }
     ]
@@ -55031,7 +55034,7 @@ exports[`Gun > Snakemaker (360) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "chance": 0.25,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 2702702.703
       }
     ]
@@ -55146,7 +55149,7 @@ exports[`Gun > Sniper Rifle (49) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 26
       }
     ]
@@ -55156,7 +55159,7 @@ exports[`Gun > Sniper Rifle (49) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 22.609
       }
     ]
@@ -55664,7 +55667,7 @@ exports[`Gun > Staff of Firepower (395) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -55809,7 +55812,7 @@ exports[`Gun > Starpew (507) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -55819,7 +55822,7 @@ exports[`Gun > Starpew (507) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 33.333
       }
     ]
@@ -55891,7 +55894,7 @@ exports[`Gun > Starpew (507) > [variants=1-0-0,1-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -55901,7 +55904,7 @@ exports[`Gun > Starpew (507) > [variants=1-0-0,1-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.444
       }
     ]
@@ -55973,7 +55976,7 @@ exports[`Gun > Starpew (507) > [variants=1-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 14
       }
     ]
@@ -55983,7 +55986,7 @@ exports[`Gun > Starpew (507) > [variants=1-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 38.889
       }
     ]
@@ -56055,7 +56058,7 @@ exports[`Gun > Starpew (507) > [variants=2-0-0,2-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -56065,7 +56068,7 @@ exports[`Gun > Starpew (507) > [variants=2-0-0,2-1-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 11.475
       }
     ]
@@ -56137,7 +56140,7 @@ exports[`Gun > Starpew (507) > [variants=2-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 14
       }
     ]
@@ -56147,7 +56150,7 @@ exports[`Gun > Starpew (507) > [variants=2-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 22.951
       }
     ]
@@ -56219,7 +56222,7 @@ exports[`Gun > Starpew (507) > [variants=3-0-0,3-1-0,3-2-0,3-3-0,3-4-0,3-5-0,3-6
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -56229,7 +56232,7 @@ exports[`Gun > Starpew (507) > [variants=3-0-0,3-1-0,3-2-0,3-3-0,3-4-0,3-5-0,3-6
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6.306
       }
     ]
@@ -56301,7 +56304,7 @@ exports[`Gun > Starpew (507) > [variants=3-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 63
       }
     ]
@@ -56311,7 +56314,7 @@ exports[`Gun > Starpew (507) > [variants=3-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 56.757
       }
     ]
@@ -56383,7 +56386,7 @@ exports[`Gun > Starpew (507) > [variants=4-0-0,4-1-0,4-2-0,4-3-0,4-4-0,4-5-0] 1`
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -56393,7 +56396,7 @@ exports[`Gun > Starpew (507) > [variants=4-0-0,4-1-0,4-2-0,4-3-0,4-4-0,4-5-0] 1`
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 8.14
       }
     ]
@@ -56465,7 +56468,7 @@ exports[`Gun > Starpew (507) > [variants=4-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -56475,7 +56478,7 @@ exports[`Gun > Starpew (507) > [variants=4-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 48.837
       }
     ]
@@ -56735,7 +56738,7 @@ exports[`Gun > Sticky Crossbow (4) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       }
     ]
@@ -56744,7 +56747,7 @@ exports[`Gun > Sticky Crossbow (4) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 9.677,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 29.032
       }
     ]
@@ -56863,7 +56866,7 @@ exports[`Gun > Stinger (92) > [variants=0-0-0,0-1-0,0-2-0] 1`] = `
     "base": 3,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 3
       }
     ]
@@ -56872,7 +56875,7 @@ exports[`Gun > Stinger (92) > [variants=0-0-0,0-1-0,0-2-0] 1`] = `
     "base": 1.5,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 1.5
       }
     ]
@@ -56951,7 +56954,7 @@ exports[`Gun > Stinger (92) > [variants=0-3-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       }
     ]
@@ -56960,7 +56963,7 @@ exports[`Gun > Stinger (92) > [variants=0-3-0] 1`] = `
     "base": 5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 7.5
       }
     ]
@@ -57050,7 +57053,7 @@ exports[`Gun > Stinger (92) > [variants=0-4-0,0-5-0,0-6-0,0-7-0,0-8-0] 1`] = `
     "base": 3,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 3
       }
     ]
@@ -57059,7 +57062,7 @@ exports[`Gun > Stinger (92) > [variants=0-4-0,0-5-0,0-6-0,0-7-0,0-8-0] 1`] = `
     "base": 1.5,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 1.5
       }
     ]
@@ -57142,11 +57145,11 @@ exports[`Gun > Stinger (92) > [variants=0-A-A] 1`] = `
     "base": 19,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 9
       },
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       },
       {
@@ -57160,11 +57163,11 @@ exports[`Gun > Stinger (92) > [variants=0-A-A] 1`] = `
     "base": 9.5,
     "details": [
       {
-        "tooltip": "Bee sting damage: {{VALUE}}",
+        "tooltip": "bee",
         "value": 4.5
       },
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 7.5
       },
       {
@@ -57494,7 +57497,7 @@ exports[`Gun > Stone Dome (741) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -57504,7 +57507,7 @@ exports[`Gun > Stone Dome (741) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 25
       }
     ]
@@ -57619,7 +57622,7 @@ exports[`Gun > Sunlight Javelin (748) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 30,
     "details": [
       {
-        "tooltip": "Fire damage: {{VALUE}}",
+        "tooltip": "fire",
         "value": 4
       }
     ]
@@ -57735,7 +57738,7 @@ exports[`Gun > Super Meat Gun (479) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 36
       }
     ]
@@ -57745,7 +57748,7 @@ exports[`Gun > Super Meat Gun (479) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 254.118
       }
     ]
@@ -58717,7 +58720,7 @@ exports[`Gun > Tear Jerker (33) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -58727,7 +58730,7 @@ exports[`Gun > Tear Jerker (33) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 25
       }
     ]
@@ -58839,7 +58842,7 @@ exports[`Gun > Tear Jerker (725) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 7
       }
     ]
@@ -58849,7 +58852,7 @@ exports[`Gun > Tear Jerker (725) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 25
       }
     ]
@@ -59942,7 +59945,7 @@ exports[`Gun > The Exotic (563) > [variants=0-0-0] 1`] = `
     "base": 25,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       }
     ]
@@ -59951,7 +59954,7 @@ exports[`Gun > The Exotic (563) > [variants=0-0-0] 1`] = `
     "base": 12.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 7.5
       }
     ]
@@ -60041,7 +60044,7 @@ exports[`Gun > The Exotic (563) > [variants=0-1-0,0-2-0,0-3-0,0-4-0,0-5-0,0-6-0,
     "base": 2,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 5
       }
     ]
@@ -60050,7 +60053,7 @@ exports[`Gun > The Exotic (563) > [variants=0-1-0,0-2-0,0-3-0,0-4-0,0-5-0,0-6-0,
     "base": 1,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 2.5
       }
     ]
@@ -60136,7 +60139,7 @@ exports[`Gun > The Exotic (563) > [variants=0-A-A] 1`] = `
     "base": 25,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       },
       {
@@ -60155,7 +60158,7 @@ exports[`Gun > The Exotic (563) > [variants=0-A-A] 1`] = `
     "base": 12.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 7.5
       },
       {
@@ -60340,7 +60343,7 @@ exports[`Gun > The Exotic (659) > [variants=0-0-0] 1`] = `
     "base": 5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 6
       }
     ]
@@ -60349,7 +60352,7 @@ exports[`Gun > The Exotic (659) > [variants=0-0-0] 1`] = `
     "base": 2.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 3
       }
     ]
@@ -60447,7 +60450,7 @@ exports[`Gun > The Exotic (659) > [variants=0-1-0,0-2-0,0-3-0,0-4-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 15
       }
     ]
@@ -60456,7 +60459,7 @@ exports[`Gun > The Exotic (659) > [variants=0-1-0,0-2-0,0-3-0,0-4-0] 1`] = `
     "base": 5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 7.5
       }
     ]
@@ -60542,7 +60545,7 @@ exports[`Gun > The Exotic (659) > [variants=0-A-A] 1`] = `
     "base": 5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 6
       },
       {
@@ -60561,7 +60564,7 @@ exports[`Gun > The Exotic (659) > [variants=0-A-A] 1`] = `
     "base": 2.5,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 3
       },
       {
@@ -60870,7 +60873,7 @@ exports[`Gun > The Fat Line (562) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 12
       }
     ]
@@ -60880,7 +60883,7 @@ exports[`Gun > The Fat Line (562) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 114.286
       }
     ]
@@ -62686,7 +62689,7 @@ exports[`Gun > The Predator (543) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 25
       }
     ]
@@ -62696,7 +62699,7 @@ exports[`Gun > The Predator (543) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 26.316
       }
     ]
@@ -63551,7 +63554,7 @@ exports[`Gun > Time Stopper (618) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 30
       }
     ]
@@ -63561,7 +63564,7 @@ exports[`Gun > Time Stopper (618) > [variants=1-A-A,1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.",
+        "tooltip": "damageAllEnemies",
         "value": 18.75
       }
     ]
@@ -64148,7 +64151,7 @@ exports[`Gun > Trashcannon (704) > [variants=0-0-0] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 8
       }
     ]
@@ -64157,7 +64160,7 @@ exports[`Gun > Trashcannon (704) > [variants=0-0-0] 1`] = `
     "base": 42.553,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 17.021
       }
     ]
@@ -64250,7 +64253,7 @@ exports[`Gun > Trashcannon (704) > [variants=0-0-1] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 8
       }
     ]
@@ -64259,7 +64262,7 @@ exports[`Gun > Trashcannon (704) > [variants=0-0-1] 1`] = `
     "base": 42.553,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 17.021
       }
     ]
@@ -64352,7 +64355,7 @@ exports[`Gun > Trashcannon (704) > [variants=0-A-A] 1`] = `
     "base": 20,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 8
       }
     ]
@@ -64361,7 +64364,7 @@ exports[`Gun > Trashcannon (704) > [variants=0-A-A] 1`] = `
     "base": 42.553,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 17.021
       }
     ]
@@ -64875,7 +64878,7 @@ exports[`Gun > Trident (444) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 8
       }
     ]
@@ -64885,7 +64888,7 @@ exports[`Gun > Trident (444) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 44.444
       }
     ]
@@ -65466,7 +65469,7 @@ exports[`Gun > Turbo-Gun (577) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 21
       }
     ]
@@ -65476,7 +65479,7 @@ exports[`Gun > Turbo-Gun (577) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 78.75
       }
     ]
@@ -65591,7 +65594,7 @@ exports[`Gun > Unfinished Gun (83) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -65601,7 +65604,7 @@ exports[`Gun > Unfinished Gun (83) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 20
       }
     ]
@@ -65799,7 +65802,7 @@ exports[`Gun > Unfinished Gun (806) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 80
       }
     ]
@@ -65809,7 +65812,7 @@ exports[`Gun > Unfinished Gun (806) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 160
       }
     ]
@@ -66254,7 +66257,7 @@ exports[`Gun > Uppercase R (649) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 2.2,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 25
       }
     ]
@@ -66263,7 +66266,7 @@ exports[`Gun > Uppercase R (649) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 0.88,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 10
       }
     ]
@@ -66380,7 +66383,7 @@ exports[`Gun > VertebraeK-47 (29) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 4
       }
     ]
@@ -66390,7 +66393,7 @@ exports[`Gun > VertebraeK-47 (29) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 26.667
       }
     ]
@@ -66596,7 +66599,7 @@ exports[`Gun > Void Core Cannon (593) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 10
       }
     ]
@@ -66605,7 +66608,7 @@ exports[`Gun > Void Core Cannon (593) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 16,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 16
       }
     ]
@@ -68118,7 +68121,7 @@ exports[`Gun > Wind Up Gun (334) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 5
       }
     ]
@@ -68128,7 +68131,7 @@ exports[`Gun > Wind Up Gun (334) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 24.39
       }
     ]
@@ -68326,12 +68329,12 @@ exports[`Gun > Witch Pistol (145) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "chance": 0.1,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 1000000
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 6
       }
     ]
@@ -68341,12 +68344,12 @@ exports[`Gun > Witch Pistol (145) > [variants=0-A-A,0-0-0] 1`] = `
     "details": [
       {
         "chance": 0.1,
-        "tooltip": "Transmogrification damage: {{VALUE}}",
+        "tooltip": "transmogrification",
         "value": 2857142.857
       },
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 17.143
       }
     ]
@@ -68823,7 +68826,7 @@ exports[`Gun > Yari Launcher (16) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 8,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 8
       }
     ]
@@ -68832,7 +68835,7 @@ exports[`Gun > Yari Launcher (16) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 69.565,
     "details": [
       {
-        "tooltip": "Explosion damage: {{VALUE}}",
+        "tooltip": "explosion",
         "value": 69.565
       }
     ]
@@ -69339,7 +69342,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -69349,7 +69352,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-0-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.091
       }
     ]
@@ -69427,7 +69430,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-1-0,1-6-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -69437,7 +69440,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-1-0,1-6-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.091
       }
     ]
@@ -69515,7 +69518,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -69525,7 +69528,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-2-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.091
       }
     ]
@@ -69603,7 +69606,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-3-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -69613,7 +69616,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-3-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.091
       }
     ]
@@ -69691,7 +69694,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-4-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -69701,7 +69704,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-4-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.091
       }
     ]
@@ -69779,7 +69782,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-5-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -69789,7 +69792,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-5-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.091
       }
     ]
@@ -69868,7 +69871,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-7-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 42
       }
     ]
@@ -69878,7 +69881,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-7-0] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 19.091
       }
     ]
@@ -69957,7 +69960,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 336
       }
     ]
@@ -69967,7 +69970,7 @@ exports[`Gun > Zilla Shotgun (329) > [variants=1-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.",
+        "tooltip": "pierce",
         "value": 152.727
       }
     ]

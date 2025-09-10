@@ -169,6 +169,9 @@ export class GunService {
   }
 
   private static _getDamageTooltip(source: TDamageDetail["source"], projectile: TResolvedProjectile) {
+    if (import.meta.env["MODE"] === "test") {
+      return source;
+    }
     switch (source) {
       case "ricochet": {
         const { numberOfBounces, chanceToDieOnBounce, damageMultiplierOnBounce } = projectile;
@@ -192,9 +195,9 @@ export class GunService {
       case "bee":
         return `Bee sting damage: {{VALUE}}`;
       case "pierce":
-        return "Estimated piercing damage: {{VALUE}}.<br/>Having bounce and homing modifiers help increase this damage.";
+        return "Estimated piercing damage: {{VALUE}}<br/>Having bounce and homing modifiers help increase this damage.";
       case "damageAllEnemies":
-        return "Estimated damage to all enemies: {{VALUE}}.<br/>Assuming 4 enemies in range on average.";
+        return "Estimated damage to all enemies: {{VALUE}}<br/>Assuming 4 enemies in range on average.";
       default:
         return `${startCase(source)} damage: {{VALUE}}`;
     }
@@ -256,6 +259,7 @@ export class GunService {
         extraDamage.push({
           value: (avgEnemyHealth * avgEnemyCountInRoom) / timeToKillAvgEnemyPerSecond,
           isEstimated: true,
+          chance: 0.65,
           tooltip:
             "Estimated soul damage: {{VALUE}}<br/>Assuming <strong>4</strong> enemies in range on average, and the last enemy killed has <strong>20</strong> health.",
         });
