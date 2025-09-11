@@ -31,6 +31,7 @@ import type {
   TBoomerangProjectileData,
   THealthModificationBuffData,
   TReverseBeamControllerData,
+  TThreeWishesBuffData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -122,6 +123,9 @@ export class ProjectileRepository {
   private _isHealthModificationBuffData(obj: unknown): obj is THealthModificationBuffData {
     return this._assetService.isMonoScript(obj, "HealthModificationBuff.cs.meta");
   }
+  private _isThreeWishesBuffData(obj: unknown): obj is TThreeWishesBuffData {
+    return this._assetService.isMonoScript(obj, "ThreeWishesBuff.cs.meta");
+  }
   private _isDevolverModifierData(obj: unknown): obj is TDevolverModifierData {
     return this._assetService.isMonoScript(obj, "DevolverModifier.cs.meta");
   }
@@ -201,6 +205,8 @@ export class ProjectileRepository {
           res.stickyGrenadeBuff = component;
         } else if (this._isHealthModificationBuffData(component)) {
           res.healthModificationBuff = component;
+        } else if (this._isThreeWishesBuffData(component)) {
+          res.threeWishesBuff = component;
         } else if (this._isDevolverModifierData(component)) {
           res.devolverModifier = component;
         }

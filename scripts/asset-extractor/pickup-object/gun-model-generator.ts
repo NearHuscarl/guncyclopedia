@@ -316,6 +316,12 @@ export class GunModelGenerator {
     }
 
     // TODO: handle synergy
+    if (projDto.threeWishesBuff && !projDto.threeWishesBuff.SynergyContingent) {
+      proj.wishesToBuff = projDto.threeWishesBuff.NumRequired;
+      proj.wishesBuffDamageDealt = projDto.threeWishesBuff.DamageDealt;
+    }
+
+    // TODO: handle synergy
     if (projDto.goopModifier?.goopDefinitionData && !projDto.goopModifier.IsSynergyContingent) {
       if (projDto.goopModifier.goopDefinitionData.CanBeIgnited) {
         if (projDto.goopModifier.SpawnGoopOnCollision) {
@@ -675,6 +681,7 @@ export class GunModelGenerator {
     // TODO: add unused reload animation for The Fat Line (?)
     // TODO: add unused guns (requireDemoMode: 1). it doesn't have the Gun script, only sprites/animations. Create a separate model for demo gun.
     // TODO: gun id=515 throws because no dps
+    // TODO: handle angleFromAim !== 0.
     // TODO: Lower Case r - has more than one type of projectile per module.
 
     // // TODO: test casey's case again
@@ -1021,8 +1028,9 @@ export class GunModelGenerator {
     // force casey final sprite to stay horizontally to fit in the ui element.
     if ([541, 616].includes(gun.id)) {
       for (const animation in gun.animation) {
-        if (gun.animation[animation] && animation !== "charge") {
-          gun.animation[animation] = { ...gun.animation[animation], rotate: 90 } as TAnimation;
+        const key = animation as keyof TGun["animation"];
+        if (gun.animation[key] && key !== "charge") {
+          gun.animation[key] = { ...gun.animation[key], rotate: 90 } as TAnimation;
         }
       }
     }

@@ -19184,12 +19184,24 @@ exports[`Gun > Face Melter (149) > [variants=0-0-0,0-1-0,0-2-0,0-3-0] 1`] = `
 exports[`Gun > Face Melter (149) > [variants=0-A-A] 1`] = `
 "{
   "damage": {
-    "base": 16,
-    "details": []
+    "base": 4,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Damage from 3 other directions: {{VALUE}}",
+        "value": 12
+      }
+    ]
   },
   "dps": {
-    "base": 156.863,
-    "details": []
+    "base": 39.216,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "Damage from 3 other directions: {{VALUE}}",
+        "value": 117.647
+      }
+    ]
   },
   "fireRate": 588.235,
   "force": {
@@ -32643,7 +32655,14 @@ exports[`Gun > Magic Lamp (0) > [variants=0-A-A,0-0-0] 1`] = `
   },
   "dps": {
     "base": 8.889,
-    "details": []
+    "details": [
+      {
+        "chance": 0.5,
+        "isEstimated": true,
+        "tooltip": "Estimated DPS from genie punch: {{VALUE}}<br/>Genie punch after <strong>3</strong> hits: <strong>115</strong> damage.",
+        "value": 42.593
+      }
+    ]
   },
   "fireRate": 66.667,
   "force": {
@@ -32660,7 +32679,9 @@ exports[`Gun > Magic Lamp (0) > [variants=0-A-A,0-0-0] 1`] = `
     "force": 10,
     "id": "Genie_Projectile",
     "range": 1000,
-    "speed": 12
+    "speed": 12,
+    "wishesBuffDamageDealt": 115,
+    "wishesToBuff": 3
   },
   "projectileModule": {
     "ammoCost": 1,
@@ -32675,7 +32696,9 @@ exports[`Gun > Magic Lamp (0) > [variants=0-A-A,0-0-0] 1`] = `
         "force": 10,
         "id": "Genie_Projectile",
         "range": 1000,
-        "speed": 12
+        "speed": 12,
+        "wishesBuffDamageDealt": 115,
+        "wishesToBuff": 3
       }
     ],
     "shootStyle": "SemiAutomatic",
@@ -32708,7 +32731,9 @@ exports[`Gun > Magic Lamp (0) > modes 1`] = `
             "force": 10,
             "id": "Genie_Projectile",
             "range": 1000,
-            "speed": 12
+            "speed": 12,
+            "wishesBuffDamageDealt": 115,
+            "wishesToBuff": 3
           }
         ],
         "shootStyle": "SemiAutomatic",

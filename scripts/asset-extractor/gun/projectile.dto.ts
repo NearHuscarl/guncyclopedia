@@ -168,6 +168,16 @@ const HealthModificationBuffData = MonoBehaviour.extend({
   healthChangeAtEnd: z.number(),
 });
 
+const ThreeWishesBuffData = MonoBehaviour.extend({
+  SynergyContingent: BinaryOption,
+  RequiredSynergy: z.number(),
+  /**
+   * Number of hits required to trigger the effect
+   */
+  NumRequired: z.number(),
+  DamageDealt: z.number(),
+});
+
 const DevolverModifierData = MonoBehaviour.extend({
   chanceToDevolve: z.number(),
   /**
@@ -333,6 +343,7 @@ export const ProjectileDto = z.object({
   matterAntimatterProjModifier: MatterAntimatterProjectileModifierData.optional(),
   stickyGrenadeBuff: StickyGrenadeBuffData.optional(),
   healthModificationBuff: HealthModificationBuffData.optional(),
+  threeWishesBuff: ThreeWishesBuffData.optional(),
   devolverModifier: DevolverModifierData.optional(),
 });
 
@@ -359,4 +370,5 @@ export type TMindControlProjectileModifierData = z.infer<typeof MindControlProje
 export type TMatterAntimatterProjectileModifierData = z.infer<typeof MatterAntimatterProjectileModifierData>;
 export type TStickyGrenadeBuffData = z.infer<typeof StickyGrenadeBuffData>;
 export type THealthModificationBuffData = z.infer<typeof HealthModificationBuffData>;
+export type TThreeWishesBuffData = z.infer<typeof ThreeWishesBuffData>;
 export type TDevolverModifierData = z.infer<typeof DevolverModifierData>;

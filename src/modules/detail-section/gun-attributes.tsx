@@ -74,6 +74,7 @@ import { HomingLevel, ProjectileService } from "@/client/service/projectile.serv
 import { AmmoIcon } from "@/components/icons/ammo";
 import { DamageAllEnemiesRadius } from "@/client/generated/models/projectile.model";
 import { LifeOrb } from "@/components/icons/life-orb";
+import { Three } from "@/components/icons/three";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -684,6 +685,21 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <br />
             Projectile has <strong>{toPercent(projectile.devolveChance || 0)}</strong> chance to devolve an enemy to{" "}
             <strong>{startCase(projectile.devolveTarget)}</strong>.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectile.wishesToBuff && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <Three size={20} className={"[&_path]:fill-yellow-500!"} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-72">
+            <strong>Three Wishes Buff</strong>
+            <br />
+            Hitting an enemy <strong>{projectile.wishesToBuff}</strong> times causes a genie to punch them, dealing
+            extremely high damage.
           </TooltipContent>
         </Tooltip>
       )}

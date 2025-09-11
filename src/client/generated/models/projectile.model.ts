@@ -54,6 +54,7 @@ export const DamageDetail = z.object({
     "devolver",
     "bee",
     "damageAllEnemies",
+    "wish",
   ]),
   damage: z.number(),
 });
@@ -220,6 +221,12 @@ export const Projectile = z.object({
   helixAmplitude: z.number().optional(),
   helixWavelength: z.number().optional(),
   antimatter: z.boolean().optional(),
+
+  /**
+   * The number of hits required to trigger the effect
+   */
+  wishesToBuff: z.number().optional(),
+  wishesBuffDamageDealt: z.number().optional(),
 
   /**
    * Some projectiles are invisible hence no animation.

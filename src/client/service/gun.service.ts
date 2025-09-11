@@ -220,8 +220,8 @@ export class GunService {
     let baseDamage = type === "dps" ? projectile.dps : projectile.damage;
     const extraDamage: IStat["details"] = [];
 
-    // douchepad gun, shooting in 4 directions and makes my code harder to maintain.
-    if (gun.id === 514 && !selectSpecificProjectile) {
+    // directional pad, face melter.
+    if ((gun.id === 514 || gun.id === 149) && !selectSpecificProjectile) {
       extraDamage.push({
         value: (baseDamage * 3) / 4,
         tooltip: "Damage from 3 other directions: {{VALUE}}",
@@ -282,6 +282,16 @@ export class GunService {
             tooltip: "Aura on reload (ignite): {{VALUE}}",
           });
         }
+      }
+
+      if (projectile.wishesToBuff && projectile.wishesBuffDamageDealt) {
+        const dps = projectile.wishesBuffDamageDealt * module.shotsPerSecond;
+        extraDamage.push({
+          tooltip: `Estimated DPS from genie punch: {{VALUE}}<br/>Genie punch after <strong>${projectile.wishesToBuff}</strong> hits: <strong>${projectile.wishesBuffDamageDealt}</strong> damage.`,
+          isEstimated: true,
+          chance: 0.5,
+          value: dps / projectile.wishesToBuff,
+        });
       }
     }
 

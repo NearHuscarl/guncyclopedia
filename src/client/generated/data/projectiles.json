@@ -3428,6 +3428,8 @@
     "range": 1000,
     "force": 10,
     "additionalDamage": [],
+    "wishesToBuff": 3,
+    "wishesBuffDamageDealt": 115,
     "animation": {
       "name": "lamp_projectile",
       "fps": 14,
