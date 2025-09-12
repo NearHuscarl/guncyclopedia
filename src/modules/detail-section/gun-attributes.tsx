@@ -5,6 +5,7 @@ import {
   Gamepad2,
   Heart,
   Keyboard,
+  Link,
   Move,
   Receipt,
   Skull,
@@ -757,6 +758,22 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
                 </>
               );
             })()}
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(projectile.linkMaxDistance || undefined) && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              <NumericValue className="text-blue-500">{projectile.linkMaxDistance}</NumericValue>
+              <Link size={17} className="[&_path]:stroke-blue-500!" />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-80">
+            <strong>Chained Projectile</strong>
+            <br />
+            Projectiles within <strong>{projectile.linkMaxDistance}</strong> distance of each other can create a link
+            that damages any enemy it touches.
           </TooltipContent>
         </Tooltip>
       )}

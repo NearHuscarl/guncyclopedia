@@ -4,7 +4,7 @@ import uniq from "lodash/uniq";
 import groupBy from "lodash/groupBy";
 import keyBy from "lodash/keyBy";
 import { HomingLevel, ProjectileService, RangeLabel, type TRangeLabel } from "./projectile.service";
-import { formatNumber } from "@/lib/lang";
+import { formatNumber, inverseLerp, lerp } from "@/lib/lang";
 import {
   GameObjectService,
   ResolvedProjectile,
@@ -59,6 +59,16 @@ export type TGunStats = {
   projectile: TResolvedProjectile;
 };
 
+type TTimingInput = {
+  shootStyle: TShootStyle;
+  magazineSize: number;
+  reloadTime: number;
+  chargeTime?: number;
+  cooldownTime: number;
+  burstCooldownTime: number;
+  burstShotCount: number;
+};
+
 export const GunStats = z.object({
   dps: Stat,
   damage: Stat,
@@ -84,15 +94,7 @@ export class GunService {
     return module.depleteAmmo ? 1 : magazineSize;
   }
 
-  static getTimeBetweenShot(input: {
-    shootStyle: TResolvedProjectileModule["shootStyle"];
-    magazineSize: number;
-    reloadTime: number;
-    chargeTime?: number;
-    cooldownTime: number;
-    burstCooldownTime: number;
-    burstShotCount: number;
-  }) {
+  static getTimeBetweenShot(input: TTimingInput) {
     const { magazineSize, chargeTime, shootStyle, cooldownTime, burstCooldownTime, burstShotCount } = input;
     if (cooldownTime <= 0 && shootStyle !== "Charged") {
       return 0;
@@ -110,15 +112,7 @@ export class GunService {
   /**
    * `ExportedProject/Assets/Scripts/Assembly-CSharp/ProjectileModule.cs#GetEstimatedShotsPerSecond`
    */
-  static getEstimatedShotsPerSecond(input: {
-    shootStyle: TResolvedProjectileModule["shootStyle"];
-    magazineSize: number;
-    reloadTime: number;
-    chargeTime?: number;
-    cooldownTime: number;
-    burstCooldownTime: number;
-    burstShotCount: number;
-  }) {
+  static getEstimatedShotsPerSecond(input: TTimingInput) {
     if (input.shootStyle === "Beam") {
       return 1; // all beam projectiles' damage = dps
     }
@@ -202,6 +196,8 @@ export class GunService {
         return "Estimated piercing damage: {{VALUE}}<br/>Having bounce and homing modifiers help increase this damage.";
       case "damageAllEnemies":
         return "Estimated damage to all enemies: {{VALUE}}<br/>Assuming 4 enemies in range on average.";
+      case "wish":
+        return `Estimated damage from genie punch after <strong>${projectile.wishesToBuff}</strong> hits: {{VALUE}}`;
       default:
         return `${startCase(source)} damage: {{VALUE}}`;
     }
@@ -283,16 +279,6 @@ export class GunService {
           });
         }
       }
-
-      if (projectile.wishesToBuff && projectile.wishesBuffDamageDealt) {
-        const dps = projectile.wishesBuffDamageDealt * module.shotsPerSecond;
-        extraDamage.push({
-          tooltip: `Estimated DPS from genie punch: {{VALUE}}<br/>Genie punch after <strong>${projectile.wishesToBuff}</strong> hits: <strong>${projectile.wishesBuffDamageDealt}</strong> damage.`,
-          isEstimated: true,
-          chance: 0.5,
-          value: dps / projectile.wishesToBuff,
-        });
-      }
     }
 
     const spawnedModules = resolvedVolley.filter((m) => m.projectiles[0].spawnedBy);
@@ -341,33 +327,38 @@ export class GunService {
       }
     }
 
+    extraDamage.sort((a, b) => {
+      let r;
+      r = Number(a.isEstimated ?? 0) - Number(b.isEstimated ?? 0);
+      if (r !== 0) return r;
+      r = a.chance ?? 1 - (b.chance ?? 1);
+      if (r !== 0) return r;
+      r = a.value - b.value; // smaller value first or they could be cropped if the total value is too big.
+      return r;
+    });
+
     return {
       base: baseDamage,
-      details: [
-        {
-          tooltip: `Base damage: {{VALUE}}`,
-          value: baseDamage,
-        },
-        ...extraDamage,
-      ].sort((a, b) => {
-        const r = Number(a.isEstimated ?? 0) - Number(b.isEstimated ?? 0);
-        if (r !== 0) return r;
-        return r;
-        return a.value - b.value;
-      }),
+      details: [{ tooltip: `Base damage: {{VALUE}}`, value: baseDamage }, ...extraDamage],
     };
   }
 
   static getForce(projectile: TResolvedProjectile): IStat {
-    return {
-      base: projectile.force ?? 0,
-      details: [
-        { tooltip: `Base force: {{VALUE}}`, value: projectile.force ?? 0 },
-        ...(projectile.explosionForce
-          ? [{ tooltip: `Explosion force: {{VALUE}}`, value: projectile.explosionForce }]
-          : []),
-      ],
-    };
+    const details: IStat["details"] = [{ tooltip: `Base force: {{VALUE}}`, value: projectile.force ?? 0 }];
+
+    if (projectile.explosionForce) {
+      details.push({ tooltip: `Explosion force: {{VALUE}}`, value: projectile.explosionForce });
+    }
+    if (projectile.wishesToBuff) {
+      details.push({
+        tooltip: `Genie punch force: {{VALUE}}`,
+        chance: 0.4,
+        isEstimated: true,
+        value: 100 /* ExportedProject/Assets/Scripts/Assembly-CSharp/ThreeWishesBuff.cs#DelayedDamage() */,
+      });
+    }
+
+    return { base: projectile.force ?? 0, details };
   }
 
   /**
@@ -382,6 +373,7 @@ export class GunService {
     additionalDamage: TDamageDetail[],
     projectile: TProjectile,
     shotsPerSecond: number,
+    timingInput: TTimingInput,
   ): TResolvedDamageDetail[] {
     const resolved: TResolvedDamageDetail[] = [];
     const additionalDamageLookup: { [key in TDamageDetail["source"]]?: TDamageDetail } = keyBy(
@@ -423,6 +415,32 @@ export class GunService {
       }
     }
 
+    if (projectile.wishesToBuff && projectile.wishesBuffDamageDealt) {
+      resolved.push({
+        source: "wish",
+        isEstimated: true,
+        damageChance: 0.4,
+        damage: projectile.wishesBuffDamageDealt,
+        dps: (projectile.wishesBuffDamageDealt * shotsPerSecond) / projectile.wishesToBuff,
+      });
+    }
+
+    if (projectile.linkMaxDistance && projectile.linkDamagePerHit) {
+      const linksPerSecond = this.getEstimatedShotsPerSecond({
+        ...timingInput,
+        // n projectiles create n-1 links
+        magazineSize: timingInput.magazineSize - 1,
+      });
+      const distanceFactor = inverseLerp(7, 18, projectile.linkMaxDistance);
+      resolved.push({
+        source: "link",
+        isEstimated: true,
+        damageChance: lerp(0.35, 0.65, distanceFactor),
+        damage: projectile.linkDamagePerHit,
+        dps: projectile.linkDamagePerHit * linksPerSecond,
+      });
+    }
+
     return resolved;
   }
 
@@ -430,7 +448,12 @@ export class GunService {
    * Return an array of projectile and all of the spawned projectiles recursively. Otherwise
    * return an array with  just the original projectile.
    */
-  static resolveProjectile(p: TResolvedProjectile, shotPerSecond: number, depth = 0): TResolvedProjectile[] {
+  static resolveProjectile(
+    p: TResolvedProjectile,
+    shotPerSecond: number,
+    timingInput: TTimingInput,
+    depth = 0,
+  ): TResolvedProjectile[] {
     if (!p.spawnProjectile) {
       return [p];
     }
@@ -441,6 +464,7 @@ export class GunService {
         spawnedProjectile.additionalDamage,
         spawnedProjectile,
         shotPerSecond,
+        timingInput,
       ),
       spawnedBy: p.id,
       spawnLevel: depth + 1,
@@ -448,7 +472,7 @@ export class GunService {
     };
     p2.dps = p2.damage * shotPerSecond;
 
-    return [p, p2, ...this.resolveProjectile(p2, shotPerSecond, depth + 1).slice(1)];
+    return [p, p2, ...this.resolveProjectile(p2, shotPerSecond, timingInput, depth + 1).slice(1)];
   }
 
   static resolveMode(
@@ -458,7 +482,7 @@ export class GunService {
     const resolvedVolley: TResolvedProjectileModule[] = [];
 
     for (const module of mode.volley) {
-      const timingInput = {
+      const timingInput: TTimingInput = {
         shootStyle: module.shootStyle,
         magazineSize: this.getMagSize(gunInput.magazineSize, module),
         reloadTime: gunInput.reloadTime,
@@ -474,7 +498,7 @@ export class GunService {
         return {
           ...p,
           dps: p.damage * shotsPerSecond,
-          additionalDamage: this.resolveAdditionalDamage(p.additionalDamage, p, shotsPerSecond),
+          additionalDamage: this.resolveAdditionalDamage(p.additionalDamage, p, shotsPerSecond, timingInput),
         };
       });
       const spawnedModules: TResolvedProjectileModule[] = [];
@@ -487,7 +511,7 @@ export class GunService {
       };
 
       for (const p of projectiles) {
-        const pp = this.resolveProjectile(p, shotsPerSecond);
+        const pp = this.resolveProjectile(p, shotsPerSecond, timingInput);
 
         for (const p2 of pp) {
           if (!p2.spawnedBy) continue;

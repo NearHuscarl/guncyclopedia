@@ -55,6 +55,7 @@ export const DamageDetail = z.object({
     "bee",
     "damageAllEnemies",
     "wish",
+    "link",
   ]),
   damage: z.number(),
 });
@@ -227,6 +228,9 @@ export const Projectile = z.object({
    */
   wishesToBuff: z.number().optional(),
   wishesBuffDamageDealt: z.number().optional(),
+
+  linkMaxDistance: z.number().optional(),
+  linkDamagePerHit: z.number().optional(),
 
   /**
    * Some projectiles are invisible hence no animation.

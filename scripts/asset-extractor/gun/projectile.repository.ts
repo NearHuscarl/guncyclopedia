@@ -32,6 +32,7 @@ import type {
   THealthModificationBuffData,
   TReverseBeamControllerData,
   TThreeWishesBuffData,
+  TChainLightningModifierData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -95,6 +96,9 @@ export class ProjectileRepository {
   }
   private _isGoopDefinitionData(obj: unknown): obj is TGoodDefinitionData {
     return this._assetService.isMonoScript(obj, "GoopDefinition.cs.meta");
+  }
+  private _isChainLightningModifierData(obj: unknown): obj is TChainLightningModifierData {
+    return this._assetService.isMonoScript(obj, "ChainLightningModifier.cs.meta");
   }
   private _isModifyProjectileSynergyProcessorData(obj: unknown): obj is TModifyProjectileSynergyProcessorData {
     return this._assetService.isMonoScript(obj, "ModifyProjectileSynergyProcessor.cs.meta");
@@ -187,6 +191,8 @@ export class ProjectileRepository {
               break;
             }
           }
+        } else if (this._isChainLightningModifierData(component)) {
+          res.chainLightningModifier = component;
         } else if (this._isModifyProjectileSynergyProcessorData(component)) {
           res.modifyProjectileSynergyProcessor = component;
         } else if (this._isBasicBeamControllerData(component)) {

@@ -319,6 +319,7 @@ export class GunModelGenerator {
     if (projDto.threeWishesBuff && !projDto.threeWishesBuff.SynergyContingent) {
       proj.wishesToBuff = projDto.threeWishesBuff.NumRequired;
       proj.wishesBuffDamageDealt = projDto.threeWishesBuff.DamageDealt;
+      this._featureFlags.add("hasSpecialProjectiles");
     }
 
     // TODO: handle synergy
@@ -342,6 +343,12 @@ export class GunModelGenerator {
           // TODO: composition gun with synergy
         }
       }
+    }
+
+    if (projDto.chainLightningModifier) {
+      proj.linkMaxDistance = projDto.chainLightningModifier.maximumLinkDistance;
+      proj.linkDamagePerHit = projDto.chainLightningModifier.damagePerHit;
+      this._featureFlags.add("hasSpecialProjectiles");
     }
 
     // homing
@@ -681,6 +688,7 @@ export class GunModelGenerator {
     // TODO: add unused reload animation for The Fat Line (?)
     // TODO: add unused guns (requireDemoMode: 1). it doesn't have the Gun script, only sprites/animations. Create a separate model for demo gun.
     // TODO: gun id=515 throws because no dps
+    // TODO: create VFX object (only contains sprite/animation) -> Genie attack animation e9563b7853da47e449600160c4e84c51
     // TODO: handle angleFromAim !== 0.
     // TODO: Lower Case r - has more than one type of projectile per module.
 

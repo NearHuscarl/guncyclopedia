@@ -2393,6 +2393,8 @@
     "range": 50,
     "force": 10,
     "additionalDamage": [],
+    "linkMaxDistance": 8,
+    "linkDamagePerHit": 5,
     "animation": {
       "name": "charge_shot_small_projectile_001",
       "fps": 0,
@@ -5579,6 +5581,8 @@
     "numberOfBounces": 2,
     "averageSurvivingBounces": 2,
     "damageMultiplierOnBounce": 0,
+    "linkMaxDistance": 16,
+    "linkDamagePerHit": 5,
     "animation": {
       "name": "Poison_Projectile_Anim",
       "fps": 10,
@@ -5836,6 +5840,8 @@
     "averageSurvivingBounces": 3,
     "penetration": 2,
     "canPenetrateObjects": true,
+    "linkMaxDistance": 18,
+    "linkDamagePerHit": 6,
     "animation": {
       "name": "saw2_projectile_shadow",
       "fps": 16,
@@ -6586,6 +6592,8 @@
     "isHoming": true,
     "homingRadius": 6,
     "homingAngularVelocity": 700,
+    "linkMaxDistance": 7,
+    "linkDamagePerHit": 2,
     "animation": {
       "name": "ghost_projectile_spine_001",
       "fps": 0,
@@ -7534,6 +7542,8 @@
     "range": 16,
     "force": 6,
     "additionalDamage": [],
+    "linkMaxDistance": 8,
+    "linkDamagePerHit": 5,
     "animation": {
       "name": "bullet_variant_011",
       "fps": 0,

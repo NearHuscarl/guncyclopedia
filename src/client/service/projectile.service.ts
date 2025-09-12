@@ -236,6 +236,8 @@ export class ProjectileService {
     damageAllEnemiesMaxTargets: ["max", "max"],
     wishesBuffDamageDealt: ["avg", "sum"],
     wishesToBuff: ["max", "max"],
+    linkDamagePerHit: ["avg", "sum"],
+    linkMaxDistance: ["max", "max"],
   };
 
   // All boolean keys that are aggregated with logical-OR.

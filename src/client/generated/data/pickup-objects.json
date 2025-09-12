@@ -6805,7 +6805,8 @@
     "maxAmmo": 300,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasSpecialProjectiles"
     ],
     "attribute": {},
     "colors": [
@@ -10319,7 +10320,9 @@
     ],
     "maxAmmo": 100,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialProjectiles"
+    ],
     "attribute": {},
     "colors": [
       "orange",
@@ -16505,6 +16508,7 @@
     "reloadTime": 1.2,
     "featureFlags": [
       "hasStatusEffects",
+      "hasSpecialProjectiles",
       "hasMultipleDamageSources"
     ],
     "attribute": {},
@@ -17324,7 +17328,9 @@
     ],
     "maxAmmo": 350,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialProjectiles"
+    ],
     "attribute": {},
     "colors": [
       "purple",
@@ -19426,6 +19432,7 @@
     "maxAmmo": 300,
     "reloadTime": 1.5,
     "featureFlags": [
+      "hasSpecialProjectiles",
       "hasHomingProjectiles"
     ],
     "attribute": {},
@@ -21829,7 +21836,9 @@
     ],
     "maxAmmo": 600,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialProjectiles"
+    ],
     "attribute": {},
     "colors": [
       "gray",

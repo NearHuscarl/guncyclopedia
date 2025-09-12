@@ -111,6 +111,14 @@ const GoopModifierData = z.object({
   IsSynergyContingent: BinaryOption,
 });
 
+/**
+ * Bullets close to each other will link together, hurting enemies that touch the link.
+ */
+const ChainLightningModifierData = z.object({
+  maximumLinkDistance: z.number(),
+  damagePerHit: z.number(),
+});
+
 const ModifyProjectileSynergyProcessorData = z.object({
   /**
    * Note: This belongs to a synergy that is ALWAYS inactive.
@@ -334,6 +342,7 @@ export const ProjectileDto = z.object({
   homingModifier: HomingModifierData.optional(),
   spawnProjModifier: SpawnProjModifierData.optional(),
   goopModifier: GoopModifierData.optional(),
+  chainLightningModifier: ChainLightningModifierData.optional(),
   modifyProjectileSynergyProcessor: ModifyProjectileSynergyProcessorData.optional(),
   basicBeamController: BasicBeamControllerData.optional(),
   raidenBeamController: RaidenBeamControllerData.optional(),
@@ -361,6 +370,7 @@ export type THomingModifierData = z.infer<typeof HomingModifierData>;
 export type TSpawnProjModifierData = z.infer<typeof SpawnProjModifierData>;
 export type TGoodDefinitionData = z.infer<typeof GoopDefinitionData>;
 export type TGoopModifierData = z.infer<typeof GoopModifierData>;
+export type TChainLightningModifierData = z.infer<typeof ChainLightningModifierData>;
 export type TModifyProjectileSynergyProcessorData = z.infer<typeof ModifyProjectileSynergyProcessorData>;
 export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;

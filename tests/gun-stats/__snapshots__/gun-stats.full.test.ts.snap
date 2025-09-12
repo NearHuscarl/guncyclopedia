@@ -10510,6 +10510,12 @@ exports[`Gun > Buzzkill (740) > [variants=0-A-A,0-0-0] 1`] = `
         "isEstimated": true,
         "tooltip": "pierce",
         "value": 14
+      },
+      {
+        "chance": 0.65,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 6
       }
     ]
   },
@@ -10520,6 +10526,12 @@ exports[`Gun > Buzzkill (740) > [variants=0-A-A,0-0-0] 1`] = `
         "isEstimated": true,
         "tooltip": "pierce",
         "value": 56
+      },
+      {
+        "chance": 0.65,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 23.793
       }
     ]
   },
@@ -10538,6 +10550,13 @@ exports[`Gun > Buzzkill (740) > [variants=0-A-A,0-0-0] 1`] = `
         "dps": 56,
         "isEstimated": true,
         "source": "pierce"
+      },
+      {
+        "damage": 6,
+        "damageChance": 0.65,
+        "dps": 23.793,
+        "isEstimated": true,
+        "source": "link"
       }
     ],
     "averageSurvivingBounces": 3,
@@ -10546,6 +10565,8 @@ exports[`Gun > Buzzkill (740) > [variants=0-A-A,0-0-0] 1`] = `
     "dps": 28,
     "force": 10,
     "id": "Saw_Projectile_Synergy",
+    "linkDamagePerHit": 6,
+    "linkMaxDistance": 18,
     "numberOfBounces": 3,
     "penetration": 2,
     "range": 1000,
@@ -10564,6 +10585,13 @@ exports[`Gun > Buzzkill (740) > [variants=0-A-A,0-0-0] 1`] = `
             "dps": 56,
             "isEstimated": true,
             "source": "pierce"
+          },
+          {
+            "damage": 6,
+            "damageChance": 0.65,
+            "dps": 23.793,
+            "isEstimated": true,
+            "source": "link"
           }
         ],
         "averageSurvivingBounces": 3,
@@ -10572,6 +10600,8 @@ exports[`Gun > Buzzkill (740) > [variants=0-A-A,0-0-0] 1`] = `
         "dps": 28,
         "force": 10,
         "id": "Saw_Projectile_Synergy",
+        "linkDamagePerHit": 6,
+        "linkMaxDistance": 18,
         "numberOfBounces": 3,
         "penetration": 2,
         "range": 1000,
@@ -10608,6 +10638,13 @@ exports[`Gun > Buzzkill (740) > modes 1`] = `
                 "dps": 56,
                 "isEstimated": true,
                 "source": "pierce"
+              },
+              {
+                "damage": 6,
+                "damageChance": 0.65,
+                "dps": 23.793,
+                "isEstimated": true,
+                "source": "link"
               }
             ],
             "averageSurvivingBounces": 3,
@@ -10616,6 +10653,8 @@ exports[`Gun > Buzzkill (740) > modes 1`] = `
             "dps": 28,
             "force": 10,
             "id": "Saw_Projectile_Synergy",
+            "linkDamagePerHit": 6,
+            "linkMaxDistance": 18,
             "numberOfBounces": 3,
             "penetration": 2,
             "range": 1000,
@@ -24240,13 +24279,13 @@ exports[`Gun > Gunslinger's Ashes (198) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 36
+        "tooltip": "Damage from spawned projectile {{P:Boo_Small_Projectile}}: {{VALUE}}",
+        "value": 5
       },
       {
         "isEstimated": true,
-        "tooltip": "Damage from spawned projectile {{P:Boo_Small_Projectile}}: {{VALUE}}",
-        "value": 5
+        "tooltip": "pierce",
+        "value": 36
       }
     ]
   },
@@ -24255,13 +24294,13 @@ exports[`Gun > Gunslinger's Ashes (198) > [variants=0-A-A] 1`] = `
     "details": [
       {
         "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 45
+        "tooltip": "Damage from spawned projectile {{P:Boo_Small_Projectile}}: {{VALUE}}",
+        "value": 2.5
       },
       {
         "isEstimated": true,
-        "tooltip": "Damage from spawned projectile {{P:Boo_Small_Projectile}}: {{VALUE}}",
-        "value": 2.5
+        "tooltip": "pierce",
+        "value": 45
       }
     ]
   },
@@ -32565,11 +32604,25 @@ exports[`Gun > Machine Pistol (673) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 3.2,
-    "details": []
+    "details": [
+      {
+        "chance": 0.377,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 5
+      }
+    ]
   },
   "dps": {
     "base": 29.091,
-    "details": []
+    "details": [
+      {
+        "chance": 0.377,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 44.892
+      }
+    ]
   },
   "fireRate": 545.455,
   "force": {
@@ -32580,11 +32633,21 @@ exports[`Gun > Machine Pistol (673) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 600,
   "precision": 90,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 5,
+        "damageChance": 0.377,
+        "dps": 44.892,
+        "isEstimated": true,
+        "source": "link"
+      }
+    ],
     "damage": 3.2,
     "dps": 29.091,
     "force": 6,
     "id": "UziProjectile_Synergy",
+    "linkDamagePerHit": 5,
+    "linkMaxDistance": 8,
     "range": 16,
     "speed": 23
   },
@@ -32595,11 +32658,21 @@ exports[`Gun > Machine Pistol (673) > [variants=0-A-A,0-0-0] 1`] = `
     "cooldownTime": 0.07,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 5,
+            "damageChance": 0.377,
+            "dps": 44.892,
+            "isEstimated": true,
+            "source": "link"
+          }
+        ],
         "damage": 3.2,
         "dps": 29.091,
         "force": 6,
         "id": "UziProjectile_Synergy",
+        "linkDamagePerHit": 5,
+        "linkMaxDistance": 8,
         "range": 16,
         "speed": 23
       }
@@ -32628,11 +32701,21 @@ exports[`Gun > Machine Pistol (673) > modes 1`] = `
         "cooldownTime": 0.07,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 5,
+                "damageChance": 0.377,
+                "dps": 44.892,
+                "isEstimated": true,
+                "source": "link"
+              }
+            ],
             "damage": 3.2,
             "dps": 29.091,
             "force": 6,
             "id": "UziProjectile_Synergy",
+            "linkDamagePerHit": 5,
+            "linkMaxDistance": 8,
             "range": 16,
             "speed": 23
           }
@@ -32651,15 +32734,22 @@ exports[`Gun > Magic Lamp (0) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 8,
-    "details": []
+    "details": [
+      {
+        "chance": 0.4,
+        "isEstimated": true,
+        "tooltip": "wish",
+        "value": 115
+      }
+    ]
   },
   "dps": {
     "base": 8.889,
     "details": [
       {
-        "chance": 0.5,
+        "chance": 0.4,
         "isEstimated": true,
-        "tooltip": "Estimated DPS from genie punch: {{VALUE}}<br/>Genie punch after <strong>3</strong> hits: <strong>115</strong> damage.",
+        "tooltip": "wish",
         "value": 42.593
       }
     ]
@@ -32667,13 +32757,28 @@ exports[`Gun > Magic Lamp (0) > [variants=0-A-A,0-0-0] 1`] = `
   "fireRate": 66.667,
   "force": {
     "base": 10,
-    "details": []
+    "details": [
+      {
+        "chance": 0.4,
+        "isEstimated": true,
+        "tooltip": "Genie punch force: {{VALUE}}",
+        "value": 100
+      }
+    ]
   },
   "magazineSize": 3,
   "maxAmmo": 100,
   "precision": 83.333,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 115,
+        "damageChance": 0.4,
+        "dps": 42.593,
+        "isEstimated": true,
+        "source": "wish"
+      }
+    ],
     "damage": 8,
     "dps": 8.889,
     "force": 10,
@@ -32690,7 +32795,15 @@ exports[`Gun > Magic Lamp (0) > [variants=0-A-A,0-0-0] 1`] = `
     "cooldownTime": 0.5,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 115,
+            "damageChance": 0.4,
+            "dps": 42.593,
+            "isEstimated": true,
+            "source": "wish"
+          }
+        ],
         "damage": 8,
         "dps": 8.889,
         "force": 10,
@@ -32725,7 +32838,15 @@ exports[`Gun > Magic Lamp (0) > modes 1`] = `
         "cooldownTime": 0.5,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 115,
+                "damageChance": 0.4,
+                "dps": 42.593,
+                "isEstimated": true,
+                "source": "wish"
+              }
+            ],
             "damage": 8,
             "dps": 8.889,
             "force": 10,
@@ -42715,7 +42836,14 @@ exports[`Gun > Plague Pistol (682) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 7,
-    "details": []
+    "details": [
+      {
+        "chance": 0.595,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 5
+      }
+    ]
   },
   "dps": {
     "base": 28,
@@ -42724,6 +42852,12 @@ exports[`Gun > Plague Pistol (682) > [variants=0-A-A,0-0-0] 1`] = `
         "isEstimated": true,
         "tooltip": "poison",
         "value": 3
+      },
+      {
+        "chance": 0.595,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 19.298
       }
     ]
   },
@@ -42743,6 +42877,13 @@ exports[`Gun > Plague Pistol (682) > [variants=0-A-A,0-0-0] 1`] = `
         "dps": 3,
         "isEstimated": true,
         "source": "poison"
+      },
+      {
+        "damage": 5,
+        "damageChance": 0.595,
+        "dps": 19.298,
+        "isEstimated": true,
+        "source": "link"
       }
     ],
     "averageSurvivingBounces": 2,
@@ -42751,6 +42892,8 @@ exports[`Gun > Plague Pistol (682) > [variants=0-A-A,0-0-0] 1`] = `
     "dps": 28,
     "force": 13,
     "id": "Rusty_Goop_Gun_Projectile_Synergy",
+    "linkDamagePerHit": 5,
+    "linkMaxDistance": 16,
     "numberOfBounces": 2,
     "poisonChance": 0.5,
     "poisonDuration": 5,
@@ -42771,6 +42914,13 @@ exports[`Gun > Plague Pistol (682) > [variants=0-A-A,0-0-0] 1`] = `
             "dps": 3,
             "isEstimated": true,
             "source": "poison"
+          },
+          {
+            "damage": 5,
+            "damageChance": 0.595,
+            "dps": 19.298,
+            "isEstimated": true,
+            "source": "link"
           }
         ],
         "averageSurvivingBounces": 2,
@@ -42779,6 +42929,8 @@ exports[`Gun > Plague Pistol (682) > [variants=0-A-A,0-0-0] 1`] = `
         "dps": 28,
         "force": 13,
         "id": "Rusty_Goop_Gun_Projectile_Synergy",
+        "linkDamagePerHit": 5,
+        "linkMaxDistance": 16,
         "numberOfBounces": 2,
         "poisonChance": 0.5,
         "poisonDuration": 5,
@@ -42817,6 +42969,13 @@ exports[`Gun > Plague Pistol (682) > modes 1`] = `
                 "dps": 3,
                 "isEstimated": true,
                 "source": "poison"
+              },
+              {
+                "damage": 5,
+                "damageChance": 0.595,
+                "dps": 19.298,
+                "isEstimated": true,
+                "source": "link"
               }
             ],
             "averageSurvivingBounces": 2,
@@ -42825,6 +42984,8 @@ exports[`Gun > Plague Pistol (682) > modes 1`] = `
             "dps": 28,
             "force": 13,
             "id": "Rusty_Goop_Gun_Projectile_Synergy",
+            "linkDamagePerHit": 5,
+            "linkMaxDistance": 16,
             "numberOfBounces": 2,
             "poisonChance": 0.5,
             "poisonDuration": 5,
@@ -58768,12 +58929,12 @@ exports[`Gun > Teapot (596) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 13.077,
     "details": [
       {
-        "tooltip": "Aura on reload: {{VALUE}}",
-        "value": 3.846
-      },
-      {
         "tooltip": "Aura on reload (ignite): {{VALUE}}",
         "value": 1.538
+      },
+      {
+        "tooltip": "Aura on reload: {{VALUE}}",
+        "value": 3.846
       }
     ]
   },
@@ -60006,11 +60167,25 @@ exports[`Gun > The Emperor (330) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 7,
-    "details": []
+    "details": [
+      {
+        "chance": 0.377,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 5
+      }
+    ]
   },
   "dps": {
     "base": 45.902,
-    "details": []
+    "details": [
+      {
+        "chance": 0.377,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 32.493
+      }
+    ]
   },
   "fireRate": 393.443,
   "force": {
@@ -60021,11 +60196,21 @@ exports[`Gun > The Emperor (330) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 300,
   "precision": 76.667,
   "projectile": {
-    "additionalDamage": [],
+    "additionalDamage": [
+      {
+        "damage": 5,
+        "damageChance": 0.377,
+        "dps": 32.493,
+        "isEstimated": true,
+        "source": "link"
+      }
+    ],
     "damage": 7,
     "dps": 45.902,
     "force": 10,
     "id": "Electro_Shark_Projectile",
+    "linkDamagePerHit": 5,
+    "linkMaxDistance": 8,
     "range": 50,
     "speed": 20
   },
@@ -60036,11 +60221,21 @@ exports[`Gun > The Emperor (330) > [variants=0-A-A,0-0-0] 1`] = `
     "cooldownTime": 0.3,
     "projectiles": [
       {
-        "additionalDamage": [],
+        "additionalDamage": [
+          {
+            "damage": 5,
+            "damageChance": 0.377,
+            "dps": 32.493,
+            "isEstimated": true,
+            "source": "link"
+          }
+        ],
         "damage": 7,
         "dps": 45.902,
         "force": 10,
         "id": "Electro_Shark_Projectile",
+        "linkDamagePerHit": 5,
+        "linkMaxDistance": 8,
         "range": 50,
         "speed": 20
       }
@@ -60069,11 +60264,21 @@ exports[`Gun > The Emperor (330) > modes 1`] = `
         "cooldownTime": 0.3,
         "projectiles": [
           {
-            "additionalDamage": [],
+            "additionalDamage": [
+              {
+                "damage": 5,
+                "damageChance": 0.377,
+                "dps": 32.493,
+                "isEstimated": true,
+                "source": "link"
+              }
+            ],
             "damage": 7,
             "dps": 45.902,
             "force": 10,
             "id": "Electro_Shark_Projectile",
+            "linkDamagePerHit": 5,
+            "linkMaxDistance": 8,
             "range": 50,
             "speed": 20
           }
@@ -60288,13 +60493,13 @@ exports[`Gun > The Exotic (563) > [variants=0-A-A] 1`] = `
     "base": 25,
     "details": [
       {
-        "tooltip": "explosion",
-        "value": 15
-      },
-      {
         "isEstimated": false,
         "tooltip": "Damage from spawned projectile {{P:Exotic_Submissile}}: {{VALUE}}",
         "value": 14
+      },
+      {
+        "tooltip": "explosion",
+        "value": 15
       },
       {
         "isEstimated": false,
@@ -60307,13 +60512,13 @@ exports[`Gun > The Exotic (563) > [variants=0-A-A] 1`] = `
     "base": 12.5,
     "details": [
       {
-        "tooltip": "explosion",
-        "value": 7.5
-      },
-      {
         "isEstimated": false,
         "tooltip": "Damage from spawned projectile {{P:Exotic_Submissile}}: {{VALUE}}",
         "value": 7
+      },
+      {
+        "tooltip": "explosion",
+        "value": 7.5
       },
       {
         "isEstimated": false,
@@ -66537,6 +66742,12 @@ exports[`Gun > VertebraeK-47 (29) > [variants=0-A-A,0-0-0] 1`] = `
         "isEstimated": true,
         "tooltip": "pierce",
         "value": 4
+      },
+      {
+        "chance": 0.35,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 2
       }
     ]
   },
@@ -66547,6 +66758,12 @@ exports[`Gun > VertebraeK-47 (29) > [variants=0-A-A,0-0-0] 1`] = `
         "isEstimated": true,
         "tooltip": "pierce",
         "value": 26.667
+      },
+      {
+        "chance": 0.35,
+        "isEstimated": true,
+        "tooltip": "link",
+        "value": 13.182
       }
     ]
   },
@@ -66565,6 +66782,13 @@ exports[`Gun > VertebraeK-47 (29) > [variants=0-A-A,0-0-0] 1`] = `
         "dps": 26.667,
         "isEstimated": true,
         "source": "pierce"
+      },
+      {
+        "damage": 2,
+        "damageChance": 0.35,
+        "dps": 13.182,
+        "isEstimated": true,
+        "source": "link"
       }
     ],
     "damage": 4,
@@ -66574,6 +66798,8 @@ exports[`Gun > VertebraeK-47 (29) > [variants=0-A-A,0-0-0] 1`] = `
     "homingRadius": 6,
     "id": "Ghost_Bullet_Small_Projectile",
     "isHoming": true,
+    "linkDamagePerHit": 2,
+    "linkMaxDistance": 7,
     "penetration": 1,
     "range": 1000,
     "speed": 18
@@ -66591,6 +66817,13 @@ exports[`Gun > VertebraeK-47 (29) > [variants=0-A-A,0-0-0] 1`] = `
             "dps": 26.667,
             "isEstimated": true,
             "source": "pierce"
+          },
+          {
+            "damage": 2,
+            "damageChance": 0.35,
+            "dps": 13.182,
+            "isEstimated": true,
+            "source": "link"
           }
         ],
         "damage": 4,
@@ -66600,6 +66833,8 @@ exports[`Gun > VertebraeK-47 (29) > [variants=0-A-A,0-0-0] 1`] = `
         "homingRadius": 6,
         "id": "Ghost_Bullet_Small_Projectile",
         "isHoming": true,
+        "linkDamagePerHit": 2,
+        "linkMaxDistance": 7,
         "penetration": 1,
         "range": 1000,
         "speed": 18
@@ -66635,6 +66870,13 @@ exports[`Gun > VertebraeK-47 (29) > modes 1`] = `
                 "dps": 26.667,
                 "isEstimated": true,
                 "source": "pierce"
+              },
+              {
+                "damage": 2,
+                "damageChance": 0.35,
+                "dps": 13.182,
+                "isEstimated": true,
+                "source": "link"
               }
             ],
             "damage": 4,
@@ -66644,6 +66886,8 @@ exports[`Gun > VertebraeK-47 (29) > modes 1`] = `
             "homingRadius": 6,
             "id": "Ghost_Bullet_Small_Projectile",
             "isHoming": true,
+            "linkDamagePerHit": 2,
+            "linkMaxDistance": 7,
             "penetration": 1,
             "range": 1000,
             "speed": 18
