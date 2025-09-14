@@ -346,7 +346,7 @@ export class ProjectileService {
         }
       });
 
-      this._booleanConfigEntries((k, [mode]) => {
+      this._booleanConfigEntries((k, mode) => {
         const v = p[k] ?? false;
 
         if (mode === "and") {

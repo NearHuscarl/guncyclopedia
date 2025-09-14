@@ -111,9 +111,7 @@ export function Volley(props: TVolleyProps) {
                     onClick={() => onSelect(i)}
                   >
                     <ProjectileSprite projectile={p} isSelected={isSelected(i)} />
-                    {projectiles.length > 1 && isSelected(i) && (
-                      <ProjectileMarker isLast={i === projectiles.length - 1} />
-                    )}
+                    {isSelected(i) && !isFinalSelected(i) && <ProjectileMarker isLast={i === projectiles.length - 1} />}
                   </TooltipTrigger>
                   <TooltipContent>{projectiles.length === volley.length && <div>{p.id}</div>}</TooltipContent>
                 </Tooltip>
@@ -131,9 +129,7 @@ export function Volley(props: TVolleyProps) {
               onClick={() => onSelectFinal(i)}
             >
               <ProjectileSprite projectile={p} isSelected={isFinalSelected(i)} />
-              {finalProjectiles.length > 1 && isFinalSelected(i) && (
-                <ProjectileMarker isLast={i === finalProjectiles.length - 1} />
-              )}
+              {isFinalSelected(i) && <ProjectileMarker isLast={i === finalProjectiles.length - 1} />}
             </TooltipTrigger>
             <TooltipContent>{finalProjectiles.length === 1 && <div>{p.id}</div>}</TooltipContent>
           </Tooltip>

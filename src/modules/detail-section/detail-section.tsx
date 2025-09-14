@@ -307,7 +307,13 @@ export function DetailSection() {
           modifier={hoverGunStats.force.base - gunStats.force.base}
         />
         <Features gun={selectedGun} className="mt-4" />
-        {isDebug && <DebugData gun={selectedGun} stats={selectedStats} />}
+        {isDebug && (
+          <DebugData
+            gun={selectedGun}
+            stats={selectedStats}
+            indices={{ modeIndex, moduleIndex, projectileIndex, finalProjectileIndex }}
+          />
+        )}
         <div className="h-14" />
       </div>
     </div>
