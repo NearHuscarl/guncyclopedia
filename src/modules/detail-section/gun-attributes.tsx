@@ -76,6 +76,7 @@ import { AmmoIcon } from "@/components/icons/ammo";
 import { DamageAllEnemiesRadius } from "@/client/generated/models/projectile.model";
 import { LifeOrb } from "@/components/icons/life-orb";
 import { Three } from "@/components/icons/three";
+import { FinalProjectile } from "@/components/icons/final-projectile";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -758,6 +759,31 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
                 </>
               );
             })()}
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {(gunStats?.projectileModule.finalProjectiles.length || undefined) && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+              {(gunStats?.projectileModule.finalProjectileCount || 1) > 1 && (
+                <NumericValue className="text-rose-500">{gunStats?.projectileModule.finalProjectileCount}</NumericValue>
+              )}
+              <FinalProjectile size={22} className={"[&_path]:stroke-rose-500!"} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Final Projectile</strong>
+            <br />
+            {(gunStats?.projectileModule.finalProjectileCount || 1) === 1 && (
+              <>The last projectile in the magazine is a bit different...</>
+            )}
+            {(gunStats?.projectileModule.finalProjectileCount || 1) > 1 && (
+              <>
+                The last <strong>{gunStats?.projectileModule.finalProjectileCount}</strong> projectiles in the magazine
+                are a bit different...
+              </>
+            )}
           </TooltipContent>
         </Tooltip>
       )}

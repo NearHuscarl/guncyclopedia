@@ -22,9 +22,8 @@ export function DebugData({ gun, stats }: TDebugDataProps) {
     delete clonedStats.projectile?.animation;
 
     clonedStats.mode?.volley.forEach((module) => {
-      module.projectiles.forEach((p) => {
-        delete p.animation;
-      });
+      module.projectiles.forEach((p) => delete p.animation);
+      module.finalProjectiles.forEach((p) => delete p.animation);
     });
 
     const { projectile, ...clonedStats2 } = clonedStats;

@@ -73,6 +73,12 @@ export const Projectile = z.object({
   force: z.number(),
 
   /**
+   * Chance to spawn this projectile in the projectile pool if there are multiple projectiles per module.
+   * Default is `1` (always spawn).
+   */
+  spawnWeight: z.number().nonnegative().optional(),
+
+  /**
    * Extra damage from explosion, ricochet, or custom projectile like blackhole
    */
   additionalDamage: z.array(DamageDetail),

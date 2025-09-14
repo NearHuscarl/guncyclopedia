@@ -96,6 +96,12 @@ export const ProjectileModuleDto = z.object({
       AmmoCost: z.number(),
     }),
   ),
+  usesOptionalFinalProjectile: BinaryOption,
+  finalProjectile: AssetExternalReference.optional(),
+  /**
+   * The last `numberOfFinalProjectiles` projectiles in a magazine are replaced with `finalProjectile`. Default is 1.
+   */
+  numberOfFinalProjectiles: z.number().min(1).optional(),
   /**
    * Spawn 1 additional projectile per shot. See [https://enterthegungeon.fandom.com/wiki/Gilded_Hydra](https://enterthegungeon.fandom.com/wiki/Gilded_Hydra) for example.
    */

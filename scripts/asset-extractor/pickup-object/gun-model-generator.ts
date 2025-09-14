@@ -551,6 +551,16 @@ export class GunModelGenerator {
       } else {
         // TODO: handle other sequence styles
       }
+
+      const finalProjectile =
+        moduleDto.usesOptionalFinalProjectile && this._assetService.referenceExists(moduleDto.finalProjectile)
+          ? this._buildProjectile(gunDto, moduleDto, moduleDto.finalProjectile)
+          : undefined;
+
+      if (finalProjectile) {
+        this._featureFlags.add("hasFinalProjectile");
+      }
+
       volley.push({
         shootStyle: shootStyleTextLookup[moduleDto.shootStyle] as keyof typeof ShootStyle,
         cooldownTime: moduleDto.shootStyle === ShootStyle.Beam ? 1 : moduleDto.cooldownTime, // for beam, cooldownTime is set so damage = dps
@@ -561,6 +571,8 @@ export class GunModelGenerator {
           moduleDto.ammoCost > 1 && defaultModule.shootStyle !== ShootStyle.Beam ? moduleDto.ammoCost : undefined,
         depleteAmmo: Boolean(moduleDto.depleteAmmo) || undefined,
         projectiles,
+        finalProjectile,
+        finalProjectileCount: finalProjectile ? moduleDto.numberOfFinalProjectiles : undefined,
       });
 
       depleteAmmo = depleteAmmo || moduleDto.depleteAmmo === 1;
@@ -621,7 +633,6 @@ export class GunModelGenerator {
       const inputModule = {
         ...defaultModule,
         shootStyle: ShootStyle.SemiAutomatic,
-        ammoCost: defaultModule.burstShotCount,
       };
       for (let i = 0; i < projectileModules.length; i++) {
         hadoukenModules.push({ ...inputModule, projectiles: [gunDto.trackInputDirectionalPad.HadoukenProjectile] });
@@ -631,7 +642,7 @@ export class GunModelGenerator {
       return [
         this._buildModeFromProjectileModules(`Normal`, gunDto, defaultModule, projectileModules),
         this._buildModeFromProjectileModules(`← ←`, gunDto, defaultModule, [...projectileModules, grappleModule]),
-        this._buildModeFromProjectileModules(`↓ →`, gunDto, defaultModule, [...projectileModules, ...hadoukenModules]),
+        this._buildModeFromProjectileModules(`↓ →`, gunDto, defaultModule, hadoukenModules), // the first volley is hadouken projectiles, followed by normal volley after that.
       ];
     }
 

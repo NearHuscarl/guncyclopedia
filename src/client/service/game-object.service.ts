@@ -26,6 +26,7 @@ export const ResolvedProjectile = Projectile.extend({
   spawnedBy: z.string().optional(),
   spawnLevel: z.number().optional(),
   additionalDamage: z.array(ResolvedDamageDetail),
+  isFinal: z.boolean().optional(),
 });
 
 export type TResolvedProjectile = z.infer<typeof ResolvedProjectile>;
@@ -42,7 +43,11 @@ export const ResolvedProjectileModule = ProjectileModule.extend({
   projectiles: z.array(ResolvedProjectile),
   timeBetweenShots: z.number(),
   shotsPerSecond: z.number(),
-});
+  /**
+   * the last projectile in the magazine. If there are multiple final projectiles, this means the first one spawns other projectiles.
+   */
+  finalProjectiles: z.array(ResolvedProjectile),
+}).omit({ finalProjectile: true });
 
 export type TResolvedProjectileModule = z.infer<typeof ResolvedProjectileModule>;
 

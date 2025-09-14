@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function usePrevious<T>(value: T): T | undefined {
   const ref = useRef<T | undefined>(undefined);
@@ -22,4 +22,15 @@ export function useUnmountRef() {
   }, []);
 
   return ref;
+}
+
+export function useToggleIndex(initial = -1) {
+  const [selectedIndex, setSelectedIndex] = useState(initial);
+
+  return [
+    selectedIndex,
+    (index: number) => {
+      setSelectedIndex((prev) => (prev === index ? -1 : index));
+    },
+  ] as const;
 }

@@ -5054,14 +5054,19 @@
             "spread": 6,
             "projectiles": [
               "Prismatic_Spray_Projectile"
-            ]
+            ],
+            "finalProjectile": "Crystal_Shard_Big",
+            "finalProjectileCount": 1
           }
         ]
       }
     ],
     "maxAmmo": 600,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpawningProjectiles",
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "sky",
@@ -5106,14 +5111,19 @@
             "spread": 6,
             "projectiles": [
               "Prismatic_Spray_Projectile"
-            ]
+            ],
+            "finalProjectile": "Crystal_Shard_Big_Synergy",
+            "finalProjectileCount": 1
           }
         ]
       }
     ],
     "maxAmmo": 600,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpawningProjectiles",
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -7640,7 +7650,9 @@
             "spread": 0,
             "projectiles": [
               "Black_Revolver_Projectile"
-            ]
+            ],
+            "finalProjectile": "Black_Revolver_Final_Projectile",
+            "finalProjectileCount": 1
           }
         ]
       }
@@ -7648,7 +7660,8 @@
     "maxAmmo": 500,
     "reloadTime": 0.78,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasFinalProjectile"
     ],
     "attribute": {},
     "colors": [
@@ -7792,14 +7805,19 @@
             "spread": 7,
             "projectiles": [
               "Fish_Barrel_Bullet_Projectile"
-            ]
+            ],
+            "finalProjectile": "Fish_Projectile_Synergy",
+            "finalProjectileCount": 1
           }
         ]
       }
     ],
     "maxAmmo": 300,
     "reloadTime": 0.78,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "orange",
@@ -9045,14 +9063,19 @@
             "spread": 7,
             "projectiles": [
               "H4MMERProjectile"
-            ]
+            ],
+            "finalProjectile": "Hammer_Projectile",
+            "finalProjectileCount": 1
           }
         ]
       }
     ],
     "maxAmmo": 450,
     "reloadTime": 0.6,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -9116,14 +9139,19 @@
             "spread": 7,
             "projectiles": [
               "H4MMERProjectile"
-            ]
+            ],
+            "finalProjectile": "Hammer_Projectile",
+            "finalProjectileCount": 5
           }
         ]
       }
     ],
     "maxAmmo": 450,
     "reloadTime": 0.6,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasStatusEffects",
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "lightGray",
@@ -15135,14 +15163,18 @@
             "spread": 5,
             "projectiles": [
               "Pulse_Projectile"
-            ]
+            ],
+            "finalProjectile": "PulseCharge_Projectile_Synergy",
+            "finalProjectileCount": 2
           }
         ]
       }
     ],
     "maxAmmo": 500,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -22205,14 +22237,18 @@
             "spread": 8,
             "projectiles": [
               "Wind_Up_Gun_Projectile"
-            ]
+            ],
+            "finalProjectile": "Wind_Up_Gun_Final_Projectile",
+            "finalProjectileCount": 10
           }
         ]
       }
     ],
     "maxAmmo": 600,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "sky",
@@ -22671,14 +22707,19 @@
             "spread": 5,
             "projectiles": [
               "Zapper_Projectile"
-            ]
+            ],
+            "finalProjectile": "Duck_Blue_Projectile",
+            "finalProjectileCount": 1
           }
         ]
       }
     ],
     "maxAmmo": 150,
     "reloadTime": 1,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasHomingProjectiles",
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "red",
@@ -22722,14 +22763,19 @@
             "spread": 5,
             "projectiles": [
               "Zapper_Dog_Projectile"
-            ]
+            ],
+            "finalProjectile": "Duck_Blue_Projectile",
+            "finalProjectileCount": 1
           }
         ]
       }
     ],
     "maxAmmo": 150,
     "reloadTime": 1,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasHomingProjectiles",
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -23783,7 +23829,6 @@
             "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
-            "ammoCost": 3,
             "projectiles": [
               "GrapplingHook"
             ]
@@ -23795,52 +23840,11 @@
         "magazineSize": 30,
         "volley": [
           {
-            "shootStyle": "Burst",
-            "burstShotCount": 3,
-            "burstCooldownTime": 0.1,
-            "cooldownTime": 0.7,
-            "spread": 0,
-            "projectiles": [
-              "dpad_Gun_Projectile"
-            ]
-          },
-          {
-            "shootStyle": "Burst",
-            "burstShotCount": 3,
-            "burstCooldownTime": 0.1,
-            "cooldownTime": 0.7,
-            "spread": 0,
-            "projectiles": [
-              "dpad_Gun_Projectile"
-            ]
-          },
-          {
-            "shootStyle": "Burst",
-            "burstShotCount": 3,
-            "burstCooldownTime": 0.1,
-            "cooldownTime": 0.7,
-            "spread": 0,
-            "projectiles": [
-              "dpad_Gun_Projectile"
-            ]
-          },
-          {
-            "shootStyle": "Burst",
-            "burstShotCount": 3,
-            "burstCooldownTime": 0.1,
-            "cooldownTime": 0.7,
-            "spread": 0,
-            "projectiles": [
-              "dpad_Gun_Projectile"
-            ]
-          },
-          {
             "shootStyle": "SemiAutomatic",
             "burstShotCount": 3,
             "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
-            "ammoCost": 3,
             "projectiles": [
               "Mega_Buster_Projectile_Super"
             ]
@@ -23851,7 +23855,6 @@
             "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
-            "ammoCost": 3,
             "projectiles": [
               "Mega_Buster_Projectile_Super"
             ]
@@ -23862,7 +23865,6 @@
             "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
-            "ammoCost": 3,
             "projectiles": [
               "Mega_Buster_Projectile_Super"
             ]
@@ -23873,7 +23875,6 @@
             "burstCooldownTime": 0.1,
             "cooldownTime": 0.7,
             "spread": 0,
-            "ammoCost": 3,
             "projectiles": [
               "Mega_Buster_Projectile_Super"
             ]
@@ -25843,14 +25844,19 @@
             "spread": 4,
             "projectiles": [
               "Beholster_Eye_Projectile"
-            ]
+            ],
+            "finalProjectile": "Beholster_Spawn_Projectile",
+            "finalProjectileCount": 1
           }
         ]
       }
     ],
     "maxAmmo": 300,
     "reloadTime": 1.2,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpawningProjectiles",
+      "hasFinalProjectile"
+    ],
     "attribute": {},
     "colors": [
       "gray",
@@ -28721,7 +28727,9 @@
             "spread": 4,
             "projectiles": [
               "Teapot_Projectile"
-            ]
+            ],
+            "finalProjectile": "Teapot_Projectile_Final",
+            "finalProjectileCount": 1
           }
         ]
       }
@@ -28730,6 +28738,7 @@
     "reloadTime": 3,
     "featureFlags": [
       "hasHomingProjectiles",
+      "hasFinalProjectile",
       "hasSpecialAbilities"
     ],
     "attribute": {

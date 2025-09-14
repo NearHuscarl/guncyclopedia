@@ -88,8 +88,8 @@ export class AssetService {
     return this._assetPaths.get(guid);
   }
 
-  referenceExists(assetReference: TAssetExternalReference): assetReference is Required<TAssetExternalReference> {
-    if (!assetReference.$$scriptPath || !assetReference.guid || !assetReference.fileID) {
+  referenceExists(assetReference?: TAssetExternalReference): assetReference is Required<TAssetExternalReference> {
+    if (!assetReference || !assetReference.$$scriptPath || !assetReference.guid || !assetReference.fileID) {
       return false;
     }
     return true;

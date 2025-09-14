@@ -73,6 +73,13 @@ export const Projectile = z.object({
   force: z.number(),
 
   /**
+   * The weight value combined with total spawn weight from other projectiles in the same module to determine
+   * the chance of being selected when firing a projectile.
+   * Default is `1`.
+   */
+  spawnWeight: z.number().nonnegative().optional(),
+
+  /**
    * Extra damage from explosion, ricochet, or custom projectile like blackhole
    */
   additionalDamage: z.array(DamageDetail),
