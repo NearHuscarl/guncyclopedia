@@ -229,6 +229,7 @@ export function DetailSection() {
               id={`${selectedGun.id}-${modeIndex}`}
               volley={selectedStats.mode.volley}
               finalProjectiles={selectedStats.mode.volley[0].finalProjectiles}
+              projectileIndex={moduleIndex}
               onSelect={setSelectedModuleIndex}
               onHover={(i) => {
                 setHoverModuleIndex(i);
@@ -238,7 +239,7 @@ export function DetailSection() {
                 setHoverModuleIndex(-1);
                 setHoverFinalProjectileIndex(-1);
               }}
-              isFinalSelected={(i) => finalProjectileIndex === i}
+              finalProjectileIndex={finalProjectileIndex}
               onSelectFinal={(i) => {
                 setHoverModuleIndex(0);
                 setSelectedFinalProjectileIndex(i);
@@ -247,7 +248,6 @@ export function DetailSection() {
                 setHoverModuleIndex(0);
                 setHoverFinalProjectileIndex(i);
               }}
-              isSelected={(i) => moduleIndex === i}
             />
           )}
           {showProjectilePool && (

@@ -37,8 +37,8 @@ type TVolleyProps = {
   id: string;
   volley: TResolvedProjectileModule[];
   finalProjectiles?: TResolvedProjectile[];
-  isSelected: (index: number) => boolean;
-  isFinalSelected: (index: number) => boolean;
+  projectileIndex: number;
+  finalProjectileIndex: number;
   onSelect: (index: number) => void;
   onHover: (index: number) => void;
   onSelectFinal: (index: number) => void;
@@ -49,8 +49,8 @@ type TVolleyProps = {
 export function Volley(props: TVolleyProps) {
   const {
     id,
-    isSelected,
-    isFinalSelected,
+    projectileIndex,
+    finalProjectileIndex,
     onSelect,
     onHover,
     onSelectFinal,
@@ -89,6 +89,7 @@ export function Volley(props: TVolleyProps) {
         {projectiles.map((p, i) => {
           const spawnLevel = p.spawnLevel;
           const isTheFirstSpawnedProjectile = spawnLevel === (projectiles[i - 1]?.spawnLevel ?? 0) + 1;
+          const isSelected = i === projectileIndex;
           return (
             <Fragment key={`${id}-${i}`}>
               {isTheFirstSpawnedProjectile && <ChevronRight className="" size={15} />}
@@ -110,8 +111,10 @@ export function Volley(props: TVolleyProps) {
                     onMouseEnter={() => onHover(i)}
                     onClick={() => onSelect(i)}
                   >
-                    <ProjectileSprite projectile={p} isSelected={isSelected(i)} />
-                    {isSelected(i) && !isFinalSelected(i) && <ProjectileMarker isLast={i === projectiles.length - 1} />}
+                    <ProjectileSprite projectile={p} isSelected={isSelected} />
+                    {isSelected && finalProjectileIndex === -1 && (
+                      <ProjectileMarker isLast={i === projectiles.length - 1} />
+                    )}
                   </TooltipTrigger>
                   <TooltipContent>{projectiles.length === volley.length && <div>{p.id}</div>}</TooltipContent>
                 </Tooltip>
@@ -120,20 +123,23 @@ export function Volley(props: TVolleyProps) {
           );
         })}
         {finalProjectiles.length > 0 && <>…</>}
-        {finalProjectiles.map((p, i) => (
-          <Tooltip key={i} delayDuration={1000}>
-            <TooltipTrigger
-              // using p-2 instead of gap-4 to increase the clickable area
-              className="relative p-2 last:pr-0 cursor-help"
-              onMouseEnter={() => onHoverFinal(i)}
-              onClick={() => onSelectFinal(i)}
-            >
-              <ProjectileSprite projectile={p} isSelected={isFinalSelected(i)} />
-              {isFinalSelected(i) && <ProjectileMarker isLast={i === finalProjectiles.length - 1} />}
-            </TooltipTrigger>
-            <TooltipContent>{finalProjectiles.length === 1 && <div>{p.id}</div>}</TooltipContent>
-          </Tooltip>
-        ))}
+        {finalProjectiles.map((p, i) => {
+          const isFinalSelected = finalProjectileIndex === i;
+          return (
+            <Tooltip key={i} delayDuration={1000}>
+              <TooltipTrigger
+                // using p-2 instead of gap-4 to increase the clickable area
+                className="relative p-2 last:pr-0 cursor-help"
+                onMouseEnter={() => onHoverFinal(i)}
+                onClick={() => onSelectFinal(i)}
+              >
+                <ProjectileSprite projectile={p} isSelected={isFinalSelected} />
+                {isFinalSelected && <ProjectileMarker isLast={i === finalProjectiles.length - 1} />}
+              </TooltipTrigger>
+              <TooltipContent>{finalProjectiles.length === 1 && <div>{p.id}</div>}</TooltipContent>
+            </Tooltip>
+          );
+        })}
       </div>
     </div>
   );
