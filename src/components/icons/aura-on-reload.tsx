@@ -1,6 +1,6 @@
 import type { IIconProps } from "./types";
 
-export function AuraOnReload({ size = 24, color = "white" }: IIconProps) {
+export function AuraOnReload({ size = 20, color = "white" }: IIconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="24" height="24" />

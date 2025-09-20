@@ -151,7 +151,7 @@ export function DetailSection() {
             </Button>
           ))}
         </div>
-        <div className="flex items-center justify-center h-36 gap-10">
+        <div className="flex items-center justify-center h-32 gap-10">
           <GunPortrait gun={gun} mode={gunStats.mode.mode} />
           {hoverGun && hoverGun.id !== gun.id && (
             <>
@@ -187,7 +187,7 @@ export function DetailSection() {
           </div>
         </div>
       </div>
-      <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 px-2 border-l border-stone-900">
+      <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 p-2 border-l border-stone-900">
         <StatStackBar
           label="DPS"
           max={100}

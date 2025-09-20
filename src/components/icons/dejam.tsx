@@ -1,6 +1,6 @@
 import type { IIconProps } from "./types";
 
-export function Dejam({ size = 22, className }: IIconProps) {
+export function Dejam({ size = 18, className }: IIconProps) {
   return (
     <svg
       width={size}

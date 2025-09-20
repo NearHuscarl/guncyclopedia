@@ -1,6 +1,6 @@
 import type { IIconProps } from "./types";
 
-export function WaveProjectiles({ size = 22, className }: IIconProps) {
+export function WaveProjectiles({ size = 20, className }: IIconProps) {
   return (
     <svg
       width={size}

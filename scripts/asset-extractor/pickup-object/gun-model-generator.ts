@@ -682,6 +682,7 @@ export class GunModelGenerator {
     }
 
     const res: TProjectileMode[] = [];
+    // TODO: fix slow animation on Chrome in weaker machines
     // TODO: add wood beam swing damage
     // TODO: shellegun: beam dps should take charge time into account as magazine size !== max ammo
     // TODO: ShovelGunModifier

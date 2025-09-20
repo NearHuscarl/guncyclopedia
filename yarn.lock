@@ -884,6 +884,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/google-sans-code@npm:^5.2.3":
+  version: 5.2.3
+  resolution: "@fontsource-variable/google-sans-code@npm:5.2.3"
+  checksum: 10c0/d1e313d50d2e1ec6a2e62bab8c7b5f0c90ffb19040bba58f7c89a6db28e5371eea5af1ecf1ddd496b2cf0021c883a30878b82dacf6930230532fc79dc47b2d78
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -4192,6 +4199,7 @@ __metadata:
   resolution: "guncyclopedia@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.30.1"
+    "@fontsource-variable/google-sans-code": "npm:^5.2.3"
     "@playwright/test": "npm:^1.54.1"
     "@radix-ui/react-dialog": "npm:^1.1.14"
     "@radix-ui/react-label": "npm:^2.1.7"

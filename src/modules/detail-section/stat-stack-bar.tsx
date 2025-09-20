@@ -175,15 +175,15 @@ export function StatStackBar({
     isNegativeStat,
   });
 
-  const gapInPx = 4; // gap between segments in pixels
-  const labelElement = <p className="text-muted-foreground font-semibold uppercase">{label}</p>;
+  const gapInPx = 3; // gap between segments in pixels
+  const labelElement = <p className="text-muted-foreground font-semibold uppercase text-sm">{label}</p>;
 
   const displayBaseValue = valueResolver?.(baseValue + modifier) ?? baseValue + modifier;
   const displayTotalValue = valueResolver?.(totalValue) ?? totalValue;
 
   return (
     <div className="mb-2">
-      <div className="flex justify-between mb-2 items-baseline">
+      <div className="flex justify-between mb-1 items-baseline">
         {labelTooltip ? (
           <Tooltip>
             <TooltipTrigger asChild>
@@ -203,7 +203,7 @@ export function StatStackBar({
         </NumericValue>
       </div>
 
-      <div className="relative flex h-2 bg-stone-900">
+      <div className="relative flex h-1.5 bg-stone-900">
         {paddedSegments.map(({ value, cappedValue, tooltip = "", isEstimated, color, chance }, i) => {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           const prevIsEstimated = usePrevious(isEstimated);

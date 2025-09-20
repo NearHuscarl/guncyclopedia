@@ -35,7 +35,7 @@ export function GunPortrait({ gun, mode }: { gun: TGun; mode: string }) {
   return (
     <AnimatedSpriteSeries
       key={`${gun.id}-idle`}
-      scale={6}
+      scale={5}
       // TODO: moonscraper charge animation doesn't exist
       animations={[introAnimation, gun.animation.idle].filter((a) => !isUndefined(a))}
     />
