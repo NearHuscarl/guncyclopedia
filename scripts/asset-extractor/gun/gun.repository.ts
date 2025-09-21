@@ -15,6 +15,7 @@ import type {
   TGunnerGunControllerData,
   TLifeOrbGunModifierData,
   TPredatorGunControllerData,
+  TScareEnemiesModifierData,
   TSpawnItemOnGunDepletionData,
   TTrackInputDirectionalPadData,
 } from "./gun.dto.ts";
@@ -48,6 +49,9 @@ export class GunRepository {
 
   private _isGunData(obj: unknown): obj is TGunData {
     return this._assetService.isMonoScript(obj, "Gun.cs.meta");
+  }
+  private _isScareEnemiesModifierData(obj: unknown): obj is TScareEnemiesModifierData {
+    return this._assetService.isMonoScript(obj, "ScareEnemiesModifier.cs.meta");
   }
   private _isTrackInputDirectionalPadData(obj: unknown): obj is TTrackInputDirectionalPadData {
     return this._assetService.isMonoScript(obj, "TrackInputDirectionalPad.cs.meta");
@@ -107,6 +111,8 @@ export class GunRepository {
           }
         } else if (this._assetService.isSpriteAnimatorData(component)) {
           res.spriteAnimator = component;
+        } else if (this._isScareEnemiesModifierData(component)) {
+          res.scareEnemiesModifier = component;
         } else if (this._isTrackInputDirectionalPadData(component)) {
           res.trackInputDirectionalPad = component;
         } else if (this._isSpawnItemOnGunDepletionData(component)) {

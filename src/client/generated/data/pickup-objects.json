@@ -26839,9 +26839,16 @@
     "reloadTime": 2,
     "featureFlags": [
       "hasStatModifiers",
-      "hasHomingProjectiles"
+      "hasHomingProjectiles",
+      "hasSpecialAbilities"
     ],
-    "attribute": {},
+    "attribute": {
+      "scareEnemies": true,
+      "scareEnemiesConeAngle": 90,
+      "fleeStartDistance": 6,
+      "fleeDeathDistance": 9,
+      "fleeStopDistance": 12
+    },
     "colors": [
       "lightGray",
       "teal"
@@ -27427,9 +27434,16 @@
     "maxAmmo": 350,
     "reloadTime": 1.2,
     "featureFlags": [
-      "hasStatModifiers"
+      "hasStatModifiers",
+      "hasSpecialAbilities"
     ],
-    "attribute": {},
+    "attribute": {
+      "scareEnemies": true,
+      "scareEnemiesConeAngle": 90,
+      "fleeStartDistance": 6,
+      "fleeDeathDistance": 9,
+      "fleeStopDistance": 12
+    },
     "video": "https://youtu.be/N-JLNlLRAXA?t=930",
     "colors": [
       "yellow",
@@ -27750,8 +27764,17 @@
     ],
     "maxAmmo": 500,
     "reloadTime": 1.5,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "scareEnemies": true,
+      "scareEnemiesConeAngle": 180,
+      "scareEnemiesOnReloadOnly": true,
+      "fleeStartDistance": 10,
+      "fleeDeathDistance": 6,
+      "fleeStopDistance": 20
+    },
     "colors": [
       "black",
       "orange",

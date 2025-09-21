@@ -77,6 +77,7 @@ import { DamageAllEnemiesRadius } from "@/client/generated/models/projectile.mod
 import { LifeOrb } from "@/components/icons/life-orb";
 import { Three } from "@/components/icons/three";
 import { FinalProjectile } from "@/components/icons/final-projectile";
+import { Fear } from "@/components/icons/fear";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -419,6 +420,22 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <strong>{gun.attribute.blankReloadRadius}</strong> radius.
             <br />
             Reflected bullets deal <strong>{gun.attribute.reflectDuringReloadDmgModifier! * 100}%</strong> more damage.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.attribute.scareEnemies && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger className={ATTRIBUTE_CLASSES}>
+            <Fear className="[&_path]:fill-purple-500" />
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-96">
+            <strong>Scare Enemies</strong>
+            <br />
+            Scares enemies in front of the player within a <strong>{gun.attribute.scareEnemiesConeAngle}</strong>° arc
+            <strong>{gun?.attribute.scareEnemiesOnReloadOnly ? " during reload" : ""}</strong>. They start fleeing when
+            closer than <strong>{gun.attribute.fleeStartDistance}</strong> distance, stop once beyond{" "}
+            <strong>{gun.attribute.fleeStopDistance}</strong> distance, and may run into pits if within{" "}
+            <strong>{gun.attribute.fleeDeathDistance}</strong> distance.
           </TooltipContent>
         </Tooltip>
       )}

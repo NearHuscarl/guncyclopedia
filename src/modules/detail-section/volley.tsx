@@ -141,20 +141,22 @@ export function Volley(props: TVolleyProps) {
           onHover={onHover}
           onSelect={onSelect}
         />
-        {finalProjectiles.length > 0 && <>…</>}
-        <div
-          className={clsx({
-            "flex items-center border border-transparent transition-colors duration-160": true,
-            "border-primary!": hoverFinalProjectile,
-          })}
-        >
-          <ProjectileList
-            projectiles={finalProjectiles}
-            projectileIndex={finalProjectileIndex}
-            onHover={onHoverFinal}
-            onSelect={onSelectFinal}
-          />
-        </div>
+        {finalProjectiles.length > 0 && (
+          <div
+            className={clsx({
+              "flex items-center border border-transparent transition-colors duration-160": true,
+              "border-primary!": hoverFinalProjectile,
+            })}
+          >
+            …
+            <ProjectileList
+              projectiles={finalProjectiles}
+              projectileIndex={finalProjectileIndex}
+              onHover={onHoverFinal}
+              onSelect={onSelectFinal}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -751,6 +751,13 @@ export class GunModelGenerator {
       guNNerSkullLifespan: gunDto.gunnerGunController?.Lifespan,
       guNNerAmmoLossOnDamage: gunDto.gunnerGunController?.AmmoLossOnDamage,
 
+      scareEnemies: Boolean(gunDto.scareEnemiesModifier) || undefined,
+      scareEnemiesConeAngle: gunDto.scareEnemiesModifier?.ConeAngle,
+      scareEnemiesOnReloadOnly: Boolean(gunDto.scareEnemiesModifier?.OnlyFearDuringReload) || undefined,
+      fleeStartDistance: gunDto.scareEnemiesModifier?.FleeData.StartDistance,
+      fleeDeathDistance: gunDto.scareEnemiesModifier?.FleeData.DeathDistance,
+      fleeStopDistance: gunDto.scareEnemiesModifier?.FleeData.StopDistance,
+
       trickGun: Boolean(gunDto.gun.IsTrickGun) || undefined,
     };
 

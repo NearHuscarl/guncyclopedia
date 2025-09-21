@@ -176,6 +176,13 @@ export const Gun = PickupObject.extend({
     guNNerSkullLifespan: z.number().optional(),
     guNNerAmmoLossOnDamage: z.number().optional(),
 
+    scareEnemies: z.boolean().optional(),
+    scareEnemiesConeAngle: z.number().optional(),
+    scareEnemiesOnReloadOnly: z.boolean().optional(),
+    fleeStartDistance: z.number().optional(),
+    fleeDeathDistance: z.number().optional(),
+    fleeStopDistance: z.number().optional(),
+
     /**
      * Gun that switch between 2 firing modes after a reload
      */

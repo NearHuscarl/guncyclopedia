@@ -174,6 +174,16 @@ const GunData = z
     },
   );
 
+const ScareEnemiesModifierData = z.object({
+  FleeData: z.object({
+    StartDistance: z.number(),
+    DeathDistance: z.number(),
+    StopDistance: z.number(),
+  }),
+  ConeAngle: z.number(),
+  OnlyFearDuringReload: BinaryOption,
+});
+
 const TrackInputDirectionalPadData = z.object({
   HadoukenProjectile: AssetExternalReference.required(),
   grappleModule: z.object({
@@ -221,6 +231,7 @@ export const GunDto = z.object({
   sprite: SpriteData,
   spriteVfx: SpriteData.optional(),
   spriteAnimator: SpriteAnimatorData,
+  scareEnemiesModifier: ScareEnemiesModifierData.optional(),
   trackInputDirectionalPad: TrackInputDirectionalPadData.optional(),
   spawnItemOnGunDepletion: SpawnItemOnGunDepletionData.optional(),
   predatorGunController: PredatorGunControllerData.optional(),
@@ -233,6 +244,7 @@ export const GunDto = z.object({
 
 export type TGunDto = z.input<typeof GunDto>;
 export type TGunData = z.input<typeof GunData>;
+export type TScareEnemiesModifierData = z.input<typeof ScareEnemiesModifierData>;
 export type TTrackInputDirectionalPadData = z.input<typeof TrackInputDirectionalPadData>;
 export type TSpawnItemOnGunDepletionData = z.input<typeof SpawnItemOnGunDepletionData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
