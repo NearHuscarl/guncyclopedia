@@ -2,15 +2,22 @@ import { useMemo } from "react";
 import cloneDeep from "lodash/cloneDeep";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ColorItem } from "../top-bar/shared/components/color-item";
+import { JsonViewer } from "../shared/components/json-viewer";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TGunStats } from "@/client/service/gun.service";
 
 type TDebugDataProps = {
   gun: TGun;
   stats: TGunStats;
+  indices: {
+    modeIndex: number;
+    moduleIndex: number;
+    projectileIndex: number;
+    finalProjectileIndex: number;
+  };
 };
 
-export function DebugData({ gun, stats }: TDebugDataProps) {
+export function DebugData({ gun, stats, indices }: TDebugDataProps) {
   const debugData = useMemo(() => {
     const clonedGun = cloneDeep(gun) as Partial<TGun>;
 
@@ -22,9 +29,8 @@ export function DebugData({ gun, stats }: TDebugDataProps) {
     delete clonedStats.projectile?.animation;
 
     clonedStats.mode?.volley.forEach((module) => {
-      module.projectiles.forEach((p) => {
-        delete p.animation;
-      });
+      module.projectiles.forEach((p) => delete p.animation);
+      module.finalProjectiles.forEach((p) => delete p.animation);
     });
 
     const { projectile, ...clonedStats2 } = clonedStats;
@@ -33,11 +39,12 @@ export function DebugData({ gun, stats }: TDebugDataProps) {
   }, [gun, stats]);
 
   return (
-    <Tabs defaultValue="gun">
+    <Tabs className="mt-1" defaultValue="gun">
       <TabsList>
         <TabsTrigger value="gun">Gun</TabsTrigger>
         <TabsTrigger value="stats">Stats</TabsTrigger>
         <TabsTrigger value="projectile">AgProj</TabsTrigger>
+        <TabsTrigger value="indices">Indices</TabsTrigger>
       </TabsList>
       <TabsContent value="gun">
         <div className="flex gap-4">
@@ -45,19 +52,16 @@ export function DebugData({ gun, stats }: TDebugDataProps) {
             <ColorItem key={c} color={c} />
           ))}
         </div>
-        <pre className="text-left break-words whitespace-pre-wrap text-xs">
-          {JSON.stringify(debugData.gun, null, 2)}
-        </pre>
+        <JsonViewer data={debugData.gun} />
       </TabsContent>
       <TabsContent value="stats">
-        <pre className="text-left break-words whitespace-pre-wrap text-xs">
-          {JSON.stringify(debugData.stats, null, 2)}
-        </pre>
+        <JsonViewer data={debugData.stats} />
       </TabsContent>
       <TabsContent value="projectile">
-        <pre className="text-left break-words whitespace-pre-wrap text-xs">
-          {JSON.stringify(debugData.projectile, null, 2)}
-        </pre>
+        <JsonViewer data={debugData.projectile} />
+      </TabsContent>
+      <TabsContent value="indices">
+        <JsonViewer data={indices} />
       </TabsContent>
     </Tabs>
   );

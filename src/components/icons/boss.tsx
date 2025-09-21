@@ -1,8 +1,8 @@
 import type { IIconProps } from "./types";
 
-export function Boss({ size = 25 }: IIconProps) {
+export function Boss({ size = 20 }: IIconProps) {
   return (
-    <svg width={size} viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg height={size} viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="13" height="17" />
       <path
         d="M3.5 2V3.5H2.5V5.5H3.5M3.5 5.5V6.5H10M3.5 5.5H6M3.5 5.5V4M10 5.5H11M2.5 7V8.5H5.5V9.5M5.5 13.5H7M5.5 13.5V15M5.5 13.5H3.5M5.5 13.5V9.5M3.5 13.5V15M3.5 13.5V12.5M3.5 12.5H2.5V11M3.5 12.5H5M5.5 9.5H4M7.5 14V15"

@@ -22,45 +22,35 @@ import { DebugData } from "./debug-data";
 import { useIsDebug } from "../shared/hooks/useDebug";
 import { GunPortrait } from "./gun-portrait";
 import { AnimatedSprite } from "../shared/components/animated-sprite";
+import { useToggleIndex } from "@/lib/hooks";
+import type { TGun } from "@/client/generated/models/gun.model";
 
-// Attributes
-// Long Range | Mid Range | Close Range: range
-// High Firerate | Steady Firerate: ROF
-// Hard Hitting: High Projectile Damage
-// Aggressive: High ROF, Low Precision
-// Accurate: At least Steady ROF, High Precision
-// Unpredictable: Large damage range
-
-export function DetailSection() {
-  const isDebug = useIsDebug();
-  const gun = useSelectedGun();
-  const hoverGun = useHoverGun();
-  const stats = useLoaderData((state) => state.stats);
+function useGunStats(gun: TGun, hoverGun?: TGun) {
   const [modeIndex, _setModeIndex] = useState(0);
   const [hoverModuleIndex, setHoverModuleIndex] = useState(-1);
-  const [selectedModuleIndex, _setSelectedModuleIndex] = useState(-1);
+  const [selectedModuleIndex, setSelectedModuleIndex] = useToggleIndex(-1);
   const [hoverProjectileIndex, setHoverProjectileIndex] = useState(-1);
-  const [selectedProjectileIndex, _setSelectedProjectileIndex] = useState(-1);
+  const [selectedProjectileIndex, setSelectedProjectileIndex] = useToggleIndex(-1);
+  const [hoverFinalProjectileIndex, setHoverFinalProjectileIndex] = useState(-1);
+  const [selectedFinalProjectileIndex, setSelectedFinalProjectileIndex] = useToggleIndex(-1);
   const setModeIndex = (index: number) => {
     _setModeIndex(index);
     // Reset projectile index when mode changes
     setHoverModuleIndex(-1);
-    _setSelectedModuleIndex(-1);
+    setSelectedModuleIndex(-1);
     setHoverProjectileIndex(-1);
-    _setSelectedProjectileIndex(-1);
-  };
-  const setSelectedModuleIndex = (index: number) => {
-    _setSelectedModuleIndex(index === selectedModuleIndex ? -1 : index);
-  };
-  const setSelectedProjectileIndex = (index: number) => {
-    _setSelectedProjectileIndex(index === selectedProjectileIndex ? -1 : index);
+    setSelectedProjectileIndex(-1);
+    setSelectedFinalProjectileIndex(-1);
+    setHoverFinalProjectileIndex(-1);
   };
   const moduleIndex = hoverModuleIndex !== -1 ? hoverModuleIndex : selectedModuleIndex;
   const projectileIndex = hoverProjectileIndex !== -1 ? hoverProjectileIndex : selectedProjectileIndex;
+  const finalProjectileIndex =
+    hoverFinalProjectileIndex !== -1 ? hoverFinalProjectileIndex : selectedFinalProjectileIndex;
 
-  const gunStats = GunService.computeGunStats(gun, modeIndex, moduleIndex, projectileIndex);
+  const gunStats = GunService.computeGunStats(gun, modeIndex, moduleIndex, projectileIndex, finalProjectileIndex);
   const hoverGunStats = hoverGun
-    ? GunService.computeGunStats(hoverGun, modeIndex, moduleIndex, projectileIndex)
+    ? GunService.computeGunStats(hoverGun, modeIndex, moduleIndex, projectileIndex, finalProjectileIndex)
     : gunStats;
   const selectedGun = hoverGun || gun;
   const selectedStats = hoverGunStats || gunStats;
@@ -79,11 +69,65 @@ export function DetailSection() {
 
     // force showing projectile pool if it exists (there will be no volley)
     if (showProjectilePool) {
-      _setSelectedModuleIndex(0);
+      setSelectedModuleIndex(0);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gun.id]);
+
+  return {
+    modeIndex,
+    moduleIndex,
+    projectileIndex,
+    finalProjectileIndex,
+    setModeIndex,
+    setSelectedModuleIndex,
+    setHoverModuleIndex,
+    setSelectedProjectileIndex,
+    setSelectedFinalProjectileIndex,
+    setHoverFinalProjectileIndex,
+    setHoverProjectileIndex,
+    gunStats,
+    hoverGunStats,
+    selectedGun,
+    selectedStats,
+    showProjectilePool,
+    isCustomMagazineSize,
+  };
+}
+
+// Attributes
+// Long Range | Mid Range | Close Range: range
+// High Firerate | Steady Firerate: ROF
+// Hard Hitting: High Projectile Damage
+// Aggressive: High ROF, Low Precision
+// Accurate: At least Steady ROF, High Precision
+// Unpredictable: Large damage range
+
+export function DetailSection() {
+  const isDebug = useIsDebug();
+  const gun = useSelectedGun();
+  const hoverGun = useHoverGun();
+  const stats = useLoaderData((state) => state.stats);
+  const {
+    modeIndex,
+    moduleIndex,
+    projectileIndex,
+    finalProjectileIndex,
+    setModeIndex,
+    setSelectedModuleIndex,
+    setHoverModuleIndex,
+    setSelectedProjectileIndex,
+    setHoverProjectileIndex,
+    setSelectedFinalProjectileIndex,
+    setHoverFinalProjectileIndex,
+    gunStats,
+    hoverGunStats,
+    selectedGun,
+    selectedStats,
+    showProjectilePool,
+    isCustomMagazineSize,
+  } = useGunStats(gun, hoverGun);
 
   return (
     <div className="p-2 pr-0 h-full flex flex-col min-h-0">
@@ -107,7 +151,7 @@ export function DetailSection() {
             </Button>
           ))}
         </div>
-        <div className="flex items-center justify-center h-36 gap-10">
+        <div className="flex items-center justify-center h-32 gap-10">
           <GunPortrait gun={gun} mode={gunStats.mode.mode} />
           {hoverGun && hoverGun.id !== gun.id && (
             <>
@@ -143,7 +187,7 @@ export function DetailSection() {
           </div>
         </div>
       </div>
-      <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 px-2 border-l border-stone-900">
+      <div data-testid="detail-section-stats" className="overflow-y-auto flex-1 min-h-0 p-2 border-l border-stone-900">
         <StatStackBar
           label="DPS"
           max={100}
@@ -179,20 +223,34 @@ export function DetailSection() {
           unit="s"
         />
         <div className="flex gap-2 items-center">
-          <H3>Projectile Stats</H3>
+          <H3 className="relative top-[-2px]">Projectile Stats</H3>
           {!showProjectilePool && (
             <Volley
-              id={`${selectedGun.id}-${modeIndex}`}
               volley={selectedStats.mode.volley}
+              finalProjectiles={selectedStats.mode.volley[0].finalProjectiles}
+              projectileIndex={moduleIndex}
               onSelect={setSelectedModuleIndex}
-              onHover={setHoverModuleIndex}
-              onBlur={() => setHoverModuleIndex(-1)}
-              isSelected={(i) => moduleIndex === i}
+              onHover={(i) => {
+                setHoverModuleIndex(i);
+                setHoverFinalProjectileIndex(-1);
+              }}
+              onBlur={() => {
+                setHoverModuleIndex(-1);
+                setHoverFinalProjectileIndex(-1);
+              }}
+              finalProjectileIndex={finalProjectileIndex}
+              onSelectFinal={(i) => {
+                setHoverModuleIndex(0);
+                setSelectedFinalProjectileIndex(i);
+              }}
+              onHoverFinal={(i) => {
+                setHoverModuleIndex(0);
+                setHoverFinalProjectileIndex(i);
+              }}
             />
           )}
           {showProjectilePool && (
             <ProjectilePool
-              id={`${selectedGun.id}-${modeIndex}`}
               projectiles={selectedStats.projectileModule.projectiles}
               onBlur={() => setHoverProjectileIndex(-1)}
               onSelect={setSelectedProjectileIndex}
@@ -247,7 +305,13 @@ export function DetailSection() {
           modifier={hoverGunStats.force.base - gunStats.force.base}
         />
         <Features gun={selectedGun} className="mt-4" />
-        {isDebug && <DebugData gun={selectedGun} stats={selectedStats} />}
+        {isDebug && (
+          <DebugData
+            gun={selectedGun}
+            stats={selectedStats}
+            indices={{ modeIndex, moduleIndex, projectileIndex, finalProjectileIndex }}
+          />
+        )}
         <div className="h-14" />
       </div>
     </div>

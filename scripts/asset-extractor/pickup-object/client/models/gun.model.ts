@@ -22,6 +22,11 @@ export type TProjectileModule = {
   ammoCost?: number;
   depleteAmmo?: boolean;
   projectiles: TProjectileSequence;
+  finalProjectile?: TProjectileId;
+  /**
+   * The last `numberOfFinalProjectiles` projectiles in a magazine are replaced with `finalProjectile`. Default is 1.
+   */
+  finalProjectileCount?: number;
 };
 export const ProjectileModule = z.object({
   shootStyle: z.enum(["SemiAutomatic", "Automatic", "Beam", "Charged", "Burst"]),
@@ -40,6 +45,8 @@ export const ProjectileModule = z.object({
    */
   depleteAmmo: z.boolean().optional(),
   projectiles: z.array(Projectile.shape.id),
+  finalProjectile: Projectile.shape.id.optional(),
+  finalProjectileCount: z.number().optional(),
 }) satisfies z.ZodType<TProjectileModule>;
 
 export interface TProjectileMode {
@@ -124,6 +131,7 @@ export const Gun = PickupObject.extend({
       "doesntDamageSecretWalls",
       "hasStatusEffects",
       "hasTieredProjectiles",
+      "hasFinalProjectile",
       "hasHomingProjectiles",
       "hasSpawningProjectiles",
       "hasExplosiveProjectile",

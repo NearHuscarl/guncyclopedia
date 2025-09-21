@@ -1,6 +1,6 @@
 import type { IIconProps } from "./types";
 
-export function AmmoIcon({ size = 25, color = "white" }: IIconProps) {
+export function AmmoIcon({ size = 20, color = "white" }: IIconProps) {
   const originalW = 6;
   const originalH = 11;
   const ratio = originalW / originalH;

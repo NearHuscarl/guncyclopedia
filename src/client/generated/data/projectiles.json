@@ -1888,6 +1888,106 @@
       ]
     }
   },
+  "Crystal_Shard_Small": {
+    "id": "Crystal_Shard_Small",
+    "gunId": 199,
+    "damage": 5,
+    "speed": 25,
+    "range": 1000,
+    "force": 20,
+    "additionalDamage": [],
+    "animation": {
+      "name": "crystal_shard_projectile_anim",
+      "fps": 16,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.5332051,0.47754005,0.5507793,0.47754005,0.5332051,0.4951162,0.5507793,0.4951162,0",
+        "0.39453322,0.50488377,0.39453322,0.52246,0.4121074,0.50488377,0.4121074,0.52246,1",
+        "0.2519551,0.48339942,0.26952928,0.48339942,0.2519551,0.5009756,0.26952928,0.5009756,0",
+        "0.45703322,0.4970713,0.49218553,0.4970713,0.45703322,0.5058584,0.49218553,0.5058584,0"
+      ]
+    }
+  },
+  "Crystal_Shard_Big": {
+    "id": "Crystal_Shard_Big",
+    "gunId": 199,
+    "damage": 24,
+    "speed": 25,
+    "range": 1000,
+    "force": 75,
+    "additionalDamage": [],
+    "spawnProjectilesInflight": false,
+    "spawnProjectilesOnCollision": true,
+    "spawnCollisionProjectilesOnBounce": false,
+    "spawnProjectileNumber": 6,
+    "spawnProjectile": "Crystal_Shard_Small",
+    "animation": {
+      "name": "crystal_shotgun_projectile_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.42578322,0.49804786,0.42578322,0.51562405,0.4433574,0.49804786,0.4433574,0.51562405,1"
+      ]
+    }
+  },
+  "Crystal_Shard_Small_Synergy": {
+    "id": "Crystal_Shard_Small_Synergy",
+    "gunId": 701,
+    "damage": 5,
+    "speed": 25,
+    "range": 1000,
+    "force": 20,
+    "additionalDamage": [],
+    "animation": {
+      "name": "crystal2_shard_projectile_anim",
+      "fps": 16,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.52343947,0.4970713,0.54101366,0.4970713,0.52343947,0.5146475,0.54101366,0.5146475,0",
+        "0.4472676,0.50781345,0.4824199,0.50781345,0.4472676,0.5166006,0.4824199,0.5166006,0",
+        "0.54492384,0.50293064,0.56249803,0.50293064,0.54492384,0.52050686,0.56249803,0.52050686,0",
+        "0.5019551,0.51074314,0.5019551,0.52831936,0.5195293,0.51074314,0.5195293,0.52831936,1"
+      ]
+    }
+  },
+  "Crystal_Shard_Big_Synergy": {
+    "id": "Crystal_Shard_Big_Synergy",
+    "gunId": 701,
+    "damage": 24,
+    "speed": 25,
+    "range": 1000,
+    "force": 75,
+    "additionalDamage": [],
+    "spawnProjectilesInflight": false,
+    "spawnProjectilesOnCollision": true,
+    "spawnCollisionProjectilesOnBounce": false,
+    "spawnProjectileNumber": 6,
+    "spawnProjectile": "Crystal_Shard_Small_Synergy",
+    "animation": {
+      "name": "crystal2_shotgun_projectile_small_002",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.4472676,0.50781345,0.4824199,0.50781345,0.4472676,0.5166006,0.4824199,0.5166006,0"
+      ]
+    }
+  },
   "Nerf_Dart": {
     "id": "Nerf_Dart",
     "gunId": 24,
@@ -2595,6 +2695,33 @@
       ]
     }
   },
+  "Black_Revolver_Final_Projectile": {
+    "id": "Black_Revolver_Final_Projectile",
+    "gunId": 762,
+    "damage": 25,
+    "speed": 20,
+    "range": 1000,
+    "force": 14,
+    "additionalDamage": [],
+    "penetration": 5,
+    "canPenetrateObjects": true,
+    "animation": {
+      "name": "black_revolver_super_bullet",
+      "fps": 10,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/dolphin_projectiles_data/atlas0.png",
+      "frames": [
+        "0.13086133,0.9101582,0.18554492,0.9101582,0.13086133,0.9648418,0.18554492,0.9648418,0",
+        "0.0742207,0.7695332,0.13281055,0.7695332,0.0742207,0.82812303,0.13281055,0.82812303,0",
+        "0.42187697,0.2070332,0.48437303,0.2070332,0.42187697,0.26952928,0.48437303,0.26952928,0",
+        "0.2148457,0.82617384,0.26171678,0.82617384,0.2148457,0.8730449,0.26171678,0.8730449,0",
+        "0.41406447,0.6679707,0.44921678,0.6679707,0.41406447,0.70312303,0.44921678,0.70312303,0"
+      ]
+    }
+  },
   "Fish_Projectile": {
     "id": "Fish_Projectile",
     "gunId": 7,
@@ -2638,6 +2765,39 @@
       "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
       "frames": [
         "0.9023457,0.5019541,0.92187303,0.5019541,0.9023457,0.5087881,0.92187303,0.5087881,0"
+      ]
+    }
+  },
+  "Fish_Projectile_Synergy": {
+    "id": "Fish_Projectile_Synergy",
+    "gunId": 709,
+    "damage": 8,
+    "speed": 20,
+    "range": 1000,
+    "force": 13,
+    "additionalDamage": [],
+    "stunChance": 0.2,
+    "stunDuration": 2.5,
+    "penetration": 1,
+    "animation": {
+      "name": "fish2_projectile",
+      "fps": 12,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/dolphin_projectiles_data/atlas0.png",
+      "frames": [
+        "0.25781447,0.6425801,0.30859178,0.6425801,0.25781447,0.6601543,0.30859178,0.6601543,0",
+        "0.37500197,0.64062697,0.42577928,0.64062697,0.37500197,0.6601543,0.42577928,0.6601543,0",
+        "0.23242383,0.88086134,0.28320116,0.88086134,0.23242383,0.9023418,0.28320116,0.9023418,0",
+        "0.47656447,0.84179884,0.52538866,0.84179884,0.47656447,0.8652324,0.52538866,0.8652324,0",
+        "0.49218947,0.25000197,0.5351543,0.25000197,0.49218947,0.26952928,0.5351543,0.26952928,0",
+        "0.6113301,0.9785176,0.6523418,0.9785176,0.6113301,0.9960918,0.6523418,0.9960918,0",
+        "0.50000197,0.5898457,0.54101366,0.5898457,0.50000197,0.6074199,0.54101366,0.6074199,0",
+        "0.48437697,0.27734572,0.5273418,0.27734572,0.48437697,0.30077928,0.5273418,0.30077928,0",
+        "0.46875197,0.8867207,0.46875197,0.9335918,0.49413866,0.8867207,0.49413866,0.9335918,1",
+        "0.31640822,0.6425801,0.36718553,0.6425801,0.31640822,0.6601543,0.36718553,0.6601543,0"
       ]
     }
   },
@@ -2981,6 +3141,32 @@
       "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
       "frames": [
         "0.86523634,0.5302744,0.8789043,0.5302744,0.86523634,0.5371084,0.8789043,0.5371084,0"
+      ]
+    }
+  },
+  "Hammer_Projectile": {
+    "id": "Hammer_Projectile",
+    "gunId": 91,
+    "damage": 20,
+    "speed": 20,
+    "range": 1000,
+    "force": 26,
+    "additionalDamage": [],
+    "stunChance": 0.2,
+    "stunDuration": 3.5,
+    "animation": {
+      "name": "hammer_projectile_anim",
+      "fps": 8,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.30078322,0.4941416,0.32226366,0.4941416,0.30078322,0.5087881,0.32226366,0.5087881,0",
+        "0.89843947,0.42089942,0.9277324,0.42089942,0.89843947,0.4326162,0.9277324,0.4326162,0",
+        "0.30078322,0.51074314,0.32226366,0.51074314,0.30078322,0.5253897,0.32226366,0.5253897,0",
+        "0.86523634,0.42089942,0.8945293,0.42089942,0.86523634,0.4326162,0.8945293,0.4326162,0"
       ]
     }
   },
@@ -5096,6 +5282,27 @@
   "PulseCharge_Projectile": {
     "id": "PulseCharge_Projectile",
     "gunId": 57,
+    "damage": 25,
+    "speed": 28,
+    "range": 15,
+    "force": 20,
+    "additionalDamage": [],
+    "animation": {
+      "name": "alien_projectile_charged_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.21679883,0.45898536,0.25195116,0.45898536,0.21679883,0.47656152,0.25195116,0.47656152,0"
+      ]
+    }
+  },
+  "PulseCharge_Projectile_Synergy": {
+    "id": "PulseCharge_Projectile_Synergy",
+    "gunId": 696,
     "damage": 25,
     "speed": 28,
     "range": 15,
@@ -7642,6 +7849,27 @@
       ]
     }
   },
+  "Wind_Up_Gun_Final_Projectile": {
+    "id": "Wind_Up_Gun_Final_Projectile",
+    "gunId": 334,
+    "damage": 2.5,
+    "speed": 20,
+    "range": 30,
+    "force": 0,
+    "additionalDamage": [],
+    "animation": {
+      "name": "purple_bolt_002",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.32617384,0.20507911,0.32617384,0.22558495,0.33202928,0.20507911,0.33202928,0.22558495,1"
+      ]
+    }
+  },
   "Pinecone_Projectile": {
     "id": "Pinecone_Projectile",
     "gunId": 339,
@@ -7780,6 +8008,35 @@
       "frames": [
         "0.73437595,0.50781345,0.74999905,0.50781345,0.73437595,0.52050686,0.74999905,0.52050686,0",
         "0.47558692,0.45996192,0.47558692,0.47558495,0.48828027,0.45996192,0.48828027,0.47558495,1"
+      ]
+    }
+  },
+  "Duck_Blue_Projectile": {
+    "id": "Duck_Blue_Projectile",
+    "gunId": 27,
+    "damage": 15,
+    "speed": 8,
+    "range": 100,
+    "force": 10,
+    "additionalDamage": [],
+    "penetration": 1,
+    "isHoming": true,
+    "homingRadius": 50,
+    "homingAngularVelocity": 900,
+    "animation": {
+      "name": "Duck_Projectile_Blue",
+      "fps": 10,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.58593947,0.2753916,0.58593947,0.30078027,0.62499803,0.2753916,0.62499803,0.30078027,1",
+        "0.51367384,0.31640723,0.51367384,0.34081933,0.5371074,0.31640723,0.5371074,0.34081933,1",
+        "0.51367384,0.29004005,0.51367384,0.31445214,0.5371074,0.29004005,0.5371074,0.31445214,1",
+        "0.73437697,0.25000098,0.73437697,0.27538964,0.7695293,0.25000098,0.7695293,0.27538964,1",
+        "0.51562697,0.2080088,0.51562697,0.23339745,0.54101366,0.2080088,0.54101366,0.23339745,1"
       ]
     }
   },
@@ -8695,6 +8952,92 @@
         "0.52343845,0.50000095,0.53906155,0.50000095,0.52343845,0.51269436,0.53906155,0.51269436,0",
         "0.45605567,0.51269627,0.4716787,0.51269627,0.45605567,0.5253897,0.4716787,0.5253897,0",
         "0.50781345,0.5097666,0.50781345,0.5253897,0.52050686,0.5097666,0.52050686,0.5253897,1"
+      ]
+    }
+  },
+  "Floating_Eye_Projectile": {
+    "id": "Floating_Eye_Projectile",
+    "gunId": 90,
+    "damage": 6,
+    "speed": 20,
+    "range": 1000,
+    "force": 10,
+    "additionalDamage": [],
+    "penetration": 1,
+    "animation": {
+      "name": "Floating_Eye_Projectile_Anim",
+      "fps": 10,
+      "loopStart": 0,
+      "wrapMode": "Loop",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.71093947,0.53125095,0.72851366,0.53125095,0.71093947,0.53906155,0.72851366,0.53906155,0",
+        "0.98437697,0.4736338,0.9980449,0.4736338,0.98437697,0.48339745,0.9980449,0.48339745,0",
+        "0.71093947,0.53125095,0.72851366,0.53125095,0.71093947,0.53906155,0.72851366,0.53906155,0",
+        "0.74804884,0.44629005,0.74804884,0.45703027,0.75976366,0.44629005,0.75976366,0.45703027,1"
+      ]
+    }
+  },
+  "Beholster_Spawn_Projectile": {
+    "id": "Beholster_Spawn_Projectile",
+    "gunId": 90,
+    "damage": 12,
+    "speed": 1,
+    "range": 20,
+    "force": 25,
+    "additionalDamage": [],
+    "numberOfBounces": 5,
+    "averageSurvivingBounces": 5,
+    "penetration": 8,
+    "canPenetrateObjects": true,
+    "spawnProjectilesInflight": true,
+    "spawnProjectilesInflightPerSecond": 0.5,
+    "spawnProjectilesOnCollision": false,
+    "spawnCollisionProjectilesOnBounce": false,
+    "spawnProjectileNumber": 1,
+    "spawnProjectile": "Floating_Eye_Projectile",
+    "animation": {
+      "name": "floating_eye_pink",
+      "fps": 8,
+      "loopStart": 19,
+      "wrapMode": "LoopSection",
+      "minFidgetDuration": 1,
+      "maxFidgetDuration": 2,
+      "texturePath": "spritesheet/projectilecollection_data/atlas0.png",
+      "frames": [
+        "0.77929884,0.2001963,0.77929884,0.20703027,0.7851543,0.2001963,0.7851543,0.20703027,1",
+        "0.8613301,0.47168067,0.8613301,0.4824209,0.8789043,0.47168067,0.8789043,0.4824209,1",
+        "0.61718947,0.5019541,0.61718947,0.51269436,0.6289043,0.5019541,0.6289043,0.51269436,1",
+        "0.92773634,0.4941416,0.94726366,0.4941416,0.92773634,0.5019522,0.94726366,0.5019522,0",
+        "0.64648634,0.4892588,0.64648634,0.5009756,0.66601366,0.4892588,0.66601366,0.5009756,1",
+        "0.9414082,0.44531348,0.9414082,0.45800683,0.9570293,0.44531348,0.9570293,0.45800683,1",
+        "0.7929707,0.4628916,0.81445116,0.4628916,0.7929707,0.47363183,0.81445116,0.47363183,0",
+        "0.60156447,0.47558692,0.6289043,0.47558692,0.60156447,0.4873037,0.6289043,0.4873037,0",
+        "0.47461134,0.52050877,0.47461134,0.53613186,0.49413866,0.52050877,0.49413866,0.53613186,1",
+        "0.5019551,0.47754005,0.5292949,0.47754005,0.5019551,0.48925683,0.5292949,0.48925683,0",
+        "0.30078322,0.5273447,0.33007616,0.5273447,0.30078322,0.5371084,0.33007616,0.5371084,0",
+        "0.39648634,0.4863291,0.39648634,0.50292873,0.42187303,0.4863291,0.42187303,0.50292873,1",
+        "0.53906447,0.39746192,0.53906447,0.41894433,0.57226366,0.39746192,0.57226366,0.41894433,1",
+        "0.25586134,0.26562598,0.3105449,0.26562598,0.25586134,0.2919912,0.3105449,0.2919912,0",
+        "0.1210957,0.18554786,0.1210957,0.21874902,0.18945117,0.18554786,0.18945117,0.21874902,1",
+        "0.3378926,0.15234473,0.41015428,0.15234473,0.3378926,0.18847558,0.41015428,0.18847558,0",
+        "0.25781447,0.15820411,0.25781447,0.1982412,0.32226366,0.15820411,0.32226366,0.1982412,1",
+        "0.1210957,0.29687598,0.1210957,0.3339834,0.18163867,0.29687598,0.18163867,0.3339834,1",
+        "0.0019550782,0.33105567,0.0019550782,0.36718652,0.058591798,0.33105567,0.058591798,0.36718652,1",
+        "0.47461134,0.28711036,0.50976366,0.28711036,0.47461134,0.30956933,0.50976366,0.30956933,0",
+        "0.85937697,0.23828223,0.8945293,0.23828223,0.85937697,0.2636709,0.8945293,0.2636709,0",
+        "0.8066426,0.21093848,0.8417949,0.21093848,0.8066426,0.24023339,0.8417949,0.24023339,0",
+        "0.73437697,0.2158213,0.7695293,0.2158213,0.73437697,0.24804589,0.7695293,0.24804589,0",
+        "0.85937697,0.20410255,0.8945293,0.20410255,0.85937697,0.23632714,0.8945293,0.23632714,0",
+        "0.18554883,0.30761817,0.22070117,0.30761817,0.18554883,0.34081933,0.22070117,0.34081933,0",
+        "0.18945508,0.23242286,0.22460742,0.23242286,0.18945508,0.2685537,0.22460742,0.2685537,0",
+        "0.19336133,0.19140723,0.22851367,0.19140723,0.19336133,0.23046777,0.22851367,0.23046777,0",
+        "0.19336133,0.15039161,0.2304668,0.15039161,0.19336133,0.18945214,0.2304668,0.18945214,0",
+        "0.95117384,0.0009775391,0.99218553,0.0009775391,0.95117384,0.040038086,0.99218553,0.040038086,0",
+        "0.18554883,0.2705088,0.22070117,0.2705088,0.18554883,0.30566308,0.22070117,0.30566308,0",
+        "0.47265822,0.38281348,0.50781053,0.38281348,0.47265822,0.40331933,0.50781053,0.40331933,0"
       ]
     }
   },
@@ -9761,6 +10104,27 @@
       "texturePath": "spritesheet/projectile2collection_data/atlas0.png",
       "frames": [
         "0.007816406,0.38086134,0.066402346,0.38086134,0.007816406,0.40624803,0.066402346,0.40624803,0"
+      ]
+    }
+  },
+  "Teapot_Projectile_Final": {
+    "id": "Teapot_Projectile_Final",
+    "gunId": 596,
+    "damage": 15,
+    "speed": 20,
+    "range": 1000,
+    "force": 7,
+    "additionalDamage": [],
+    "animation": {
+      "name": "teapot_final_projectile_001",
+      "fps": 0,
+      "loopStart": 0,
+      "wrapMode": "Single",
+      "minFidgetDuration": 0,
+      "maxFidgetDuration": 0,
+      "texturePath": "spritesheet/projectile2collection_data/atlas0.png",
+      "frames": [
+        "0.1640664,0.38086134,0.22265235,0.38086134,0.1640664,0.40624803,0.22265235,0.40624803,0"
       ]
     }
   },

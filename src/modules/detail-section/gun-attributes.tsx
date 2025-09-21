@@ -76,6 +76,7 @@ import { AmmoIcon } from "@/components/icons/ammo";
 import { DamageAllEnemiesRadius } from "@/client/generated/models/projectile.model";
 import { LifeOrb } from "@/components/icons/life-orb";
 import { Three } from "@/components/icons/three";
+import { FinalProjectile } from "@/components/icons/final-projectile";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -83,7 +84,7 @@ import type { TResolvedProjectile } from "@/client/service/game-object.service";
 import type { TGunStats } from "@/client/service/gun.service";
 
 const TOOLTIP_DELAY = 100;
-const ATTRIBUTE_CLASSES = "gap-0.5 cursor-help!";
+const ATTRIBUTE_CLASSES = "gap-0.5 cursor-help! [&_>_span]:relative [&_>_span]:top-[1px]";
 
 type TStatModifier = TGun["playerStatModifiers"][number];
 type TStatToBoost = TStatModifier["statToBoost"];
@@ -101,7 +102,7 @@ function createPlayerStatsComponent({ modifier, className, icon, tooltip }: TSta
     <Tooltip key={modifier.statToBoost} delayDuration={TOOLTIP_DELAY}>
       <TooltipTrigger>
         <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-          <NumericValue className={className}>
+          <NumericValue className={clsx(className)}>
             {modifyType === "ADDITIVE" && "+"}
             {modifyType === "MULTIPLICATIVE" ? toPercent(amount) : amount}
           </NumericValue>
@@ -118,21 +119,21 @@ const playerStatsComponentLookup: { [K in TStatToBoost]?: (modifier: TStatModifi
     createPlayerStatsComponent({
       modifier,
       className: "text-purple-600",
-      icon: <Skull size={22} className="text-purple-600" />,
+      icon: <Skull size={18} className="text-purple-600" />,
       tooltip: <strong>Curse</strong>,
     }),
   MovementSpeed: (modifier) =>
     createPlayerStatsComponent({
       modifier,
       className: "text-yellow-500",
-      icon: <Wind size={22} className="text-yellow-500" />,
+      icon: <Wind size={18} className="text-yellow-500" />,
       tooltip: <strong>Movement Speed</strong>,
     }),
   GlobalPriceMultiplier: (modifier) =>
     createPlayerStatsComponent({
       modifier,
       className: "text-green-500",
-      icon: <Receipt size={22} className="text-green-500" />,
+      icon: <Receipt size={18} className="text-green-500" />,
       tooltip: (
         <>
           <strong>Global Price Multiplier</strong>
@@ -147,7 +148,7 @@ const playerStatsComponentLookup: { [K in TStatToBoost]?: (modifier: TStatModifi
     createPlayerStatsComponent({
       modifier,
       className: "text-orange-500",
-      icon: <Sunglasses size={22} className="fill-orange-500" />,
+      icon: <Sunglasses size={18} className="fill-orange-500" />,
       tooltip: <strong>Coolness</strong>,
     }),
   DamageToBosses: (modifier) =>
@@ -169,7 +170,7 @@ const playerStatsComponentLookup: { [K in TStatToBoost]?: (modifier: TStatModifi
     createPlayerStatsComponent({
       modifier,
       className: "text-red-500",
-      icon: <Heart size={20} className="stroke-red-500" />,
+      icon: <Heart size={16} className="stroke-red-500" />,
       tooltip: (
         <>
           <strong>Health</strong>
@@ -236,6 +237,7 @@ type TGunAttributesProps = {
 
 export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps) {
   const setPortraitAnimation = useGunStore((state) => state.setPortraitAnimation);
+  const setHoverFinalProjectile = useGunStore((state) => state.setHoverFinalProjectile);
   const homingLevel = ProjectileService.getHomingLevel(projectile);
 
   return (
@@ -288,7 +290,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
               onMouseLeave={() => setPortraitAnimation("idle")}
             >
               <NumericValue className="text-pink-500">{formatNumber(gunStats?.mode.chargeTime ?? 0, 1)}s</NumericValue>
-              <BatteryCharging className="text-pink-500" />
+              <BatteryCharging className="text-pink-500" size={20} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -300,7 +302,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {createStatusEffectAttribute(
         projectile.charmChance,
         "text-fuchsia-500",
-        <Heart size={20} color={fuchsia500} />,
+        <Heart size={16} color={fuchsia500} />,
         <>
           <strong>Charm</strong>
           <br />
@@ -311,7 +313,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {createStatusEffectAttribute(
         projectile.fireChance,
         "text-red-600",
-        <Flame size={18} color={red600} />,
+        <Flame size={16} color={red600} />,
         <>
           <strong>Fire</strong>
           <br />
@@ -322,7 +324,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {createStatusEffectAttribute(
         projectile.speedChance,
         "text-orange-500",
-        <Snail size={20} color={orange500} />,
+        <Snail size={18} color={orange500} />,
         <>
           <strong>Slow</strong>
           <br />
@@ -334,7 +336,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {createStatusEffectAttribute(
         projectile.poisonChance,
         "text-green-500",
-        <Biohazard size={20} color={green500} />,
+        <Biohazard size={18} color={green500} />,
         <>
           <strong>Poison</strong>
           <br />
@@ -345,7 +347,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {createStatusEffectAttribute(
         projectile.freezeChance,
         "text-sky-500",
-        <Snowflake size={20} color={sky500} />,
+        <Snowflake size={18} color={sky500} />,
         <>
           <strong>Freeze</strong>
           <br />
@@ -358,7 +360,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {createStatusEffectAttribute(
         projectile.stunChance,
         "text-slate-400",
-        <Stun size={20} color={slate400} />,
+        <Stun size={18} color={slate400} />,
         <>
           <strong>Stun</strong>
           <br />
@@ -369,7 +371,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {createStatusEffectAttribute(
         projectile.cheeseChance,
         "text-yellow-500",
-        <Cheese size={20} color={yellow500} />,
+        <Cheese size={18} color={yellow500} />,
         <>
           <strong>Cheese</strong>
           <br />
@@ -408,7 +410,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
       {gun?.attribute.reflectDuringReload && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger className={ATTRIBUTE_CLASSES}>
-            <FightsabreAttack />
+            <FightsabreAttack className="[&_path]:fill-emerald-300 [&_path]:stroke-emerald-300" />
           </TooltipTrigger>
           <TooltipContent className="text-wrap">
             <strong>Reflect During Reload</strong>
@@ -442,7 +444,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              <Move size={17} />
+              <Move size={16} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -456,7 +458,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              <Chest size={18} />
+              <Chest size={16} />
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-72">
@@ -471,7 +473,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               <Keyboard
-                size={20}
+                size={18}
                 className={clsx({
                   "[&_path,&_rect]:stroke-muted-foreground [&_path,&_rect]:transition-colors": true,
                   "[&_path,&_rect]:stroke-yellow-500!": gunStats?.mode.mode === "← ←",
@@ -497,7 +499,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
               onMouseEnter={() => setPortraitAnimation("lifeOrbFullIdle")}
               onMouseLeave={() => setPortraitAnimation("idle")}
             >
-              <LifeOrb size={20} />
+              <LifeOrb size={18} />
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-96">
@@ -512,7 +514,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
-              <Bee size={18} />
+              <Bee size={16} />
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-80">
@@ -592,7 +594,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
-              <Sticky size={20} />
+              <Sticky size={18} className="relative top-[-1px]" />
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-72">
@@ -606,7 +608,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
-              <Gamepad2 size={20} className="stroke-red-500" />
+              <Gamepad2 size={18} className="stroke-red-500" />
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-96">
@@ -622,7 +624,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
-              <IgnoreDamageCap size={20} />
+              <IgnoreDamageCap size={18} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -641,7 +643,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
                   {formatNumber(projectile.goopCollisionRadius!, 1)}
                 </NumericValue>
               )}
-              <OilGoop size={16} className="[&>path]:fill-slate-500" />
+              <OilGoop size={18} className="[&>path]:fill-slate-500" />
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-72">
@@ -693,7 +695,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={ATTRIBUTE_CLASSES}>
-              <Three size={20} className={"[&_path]:fill-yellow-500!"} />
+              <Three size={18} className={"[&_path]:fill-yellow-500!"} />
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-72">
@@ -725,7 +727,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
               {projectile.damageAllEnemiesMaxTargets !== -1 && (
                 <NumericValue className={clsx("text-orange-500")}>{projectile.damageAllEnemiesMaxTargets}</NumericValue>
               )}
-              <SquareAsterisk size={20} className={"[&_rect_,&_path]:stroke-orange-500"} />
+              <SquareAsterisk size={18} className={"[&_rect_,&_path]:stroke-orange-500"} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -761,12 +763,57 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           </TooltipContent>
         </Tooltip>
       )}
+      {(projectile.isFinalBuff || projectile.isFinalDebuff) &&
+        (() => {
+          const buffText = projectile.isFinalBuff ? "buffed" : "debuffed";
+          return (
+            <Tooltip delayDuration={TOOLTIP_DELAY}>
+              <TooltipTrigger
+                onMouseEnter={() => setHoverFinalProjectile(true)}
+                onMouseLeave={() => setHoverFinalProjectile(false)}
+              >
+                <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+                  {(gunStats?.projectileModule.finalProjectileCount || 1) > 1 && (
+                    <NumericValue
+                      className={clsx({
+                        "text-rose-500": projectile.isFinalBuff,
+                        "text-violet-500": !projectile.isFinalBuff,
+                      })}
+                    >
+                      {gunStats?.projectileModule.finalProjectileCount}
+                    </NumericValue>
+                  )}
+                  <FinalProjectile
+                    size={20}
+                    className={clsx({
+                      "[&_path]:stroke-rose-500!": projectile.isFinalBuff,
+                      "[&_path]:stroke-violet-500!": !projectile.isFinalBuff,
+                    })}
+                  />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <strong>Final Projectile</strong>
+                <br />
+                {(gunStats?.projectileModule.finalProjectileCount || 1) === 1 && (
+                  <>The last projectile in the magazine is {buffText}</>
+                )}
+                {(gunStats?.projectileModule.finalProjectileCount || 1) > 1 && (
+                  <>
+                    The last <strong>{gunStats?.projectileModule.finalProjectileCount}</strong> projectiles in the
+                    magazine are {buffText}
+                  </>
+                )}
+              </TooltipContent>
+            </Tooltip>
+          );
+        })()}
       {(projectile.linkMaxDistance || undefined) && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               <NumericValue className="text-blue-500">{projectile.linkMaxDistance}</NumericValue>
-              <Link size={17} className="[&_path]:stroke-blue-500!" />
+              <Link size={16} className="[&_path]:stroke-blue-500!" />
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-wrap w-80">
@@ -782,7 +829,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               <NumericValue>{gunStats?.projectileModule.ammoCost}</NumericValue>
-              <AmmoIcon size={18} className="white" />
+              <AmmoIcon size={18} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -799,7 +846,13 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
               <NumericValue className={clsx({ "text-sky-500": projectile.explosionFreezeRadius })}>
                 {formatNumber(projectile.explosionRadius!, 1)}
               </NumericValue>
-              <Explosion size={20} className={clsx({ "[&_path]:fill-sky-500!": projectile.explosionFreezeRadius })} />
+              <Explosion
+                size={18}
+                className={clsx({
+                  "relative top-[-1px]": true,
+                  "[&_path]:fill-sky-500!": projectile.explosionFreezeRadius,
+                })}
+              />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -830,7 +883,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
               {(projectile.homingRadius || undefined) && (
                 <NumericValue>{formatNumber(projectile.homingRadius!, 0)}</NumericValue>
               )}
-              {homingLevel === HomingLevel.InstantHit ? <Homing2 size={18} /> : <Homing size={18} />}
+              {homingLevel === HomingLevel.InstantHit ? <Homing2 size={16} /> : <Homing size={16} />}
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -861,7 +914,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
               <NumericValue>
                 {formatNumber(projectile.spawnProjectileMaxNumber || projectile.spawnProjectileNumber!, 0)}
               </NumericValue>
-              <SpawnModifier size={22} />
+              <SpawnModifier size={20} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -880,7 +933,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               <NumericValue>{formatNumber(projectile.spawnProjectilesInflightPerSecond!, 1)}/s</NumericValue>
-              <SpawnModifier size={22} />
+              <SpawnModifier size={20} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -898,7 +951,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
               {(Math.floor(projectile.penetration || 0) || undefined) && (
                 <NumericValue>{formatNumber(projectile.penetration!, 1)}</NumericValue>
               )}
-              <Penetration size={20} />
+              <Penetration size={18} />
             </div>
           </TooltipTrigger>
           <TooltipContent>
@@ -915,7 +968,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
               {(Math.floor(projectile.numberOfBounces || 0) || undefined) && (
                 <NumericValue>{formatNumber(projectile.numberOfBounces!, 1)}</NumericValue>
               )}
-              <Bounce color="white" size={20} />
+              <Bounce size={20} />
             </div>
           </TooltipTrigger>
           <TooltipContent>

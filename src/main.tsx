@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider, createRouter, parseSearchWith, stringifySearchWith } from "@tanstack/react-router";
 import qs from "query-string";
 import "./index.css";
+import "@fontsource-variable/google-sans-code/index.css";
 
 import { routeTree } from "./routeTree.gen";
 

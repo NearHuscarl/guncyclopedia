@@ -1,6 +1,6 @@
 import type { IIconProps } from "./types";
 
-export function AntimatterProjectile({ size = 22, className }: IIconProps) {
+export function AntimatterProjectile({ size = 20, className }: IIconProps) {
   return (
     <svg
       width={size}

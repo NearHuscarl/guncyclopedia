@@ -1,6 +1,6 @@
 import type { IIconProps } from "./types";
 
-export function PlayerCultist2({ size = 22 }: IIconProps) {
+export function PlayerCultist2({ size = 20 }: IIconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="11" height="11" />

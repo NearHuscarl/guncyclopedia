@@ -6,7 +6,7 @@ interface ITrickGunProps extends IIconProps {
   color2?: string;
 }
 
-export function TrickGun({ size = 25, color1, color2, className }: ITrickGunProps) {
+export function TrickGun({ size = 18, color1, color2, className }: ITrickGunProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

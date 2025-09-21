@@ -1,21 +1,25 @@
 import z from "zod/v4";
 import clamp from "lodash/clamp";
+import sumBy from "lodash/sumBy";
 import type { ArrayKeys, BooleanKeys, NumericKeys, StringKeys } from "@/lib/types";
 import type { TResolvedDamageDetail, TResolvedProjectile } from "./game-object.service";
 import type { TProjectile } from "../generated/models/projectile.model";
 
 type AggregateModeOption = "volley" | "random";
-type AggregateMode = "sum" | "avg" | "max" | ((projectiles: TResolvedProjectile[]) => number);
+
+type NumericAggregateMode = "sum" | "avg" | "max" | ((projectiles: TResolvedProjectile[]) => number);
 type NumericAggregateConfig = {
   [K in NumericKeys<TResolvedProjectile>]: [
-    random?: AggregateMode,
-    volley?: AggregateMode,
+    random?: NumericAggregateMode,
+    volley?: NumericAggregateMode,
     defaultValue?: number,
     required?: boolean,
   ];
 };
+
+type BooleanAggregateMode = "and" | "or";
 type BooleanAggregateConfig = {
-  [K in BooleanKeys<TResolvedProjectile>]: true;
+  [K in BooleanKeys<TResolvedProjectile>]: BooleanAggregateMode;
 };
 type StringAggregateConfig = {
   [K in StringKeys<TResolvedProjectile>]: boolean;
@@ -227,8 +231,8 @@ export class ProjectileService {
     helixAmplitude: ["avg", "max"],
     helixWavelength: ["avg", "max"],
     devolveChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.devolveChance)],
-    spawnProjectileNumber: ["avg", "sum"],
-    spawnProjectileMaxNumber: ["avg", "sum"],
+    spawnProjectileNumber: ["max", "sum"],
+    spawnProjectileMaxNumber: ["max", "sum"],
     spawnLevel: ["max", "max"],
     spawnProjectilesInflightPerSecond: ["max", "max"],
     damageAllEnemiesRadius: ["max", "max"],
@@ -238,28 +242,31 @@ export class ProjectileService {
     wishesToBuff: ["max", "max"],
     linkDamagePerHit: ["avg", "sum"],
     linkMaxDistance: ["max", "max"],
+    spawnWeight: [],
   };
 
   // All boolean keys that are aggregated with logical-OR.
   private static readonly _bAggregateConfig: BooleanAggregateConfig = {
-    ignoreDamageCaps: true,
-    canPenetrateObjects: true,
-    isHoming: true,
-    homingAndIgnoringObstacles: true,
-    damageAllEnemies: true,
-    hasOilGoop: true,
-    spawnGoopOnCollision: true,
-    dejam: true,
-    mindControl: true,
-    antimatter: true,
-    blankOnCollision: true,
-    sticky: true,
-    isBlackhole: true,
-    spawnCollisionProjectilesOnBounce: true,
-    spawnProjectilesInflight: true,
-    spawnProjectilesOnCollision: true,
-    isBeeLikeTargetBehavior: true,
-    isBee: true,
+    ignoreDamageCaps: "or",
+    canPenetrateObjects: "or",
+    isHoming: "or",
+    homingAndIgnoringObstacles: "or",
+    damageAllEnemies: "or",
+    hasOilGoop: "or",
+    spawnGoopOnCollision: "or",
+    dejam: "or",
+    mindControl: "or",
+    antimatter: "or",
+    blankOnCollision: "or",
+    sticky: "or",
+    isBlackhole: "or",
+    spawnCollisionProjectilesOnBounce: "or",
+    spawnProjectilesInflight: "or",
+    spawnProjectilesOnCollision: "or",
+    isBeeLikeTargetBehavior: "or",
+    isBee: "or",
+    isFinalBuff: "or",
+    isFinalDebuff: "or",
   };
   // All string keys that are aggregated into arrays of string
   private static readonly _sAggregateConfig: StringAggregateConfig = {
@@ -301,17 +308,13 @@ export class ProjectileService {
    *
    * @throws {Error} if the input array is empty.
    */
-  static createAggregatedProjectile(
-    projectiles: TResolvedProjectile[],
-    mode: AggregateModeOption,
-  ): TResolvedProjectile {
+  static aggregateProjectile(projectiles: TResolvedProjectile[], mode: AggregateModeOption): TResolvedProjectile {
     if (projectiles.length === 0) {
       throw new Error("Cannot average an empty projectile list.");
     }
 
     // ---------- aggregate ----------
     const sums: Record<string, number> = {};
-    this._numericConfigEntries((k, [, , defaultValue]) => (sums[k] = projectiles[0][k] ?? defaultValue ?? 0));
 
     const strSums: Record<string, Set<string>> = {};
     this._stringConfigEntries((k) => (strSums[k] = new Set(projectiles[0][k] ? [projectiles[0][k]] : [])));
@@ -319,21 +322,39 @@ export class ProjectileService {
     const hasTrue: Record<string, boolean> = {};
     this._booleanConfigEntries((k) => (hasTrue[k] = projectiles[0][k] ?? false));
 
+    this._numericConfigEntries((k, [random, volley, defaultValue]) => {
+      const p = projectiles[0];
+      const m = mode === "random" ? random : volley;
+      if (m === "avg") {
+        sums[k] = (p[k] ?? defaultValue ?? 0) * (p.spawnWeight ?? 1);
+      } else {
+        sums[k] = p[k] ?? defaultValue ?? 0;
+      }
+    });
+
     for (let i = 1; i < projectiles.length; i++) {
       const p = projectiles[i];
       this._numericConfigEntries((k, [random, volley, defaultValue]) => {
+        if (random === undefined && volley === undefined) return;
         const m = mode === "random" ? random : volley;
 
         if (m === "max") {
           sums[k] = Math.max(sums[k], p[k] ?? 0);
-        } else if (m === "avg" || m === "sum") {
+        } else if (m === "sum") {
           sums[k] += p[k] ?? defaultValue ?? 0;
+        } else if (m === "avg") {
+          sums[k] += (p[k] ?? defaultValue ?? 0) * (p.spawnWeight ?? 1);
         }
       });
 
-      this._booleanConfigEntries((k) => {
+      this._booleanConfigEntries((k, mode) => {
         const v = p[k] ?? false;
-        hasTrue[k] = hasTrue[k] || v;
+
+        if (mode === "and") {
+          hasTrue[k] = hasTrue[k] && v;
+        } else if (mode === "or") {
+          hasTrue[k] = hasTrue[k] || v;
+        }
       });
 
       this._stringConfigEntries((k) => {
@@ -342,15 +363,18 @@ export class ProjectileService {
         if (v) strSums[k].add(v);
       });
     }
-    for (const [k, [avg, sum]] of Object.entries(this._nAggregateConfig)) {
-      const m = mode === "random" ? avg : sum;
+
+    const projectileTotalWeight = sumBy(projectiles, (p) => p.spawnWeight ?? 1);
+    this._numericConfigEntries((k, [random, volley]) => {
+      if (random === undefined && volley === undefined) return;
+      const m = mode === "random" ? random : volley;
 
       if (m === "avg") {
-        sums[k] /= projectiles.length;
+        sums[k] /= projectileTotalWeight;
       } else if (typeof m === "function") {
         sums[k] = m(projectiles);
       }
-    }
+    });
 
     // ---------- build result ----------
     const final: Partial<TResolvedProjectile> = {};
