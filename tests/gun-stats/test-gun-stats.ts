@@ -9,9 +9,6 @@ import { hashObject, JSONstringifyOrder, sanitizeTestData } from "../helpers";
 import type { TGun } from "../../src/client/generated/models/gun.model";
 
 function stripUnusedFields(gunStats: TGunStats) {
-  // @ts-expect-error TODO: update snapshot GunStats.id
-  delete gunStats.id;
-
   for (const module of gunStats.mode.volley) {
     for (const projectile of module.projectiles) {
       delete projectile.animation;
@@ -22,17 +19,12 @@ function stripUnusedFields(gunStats: TGunStats) {
       delete projectile.animation;
       delete projectile.gunId;
     }
-
-    // @ts-expect-error TODO: update snapshot for finalProjectiles
-    if (!module.finalProjectiles?.length) delete module.finalProjectiles;
   }
 
   for (const projectile of gunStats.projectileModule.finalProjectiles ?? []) {
     delete projectile.animation;
     delete projectile.gunId;
   }
-  // @ts-expect-error TODO: update snapshot for finalProjectiles
-  if (!gunStats.projectileModule.finalProjectiles?.length) delete gunStats.projectileModule.finalProjectiles;
 
   for (const p of gunStats.projectileModule.projectiles) {
     delete p.animation;
@@ -143,7 +135,7 @@ export function testGunStats(gunId: number, gunName: string) {
         } else {
           expect(mode).toEqual(modes[i]);
         }
-        // GunStats.parse(gunStats);
+        GunStats.parse(gunStats);
       });
     });
 
