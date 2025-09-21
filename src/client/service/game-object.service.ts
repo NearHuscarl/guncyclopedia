@@ -26,7 +26,14 @@ export const ResolvedProjectile = Projectile.extend({
   spawnedBy: z.string().optional(),
   spawnLevel: z.number().optional(),
   additionalDamage: z.array(ResolvedDamageDetail),
-  isFinal: z.boolean().optional(),
+  /**
+   * Whether the final projectile exist AND stronger than the normal projectile?
+   */
+  isFinalBuff: z.boolean().optional(),
+  /**
+   * Whether the final projectile exist AND weaker than the normal projectile?
+   */
+  isFinalDebuff: z.boolean().optional(),
 });
 
 export type TResolvedProjectile = z.infer<typeof ResolvedProjectile>;

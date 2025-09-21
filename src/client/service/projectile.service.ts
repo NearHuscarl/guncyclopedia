@@ -231,8 +231,8 @@ export class ProjectileService {
     helixAmplitude: ["avg", "max"],
     helixWavelength: ["avg", "max"],
     devolveChance: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.devolveChance)],
-    spawnProjectileNumber: ["avg", "sum"],
-    spawnProjectileMaxNumber: ["avg", "sum"],
+    spawnProjectileNumber: ["max", "sum"],
+    spawnProjectileMaxNumber: ["max", "sum"],
     spawnLevel: ["max", "max"],
     spawnProjectilesInflightPerSecond: ["max", "max"],
     damageAllEnemiesRadius: ["max", "max"],
@@ -265,7 +265,8 @@ export class ProjectileService {
     spawnProjectilesOnCollision: "or",
     isBeeLikeTargetBehavior: "or",
     isBee: "or",
-    isFinal: "or",
+    isFinalBuff: "or",
+    isFinalDebuff: "or",
   };
   // All string keys that are aggregated into arrays of string
   private static readonly _sAggregateConfig: StringAggregateConfig = {

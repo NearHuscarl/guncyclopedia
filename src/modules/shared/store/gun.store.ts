@@ -16,6 +16,8 @@ type TGunState = {
   createGunLookup: (guns: TGun[]) => void;
   hoverGunId: number;
   setHoverGun: (id: number) => void;
+  hoverFinalProjectile: boolean;
+  setHoverFinalProjectile: (hover: boolean) => void;
   portraitAnimation: TGunAnimationName;
   setPortraitAnimation: (animationName: TGunAnimationName) => void;
 };
@@ -58,6 +60,16 @@ function createGunStore() {
             },
             undefined,
             { type: "setPortraitAnimation", animationName },
+          );
+        },
+        hoverFinalProjectile: false,
+        setHoverFinalProjectile: (hover) => {
+          set(
+            (state) => {
+              state.hoverFinalProjectile = hover;
+            },
+            undefined,
+            { type: "setHoverFinalProjectile", hover },
           );
         },
       })),

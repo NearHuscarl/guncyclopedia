@@ -2010,7 +2010,7 @@ exports[`Gun > Alien Sidearm (57) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Alien Sidearm (696) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Alien Sidearm (696) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 5,
@@ -2042,6 +2042,21 @@ exports[`Gun > Alien Sidearm (696) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.1,
+    "finalProjectile": "PulseCharge_Projectile_Synergy",
+    "finalProjectileCount": 2,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 25,
+        "dps": 178.571,
+        "force": 20,
+        "id": "PulseCharge_Projectile_Synergy",
+        "isFinalBuff": true,
+        "range": 15,
+        "spawnWeight": 2,
+        "speed": 28
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [],
@@ -2051,6 +2066,149 @@ exports[`Gun > Alien Sidearm (696) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "Pulse_Projectile",
         "range": 15,
         "speed": 23
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 7.143,
+    "spread": 5,
+    "timeBetweenShots": 0.1
+  },
+  "range": "short-range",
+  "reloadTime": 1.2,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Alien Sidearm (696) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 25,
+    "details": []
+  },
+  "dps": {
+    "base": 178.571,
+    "details": []
+  },
+  "fireRate": 428.571,
+  "force": {
+    "base": 20,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 500,
+  "precision": 83.333,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 25,
+    "dps": 178.571,
+    "force": 20,
+    "id": "PulseCharge_Projectile_Synergy",
+    "isFinalBuff": true,
+    "range": 15,
+    "spawnWeight": 2,
+    "speed": 28
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.1,
+    "finalProjectile": "PulseCharge_Projectile_Synergy",
+    "finalProjectileCount": 2,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 25,
+        "dps": 178.571,
+        "force": 20,
+        "id": "PulseCharge_Projectile_Synergy",
+        "isFinalBuff": true,
+        "range": 15,
+        "spawnWeight": 2,
+        "speed": 28
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 35.714,
+        "force": 10,
+        "id": "Pulse_Projectile",
+        "range": 15,
+        "speed": 23
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 7.143,
+    "spread": 5,
+    "timeBetweenShots": 0.1
+  },
+  "range": "short-range",
+  "reloadTime": 1.2,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Alien Sidearm (696) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 6.333,
+    "details": []
+  },
+  "dps": {
+    "base": 45.238,
+    "details": []
+  },
+  "fireRate": 428.571,
+  "force": {
+    "base": 10.667,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 500,
+  "precision": 83.333,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 6.333,
+    "dps": 45.238,
+    "force": 10.667,
+    "id": "Pulse_Projectile,PulseCharge_Projectile_Synergy",
+    "isFinalBuff": true,
+    "range": 15,
+    "spawnWeight": 28,
+    "speed": 23.333
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.1,
+    "finalProjectileCount": 2,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 25,
+        "dps": 178.571,
+        "force": 20,
+        "id": "PulseCharge_Projectile_Synergy",
+        "isFinalBuff": true,
+        "range": 15,
+        "spawnWeight": 2,
+        "speed": 28
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 6.333,
+        "dps": 45.238,
+        "force": 10.667,
+        "id": "Pulse_Projectile,PulseCharge_Projectile_Synergy",
+        "isFinalBuff": true,
+        "range": 15,
+        "spawnWeight": 28,
+        "speed": 23.333
       }
     ],
     "shootStyle": "Automatic",
@@ -2075,6 +2233,21 @@ exports[`Gun > Alien Sidearm (696) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.1,
+        "finalProjectile": "PulseCharge_Projectile_Synergy",
+        "finalProjectileCount": 2,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 25,
+            "dps": 178.571,
+            "force": 20,
+            "id": "PulseCharge_Projectile_Synergy",
+            "isFinalBuff": true,
+            "range": 15,
+            "spawnWeight": 2,
+            "speed": 28
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [],
@@ -3999,7 +4172,7 @@ exports[`Gun > Barrel (7) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Barrel (709) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Barrel (709) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 5,
@@ -4031,6 +4204,31 @@ exports[`Gun > Barrel (709) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.2,
+    "finalProjectile": "Fish_Projectile_Synergy",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 8,
+            "dps": 27.907,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 8,
+        "dps": 27.907,
+        "force": 13,
+        "id": "Fish_Projectile_Synergy",
+        "isFinalBuff": true,
+        "penetration": 1,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 2.5
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [],
@@ -4053,6 +4251,223 @@ exports[`Gun > Barrel (709) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Barrel (709) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 8,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 8
+      }
+    ]
+  },
+  "dps": {
+    "base": 27.907,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 27.907
+      }
+    ]
+  },
+  "fireRate": 209.302,
+  "force": {
+    "base": 13,
+    "details": []
+  },
+  "magazineSize": 9,
+  "maxAmmo": 300,
+  "precision": 76.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 8,
+        "dps": 27.907,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 8,
+    "dps": 27.907,
+    "force": 13,
+    "id": "Fish_Projectile_Synergy",
+    "isFinalBuff": true,
+    "penetration": 1,
+    "range": 1000,
+    "spawnWeight": 1,
+    "speed": 20,
+    "stunChance": 0.2,
+    "stunDuration": 2.5
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.2,
+    "finalProjectile": "Fish_Projectile_Synergy",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 8,
+            "dps": 27.907,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 8,
+        "dps": 27.907,
+        "force": 13,
+        "id": "Fish_Projectile_Synergy",
+        "isFinalBuff": true,
+        "penetration": 1,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 2.5
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 17.442,
+        "force": 10,
+        "id": "Fish_Barrel_Bullet_Projectile",
+        "range": 35,
+        "speed": 23
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 3.488,
+    "spread": 7,
+    "timeBetweenShots": 0.2
+  },
+  "range": "long-range",
+  "reloadTime": 0.78,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Barrel (709) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 5.333,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 4
+      }
+    ]
+  },
+  "dps": {
+    "base": 18.605,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 13.953
+      }
+    ]
+  },
+  "fireRate": 209.302,
+  "force": {
+    "base": 10.333,
+    "details": []
+  },
+  "magazineSize": 9,
+  "maxAmmo": 300,
+  "precision": 76.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 4,
+        "dps": 13.953,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 5.333,
+    "dps": 18.605,
+    "force": 10.333,
+    "id": "Fish_Barrel_Bullet_Projectile,Fish_Projectile_Synergy",
+    "isFinalBuff": true,
+    "penetration": 0.111,
+    "range": 142.222,
+    "spawnWeight": 8,
+    "speed": 22.667,
+    "stunChance": 0.022,
+    "stunDuration": 0.278
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.2,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 8,
+            "dps": 27.907,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 8,
+        "dps": 27.907,
+        "force": 13,
+        "id": "Fish_Projectile_Synergy",
+        "isFinalBuff": true,
+        "penetration": 1,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 2.5
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 4,
+            "dps": 13.953,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 5.333,
+        "dps": 18.605,
+        "force": 10.333,
+        "id": "Fish_Barrel_Bullet_Projectile,Fish_Projectile_Synergy",
+        "isFinalBuff": true,
+        "penetration": 0.111,
+        "range": 142.222,
+        "spawnWeight": 8,
+        "speed": 22.667,
+        "stunChance": 0.022,
+        "stunDuration": 0.278
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 3.488,
+    "spread": 7,
+    "timeBetweenShots": 0.2
+  },
+  "range": "long-range",
+  "reloadTime": 0.78,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
 exports[`Gun > Barrel (709) > modes 1`] = `
 "[
   {
@@ -4064,6 +4479,31 @@ exports[`Gun > Barrel (709) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.2,
+        "finalProjectile": "Fish_Projectile_Synergy",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 8,
+                "dps": 27.907,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "damage": 8,
+            "dps": 27.907,
+            "force": 13,
+            "id": "Fish_Projectile_Synergy",
+            "isFinalBuff": true,
+            "penetration": 1,
+            "range": 1000,
+            "spawnWeight": 1,
+            "speed": 20,
+            "stunChance": 0.2,
+            "stunDuration": 2.5
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [],
@@ -16288,7 +16728,7 @@ exports[`Gun > Devolver (484) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Directional Pad (514) > [variants=0-0-0,0-1-0,0-2-0,0-3-0,1-0-0,1-1-0,1-2-0,1-3-0,2-0-0,2-1-0,2-2-0,2-3-0] 1`] = `
+exports[`Gun > Directional Pad (514) > [variants=0-0-0,0-1-0,0-2-0,0-3-0,1-0-0,1-1-0,1-2-0,1-3-0] 1`] = `
 "{
   "damage": {
     "base": 8,
@@ -16436,7 +16876,7 @@ exports[`Gun > Directional Pad (514) > [variants=1-4-0] 1`] = `
     "speed": 50
   },
   "projectileModule": {
-    "ammoCost": 3,
+    "ammoCost": 1,
     "burstCooldownTime": 0.1,
     "burstShotCount": 3,
     "cooldownTime": 0.7,
@@ -16528,7 +16968,7 @@ exports[`Gun > Directional Pad (514) > [variants=1-A-A] 1`] = `
 }"
 `;
 
-exports[`Gun > Directional Pad (514) > [variants=2-4-0,2-5-0,2-6-0,2-7-0] 1`] = `
+exports[`Gun > Directional Pad (514) > [variants=2-0-0,2-1-0,2-2-0,2-3-0] 1`] = `
 "{
   "damage": {
     "base": 45,
@@ -16556,7 +16996,7 @@ exports[`Gun > Directional Pad (514) > [variants=2-4-0,2-5-0,2-6-0,2-7-0] 1`] = 
     "speed": 25
   },
   "projectileModule": {
-    "ammoCost": 3,
+    "ammoCost": 1,
     "burstCooldownTime": 0.1,
     "burstShotCount": 3,
     "cooldownTime": 0.7,
@@ -16585,28 +17025,28 @@ exports[`Gun > Directional Pad (514) > [variants=2-4-0,2-5-0,2-6-0,2-7-0] 1`] = 
 exports[`Gun > Directional Pad (514) > [variants=2-A-A] 1`] = `
 "{
   "damage": {
-    "base": 53,
+    "base": 45,
     "details": [
       {
         "isEstimated": true,
         "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 159
+        "value": 135
       }
     ]
   },
   "dps": {
-    "base": 81.901,
+    "base": 59.471,
     "details": [
       {
         "isEstimated": true,
         "tooltip": "Damage from 3 other directions: {{VALUE}}",
-        "value": 245.704
+        "value": 178.414
       }
     ]
   },
-  "fireRate": 168.224,
+  "fireRate": 79.295,
   "force": {
-    "base": 248,
+    "base": 200,
     "details": []
   },
   "magazineSize": 30,
@@ -16614,12 +17054,12 @@ exports[`Gun > Directional Pad (514) > [variants=2-A-A] 1`] = `
   "precision": 100,
   "projectile": {
     "additionalDamage": [],
-    "damage": 212,
-    "dps": 327.605,
-    "force": 248,
-    "id": "dpad_Gun_Projectile,Mega_Buster_Projectile_Super",
+    "damage": 180,
+    "dps": 237.885,
+    "force": 200,
+    "id": "Mega_Buster_Projectile_Super",
     "range": 1000,
-    "speed": 24
+    "speed": 25
   },
   "projectileModule": {
     "ammoCost": 1,
@@ -16629,22 +17069,22 @@ exports[`Gun > Directional Pad (514) > [variants=2-A-A] 1`] = `
     "projectiles": [
       {
         "additionalDamage": [],
-        "damage": 212,
-        "dps": 327.605,
-        "force": 248,
-        "id": "dpad_Gun_Projectile,Mega_Buster_Projectile_Super",
+        "damage": 180,
+        "dps": 237.885,
+        "force": 200,
+        "id": "Mega_Buster_Projectile_Super",
         "range": 1000,
-        "speed": 24
+        "speed": 25
       }
     ],
-    "shootStyle": "Burst",
-    "shotsPerSecond": 2.804,
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 1.322,
     "spread": 0,
-    "timeBetweenShots": 0.3
+    "timeBetweenShots": 0.7
   },
   "range": "long-range",
   "reloadTime": 1.7,
-  "shootStyle": "Burst"
+  "shootStyle": "SemiAutomatic"
 }"
 `;
 
@@ -16705,7 +17145,7 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
         "timeBetweenShots": 0.3
       },
       {
-        "ammoCost": 3,
+        "ammoCost": 1,
         "burstCooldownTime": 0.1,
         "burstShotCount": 3,
         "cooldownTime": 0.7,
@@ -16733,28 +17173,6 @@ exports[`Gun > Directional Pad (514) > modes 1`] = `
     "volley": [
       {
         "ammoCost": 1,
-        "burstCooldownTime": 0.1,
-        "burstShotCount": 3,
-        "cooldownTime": 0.7,
-        "moduleCount": 4,
-        "projectiles": [
-          {
-            "additionalDamage": [],
-            "damage": 8,
-            "dps": 22.43,
-            "force": 12,
-            "id": "dpad_Gun_Projectile",
-            "range": 50,
-            "speed": 23
-          }
-        ],
-        "shootStyle": "Burst",
-        "shotsPerSecond": 2.804,
-        "spread": 0,
-        "timeBetweenShots": 0.3
-      },
-      {
-        "ammoCost": 3,
         "burstCooldownTime": 0.1,
         "burstShotCount": 3,
         "cooldownTime": 0.7,
@@ -19041,7 +19459,7 @@ exports[`Gun > Excaliber (680) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Eye of the Beholster (90) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Eye of the Beholster (90) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 6,
@@ -19094,6 +19512,59 @@ exports[`Gun > Eye of the Beholster (90) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.15,
+    "finalProjectile": "Beholster_Spawn_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 72,
+            "dps": 288,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "averageSurvivingBounces": 5,
+        "canPenetrateObjects": true,
+        "damage": 12,
+        "dps": 48,
+        "force": 25,
+        "id": "Beholster_Spawn_Projectile",
+        "isFinalBuff": true,
+        "numberOfBounces": 5,
+        "penetration": 8,
+        "range": 20,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Floating_Eye_Projectile",
+        "spawnProjectileNumber": 1,
+        "spawnProjectilesInflight": true,
+        "spawnProjectilesInflightPerSecond": 0.5,
+        "spawnProjectilesOnCollision": false,
+        "spawnWeight": 1,
+        "speed": 1
+      },
+      {
+        "additionalDamage": [
+          {
+            "damage": 6,
+            "dps": 24,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 6,
+        "dps": 24,
+        "force": 10,
+        "id": "Floating_Eye_Projectile",
+        "isFinalDebuff": true,
+        "penetration": 1,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Beholster_Spawn_Projectile",
+        "speed": 20
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [
@@ -19125,6 +19596,451 @@ exports[`Gun > Eye of the Beholster (90) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Eye of the Beholster (90) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 12,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 72
+      }
+    ]
+  },
+  "dps": {
+    "base": 48,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 288
+      }
+    ]
+  },
+  "fireRate": 240,
+  "force": {
+    "base": 25,
+    "details": []
+  },
+  "magazineSize": 12,
+  "maxAmmo": 300,
+  "precision": 86.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 72,
+        "dps": 288,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "averageSurvivingBounces": 5,
+    "canPenetrateObjects": true,
+    "damage": 12,
+    "dps": 48,
+    "force": 25,
+    "id": "Beholster_Spawn_Projectile",
+    "isFinalBuff": true,
+    "numberOfBounces": 5,
+    "penetration": 8,
+    "range": 20,
+    "spawnCollisionProjectilesOnBounce": false,
+    "spawnProjectile": "Floating_Eye_Projectile",
+    "spawnProjectileNumber": 1,
+    "spawnProjectilesInflight": true,
+    "spawnProjectilesInflightPerSecond": 0.5,
+    "spawnProjectilesOnCollision": false,
+    "spawnWeight": 1,
+    "speed": 1
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.15,
+    "finalProjectile": "Beholster_Spawn_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 72,
+            "dps": 288,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "averageSurvivingBounces": 5,
+        "canPenetrateObjects": true,
+        "damage": 12,
+        "dps": 48,
+        "force": 25,
+        "id": "Beholster_Spawn_Projectile",
+        "isFinalBuff": true,
+        "numberOfBounces": 5,
+        "penetration": 8,
+        "range": 20,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Floating_Eye_Projectile",
+        "spawnProjectileNumber": 1,
+        "spawnProjectilesInflight": true,
+        "spawnProjectilesInflightPerSecond": 0.5,
+        "spawnProjectilesOnCollision": false,
+        "spawnWeight": 1,
+        "speed": 1
+      },
+      {
+        "additionalDamage": [
+          {
+            "damage": 6,
+            "dps": 24,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 6,
+        "dps": 24,
+        "force": 10,
+        "id": "Floating_Eye_Projectile",
+        "isFinalDebuff": true,
+        "penetration": 1,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Beholster_Spawn_Projectile",
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 6,
+            "dps": 24,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 6,
+        "dps": 24,
+        "force": 4,
+        "id": "Beholster_Eye_Projectile",
+        "penetration": 1,
+        "range": 1000,
+        "speed": 200
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4,
+    "spread": 4,
+    "timeBetweenShots": 0.15
+  },
+  "range": "mid-range",
+  "reloadTime": 1.2,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Eye of the Beholster (90) > [variants=0-0-F1] 1`] = `
+"{
+  "damage": {
+    "base": 6,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 6
+      }
+    ]
+  },
+  "dps": {
+    "base": 24,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 24
+      }
+    ]
+  },
+  "fireRate": 240,
+  "force": {
+    "base": 10,
+    "details": []
+  },
+  "magazineSize": 12,
+  "maxAmmo": 300,
+  "precision": 86.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 6,
+        "dps": 24,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 6,
+    "dps": 24,
+    "force": 10,
+    "id": "Floating_Eye_Projectile",
+    "isFinalDebuff": true,
+    "penetration": 1,
+    "range": 1000,
+    "spawnLevel": 1,
+    "spawnWeight": 1,
+    "spawnedBy": "Beholster_Spawn_Projectile",
+    "speed": 20
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.15,
+    "finalProjectile": "Beholster_Spawn_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 72,
+            "dps": 288,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "averageSurvivingBounces": 5,
+        "canPenetrateObjects": true,
+        "damage": 12,
+        "dps": 48,
+        "force": 25,
+        "id": "Beholster_Spawn_Projectile",
+        "isFinalBuff": true,
+        "numberOfBounces": 5,
+        "penetration": 8,
+        "range": 20,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Floating_Eye_Projectile",
+        "spawnProjectileNumber": 1,
+        "spawnProjectilesInflight": true,
+        "spawnProjectilesInflightPerSecond": 0.5,
+        "spawnProjectilesOnCollision": false,
+        "spawnWeight": 1,
+        "speed": 1
+      },
+      {
+        "additionalDamage": [
+          {
+            "damage": 6,
+            "dps": 24,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 6,
+        "dps": 24,
+        "force": 10,
+        "id": "Floating_Eye_Projectile",
+        "isFinalDebuff": true,
+        "penetration": 1,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Beholster_Spawn_Projectile",
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 6,
+            "dps": 24,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 6,
+        "dps": 24,
+        "force": 4,
+        "id": "Beholster_Eye_Projectile",
+        "penetration": 1,
+        "range": 1000,
+        "speed": 200
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4,
+    "spread": 4,
+    "timeBetweenShots": 0.15
+  },
+  "range": "long-range",
+  "reloadTime": 1.2,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Eye of the Beholster (90) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 7,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 42
+      }
+    ]
+  },
+  "dps": {
+    "base": 28,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 168
+      }
+    ]
+  },
+  "fireRate": 240,
+  "force": {
+    "base": 6.583,
+    "details": []
+  },
+  "magazineSize": 12,
+  "maxAmmo": 300,
+  "precision": 86.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 42,
+        "dps": 168,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "averageSurvivingBounces": 0.208,
+    "canPenetrateObjects": true,
+    "damage": 7,
+    "dps": 28,
+    "force": 6.583,
+    "id": "Beholster_Eye_Projectile,Beholster_Spawn_Projectile,Floating_Eye_Projectile",
+    "isFinalBuff": true,
+    "isFinalDebuff": true,
+    "numberOfBounces": 0.208,
+    "penetration": 1.583,
+    "range": 1000,
+    "spawnLevel": 1,
+    "spawnProjectile": "Floating_Eye_Projectile",
+    "spawnProjectileNumber": 1,
+    "spawnProjectilesInflight": true,
+    "spawnProjectilesInflightPerSecond": 0.5,
+    "spawnWeight": 11,
+    "spawnedBy": "Beholster_Spawn_Projectile",
+    "speed": 184.208
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.15,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 72,
+            "dps": 288,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "averageSurvivingBounces": 5,
+        "canPenetrateObjects": true,
+        "damage": 12,
+        "dps": 48,
+        "force": 25,
+        "id": "Beholster_Spawn_Projectile",
+        "isFinalBuff": true,
+        "numberOfBounces": 5,
+        "penetration": 8,
+        "range": 20,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Floating_Eye_Projectile",
+        "spawnProjectileNumber": 1,
+        "spawnProjectilesInflight": true,
+        "spawnProjectilesInflightPerSecond": 0.5,
+        "spawnProjectilesOnCollision": false,
+        "spawnWeight": 1,
+        "speed": 1
+      },
+      {
+        "additionalDamage": [
+          {
+            "damage": 6,
+            "dps": 24,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 6,
+        "dps": 24,
+        "force": 10,
+        "id": "Floating_Eye_Projectile",
+        "isFinalDebuff": true,
+        "penetration": 1,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Beholster_Spawn_Projectile",
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 42,
+            "dps": 168,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "averageSurvivingBounces": 0.208,
+        "canPenetrateObjects": true,
+        "damage": 7,
+        "dps": 28,
+        "force": 6.583,
+        "id": "Beholster_Eye_Projectile,Beholster_Spawn_Projectile,Floating_Eye_Projectile",
+        "isFinalBuff": true,
+        "isFinalDebuff": true,
+        "numberOfBounces": 0.208,
+        "penetration": 1.583,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnProjectile": "Floating_Eye_Projectile",
+        "spawnProjectileNumber": 1,
+        "spawnProjectilesInflight": true,
+        "spawnProjectilesInflightPerSecond": 0.5,
+        "spawnWeight": 11,
+        "spawnedBy": "Beholster_Spawn_Projectile",
+        "speed": 184.208
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4,
+    "spread": 4,
+    "timeBetweenShots": 0.15
+  },
+  "range": "long-range",
+  "reloadTime": 1.2,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
 exports[`Gun > Eye of the Beholster (90) > modes 1`] = `
 "[
   {
@@ -19136,6 +20052,59 @@ exports[`Gun > Eye of the Beholster (90) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.15,
+        "finalProjectile": "Beholster_Spawn_Projectile",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 72,
+                "dps": 288,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "averageSurvivingBounces": 5,
+            "canPenetrateObjects": true,
+            "damage": 12,
+            "dps": 48,
+            "force": 25,
+            "id": "Beholster_Spawn_Projectile",
+            "isFinalBuff": true,
+            "numberOfBounces": 5,
+            "penetration": 8,
+            "range": 20,
+            "spawnCollisionProjectilesOnBounce": false,
+            "spawnProjectile": "Floating_Eye_Projectile",
+            "spawnProjectileNumber": 1,
+            "spawnProjectilesInflight": true,
+            "spawnProjectilesInflightPerSecond": 0.5,
+            "spawnProjectilesOnCollision": false,
+            "spawnWeight": 1,
+            "speed": 1
+          },
+          {
+            "additionalDamage": [
+              {
+                "damage": 6,
+                "dps": 24,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "damage": 6,
+            "dps": 24,
+            "force": 10,
+            "id": "Floating_Eye_Projectile",
+            "isFinalDebuff": true,
+            "penetration": 1,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Beholster_Spawn_Projectile",
+            "speed": 20
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [
@@ -19546,7 +20515,7 @@ exports[`Gun > Fightsabre (345) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Finished Gun (762) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Finished Gun (762) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 14,
@@ -19581,6 +20550,30 @@ exports[`Gun > Finished Gun (762) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.07,
+    "finalProjectile": "Black_Revolver_Final_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 75,
+            "dps": 375,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 25,
+        "dps": 125,
+        "force": 14,
+        "id": "Black_Revolver_Final_Projectile",
+        "isFinalBuff": true,
+        "penetration": 5,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [],
@@ -19606,6 +20599,227 @@ exports[`Gun > Finished Gun (762) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Finished Gun (762) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 25,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 75
+      }
+    ]
+  },
+  "dps": {
+    "base": 125,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 375
+      }
+    ]
+  },
+  "fireRate": 300,
+  "force": {
+    "base": 14,
+    "details": []
+  },
+  "magazineSize": 6,
+  "maxAmmo": 500,
+  "precision": 100,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 75,
+        "dps": 375,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "canPenetrateObjects": true,
+    "damage": 25,
+    "dps": 125,
+    "force": 14,
+    "id": "Black_Revolver_Final_Projectile",
+    "isFinalBuff": true,
+    "penetration": 5,
+    "range": 1000,
+    "spawnWeight": 1,
+    "speed": 20
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.07,
+    "finalProjectile": "Black_Revolver_Final_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 75,
+            "dps": 375,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 25,
+        "dps": 125,
+        "force": 14,
+        "id": "Black_Revolver_Final_Projectile",
+        "isFinalBuff": true,
+        "penetration": 5,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "averageSurvivingBounces": 2,
+        "damage": 14,
+        "damageMultiplierOnBounce": 1.5,
+        "dps": 70,
+        "force": 14,
+        "id": "Black_Revolver_Projectile",
+        "numberOfBounces": 2,
+        "range": 1000,
+        "speed": 30
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 5,
+    "spread": 0,
+    "timeBetweenShots": 0.07
+  },
+  "range": "long-range",
+  "reloadTime": 0.78,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Finished Gun (762) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 15.833,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 37.5
+      }
+    ]
+  },
+  "dps": {
+    "base": 79.167,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 187.5
+      }
+    ]
+  },
+  "fireRate": 300,
+  "force": {
+    "base": 14,
+    "details": []
+  },
+  "magazineSize": 6,
+  "maxAmmo": 500,
+  "precision": 100,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 37.5,
+        "dps": 187.5,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "averageSurvivingBounces": 1.667,
+    "canPenetrateObjects": true,
+    "damage": 15.833,
+    "damageMultiplierOnBounce": 1.417,
+    "dps": 79.167,
+    "force": 14,
+    "id": "Black_Revolver_Projectile,Black_Revolver_Final_Projectile",
+    "isFinalBuff": true,
+    "numberOfBounces": 1.667,
+    "penetration": 0.833,
+    "range": 1000,
+    "spawnWeight": 5,
+    "speed": 28.333
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.07,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 75,
+            "dps": 375,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 25,
+        "dps": 125,
+        "force": 14,
+        "id": "Black_Revolver_Final_Projectile",
+        "isFinalBuff": true,
+        "penetration": 5,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 37.5,
+            "dps": 187.5,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "averageSurvivingBounces": 1.667,
+        "canPenetrateObjects": true,
+        "damage": 15.833,
+        "damageMultiplierOnBounce": 1.417,
+        "dps": 79.167,
+        "force": 14,
+        "id": "Black_Revolver_Projectile,Black_Revolver_Final_Projectile",
+        "isFinalBuff": true,
+        "numberOfBounces": 1.667,
+        "penetration": 0.833,
+        "range": 1000,
+        "spawnWeight": 5,
+        "speed": 28.333
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 5,
+    "spread": 0,
+    "timeBetweenShots": 0.07
+  },
+  "range": "long-range",
+  "reloadTime": 0.78,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
 exports[`Gun > Finished Gun (762) > modes 1`] = `
 "[
   {
@@ -19617,6 +20831,30 @@ exports[`Gun > Finished Gun (762) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.07,
+        "finalProjectile": "Black_Revolver_Final_Projectile",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 75,
+                "dps": 375,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "canPenetrateObjects": true,
+            "damage": 25,
+            "dps": 125,
+            "force": 14,
+            "id": "Black_Revolver_Final_Projectile",
+            "isFinalBuff": true,
+            "penetration": 5,
+            "range": 1000,
+            "spawnWeight": 1,
+            "speed": 20
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [],
@@ -24711,7 +25949,7 @@ exports[`Gun > Gunzheng (482) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > H4mmer (91) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > H4mmer (91) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 3.8,
@@ -24743,6 +25981,23 @@ exports[`Gun > H4mmer (91) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.05,
+    "finalProjectile": "Hammer_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 20,
+        "dps": 285.714,
+        "force": 26,
+        "id": "Hammer_Projectile",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 3.5
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [],
@@ -24752,6 +26007,159 @@ exports[`Gun > H4mmer (91) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "H4MMERProjectile",
         "range": 1000,
         "speed": 23
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 14.286,
+    "spread": 7,
+    "timeBetweenShots": 0.05
+  },
+  "range": "long-range",
+  "reloadTime": 0.6,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > H4mmer (91) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 20,
+    "details": []
+  },
+  "dps": {
+    "base": 285.714,
+    "details": []
+  },
+  "fireRate": 857.143,
+  "force": {
+    "base": 26,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 450,
+  "precision": 76.667,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 20,
+    "dps": 285.714,
+    "force": 26,
+    "id": "Hammer_Projectile",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnWeight": 1,
+    "speed": 20,
+    "stunChance": 0.2,
+    "stunDuration": 3.5
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.05,
+    "finalProjectile": "Hammer_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 20,
+        "dps": 285.714,
+        "force": 26,
+        "id": "Hammer_Projectile",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 3.5
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 3.8,
+        "dps": 54.286,
+        "force": 6,
+        "id": "H4MMERProjectile",
+        "range": 1000,
+        "speed": 23
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 14.286,
+    "spread": 7,
+    "timeBetweenShots": 0.05
+  },
+  "range": "long-range",
+  "reloadTime": 0.6,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > H4mmer (91) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 4.34,
+    "details": []
+  },
+  "dps": {
+    "base": 62,
+    "details": []
+  },
+  "fireRate": 857.143,
+  "force": {
+    "base": 6.667,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 450,
+  "precision": 76.667,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 4.34,
+    "dps": 62,
+    "force": 6.667,
+    "id": "H4MMERProjectile,Hammer_Projectile",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnWeight": 29,
+    "speed": 22.9,
+    "stunChance": 0.007,
+    "stunDuration": 0.117
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.05,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 20,
+        "dps": 285.714,
+        "force": 26,
+        "id": "Hammer_Projectile",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 3.5
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 4.34,
+        "dps": 62,
+        "force": 6.667,
+        "id": "H4MMERProjectile,Hammer_Projectile",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 29,
+        "speed": 22.9,
+        "stunChance": 0.007,
+        "stunDuration": 0.117
       }
     ],
     "shootStyle": "Automatic",
@@ -24776,6 +26184,23 @@ exports[`Gun > H4mmer (91) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.05,
+        "finalProjectile": "Hammer_Projectile",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 20,
+            "dps": 285.714,
+            "force": 26,
+            "id": "Hammer_Projectile",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnWeight": 1,
+            "speed": 20,
+            "stunChance": 0.2,
+            "stunDuration": 3.5
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [],
@@ -24797,7 +26222,7 @@ exports[`Gun > H4mmer (91) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > H4mmer (715) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > H4mmer (715) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 3.8,
@@ -24829,6 +26254,23 @@ exports[`Gun > H4mmer (715) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.05,
+    "finalProjectile": "Hammer_Projectile",
+    "finalProjectileCount": 5,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 20,
+        "dps": 285.714,
+        "force": 26,
+        "id": "Hammer_Projectile",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 5,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 3.5
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [],
@@ -24838,6 +26280,159 @@ exports[`Gun > H4mmer (715) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "H4MMERProjectile",
         "range": 1000,
         "speed": 23
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 14.286,
+    "spread": 7,
+    "timeBetweenShots": 0.05
+  },
+  "range": "long-range",
+  "reloadTime": 0.6,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > H4mmer (715) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 20,
+    "details": []
+  },
+  "dps": {
+    "base": 285.714,
+    "details": []
+  },
+  "fireRate": 857.143,
+  "force": {
+    "base": 26,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 450,
+  "precision": 76.667,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 20,
+    "dps": 285.714,
+    "force": 26,
+    "id": "Hammer_Projectile",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnWeight": 5,
+    "speed": 20,
+    "stunChance": 0.2,
+    "stunDuration": 3.5
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.05,
+    "finalProjectile": "Hammer_Projectile",
+    "finalProjectileCount": 5,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 20,
+        "dps": 285.714,
+        "force": 26,
+        "id": "Hammer_Projectile",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 5,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 3.5
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 3.8,
+        "dps": 54.286,
+        "force": 6,
+        "id": "H4MMERProjectile",
+        "range": 1000,
+        "speed": 23
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 14.286,
+    "spread": 7,
+    "timeBetweenShots": 0.05
+  },
+  "range": "long-range",
+  "reloadTime": 0.6,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > H4mmer (715) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 6.5,
+    "details": []
+  },
+  "dps": {
+    "base": 92.857,
+    "details": []
+  },
+  "fireRate": 857.143,
+  "force": {
+    "base": 9.333,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 450,
+  "precision": 76.667,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 6.5,
+    "dps": 92.857,
+    "force": 9.333,
+    "id": "H4MMERProjectile,Hammer_Projectile",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnWeight": 25,
+    "speed": 22.5,
+    "stunChance": 0.033,
+    "stunDuration": 0.583
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.05,
+    "finalProjectileCount": 5,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 20,
+        "dps": 285.714,
+        "force": 26,
+        "id": "Hammer_Projectile",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 5,
+        "speed": 20,
+        "stunChance": 0.2,
+        "stunDuration": 3.5
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 6.5,
+        "dps": 92.857,
+        "force": 9.333,
+        "id": "H4MMERProjectile,Hammer_Projectile",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 25,
+        "speed": 22.5,
+        "stunChance": 0.033,
+        "stunDuration": 0.583
       }
     ],
     "shootStyle": "Automatic",
@@ -24862,6 +26457,23 @@ exports[`Gun > H4mmer (715) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.05,
+        "finalProjectile": "Hammer_Projectile",
+        "finalProjectileCount": 5,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 20,
+            "dps": 285.714,
+            "force": 26,
+            "id": "Hammer_Projectile",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnWeight": 5,
+            "speed": 20,
+            "stunChance": 0.2,
+            "stunDuration": 3.5
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [],
@@ -30241,7 +31853,7 @@ exports[`Gun > Life Orb (595) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Light Gun (27) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Light Gun (27) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 7,
@@ -30294,6 +31906,32 @@ exports[`Gun > Light Gun (27) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.2,
+    "finalProjectile": "Duck_Blue_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 15,
+            "dps": 40.909,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 15,
+        "dps": 40.909,
+        "force": 10,
+        "homingAngularVelocity": 900,
+        "homingRadius": 50,
+        "id": "Duck_Blue_Projectile",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "penetration": 1,
+        "range": 100,
+        "spawnWeight": 1,
+        "speed": 8
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [
@@ -30325,6 +31963,239 @@ exports[`Gun > Light Gun (27) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Light Gun (27) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 15,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 15
+      }
+    ]
+  },
+  "dps": {
+    "base": 40.909,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 40.909
+      }
+    ]
+  },
+  "fireRate": 163.636,
+  "force": {
+    "base": 10,
+    "details": []
+  },
+  "magazineSize": 6,
+  "maxAmmo": 150,
+  "precision": 83.333,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 15,
+        "dps": 40.909,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 15,
+    "dps": 40.909,
+    "force": 10,
+    "homingAngularVelocity": 900,
+    "homingRadius": 50,
+    "id": "Duck_Blue_Projectile",
+    "isFinalBuff": true,
+    "isHoming": true,
+    "penetration": 1,
+    "range": 100,
+    "spawnWeight": 1,
+    "speed": 8
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.2,
+    "finalProjectile": "Duck_Blue_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 15,
+            "dps": 40.909,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 15,
+        "dps": 40.909,
+        "force": 10,
+        "homingAngularVelocity": 900,
+        "homingRadius": 50,
+        "id": "Duck_Blue_Projectile",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "penetration": 1,
+        "range": 100,
+        "spawnWeight": 1,
+        "speed": 8
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 7,
+            "dps": 19.091,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 7,
+        "dps": 19.091,
+        "force": 30,
+        "id": "Zapper_Projectile",
+        "penetration": 1,
+        "range": 60,
+        "speed": 400
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 2.727,
+    "spread": 5,
+    "timeBetweenShots": 0.2
+  },
+  "range": "long-range",
+  "reloadTime": 1,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Light Gun (27) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 8.333,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 11
+      }
+    ]
+  },
+  "dps": {
+    "base": 22.727,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 30
+      }
+    ]
+  },
+  "fireRate": 163.636,
+  "force": {
+    "base": 26.667,
+    "details": []
+  },
+  "magazineSize": 6,
+  "maxAmmo": 150,
+  "precision": 83.333,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 11,
+        "dps": 30,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "canPenetrateObjects": true,
+    "damage": 8.333,
+    "dps": 22.727,
+    "force": 26.667,
+    "homingAngularVelocity": 150,
+    "homingRadius": 8.333,
+    "id": "Zapper_Projectile,Duck_Blue_Projectile",
+    "isFinalBuff": true,
+    "isHoming": true,
+    "penetration": 1,
+    "range": 66.667,
+    "spawnWeight": 5,
+    "speed": 334.667
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.2,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 15,
+            "dps": 40.909,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 15,
+        "dps": 40.909,
+        "force": 10,
+        "homingAngularVelocity": 900,
+        "homingRadius": 50,
+        "id": "Duck_Blue_Projectile",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "penetration": 1,
+        "range": 100,
+        "spawnWeight": 1,
+        "speed": 8
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 11,
+            "dps": 30,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 8.333,
+        "dps": 22.727,
+        "force": 26.667,
+        "homingAngularVelocity": 150,
+        "homingRadius": 8.333,
+        "id": "Zapper_Projectile,Duck_Blue_Projectile",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "penetration": 1,
+        "range": 66.667,
+        "spawnWeight": 5,
+        "speed": 334.667
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 2.727,
+    "spread": 5,
+    "timeBetweenShots": 0.2
+  },
+  "range": "long-range",
+  "reloadTime": 1,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
 exports[`Gun > Light Gun (27) > modes 1`] = `
 "[
   {
@@ -30336,6 +32207,32 @@ exports[`Gun > Light Gun (27) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.2,
+        "finalProjectile": "Duck_Blue_Projectile",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 15,
+                "dps": 40.909,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "damage": 15,
+            "dps": 40.909,
+            "force": 10,
+            "homingAngularVelocity": 900,
+            "homingRadius": 50,
+            "id": "Duck_Blue_Projectile",
+            "isFinalBuff": true,
+            "isHoming": true,
+            "penetration": 1,
+            "range": 100,
+            "spawnWeight": 1,
+            "speed": 8
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [
@@ -30366,7 +32263,7 @@ exports[`Gun > Light Gun (27) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Light Gun (711) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Light Gun (711) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 3,
@@ -30419,6 +32316,32 @@ exports[`Gun > Light Gun (711) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.2,
+    "finalProjectile": "Duck_Blue_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 15,
+            "dps": 43.75,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 15,
+        "dps": 43.75,
+        "force": 10,
+        "homingAngularVelocity": 900,
+        "homingRadius": 50,
+        "id": "Duck_Blue_Projectile",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "penetration": 1,
+        "range": 100,
+        "spawnWeight": 1,
+        "speed": 8
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [
@@ -30450,6 +32373,239 @@ exports[`Gun > Light Gun (711) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Light Gun (711) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 15,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 15
+      }
+    ]
+  },
+  "dps": {
+    "base": 43.75,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 43.75
+      }
+    ]
+  },
+  "fireRate": 175,
+  "force": {
+    "base": 10,
+    "details": []
+  },
+  "magazineSize": 7,
+  "maxAmmo": 150,
+  "precision": 83.333,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 15,
+        "dps": 43.75,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 15,
+    "dps": 43.75,
+    "force": 10,
+    "homingAngularVelocity": 900,
+    "homingRadius": 50,
+    "id": "Duck_Blue_Projectile",
+    "isFinalBuff": true,
+    "isHoming": true,
+    "penetration": 1,
+    "range": 100,
+    "spawnWeight": 1,
+    "speed": 8
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.2,
+    "finalProjectile": "Duck_Blue_Projectile",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 15,
+            "dps": 43.75,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 15,
+        "dps": 43.75,
+        "force": 10,
+        "homingAngularVelocity": 900,
+        "homingRadius": 50,
+        "id": "Duck_Blue_Projectile",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "penetration": 1,
+        "range": 100,
+        "spawnWeight": 1,
+        "speed": 8
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 3,
+            "dps": 8.75,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 3,
+        "dps": 8.75,
+        "force": 12,
+        "id": "Zapper_Dog_Projectile",
+        "penetration": 1,
+        "range": 60,
+        "speed": 400
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 2.917,
+    "spread": 5,
+    "timeBetweenShots": 0.2
+  },
+  "range": "long-range",
+  "reloadTime": 1,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Light Gun (711) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 4.714,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 9
+      }
+    ]
+  },
+  "dps": {
+    "base": 13.75,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 26.25
+      }
+    ]
+  },
+  "fireRate": 175,
+  "force": {
+    "base": 11.714,
+    "details": []
+  },
+  "magazineSize": 7,
+  "maxAmmo": 150,
+  "precision": 83.333,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 9,
+        "dps": 26.25,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "canPenetrateObjects": true,
+    "damage": 4.714,
+    "dps": 13.75,
+    "force": 11.714,
+    "homingAngularVelocity": 128.571,
+    "homingRadius": 7.143,
+    "id": "Zapper_Dog_Projectile,Duck_Blue_Projectile",
+    "isFinalBuff": true,
+    "isHoming": true,
+    "penetration": 1,
+    "range": 65.714,
+    "spawnWeight": 6,
+    "speed": 344
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.2,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 15,
+            "dps": 43.75,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 15,
+        "dps": 43.75,
+        "force": 10,
+        "homingAngularVelocity": 900,
+        "homingRadius": 50,
+        "id": "Duck_Blue_Projectile",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "penetration": 1,
+        "range": 100,
+        "spawnWeight": 1,
+        "speed": 8
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 9,
+            "dps": 26.25,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "canPenetrateObjects": true,
+        "damage": 4.714,
+        "dps": 13.75,
+        "force": 11.714,
+        "homingAngularVelocity": 128.571,
+        "homingRadius": 7.143,
+        "id": "Zapper_Dog_Projectile,Duck_Blue_Projectile",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "penetration": 1,
+        "range": 65.714,
+        "spawnWeight": 6,
+        "speed": 344
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 2.917,
+    "spread": 5,
+    "timeBetweenShots": 0.2
+  },
+  "range": "long-range",
+  "reloadTime": 1,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
 exports[`Gun > Light Gun (711) > modes 1`] = `
 "[
   {
@@ -30461,6 +32617,32 @@ exports[`Gun > Light Gun (711) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.2,
+        "finalProjectile": "Duck_Blue_Projectile",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 15,
+                "dps": 43.75,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "damage": 15,
+            "dps": 43.75,
+            "force": 10,
+            "homingAngularVelocity": 900,
+            "homingRadius": 50,
+            "id": "Duck_Blue_Projectile",
+            "isFinalBuff": true,
+            "isHoming": true,
+            "penetration": 1,
+            "range": 100,
+            "spawnWeight": 1,
+            "speed": 8
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [
@@ -31502,7 +33684,7 @@ exports[`Gun > Lower Case r (738) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Luxin Cannon (199) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Luxin Cannon (199) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 4.5,
@@ -31534,6 +33716,104 @@ exports[`Gun > Luxin Cannon (199) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.07,
+    "finalProjectile": "Crystal_Shard_Big",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 24,
+        "dps": 200,
+        "force": 75,
+        "id": "Crystal_Shard_Big",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Crystal_Shard_Small",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesInflight": false,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 1,
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [],
@@ -31543,6 +33823,486 @@ exports[`Gun > Luxin Cannon (199) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "Prismatic_Spray_Projectile",
         "range": 1000,
         "speed": 60
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 8.333,
+    "spread": 6,
+    "timeBetweenShots": 0.07
+  },
+  "range": "long-range",
+  "reloadTime": 1.5,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Luxin Cannon (199) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 24,
+    "details": []
+  },
+  "dps": {
+    "base": 200,
+    "details": []
+  },
+  "fireRate": 500,
+  "force": {
+    "base": 75,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 600,
+  "precision": 80,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 24,
+    "dps": 200,
+    "force": 75,
+    "id": "Crystal_Shard_Big",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnCollisionProjectilesOnBounce": false,
+    "spawnProjectile": "Crystal_Shard_Small",
+    "spawnProjectileNumber": 6,
+    "spawnProjectilesInflight": false,
+    "spawnProjectilesOnCollision": true,
+    "spawnWeight": 1,
+    "speed": 25
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.07,
+    "finalProjectile": "Crystal_Shard_Big",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 24,
+        "dps": 200,
+        "force": 75,
+        "id": "Crystal_Shard_Big",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Crystal_Shard_Small",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesInflight": false,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 1,
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 4.5,
+        "dps": 37.5,
+        "force": 10,
+        "id": "Prismatic_Spray_Projectile",
+        "range": 1000,
+        "speed": 60
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 8.333,
+    "spread": 6,
+    "timeBetweenShots": 0.07
+  },
+  "range": "long-range",
+  "reloadTime": 1.5,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Luxin Cannon (199) > [variants=0-0-F1,0-0-F2,0-0-F3,0-0-F4,0-0-F5,0-0-F6] 1`] = `
+"{
+  "damage": {
+    "base": 5,
+    "details": []
+  },
+  "dps": {
+    "base": 41.667,
+    "details": []
+  },
+  "fireRate": 500,
+  "force": {
+    "base": 20,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 600,
+  "precision": 80,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 5,
+    "dps": 41.667,
+    "force": 20,
+    "id": "Crystal_Shard_Small",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnLevel": 1,
+    "spawnWeight": 1,
+    "spawnedBy": "Crystal_Shard_Big",
+    "speed": 25
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.07,
+    "finalProjectile": "Crystal_Shard_Big",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 24,
+        "dps": 200,
+        "force": 75,
+        "id": "Crystal_Shard_Big",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Crystal_Shard_Small",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesInflight": false,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 1,
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 4.5,
+        "dps": 37.5,
+        "force": 10,
+        "id": "Prismatic_Spray_Projectile",
+        "range": 1000,
+        "speed": 60
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 8.333,
+    "spread": 6,
+    "timeBetweenShots": 0.07
+  },
+  "range": "long-range",
+  "reloadTime": 1.5,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Luxin Cannon (199) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 6.15,
+    "details": []
+  },
+  "dps": {
+    "base": 51.25,
+    "details": []
+  },
+  "fireRate": 500,
+  "force": {
+    "base": 16.167,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 600,
+  "precision": 80,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 6.15,
+    "dps": 51.25,
+    "force": 16.167,
+    "id": "Prismatic_Spray_Projectile,Crystal_Shard_Big,Crystal_Shard_Small",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnLevel": 1,
+    "spawnProjectile": "Crystal_Shard_Small",
+    "spawnProjectileNumber": 6,
+    "spawnProjectilesOnCollision": true,
+    "spawnWeight": 29,
+    "spawnedBy": "Crystal_Shard_Big",
+    "speed": 58.833
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.07,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 24,
+        "dps": 200,
+        "force": 75,
+        "id": "Crystal_Shard_Big",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Crystal_Shard_Small",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesInflight": false,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 1,
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 25
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 6.15,
+        "dps": 51.25,
+        "force": 16.167,
+        "id": "Prismatic_Spray_Projectile,Crystal_Shard_Big,Crystal_Shard_Small",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnProjectile": "Crystal_Shard_Small",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 29,
+        "spawnedBy": "Crystal_Shard_Big",
+        "speed": 58.833
       }
     ],
     "shootStyle": "Automatic",
@@ -31567,6 +34327,104 @@ exports[`Gun > Luxin Cannon (199) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.07,
+        "finalProjectile": "Crystal_Shard_Big",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 24,
+            "dps": 200,
+            "force": 75,
+            "id": "Crystal_Shard_Big",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnCollisionProjectilesOnBounce": false,
+            "spawnProjectile": "Crystal_Shard_Small",
+            "spawnProjectileNumber": 6,
+            "spawnProjectilesInflight": false,
+            "spawnProjectilesOnCollision": true,
+            "spawnWeight": 1,
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big",
+            "speed": 25
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [],
@@ -31588,7 +34446,7 @@ exports[`Gun > Luxin Cannon (199) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Luxin Cannon (701) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Luxin Cannon (701) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 4.5,
@@ -31620,6 +34478,104 @@ exports[`Gun > Luxin Cannon (701) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.07,
+    "finalProjectile": "Crystal_Shard_Big_Synergy",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 24,
+        "dps": 200,
+        "force": 75,
+        "id": "Crystal_Shard_Big_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Crystal_Shard_Small_Synergy",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesInflight": false,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 1,
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [],
@@ -31629,6 +34585,486 @@ exports[`Gun > Luxin Cannon (701) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "Prismatic_Spray_Projectile",
         "range": 1000,
         "speed": 60
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 8.333,
+    "spread": 6,
+    "timeBetweenShots": 0.07
+  },
+  "range": "long-range",
+  "reloadTime": 1.5,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Luxin Cannon (701) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 24,
+    "details": []
+  },
+  "dps": {
+    "base": 200,
+    "details": []
+  },
+  "fireRate": 500,
+  "force": {
+    "base": 75,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 600,
+  "precision": 80,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 24,
+    "dps": 200,
+    "force": 75,
+    "id": "Crystal_Shard_Big_Synergy",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnCollisionProjectilesOnBounce": false,
+    "spawnProjectile": "Crystal_Shard_Small_Synergy",
+    "spawnProjectileNumber": 6,
+    "spawnProjectilesInflight": false,
+    "spawnProjectilesOnCollision": true,
+    "spawnWeight": 1,
+    "speed": 25
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.07,
+    "finalProjectile": "Crystal_Shard_Big_Synergy",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 24,
+        "dps": 200,
+        "force": 75,
+        "id": "Crystal_Shard_Big_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Crystal_Shard_Small_Synergy",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesInflight": false,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 1,
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 4.5,
+        "dps": 37.5,
+        "force": 10,
+        "id": "Prismatic_Spray_Projectile",
+        "range": 1000,
+        "speed": 60
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 8.333,
+    "spread": 6,
+    "timeBetweenShots": 0.07
+  },
+  "range": "long-range",
+  "reloadTime": 1.5,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Luxin Cannon (701) > [variants=0-0-F1,0-0-F2,0-0-F3,0-0-F4,0-0-F5,0-0-F6] 1`] = `
+"{
+  "damage": {
+    "base": 5,
+    "details": []
+  },
+  "dps": {
+    "base": 41.667,
+    "details": []
+  },
+  "fireRate": 500,
+  "force": {
+    "base": 20,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 600,
+  "precision": 80,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 5,
+    "dps": 41.667,
+    "force": 20,
+    "id": "Crystal_Shard_Small_Synergy",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnLevel": 1,
+    "spawnWeight": 1,
+    "spawnedBy": "Crystal_Shard_Big_Synergy",
+    "speed": 25
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.07,
+    "finalProjectile": "Crystal_Shard_Big_Synergy",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 24,
+        "dps": 200,
+        "force": 75,
+        "id": "Crystal_Shard_Big_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Crystal_Shard_Small_Synergy",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesInflight": false,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 1,
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 4.5,
+        "dps": 37.5,
+        "force": 10,
+        "id": "Prismatic_Spray_Projectile",
+        "range": 1000,
+        "speed": 60
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 8.333,
+    "spread": 6,
+    "timeBetweenShots": 0.07
+  },
+  "range": "long-range",
+  "reloadTime": 1.5,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Luxin Cannon (701) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 6.15,
+    "details": []
+  },
+  "dps": {
+    "base": 51.25,
+    "details": []
+  },
+  "fireRate": 500,
+  "force": {
+    "base": 16.167,
+    "details": []
+  },
+  "magazineSize": 30,
+  "maxAmmo": 600,
+  "precision": 80,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 6.15,
+    "dps": 51.25,
+    "force": 16.167,
+    "id": "Prismatic_Spray_Projectile,Crystal_Shard_Big_Synergy,Crystal_Shard_Small_Synergy",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnLevel": 1,
+    "spawnProjectile": "Crystal_Shard_Small_Synergy",
+    "spawnProjectileNumber": 6,
+    "spawnProjectilesOnCollision": true,
+    "spawnWeight": 29,
+    "spawnedBy": "Crystal_Shard_Big_Synergy",
+    "speed": 58.833
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.07,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 24,
+        "dps": 200,
+        "force": 75,
+        "id": "Crystal_Shard_Big_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnCollisionProjectilesOnBounce": false,
+        "spawnProjectile": "Crystal_Shard_Small_Synergy",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesInflight": false,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 1,
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      },
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 41.667,
+        "force": 20,
+        "id": "Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnWeight": 1,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 25
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 6.15,
+        "dps": 51.25,
+        "force": 16.167,
+        "id": "Prismatic_Spray_Projectile,Crystal_Shard_Big_Synergy,Crystal_Shard_Small_Synergy",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnLevel": 1,
+        "spawnProjectile": "Crystal_Shard_Small_Synergy",
+        "spawnProjectileNumber": 6,
+        "spawnProjectilesOnCollision": true,
+        "spawnWeight": 29,
+        "spawnedBy": "Crystal_Shard_Big_Synergy",
+        "speed": 58.833
       }
     ],
     "shootStyle": "Automatic",
@@ -31653,6 +35089,104 @@ exports[`Gun > Luxin Cannon (701) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.07,
+        "finalProjectile": "Crystal_Shard_Big_Synergy",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 24,
+            "dps": 200,
+            "force": 75,
+            "id": "Crystal_Shard_Big_Synergy",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnCollisionProjectilesOnBounce": false,
+            "spawnProjectile": "Crystal_Shard_Small_Synergy",
+            "spawnProjectileNumber": 6,
+            "spawnProjectilesInflight": false,
+            "spawnProjectilesOnCollision": true,
+            "spawnWeight": 1,
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small_Synergy",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big_Synergy",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small_Synergy",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big_Synergy",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small_Synergy",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big_Synergy",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small_Synergy",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big_Synergy",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small_Synergy",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big_Synergy",
+            "speed": 25
+          },
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 41.667,
+            "force": 20,
+            "id": "Crystal_Shard_Small_Synergy",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnLevel": 1,
+            "spawnWeight": 1,
+            "spawnedBy": "Crystal_Shard_Big_Synergy",
+            "speed": 25
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [],
@@ -58919,7 +62453,7 @@ exports[`Gun > Tangler (175) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Teapot (596) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Teapot (596) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 8.5,
@@ -58963,6 +62497,21 @@ exports[`Gun > Teapot (596) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.4,
+    "finalProjectile": "Teapot_Projectile_Final",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 15,
+        "dps": 23.077,
+        "force": 7,
+        "id": "Teapot_Projectile_Final",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [],
@@ -58988,6 +62537,176 @@ exports[`Gun > Teapot (596) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Teapot (596) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 15,
+    "details": []
+  },
+  "dps": {
+    "base": 23.077,
+    "details": [
+      {
+        "tooltip": "Aura on reload (ignite): {{VALUE}}",
+        "value": 1.538
+      },
+      {
+        "tooltip": "Aura on reload: {{VALUE}}",
+        "value": 3.846
+      }
+    ]
+  },
+  "fireRate": 92.308,
+  "force": {
+    "base": 7,
+    "details": []
+  },
+  "magazineSize": 12,
+  "maxAmmo": 250,
+  "precision": 86.667,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 15,
+    "dps": 23.077,
+    "force": 7,
+    "id": "Teapot_Projectile_Final",
+    "isFinalBuff": true,
+    "range": 1000,
+    "spawnWeight": 1,
+    "speed": 20
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.4,
+    "finalProjectile": "Teapot_Projectile_Final",
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 15,
+        "dps": 23.077,
+        "force": 7,
+        "id": "Teapot_Projectile_Final",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 8.5,
+        "dps": 13.077,
+        "force": 7,
+        "homingAngularVelocity": 180,
+        "homingRadius": 2,
+        "id": "Teapot_Projectile",
+        "isHoming": true,
+        "range": 1000,
+        "speed": 20
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 1.538,
+    "spread": 4,
+    "timeBetweenShots": 0.4
+  },
+  "range": "long-range",
+  "reloadTime": 3,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Teapot (596) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 9.042,
+    "details": []
+  },
+  "dps": {
+    "base": 13.91,
+    "details": [
+      {
+        "tooltip": "Aura on reload (ignite): {{VALUE}}",
+        "value": 1.538
+      },
+      {
+        "tooltip": "Aura on reload: {{VALUE}}",
+        "value": 3.846
+      }
+    ]
+  },
+  "fireRate": 92.308,
+  "force": {
+    "base": 7,
+    "details": []
+  },
+  "magazineSize": 12,
+  "maxAmmo": 250,
+  "precision": 86.667,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 9.042,
+    "dps": 13.91,
+    "force": 7,
+    "homingAngularVelocity": 165,
+    "homingRadius": 1.833,
+    "id": "Teapot_Projectile,Teapot_Projectile_Final",
+    "isFinalBuff": true,
+    "isHoming": true,
+    "range": 1000,
+    "spawnWeight": 11,
+    "speed": 20
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.4,
+    "finalProjectileCount": 1,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 15,
+        "dps": 23.077,
+        "force": 7,
+        "id": "Teapot_Projectile_Final",
+        "isFinalBuff": true,
+        "range": 1000,
+        "spawnWeight": 1,
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 9.042,
+        "dps": 13.91,
+        "force": 7,
+        "homingAngularVelocity": 165,
+        "homingRadius": 1.833,
+        "id": "Teapot_Projectile,Teapot_Projectile_Final",
+        "isFinalBuff": true,
+        "isHoming": true,
+        "range": 1000,
+        "spawnWeight": 11,
+        "speed": 20
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 1.538,
+    "spread": 4,
+    "timeBetweenShots": 0.4
+  },
+  "range": "long-range",
+  "reloadTime": 3,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
 exports[`Gun > Teapot (596) > modes 1`] = `
 "[
   {
@@ -58999,6 +62718,21 @@ exports[`Gun > Teapot (596) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.4,
+        "finalProjectile": "Teapot_Projectile_Final",
+        "finalProjectileCount": 1,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 15,
+            "dps": 23.077,
+            "force": 7,
+            "id": "Teapot_Projectile_Final",
+            "isFinalBuff": true,
+            "range": 1000,
+            "spawnWeight": 1,
+            "speed": 20
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [],
@@ -68510,7 +72244,7 @@ exports[`Gun > Winchester Rifle (181) > modes 1`] = `
 ]"
 `;
 
-exports[`Gun > Wind Up Gun (334) > [variants=0-A-A,0-0-0] 1`] = `
+exports[`Gun > Wind Up Gun (334) > [variants=0-0-0] 1`] = `
 "{
   "damage": {
     "base": 5,
@@ -68562,6 +72296,21 @@ exports[`Gun > Wind Up Gun (334) > [variants=0-A-A,0-0-0] 1`] = `
     "burstCooldownTime": 0.2,
     "burstShotCount": 3,
     "cooldownTime": 0.13,
+    "finalProjectile": "Wind_Up_Gun_Final_Projectile",
+    "finalProjectileCount": 10,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 2.5,
+        "dps": 12.195,
+        "force": 0,
+        "id": "Wind_Up_Gun_Final_Projectile",
+        "isFinalDebuff": true,
+        "range": 30,
+        "spawnWeight": 10,
+        "speed": 20
+      }
+    ],
     "projectiles": [
       {
         "additionalDamage": [
@@ -68592,6 +72341,185 @@ exports[`Gun > Wind Up Gun (334) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Wind Up Gun (334) > [variants=0-0-F0] 1`] = `
+"{
+  "damage": {
+    "base": 2.5,
+    "details": []
+  },
+  "dps": {
+    "base": 12.195,
+    "details": []
+  },
+  "fireRate": 292.683,
+  "force": {
+    "base": 0,
+    "details": []
+  },
+  "magazineSize": 20,
+  "maxAmmo": 600,
+  "precision": 73.333,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 2.5,
+    "dps": 12.195,
+    "force": 0,
+    "id": "Wind_Up_Gun_Final_Projectile",
+    "isFinalDebuff": true,
+    "range": 30,
+    "spawnWeight": 10,
+    "speed": 20
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.13,
+    "finalProjectile": "Wind_Up_Gun_Final_Projectile",
+    "finalProjectileCount": 10,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 2.5,
+        "dps": 12.195,
+        "force": 0,
+        "id": "Wind_Up_Gun_Final_Projectile",
+        "isFinalDebuff": true,
+        "range": 30,
+        "spawnWeight": 10,
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 5,
+            "dps": 24.39,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 5,
+        "dps": 24.39,
+        "force": 10,
+        "id": "Wind_Up_Gun_Projectile",
+        "penetration": 1,
+        "range": 35,
+        "speed": 30
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 4.878,
+    "spread": 8,
+    "timeBetweenShots": 0.13
+  },
+  "range": "mid-range",
+  "reloadTime": 1.5,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Wind Up Gun (334) > [variants=0-A-A] 1`] = `
+"{
+  "damage": {
+    "base": 3.75,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 2.5
+      }
+    ]
+  },
+  "dps": {
+    "base": 18.293,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 12.195
+      }
+    ]
+  },
+  "fireRate": 292.683,
+  "force": {
+    "base": 5,
+    "details": []
+  },
+  "magazineSize": 20,
+  "maxAmmo": 600,
+  "precision": 73.333,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 2.5,
+        "dps": 12.195,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 3.75,
+    "dps": 18.293,
+    "force": 5,
+    "id": "Wind_Up_Gun_Projectile,Wind_Up_Gun_Final_Projectile",
+    "isFinalDebuff": true,
+    "penetration": 0.5,
+    "range": 32.5,
+    "spawnWeight": 10,
+    "speed": 25
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.13,
+    "finalProjectileCount": 10,
+    "finalProjectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 2.5,
+        "dps": 12.195,
+        "force": 0,
+        "id": "Wind_Up_Gun_Final_Projectile",
+        "isFinalDebuff": true,
+        "range": 30,
+        "spawnWeight": 10,
+        "speed": 20
+      }
+    ],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 2.5,
+            "dps": 12.195,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 3.75,
+        "dps": 18.293,
+        "force": 5,
+        "id": "Wind_Up_Gun_Projectile,Wind_Up_Gun_Final_Projectile",
+        "isFinalDebuff": true,
+        "penetration": 0.5,
+        "range": 32.5,
+        "spawnWeight": 10,
+        "speed": 25
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 4.878,
+    "spread": 8,
+    "timeBetweenShots": 0.13
+  },
+  "range": "mid-range",
+  "reloadTime": 1.5,
+  "shootStyle": "Automatic"
+}"
+`;
+
 exports[`Gun > Wind Up Gun (334) > modes 1`] = `
 "[
   {
@@ -68603,6 +72531,21 @@ exports[`Gun > Wind Up Gun (334) > modes 1`] = `
         "burstCooldownTime": 0.2,
         "burstShotCount": 3,
         "cooldownTime": 0.13,
+        "finalProjectile": "Wind_Up_Gun_Final_Projectile",
+        "finalProjectileCount": 10,
+        "finalProjectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 2.5,
+            "dps": 12.195,
+            "force": 0,
+            "id": "Wind_Up_Gun_Final_Projectile",
+            "isFinalDebuff": true,
+            "range": 30,
+            "spawnWeight": 10,
+            "speed": 20
+          }
+        ],
         "projectiles": [
           {
             "additionalDamage": [

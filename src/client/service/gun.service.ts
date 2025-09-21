@@ -170,22 +170,30 @@ export class GunService {
       finalVolley.shotsPerSecond = Math.max(finalVolley.shotsPerSecond, module.shotsPerSecond);
 
       const projectile = ProjectileService.aggregateProjectile(module.projectiles, "random");
+
       if (module.finalProjectiles.length > 0) {
         const finalProjectileCount = module.finalProjectileCount ?? 1;
         const normalProjectile: TResolvedProjectile = {
           ...projectile,
           spawnWeight: magazineSize - finalProjectileCount,
         };
-        const projectilesWithFinal: TResolvedProjectile[] = [normalProjectile, ...module.finalProjectiles];
-
+        const finalProjectile = ProjectileService.aggregateProjectile(module.finalProjectiles, "volley"); // final projectiles are either single or with spawned projectiles
+        if (finalProjectile.damage > normalProjectile.damage) finalProjectile.isFinalBuff = true;
+        else finalProjectile.isFinalDebuff = true;
         finalVolley.finalProjectiles.push(...module.finalProjectiles);
-        finalVolley.projectiles.push(ProjectileService.aggregateProjectile(projectilesWithFinal, "random"));
+        finalVolley.projectiles.push(
+          ProjectileService.aggregateProjectile([normalProjectile, finalProjectile], "random"),
+        );
       } else {
-        finalVolley.projectiles.push(ProjectileService.aggregateProjectile(module.projectiles, "random"));
+        finalVolley.projectiles.push(projectile);
       }
     }
 
     finalVolley.projectiles = [ProjectileService.aggregateProjectile(finalVolley.projectiles, "volley")];
+
+    if (finalVolley.finalProjectiles.length === 0) {
+      delete finalVolley.finalProjectileCount;
+    }
 
     return finalVolley;
   }
@@ -532,13 +540,6 @@ export class GunService {
           projectiles: [],
           finalProjectiles: [],
         };
-        if (module.finalProjectile) {
-          resolvedModule.finalProjectiles = this.resolveProjectile(module.finalProjectile, shotsPerSecond, timingInput); // TODO: final + spawned projectiles?
-          resolvedModule.finalProjectiles.forEach((p) => {
-            p.spawnWeight = module.finalProjectileCount ?? 1;
-            p.isFinal = true;
-          });
-        }
 
         const projectileIds = uniq(module.projectiles);
         const pCountLookup = countBy(projectileIds, (p) => p);
@@ -561,6 +562,33 @@ export class GunService {
             pCountLookup[p2.id] = spawnCount;
           }
         }
+
+        if (module.finalProjectile) {
+          const pp = this.resolveProjectile(module.finalProjectile, shotsPerSecond, timingInput);
+          const pCountLookup = { [module.finalProjectile]: 1 };
+
+          for (const p2 of pp) {
+            if (!p2.spawnedBy) {
+              resolvedModule.finalProjectiles.push(p2);
+              continue;
+            }
+            const spawner = GameObjectService.getProjectile(p2.spawnedBy);
+            const spawnerCount = pCountLookup[p2.spawnedBy];
+            const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
+
+            for (let i = 0; i < spawnCount; i++) {
+              // spawned projectile is considered part of a volley, just a bit more delay than the spawner
+              resolvedModule.finalProjectiles.push({ ...p2 });
+            }
+            pCountLookup[p2.id] = spawnCount;
+          }
+          for (const p of resolvedModule.finalProjectiles) {
+            p.spawnWeight = module.finalProjectileCount ?? 1;
+            if (p.damage > resolvedModule.projectiles[0].damage) p.isFinalBuff = true;
+            else p.isFinalDebuff = true;
+          }
+        }
+
         resolvedVolley.push(resolvedModule, ...spawnedModules);
       }
 

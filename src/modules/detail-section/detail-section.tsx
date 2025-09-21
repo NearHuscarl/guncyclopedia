@@ -226,7 +226,6 @@ export function DetailSection() {
           <H3 className="relative top-[-2px]">Projectile Stats</H3>
           {!showProjectilePool && (
             <Volley
-              id={`${selectedGun.id}-${modeIndex}`}
               volley={selectedStats.mode.volley}
               finalProjectiles={selectedStats.mode.volley[0].finalProjectiles}
               projectileIndex={moduleIndex}
@@ -252,7 +251,6 @@ export function DetailSection() {
           )}
           {showProjectilePool && (
             <ProjectilePool
-              id={`${selectedGun.id}-${modeIndex}`}
               projectiles={selectedStats.projectileModule.projectiles}
               onBlur={() => setHoverProjectileIndex(-1)}
               onSelect={setSelectedProjectileIndex}

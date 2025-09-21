@@ -1,0 +1,74 @@
+[
+  [
+    {
+      "damage": {
+        "base": 5,
+        "details": [
+          {
+            "tooltip": "Base damage: {{VALUE}}",
+            "value": 5
+          }
+        ]
+      },
+      "dps": {
+        "base": 25,
+        "details": [
+          {
+            "tooltip": "Base damage: {{VALUE}}",
+            "value": 25
+          }
+        ]
+      },
+      "fireRate": 300,
+      "force": {
+        "base": 10,
+        "details": [
+          {
+            "tooltip": "Base force: {{VALUE}}",
+            "value": 10
+          }
+        ]
+      },
+      "id": 56,
+      "magazineSize": 6,
+      "maxAmmo": 350,
+      "precision": 83.333,
+      "projectile": {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 25,
+        "force": 10,
+        "id": "38_Special_Projectile",
+        "range": 35,
+        "speed": 23
+      },
+      "projectileModule": {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.07,
+        "finalProjectileCount": 0,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 25,
+            "force": 10,
+            "id": "38_Special_Projectile",
+            "range": 35,
+            "speed": 23
+          }
+        ],
+        "shootStyle": "SemiAutomatic",
+        "shotsPerSecond": 5,
+        "spread": 5,
+        "timeBetweenShots": 0.07
+      },
+      "range": "mid-range",
+      "reloadTime": 0.78,
+      "shootStyle": "SemiAutomatic"
+    },
+    ["0-A-A"]
+  ]
+]

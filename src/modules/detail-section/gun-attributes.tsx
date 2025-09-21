@@ -237,6 +237,7 @@ type TGunAttributesProps = {
 
 export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps) {
   const setPortraitAnimation = useGunStore((state) => state.setPortraitAnimation);
+  const setHoverFinalProjectile = useGunStore((state) => state.setHoverFinalProjectile);
   const homingLevel = ProjectileService.getHomingLevel(projectile);
 
   return (
@@ -762,31 +763,51 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           </TooltipContent>
         </Tooltip>
       )}
-      {(gunStats?.projectileModule.finalProjectiles.length || undefined) && (
-        <Tooltip delayDuration={TOOLTIP_DELAY}>
-          <TooltipTrigger>
-            <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              {(gunStats?.projectileModule.finalProjectileCount || 1) > 1 && (
-                <NumericValue className="text-rose-500">{gunStats?.projectileModule.finalProjectileCount}</NumericValue>
-              )}
-              <FinalProjectile size={20} className={"[&_path]:stroke-rose-500!"} />
-            </div>
-          </TooltipTrigger>
-          <TooltipContent>
-            <strong>Final Projectile</strong>
-            <br />
-            {(gunStats?.projectileModule.finalProjectileCount || 1) === 1 && (
-              <>The last projectile in the magazine is a bit different...</>
-            )}
-            {(gunStats?.projectileModule.finalProjectileCount || 1) > 1 && (
-              <>
-                The last <strong>{gunStats?.projectileModule.finalProjectileCount}</strong> projectiles in the magazine
-                are a bit different...
-              </>
-            )}
-          </TooltipContent>
-        </Tooltip>
-      )}
+      {(projectile.isFinalBuff || projectile.isFinalDebuff) &&
+        (() => {
+          const buffText = projectile.isFinalBuff ? "buffed" : "debuffed";
+          return (
+            <Tooltip delayDuration={TOOLTIP_DELAY}>
+              <TooltipTrigger
+                onMouseEnter={() => setHoverFinalProjectile(true)}
+                onMouseLeave={() => setHoverFinalProjectile(false)}
+              >
+                <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
+                  {(gunStats?.projectileModule.finalProjectileCount || 1) > 1 && (
+                    <NumericValue
+                      className={clsx({
+                        "text-rose-500": projectile.isFinalBuff,
+                        "text-violet-500": !projectile.isFinalBuff,
+                      })}
+                    >
+                      {gunStats?.projectileModule.finalProjectileCount}
+                    </NumericValue>
+                  )}
+                  <FinalProjectile
+                    size={20}
+                    className={clsx({
+                      "[&_path]:stroke-rose-500!": projectile.isFinalBuff,
+                      "[&_path]:stroke-violet-500!": !projectile.isFinalBuff,
+                    })}
+                  />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <strong>Final Projectile</strong>
+                <br />
+                {(gunStats?.projectileModule.finalProjectileCount || 1) === 1 && (
+                  <>The last projectile in the magazine is {buffText}</>
+                )}
+                {(gunStats?.projectileModule.finalProjectileCount || 1) > 1 && (
+                  <>
+                    The last <strong>{gunStats?.projectileModule.finalProjectileCount}</strong> projectiles in the
+                    magazine are {buffText}
+                  </>
+                )}
+              </TooltipContent>
+            </Tooltip>
+          );
+        })()}
       {(projectile.linkMaxDistance || undefined) && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
