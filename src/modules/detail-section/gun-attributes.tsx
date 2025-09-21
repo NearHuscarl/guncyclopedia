@@ -440,6 +440,20 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           </TooltipContent>
         </Tooltip>
       )}
+      {gun?.attribute.guNNer && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger className={ATTRIBUTE_CLASSES}>
+            <Skull size={18} className="stroke-blue-400" />
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-80">
+            <strong>GuNNer</strong>
+            <br />
+            Taking damage consumes <strong>{gun.attribute.guNNerAmmoLossOnDamage}</strong> ammo and spawns a blue skull.
+            Picking it up heals <strong>0.5</strong> healths. The skull vanishes after{" "}
+            <strong>{gun.attribute.guNNerSkullLifespan}</strong> seconds or if damage is taken again.
+          </TooltipContent>
+        </Tooltip>
+      )}
       {gun?.name === "Directional Pad" && (
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>

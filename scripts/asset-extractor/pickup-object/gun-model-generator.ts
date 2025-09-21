@@ -488,6 +488,7 @@ export class GunModelGenerator {
     }
     if (projDto.matterAntimatterProjModifier?.isAntimatter) {
       proj.antimatter = true;
+      this._featureFlags.add("hasSpecialProjectiles");
     }
     if (projDto.devolverModifier) {
       proj.devolveChance = projDto.devolverModifier.chanceToDevolve;
@@ -745,6 +746,11 @@ export class GunModelGenerator {
 
       inputCombo: Boolean(gunDto.trackInputDirectionalPad) || undefined,
       lifeOrb: Boolean(gunDto.lifeOrbGunModifier) || undefined,
+
+      guNNer: Boolean(gunDto.gunnerGunController) || undefined,
+      guNNerSkullLifespan: gunDto.gunnerGunController?.Lifespan,
+      guNNerAmmoLossOnDamage: gunDto.gunnerGunController?.AmmoLossOnDamage,
+
       trickGun: Boolean(gunDto.gun.IsTrickGun) || undefined,
     };
 

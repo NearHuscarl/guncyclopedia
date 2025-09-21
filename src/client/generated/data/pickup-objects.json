@@ -11942,6 +11942,7 @@
     "reloadTime": 1.5,
     "featureFlags": [
       "hasExplosiveProjectile",
+      "hasSpecialProjectiles",
       "hasMultipleDamageSources"
     ],
     "attribute": {},
@@ -27678,8 +27679,14 @@
     ],
     "maxAmmo": 200,
     "reloadTime": 1.5,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "guNNer": true,
+      "guNNerSkullLifespan": 3,
+      "guNNerAmmoLossOnDamage": 40
+    },
     "colors": [
       "sky"
     ],

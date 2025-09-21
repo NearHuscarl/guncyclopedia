@@ -23,6 +23,9 @@ export type TProjectileModule = {
   depleteAmmo?: boolean;
   projectiles: TProjectileSequence;
   finalProjectile?: TProjectileId;
+  /**
+   * The last `numberOfFinalProjectiles` projectiles in a magazine are replaced with `finalProjectile`. Default is 1.
+   */
   finalProjectileCount?: number;
 };
 export const ProjectileModule = z.object({
@@ -163,6 +166,15 @@ export const Gun = PickupObject.extend({
     spawnChestOnDepletion: z.boolean().optional(),
     inputCombo: z.boolean().optional(),
     lifeOrb: z.boolean().optional(),
+
+    /**
+     * Spawns a skull to heal the player when they're taking damage.
+     *
+     * https://enterthegungeon.fandom.com/wiki/GuNNER
+     */
+    guNNer: z.boolean().optional(),
+    guNNerSkullLifespan: z.number().optional(),
+    guNNerAmmoLossOnDamage: z.number().optional(),
 
     /**
      * Gun that switch between 2 firing modes after a reload

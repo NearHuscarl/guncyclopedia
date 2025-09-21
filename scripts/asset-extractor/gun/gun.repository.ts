@@ -12,6 +12,7 @@ import type {
   TGunData,
   TGunDto,
   TGunExtraSettingSynergyProcessorData,
+  TGunnerGunControllerData,
   TLifeOrbGunModifierData,
   TPredatorGunControllerData,
   TSpawnItemOnGunDepletionData,
@@ -56,6 +57,9 @@ export class GunRepository {
   }
   private _isPredatorGunControllerData(obj: unknown): obj is TPredatorGunControllerData {
     return this._assetService.isMonoScript(obj, "PredatorGunController.cs.meta");
+  }
+  private _isGunnerGunControllerData(obj: unknown): obj is TGunnerGunControllerData {
+    return this._assetService.isMonoScript(obj, "GunnerGunController.cs.meta");
   }
   private _isGunExtraSettingSynergyProcessorData(obj: unknown): obj is TGunExtraSettingSynergyProcessorData {
     return this._assetService.isMonoScript(obj, "GunExtraSettingSynergyProcessor.cs.meta");
@@ -109,6 +113,8 @@ export class GunRepository {
           res.spawnItemOnGunDepletion = component;
         } else if (this._isPredatorGunControllerData(component)) {
           res.predatorGunController = component;
+        } else if (this._isGunnerGunControllerData(component)) {
+          res.gunnerGunController = component;
         } else if (this._isGunExtraSettingSynergyProcessorData(component)) {
           res.gunExtraSettingSynergyProcessor = component;
         } else if (this._isAuraOnReloadModifierData(component)) {

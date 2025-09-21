@@ -199,6 +199,11 @@ const PredatorGunControllerData = z.object({
   HomingAngularVelocity: z.number(),
 });
 
+const GunnerGunControllerData = z.object({
+  Lifespan: z.number(),
+  AmmoLossOnDamage: z.number(),
+});
+
 const GunExtraSettingSynergyProcessorData = z.object({
   ReflectedBulletDamageModifier: z.number(),
 });
@@ -219,6 +224,7 @@ export const GunDto = z.object({
   trackInputDirectionalPad: TrackInputDirectionalPadData.optional(),
   spawnItemOnGunDepletion: SpawnItemOnGunDepletionData.optional(),
   predatorGunController: PredatorGunControllerData.optional(),
+  gunnerGunController: GunnerGunControllerData.optional(),
   gunExtraSettingSynergyProcessor: GunExtraSettingSynergyProcessorData.optional(),
   auraOnReloadModifier: AuraOnReloadModifierData.optional(),
   lifeOrbGunModifier: LifeOrbGunModifierData.optional(),
@@ -230,6 +236,7 @@ export type TGunData = z.input<typeof GunData>;
 export type TTrackInputDirectionalPadData = z.input<typeof TrackInputDirectionalPadData>;
 export type TSpawnItemOnGunDepletionData = z.input<typeof SpawnItemOnGunDepletionData>;
 export type TPredatorGunControllerData = z.input<typeof PredatorGunControllerData>;
+export type TGunnerGunControllerData = z.input<typeof GunnerGunControllerData>;
 export type TGunExtraSettingSynergyProcessorData = z.input<typeof GunExtraSettingSynergyProcessorData>;
 export type TAuraOnReloadModifierData = z.input<typeof AuraOnReloadModifierData>;
 export type TLifeOrbGunModifierData = z.input<typeof LifeOrbGunModifierData>;

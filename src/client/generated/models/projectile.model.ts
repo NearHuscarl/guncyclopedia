@@ -73,9 +73,8 @@ export const Projectile = z.object({
   force: z.number(),
 
   /**
-   * The weight value combined with total spawn weight from other projectiles in the same module to determine
-   * the chance of being selected when firing a projectile.
-   * Default is `1`.
+   * Chance to spawn this projectile in the projectile pool if there are multiple projectiles per module.
+   * Default is `1` (always spawn).
    */
   spawnWeight: z.number().nonnegative().optional(),
 

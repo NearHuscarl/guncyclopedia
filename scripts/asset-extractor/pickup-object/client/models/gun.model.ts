@@ -168,6 +168,15 @@ export const Gun = PickupObject.extend({
     lifeOrb: z.boolean().optional(),
 
     /**
+     * Spawns a skull to heal the player when they're taking damage.
+     *
+     * https://enterthegungeon.fandom.com/wiki/GuNNER
+     */
+    guNNer: z.boolean().optional(),
+    guNNerSkullLifespan: z.number().optional(),
+    guNNerAmmoLossOnDamage: z.number().optional(),
+
+    /**
      * Gun that switch between 2 firing modes after a reload
      */
     trickGun: z.boolean().optional(),
