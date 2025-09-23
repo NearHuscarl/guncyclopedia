@@ -513,6 +513,82 @@ export class GunService {
       return (p.spawnLevel ?? 0) + 1;
     }
 
+    static resolveModule(
+      module: TProjectileModule,
+      gunInput: { reloadTime: number; chargeTime?: number; magazineSize: number },
+    ): TResolvedProjectileModule[] {
+      const timingInput: TTimingInput = {
+        shootStyle: module.shootStyle,
+        magazineSize: GunService.getMagSize(gunInput.magazineSize, module),
+        reloadTime: gunInput.reloadTime,
+        chargeTime: gunInput.chargeTime,
+        cooldownTime: module.cooldownTime,
+        burstCooldownTime: module.burstCooldownTime,
+        burstShotCount: module.burstShotCount,
+      };
+      const shotsPerSecond = GunService.getEstimatedShotsPerSecond(timingInput);
+      const timeBetweenShots = GunService.getTimeBetweenShot(timingInput);
+      const spawnedModules: TResolvedProjectileModule[] = [];
+      const resolvedModule: TResolvedProjectileModule = {
+        ...module,
+        ammoCost: module.ammoCost ?? 1,
+        timeBetweenShots,
+        shotsPerSecond,
+        projectiles: [],
+        finalProjectiles: [],
+      };
+
+      const projectileIds = uniq(module.projectiles);
+      const pCountLookup = countBy(projectileIds, (p) => p);
+
+      for (const id of projectileIds) {
+        const pp = this.resolveProjectile(id, shotsPerSecond, timingInput);
+
+        for (const p2 of pp) {
+          if (!p2.spawnedBy) {
+            resolvedModule.projectiles.push(p2);
+            continue;
+          }
+          const spawner = GameObjectService.getProjectile(p2.spawnedBy);
+          const spawnerCount = pCountLookup[p2.spawnedBy];
+          const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
+          for (let i = 0; i < spawnCount; i++) {
+            // spawned projectile is considered part of a volley, just a bit more delay than the spawner
+            spawnedModules.push({ ...resolvedModule, projectiles: [p2] });
+          }
+          pCountLookup[p2.id] = spawnCount;
+        }
+      }
+
+      if (module.finalProjectile) {
+        const pp = this.resolveProjectile(module.finalProjectile, shotsPerSecond, timingInput);
+        const pCountLookup = { [module.finalProjectile]: 1 };
+
+        for (const p2 of pp) {
+          if (!p2.spawnedBy) {
+            resolvedModule.finalProjectiles.push(p2);
+            continue;
+          }
+          const spawner = GameObjectService.getProjectile(p2.spawnedBy);
+          const spawnerCount = pCountLookup[p2.spawnedBy];
+          const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
+
+          for (let i = 0; i < spawnCount; i++) {
+            // spawned projectile is considered part of a volley, just a bit more delay than the spawner
+            resolvedModule.finalProjectiles.push({ ...p2 });
+          }
+          pCountLookup[p2.id] = spawnCount;
+        }
+        for (const p of resolvedModule.finalProjectiles) {
+          p.spawnWeight = module.finalProjectileCount ?? 1;
+          if (p.damage > resolvedModule.projectiles[0].damage) p.isFinalBuff = true;
+          else p.isFinalDebuff = true;
+        }
+      }
+
+      return [resolvedModule, ...spawnedModules];
+    }
+
     static resolveMode(
       mode: TProjectileMode,
       gunInput: { reloadTime: number; chargeTime?: number; magazineSize: number },
@@ -520,76 +596,7 @@ export class GunService {
       const resolvedVolley: TResolvedProjectileModule[] = [];
 
       for (const module of mode.volley) {
-        const timingInput: TTimingInput = {
-          shootStyle: module.shootStyle,
-          magazineSize: GunService.getMagSize(gunInput.magazineSize, module),
-          reloadTime: gunInput.reloadTime,
-          chargeTime: gunInput.chargeTime,
-          cooldownTime: module.cooldownTime,
-          burstCooldownTime: module.burstCooldownTime,
-          burstShotCount: module.burstShotCount,
-        };
-        const shotsPerSecond = GunService.getEstimatedShotsPerSecond(timingInput);
-        const timeBetweenShots = GunService.getTimeBetweenShot(timingInput);
-        const spawnedModules: TResolvedProjectileModule[] = [];
-        const resolvedModule: TResolvedProjectileModule = {
-          ...module,
-          ammoCost: module.ammoCost ?? 1,
-          timeBetweenShots,
-          shotsPerSecond,
-          projectiles: [],
-          finalProjectiles: [],
-        };
-
-        const projectileIds = uniq(module.projectiles);
-        const pCountLookup = countBy(projectileIds, (p) => p);
-
-        for (const id of projectileIds) {
-          const pp = this.resolveProjectile(id, shotsPerSecond, timingInput);
-
-          for (const p2 of pp) {
-            if (!p2.spawnedBy) {
-              resolvedModule.projectiles.push(p2);
-              continue;
-            }
-            const spawner = GameObjectService.getProjectile(p2.spawnedBy);
-            const spawnerCount = pCountLookup[p2.spawnedBy];
-            const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
-            for (let i = 0; i < spawnCount; i++) {
-              // spawned projectile is considered part of a volley, just a bit more delay than the spawner
-              spawnedModules.push({ ...resolvedModule, projectiles: [p2] });
-            }
-            pCountLookup[p2.id] = spawnCount;
-          }
-        }
-
-        if (module.finalProjectile) {
-          const pp = this.resolveProjectile(module.finalProjectile, shotsPerSecond, timingInput);
-          const pCountLookup = { [module.finalProjectile]: 1 };
-
-          for (const p2 of pp) {
-            if (!p2.spawnedBy) {
-              resolvedModule.finalProjectiles.push(p2);
-              continue;
-            }
-            const spawner = GameObjectService.getProjectile(p2.spawnedBy);
-            const spawnerCount = pCountLookup[p2.spawnedBy];
-            const spawnCount = (spawner.spawnProjectileMaxNumber ?? spawner.spawnProjectileNumber!) * spawnerCount;
-
-            for (let i = 0; i < spawnCount; i++) {
-              // spawned projectile is considered part of a volley, just a bit more delay than the spawner
-              resolvedModule.finalProjectiles.push({ ...p2 });
-            }
-            pCountLookup[p2.id] = spawnCount;
-          }
-          for (const p of resolvedModule.finalProjectiles) {
-            p.spawnWeight = module.finalProjectileCount ?? 1;
-            if (p.damage > resolvedModule.projectiles[0].damage) p.isFinalBuff = true;
-            else p.isFinalDebuff = true;
-          }
-        }
-
-        resolvedVolley.push(resolvedModule, ...spawnedModules);
+        resolvedVolley.push(...this.resolveModule(module, gunInput));
       }
 
       resolvedVolley.sort((a, b) => this.getSortWeight(a.projectiles[0]) - this.getSortWeight(b.projectiles[0]));
@@ -597,6 +604,14 @@ export class GunService {
       return { ...mode, volley: resolvedVolley };
     }
   };
+
+  static getMaxAmmo(gun: TGun, modeIndex: number) {
+    if (gun.featureFlags.includes("hasInfiniteAmmo")) {
+      return ProjectileService.MAX_MAX_AMMO;
+    }
+
+    return gun.projectileModes[modeIndex]?.maxAmmo ?? gun.maxAmmo;
+  }
 
   static computeGunStats(
     gun: TGun,
@@ -606,7 +621,7 @@ export class GunService {
     finalProjectileIndex = -1,
   ): TGunStats {
     const selectSpecificProjectile = moduleIndex !== -1 || projectileIndex !== -1;
-    const maxAmmo = gun.featureFlags.includes("hasInfiniteAmmo") ? ProjectileService.MAX_MAX_AMMO : gun.maxAmmo;
+    const maxAmmo = this.getMaxAmmo(gun, modeIndex);
     const reloadTime = gun.reloadTime;
     const modeInput = gun.projectileModes[modeIndex] ?? gun.projectileModes[0];
     const timingInput = { reloadTime, chargeTime: modeInput.chargeTime, magazineSize: modeInput.magazineSize };

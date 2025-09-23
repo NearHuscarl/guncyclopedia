@@ -8539,6 +8539,9 @@
     "additionalDamage": [],
     "penetration": 5,
     "canPenetrateObjects": true,
+    "restoreAmmoOnHit": true,
+    "chanceToRestoreAmmoOnHit": 1,
+    "ammoToRestoreOnHit": 1,
     "animation": {
       "name": "hld_projectile",
       "fps": 12,

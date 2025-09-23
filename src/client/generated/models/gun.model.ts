@@ -53,6 +53,7 @@ export interface TProjectileMode {
   mode: string;
   chargeTime?: number;
   magazineSize: number;
+  maxAmmo?: number;
   volley: TProjectileModule[];
 }
 
@@ -60,6 +61,10 @@ export const ProjectileMode = z.object({
   mode: z.string(),
   chargeTime: z.number().optional(),
   magazineSize: z.number(),
+  /**
+   * Overrides `Gun.maxAmmo` if exists.
+   */
+  maxAmmo: z.number().optional(),
   volley: z.array(ProjectileModule),
 }) satisfies z.ZodType<TProjectileMode>;
 

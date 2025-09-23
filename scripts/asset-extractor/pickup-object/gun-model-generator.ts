@@ -475,6 +475,17 @@ export class GunModelGenerator {
       });
       this._featureFlags.add("hasSpecialProjectiles");
     }
+    if (projDto.restoreAmmoToGunModifier) {
+      if (!projDto.restoreAmmoToGunModifier.RequiredSynergy) {
+        proj.restoreAmmoOnHit = projDto.restoreAmmoToGunModifier.ChanceToWork > 0;
+        proj.chanceToRestoreAmmoOnHit = projDto.restoreAmmoToGunModifier.ChanceToWork;
+        proj.ammoToRestoreOnHit = projDto.restoreAmmoToGunModifier.AmmoToGain;
+        this._featureFlags.add("hasSpecialProjectiles");
+      } else {
+        // TODO: handle synergy
+        // this._featureFlags.add("hasSpecialProjectiles");
+      }
+    }
 
     if (projDto.id === "GrapplingHook" && gunDto.trackInputDirectionalPad) {
       proj.damage = gunDto.trackInputDirectionalPad.grappleModule.DamageToEnemies;
@@ -532,6 +543,17 @@ export class GunModelGenerator {
 
   private _p(projectileId: TProjectileId): TProjectile {
     return this._gunProjectiles[projectileId];
+  }
+
+  private _hasProjectile(gunDto: TGunDto, predicate: (p: TProjectileDto) => boolean): boolean {
+    const { projectileModules } = this._getProjectileModules(gunDto);
+    return projectileModules.some((m) =>
+      m.projectiles.some((p) => {
+        if (!this._assetService.referenceExists(p)) return false;
+        const projDto = this._getProjectileDto(gunDto, p);
+        return predicate(projDto);
+      }),
+    );
   }
 
   private _buildModeFromProjectileModules(
@@ -647,6 +669,23 @@ export class GunModelGenerator {
       ];
     }
 
+    if (
+      // TODO: handle synergy
+      this._hasProjectile(gunDto, (p) => !!p.restoreAmmoToGunModifier && !p.restoreAmmoToGunModifier.RequiresSynergy)
+    ) {
+      const maxAmmoLookup = {
+        "0% Accuracy": gunDto.gun.maxAmmo,
+        "60% Accuracy": gunDto.gun.maxAmmo / (1 - 0.6),
+        "90% Accuracy": gunDto.gun.maxAmmo / (1 - 0.9),
+        "100% Accuracy": 10_000,
+      };
+      return Object.entries(maxAmmoLookup).map(([modeName]) => {
+        const m = this._buildModeFromProjectileModules(modeName, gunDto, defaultModule, projectileModules);
+        m.maxAmmo = maxAmmoLookup[modeName as keyof typeof maxAmmoLookup];
+        return m;
+      });
+    }
+
     // TODO: handle fucking Starpew volley
     const chargeModuleDtosLookup = new Map<number, TProjectileModuleDto[]>();
     const normalModuleDtos: TProjectileModuleDto[] = [];
@@ -692,7 +731,6 @@ export class GunModelGenerator {
     // TODO: Synergies: link 2 guns (e.g. NonSynergyGunId -> (SynergyGunId, PartnerGunID))
     //    ExportedProject/Assets/data/AAA_AdvSynergyManager.asset
     //    ExportedProject/Assets/Scripts/Assembly-CSharp/CustomSynergyType.cs
-    // TODO: JK-47: fear effect
     // TODO: add a badge next to best stat: https://fontawesome.com/icons/medal?f=classic&s=solid
     // TODO: Rad gun: update modified reload time & animation speed on each level
     // TODO: black hole gun reload sprites are not anchored correctly. Investigate reloadOffset

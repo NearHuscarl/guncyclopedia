@@ -78,6 +78,7 @@ import { LifeOrb } from "@/components/icons/life-orb";
 import { Three } from "@/components/icons/three";
 import { FinalProjectile } from "@/components/icons/final-projectile";
 import { Fear } from "@/components/icons/fear";
+import { RestoreAmmoOnHit } from "@/components/icons/restore-ammo-on-hit";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -604,6 +605,20 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <strong>Blank Projectile</strong>
             <br />
             Triggers a blank effect on collision
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {projectile.restoreAmmoOnHit && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <RestoreAmmoOnHit />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Restore Ammo on Hit</strong>
+            <br />
+            Hitting an enemy will restore <strong>{projectile.ammoToRestoreOnHit}</strong> ammo.
           </TooltipContent>
         </Tooltip>
       )}

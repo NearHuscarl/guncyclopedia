@@ -238,6 +238,10 @@ export const Projectile = z.object({
   linkMaxDistance: z.number().optional(),
   linkDamagePerHit: z.number().optional(),
 
+  restoreAmmoOnHit: z.boolean().optional(),
+  chanceToRestoreAmmoOnHit: Percentage.optional(),
+  ammoToRestoreOnHit: z.number().optional(),
+
   /**
    * Some projectiles are invisible hence no animation.
    */

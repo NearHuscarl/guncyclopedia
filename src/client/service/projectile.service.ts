@@ -242,6 +242,8 @@ export class ProjectileService {
     wishesToBuff: ["max", "max"],
     linkDamagePerHit: ["avg", "sum"],
     linkMaxDistance: ["max", "max"],
+    ammoToRestoreOnHit: ["max", "max"],
+    chanceToRestoreAmmoOnHit: ["avg", (p) => this.calculateVolleyChance(p, (proj) => proj.chanceToRestoreAmmoOnHit)],
     spawnWeight: [],
   };
 
@@ -267,6 +269,7 @@ export class ProjectileService {
     isBee: "or",
     isFinalBuff: "or",
     isFinalDebuff: "or",
+    restoreAmmoOnHit: "or",
   };
   // All string keys that are aggregated into arrays of string
   private static readonly _sAggregateConfig: StringAggregateConfig = {

@@ -33,6 +33,7 @@ import type {
   TReverseBeamControllerData,
   TThreeWishesBuffData,
   TChainLightningModifierData,
+  TRestoreAmmoToGunModifierData,
 } from "./projectile.dto.ts";
 
 type Guid = string;
@@ -99,6 +100,9 @@ export class ProjectileRepository {
   }
   private _isChainLightningModifierData(obj: unknown): obj is TChainLightningModifierData {
     return this._assetService.isMonoScript(obj, "ChainLightningModifier.cs.meta");
+  }
+  private _isRestoreAmmoToGunModifierData(obj: unknown): obj is TRestoreAmmoToGunModifierData {
+    return this._assetService.isMonoScript(obj, "RestoreAmmoToGunModifier.cs.meta");
   }
   private _isModifyProjectileSynergyProcessorData(obj: unknown): obj is TModifyProjectileSynergyProcessorData {
     return this._assetService.isMonoScript(obj, "ModifyProjectileSynergyProcessor.cs.meta");
@@ -193,6 +197,8 @@ export class ProjectileRepository {
           }
         } else if (this._isChainLightningModifierData(component)) {
           res.chainLightningModifier = component;
+        } else if (this._isRestoreAmmoToGunModifierData(component)) {
+          res.restoreAmmoToGunModifier = component;
         } else if (this._isModifyProjectileSynergyProcessorData(component)) {
           res.modifyProjectileSynergyProcessor = component;
         } else if (this._isBasicBeamControllerData(component)) {

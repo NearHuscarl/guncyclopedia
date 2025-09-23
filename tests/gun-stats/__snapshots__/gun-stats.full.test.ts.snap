@@ -30346,13 +30346,16 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
         "source": "pierce"
       }
     ],
+    "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
+    "chanceToRestoreAmmoOnHit": 1,
     "damage": 20,
     "dps": 81.633,
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
     "range": 20,
+    "restoreAmmoOnHit": true,
     "speed": 26
   },
   "projectileModule": {
@@ -30371,13 +30374,292 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
             "source": "pierce"
           }
         ],
+        "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
+        "chanceToRestoreAmmoOnHit": 1,
         "damage": 20,
         "dps": 81.633,
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
         "range": 20,
+        "restoreAmmoOnHit": true,
+        "speed": 26
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4.082,
+    "spread": 4,
+    "timeBetweenShots": 0.12
+  },
+  "range": "mid-range",
+  "reloadTime": 1.5,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Hyper Light Blaster (504) > [variants=1-A-A,1-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 20,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 60
+      }
+    ]
+  },
+  "dps": {
+    "base": 81.633,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 244.898
+      }
+    ]
+  },
+  "fireRate": 244.898,
+  "force": {
+    "base": 6,
+    "details": []
+  },
+  "id": 504,
+  "magazineSize": 12,
+  "maxAmmo": 30,
+  "precision": 86.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 60,
+        "dps": 244.898,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "ammoToRestoreOnHit": 1,
+    "canPenetrateObjects": true,
+    "chanceToRestoreAmmoOnHit": 1,
+    "damage": 20,
+    "dps": 81.633,
+    "force": 6,
+    "id": "HLD_Projectile",
+    "penetration": 5,
+    "range": 20,
+    "restoreAmmoOnHit": true,
+    "speed": 26
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.12,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 60,
+            "dps": 244.898,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "ammoToRestoreOnHit": 1,
+        "canPenetrateObjects": true,
+        "chanceToRestoreAmmoOnHit": 1,
+        "damage": 20,
+        "dps": 81.633,
+        "force": 6,
+        "id": "HLD_Projectile",
+        "penetration": 5,
+        "range": 20,
+        "restoreAmmoOnHit": true,
+        "speed": 26
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4.082,
+    "spread": 4,
+    "timeBetweenShots": 0.12
+  },
+  "range": "mid-range",
+  "reloadTime": 1.5,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Hyper Light Blaster (504) > [variants=2-A-A,2-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 20,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 60
+      }
+    ]
+  },
+  "dps": {
+    "base": 81.633,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 244.898
+      }
+    ]
+  },
+  "fireRate": 244.898,
+  "force": {
+    "base": 6,
+    "details": []
+  },
+  "id": 504,
+  "magazineSize": 12,
+  "maxAmmo": 120,
+  "precision": 86.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 60,
+        "dps": 244.898,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "ammoToRestoreOnHit": 1,
+    "canPenetrateObjects": true,
+    "chanceToRestoreAmmoOnHit": 1,
+    "damage": 20,
+    "dps": 81.633,
+    "force": 6,
+    "id": "HLD_Projectile",
+    "penetration": 5,
+    "range": 20,
+    "restoreAmmoOnHit": true,
+    "speed": 26
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.12,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 60,
+            "dps": 244.898,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "ammoToRestoreOnHit": 1,
+        "canPenetrateObjects": true,
+        "chanceToRestoreAmmoOnHit": 1,
+        "damage": 20,
+        "dps": 81.633,
+        "force": 6,
+        "id": "HLD_Projectile",
+        "penetration": 5,
+        "range": 20,
+        "restoreAmmoOnHit": true,
+        "speed": 26
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4.082,
+    "spread": 4,
+    "timeBetweenShots": 0.12
+  },
+  "range": "mid-range",
+  "reloadTime": 1.5,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Hyper Light Blaster (504) > [variants=3-A-A,3-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 20,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 60
+      }
+    ]
+  },
+  "dps": {
+    "base": 81.633,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 244.898
+      }
+    ]
+  },
+  "fireRate": 244.898,
+  "force": {
+    "base": 6,
+    "details": []
+  },
+  "id": 504,
+  "magazineSize": 12,
+  "maxAmmo": 10000,
+  "precision": 86.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 60,
+        "dps": 244.898,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "ammoToRestoreOnHit": 1,
+    "canPenetrateObjects": true,
+    "chanceToRestoreAmmoOnHit": 1,
+    "damage": 20,
+    "dps": 81.633,
+    "force": 6,
+    "id": "HLD_Projectile",
+    "penetration": 5,
+    "range": 20,
+    "restoreAmmoOnHit": true,
+    "speed": 26
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.12,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 60,
+            "dps": 244.898,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "ammoToRestoreOnHit": 1,
+        "canPenetrateObjects": true,
+        "chanceToRestoreAmmoOnHit": 1,
+        "damage": 20,
+        "dps": 81.633,
+        "force": 6,
+        "id": "HLD_Projectile",
+        "penetration": 5,
+        "range": 20,
+        "restoreAmmoOnHit": true,
         "speed": 26
       }
     ],
@@ -30396,7 +30678,8 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
 "[
   {
     "magazineSize": 12,
-    "mode": "Default",
+    "maxAmmo": 12,
+    "mode": "0% Accuracy",
     "volley": [
       {
         "ammoCost": 1,
@@ -30414,13 +30697,139 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
                 "source": "pierce"
               }
             ],
+            "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
+            "chanceToRestoreAmmoOnHit": 1,
             "damage": 20,
             "dps": 81.633,
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
             "range": 20,
+            "restoreAmmoOnHit": true,
+            "speed": 26
+          }
+        ],
+        "shootStyle": "SemiAutomatic",
+        "shotsPerSecond": 4.082,
+        "spread": 4,
+        "timeBetweenShots": 0.12
+      }
+    ]
+  },
+  {
+    "magazineSize": 12,
+    "maxAmmo": 30,
+    "mode": "60% Accuracy",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.12,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 60,
+                "dps": 244.898,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "ammoToRestoreOnHit": 1,
+            "canPenetrateObjects": true,
+            "chanceToRestoreAmmoOnHit": 1,
+            "damage": 20,
+            "dps": 81.633,
+            "force": 6,
+            "id": "HLD_Projectile",
+            "penetration": 5,
+            "range": 20,
+            "restoreAmmoOnHit": true,
+            "speed": 26
+          }
+        ],
+        "shootStyle": "SemiAutomatic",
+        "shotsPerSecond": 4.082,
+        "spread": 4,
+        "timeBetweenShots": 0.12
+      }
+    ]
+  },
+  {
+    "magazineSize": 12,
+    "maxAmmo": 120,
+    "mode": "90% Accuracy",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.12,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 60,
+                "dps": 244.898,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "ammoToRestoreOnHit": 1,
+            "canPenetrateObjects": true,
+            "chanceToRestoreAmmoOnHit": 1,
+            "damage": 20,
+            "dps": 81.633,
+            "force": 6,
+            "id": "HLD_Projectile",
+            "penetration": 5,
+            "range": 20,
+            "restoreAmmoOnHit": true,
+            "speed": 26
+          }
+        ],
+        "shootStyle": "SemiAutomatic",
+        "shotsPerSecond": 4.082,
+        "spread": 4,
+        "timeBetweenShots": 0.12
+      }
+    ]
+  },
+  {
+    "magazineSize": 12,
+    "maxAmmo": 10000,
+    "mode": "100% Accuracy",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.12,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 60,
+                "dps": 244.898,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "ammoToRestoreOnHit": 1,
+            "canPenetrateObjects": true,
+            "chanceToRestoreAmmoOnHit": 1,
+            "damage": 20,
+            "dps": 81.633,
+            "force": 6,
+            "id": "HLD_Projectile",
+            "penetration": 5,
+            "range": 20,
+            "restoreAmmoOnHit": true,
             "speed": 26
           }
         ],
@@ -30474,13 +30883,16 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
         "source": "pierce"
       }
     ],
+    "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
+    "chanceToRestoreAmmoOnHit": 1,
     "damage": 20,
     "dps": 98.361,
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
     "range": 20,
+    "restoreAmmoOnHit": true,
     "speed": 26
   },
   "projectileModule": {
@@ -30499,13 +30911,292 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
             "source": "pierce"
           }
         ],
+        "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
+        "chanceToRestoreAmmoOnHit": 1,
         "damage": 20,
         "dps": 98.361,
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
         "range": 20,
+        "restoreAmmoOnHit": true,
+        "speed": 26
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4.918,
+    "spread": 0,
+    "timeBetweenShots": 0.12
+  },
+  "range": "mid-range",
+  "reloadTime": 1.5,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Hyper Light Blaster (695) > [variants=1-A-A,1-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 20,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 60
+      }
+    ]
+  },
+  "dps": {
+    "base": 98.361,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 295.082
+      }
+    ]
+  },
+  "fireRate": 295.082,
+  "force": {
+    "base": 6,
+    "details": []
+  },
+  "id": 695,
+  "magazineSize": 18,
+  "maxAmmo": 45,
+  "precision": 100,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 60,
+        "dps": 295.082,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "ammoToRestoreOnHit": 1,
+    "canPenetrateObjects": true,
+    "chanceToRestoreAmmoOnHit": 1,
+    "damage": 20,
+    "dps": 98.361,
+    "force": 6,
+    "id": "HLD_Projectile",
+    "penetration": 5,
+    "range": 20,
+    "restoreAmmoOnHit": true,
+    "speed": 26
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.12,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 60,
+            "dps": 295.082,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "ammoToRestoreOnHit": 1,
+        "canPenetrateObjects": true,
+        "chanceToRestoreAmmoOnHit": 1,
+        "damage": 20,
+        "dps": 98.361,
+        "force": 6,
+        "id": "HLD_Projectile",
+        "penetration": 5,
+        "range": 20,
+        "restoreAmmoOnHit": true,
+        "speed": 26
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4.918,
+    "spread": 0,
+    "timeBetweenShots": 0.12
+  },
+  "range": "mid-range",
+  "reloadTime": 1.5,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Hyper Light Blaster (695) > [variants=2-A-A,2-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 20,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 60
+      }
+    ]
+  },
+  "dps": {
+    "base": 98.361,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 295.082
+      }
+    ]
+  },
+  "fireRate": 295.082,
+  "force": {
+    "base": 6,
+    "details": []
+  },
+  "id": 695,
+  "magazineSize": 18,
+  "maxAmmo": 180,
+  "precision": 100,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 60,
+        "dps": 295.082,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "ammoToRestoreOnHit": 1,
+    "canPenetrateObjects": true,
+    "chanceToRestoreAmmoOnHit": 1,
+    "damage": 20,
+    "dps": 98.361,
+    "force": 6,
+    "id": "HLD_Projectile",
+    "penetration": 5,
+    "range": 20,
+    "restoreAmmoOnHit": true,
+    "speed": 26
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.12,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 60,
+            "dps": 295.082,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "ammoToRestoreOnHit": 1,
+        "canPenetrateObjects": true,
+        "chanceToRestoreAmmoOnHit": 1,
+        "damage": 20,
+        "dps": 98.361,
+        "force": 6,
+        "id": "HLD_Projectile",
+        "penetration": 5,
+        "range": 20,
+        "restoreAmmoOnHit": true,
+        "speed": 26
+      }
+    ],
+    "shootStyle": "SemiAutomatic",
+    "shotsPerSecond": 4.918,
+    "spread": 0,
+    "timeBetweenShots": 0.12
+  },
+  "range": "mid-range",
+  "reloadTime": 1.5,
+  "shootStyle": "SemiAutomatic"
+}"
+`;
+
+exports[`Gun > Hyper Light Blaster (695) > [variants=3-A-A,3-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 20,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 60
+      }
+    ]
+  },
+  "dps": {
+    "base": 98.361,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 295.082
+      }
+    ]
+  },
+  "fireRate": 295.082,
+  "force": {
+    "base": 6,
+    "details": []
+  },
+  "id": 695,
+  "magazineSize": 18,
+  "maxAmmo": 10000,
+  "precision": 100,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 60,
+        "dps": 295.082,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "ammoToRestoreOnHit": 1,
+    "canPenetrateObjects": true,
+    "chanceToRestoreAmmoOnHit": 1,
+    "damage": 20,
+    "dps": 98.361,
+    "force": 6,
+    "id": "HLD_Projectile",
+    "penetration": 5,
+    "range": 20,
+    "restoreAmmoOnHit": true,
+    "speed": 26
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.12,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 60,
+            "dps": 295.082,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "ammoToRestoreOnHit": 1,
+        "canPenetrateObjects": true,
+        "chanceToRestoreAmmoOnHit": 1,
+        "damage": 20,
+        "dps": 98.361,
+        "force": 6,
+        "id": "HLD_Projectile",
+        "penetration": 5,
+        "range": 20,
+        "restoreAmmoOnHit": true,
         "speed": 26
       }
     ],
@@ -30524,7 +31215,8 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
 "[
   {
     "magazineSize": 18,
-    "mode": "Default",
+    "maxAmmo": 18,
+    "mode": "0% Accuracy",
     "volley": [
       {
         "ammoCost": 1,
@@ -30542,13 +31234,139 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
                 "source": "pierce"
               }
             ],
+            "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
+            "chanceToRestoreAmmoOnHit": 1,
             "damage": 20,
             "dps": 98.361,
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
             "range": 20,
+            "restoreAmmoOnHit": true,
+            "speed": 26
+          }
+        ],
+        "shootStyle": "SemiAutomatic",
+        "shotsPerSecond": 4.918,
+        "spread": 0,
+        "timeBetweenShots": 0.12
+      }
+    ]
+  },
+  {
+    "magazineSize": 18,
+    "maxAmmo": 45,
+    "mode": "60% Accuracy",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.12,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 60,
+                "dps": 295.082,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "ammoToRestoreOnHit": 1,
+            "canPenetrateObjects": true,
+            "chanceToRestoreAmmoOnHit": 1,
+            "damage": 20,
+            "dps": 98.361,
+            "force": 6,
+            "id": "HLD_Projectile",
+            "penetration": 5,
+            "range": 20,
+            "restoreAmmoOnHit": true,
+            "speed": 26
+          }
+        ],
+        "shootStyle": "SemiAutomatic",
+        "shotsPerSecond": 4.918,
+        "spread": 0,
+        "timeBetweenShots": 0.12
+      }
+    ]
+  },
+  {
+    "magazineSize": 18,
+    "maxAmmo": 180,
+    "mode": "90% Accuracy",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.12,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 60,
+                "dps": 295.082,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "ammoToRestoreOnHit": 1,
+            "canPenetrateObjects": true,
+            "chanceToRestoreAmmoOnHit": 1,
+            "damage": 20,
+            "dps": 98.361,
+            "force": 6,
+            "id": "HLD_Projectile",
+            "penetration": 5,
+            "range": 20,
+            "restoreAmmoOnHit": true,
+            "speed": 26
+          }
+        ],
+        "shootStyle": "SemiAutomatic",
+        "shotsPerSecond": 4.918,
+        "spread": 0,
+        "timeBetweenShots": 0.12
+      }
+    ]
+  },
+  {
+    "magazineSize": 18,
+    "maxAmmo": 10000,
+    "mode": "100% Accuracy",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.12,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 60,
+                "dps": 295.082,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "ammoToRestoreOnHit": 1,
+            "canPenetrateObjects": true,
+            "chanceToRestoreAmmoOnHit": 1,
+            "damage": 20,
+            "dps": 98.361,
+            "force": 6,
+            "id": "HLD_Projectile",
+            "penetration": 5,
+            "range": 20,
+            "restoreAmmoOnHit": true,
             "speed": 26
           }
         ],

@@ -119,6 +119,16 @@ const ChainLightningModifierData = z.object({
   damagePerHit: z.number(),
 });
 
+/**
+ * Restores ammo to the gun when hitting an enemy with the projectile.
+ */
+const RestoreAmmoToGunModifierData = z.object({
+  ChanceToWork: z.number(),
+  AmmoToGain: z.number(),
+  RequiresSynergy: BinaryOption,
+  RequiredSynergy: z.number(),
+});
+
 const ModifyProjectileSynergyProcessorData = z.object({
   /**
    * Note: This belongs to a synergy that is ALWAYS inactive.
@@ -343,6 +353,7 @@ export const ProjectileDto = z.object({
   spawnProjModifier: SpawnProjModifierData.optional(),
   goopModifier: GoopModifierData.optional(),
   chainLightningModifier: ChainLightningModifierData.optional(),
+  restoreAmmoToGunModifier: RestoreAmmoToGunModifierData.optional(),
   modifyProjectileSynergyProcessor: ModifyProjectileSynergyProcessorData.optional(),
   basicBeamController: BasicBeamControllerData.optional(),
   raidenBeamController: RaidenBeamControllerData.optional(),
@@ -371,6 +382,7 @@ export type TSpawnProjModifierData = z.infer<typeof SpawnProjModifierData>;
 export type TGoodDefinitionData = z.infer<typeof GoopDefinitionData>;
 export type TGoopModifierData = z.infer<typeof GoopModifierData>;
 export type TChainLightningModifierData = z.infer<typeof ChainLightningModifierData>;
+export type TRestoreAmmoToGunModifierData = z.infer<typeof RestoreAmmoToGunModifierData>;
 export type TModifyProjectileSynergyProcessorData = z.infer<typeof ModifyProjectileSynergyProcessorData>;
 export type TBasicBeamControllerData = z.infer<typeof BasicBeamControllerData>;
 export type TRaidenBeamControllerData = z.infer<typeof RaidenBeamControllerData>;

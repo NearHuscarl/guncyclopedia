@@ -24565,8 +24565,60 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "0% Accuracy",
         "magazineSize": 12,
+        "maxAmmo": 12,
+        "volley": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.12,
+            "spread": 4,
+            "projectiles": [
+              "HLD_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "60% Accuracy",
+        "magazineSize": 12,
+        "maxAmmo": 30,
+        "volley": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.12,
+            "spread": 4,
+            "projectiles": [
+              "HLD_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "90% Accuracy",
+        "magazineSize": 12,
+        "maxAmmo": 120.00000000000003,
+        "volley": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.12,
+            "spread": 4,
+            "projectiles": [
+              "HLD_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "100% Accuracy",
+        "magazineSize": 12,
+        "maxAmmo": 10000,
         "volley": [
           {
             "shootStyle": "SemiAutomatic",
@@ -24583,7 +24635,9 @@
     ],
     "maxAmmo": 12,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialProjectiles"
+    ],
     "attribute": {},
     "colors": [
       "lightGray",
@@ -24636,8 +24690,60 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "0% Accuracy",
         "magazineSize": 18,
+        "maxAmmo": 18,
+        "volley": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.12,
+            "spread": 0,
+            "projectiles": [
+              "HLD_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "60% Accuracy",
+        "magazineSize": 18,
+        "maxAmmo": 45,
+        "volley": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.12,
+            "spread": 0,
+            "projectiles": [
+              "HLD_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "90% Accuracy",
+        "magazineSize": 18,
+        "maxAmmo": 180.00000000000003,
+        "volley": [
+          {
+            "shootStyle": "SemiAutomatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.12,
+            "spread": 0,
+            "projectiles": [
+              "HLD_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "100% Accuracy",
+        "magazineSize": 18,
+        "maxAmmo": 10000,
         "volley": [
           {
             "shootStyle": "SemiAutomatic",
@@ -24654,7 +24760,9 @@
     ],
     "maxAmmo": 18,
     "reloadTime": 1.5,
-    "featureFlags": [],
+    "featureFlags": [
+      "hasSpecialProjectiles"
+    ],
     "attribute": {},
     "colors": [
       "lightGray",
