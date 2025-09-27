@@ -21,6 +21,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { NumericValue } from "./numeric-value";
 import { formatNumber, toPercent } from "@/lib/lang";
 import {
+  fuchsia400,
   fuchsia500,
   green500,
   orange500,
@@ -82,6 +83,7 @@ import { Three } from "@/components/icons/three";
 import { FinalProjectile } from "@/components/icons/final-projectile";
 import { Fear } from "@/components/icons/fear";
 import { RestoreAmmoOnHit } from "@/components/icons/restore-ammo-on-hit";
+import { BuffCompanion } from "@/components/icons/buff-companion";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -396,6 +398,20 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <br />
             Pressing reload or firing at the right time will increase the gun's damage. Each successful reload will also
             make the reload time shorter, making another successful reload harder to pull off.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.attribute.buffCompanion && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <BuffCompanion color={fuchsia400} />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent className="text-wrap w-72">
+            <strong>Companion Buff</strong>
+            <br />
+            While firing, it also buffs the player's companions, <strong>x2</strong> the damage of their projectiles.
           </TooltipContent>
         </Tooltip>
       )}

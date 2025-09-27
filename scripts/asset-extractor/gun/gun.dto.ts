@@ -160,6 +160,7 @@ const GunData = z
      * Gungeon Ant flip the ant when running reload animation but doesn't have `alternateIdleAnimation`
      */
     alternateReloadAnimation: z.string().nullable(),
+    IsLuteCompanionBuff: BinaryOption,
     LocalActiveReload: BinaryOption,
   })
   .refine(

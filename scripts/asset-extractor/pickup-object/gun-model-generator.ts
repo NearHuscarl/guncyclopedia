@@ -796,6 +796,7 @@ export class GunModelGenerator {
       fleeDeathDistance: gunDto.scareEnemiesModifier?.FleeData.DeathDistance,
       fleeStopDistance: gunDto.scareEnemiesModifier?.FleeData.StopDistance,
 
+      buffCompanion: Boolean(gunDto.gun.IsLuteCompanionBuff) || undefined,
       trickGun: Boolean(gunDto.gun.IsTrickGun) || undefined,
     };
 
@@ -979,6 +980,17 @@ export class GunModelGenerator {
         return anim;
       }
       case "Guzheng": {
+        let anim = this._buildAnimationFromName(gunDto, gunDto.gun.shootAnimation, {
+          wrapMode: "LoopFidget",
+          minFidgetDuration: 3,
+          maxFidgetDuration: 8,
+        });
+        const idleAnim = this._buildAnimationFromSprite(gunDto.sprite);
+        anim = this._repeatAnimationFrames(anim, 4);
+        anim?.frames.push(idleAnim!.frames[0]);
+        return anim;
+      }
+      case "Lute_Gun": {
         let anim = this._buildAnimationFromName(gunDto, gunDto.gun.shootAnimation, {
           wrapMode: "LoopFidget",
           minFidgetDuration: 3,

@@ -188,6 +188,8 @@ export const Gun = PickupObject.extend({
     fleeDeathDistance: z.number().optional(),
     fleeStopDistance: z.number().optional(),
 
+    buffCompanion: z.boolean().optional(),
+
     /**
      * Gun that switch between 2 firing modes after a reload
      */
