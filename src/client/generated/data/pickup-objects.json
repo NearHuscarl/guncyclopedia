@@ -7267,7 +7267,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 100,
         "volley": [
           {
@@ -7281,12 +7281,80 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Hold 1s",
+        "magazineSize": 100,
+        "volley": [
+          {
+            "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.15,
+            "spread": 1,
+            "projectiles": [
+              "Excaliber_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "Hold 2s",
+        "magazineSize": 100,
+        "volley": [
+          {
+            "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.09999999999999999,
+            "spread": 1,
+            "projectiles": [
+              "Excaliber_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "Hold 4s",
+        "magazineSize": 100,
+        "volley": [
+          {
+            "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.06,
+            "spread": 1,
+            "projectiles": [
+              "Excaliber_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "Hold 8s",
+        "magazineSize": 100,
+        "volley": [
+          {
+            "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.03333333333333333,
+            "spread": 1,
+            "projectiles": [
+              "Excaliber_Projectile"
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 500,
     "reloadTime": 1,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "gainsFireRateDuringAttack": true
+    },
     "colors": [
       "gray",
       "sky"
@@ -12515,7 +12583,7 @@
     "playerStatModifiers": [],
     "projectileModes": [
       {
-        "mode": "Default",
+        "mode": "Normal",
         "magazineSize": 1000,
         "volley": [
           {
@@ -12529,12 +12597,80 @@
             ]
           }
         ]
+      },
+      {
+        "mode": "Hold 1s",
+        "magazineSize": 1000,
+        "volley": [
+          {
+            "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.025,
+            "spread": 9,
+            "projectiles": [
+              "Minigun_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "Hold 2s",
+        "magazineSize": 1000,
+        "volley": [
+          {
+            "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.016666666666666666,
+            "spread": 9,
+            "projectiles": [
+              "Minigun_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "Hold 4s",
+        "magazineSize": 1000,
+        "volley": [
+          {
+            "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.01,
+            "spread": 9,
+            "projectiles": [
+              "Minigun_Projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "mode": "Hold 8s",
+        "magazineSize": 1000,
+        "volley": [
+          {
+            "shootStyle": "Automatic",
+            "burstShotCount": 3,
+            "burstCooldownTime": 0.2,
+            "cooldownTime": 0.005555555555555556,
+            "spread": 9,
+            "projectiles": [
+              "Minigun_Projectile"
+            ]
+          }
+        ]
       }
     ],
     "maxAmmo": 1000,
     "reloadTime": 0.6,
-    "featureFlags": [],
-    "attribute": {},
+    "featureFlags": [
+      "hasSpecialAbilities"
+    ],
+    "attribute": {
+      "gainsFireRateDuringAttack": true
+    },
     "colors": [
       "gray",
       "teal"

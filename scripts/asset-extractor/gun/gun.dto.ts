@@ -162,6 +162,11 @@ const GunData = z
     alternateReloadAnimation: z.string().nullable(),
     IsLuteCompanionBuff: BinaryOption,
     LocalActiveReload: BinaryOption,
+    /**
+     * https://enterthegungeon.fandom.com/wiki/Patriot
+     */
+    GainsRateOfFireAsContinueAttack: BinaryOption,
+    RateOfFireMultiplierAdditionPerSecond: z.number(),
   })
   .refine(
     (data) => {

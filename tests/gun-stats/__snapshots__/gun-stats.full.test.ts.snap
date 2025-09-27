@@ -46871,11 +46871,347 @@ exports[`Gun > Patriot (98) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Patriot (98) > [variants=1-A-A,1-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 7,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 21
+      }
+    ]
+  },
+  "dps": {
+    "base": 43.75,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 131.25
+      }
+    ]
+  },
+  "fireRate": 375,
+  "force": {
+    "base": 15,
+    "details": []
+  },
+  "id": 98,
+  "magazineSize": 100,
+  "maxAmmo": 500,
+  "precision": 96.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 21,
+        "dps": 131.25,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 7,
+    "dps": 43.75,
+    "force": 15,
+    "id": "Excaliber_Projectile",
+    "penetration": 3,
+    "range": 1000,
+    "speed": 30
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.15,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 21,
+            "dps": 131.25,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 7,
+        "dps": 43.75,
+        "force": 15,
+        "id": "Excaliber_Projectile",
+        "penetration": 3,
+        "range": 1000,
+        "speed": 30
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 6.25,
+    "spread": 1,
+    "timeBetweenShots": 0.15
+  },
+  "range": "long-range",
+  "reloadTime": 1,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Patriot (98) > [variants=2-A-A,2-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 7,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 21
+      }
+    ]
+  },
+  "dps": {
+    "base": 63.636,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 190.909
+      }
+    ]
+  },
+  "fireRate": 545.455,
+  "force": {
+    "base": 15,
+    "details": []
+  },
+  "id": 98,
+  "magazineSize": 100,
+  "maxAmmo": 500,
+  "precision": 96.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 21,
+        "dps": 190.909,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 7,
+    "dps": 63.636,
+    "force": 15,
+    "id": "Excaliber_Projectile",
+    "penetration": 3,
+    "range": 1000,
+    "speed": 30
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.1,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 21,
+            "dps": 190.909,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 7,
+        "dps": 63.636,
+        "force": 15,
+        "id": "Excaliber_Projectile",
+        "penetration": 3,
+        "range": 1000,
+        "speed": 30
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 9.091,
+    "spread": 1,
+    "timeBetweenShots": 0.1
+  },
+  "range": "long-range",
+  "reloadTime": 1,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Patriot (98) > [variants=3-A-A,3-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 7,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 21
+      }
+    ]
+  },
+  "dps": {
+    "base": 100,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 300
+      }
+    ]
+  },
+  "fireRate": 857.143,
+  "force": {
+    "base": 15,
+    "details": []
+  },
+  "id": 98,
+  "magazineSize": 100,
+  "maxAmmo": 500,
+  "precision": 96.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 21,
+        "dps": 300,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 7,
+    "dps": 100,
+    "force": 15,
+    "id": "Excaliber_Projectile",
+    "penetration": 3,
+    "range": 1000,
+    "speed": 30
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.06,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 21,
+            "dps": 300,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 7,
+        "dps": 100,
+        "force": 15,
+        "id": "Excaliber_Projectile",
+        "penetration": 3,
+        "range": 1000,
+        "speed": 30
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 14.286,
+    "spread": 1,
+    "timeBetweenShots": 0.06
+  },
+  "range": "long-range",
+  "reloadTime": 1,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Patriot (98) > [variants=4-A-A,4-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 7,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 21
+      }
+    ]
+  },
+  "dps": {
+    "base": 161.538,
+    "details": [
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 484.615
+      }
+    ]
+  },
+  "fireRate": 1384.615,
+  "force": {
+    "base": 15,
+    "details": []
+  },
+  "id": 98,
+  "magazineSize": 100,
+  "maxAmmo": 500,
+  "precision": 96.667,
+  "projectile": {
+    "additionalDamage": [
+      {
+        "damage": 21,
+        "dps": 484.615,
+        "isEstimated": true,
+        "source": "pierce"
+      }
+    ],
+    "damage": 7,
+    "dps": 161.538,
+    "force": 15,
+    "id": "Excaliber_Projectile",
+    "penetration": 3,
+    "range": 1000,
+    "speed": 30
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.033,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [
+          {
+            "damage": 21,
+            "dps": 484.615,
+            "isEstimated": true,
+            "source": "pierce"
+          }
+        ],
+        "damage": 7,
+        "dps": 161.538,
+        "force": 15,
+        "id": "Excaliber_Projectile",
+        "penetration": 3,
+        "range": 1000,
+        "speed": 30
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 23.077,
+    "spread": 1,
+    "timeBetweenShots": 0.033
+  },
+  "range": "long-range",
+  "reloadTime": 1,
+  "shootStyle": "Automatic"
+}"
+`;
+
 exports[`Gun > Patriot (98) > modes 1`] = `
 "[
   {
     "magazineSize": 100,
-    "mode": "Default",
+    "mode": "Normal",
     "volley": [
       {
         "ammoCost": 1,
@@ -46906,6 +47242,150 @@ exports[`Gun > Patriot (98) > modes 1`] = `
         "shotsPerSecond": 3.226,
         "spread": 1,
         "timeBetweenShots": 0.3
+      }
+    ]
+  },
+  {
+    "magazineSize": 100,
+    "mode": "Hold 1s",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.15,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 21,
+                "dps": 131.25,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "damage": 7,
+            "dps": 43.75,
+            "force": 15,
+            "id": "Excaliber_Projectile",
+            "penetration": 3,
+            "range": 1000,
+            "speed": 30
+          }
+        ],
+        "shootStyle": "Automatic",
+        "shotsPerSecond": 6.25,
+        "spread": 1,
+        "timeBetweenShots": 0.15
+      }
+    ]
+  },
+  {
+    "magazineSize": 100,
+    "mode": "Hold 2s",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.1,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 21,
+                "dps": 190.909,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "damage": 7,
+            "dps": 63.636,
+            "force": 15,
+            "id": "Excaliber_Projectile",
+            "penetration": 3,
+            "range": 1000,
+            "speed": 30
+          }
+        ],
+        "shootStyle": "Automatic",
+        "shotsPerSecond": 9.091,
+        "spread": 1,
+        "timeBetweenShots": 0.1
+      }
+    ]
+  },
+  {
+    "magazineSize": 100,
+    "mode": "Hold 4s",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.06,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 21,
+                "dps": 300,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "damage": 7,
+            "dps": 100,
+            "force": 15,
+            "id": "Excaliber_Projectile",
+            "penetration": 3,
+            "range": 1000,
+            "speed": 30
+          }
+        ],
+        "shootStyle": "Automatic",
+        "shotsPerSecond": 14.286,
+        "spread": 1,
+        "timeBetweenShots": 0.06
+      }
+    ]
+  },
+  {
+    "magazineSize": 100,
+    "mode": "Hold 8s",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.033,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [
+              {
+                "damage": 21,
+                "dps": 484.615,
+                "isEstimated": true,
+                "source": "pierce"
+              }
+            ],
+            "damage": 7,
+            "dps": 161.538,
+            "force": 15,
+            "id": "Excaliber_Projectile",
+            "penetration": 3,
+            "range": 1000,
+            "speed": 30
+          }
+        ],
+        "shootStyle": "Automatic",
+        "shotsPerSecond": 23.077,
+        "spread": 1,
+        "timeBetweenShots": 0.033
       }
     ]
   }
@@ -74101,11 +74581,235 @@ exports[`Gun > Vulcan Cannon (707) > [variants=0-A-A,0-0-0] 1`] = `
 }"
 `;
 
+exports[`Gun > Vulcan Cannon (707) > [variants=1-A-A,1-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 5,
+    "details": []
+  },
+  "dps": {
+    "base": 195.313,
+    "details": []
+  },
+  "fireRate": 2343.75,
+  "force": {
+    "base": 15,
+    "details": []
+  },
+  "id": 707,
+  "magazineSize": 1000,
+  "maxAmmo": 1000,
+  "precision": 70,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 5,
+    "dps": 195.313,
+    "force": 15,
+    "id": "Minigun_Projectile",
+    "range": 1000,
+    "speed": 50
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.025,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 195.313,
+        "force": 15,
+        "id": "Minigun_Projectile",
+        "range": 1000,
+        "speed": 50
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 39.063,
+    "spread": 9,
+    "timeBetweenShots": 0.025
+  },
+  "range": "long-range",
+  "reloadTime": 0.6,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Vulcan Cannon (707) > [variants=2-A-A,2-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 5,
+    "details": []
+  },
+  "dps": {
+    "base": 289.575,
+    "details": []
+  },
+  "fireRate": 3474.903,
+  "force": {
+    "base": 15,
+    "details": []
+  },
+  "id": 707,
+  "magazineSize": 1000,
+  "maxAmmo": 1000,
+  "precision": 70,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 5,
+    "dps": 289.575,
+    "force": 15,
+    "id": "Minigun_Projectile",
+    "range": 1000,
+    "speed": 50
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.017,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 289.575,
+        "force": 15,
+        "id": "Minigun_Projectile",
+        "range": 1000,
+        "speed": 50
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 57.915,
+    "spread": 9,
+    "timeBetweenShots": 0.017
+  },
+  "range": "long-range",
+  "reloadTime": 0.6,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Vulcan Cannon (707) > [variants=3-A-A,3-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 5,
+    "details": []
+  },
+  "dps": {
+    "base": 471.698,
+    "details": []
+  },
+  "fireRate": 5660.377,
+  "force": {
+    "base": 15,
+    "details": []
+  },
+  "id": 707,
+  "magazineSize": 1000,
+  "maxAmmo": 1000,
+  "precision": 70,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 5,
+    "dps": 471.698,
+    "force": 15,
+    "id": "Minigun_Projectile",
+    "range": 1000,
+    "speed": 50
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.01,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 471.698,
+        "force": 15,
+        "id": "Minigun_Projectile",
+        "range": 1000,
+        "speed": 50
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 94.34,
+    "spread": 9,
+    "timeBetweenShots": 0.01
+  },
+  "range": "long-range",
+  "reloadTime": 0.6,
+  "shootStyle": "Automatic"
+}"
+`;
+
+exports[`Gun > Vulcan Cannon (707) > [variants=4-A-A,4-0-0] 1`] = `
+"{
+  "damage": {
+    "base": 5,
+    "details": []
+  },
+  "dps": {
+    "base": 812.274,
+    "details": []
+  },
+  "fireRate": 9747.292,
+  "force": {
+    "base": 15,
+    "details": []
+  },
+  "id": 707,
+  "magazineSize": 1000,
+  "maxAmmo": 1000,
+  "precision": 70,
+  "projectile": {
+    "additionalDamage": [],
+    "damage": 5,
+    "dps": 812.274,
+    "force": 15,
+    "id": "Minigun_Projectile",
+    "range": 1000,
+    "speed": 50
+  },
+  "projectileModule": {
+    "ammoCost": 1,
+    "burstCooldownTime": 0.2,
+    "burstShotCount": 3,
+    "cooldownTime": 0.006,
+    "finalProjectiles": [],
+    "projectiles": [
+      {
+        "additionalDamage": [],
+        "damage": 5,
+        "dps": 812.274,
+        "force": 15,
+        "id": "Minigun_Projectile",
+        "range": 1000,
+        "speed": 50
+      }
+    ],
+    "shootStyle": "Automatic",
+    "shotsPerSecond": 162.455,
+    "spread": 9,
+    "timeBetweenShots": 0.006
+  },
+  "range": "long-range",
+  "reloadTime": 0.6,
+  "shootStyle": "Automatic"
+}"
+`;
+
 exports[`Gun > Vulcan Cannon (707) > modes 1`] = `
 "[
   {
     "magazineSize": 1000,
-    "mode": "Default",
+    "mode": "Normal",
     "volley": [
       {
         "ammoCost": 1,
@@ -74128,6 +74832,118 @@ exports[`Gun > Vulcan Cannon (707) > modes 1`] = `
         "shotsPerSecond": 19.763,
         "spread": 9,
         "timeBetweenShots": 0.05
+      }
+    ]
+  },
+  {
+    "magazineSize": 1000,
+    "mode": "Hold 1s",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.025,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 195.313,
+            "force": 15,
+            "id": "Minigun_Projectile",
+            "range": 1000,
+            "speed": 50
+          }
+        ],
+        "shootStyle": "Automatic",
+        "shotsPerSecond": 39.063,
+        "spread": 9,
+        "timeBetweenShots": 0.025
+      }
+    ]
+  },
+  {
+    "magazineSize": 1000,
+    "mode": "Hold 2s",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.017,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 289.575,
+            "force": 15,
+            "id": "Minigun_Projectile",
+            "range": 1000,
+            "speed": 50
+          }
+        ],
+        "shootStyle": "Automatic",
+        "shotsPerSecond": 57.915,
+        "spread": 9,
+        "timeBetweenShots": 0.017
+      }
+    ]
+  },
+  {
+    "magazineSize": 1000,
+    "mode": "Hold 4s",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.01,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 471.698,
+            "force": 15,
+            "id": "Minigun_Projectile",
+            "range": 1000,
+            "speed": 50
+          }
+        ],
+        "shootStyle": "Automatic",
+        "shotsPerSecond": 94.34,
+        "spread": 9,
+        "timeBetweenShots": 0.01
+      }
+    ]
+  },
+  {
+    "magazineSize": 1000,
+    "mode": "Hold 8s",
+    "volley": [
+      {
+        "ammoCost": 1,
+        "burstCooldownTime": 0.2,
+        "burstShotCount": 3,
+        "cooldownTime": 0.006,
+        "finalProjectiles": [],
+        "projectiles": [
+          {
+            "additionalDamage": [],
+            "damage": 5,
+            "dps": 812.274,
+            "force": 15,
+            "id": "Minigun_Projectile",
+            "range": 1000,
+            "speed": 50
+          }
+        ],
+        "shootStyle": "Automatic",
+        "shotsPerSecond": 162.455,
+        "spread": 9,
+        "timeBetweenShots": 0.006
       }
     ]
   }

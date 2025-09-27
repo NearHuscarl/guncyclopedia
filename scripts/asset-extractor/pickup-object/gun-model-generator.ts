@@ -642,6 +642,27 @@ export class GunModelGenerator {
       );
     }
 
+    if (gunDto.gun.GainsRateOfFireAsContinueAttack) {
+      if (projectileModules.length > 1) {
+        throw new Error(
+          `Parsing ${gunDto.name} (${gunDto.gun.PickupObjectId}) gun failed: GainsRateOfFireAsContinueAttack with multiple projectile modules is not supported.`,
+        );
+      }
+      const mod = projectileModules[0];
+      const x = gunDto.gun.RateOfFireMultiplierAdditionPerSecond;
+      const holdTriggerDurations = [1, 2, 4, 8];
+      const baseFireRateStat = 1;
+
+      return [
+        this._buildModeFromProjectileModules(`Normal`, gunDto, defaultModule, [{ ...mod }]),
+        ...holdTriggerDurations.map((d) =>
+          this._buildModeFromProjectileModules(`Hold ${d}s`, gunDto, defaultModule, [
+            { ...mod, cooldownTime: mod.cooldownTime / ((baseFireRateStat + d) * x) },
+          ]),
+        ),
+      ];
+    }
+
     if (gunDto.gun.IsTrickGun) {
       const { projectileModules: alternateModules } = this._getProjectileModules(gunDto, true);
 
@@ -797,6 +818,7 @@ export class GunModelGenerator {
       fleeStopDistance: gunDto.scareEnemiesModifier?.FleeData.StopDistance,
 
       buffCompanion: Boolean(gunDto.gun.IsLuteCompanionBuff) || undefined,
+      gainsFireRateDuringAttack: Boolean(gunDto.gun.GainsRateOfFireAsContinueAttack) || undefined,
       trickGun: Boolean(gunDto.gun.IsTrickGun) || undefined,
     };
 

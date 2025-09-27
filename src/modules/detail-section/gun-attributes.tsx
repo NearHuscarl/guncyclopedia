@@ -84,6 +84,7 @@ import { FinalProjectile } from "@/components/icons/final-projectile";
 import { Fear } from "@/components/icons/fear";
 import { RestoreAmmoOnHit } from "@/components/icons/restore-ammo-on-hit";
 import { BuffCompanion } from "@/components/icons/buff-companion";
+import { FireRateBuff } from "@/components/icons/fire-rate-buff";
 import type { ReactNode } from "react";
 import type { TGun } from "@/client/generated/models/gun.model";
 import type { TPlayerName } from "@/client/generated/models/player.model";
@@ -398,6 +399,29 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
             <br />
             Pressing reload or firing at the right time will increase the gun's damage. Each successful reload will also
             make the reload time shorter, making another successful reload harder to pull off.
+          </TooltipContent>
+        </Tooltip>
+      )}
+      {gun?.attribute.gainsFireRateDuringAttack && (
+        <Tooltip delayDuration={TOOLTIP_DELAY}>
+          <TooltipTrigger>
+            <div className={ATTRIBUTE_CLASSES}>
+              <FireRateBuff
+                className={clsx({
+                  "[&_path]:transition-colors": true,
+                  "[&_path]:stroke-muted-foreground": gunStats?.mode.mode === "Normal",
+                  "[&_path]:stroke-white": gunStats?.mode.mode === "Hold 1s",
+                  "[&_path]:stroke-primary": gunStats?.mode.mode === "Hold 2s",
+                  "[&_path]:stroke-orange-500": gunStats?.mode.mode === "Hold 4s",
+                  "[&_path]:stroke-red-500": gunStats?.mode.mode === "Hold 8s",
+                })}
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <strong>Gains Fire Rate During Attack</strong>
+            <br />
+            The gun's fire rate increases rapidly as the trigger is held.
           </TooltipContent>
         </Tooltip>
       )}
