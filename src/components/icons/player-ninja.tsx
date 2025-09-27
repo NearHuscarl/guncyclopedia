@@ -4,19 +4,16 @@ export function PlayerNinja({ size = 20 }: IIconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="11" height="11" />
-      <path d="M1.5 5V2.5H2.5V1.5H4M7 1.5H8.5V2.5H9.5V5M1 8.5H2M2 9.5H3M8 9.5H9M9 8.5H10" stroke="#000436" />
-      <path d="M1.5 5V7M5.5 5V7M9.5 5V7" stroke="#F10600" />
-      <path d="M1 7.5H2M2 8.5H3M3 9.5H4M7 9.5H8M8 8.5H9M9 7.5H10" stroke="#00021D" />
-      <path d="M5.5 4V5M4.5 5V7" stroke="#FF7572" />
-      <path d="M6.5 5V7M5.5 7V8" stroke="#813A00" />
       <path
-        d="M3.5 7.5V4.5H4.5V3.5H5.5V1.5H4.5V2.5H3.5V3.5H2.5V7.5H3.5ZM3.5 7.5H4.5V8.5M4.5 8.5H5.5V9.5H4M4.5 8.5H3"
-        stroke="#FFE690"
+        d="M3 9V10H2V9H3ZM9 9V10H8V9H9ZM2 8V9H1V8H2ZM10 8V9H9V8H10ZM4 1V2H3V3H2V5H1V2H2V1H4ZM9 1V2H10V5H9V3H8V2H7V1H9Z"
+        fill="#000436"
       />
-      <path
-        d="M6.5 1V2.5M6.5 2.5H7.5V3.5H8.5V7.5H7.5M6.5 2.5V4.5H7.5V7.5M7.5 7.5V8.5H6.5M6.5 8.5V10M6.5 8.5V7"
-        stroke="white"
-      />
+      <path d="M2 5V7H1V5H2ZM6 5V7H5V5H6ZM10 5V7H9V5H10Z" fill="#F10600" />
+      <path d="M4 9V10H3V9H4ZM8 9V10H7V9H8ZM3 8V9H2V8H3ZM9 8V9H8V8H9ZM2 7V8H1V7H2ZM10 7V8H9V7H10Z" fill="#00021D" />
+      <path d="M5 5V7H4V5H5ZM6 4V5H5V4H6Z" fill="#FF7572" />
+      <path d="M6 7V8H5V7H6ZM7 5V7H6V5H7Z" fill="#813A00" />
+      <path d="M6 1V4H5V5H4V7H5V8H6V10H4V9H3V8H2V3H3V2H4V1H6Z" fill="#FFE690" />
+      <path d="M7 1V2H8V3H9V8H8V9H7V10H6V7H7V5H6V1H7Z" fill="white" />
     </svg>
   );
 }

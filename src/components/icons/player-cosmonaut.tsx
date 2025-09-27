@@ -4,11 +4,11 @@ export function PlayerCosmonaut({ size = 20 }: IIconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="11" height="11" />
-      <path d="M1.5 6V2.5H2.5V1.5H8.5V2.5H9.5V5M2 6.5H3M8 6.5H9M3 7.5H8" stroke="#ECEBD7" />
-      <path d="M3 2.5H8M8.5 3V6M2.5 3V6M3 6.5H8" stroke="#EDC900" />
-      <path d="M1.5 6V8.5H2.5M2.5 8.5V9.5H8.5V8.5M2.5 8.5H8.5M2.5 8.5V7M8.5 8.5H9.5V5M8.5 8.5V7" stroke="#8A8A8A" />
-      <path d="M3 3.5H8M4 5.5H5M6 5.5H7" stroke="#24333D" />
-      <path d="M3.5 6V4.5H5.5M7.5 6V4.5H5.5M5.5 4.5V6" stroke="#3C5768" />
+      <path d="M8 7V8H3V7H8ZM3 6V7H2V6H3ZM9 6V7H8V6H9ZM9 1V2H10V5H9V3H8V2H3V3H2V6H1V2H2V1H9Z" fill="#ECEBD7" />
+      <path d="M8 6V7H3V6H8ZM3 3V6H2V3H3ZM9 3V6H8V3H9ZM8 2V3H3V2H8Z" fill="#EDC900" />
+      <path d="M10 5V9H9V10H2V9H1V6H2V7H3V8H8V7H9V5H10Z" fill="#8A8A8A" />
+      <path d="M5 5V6H4V5H5ZM7 5V6H6V5H7ZM8 3V4H3V3H8Z" fill="#24333D" />
+      <path d="M8 4V6H7V5H6V6H5V5H4V6H3V4H8Z" fill="#3C5768" />
     </svg>
   );
 }

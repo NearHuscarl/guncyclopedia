@@ -26,8 +26,11 @@ import {
   orange500,
   primaryColor,
   red600,
+  rose500,
   sky500,
   slate400,
+  teal500,
+  violet500,
   yellow500,
 } from "../shared/settings/tailwind";
 import { Penetration } from "@/components/icons/penetration";
@@ -187,7 +190,7 @@ const playerStatsComponentLookup: { [K in TStatToBoost]?: (modifier: TStatModifi
     createPlayerStatsComponent({
       modifier,
       className: "text-teal-500",
-      icon: <DamageMultiplier size={20} className="stroke-teal-500" />,
+      icon: <DamageMultiplier size={20} color={teal500} />,
       tooltip: (
         <>
           <strong>Damage</strong>
@@ -829,13 +832,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
                       {gunStats?.projectileModule.finalProjectileCount}
                     </NumericValue>
                   )}
-                  <FinalProjectile
-                    size={20}
-                    className={clsx({
-                      "[&_path]:stroke-rose-500!": projectile.isFinalBuff,
-                      "[&_path]:stroke-violet-500!": !projectile.isFinalBuff,
-                    })}
-                  />
+                  <FinalProjectile size={20} color={projectile.isFinalBuff ? rose500 : violet500} />
                 </div>
               </TooltipTrigger>
               <TooltipContent>
