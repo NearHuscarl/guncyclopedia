@@ -45,6 +45,7 @@ const BounceProjModifierData = z.object({
 const PierceProjModifierData = z.object({
   penetration: z.number(),
   penetratesBreakables: BinaryOption,
+  preventPenetrationOfActors: BinaryOption,
 });
 
 const ExplosiveModifierData = z.object({

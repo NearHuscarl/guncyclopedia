@@ -178,6 +178,7 @@
       }
     ],
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "explosionRadius": 3,
     "explosionForce": 100,
@@ -1179,6 +1180,7 @@
     "numberOfBounces": 6,
     "averageSurvivingBounces": 6,
     "penetration": 50,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "explosionRadius": 3,
     "explosionForce": 100,
@@ -3062,6 +3064,7 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "animation": {
       "name": "10x10_player_Projectile_001",
@@ -4414,6 +4417,7 @@
       }
     ],
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "explosionRadius": 3,
     "explosionForce": 75,
@@ -5717,6 +5721,7 @@
       }
     ],
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "explosionRadius": 3,
     "explosionForce": 100,
@@ -6159,6 +6164,7 @@
     "numberOfBounces": 50,
     "averageSurvivingBounces": 50,
     "penetration": 1000,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "animation": {
       "name": "shark_fin_north",
@@ -8538,6 +8544,7 @@
     "force": 6,
     "additionalDamage": [],
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "restoreAmmoOnHit": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -8914,6 +8921,7 @@
       }
     ],
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "explosionRadius": 3,
     "explosionForce": 100,
@@ -9475,6 +9483,7 @@
       }
     ],
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "explosionRadius": 3,
     "explosionForce": 75,
@@ -9930,6 +9939,7 @@
     "force": 10,
     "additionalDamage": [],
     "penetration": 1,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "isHoming": true,
     "homingRadius": 20,
@@ -9956,6 +9966,7 @@
     "force": 6,
     "additionalDamage": [],
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "canPenetrateObjects": true,
     "animation": {
       "name": "recharge_gun_projectile_002",

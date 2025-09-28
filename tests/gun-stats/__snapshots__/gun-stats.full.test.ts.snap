@@ -1023,23 +1023,11 @@ exports[`Gun > AU Gun (53) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 100,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 100
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 83.333,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 83.333
-      }
-    ]
+    "details": []
   },
   "fireRate": 50,
   "force": {
@@ -1051,20 +1039,14 @@ exports[`Gun > AU Gun (53) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 22,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 100,
-        "dps": 83.333,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "canPenetrateObjects": true,
     "damage": 100,
     "dps": 83.333,
     "force": 10,
     "id": "GoldenGunProjectile",
     "penetration": 1,
+    "penetrationBlockedByEnemies": true,
     "range": 1000,
     "speed": 25
   },
@@ -1076,20 +1058,14 @@ exports[`Gun > AU Gun (53) > [variants=0-A-A,0-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 100,
-            "dps": 83.333,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "canPenetrateObjects": true,
         "damage": 100,
         "dps": 83.333,
         "force": 10,
         "id": "GoldenGunProjectile",
         "penetration": 1,
+        "penetrationBlockedByEnemies": true,
         "range": 1000,
         "speed": 25
       }
@@ -1119,20 +1095,14 @@ exports[`Gun > AU Gun (53) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 100,
-                "dps": 83.333,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "canPenetrateObjects": true,
             "damage": 100,
             "dps": 83.333,
             "force": 10,
             "id": "GoldenGunProjectile",
             "penetration": 1,
+            "penetrationBlockedByEnemies": true,
             "range": 1000,
             "speed": 25
           }
@@ -10422,6 +10392,11 @@ exports[`Gun > Bullet Bore (362) > [variants=0-A-A,0-0-0] 1`] = `
       {
         "tooltip": "explosion",
         "value": 25
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 10
       }
     ]
   },
@@ -10431,6 +10406,11 @@ exports[`Gun > Bullet Bore (362) > [variants=0-A-A,0-0-0] 1`] = `
       {
         "tooltip": "explosion",
         "value": 16.667
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 6.667
       }
     ]
   },
@@ -10454,6 +10434,12 @@ exports[`Gun > Bullet Bore (362) > [variants=0-A-A,0-0-0] 1`] = `
         "damage": 25,
         "dps": 16.667,
         "source": "explosion"
+      },
+      {
+        "damage": 10,
+        "dps": 6.667,
+        "isEstimated": true,
+        "source": "pierce"
       }
     ],
     "canPenetrateObjects": true,
@@ -10485,6 +10471,12 @@ exports[`Gun > Bullet Bore (362) > [variants=0-A-A,0-0-0] 1`] = `
             "damage": 25,
             "dps": 16.667,
             "source": "explosion"
+          },
+          {
+            "damage": 10,
+            "dps": 6.667,
+            "isEstimated": true,
+            "source": "pierce"
           }
         ],
         "canPenetrateObjects": true,
@@ -10534,6 +10526,12 @@ exports[`Gun > Bullet Bore (362) > modes 1`] = `
                 "damage": 25,
                 "dps": 16.667,
                 "source": "explosion"
+              },
+              {
+                "damage": 10,
+                "dps": 6.667,
+                "isEstimated": true,
+                "source": "pierce"
               }
             ],
             "canPenetrateObjects": true,
@@ -10571,6 +10569,11 @@ exports[`Gun > Bullet Bore (717) > [variants=0-0-0,0-1-0] 1`] = `
       {
         "tooltip": "explosion",
         "value": 25
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 10
       }
     ]
   },
@@ -10580,6 +10583,11 @@ exports[`Gun > Bullet Bore (717) > [variants=0-0-0,0-1-0] 1`] = `
       {
         "tooltip": "explosion",
         "value": 16.667
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 6.667
       }
     ]
   },
@@ -10603,6 +10611,12 @@ exports[`Gun > Bullet Bore (717) > [variants=0-0-0,0-1-0] 1`] = `
         "damage": 25,
         "dps": 16.667,
         "source": "explosion"
+      },
+      {
+        "damage": 10,
+        "dps": 6.667,
+        "isEstimated": true,
+        "source": "pierce"
       }
     ],
     "canPenetrateObjects": true,
@@ -10634,6 +10648,12 @@ exports[`Gun > Bullet Bore (717) > [variants=0-0-0,0-1-0] 1`] = `
             "damage": 25,
             "dps": 16.667,
             "source": "explosion"
+          },
+          {
+            "damage": 10,
+            "dps": 6.667,
+            "isEstimated": true,
+            "source": "pierce"
           }
         ],
         "canPenetrateObjects": true,
@@ -10672,6 +10692,11 @@ exports[`Gun > Bullet Bore (717) > [variants=0-A-A] 1`] = `
       {
         "tooltip": "explosion",
         "value": 50
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 20
       }
     ]
   },
@@ -10681,6 +10706,11 @@ exports[`Gun > Bullet Bore (717) > [variants=0-A-A] 1`] = `
       {
         "tooltip": "explosion",
         "value": 33.333
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 13.333
       }
     ]
   },
@@ -10704,6 +10734,12 @@ exports[`Gun > Bullet Bore (717) > [variants=0-A-A] 1`] = `
         "damage": 50,
         "dps": 33.333,
         "source": "explosion"
+      },
+      {
+        "damage": 20,
+        "dps": 13.333,
+        "isEstimated": true,
+        "source": "pierce"
       }
     ],
     "canPenetrateObjects": true,
@@ -10735,6 +10771,12 @@ exports[`Gun > Bullet Bore (717) > [variants=0-A-A] 1`] = `
             "damage": 50,
             "dps": 33.333,
             "source": "explosion"
+          },
+          {
+            "damage": 20,
+            "dps": 13.333,
+            "isEstimated": true,
+            "source": "pierce"
           }
         ],
         "canPenetrateObjects": true,
@@ -10785,6 +10827,12 @@ exports[`Gun > Bullet Bore (717) > modes 1`] = `
                 "damage": 25,
                 "dps": 16.667,
                 "source": "explosion"
+              },
+              {
+                "damage": 10,
+                "dps": 6.667,
+                "isEstimated": true,
+                "source": "pierce"
               }
             ],
             "canPenetrateObjects": true,
@@ -14263,23 +14311,11 @@ exports[`Gun > Compressed Air Tank (359) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 150,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 900
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 120,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 720
-      }
-    ]
+    "details": []
   },
   "fireRate": 48,
   "force": {
@@ -14291,14 +14327,7 @@ exports[`Gun > Compressed Air Tank (359) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 50,
   "precision": 80,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 900,
-        "dps": 720,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "averageSurvivingBounces": 50,
     "canPenetrateObjects": true,
     "damage": 150,
@@ -14307,6 +14336,7 @@ exports[`Gun > Compressed Air Tank (359) > [variants=0-A-A,0-0-0] 1`] = `
     "id": "SharkProjectile",
     "numberOfBounces": 50,
     "penetration": 1000,
+    "penetrationBlockedByEnemies": true,
     "range": 1000,
     "speed": 10
   },
@@ -14318,14 +14348,7 @@ exports[`Gun > Compressed Air Tank (359) > [variants=0-A-A,0-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 900,
-            "dps": 720,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "averageSurvivingBounces": 50,
         "canPenetrateObjects": true,
         "damage": 150,
@@ -14334,6 +14357,7 @@ exports[`Gun > Compressed Air Tank (359) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "SharkProjectile",
         "numberOfBounces": 50,
         "penetration": 1000,
+        "penetrationBlockedByEnemies": true,
         "range": 1000,
         "speed": 10
       }
@@ -14364,14 +14388,7 @@ exports[`Gun > Compressed Air Tank (359) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 900,
-                "dps": 720,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "averageSurvivingBounces": 50,
             "canPenetrateObjects": true,
             "damage": 150,
@@ -14380,6 +14397,7 @@ exports[`Gun > Compressed Air Tank (359) > modes 1`] = `
             "id": "SharkProjectile",
             "numberOfBounces": 50,
             "penetration": 1000,
+            "penetrationBlockedByEnemies": true,
             "range": 1000,
             "speed": 10
           }
@@ -14400,8 +14418,14 @@ exports[`Gun > Corsair (327) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
+        "chance": 0.032,
         "tooltip": "explosion",
         "value": 40
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 70
       }
     ]
   },
@@ -14409,8 +14433,14 @@ exports[`Gun > Corsair (327) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 12.5,
     "details": [
       {
+        "chance": 0.032,
         "tooltip": "explosion",
         "value": 50
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 87.5
       }
     ]
   },
@@ -14427,8 +14457,15 @@ exports[`Gun > Corsair (327) > [variants=0-A-A,0-0-0] 1`] = `
     "additionalDamage": [
       {
         "damage": 40,
+        "damageChance": 0.032,
         "dps": 50,
         "source": "explosion"
+      },
+      {
+        "damage": 70,
+        "dps": 87.5,
+        "isEstimated": true,
+        "source": "pierce"
       }
     ],
     "averageSurvivingBounces": 5.126,
@@ -14459,8 +14496,15 @@ exports[`Gun > Corsair (327) > [variants=0-A-A,0-0-0] 1`] = `
         "additionalDamage": [
           {
             "damage": 40,
+            "damageChance": 0.032,
             "dps": 50,
             "source": "explosion"
+          },
+          {
+            "damage": 70,
+            "dps": 87.5,
+            "isEstimated": true,
+            "source": "pierce"
           }
         ],
         "averageSurvivingBounces": 5.126,
@@ -14510,8 +14554,15 @@ exports[`Gun > Corsair (327) > modes 1`] = `
             "additionalDamage": [
               {
                 "damage": 40,
+                "damageChance": 0.032,
                 "dps": 50,
                 "source": "explosion"
+              },
+              {
+                "damage": 70,
+                "dps": 87.5,
+                "isEstimated": true,
+                "source": "pierce"
               }
             ],
             "averageSurvivingBounces": 5.126,
@@ -14548,8 +14599,14 @@ exports[`Gun > Corsair (686) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 10,
     "details": [
       {
+        "chance": 0.032,
         "tooltip": "explosion",
         "value": 40
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 70
       }
     ]
   },
@@ -14557,8 +14614,14 @@ exports[`Gun > Corsair (686) > [variants=0-A-A,0-0-0] 1`] = `
     "base": 12.5,
     "details": [
       {
+        "chance": 0.032,
         "tooltip": "explosion",
         "value": 50
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 87.5
       }
     ]
   },
@@ -14575,8 +14638,15 @@ exports[`Gun > Corsair (686) > [variants=0-A-A,0-0-0] 1`] = `
     "additionalDamage": [
       {
         "damage": 40,
+        "damageChance": 0.032,
         "dps": 50,
         "source": "explosion"
+      },
+      {
+        "damage": 70,
+        "dps": 87.5,
+        "isEstimated": true,
+        "source": "pierce"
       }
     ],
     "averageSurvivingBounces": 5.126,
@@ -14607,8 +14677,15 @@ exports[`Gun > Corsair (686) > [variants=0-A-A,0-0-0] 1`] = `
         "additionalDamage": [
           {
             "damage": 40,
+            "damageChance": 0.032,
             "dps": 50,
             "source": "explosion"
+          },
+          {
+            "damage": 70,
+            "dps": 87.5,
+            "isEstimated": true,
+            "source": "pierce"
           }
         ],
         "averageSurvivingBounces": 5.126,
@@ -14658,8 +14735,15 @@ exports[`Gun > Corsair (686) > modes 1`] = `
             "additionalDamage": [
               {
                 "damage": 40,
+                "damageChance": 0.032,
                 "dps": 50,
                 "source": "explosion"
+              },
+              {
+                "damage": 70,
+                "dps": 87.5,
+                "isEstimated": true,
+                "source": "pierce"
               }
             ],
             "averageSurvivingBounces": 5.126,
@@ -14754,6 +14838,11 @@ exports[`Gun > Crash Bomber (624) > [variants=1-A-A,1-0-0] 1`] = `
       {
         "tooltip": "explosion",
         "value": 25
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 10
       }
     ]
   },
@@ -14763,6 +14852,11 @@ exports[`Gun > Crash Bomber (624) > [variants=1-A-A,1-0-0] 1`] = `
       {
         "tooltip": "explosion",
         "value": 26.596
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 10.638
       }
     ]
   },
@@ -14786,6 +14880,12 @@ exports[`Gun > Crash Bomber (624) > [variants=1-A-A,1-0-0] 1`] = `
         "damage": 25,
         "dps": 26.596,
         "source": "explosion"
+      },
+      {
+        "damage": 10,
+        "dps": 10.638,
+        "isEstimated": true,
+        "source": "pierce"
       }
     ],
     "canPenetrateObjects": true,
@@ -14817,6 +14917,12 @@ exports[`Gun > Crash Bomber (624) > [variants=1-A-A,1-0-0] 1`] = `
             "damage": 25,
             "dps": 26.596,
             "source": "explosion"
+          },
+          {
+            "damage": 10,
+            "dps": 10.638,
+            "isEstimated": true,
+            "source": "pierce"
           }
         ],
         "canPenetrateObjects": true,
@@ -14896,6 +15002,12 @@ exports[`Gun > Crash Bomber (624) > modes 1`] = `
                 "damage": 25,
                 "dps": 26.596,
                 "source": "explosion"
+              },
+              {
+                "damage": 10,
+                "dps": 10.638,
+                "isEstimated": true,
+                "source": "pierce"
               }
             ],
             "canPenetrateObjects": true,
@@ -16088,6 +16200,11 @@ exports[`Gun > Dark Marker (274) > [variants=1-0-0] 1`] = `
       {
         "tooltip": "explosion",
         "value": 50
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 120
       }
     ]
   },
@@ -16097,6 +16214,11 @@ exports[`Gun > Dark Marker (274) > [variants=1-0-0] 1`] = `
       {
         "tooltip": "explosion",
         "value": 16.667
+      },
+      {
+        "isEstimated": true,
+        "tooltip": "pierce",
+        "value": 40
       }
     ]
   },
@@ -16120,6 +16242,12 @@ exports[`Gun > Dark Marker (274) > [variants=1-0-0] 1`] = `
         "damage": 50,
         "dps": 16.667,
         "source": "explosion"
+      },
+      {
+        "damage": 120,
+        "dps": 40,
+        "isEstimated": true,
+        "source": "pierce"
       }
     ],
     "antimatter": true,
@@ -16150,6 +16278,12 @@ exports[`Gun > Dark Marker (274) > [variants=1-0-0] 1`] = `
             "damage": 50,
             "dps": 16.667,
             "source": "explosion"
+          },
+          {
+            "damage": 120,
+            "dps": 40,
+            "isEstimated": true,
+            "source": "pierce"
           }
         ],
         "antimatter": true,
@@ -16282,7 +16416,7 @@ exports[`Gun > Dark Marker (274) > [variants=1-A-A] 1`] = `
       {
         "isEstimated": true,
         "tooltip": "pierce",
-        "value": 120
+        "value": 240
       }
     ]
   },
@@ -16296,7 +16430,7 @@ exports[`Gun > Dark Marker (274) > [variants=1-A-A] 1`] = `
       {
         "isEstimated": true,
         "tooltip": "pierce",
-        "value": 40
+        "value": 80
       }
     ]
   },
@@ -16322,8 +16456,8 @@ exports[`Gun > Dark Marker (274) > [variants=1-A-A] 1`] = `
         "source": "explosion"
       },
       {
-        "damage": 120,
-        "dps": 40,
+        "damage": 240,
+        "dps": 80,
         "isEstimated": true,
         "source": "pierce"
       }
@@ -16359,8 +16493,8 @@ exports[`Gun > Dark Marker (274) > [variants=1-A-A] 1`] = `
             "source": "explosion"
           },
           {
-            "damage": 120,
-            "dps": 40,
+            "damage": 240,
+            "dps": 80,
             "isEstimated": true,
             "source": "pierce"
           }
@@ -16440,6 +16574,12 @@ exports[`Gun > Dark Marker (274) > modes 1`] = `
                 "damage": 50,
                 "dps": 16.667,
                 "source": "explosion"
+              },
+              {
+                "damage": 120,
+                "dps": 40,
+                "isEstimated": true,
+                "source": "pierce"
               }
             ],
             "antimatter": true,
@@ -24636,6 +24776,7 @@ exports[`Gun > Gunbow (693) > [variants=0-A-A,0-0-0] 1`] = `
     "id": "BulletBow_Synergy_Projectile",
     "numberOfBounces": 6,
     "penetration": 50,
+    "penetrationBlockedByEnemies": true,
     "range": 1000,
     "speed": 500
   },
@@ -24664,6 +24805,7 @@ exports[`Gun > Gunbow (693) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "BulletBow_Synergy_Projectile",
         "numberOfBounces": 6,
         "penetration": 50,
+        "penetrationBlockedByEnemies": true,
         "range": 1000,
         "speed": 500
       }
@@ -24711,6 +24853,7 @@ exports[`Gun > Gunbow (693) > modes 1`] = `
             "id": "BulletBow_Synergy_Projectile",
             "numberOfBounces": 6,
             "penetration": 50,
+            "penetrationBlockedByEnemies": true,
             "range": 1000,
             "speed": 500
           }
@@ -25827,6 +25970,7 @@ exports[`Gun > Gungeon Ant (739) > [variants=0-A-A,0-0-0] 1`] = `
     "force": 10,
     "id": "Ant_Gun_Missile_Synergy",
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "range": 90,
     "speed": 40
   },
@@ -25853,6 +25997,7 @@ exports[`Gun > Gungeon Ant (739) > [variants=0-A-A,0-0-0] 1`] = `
         "force": 10,
         "id": "Ant_Gun_Missile_Synergy",
         "penetration": 10,
+        "penetrationBlockedByEnemies": true,
         "range": 90,
         "speed": 40
       }
@@ -25897,6 +26042,7 @@ exports[`Gun > Gungeon Ant (739) > modes 1`] = `
             "force": 10,
             "id": "Ant_Gun_Missile_Synergy",
             "penetration": 10,
+            "penetrationBlockedByEnemies": true,
             "range": 90,
             "speed": 40
           }
@@ -30310,23 +30456,11 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 20,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 60
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 81.633,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 244.898
-      }
-    ]
+    "details": []
   },
   "fireRate": 244.898,
   "force": {
@@ -30338,14 +30472,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 12,
   "precision": 86.667,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 60,
-        "dps": 244.898,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -30354,6 +30481,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "restoreAmmoOnHit": true,
     "speed": 26
@@ -30366,14 +30494,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 60,
-            "dps": 244.898,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
         "chanceToRestoreAmmoOnHit": 1,
@@ -30382,6 +30503,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=0-A-A,0-0-0] 1`] = `
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "restoreAmmoOnHit": true,
         "speed": 26
@@ -30402,23 +30524,11 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=1-A-A,1-0-0] 1`] = `
 "{
   "damage": {
     "base": 20,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 60
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 81.633,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 244.898
-      }
-    ]
+    "details": []
   },
   "fireRate": 244.898,
   "force": {
@@ -30430,14 +30540,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=1-A-A,1-0-0] 1`] = `
   "maxAmmo": 30,
   "precision": 86.667,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 60,
-        "dps": 244.898,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -30446,6 +30549,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=1-A-A,1-0-0] 1`] = `
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "restoreAmmoOnHit": true,
     "speed": 26
@@ -30458,14 +30562,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=1-A-A,1-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 60,
-            "dps": 244.898,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
         "chanceToRestoreAmmoOnHit": 1,
@@ -30474,6 +30571,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=1-A-A,1-0-0] 1`] = `
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "restoreAmmoOnHit": true,
         "speed": 26
@@ -30494,23 +30592,11 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=2-A-A,2-0-0] 1`] = `
 "{
   "damage": {
     "base": 20,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 60
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 81.633,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 244.898
-      }
-    ]
+    "details": []
   },
   "fireRate": 244.898,
   "force": {
@@ -30522,14 +30608,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=2-A-A,2-0-0] 1`] = `
   "maxAmmo": 120,
   "precision": 86.667,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 60,
-        "dps": 244.898,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -30538,6 +30617,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=2-A-A,2-0-0] 1`] = `
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "restoreAmmoOnHit": true,
     "speed": 26
@@ -30550,14 +30630,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=2-A-A,2-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 60,
-            "dps": 244.898,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
         "chanceToRestoreAmmoOnHit": 1,
@@ -30566,6 +30639,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=2-A-A,2-0-0] 1`] = `
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "restoreAmmoOnHit": true,
         "speed": 26
@@ -30586,23 +30660,11 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=3-A-A,3-0-0] 1`] = `
 "{
   "damage": {
     "base": 20,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 60
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 81.633,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 244.898
-      }
-    ]
+    "details": []
   },
   "fireRate": 244.898,
   "force": {
@@ -30614,14 +30676,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=3-A-A,3-0-0] 1`] = `
   "maxAmmo": 10000,
   "precision": 86.667,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 60,
-        "dps": 244.898,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -30630,6 +30685,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=3-A-A,3-0-0] 1`] = `
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "restoreAmmoOnHit": true,
     "speed": 26
@@ -30642,14 +30698,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=3-A-A,3-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 60,
-            "dps": 244.898,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
         "chanceToRestoreAmmoOnHit": 1,
@@ -30658,6 +30707,7 @@ exports[`Gun > Hyper Light Blaster (504) > [variants=3-A-A,3-0-0] 1`] = `
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "restoreAmmoOnHit": true,
         "speed": 26
@@ -30689,14 +30739,7 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 60,
-                "dps": 244.898,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
             "chanceToRestoreAmmoOnHit": 1,
@@ -30705,6 +30748,7 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "restoreAmmoOnHit": true,
             "speed": 26
@@ -30730,14 +30774,7 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 60,
-                "dps": 244.898,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
             "chanceToRestoreAmmoOnHit": 1,
@@ -30746,6 +30783,7 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "restoreAmmoOnHit": true,
             "speed": 26
@@ -30771,14 +30809,7 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 60,
-                "dps": 244.898,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
             "chanceToRestoreAmmoOnHit": 1,
@@ -30787,6 +30818,7 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "restoreAmmoOnHit": true,
             "speed": 26
@@ -30812,14 +30844,7 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 60,
-                "dps": 244.898,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
             "chanceToRestoreAmmoOnHit": 1,
@@ -30828,6 +30853,7 @@ exports[`Gun > Hyper Light Blaster (504) > modes 1`] = `
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "restoreAmmoOnHit": true,
             "speed": 26
@@ -30847,23 +30873,11 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 20,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 60
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 98.361,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 295.082
-      }
-    ]
+    "details": []
   },
   "fireRate": 295.082,
   "force": {
@@ -30875,14 +30889,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 18,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 60,
-        "dps": 295.082,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -30891,6 +30898,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "restoreAmmoOnHit": true,
     "speed": 26
@@ -30903,14 +30911,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 60,
-            "dps": 295.082,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
         "chanceToRestoreAmmoOnHit": 1,
@@ -30919,6 +30920,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=0-A-A,0-0-0] 1`] = `
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "restoreAmmoOnHit": true,
         "speed": 26
@@ -30939,23 +30941,11 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=1-A-A,1-0-0] 1`] = `
 "{
   "damage": {
     "base": 20,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 60
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 98.361,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 295.082
-      }
-    ]
+    "details": []
   },
   "fireRate": 295.082,
   "force": {
@@ -30967,14 +30957,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=1-A-A,1-0-0] 1`] = `
   "maxAmmo": 45,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 60,
-        "dps": 295.082,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -30983,6 +30966,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=1-A-A,1-0-0] 1`] = `
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "restoreAmmoOnHit": true,
     "speed": 26
@@ -30995,14 +30979,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=1-A-A,1-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 60,
-            "dps": 295.082,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
         "chanceToRestoreAmmoOnHit": 1,
@@ -31011,6 +30988,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=1-A-A,1-0-0] 1`] = `
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "restoreAmmoOnHit": true,
         "speed": 26
@@ -31031,23 +31009,11 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=2-A-A,2-0-0] 1`] = `
 "{
   "damage": {
     "base": 20,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 60
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 98.361,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 295.082
-      }
-    ]
+    "details": []
   },
   "fireRate": 295.082,
   "force": {
@@ -31059,14 +31025,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=2-A-A,2-0-0] 1`] = `
   "maxAmmo": 180,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 60,
-        "dps": 295.082,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -31075,6 +31034,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=2-A-A,2-0-0] 1`] = `
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "restoreAmmoOnHit": true,
     "speed": 26
@@ -31087,14 +31047,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=2-A-A,2-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 60,
-            "dps": 295.082,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
         "chanceToRestoreAmmoOnHit": 1,
@@ -31103,6 +31056,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=2-A-A,2-0-0] 1`] = `
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "restoreAmmoOnHit": true,
         "speed": 26
@@ -31123,23 +31077,11 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=3-A-A,3-0-0] 1`] = `
 "{
   "damage": {
     "base": 20,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 60
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 98.361,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 295.082
-      }
-    ]
+    "details": []
   },
   "fireRate": 295.082,
   "force": {
@@ -31151,14 +31093,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=3-A-A,3-0-0] 1`] = `
   "maxAmmo": 10000,
   "precision": 100,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 60,
-        "dps": 295.082,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "ammoToRestoreOnHit": 1,
     "canPenetrateObjects": true,
     "chanceToRestoreAmmoOnHit": 1,
@@ -31167,6 +31102,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=3-A-A,3-0-0] 1`] = `
     "force": 6,
     "id": "HLD_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "restoreAmmoOnHit": true,
     "speed": 26
@@ -31179,14 +31115,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=3-A-A,3-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 60,
-            "dps": 295.082,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "ammoToRestoreOnHit": 1,
         "canPenetrateObjects": true,
         "chanceToRestoreAmmoOnHit": 1,
@@ -31195,6 +31124,7 @@ exports[`Gun > Hyper Light Blaster (695) > [variants=3-A-A,3-0-0] 1`] = `
         "force": 6,
         "id": "HLD_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "restoreAmmoOnHit": true,
         "speed": 26
@@ -31226,14 +31156,7 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 60,
-                "dps": 295.082,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
             "chanceToRestoreAmmoOnHit": 1,
@@ -31242,6 +31165,7 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "restoreAmmoOnHit": true,
             "speed": 26
@@ -31267,14 +31191,7 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 60,
-                "dps": 295.082,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
             "chanceToRestoreAmmoOnHit": 1,
@@ -31283,6 +31200,7 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "restoreAmmoOnHit": true,
             "speed": 26
@@ -31308,14 +31226,7 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 60,
-                "dps": 295.082,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
             "chanceToRestoreAmmoOnHit": 1,
@@ -31324,6 +31235,7 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "restoreAmmoOnHit": true,
             "speed": 26
@@ -31349,14 +31261,7 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 60,
-                "dps": 295.082,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "ammoToRestoreOnHit": 1,
             "canPenetrateObjects": true,
             "chanceToRestoreAmmoOnHit": 1,
@@ -31365,6 +31270,7 @@ exports[`Gun > Hyper Light Blaster (695) > modes 1`] = `
             "force": 6,
             "id": "HLD_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "restoreAmmoOnHit": true,
             "speed": 26
@@ -51469,6 +51375,7 @@ exports[`Gun > RPG (39) > [variants=0-A-A,0-0-0] 1`] = `
     "force": 10,
     "id": "RPG_Missile",
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "range": 90,
     "speed": 40
   },
@@ -51495,6 +51402,7 @@ exports[`Gun > RPG (39) > [variants=0-A-A,0-0-0] 1`] = `
         "force": 10,
         "id": "RPG_Missile",
         "penetration": 10,
+        "penetrationBlockedByEnemies": true,
         "range": 90,
         "speed": 40
       }
@@ -51539,6 +51447,7 @@ exports[`Gun > RPG (39) > modes 1`] = `
             "force": 10,
             "id": "RPG_Missile",
             "penetration": 10,
+            "penetrationBlockedByEnemies": true,
             "range": 90,
             "speed": 40
           }
@@ -63738,6 +63647,7 @@ exports[`Gun > Stinger (92) > [variants=0-3-0] 1`] = `
     "force": 10,
     "id": "Stinger_Projectile",
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "range": 60,
     "spawnCollisionProjectilesOnBounce": true,
     "spawnProjectile": "BeeProjectile",
@@ -63769,6 +63679,7 @@ exports[`Gun > Stinger (92) > [variants=0-3-0] 1`] = `
         "force": 10,
         "id": "Stinger_Projectile",
         "penetration": 10,
+        "penetrationBlockedByEnemies": true,
         "range": 60,
         "spawnCollisionProjectilesOnBounce": true,
         "spawnProjectile": "BeeProjectile",
@@ -63962,6 +63873,7 @@ exports[`Gun > Stinger (92) > [variants=0-A-A] 1`] = `
     "isBeeLikeTargetBehavior": true,
     "isHoming": true,
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "range": 1000,
     "spawnCollisionProjectilesOnBounce": true,
     "spawnLevel": 1,
@@ -64005,6 +63917,7 @@ exports[`Gun > Stinger (92) > [variants=0-A-A] 1`] = `
         "isBeeLikeTargetBehavior": true,
         "isHoming": true,
         "penetration": 10,
+        "penetrationBlockedByEnemies": true,
         "range": 1000,
         "spawnCollisionProjectilesOnBounce": true,
         "spawnProjectile": "BeeProjectile",
@@ -64088,6 +64001,7 @@ exports[`Gun > Stinger (92) > modes 1`] = `
             "force": 10,
             "id": "Stinger_Projectile",
             "penetration": 10,
+            "penetrationBlockedByEnemies": true,
             "range": 60,
             "spawnCollisionProjectilesOnBounce": true,
             "spawnProjectile": "BeeProjectile",
@@ -67049,6 +66963,7 @@ exports[`Gun > The Exotic (563) > [variants=0-0-0] 1`] = `
     "force": 10,
     "id": "Exotic_Projectile",
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "range": 60,
     "spawnCollisionProjectilesOnBounce": true,
     "spawnProjectile": "Exotic_Submissile",
@@ -67080,6 +66995,7 @@ exports[`Gun > The Exotic (563) > [variants=0-0-0] 1`] = `
         "force": 10,
         "id": "Exotic_Projectile",
         "penetration": 10,
+        "penetrationBlockedByEnemies": true,
         "range": 60,
         "spawnCollisionProjectilesOnBounce": true,
         "spawnProjectile": "Exotic_Submissile",
@@ -67270,6 +67186,7 @@ exports[`Gun > The Exotic (563) > [variants=0-A-A] 1`] = `
     "id": "Exotic_Projectile,Exotic_Submissile",
     "isHoming": true,
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "range": 60,
     "spawnCollisionProjectilesOnBounce": true,
     "spawnLevel": 1,
@@ -67302,6 +67219,7 @@ exports[`Gun > The Exotic (563) > [variants=0-A-A] 1`] = `
         "force": 10,
         "id": "Exotic_Projectile",
         "penetration": 10,
+        "penetrationBlockedByEnemies": true,
         "range": 60,
         "spawnCollisionProjectilesOnBounce": true,
         "spawnProjectile": "Exotic_Submissile",
@@ -67350,6 +67268,7 @@ exports[`Gun > The Exotic (563) > modes 1`] = `
             "force": 10,
             "id": "Exotic_Projectile",
             "penetration": 10,
+            "penetrationBlockedByEnemies": true,
             "range": 60,
             "spawnCollisionProjectilesOnBounce": true,
             "spawnProjectile": "Exotic_Submissile",
@@ -69823,23 +69742,11 @@ exports[`Gun > The Predator (543) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 25,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 25
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 26.316,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 26.316
-      }
-    ]
+    "details": []
   },
   "fireRate": 63.158,
   "force": {
@@ -69851,14 +69758,7 @@ exports[`Gun > The Predator (543) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 150,
   "precision": 83.333,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 25,
-        "dps": 26.316,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "canPenetrateObjects": true,
     "damage": 25,
     "dps": 26.316,
@@ -69868,6 +69768,7 @@ exports[`Gun > The Predator (543) > [variants=0-A-A,0-0-0] 1`] = `
     "id": "Predator_Projectile",
     "isHoming": true,
     "penetration": 1,
+    "penetrationBlockedByEnemies": true,
     "range": 32,
     "speed": 75
   },
@@ -69879,14 +69780,7 @@ exports[`Gun > The Predator (543) > [variants=0-A-A,0-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 25,
-            "dps": 26.316,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "canPenetrateObjects": true,
         "damage": 25,
         "dps": 26.316,
@@ -69896,6 +69790,7 @@ exports[`Gun > The Predator (543) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "Predator_Projectile",
         "isHoming": true,
         "penetration": 1,
+        "penetrationBlockedByEnemies": true,
         "range": 32,
         "speed": 75
       }
@@ -69925,14 +69820,7 @@ exports[`Gun > The Predator (543) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 25,
-                "dps": 26.316,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "canPenetrateObjects": true,
             "damage": 25,
             "dps": 26.316,
@@ -69942,6 +69830,7 @@ exports[`Gun > The Predator (543) > modes 1`] = `
             "id": "Predator_Projectile",
             "isHoming": true,
             "penetration": 1,
+            "penetrationBlockedByEnemies": true,
             "range": 32,
             "speed": 75
           }
@@ -72692,23 +72581,11 @@ exports[`Gun > Turbo-Gun (577) > [variants=0-A-A,0-0-0] 1`] = `
 "{
   "damage": {
     "base": 7,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 21
-      }
-    ]
+    "details": []
   },
   "dps": {
     "base": 26.25,
-    "details": [
-      {
-        "isEstimated": true,
-        "tooltip": "pierce",
-        "value": 78.75
-      }
-    ]
+    "details": []
   },
   "fireRate": 225,
   "force": {
@@ -72720,20 +72597,14 @@ exports[`Gun > Turbo-Gun (577) > [variants=0-A-A,0-0-0] 1`] = `
   "maxAmmo": 180,
   "precision": 86.667,
   "projectile": {
-    "additionalDamage": [
-      {
-        "damage": 21,
-        "dps": 78.75,
-        "isEstimated": true,
-        "source": "pierce"
-      }
-    ],
+    "additionalDamage": [],
     "canPenetrateObjects": true,
     "damage": 7,
     "dps": 26.25,
     "force": 6,
     "id": "Recharge_Projectile",
     "penetration": 5,
+    "penetrationBlockedByEnemies": true,
     "range": 20,
     "speed": 21
   },
@@ -72745,20 +72616,14 @@ exports[`Gun > Turbo-Gun (577) > [variants=0-A-A,0-0-0] 1`] = `
     "finalProjectiles": [],
     "projectiles": [
       {
-        "additionalDamage": [
-          {
-            "damage": 21,
-            "dps": 78.75,
-            "isEstimated": true,
-            "source": "pierce"
-          }
-        ],
+        "additionalDamage": [],
         "canPenetrateObjects": true,
         "damage": 7,
         "dps": 26.25,
         "force": 6,
         "id": "Recharge_Projectile",
         "penetration": 5,
+        "penetrationBlockedByEnemies": true,
         "range": 20,
         "speed": 21
       }
@@ -72788,20 +72653,14 @@ exports[`Gun > Turbo-Gun (577) > modes 1`] = `
         "finalProjectiles": [],
         "projectiles": [
           {
-            "additionalDamage": [
-              {
-                "damage": 21,
-                "dps": 78.75,
-                "isEstimated": true,
-                "source": "pierce"
-              }
-            ],
+            "additionalDamage": [],
             "canPenetrateObjects": true,
             "damage": 7,
             "dps": 26.25,
             "force": 6,
             "id": "Recharge_Projectile",
             "penetration": 5,
+            "penetrationBlockedByEnemies": true,
             "range": 20,
             "speed": 21
           }
@@ -73943,6 +73802,7 @@ exports[`Gun > Void Core Cannon (593) > [variants=0-A-A,0-0-0] 1`] = `
     "id": "Voidcore_Missile",
     "isHoming": true,
     "penetration": 10,
+    "penetrationBlockedByEnemies": true,
     "range": 90,
     "speed": 40
   },
@@ -73972,6 +73832,7 @@ exports[`Gun > Void Core Cannon (593) > [variants=0-A-A,0-0-0] 1`] = `
         "id": "Voidcore_Missile",
         "isHoming": true,
         "penetration": 10,
+        "penetrationBlockedByEnemies": true,
         "range": 90,
         "speed": 40
       }
@@ -74019,6 +73880,7 @@ exports[`Gun > Void Core Cannon (593) > modes 1`] = `
             "id": "Voidcore_Missile",
             "isHoming": true,
             "penetration": 10,
+            "penetrationBlockedByEnemies": true,
             "range": 90,
             "speed": 40
           }

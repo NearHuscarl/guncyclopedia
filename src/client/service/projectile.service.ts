@@ -40,6 +40,15 @@ export const HomingLevel = {
   InstantHit: 4,
 } as const;
 
+export const ExplosiveLevel = {
+  None: -1,
+  Pathetic: 0,
+  Weak: 1,
+  Moderate: 2,
+  Strong: 3,
+  Freeze: 10,
+} as const;
+
 export class ProjectileService {
   static readonly MAX_SPEED = 10_000;
   static readonly MAX_FIRE_RATE = 10_000;
@@ -94,6 +103,26 @@ export class ProjectileService {
     }
 
     return HomingLevel.Weak;
+  }
+
+  static getExplosiveLevel(projectile: TProjectile | TResolvedProjectile) {
+    if (!projectile.explosionRadius) return ExplosiveLevel.None;
+    if (projectile.explosionFreezeRadius) return ExplosiveLevel.Freeze;
+
+    const explosionForce = projectile.explosionForce ?? 0;
+    const explosionDamage = projectile.additionalDamage.find((d) => d.source === "explosion")?.damage ?? 0;
+
+    if (!explosionForce && !projectile.penetrationBlockedByEnemies) {
+      return ExplosiveLevel.Pathetic;
+    }
+    if (projectile.explosionRadius >= 6 && explosionForce >= 100 && explosionDamage >= 50) {
+      return ExplosiveLevel.Strong;
+    }
+    if (projectile.explosionRadius >= 3 && explosionForce >= 70 && explosionDamage >= 25) {
+      return ExplosiveLevel.Moderate;
+    }
+
+    return ExplosiveLevel.Weak;
   }
 
   /**
@@ -270,6 +299,7 @@ export class ProjectileService {
     isFinalBuff: "or",
     isFinalDebuff: "or",
     restoreAmmoOnHit: "or",
+    penetrationBlockedByEnemies: "or",
   };
   // All string keys that are aggregated into arrays of string
   private static readonly _sAggregateConfig: StringAggregateConfig = {

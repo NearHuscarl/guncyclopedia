@@ -235,6 +235,7 @@ export class GunModelGenerator {
     if (projDto.pierceProjModifier?.penetration) {
       proj.penetration = projDto.pierceProjModifier.penetration;
       proj.canPenetrateObjects = Boolean(projDto.pierceProjModifier.penetratesBreakables) || undefined;
+      proj.penetrationBlockedByEnemies = Boolean(projDto.pierceProjModifier.preventPenetrationOfActors) || undefined;
     }
 
     let explosionData = projDto.explosiveModifier?.doExplosion && projDto.explosiveModifier?.explosionData;
@@ -657,7 +658,7 @@ export class GunModelGenerator {
         this._buildModeFromProjectileModules(`Normal`, gunDto, defaultModule, [{ ...mod }]),
         ...holdTriggerDurations.map((d) =>
           this._buildModeFromProjectileModules(`Hold ${d}s`, gunDto, defaultModule, [
-            { ...mod, cooldownTime: mod.cooldownTime / ((baseFireRateStat + d) * x) },
+            { ...mod, cooldownTime: mod.cooldownTime / (baseFireRateStat + d * x) },
           ]),
         ),
       ];
@@ -743,6 +744,10 @@ export class GunModelGenerator {
     }
 
     const res: TProjectileMode[] = [];
+    // TODO: add default mode index (for Patriot,Synergied Vulcan Cannon, Hyper Light Blaster)
+    // TODO: mute RestoreAmmoOnHit icon and add more colors depend on the accuracy.
+    // TODO: add tooltip for explosion level
+
     // TODO: fix slow animation on Chrome in weaker machines
     // TODO: add wood beam swing damage
     // TODO: shellegun: beam dps should take charge time into account as magazine size !== max ammo

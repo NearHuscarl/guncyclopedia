@@ -21,13 +21,14 @@ export type TStatusEffectProp =
 export const DamageDetail = z.object({
   type: z.enum(["dps", "instant"]),
   /**
-   * Probability that this damage will actually occur. Default to `0` (never happen).
+   * Probability that this damage will actually occur. Default to `undefined` (always happen if the projectile hits the target).
    *
    * Used for chance-based effects such as status effect, piercing, or other random outcomes.
    *
    * The value may be derived from known mechanics or be an informed estimate when the exact data
    * is unavailable.
    *
+   * - If `damageChance = undefined` and `isEstimated = false`, the damage always happens.
    * - If `damageChance = 0` and `isEstimated = true`, the chance is considered unknown rather than 'never happen'.
    * - If `damageChance > 0`, the damage is estimated regardless of `isEstimated`.
    */
@@ -125,6 +126,7 @@ export const Projectile = z.object({
    * but explode on impact with the first enemy.
    */
   penetration: z.number().optional(),
+  penetrationBlockedByEnemies: z.boolean().optional(),
   canPenetrateObjects: z.boolean().optional(),
 
   explosionRadius: z.number().optional(),

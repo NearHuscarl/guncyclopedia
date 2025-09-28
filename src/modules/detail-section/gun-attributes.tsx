@@ -75,7 +75,7 @@ import { Homing } from "@/components/icons/homing";
 import { Homing2 } from "@/components/icons/homing2";
 import { Bee } from "@/components/icons/bee";
 import { Chest } from "@/components/icons/chest";
-import { HomingLevel, ProjectileService } from "@/client/service/projectile.service";
+import { ExplosiveLevel, HomingLevel, ProjectileService } from "@/client/service/projectile.service";
 import { AmmoIcon } from "@/components/icons/ammo";
 import { DamageAllEnemiesRadius } from "@/client/generated/models/projectile.model";
 import { LifeOrb } from "@/components/icons/life-orb";
@@ -247,6 +247,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
   const setPortraitAnimation = useGunStore((state) => state.setPortraitAnimation);
   const setHoverFinalProjectile = useGunStore((state) => state.setHoverFinalProjectile);
   const homingLevel = ProjectileService.getHomingLevel(projectile);
+  const explosiveLevel = ProjectileService.getExplosiveLevel(projectile);
 
   return (
     <div className="flex gap-3">
@@ -926,14 +927,26 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
         <Tooltip delayDuration={TOOLTIP_DELAY}>
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
-              <NumericValue className={clsx({ "text-sky-500": projectile.explosionFreezeRadius })}>
+              <NumericValue
+                className={clsx({
+                  "text-muted-foreground": explosiveLevel === ExplosiveLevel.Pathetic,
+                  "text-white": explosiveLevel === ExplosiveLevel.Weak,
+                  "text-primary": explosiveLevel === ExplosiveLevel.Moderate,
+                  "text-red-500": explosiveLevel === ExplosiveLevel.Strong,
+                  "text-sky-500": explosiveLevel === ExplosiveLevel.Freeze,
+                })}
+              >
                 {formatNumber(projectile.explosionRadius!, 1)}
               </NumericValue>
               <Explosion
                 size={18}
                 className={clsx({
                   "relative top-[-1px]": true,
-                  "[&_path]:fill-sky-500!": projectile.explosionFreezeRadius,
+                  "[&_path]:fill-muted-foreground!": explosiveLevel === ExplosiveLevel.Pathetic,
+                  "[&_path]:fill-white!": explosiveLevel === ExplosiveLevel.Weak,
+                  "[&_path]:fill-primary!": explosiveLevel === ExplosiveLevel.Moderate,
+                  "[&_path]:fill-red-500!": explosiveLevel === ExplosiveLevel.Strong,
+                  "[&_path]:fill-sky-500!": explosiveLevel === ExplosiveLevel.Freeze,
                 })}
               />
             </div>

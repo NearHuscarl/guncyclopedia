@@ -42,6 +42,12 @@ function useGunResults() {
           return [g, ProjectileService.getHomingLevel(gunStatsLookup[g.id].projectile)] as const;
         });
         return gunsWithSortedWeight.sort((a, b) => b[1] - a[1]).map((v) => v[0]);
+      } else if (filter?.feature === "hasExplosiveProjectile") {
+        const gunStatsLookup = useGunStore.getState().gunStatsLookup;
+        const gunsWithSortedWeight = filteredGuns.map((g) => {
+          return [g, ProjectileService.getExplosiveLevel(gunStatsLookup[g.id].projectile)] as const;
+        });
+        return gunsWithSortedWeight.sort((a, b) => b[1] - a[1]).map((v) => v[0]);
       }
     }
 

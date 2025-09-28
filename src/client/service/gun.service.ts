@@ -2,9 +2,8 @@ import z from "zod/v4";
 import startCase from "lodash/startCase";
 import uniq from "lodash/uniq";
 import groupBy from "lodash/groupBy";
-import keyBy from "lodash/keyBy";
 import countBy from "lodash/countBy";
-import { HomingLevel, ProjectileService, RangeLabel, type TRangeLabel } from "./projectile.service";
+import { ExplosiveLevel, HomingLevel, ProjectileService, RangeLabel, type TRangeLabel } from "./projectile.service";
 import { formatNumber, inverseLerp, lerp } from "@/lib/lang";
 import {
   GameObjectService,
@@ -401,10 +400,6 @@ export class GunService {
     ): TResolvedDamageDetail[] {
       const additionalDamage = projectile.additionalDamage;
       const resolved: TResolvedDamageDetail[] = [];
-      const additionalDamageLookup: { [key in TDamageDetail["source"]]?: TDamageDetail } = keyBy(
-        additionalDamage,
-        "source",
-      );
 
       for (const d of additionalDamage) {
         const { type, ...rest } = d;
@@ -413,19 +408,28 @@ export class GunService {
         } else {
           resolved.push({ ...rest, dps: d.damage * shotsPerSecond });
         }
+
+        if (d.source === "explosion") {
+          const isUnlikelyToExplodeOnEnemy =
+            projectile.penetration &&
+            !projectile.penetrationBlockedByEnemies && // Sailgun_Projectile
+            ProjectileService.getHomingLevel(projectile) < HomingLevel.AutoAim && // not bullet bore
+            ProjectileService.getExplosiveLevel(projectile) < ExplosiveLevel.Strong; // not dark marker
+
+          resolved.at(-1)!.damageChance = isUnlikelyToExplodeOnEnemy
+            ? 1 / (1 + (projectile.penetration ?? 0))
+            : d.damageChance;
+        }
       }
 
       // apply additional damage from existing projectile fields
-      if (projectile.penetration) {
+      if (projectile.penetration && !projectile.penetrationBlockedByEnemies) {
         let penetration = Math.min(projectile.penetration, 3); // unlikely to hit more than 3 enemies at once.
         if (projectile.numberOfBounces && projectile.numberOfBounces > 1) {
           penetration += Math.min(projectile.numberOfBounces, 3); // more chance if it's bouncy idk
         }
         if (ProjectileService.getHomingLevel(projectile) >= HomingLevel.Weak) {
           penetration++; // even more chance if it's homing hah
-        }
-        if (additionalDamageLookup.explosion) {
-          penetration = 0; // piercing only affects objects
         }
         penetration = Math.min(penetration, projectile.penetration);
 
