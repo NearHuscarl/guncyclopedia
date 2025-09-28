@@ -49,6 +49,13 @@ export const ExplosiveLevel = {
   Freeze: 10,
 } as const;
 
+export const PenetrationLevel = {
+  None: -1,
+  ObjectsOnly: 0,
+  Enemies: 1,
+  EnemiesAndObjects: 2,
+} as const;
+
 export class ProjectileService {
   static readonly MAX_SPEED = 10_000;
   static readonly MAX_FIRE_RATE = 10_000;
@@ -123,6 +130,20 @@ export class ProjectileService {
     }
 
     return ExplosiveLevel.Weak;
+  }
+
+  static getPenetrationLevel(projectile: TProjectile | TResolvedProjectile) {
+    if (!projectile.penetration) return PenetrationLevel.None;
+
+    if (!projectile.penetrationBlockedByEnemies && projectile.canPenetrateObjects) {
+      return PenetrationLevel.EnemiesAndObjects;
+    }
+
+    if (!projectile.penetrationBlockedByEnemies && !projectile.canPenetrateObjects) {
+      return PenetrationLevel.Enemies;
+    }
+
+    return PenetrationLevel.ObjectsOnly;
   }
 
   /**

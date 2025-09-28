@@ -16,9 +16,11 @@ export function toPercent(value: number): string {
   return (value * 100).toFixed(0) + "%";
 }
 
-export function joinWords(words: string[], separator = ", "): string {
+export function joinWords(words: (string | undefined)[], separator = ", "): string {
+  words = words.filter((word): word is string => word !== undefined);
+
   if (words.length === 0) return "";
-  if (words.length === 1) return words[0];
+  if (words.length === 1) return words[0] || "";
   return words.slice(0, -1).join(separator) + " and " + words.at(-1);
 }
 

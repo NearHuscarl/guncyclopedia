@@ -19,7 +19,7 @@ import clsx from "clsx";
 import startCase from "lodash/startCase";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { NumericValue } from "./numeric-value";
-import { formatNumber, toPercent } from "@/lib/lang";
+import { formatNumber, joinWords, toPercent } from "@/lib/lang";
 import {
   fuchsia400,
   fuchsia500,
@@ -75,7 +75,7 @@ import { Homing } from "@/components/icons/homing";
 import { Homing2 } from "@/components/icons/homing2";
 import { Bee } from "@/components/icons/bee";
 import { Chest } from "@/components/icons/chest";
-import { ExplosiveLevel, HomingLevel, ProjectileService } from "@/client/service/projectile.service";
+import { ExplosiveLevel, HomingLevel, PenetrationLevel, ProjectileService } from "@/client/service/projectile.service";
 import { AmmoIcon } from "@/components/icons/ammo";
 import { DamageAllEnemiesRadius } from "@/client/generated/models/projectile.model";
 import { LifeOrb } from "@/components/icons/life-orb";
@@ -248,6 +248,7 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
   const setHoverFinalProjectile = useGunStore((state) => state.setHoverFinalProjectile);
   const homingLevel = ProjectileService.getHomingLevel(projectile);
   const explosiveLevel = ProjectileService.getExplosiveLevel(projectile);
+  const penetrationLevel = ProjectileService.getPenetrationLevel(projectile);
 
   return (
     <div className="flex gap-3">
@@ -1045,15 +1046,37 @@ export function GunAttributes({ projectile, gun, gunStats }: TGunAttributesProps
           <TooltipTrigger>
             <div className={clsx("flex items-center", ATTRIBUTE_CLASSES)}>
               {(Math.floor(projectile.penetration || 0) || undefined) && (
-                <NumericValue>{formatNumber(projectile.penetration!, 1)}</NumericValue>
+                <NumericValue
+                  className={clsx({
+                    "text-muted-foreground": penetrationLevel === PenetrationLevel.ObjectsOnly,
+                    "text-white": penetrationLevel === PenetrationLevel.Enemies,
+                    "text-primary": penetrationLevel === PenetrationLevel.EnemiesAndObjects,
+                  })}
+                >
+                  {formatNumber(projectile.penetration!, 1)}
+                </NumericValue>
               )}
-              <Penetration size={18} />
+              <Penetration
+                className={clsx({
+                  "[&_path]:stroke-muted-foreground": penetrationLevel === PenetrationLevel.ObjectsOnly,
+                  "[&_path]:stroke-white": penetrationLevel === PenetrationLevel.Enemies,
+                  "[&_path]:stroke-primary": penetrationLevel === PenetrationLevel.EnemiesAndObjects,
+                })}
+              />
             </div>
           </TooltipTrigger>
           <TooltipContent>
             <strong>Piercing Projectile</strong>
             <br />
-            Number of penetration: <strong>{formatNumber(projectile.penetration!, 1)}</strong>
+            Penetrates{" "}
+            <strong>
+              {joinWords([
+                projectile.penetrationBlockedByEnemies ? undefined : "enemies",
+                projectile.canPenetrateObjects ? "objects" : undefined,
+              ])}
+            </strong>{" "}
+            up to <strong>{formatNumber(projectile.penetration!, 1)}</strong>{" "}
+            {projectile.penetration !== 1 ? "times" : "time"}.
           </TooltipContent>
         </Tooltip>
       )}
